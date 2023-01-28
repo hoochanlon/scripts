@@ -52,7 +52,7 @@ yum install lrzsz
 * 操作系统加固：https://help.aliyun.com/knowledge_list/60787.html
 * web应用加固：https://help.aliyun.com/knowledge_list/60792.html
 
-## Linux那奇葩的防火墙
+### Linux那奇葩的防火墙
 
 Linux的逻辑和我们平常见到的图形操作系统Windows、macOS不太一样，指定一个某某程序，禁止它们联网。在Windows、macOS很容易做到，但在Linux却不是很好办...防火墙主要针对于web、ftp等这类资源访问服务器的。而且呢，这类不少的软件产品也是要钱的。看来正版Windows贵，使用起来也为广大人民群众所接受的产品，这也是有道理的。Linux难用但免费，不过是企业省钱，加之术业有专攻罢了。
 
@@ -64,7 +64,7 @@ Linux的逻辑和我们平常见到的图形操作系统Windows、macOS不太一
 
 根据这情况那就备些防火墙相关的常用命令吧，把GitHub及对其加速CDN，一块ban了吧。等需要时，再来解禁一下这些主机IP。这个嘛，倒是可以做个一键脚本。
 
-### firewall-cmd
+#### firewall-cmd
 
 使用firewall-cmd，需将系统的防火墙服务打开。
 
