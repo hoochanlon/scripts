@@ -6,9 +6,6 @@
 @echo off
 powershell -command Invoke-WebRequest -Uri "https://www.win-rar.com/fileadmin/winrar-versions/sc/sc20220317/wrr/winrar-x64-611sc.exe" -OutFile "C:/Users/${env:UserName}/Downloads/winrar-x64-611sc.exe"
 
-:: 大部分用户可能下载的是国内代理商的个人含广告版WinRAR，保险起见先卸载再换商业版WinRAR
-if exist C:\"Program Files"\WinRAR\Uninstall.exe start /wait C:\"Program Files"\WinRAR\Uninstall.exe /S
-
 @echo "静默安装WinRAR，并写入注册文件。"
 
 start /wait C:\Users\%username%\Downloads\winrar-x64-611sc.exe /S
@@ -35,7 +32,8 @@ pause
 del %0
 
 :: 其他说明
-:: 编码：GB2312；换行：CRLF。
-:: 修复注释造成命令字母缺失及乱码问题
-:: 用explorer.exe也行，只不过会调用浏览器下载而已
+:: 之前的WinRAR软件需安装默认目录。
+:: 编码：GB2312；换行：CRLF。修复注释造成命令字母缺失及乱码问题。
+:: explorer.exe也用于下载，但写出有效代码太麻烦了。
 :: 非管理员的CMD，写入到C盘的Program Files文件不成功。
+:: win7需要额外安装powershell5.0以及TLS/SSL管理工具。
