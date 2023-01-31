@@ -1,9 +1,11 @@
 @echo off
-
+@REM 调用powershell模块下载，用explorer.exe也行，只不过会调用浏览器下载而已
 powershell -command Invoke-WebRequest -Uri "https://www.win-rar.com/fileadmin/winrar-versions/sc/sc20220317/wrr/winrar-x64-611sc.exe" -OutFile "C:/Users/${env:UserName}/Downloads/winrar-x64-611sc.exe"
 
+@REM 下载完成，执行静默安装 文件位置：/用户/下载目录
 start /wait C:\Users\%username%\Downloads\winrar-x64-611sc.exe /S
 
+@REM 写入文件
 (
 echo RAR registration data
 echo State Grid Corporation Of China
