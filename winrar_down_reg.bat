@@ -1,11 +1,16 @@
+
+@echo "注意：需以管理员权限运行该winRAR一键下载安装注册激活脚本。"
+@echo
+@echo "开始检测WinRAR（简中商业版）是否存在并下载。（下载位置在C盘里的下载目录）。"
+
 @echo off
-@REM 调用powershell模块下载，用explorer.exe也行，只不过会调用浏览器下载而已
 powershell -command Invoke-WebRequest -Uri "https://www.win-rar.com/fileadmin/winrar-versions/sc/sc20220317/wrr/winrar-x64-611sc.exe" -OutFile "C:/Users/${env:UserName}/Downloads/winrar-x64-611sc.exe"
 
-@REM 下载完成，执行静默安装 文件位置：/用户/下载目录
+@echo "静默安装WinRAR，并写入注册文件。"
+
 start /wait C:\Users\%username%\Downloads\winrar-x64-611sc.exe /S
 
-@REM 写入文件
+@echo off
 (
 echo RAR registration data
 echo State Grid Corporation Of China
@@ -21,8 +26,13 @@ echo c9ffbc159bf2640ad5d9b88f8fa9d9cbf2b7e5b022a21938465244
 )>C:\"Program Files"\WinRAR\rarreg.key
 
 
+@echo "激活去广告已完成，按回车或点叉关闭该窗口。"
+pause
 
+del %0
 
-
-
-
+:: 其他说明
+:: 编码：GB2312；换行：CRLF。
+:: 修复注释造成命令字母缺失及乱码问题
+:: 用explorer.exe也行，只不过会调用浏览器下载而已
+:: 非管理员的CMD，写入到C盘的Program Files文件不成功。
