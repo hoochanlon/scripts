@@ -1,9 +1,13 @@
 @echo off
+: 调用powershell模块下载，win7建议使用如下方式
+: explorer.exe https://www.win-rar.com/fileadmin/winrar-versions/sc/sc20220317/wrr/winrar-x64-611sc.exe
 
 powershell -command Invoke-WebRequest -Uri "https://www.win-rar.com/fileadmin/winrar-versions/sc/sc20220317/wrr/winrar-x64-611sc.exe" -OutFile "C:/Users/${env:UserName}/Downloads/winrar-x64-611sc.exe"
 
+: 静默安装
 start /wait C:\Users\%username%\Downloads\winrar-x64-611sc.exe /S
 
+: 写入注册winrar文件，来自烈火的key
 (
 echo RAR registration data
 echo State Grid Corporation Of China
