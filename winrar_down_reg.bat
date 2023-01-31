@@ -4,11 +4,9 @@
 @echo "替换国内代理个人含广告版，下载官方镜像简中商业版WinRAR。（下载位置在C盘里的下载目录）。"
 
 @echo off
-powershell -command Invoke-WebRequest -Uri "https://www.win-rar.com/fileadmin/winrar-versions/sc/sc20220317/wrr/winrar-x64-611sc.exe" -OutFile "C:/Users/${env:UserName}/Downloads/winrar-x64-611sc.exe"
+powershell -command Invoke-WebRequest -Uri "https://www.win-rar.com/fileadmin/winrar-versions/sc/sc20220317/wrr/winrar-x64-611sc.exe" -OutFile "C:/Users/${env:UserName}/Downloads/winrar-x64-611sc.exe"&&start /wait C:\Users\%username%\Downloads\winrar-x64-611sc.exe /S
 
 @echo "静默安装WinRAR，并写入注册文件。"
-
-start /wait C:\Users\%username%\Downloads\winrar-x64-611sc.exe /S
 
 @echo off
 (
