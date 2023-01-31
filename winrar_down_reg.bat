@@ -1,10 +1,13 @@
 
 @echo "注意：需以管理员权限运行该winRAR一键下载安装注册激活脚本。"
 @echo
-@echo "开始检测WinRAR（简中商业版）是否存在并下载。（下载位置在C盘里的下载目录）。"
+@echo "替换国内代理个人含广告版，下载官方镜像简中商业版WinRAR。（下载位置在C盘里的下载目录）。"
 
 @echo off
 powershell -command Invoke-WebRequest -Uri "https://www.win-rar.com/fileadmin/winrar-versions/sc/sc20220317/wrr/winrar-x64-611sc.exe" -OutFile "C:/Users/${env:UserName}/Downloads/winrar-x64-611sc.exe"
+
+:: 大部分用户可能下载的是国内代理商的个人含广告版WinRAR，保险起见先卸载再换商业版WinRAR
+if exist C:\"Program Files"\WinRAR\Uninstall.exe start /wait C:\"Program Files"\WinRAR\Uninstall.exe /S
 
 @echo "静默安装WinRAR，并写入注册文件。"
 
