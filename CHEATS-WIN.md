@@ -15,6 +15,10 @@ cmd的curl下载，文件默认会在命令行所在当前目录（管理员权�
 curl -O https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/emeditor_random_keygen.ps1&&powershell -c emeditor_random_keygen.ps1
 ```
 
+### 提升管理权限
+
+https://zhidao.baidu.com/question/1431089222201948539.html 家庭版，嫌麻烦，没做
+
 ### 写入hosts
 
 详情见：`xcopy /?`，大意将文件全部复制到一个新目录（xcopy特性）存放，再排除重复操作的报错。
