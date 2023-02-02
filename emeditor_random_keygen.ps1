@@ -11,6 +11,8 @@ $emeditor_v21_str = switch ($i){
 $getkey = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String($emeditor_v21_str))
 Set-Clipboard -Value $getkey # Get-Clipboard
 Write-Output "注册名字随便填一个，序列号粘贴进去就行了。序列号已复制到粘贴板：" $getkey
+#删除脚本自身，http://zhishichong.com/article/47563
+remove-item $MyInvocation.MyCommand.Path -force
 
 <# 
 
