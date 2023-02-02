@@ -7,6 +7,14 @@
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/winrar_down_reg.bat&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
 ```
 
+### 注册emeditor
+
+cmd的curl下载，文件默认会在命令行所在当前目录（管理员权限 /system32，平常打开 /用户名），powershell和管理员的界面默认会从system32里找文件，所以也能容易出错。
+
+```
+curl -O https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/emeditor_random_keygen.ps1&&powershell -c emeditor_random_keygen.ps1
+```
+
 ### 写入hosts
 
 详情见：`xcopy /?`，大意将文件全部复制到一个新目录（xcopy特性）存放，再排除重复操作的报错。
