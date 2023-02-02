@@ -9,7 +9,7 @@ curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-sim
 
 ### 写入hosts
 
-详情见：`xcopy /?`，大意将文件全部复制一个新目录存放，再排除重复操作的报错。
+详情见：`xcopy /?`，大意将文件全部复制到一个新目录（xcopy特性）存放，再排除重复操作的报错。
 
 ```
 @xcopy C:\Windows\system32\drivers\etc\hosts C:\Windows\system32\drivers\etc\hosts.bak\ /d /c /i /y 
@@ -28,6 +28,18 @@ curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-sim
 ```
 
 参考： [windwos使用CMD命令添加hosts的方法](https://blog.csdn.net/pokes/article/details/122179412)
+
+### 复制与粘贴文本
+
+快速回到桌面
+
+```
+cd %userprofile%\desktop
+```
+
+参考：
+
+* [jack孟-Windows系统，命令行窗口里的内容复制到剪贴板](https://www.cnblogs.com/mq0036/p/16285243.html)
 
 ### 防火墙
 
