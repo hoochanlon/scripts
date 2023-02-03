@@ -2,7 +2,6 @@
 
 以管理员运行cmd，一键下载安装及注册WinRAR
 
-
 ```batch
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/winrar_down_reg.bat&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
 ```
@@ -17,8 +16,10 @@ curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-sim
 
 ### 注册xchange pdf
 
+powershell以管理员权限运行。
+
 ```
-curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1&&powershell -c xchange_v8_active.ps1
+curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
 ```
 
 ### 提升管理权限
