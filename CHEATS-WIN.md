@@ -16,7 +16,7 @@ curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-sim
 
 ### 注册xchange pdf
 
-powershell以管理员权限运行。
+powershell以管理员权限运行。注意当前目录，curl输出到当前所在目录，powershell的命令会在system32找文件或命令，自然就会报错了。
 
 ```
 curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
