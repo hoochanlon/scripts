@@ -56,9 +56,18 @@ https://zhidao.baidu.com/question/1431089222201948539.html 家庭版，嫌麻烦
 cd %userprofile%\desktop
 ```
 
-参考：
+参考：[jack孟-Windows系统，命令行窗口里的内容复制到剪贴板](https://www.cnblogs.com/mq0036/p/16285243.html)
 
-* [jack孟-Windows系统，命令行窗口里的内容复制到剪贴板](https://www.cnblogs.com/mq0036/p/16285243.html)
+### 结束进程
+
+`/IM` 指定进程名称，这比PID好多了。
+
+```
+TASKKILL /F /IM PDFXHost32.exe
+```
+
+参考：[csdn-taskkill /f /im *.exe 的作用](https://blog.csdn.net/ccf19881030/article/details/119040631)
+
 
 ### 防火墙
 

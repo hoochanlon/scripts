@@ -34,6 +34,8 @@ remove-item $MyInvocation.MyCommand.Path -force
 # 静默卸载
 # * https://qastack.cn/programming/113542/how-can-i-uninstall-an-application-using-powershell
 # * https://www.pstips.net/powershell-uninstall-software.html
+# 加载网页文本乱码问题
+# * http://www.bathome.net/redirect.php?tid=58406&goto=lastpost
 
 #------debug-----
 # 卸载
