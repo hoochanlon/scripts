@@ -12,7 +12,13 @@ curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-sim
 cmd的curl下载，文件默认会在命令行所在当前目录（管理员权限 /system32，平常打开 /用户名），powershell和管理员的界面默认会从system32里找文件，所以也能容易出错。
 
 ```
-curl -O https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/emeditor_random_keygen.ps1&&powershell -c emeditor_random_keygen.ps1
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/emeditor_random_keygen.ps1&&powershell -c emeditor_random_keygen.ps1
+```
+
+### 注册xchange pdf
+
+```
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1&&powershell -c xchange_v8_active.ps1
 ```
 
 ### 提升管理权限
