@@ -1,6 +1,6 @@
+# 发现一个升级的aiu文件，删不删随喜吧，"C:\ProgramData\Emurasoft\EmEditor\updates\emed64_updates4u.aiu"
 # 摇骰子1～6点随机选一个 emeditor key。
 $emeditor_v21_str;$getkey;$i = Get-Random 1,6
-
 $emeditor_v21_str = switch ($i)
 {
 1 {"RABNAEEAWgBNAC0AVwBIAFkANQAyAC0AQQBYADIAMgAyAC0AWgBRAEoAWABOAC0ANwA5AEoAWABIAA=="}
@@ -12,9 +12,7 @@ $emeditor_v21_str = switch ($i)
 }
 
 $getkey = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String($emeditor_v21_str))
-
 Set-Clipboard -Value $getkey # Get-Clipboard
-
 Write-Output "注册名字随便填一个，序列号粘贴进去就行了。序列号已复制到粘贴板：" $getkey
 Write-Output "xp/win7/server2008： http://files.emeditor.com/emed32_14.8.1.exe"
 Write-Output "win10/win11及未来更高版本以上：https://support.emeditor.com/en/downloads/latest/installer/64"
