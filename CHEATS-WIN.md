@@ -14,7 +14,7 @@ cmd的curl下载，文件默认会在命令行所在当前目录（管理员权�
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/emeditor_random_keygen.ps1&&powershell -c emeditor_random_keygen.ps1
 ```
 
-调用webclient下载
+附龟速下载
 
 ```powershell
 (new-object System.Net.WebClient).DownloadFile("https://support.emeditor.com/en/downloads/latest/installer/64","c:/editor.exe")
