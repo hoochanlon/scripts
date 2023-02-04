@@ -83,10 +83,10 @@ netsh advfirewall show allprofiles
 netsh advfirewall set allprofiles state on/off
 ```
 
-限制程序联网（添加规则）/删除规则
+添加限制程序联网规则
 
 ```
-netsh advfirewall firewall add/delete rule name="no360ie" dir=out program="程序路径 " action=block
+netsh advfirewall firewall add rule name="deny_inte_emeditor" protocol=TCP dir=out program="%localappdata%\Programs\EmEditor\emeditor.exe" localport=80 action=block
 ```
 
 
