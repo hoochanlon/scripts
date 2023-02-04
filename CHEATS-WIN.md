@@ -14,6 +14,13 @@ cmd的curl下载，文件默认会在命令行所在当前目录（管理员权�
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/emeditor_random_keygen.ps1&&powershell -c emeditor_random_keygen.ps1
 ```
 
+调用webclient下载
+
+```powershell
+(new-object System.Net.WebClient).DownloadFile("https://support.emeditor.com/en/downloads/latest/installer/64","c:/editor.exe")
+```
+
+
 ### 注册xchange pdf
 
 powershell以管理员权限运行。注意当前目录，curl输出到当前所在目录，powershell的命令会在system32找文件或命令，自然就会报错了。
