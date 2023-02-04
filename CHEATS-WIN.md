@@ -86,7 +86,7 @@ netsh advfirewall set allprofiles state on/off
 添加限制程序联网规则
 
 ```
-netsh advfirewall firewall add rule name="deny_inte_emeditor" protocol=TCP dir=out program="%localappdata%\Programs\EmEditor\emeditor.exe" localport=80 action=block
+netsh advfirewall firewall add rule name="no_ie_for_em" dir=out program="%localappdata%\Programs\EmEditor\emeditor.exe" action=block
 ```
 
 
