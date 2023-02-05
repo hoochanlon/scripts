@@ -23,6 +23,15 @@ bash
 rm -rf ~/.ssh/known_hosts && rm -rf ~/.ssh/known_hosts.old
 ```
 
+掉线问题，主要看客户端，有些客户端长时间不操作会自动断开。系统默认就是不掉线的，除非配置在`/etc/profile `了 export TMOUT=300。改成如下便可。
+
+```
+# ClientAliveInterval 0 # 客户端每隔多少秒向服务发送一个心跳数据，类似web响应。
+# ClientAliveCountMax 3 # 客户端多少秒没有相应，服务器自动断掉连接 
+ClientAliveInterval 30
+ClientAliveCountMax 86400
+```
+
 从Linux下载文件到本地，先安装lrzsz
 
 ```
@@ -128,3 +137,7 @@ firewall-cmd --direct  -add -rule ipv4 filter INPUT  1 -s  172.25.254.50  -p  tc
 ```
 
 参考：[博客园-Linux命令之firewall-cmd](https://www.cnblogs.com/diantong/p/9713915.html)、[csdn-Linux系统上的防火墙命令](https://blog.csdn.net/weixin_43780179/article/details/125046304)、[爱码网-linux下防火墙的管理工具firewall-cmd](https://www.likecs.com/show-203862572.html)。
+
+
+## Linux安装及使用杀软
+
