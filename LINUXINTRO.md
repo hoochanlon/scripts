@@ -60,16 +60,27 @@ cp /etc/ssh/sshd_config /etc/ssh/sshd_config_bak/sshd_config && vi /etc/ssh/sshd
 
 #### 3. 修改用户登录策略
 
-参考：
+***虽然他们文章是不错参考资料，但必须要注意Linux的版本号，版本不一样，命令也是大有改动。19年的centos8取消了pam_tally2模块，但网上不少文章是2022、2020，他们可能当时就是用的centos8以下。***
+
 * [linux 终端 设置连接登录密码 + 登录失败处理功能策略](https://www.cnblogs.com/qwer78/p/16546372.html)
 * [uos账号解锁](https://blog.csdn.net/qq_35957643/article/details/125277224)
+* [CentOS 8.0配置安全策略（用户3次登录失败锁定3分钟）](https://zhuanlan.zhihu.com/p/127109500?utm_id=0)
 
-`/pam.d/sshd` 可以取消规则 。也可在`sshd_config`找到use_pam no掉。
+修改配置
 
 ```
+vi /etc/pam.d/system-auth
+# 顶行复制如下指令，即默认所有用户通用处理。
+auth required  pam_faillock.so preauth silent audit deny=3  unlock_time=300 even_deny_root
+```
+解锁用户
 
 ```
-
+# 解锁一个用户
+faillock --user It --reset
+# 解锁所有用户
+faillock--reset
+```
 
 #### 4. 阿里云技术支持的推荐（要钱）
 
