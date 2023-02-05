@@ -66,6 +66,8 @@ cp /etc/ssh/sshd_config /etc/ssh/sshd_config_bak/sshd_config && vi /etc/ssh/sshd
 * [uos账号解锁](https://blog.csdn.net/qq_35957643/article/details/125277224)
 * [CentOS 8.0配置安全策略（用户3次登录失败锁定3分钟）](https://zhuanlan.zhihu.com/p/127109500?utm_id=0)
 
+以上总结是CentOS8对修改sshd文件的教训，只适合CentOS7及以下。
+
 修改配置
 
 ```
