@@ -33,7 +33,7 @@ yum install lrzsz
 * `lz 对应的文件名` 即上传。
 
 
-### 网上的恶意脚本攻击
+## 遭遇网上的恶意脚本攻击
 
 扫描到我云主机，并用脚本恶意破坏系统与Ddos攻击的“黑客”。据查为： https://github.com/Tremblae/Tremble 。
 
@@ -43,16 +43,40 @@ yum install lrzsz
 
 ![](https://fastly.jsdelivr.net/gh/hoochanlon/Free-NTFS-for-Mac/shashin/zei.png)
 
-处理办法：
+### 处理办法
 
-关闭自己不用的桌面系统远程端口，如Windows，3389。“0.0.0.0/0”是任何人都能访问的，自己可临时百度IP，用公网IP登录。设置在“云服务器ECS” -> "ECS安全组"，编辑即可。
+#### 1. 关闭不需要的远程端口（为了方便考虑，不优先选择）
 
-阿里云技术支持的推荐
+关闭自己不用的桌面系统远程端口，如Windows：3389，SSH：22，改成其他的端口。
+
+````
+cp /etc/ssh/sshd_config /etc/ssh/sshd_config_bak/sshd_config && vi /etc/ssh/sshd_config
+# 找到 # port 22位置，在下方添加 port 1122
+````
+
+#### 2. 修成自己电脑的IP才能远程过去
+
+“0.0.0.0/0”是任何人都能访问的，自己可临时百度IP，用公网IP登录。设置在“云服务器ECS” -> "ECS安全组"，编辑即可。
+
+#### 3. 修改用户登录策略
+
+参考：
+* [linux 终端 设置连接登录密码 + 登录失败处理功能策略](https://www.cnblogs.com/qwer78/p/16546372.html)
+* [uos账号解锁](https://blog.csdn.net/qq_35957643/article/details/125277224)
+
+`/pam.d/sshd` 可以取消规则 。也可在`sshd_config`找到use_pam no掉。
+
+```
+
+```
+
+
+#### 4. 阿里云技术支持的推荐（要钱）
 
 * 操作系统加固：https://help.aliyun.com/knowledge_list/60787.html
 * web应用加固：https://help.aliyun.com/knowledge_list/60792.html
 
-### Linux那奇葩的防火墙
+## Linux那奇葩的防火墙
 
 Linux的逻辑和我们平常见到的图形操作系统Windows、macOS不太一样，指定一个某某程序，禁止它们联网。在Windows、macOS很容易，如[win7禁止应用程序联网](https://blog.csdn.net/linxi8693/article/details/107205322/)；可到了Linux，却不是很好办了...防火墙主要针对于web、ftp等这类资源访问服务器的。而且呢，这类不少的软件产品也是要钱的。看来正版Windows贵，使用起来也为广大人民群众所接受的产品，这也是有道理的。Linux难用但免费，不过是企业省钱，加之术业有专攻罢了。
 
