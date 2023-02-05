@@ -141,6 +141,16 @@ firewall-cmd --direct  -add -rule ipv4 filter INPUT  1 -s  172.25.254.50  -p  tc
 参考：[博客园-Linux命令之firewall-cmd](https://www.cnblogs.com/diantong/p/9713915.html)、[csdn-Linux系统上的防火墙命令](https://blog.csdn.net/weixin_43780179/article/details/125046304)、[爱码网-linux下防火墙的管理工具firewall-cmd](https://www.likecs.com/show-203862572.html)。
 
 
-## Linux安装及使用杀软
+## 下载ClamAV和更新病毒库
 
+freshclam为更新病毒库。
 
+```
+yum install clamav && freshclam
+```
+
+扫描；-r：迭代目录；-l：指定路径；--max-dir-recursion：指定目录层级。
+
+```
+clamscan -r /etc --max-dir-recursion=5 -l /home/www/clamav-scan.log
+```
