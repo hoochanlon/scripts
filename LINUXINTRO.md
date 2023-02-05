@@ -4,7 +4,7 @@
 
 ## Linux云服务器初体验
 
-### 连接、配置、上传与下载
+### SSH连接主机相关
 
 连接主机输入主机密码，设置主机名。
 
@@ -32,17 +32,15 @@ ClientAliveInterval 30
 ClientAliveCountMax 86400
 ```
 
-从Linux下载文件到本地，先安装lrzsz
+### 从Linux下载文件到本地，先安装lrzsz
+
+`sz 对应的文件名` 即下载。`lz 对应的文件名` 即上传。
 
 ```
 yum install lrzsz
 ```
 
-* `sz 对应的文件名` 即下载。
-* `lz 对应的文件名` 即上传。
-
-
-## 遭遇网上的恶意脚本攻击
+### 遭遇网上的恶意脚本攻击
 
 扫描到我云主机，并用脚本恶意破坏系统与Ddos攻击的“黑客”。据查为： https://github.com/Tremblae/Tremble 。
 
@@ -52,9 +50,9 @@ yum install lrzsz
 
 ![](https://fastly.jsdelivr.net/gh/hoochanlon/Free-NTFS-for-Mac/shashin/zei.png)
 
-### 处理办法
+#### 处理办法
 
-#### 1. 关闭不需要的远程端口（为了方便考虑，不优先选择）
+##### 1. 关闭不需要的远程端口，或修改成自己电脑的IP才能远程（为了方便考虑，不优先选择）
 
 关闭自己不用的桌面系统远程端口，如Windows：3389，SSH：22，改成其他的端口。
 
@@ -63,11 +61,9 @@ cp /etc/ssh/sshd_config /etc/ssh/sshd_config_bak/sshd_config && vi /etc/ssh/sshd
 # 找到 # port 22位置，在下方添加 port 1122
 ````
 
-#### 2. 修成自己电脑的IP才能远程过去
+自己可临时百度IP，用公网IP登录。设置在“云服务器ECS” -> "ECS安全组"，编辑即可。注意：“0.0.0.0/0”代表任何人都能访问的。
 
-“0.0.0.0/0”是任何人都能访问的，自己可临时百度IP，用公网IP登录。设置在“云服务器ECS” -> "ECS安全组"，编辑即可。
-
-#### 3. 修改用户登录策略
+##### 2. 修改用户登录策略
 
 ***虽然他们文章是不错参考资料，但必须要注意Linux的版本号，版本不一样，命令也是大有改动。19年的centos8取消了pam_tally2模块，但网上不少文章是2022、2020，他们可能当时就是用的centos8以下。***
 
@@ -93,7 +89,7 @@ faillock --user It --reset
 faillock--reset
 ```
 
-#### 4. 阿里云技术支持的推荐（要钱）
+##### 3. 阿里云技术支持对小白的推荐（要钱）
 
 * 操作系统加固：https://help.aliyun.com/knowledge_list/60787.html
 * web应用加固：https://help.aliyun.com/knowledge_list/60792.html
@@ -110,7 +106,7 @@ Linux的逻辑和我们平常见到的图形操作系统Windows、macOS不太一
 
 根据这情况那就备些防火墙相关的常用命令吧，把GitHub及对其加速CDN，一块ban了吧。等需要时，再来解禁一下这些主机IP。这个嘛，倒是可以做个一键脚本。
 
-#### firewall-cmd
+### firewall-cmd
 
 使用firewall-cmd，需将系统的防火墙服务打开。
 
@@ -140,4 +136,5 @@ firewall-cmd --direct  -add -rule ipv4 filter INPUT  1 -s  172.25.254.50  -p  tc
 
 
 ## Linux安装及使用杀软
+
 
