@@ -35,3 +35,9 @@ del %0
 :: explorer.exe也用于下载，但写出有效代码太麻烦了。
 :: 非管理员的CMD，写入到C盘的Program Files文件不成功。
 :: win7需要额外安装powershell5.0以及TLS/SSL管理工具。
+
+:: 参考链接
+:: https://jingyan.baidu.com/article/14bd256e4f7b6fbb6d2612c6.htm
+:: https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3
+:: https://www.learnfk.com/batch-script/batch-script.aliases.html
+:: https://cloud.tencent.com/developer/article/2069559
