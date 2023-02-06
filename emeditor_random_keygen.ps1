@@ -11,6 +11,7 @@ $emeditor_v21_str = switch ($i)
 6 {"RABNAEEAWgBNAC0AWgBNADUANQA2AC0ASwA2AFoAWgBaAC0AOQA5AEwAVwA4AC0AVwBWADUAQgBUAA=="}
 }
 
+# 编码测试 [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("asdasdxzczc"));
 $getkey = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String($emeditor_v21_str))
 Set-Clipboard -Value $getkey # Get-Clipboard
 Write-Output "注册名字随便填一个，序列号粘贴进去就行了。序列号已复制到粘贴板：" $getkey
