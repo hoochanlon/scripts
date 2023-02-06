@@ -29,6 +29,27 @@ powershell以管理员权限运行。注意当前目录，curl输出到当前所
 curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
 ```
 
+### win11 home to pro
+
+升级了，但没激活
+
+```
+:: 出处： https://github.com/pakbch/win11-home-to-pro/blob/main/code.bat
+
+sc config LicenseManager start= auto & net start LicenseManager
+sc config wuauserv start= auto & net start wuauserv
+changepk.exe /productkey VK7JG-NPHTM-C97JM-9MPGT-3V66T
+exit
+exit
+```
+
+激活
+
+```
+irm https://massgrave.dev/get | iex
+```
+
+
 ### 提升管理权限
 
 https://zhidao.baidu.com/question/1431089222201948539.html 家庭版，嫌麻烦，没做
