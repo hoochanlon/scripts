@@ -46,6 +46,18 @@ systemctl restart sshd
 yum install lrzsz
 ```
 
+### 换成别的压缩工具p7zip
+
+自带解压上手起来，徒增学习成本，冗长的命令，不方便操作。
+
+```
+# a 添加压缩包 x 解压
+yum install -y p7zip
+```
+
+参考文档：https://wiki.archlinux.org/title/p7zip
+
+
 ### 遭遇网上的恶意脚本攻击
 
 扫描到我云主机，并用脚本恶意破坏系统与Ddos攻击的“黑客”。据查为： https://github.com/Tremblae/Tremble 。
