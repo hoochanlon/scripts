@@ -1,3 +1,11 @@
+### 激活Windows
+
+以管理员运行cmd，一键起飞
+
+```
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/win11_htp_active_lite.ps1&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
+```
+
 ### 注册WinRAR
 
 以管理员运行cmd，一键下载安装及注册WinRAR
