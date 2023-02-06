@@ -166,3 +166,5 @@ yum install clamav && freshclam
 ```
 clamscan -r /etc --max-dir-recursion=5 -l /home/www/clamav-scan.log
 ```
+
+类似软件还有河马查杀：https://www.shellpub.com/doc/hm_linux_usage.html
