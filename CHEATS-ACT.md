@@ -6,6 +6,12 @@
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/win11_htp_active_lite.ps1&&TIMEOUT /T 1&&start /b powershell win11_htp_active_lite.ps1
 ```
 
+以管理员运行powershell，一键起飞
+
+```
+curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/win11_htp_active_lite.ps1 -Outfile win11_htp_active_lite.ps1 | powershell -c win11_htp_active_lite.ps1
+```
+
 ### 注册WinRAR
 
 以管理员运行cmd，一键下载安装及注册WinRAR
