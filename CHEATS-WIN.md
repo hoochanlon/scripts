@@ -31,19 +31,16 @@ curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple
 
 ### win11 home to pro
 
-升级了，但没激活
+升级了，但没激活。[代码出处 akbch/win11-home-to-pro](https://github.com/pakbch/win11-home-to-pro/blob/main/code.bat)
 
-```
-:: 出处： https://github.com/pakbch/win11-home-to-pro/blob/main/code.bat
-
+``` 
 sc config LicenseManager start= auto & net start LicenseManager
 sc config wuauserv start= auto & net start wuauserv
 changepk.exe /productkey VK7JG-NPHTM-C97JM-9MPGT-3V66T
 exit
-exit
 ```
 
-激活
+微软产品激活。详情：https://massgrave.dev
 
 ```
 irm https://massgrave.dev/get | iex
