@@ -8,7 +8,7 @@
 
 ![](https://fastly.jsdelivr.net/gh/hoochanlon/Free-NTFS-for-Mac/shashin/zei.png)
 
-## 处理办法
+## 后续策略
 
 ### 1. 修改用户登录策略
 
@@ -47,7 +47,13 @@ cp /etc/ssh/sshd_config /etc/ssh/sshd_config_bak/sshd_config && vi /etc/ssh/sshd
 
 自己可临时百度IP，用公网IP登录。设置在“云服务器ECS” -> "ECS安全组"，编辑即可。注意：“0.0.0.0/0”代表任何人都能访问的。由于是自己用搞着玩，又没有部署数据库、文件、网页等服务，用的时候登录网页开启远程访问端口。
 
-### 3. 阿里云技术支持对小白的推荐（要钱）
+### 3. 做了服务器，存了重要资料，那就自己做好每天的快照备份。
+
+阿里云漏洞访问入口：
+
+Linux不像微软的Windows那么服务到位，还有补丁推送，都得自己来。不想自己来，找阿里那得加钱买服务，企业支持什么的。
+
+### 4. 阿里云技术支持对小白的推荐（要钱）
 
 * 操作系统加固：https://help.aliyun.com/knowledge_list/60787.html
 * web应用加固：https://help.aliyun.com/knowledge_list/60792.html
