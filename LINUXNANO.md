@@ -41,7 +41,7 @@
 
 由于是免费领的阿里云主机，我基本上很少登录，所以没配置安装软件之类的，索性把root的定时任务全清除了。
 
-![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-07%2010.31.54.png)
+![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-07%2010.31.541.png)
 
 
 ## 后续策略
