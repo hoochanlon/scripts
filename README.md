@@ -2,11 +2,7 @@
 
 [![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
 
-电脑脚本、软件应用、网页存档仅面向研究和学习使用，切勿用于其他用途，并在24小时之内删掉与本项目相关的一切内容，否则出现一切问题，项目作者概不负责。
-
-![ ](https://raw.githubusercontent.com/hoochanlon/hoochanlon/master/assets/github-contribution-grid-snake.svg)
-
-## 使用须知
+## 图床方案
 
 ### PicGo
 
@@ -36,7 +32,7 @@ https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/AQUICK/taipei.png
 https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple
 ```
 
-## 進め！
+## 整合
 
 picgo
 
@@ -51,3 +47,10 @@ typora的设置
 ![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/typora-set-ihs-pic.png)
 
 一套操作下来，这样就可以复制粘贴到typora，picgo插件squoosh压缩图片，并上传到GitHub，用cdn返回链接了。nice。
+
+
+## 脚本/App/存档特例说明
+
+电脑脚本、软件应用、网页存档仅面向研究和学习使用，切勿用于其他用途，并在24小时之内删掉与本项目相关的一切内容，否则出现一切问题，项目作者概不负责。
+
+![ ](https://raw.githubusercontent.com/hoochanlon/hoochanlon/master/assets/github-contribution-grid-snake.svg)
