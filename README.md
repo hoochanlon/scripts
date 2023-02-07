@@ -51,6 +51,8 @@ typora的设置
 
 ![ ](https://raw.githubusercontent.com/hoochanlon/hoochanlon/master/assets/github-contribution-grid-snake.svg)
 
+---
+
 ***最后关于对脚本/App/存档特例的说明：***
 
 ***电脑脚本、软件应用、网页存档仅面向研究和学习使用，切勿用于其他用途，并在24小时之内删掉与本项目相关的一切内容，否则出现一切问题，项目作者概不负责。***
