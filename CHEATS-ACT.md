@@ -1,5 +1,25 @@
 ### 激活Windows
 
+一键切换Windows版本
+
+```
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start /b Switch.bat
+```
+
+一键激活微软服务(powershell)
+
+```
+irm https://massgrave.dev/get | iex
+```
+
+整合
+
+
+
+
+### 激活Windows(script test)
+
+
 以管理员运行cmd，一键起飞
 
 ```
@@ -18,14 +38,6 @@ curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple
 
 ```batch
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/winrar_down_reg.bat&&TIMEOUT /T 1&&start /b winrar_down_reg.bat
-```
-
-注释版示例
-
-```
-# curl -O https://ghproxy.com/https://raw.githubusercontent.com/
-# hoochanlon/ihs-simple/main/winrar_down_reg.bat&&TIMEOUT /T 1&&
-# start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
 ```
 
 
