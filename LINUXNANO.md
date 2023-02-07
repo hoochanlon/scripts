@@ -36,6 +36,8 @@ faillock --user It --reset
 faillock--reset
 ```
 
+阿里给出的[《Linux操作系统加固》](https://help.aliyun.com/knowledge_list/60787.html)文档，本质上就是用户登录策略...不过文档挺好、挺详细的。
+
 ### 2. 关闭不需要的远程端口及ICMP回显。
 
 关闭自己不用的桌面系统远程端口，如Windows：3389，SSH：22，改成其他的端口。
@@ -49,13 +51,10 @@ cp /etc/ssh/sshd_config /etc/ssh/sshd_config_bak/sshd_config && vi /etc/ssh/sshd
 
 ### 3. 若是自己存有重要资料及配置，那就自己做好每天的快照备份。
 
-Linux不像微软的Windows那么服务到位，还有补丁推送，有不少杀软防护。基本上一切都得自己来。想要高枕无忧的话，找阿里那得加钱买服务，企业支持什么的。Linux恶意脚本通过其他程序服务上的机制漏洞，打开及利用这一程序后门，绕过密码注入脚本，搞破坏、静默上传下载、恶意ddos、挖矿等什么的。
+Linux不像微软的Windows那么服务到位，还有补丁推送，有不少杀软防护。基本上一切都得自己来。想要高枕无忧的话，找阿里那得加钱买服务，[web应用加固](https://help.aliyun.com/knowledge_list/60792.html)，[企业支持](https://www.aliyun.com/service/supportplans)，都是一堆要钱的玩意，不太适用于我们这种个人用户。Linux恶意脚本通过其他程序服务上的机制漏洞，打开及利用这一程序后门，绕过密码注入脚本，搞破坏、静默上传下载、恶意ddos、挖矿等什么的。
 
 ![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-07%2015.24.45.png)
 
 此外恶意脚本、软件不时重启打开，又会额外又生成多个脚本垃圾等，等下一次自启时，没查杀到的文件又一次自启生成运行，反复不觉，不好彻底清理。以及阿里云客服给出的漏洞信息访问入口：https://avd.aliyun.com/high-risk/list 。这样的话，还不如备份快照还原来得快。
 
-### 4. 阿里云技术支持对小白的推荐（要钱）
 
-* 操作系统加固：https://help.aliyun.com/knowledge_list/60787.html
-* web应用加固：https://help.aliyun.com/knowledge_list/60792.html
