@@ -8,6 +8,11 @@
 
 ![](https://fastly.jsdelivr.net/gh/hoochanlon/Free-NTFS-for-Mac/shashin/zei.png)
 
+## 处理中的过程回顾
+
+接到手机上的短信，我也及时联系了他们阿里云的客服。
+
+
 ## 后续策略
 
 ### 1. 修改用户登录策略
