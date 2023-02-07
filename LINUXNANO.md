@@ -93,7 +93,9 @@ cp /etc/ssh/sshd_config /etc/ssh/sshd_config_bak/sshd_config && vi /etc/ssh/sshd
 
 ### 4. 若是自己存有重要资料及配置，那就自己做好每天的快照备份。
 
-Linux不像微软的Windows那么服务到位，还有补丁推送，有不少杀软防护。基本上一切都得自己来。想要高枕无忧的话，找阿里那得加钱买服务，[web应用加固](https://help.aliyun.com/knowledge_list/60792.html)，[企业支持](https://www.aliyun.com/service/supportplans)，都是一堆要钱的玩意，不太适用于我们这种个人用户。Linux恶意脚本通过其他程序服务上的机制漏洞，打开及利用这一程序后门，绕过密码注入脚本，搞破坏、静默上传下载、恶意ddos、挖矿等什么的，以及客服也对我给出了阿里云高危漏洞通报的访问入口：https://avd.aliyun.com/high-risk/list 。
+Linux不像微软的Windows那么服务到位，还有补丁推送，有不少杀软防护。基本上一切都得自己来。客服表示我想高枕无忧，啥也不想管，得找得加钱买服务，如：[web应用加固](https://help.aliyun.com/knowledge_list/60792.html)，[企业支持](https://www.aliyun.com/service/supportplans)，全是一堆要钱的玩意。
+
+可这些高昂费用，反正不适用于我这种个人用户。Linux恶意脚本通过其他程序服务上的机制漏洞，打开及利用这一程序后门，绕过密码注入脚本，搞破坏、静默上传下载、恶意ddos、挖矿等什么的，以及客服也对我给出了阿里云高危漏洞通报的访问入口：https://avd.aliyun.com/high-risk/list 。
 
 ![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-07%2015.24.45.png)
 
