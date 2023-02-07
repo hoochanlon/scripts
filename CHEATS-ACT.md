@@ -15,7 +15,7 @@ irm https://massgrave.dev/get | iex
 整合
 
 ```
-curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start /b Switch.bat&&powershell -command irm https://massgrave.dev/get | iex
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start Switch.bat&&powershell -command "irm https://massgrave.dev/get|iex"
 ```
 
 
