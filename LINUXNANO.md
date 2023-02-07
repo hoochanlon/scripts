@@ -76,7 +76,7 @@ faillock--reset
 
 阿里给出的[《Linux操作系统加固》](https://help.aliyun.com/knowledge_list/60787.html)文档，本质上就是用户登录策略...不过文档挺好、挺详细的。
 
-### 2. 关闭不需要的远程端口及ICMP回显（ping）。
+### 2. 关闭不需要的远程端口及ICMP回显（ping）
 
 关闭自己不用的桌面系统远程端口，如Windows：3389，SSH：22，改成其他的端口。
 
@@ -85,9 +85,13 @@ cp /etc/ssh/sshd_config /etc/ssh/sshd_config_bak/sshd_config && vi /etc/ssh/sshd
 # 找到 # port 22位置，在下方添加 port 1122
 ````
 
+但完全限死，只用VNC登录使用的话，太难受了...😂
+
+### 3. 限制IP或更换IP
+
 “0.0.0.0/0”，任何人都能访问，还是不太安全啊...百度关键字“IP”，临时用自己的公网IP登录，弄个弹性IP，换下IP也行吧...不过由于我个人在云主机没放什么重要东西，也没部署ftp、web等服务啥的，用的时候登录网页开启远程访问端口，这样也可以。
 
-### 3. 若是自己存有重要资料及配置，那就自己做好每天的快照备份。
+### 4. 若是自己存有重要资料及配置，那就自己做好每天的快照备份。
 
 Linux不像微软的Windows那么服务到位，还有补丁推送，有不少杀软防护。基本上一切都得自己来。想要高枕无忧的话，找阿里那得加钱买服务，[web应用加固](https://help.aliyun.com/knowledge_list/60792.html)，[企业支持](https://www.aliyun.com/service/supportplans)，都是一堆要钱的玩意，不太适用于我们这种个人用户。Linux恶意脚本通过其他程序服务上的机制漏洞，打开及利用这一程序后门，绕过密码注入脚本，搞破坏、静默上传下载、恶意ddos、挖矿等什么的，以及客服也对我给出了阿里云高危漏洞通报的访问入口：https://avd.aliyun.com/high-risk/list 。
 
