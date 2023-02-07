@@ -4,7 +4,7 @@
 
 接到手机上的短信，我及时联系了他们阿里云的客服，看了下控制台提供的黑客线索
 
-![](https://fastly.jsdelivr.net/gh/hoochanlon/Free-NTFS-for-Mac/shashin/zei.png)
+![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/2e706e67.png)
 
 注意到了 https://github.com/Tremblae/Tremble 的信息，主机重置快一个多来月了，这家伙又一次暴破了我的云主机。
 
