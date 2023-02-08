@@ -34,11 +34,13 @@ Warning: Permanently added '119.x.x.x' (ED25519) to the list of known hosts.
 root@119.x.x.x: Permission denied (publickey,gssapi-keyex,gssapi-with-mic)
 ```
 
-*连接远程的本地机器生成匹配密钥
-
+*也说明主机很有可能被人动过手脚
 
 ```
-
+vi /etc/ssh/sshd_config
+PasswordAuthentication yes
+PermitRootLogin yes
+systemctl restart sshd
 ```
 
 掉线问题，主要看客户端，有些客户端长时间不操作会自动断开。系统默认就是不掉线的，除非配置在`/etc/profile `了 export TMOUT=300。改成如下便可。
