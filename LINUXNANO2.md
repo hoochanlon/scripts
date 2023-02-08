@@ -10,6 +10,7 @@
 * [csdn-linux+agent卸载_华为云服务器卸载agent监控服务Linux+windows教程](https://blog.csdn.net/weixin_33148621/article/details/113900993)
 * [CentOS服务器清除用户登录记录和命令历史方法](https://blog.csdn.net/cljdsc/article/details/123358983)
 * [Linux基础：history命令](https://blog.51cto.com/skypegnu1/1941153)
+* [Linux /dev/null详解](https://www.shuzhiduo.com/A/6pdDP9ALdw/)
 
 黑客核心代码解读
 
@@ -104,15 +105,7 @@ if [ ! -d $HOME ]; then
   echo 'export HOME=<dir>'
   exit 1
 fi
-```
 
-### if curl、lscpu、 ! sudo -n true
-
-参考信息源；
-
-* [Linux /dev/null详解](https://www.shuzhiduo.com/A/6pdDP9ALdw/)
-
-```
 # 找不到curl命令定义，则丢入黑洞。
 if ! type curl >/dev/null; then
   echo "ERROR: This script requires \"curl\" utility to work correctly"
