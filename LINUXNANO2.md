@@ -118,10 +118,8 @@ if ! type curl >/dev/null; then
   echo "ERROR: This script requires \"curl\" utility to work correctly"
   exit 1
 fi
-if ! type lscpu >/dev/null; then
-  echo "WARNING: This script requires \"lscpu\" utility to work correctly"
-fi
 
+# `sudo -n true 2`返回“一个密码请求”的定义信息
 if ! sudo -n true 2>/dev/null; then
   if ! pidof systemd >/dev/null; then
     echo "ERROR: This script requires systemd to work correctly"
