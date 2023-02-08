@@ -23,6 +23,24 @@ bash
 rm -rf ~/.ssh/known_hosts && rm -rf ~/.ssh/known_hosts.old
 ```
 
+*远程主机ssh配对不上,报错代码
+
+```
+The authenticity of host '119.x.x.x (119.x.x.x)' can't be established.
+ED25519 key fingerprint is SHA256:h0WBJe1ZfasEei+4Zluoog9LfH+GBQwzkh/twHN9FlA.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '119.x.x.x' (ED25519) to the list of known hosts.
+root@119.x.x.x: Permission denied (publickey,gssapi-keyex,gssapi-with-mic)
+```
+
+*连接远程的本地机器生成匹配密钥
+
+
+```
+
+```
+
 掉线问题，主要看客户端，有些客户端长时间不操作会自动断开。系统默认就是不掉线的，除非配置在`/etc/profile `了 export TMOUT=300。改成如下便可。
 
 ```
