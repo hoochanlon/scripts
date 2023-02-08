@@ -73,6 +73,42 @@ sleep 88;rm -rf cd /root/c3pool
 
 ## bk.sh，推测是靶机脚本
 
+### if语句检测环境内容
+
+参考信息源：
+
+* [百度知道-Linux shell 脚本 $(id -u) 是什么意思？](https://zhidao.baidu.com/question/944658594109817212.html)
+* [bbsmax-shell if判断中常用的a-z表达式含义](https://www.bbsmax.com/A/8Bz81Qa6Jx/)
+* [linux 环境变量设置 -d,Linux环境变量的设置](https://blog.csdn.net/weixin_35565522/article/details/116774198)
+* [https://www.pianshen.com/article/37962128580/](https://www.pianshen.com/article/37962128580/)
+
+```
+#-----
+# 判断是不是root权限
+if [ "$(id -u)" == "0" ]; then
+  echo ""
+fi
+#----
+# 这部分是判断环境配置准备
+
+# “-z 长度为零则为真”，做一个逆向判断，就是找不到这个目录，打印"请将home环境定义到主目录"。 
+if [ -z $HOME ]; then
+  echo "ERROR: Please define HOME environment variable to your home directory"
+# 异常退出，debug检测的。
+  exit 1
+fi
+# 检查是否有家目录，没有则提示导入，引入家目录环境变量
+if [ ! -d $HOME ]; then
+  echo "ERROR: Please make sure HOME directory $HOME exists or set it yourself using this command:"
+  echo 'export HOME=<dir>'
+  exit 1
+fi
+```
+
+### if curl、lscpu、 ! sudo -n true
+
+### echo信息
+
 echo部分为英语，我用翻译及个人有限功底理解其代码。第一行，中二教言语，忽略；从第二行开始翻译解读。
 
 ```
