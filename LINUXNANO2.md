@@ -108,7 +108,12 @@ fi
 
 ### if curl、lscpu、 ! sudo -n true
 
+参考信息源；
+
+* [Linux /dev/null详解](https://www.shuzhiduo.com/A/6pdDP9ALdw/)
+
 ```
+# 找不到curl命令定义，则丢入黑洞。
 if ! type curl >/dev/null; then
   echo "ERROR: This script requires \"curl\" utility to work correctly"
   exit 1
