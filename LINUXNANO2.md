@@ -120,11 +120,11 @@ if ! type curl >/dev/null; then
 fi
 
 # `sudo -n true 2`返回“一个密码请求”的定义信息
-if ! sudo -n true 2>/dev/null; then
-  if ! pidof systemd >/dev/null; then
-    echo "ERROR: This script requires systemd to work correctly"
-    exit 1
-  fi
+# if ! sudo -n true 2>/dev/null; then
+#  if ! pidof systemd >/dev/null; then
+#    echo "ERROR: This script requires systemd to work correctly"
+#    exit 1
+#  fi
 ```
 
 ### echo信息
