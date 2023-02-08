@@ -80,7 +80,8 @@ sleep 88;rm -rf cd /root/c3pool
 * [百度知道-Linux shell 脚本 $(id -u) 是什么意思？](https://zhidao.baidu.com/question/944658594109817212.html)
 * [bbsmax-shell if判断中常用的a-z表达式含义](https://www.bbsmax.com/A/8Bz81Qa6Jx/)
 * [linux 环境变量设置 -d,Linux环境变量的设置](https://blog.csdn.net/weixin_35565522/article/details/116774198)
-* [https://www.pianshen.com/article/37962128580/](https://www.pianshen.com/article/37962128580/)
+* [Shell中的exit 0 和 exit 1是做什么的?](https://www.pianshen.com/article/37962128580/)
+* [博客园-shell中的type命令](https://www.cnblogs.com/chaoguo1234/p/5723531.html)
 
 ```
 #-----
@@ -106,6 +107,22 @@ fi
 ```
 
 ### if curl、lscpu、 ! sudo -n true
+
+```
+if ! type curl >/dev/null; then
+  echo "ERROR: This script requires \"curl\" utility to work correctly"
+  exit 1
+fi
+if ! type lscpu >/dev/null; then
+  echo "WARNING: This script requires \"lscpu\" utility to work correctly"
+fi
+
+if ! sudo -n true 2>/dev/null; then
+  if ! pidof systemd >/dev/null; then
+    echo "ERROR: This script requires systemd to work correctly"
+    exit 1
+  fi
+```
 
 ### echo信息
 
