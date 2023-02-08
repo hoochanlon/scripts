@@ -10,7 +10,7 @@
 * [csdn-linux+agent卸载_华为云服务器卸载agent监控服务Linux+windows教程](https://blog.csdn.net/weixin_33148621/article/details/113900993)
 * [CentOS服务器清除用户登录记录和命令历史方法](https://blog.csdn.net/cljdsc/article/details/123358983)
 * [Linux基础：history命令](https://blog.51cto.com/skypegnu1/1941153)
-* [Linux /dev/null详解](https://www.shuzhiduo.com/A/6pdDP9ALdw/)
+
 
 黑客核心代码解读
 
@@ -83,6 +83,7 @@ sleep 88;rm -rf cd /root/c3pool
 * [linux 环境变量设置 -d,Linux环境变量的设置](https://blog.csdn.net/weixin_35565522/article/details/116774198)
 * [Shell中的exit 0 和 exit 1是做什么的?](https://www.pianshen.com/article/37962128580/)
 * [博客园-shell中的type命令](https://www.cnblogs.com/chaoguo1234/p/5723531.html)
+* [Linux /dev/null详解](https://www.shuzhiduo.com/A/6pdDP9ALdw/)
 
 ```
 #-----
