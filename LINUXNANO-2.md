@@ -3,7 +3,7 @@
 已将问题反馈到阿里云安全团队客服，并向阿里云中心举报其地址。接下来是代码分析。(bk.sh)
 
 
-## bk.sh，推测是靶机脚本(if 部分)
+## bk.sh，推测是靶机脚本(if及json部分)
 
 ### 第一层 if
 
@@ -147,7 +147,7 @@ sed -i 's/"background": *false,/"background": true,/' $HOME/c3pool/config_backgr
 ```
 
 
-### `cat >/tmp/c3pool_miner.service <<EOL` 注入设置脚本后台启动等
+## `cat >/tmp/c3pool_miner.service <<EOL` 注入设置脚本后台启动等
 
 #### EOL注入脚本文件
 
@@ -170,8 +170,7 @@ fi
 EOL
 ```
 
-#### service内容解读
-
+### service内容解读
 
 
 ```
@@ -209,14 +208,13 @@ EOL
     echo "To see miner service logs run \"sudo journalctl -u c3pool_miner -f\" command"
 	echo ""
   fi
-
 ```
 
+## “echo”及“#”打印及注释信息收集
 
+### echo
 
-### “echo”及“#”打印及注释信息收集
-
-echo部分为英语，我用翻译及个人有限功底理解其代码。第一行，中二教言语，忽略；从第二行开始翻译解读。
+"echo"部分为英语，我用翻译及个人有限功底理解其代码。第一行，中二教言语，忽略；从第二行开始翻译解读。
 
 ```
 # 这部分是配置准备，以及调试
@@ -243,3 +241,32 @@ echo "Mining will happen to $WALLET wallet."
 echo "[*] Removing $HOME/c3pool directory"
 ```
 
+### “#”（全部为机翻）
+
+打印问候语；命令行参数；检查先决条件
+
+```
+# printing greetings
+# command line arguments
+# checking prerequisites
+```
+
+计算端口；印刷的意图；开始做事：准备矿工
+
+```
+# calculating port
+# printing intentions
+# start doing stuff: preparing miner
+```
+
+准备脚本
+
+```
+# preparing script
+```
+
+准备脚本背景工作和重启下的工作
+
+```
+# preparing script background work and work under reboot
+```
