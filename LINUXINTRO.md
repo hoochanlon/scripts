@@ -81,8 +81,6 @@ Linux的逻辑和我们平常见到的图形操作系统Windows、macOS不太一
 
 现在的Linux，通过web访问，也有图形化的配置界面了，安装软件什么的，也如同Windows一样简单。就比如说[mdserver-web](https://github.com/midoks/mdserver-web)、[宝塔面板](https://www.bt.cn/new/index.html)，也难怪这么多卖防火墙的，像深信服、山石都是的，以及阿里搞什么加钱购买的云盾防火墙，就是这个理。
 
-根据这情况那就备些防火墙相关的常用命令吧，把GitHub及对其加速CDN，一块ban了吧。等需要时，再来解禁一下这些主机IP。这个嘛，倒是可以做个一键脚本。
-
 ### firewall-cmd
 
 使用firewall-cmd，需将系统的防火墙服务打开。
