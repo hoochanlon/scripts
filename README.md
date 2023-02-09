@@ -2,7 +2,7 @@
 
 [![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
 
-***关于脚本病毒分析特例存档说明：仅面向研究和学习，切勿用于其他用途，并在24小时之内删掉与本项目相关的一切内容，否则出现一切问题，项目作者概不负责。***
+***关于脚本、病毒分析特例存档说明：仅面向研究和学习，切勿用于其他用途，并在24小时之内删掉与本项目相关的一切内容，否则出现一切问题，项目作者概不负责。***
 
 
 ## 图床方案
