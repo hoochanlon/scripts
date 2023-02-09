@@ -15,7 +15,10 @@ password requisite pam_pwquality.so try_first_pass local_users_only retry=3 auth
 passwd root
 ```
 
-参考：[csdn-Linux CentOS7 服务器密码策略配置修改](https://blog.csdn.net/Ahuuua/article/details/125333088)
+参考：
+
+* [csdn-Linux CentOS7 服务器密码策略配置修改](https://blog.csdn.net/Ahuuua/article/details/125333088)
+* [CentOS操作系统密码复杂度策略查看和设置](https://www.cnblogs.com/wwwcf1982603555/p/15560277.html)
 
 
 ## Linux云服务器初体验
