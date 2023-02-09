@@ -23,18 +23,7 @@ bash
 rm -rf ~/.ssh/known_hosts && rm -rf ~/.ssh/known_hosts.old
 ```
 
-*远程主机ssh配对不上,报错代码
-
-```
-The authenticity of host '119.x.x.x (119.x.x.x)' can't be established.
-ED25519 key fingerprint is SHA256:h0WBJe1ZfasEei+4Zluoog9LfH+GBQwzkh/twHN9FlA.
-This key is not known by any other names
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added '119.x.x.x' (ED25519) to the list of known hosts.
-root@119.x.x.x: Permission denied (publickey,gssapi-keyex,gssapi-with-mic)
-```
-
-*也说明主机很有可能被人动过手脚
+远程主机ssh拒绝，配置
 
 ```
 vi /etc/ssh/sshd_config
