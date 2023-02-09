@@ -6,12 +6,16 @@
 
 密码像4位数的验证码一样简单。
 
-[csdn-Linux CentOS7 服务器密码策略配置修改](https://blog.csdn.net/Ahuuua/article/details/125333088)
-
 ```
 vi /etc/pam.d/system-auth
 password requisite pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type= lcredit=0 ucredit=0 dcredit=0 ocredit=0  minlen=4
 ```
+
+```
+passwd root
+```
+
+参考：[csdn-Linux CentOS7 服务器密码策略配置修改](https://blog.csdn.net/Ahuuua/article/details/125333088)
 
 
 ## Linux云服务器初体验
