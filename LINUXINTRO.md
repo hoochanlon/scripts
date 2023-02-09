@@ -2,7 +2,9 @@
 
 一篇用爱发电的落后于时代的Linux折腾记录笔记。推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
 
-## 重改密码
+## 安全设置（2023.2.10）
+
+### 修改密码
 
 密码像4位数的验证码一样简单。
 
@@ -16,6 +18,9 @@ passwd root
 ```
 
 参考：[csdn-Linux CentOS7 服务器密码策略配置修改](https://blog.csdn.net/Ahuuua/article/details/125333088)、[CentOS操作系统密码复杂度策略查看和设置](https://www.cnblogs.com/wwwcf1982603555/p/15560277.html)
+
+### 密码输错2次直接BAN IP
+
 
 ## Linux云服务器初体验
 
