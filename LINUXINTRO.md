@@ -2,6 +2,18 @@
 
 一篇用爱发电的落后于时代的Linux折腾记录笔记。推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
 
+## 难记！重改密码
+
+密码像4位数的验证码一样简单。
+
+[csdn-Linux CentOS7 服务器密码策略配置修改](https://blog.csdn.net/Ahuuua/article/details/125333088)
+
+```
+vi /etc/pam.d/system-auth
+password requisite pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type= lcredit=0 ucredit=0 dcredit=0 ocredit=0  minlen=4
+```
+
+
 ## Linux云服务器初体验
 
 ### SSH连接主机相关
@@ -65,10 +77,6 @@ yum install -y p7zip
 ```
 
 参考文档：https://wiki.archlinux.org/title/p7zip
-
-
-## 难记！重改密码
-
 
 
 ## Linux那奇葩的防火墙
