@@ -122,7 +122,7 @@ echo "[*] Removing $HOME/c3pool directory"
 # preparing script
 ```
 
-准备脚本背景工作和重启下的工作
+准备脚本后台工作和重启时的工作
 
 ```
 # preparing script background work and work under reboot
