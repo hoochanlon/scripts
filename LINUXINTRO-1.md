@@ -20,13 +20,13 @@
 
 ### 思路2: fail2ban、secure_ssh、denyhosts
 
-
-
-
-
 参考：[[Linux] Centos DenyHosts 禁止针对 linux sshd 的暴力破解](https://my.oschina.net/notbad/blog/338545)
 
-### 思路3: 禁止Ping，仅限于临时放开
+### ssh密钥取代密码
+
+
+
+## 禁止Ping，仅限于临时放开
 
 #### 内核
 
