@@ -36,8 +36,15 @@ passwd root
 
 ### SSH免密登录
 
-```
+
 https://www.cnblogs.com/hongdada/p/13045121.html
+
+
+```
+RSAAuthentication yes
+PubkeyAuthentication yes
+PermitRootLogin yes
+PasswordAuthentication no
 ```
 
 
