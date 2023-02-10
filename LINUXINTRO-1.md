@@ -1,4 +1,4 @@
-# 我的Linux入门（2023.2.10）
+# 我的Linux入门之安全设置
 
 一篇用爱发电的落后于时代的Linux折腾记录笔记。推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
 
@@ -18,31 +18,59 @@
  tcpdump -i eth0 icmp and icmp[icmptype]=icmp-echo -n
 ```
 
-### 思路2: fail2ban、secure_ssh、denyhosts
+### 思路2: 使用ban ip等软件及脚本
 
-参考：[[Linux] Centos DenyHosts 禁止针对 linux sshd 的暴力破解](https://my.oschina.net/notbad/blog/338545)
-
-### ssh密钥取代密码
-
-
-
-## 禁止Ping，仅限于临时放开
-
-#### 内核
-
-关闭ping
+常见的有：fail2ban、denyhosts、secure_ssh。这里以fail2ban为例，从下载安装设置自启与启动。
 
 ```
-vi /etc/sysctl.conf
+yum install -y fail2ban && systemctl enable fail2ban.service
+```
+
+配置 `vi /etc/fail2ban/jail.conf`
+
+```
+# 注意时区问题：systemctl restart rsyslog
+# 注意端口号：我们修改ssh端口后，fail2ban也需要修改端口号
+action = iptables[name=SSH,port=ssh,protocol=tcp] 
+enabled = true
+filter = sshd
+logpath = /var/log/secure   #日志位置
+bantime =  30d              #封锁时间一个月
+maxretry = 2                #失败2次即封禁
+findtime = 180              #3分钟之内
+# 可以定制化发送邮件
+sendmail-whois[name=SSH, dest=your@email.com, sender=fail2ban@example.com,sendername="Fail2Ban"]    
+```
+
+启动服务 `systemctl start fail2ban.service`，fail2ban开始生效。
+
+```
+systemctl restart fail2ban
+```
+
+
+参考：
+
+* [oschina-Centos DenyHosts 禁止针对 linux sshd 的暴力破解](https://my.oschina.net/notbad/blog/338545)
+* [bbsmax-fail2ban的使用以及防暴力破解与邮件预警](https://www.bbsmax.com/A/QW5YD19MJm/)
+* [csdn-fail2ban配置教程 有效防止服务器被暴力破解](https://blog.csdn.net/qq_44293827/article/details/118641216)
+
+
+## 禁止随意乱发洪流，仅限于临时放开
+
+重要：<u>系统是否允许Ping由2个因素决定的：A、内核参数，B、防火墙。</u>
+
+### 内核关闭ping
+
+编辑 `/etc/sysctl.conf` 然后执行 `sysctl -p`
+
+```
 net.ipv4.icmp_echo_ignore_all=1 
 ```
 
-然后执行  `sysctl -p`
-
 参考：[Linux禁止ping、开启ping设置](https://www.bbsmax.com/A/obzbMvAMdE/)
-重要：<u>系统是否允许Ping由2个因素决定的：A、内核参数，B、防火墙。</u>
 
-#### 防火墙
+### 防火墙
 
 防火墙开启ICMP。
 
