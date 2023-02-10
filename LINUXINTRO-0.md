@@ -58,7 +58,10 @@ ssh-copy-id -i .ssh/id_rsa.pub user@server
 ssh user@server
 ```
 
-参考：[cnblogs-ssh实现免密登录](https://www.cnblogs.com/hongdada/p/13045121.html)
+参考：
+
+* [csdn-设置ssh免密不起作用？彻底搞懂密钥】vscode在remote SSH免密远程登录](https://blog.csdn.net/weixin_42907822/article/details/125237307)
+* [cnblogs-ssh实现免密登录](https://www.cnblogs.com/hongdada/p/13045121.html)
 
 
 ## SSH故障排除
