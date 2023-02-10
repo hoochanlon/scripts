@@ -25,15 +25,18 @@
 
 ### Linux限制网络带宽— —Wondershaper
 
-[yum 和 epel 的详解](https://jiuaidu.com/jianzhan/741516/)，简单说就是安装包更多。
+注意这是不保险的设置：
+
+> 上下带宽为0，是表示你没有数据通信，并不表示你上不了网。这要看你在哪里看到的上下带宽了，如果在本地连接上看到的话那就真的上不了网了。我是设置的路由器管理的ip地址上下带宽为0还能上不？可以上网，路由有最低带宽保障的，而且有的还有流量负载均衡，它会自动把空闲流量给你流量设置较小的地址 [百度知道-ip地址上下带宽为0是不是不能上网了?](https://zhidao.baidu.com/question/2052567243210887067.html)
 
 ```
+# 安装yum软件仓扩展库
 sudo yum install epel-release
 sudo yum install wondershaper
 sudo systemctl enable wondershaper.service
 sudo systemctl start wondershaper.service
 # 上行带宽 -d；下行带宽-u 512.
-sudo wondershaper -a eth0 -d 1024 -u 512
+sudo wondershaper -a eth0 -d 0 -u 0
 # 解除限制
 sudo wondershaper -c eth0
 ```
