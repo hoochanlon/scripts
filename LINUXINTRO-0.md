@@ -62,7 +62,7 @@ PermitRootLogin yes
 # 设置是否使用口令验证
 PasswordAuthentication no
 ```
-service sshd restart
+systemctl restart sshd.service
 
 
 参考：
