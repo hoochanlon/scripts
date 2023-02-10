@@ -92,10 +92,9 @@ vi /etc/ssh/sshd_config
 # ClientAliveCountMax 3 # 客户端多少秒没有相应，服务器自动断掉连接 
 ClientAliveInterval 30
 ClientAliveCountMax 86400
-: wq!
-# 并重启ssh服务。
-systemctl restart sshd
 ```
+
+并重启ssh服务，`systemctl restart sshd`。
 
 参考：[【mysql安装】阿里云centos7环境mysql安装](https://blog.csdn.net/b_ingram/article/details/122396363)
 
