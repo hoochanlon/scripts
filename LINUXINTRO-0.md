@@ -33,7 +33,9 @@ passwd root
 参考：[csdn-Linux CentOS7 服务器密码策略配置修改](https://blog.csdn.net/Ahuuua/article/details/125333088)、[CentOS操作系统密码复杂度策略查看和设置](https://www.cnblogs.com/wwwcf1982603555/p/15560277.html)
 
 
-### SSH免密登录
+### 快速配置SSH免密登录
+
+#### 服务端
 
 编辑 /etc/ssh/sshd_config 文件，添加如下设置：
 
@@ -47,6 +49,18 @@ PermitRootLogin yes
 #
 PasswordAuthentication no
 ```
+service sshd restart
+
+#### 客户端
+
+本机会将这一登录信息保存在`~/.ssh/known_hosts`文件当中，再次登录到远程服务器不用输入密码。
+
+```
+ssh-keygen
+ssh-keygen -t rsa -C "your@email.com"
+ssh-copy-id -i .ssh/id_rsa.pub user@server
+ssh user@server
+```
 
 参考：[cnblogs-ssh实现免密登录](https://www.cnblogs.com/hongdada/p/13045121.html)
 
@@ -59,7 +73,7 @@ PasswordAuthentication no
 rm -rf ~/.ssh/known_hosts && rm -rf ~/.ssh/known_hosts.old
 ```
 
-远程主机ssh拒绝，配置
+修正远程主机拒绝密码登录
 
 ```
 vi /etc/ssh/sshd_config
