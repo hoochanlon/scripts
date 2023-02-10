@@ -75,15 +75,6 @@ ssh user@server
 rm -rf ~/.ssh/known_hosts && rm -rf ~/.ssh/known_hosts.old
 ```
 
-修正远程主机拒绝密码登录
-
-```
-vi /etc/ssh/sshd_config
-PasswordAuthentication yes
-PermitRootLogin yes
-systemctl restart sshd
-```
-
 掉线问题，主要看客户端，有些客户端长时间不操作会自动断开。系统默认就是不掉线的，除非配置在`/etc/profile `了 export TMOUT=300。改成如下便可。
 
 ```
@@ -98,14 +89,15 @@ ClientAliveCountMax 86400
 
 参考：[【mysql安装】阿里云centos7环境mysql安装](https://blog.csdn.net/b_ingram/article/details/122396363)
 
-
-### lrzsz 和 p7zip
+### lrzsz 和 scp
 
 从Linux下载文件到本地，先安装lrzsz，`sz 对应的文件名` 即下载。`rz 对应的文件名` 即上传。
 
 ```
 yum install lrzsz
 ```
+
+### p7zip
 
 换成别的压缩工具。自带解压上手起来，徒增学习成本，冗长的命令，不方便操作。
 
