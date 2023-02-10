@@ -42,13 +42,13 @@ passwd root
 编辑 /etc/ssh/sshd_config 文件，添加如下设置：
 
 ```
-# 
+# 设置是否使用RSA算法进行安全验证
 RSAAuthentication yes
-#
+# 是否允许Public Key 
 PubkeyAuthentication yes
-#
+# 允许Root登录
 PermitRootLogin yes
-#
+# 设置是否使用口令验证
 PasswordAuthentication no
 ```
 service sshd restart
