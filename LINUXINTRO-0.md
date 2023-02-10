@@ -2,7 +2,6 @@
 
 一篇用爱发电的落后于时代的Linux折腾记录笔记。推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
 
-
 ## Linux云服务器初体验
 
 ### SSH连接主机相关
@@ -36,16 +35,20 @@ passwd root
 
 ### SSH免密登录
 
-
-https://www.cnblogs.com/hongdada/p/13045121.html
-
+编辑 /etc/ssh/sshd_config 文件，添加如下设置：
 
 ```
+# 
 RSAAuthentication yes
+#
 PubkeyAuthentication yes
+#
 PermitRootLogin yes
+#
 PasswordAuthentication no
 ```
+
+参考：[cnblogs-ssh实现免密登录](https://www.cnblogs.com/hongdada/p/13045121.html)
 
 
 ### SSH故障排除
