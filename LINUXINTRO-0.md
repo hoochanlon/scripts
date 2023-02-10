@@ -15,11 +15,12 @@ hostnamectl set-hostname xiaohong
 bash
 ````
 
-配置密码策略，修改密码得像4位数的验证码一样简单。
+配置密码策略，修改密码得像4位数的验证码一样简单。vi /etc/pam.d/system-auth
 
 ```
-vi /etc/pam.d/system-auth
-password requisite pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type= lcredit=0 ucredit=0 dcredit=0 ocredit=0  minlen=4
+# 密码验证三次，什么大小写特殊字符统统给我去掉
+password requisite pam_pwquality.so try_first_pass local_users_only retry=3
+password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 ocredit=0  minlen=4
 ```
 
 然后修改密码：`passwd root`
