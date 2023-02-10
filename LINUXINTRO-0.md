@@ -31,6 +31,23 @@ password requisite pam_pwquality.so try_first_pass local_users_only retry=3 auth
 
 注：这只是针对免密码登录的密钥访问形式，其他主机访问一样要输入密码，只是自己不输入罢了。
 
+### 客户端
+
+本机会将这一登录信息保存在`~/.ssh/known_hosts`文件当中，再次登录到远程服务器不用输入密码。
+
+```
+# 参数说明：-t 指定要创建的类型；-b 密钥长度；-f 指定文件名；id_rsa-remotessh 名字随意
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remotessh
+```
+
+设置ssh路径下的权限
+
+```
+chmod 700 /home/userName && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
+
+```
+
+
 ### 服务端
 
 编辑 /etc/ssh/sshd_config 文件，添加如下设置：
@@ -47,16 +64,6 @@ PasswordAuthentication no
 ```
 service sshd restart
 
-### 客户端
-
-本机会将这一登录信息保存在`~/.ssh/known_hosts`文件当中，再次登录到远程服务器不用输入密码。
-
-```
-ssh-keygen
-ssh-keygen -t rsa -C "your@email.com"
-ssh-copy-id -i .ssh/id_rsa.pub user@server
-ssh user@server
-```
 
 参考：
 
