@@ -18,6 +18,29 @@ hostnamectl set-hostname xiaohong
 bash
 ````
 
+### 修改密码
+
+密码像4位数的验证码一样简单。
+
+```
+vi /etc/pam.d/system-auth
+password requisite pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type= lcredit=0 ucredit=0 dcredit=0 ocredit=0  minlen=4
+```
+
+```
+passwd root
+```
+
+参考：[csdn-Linux CentOS7 服务器密码策略配置修改](https://blog.csdn.net/Ahuuua/article/details/125333088)、[CentOS操作系统密码复杂度策略查看和设置](https://www.cnblogs.com/wwwcf1982603555/p/15560277.html)
+
+
+### SSH免密登录
+
+
+
+
+### SSH故障排除
+
 现象：由于ssh的加密性质，电脑重装之后，远程输入密码就登陆不上了。解决办法：电脑设置一次VNC，此时需要删除ssh的hnown_hosts。
 
 ```
@@ -47,21 +70,6 @@ systemctl restart sshd
 ```
 
 参考：[【mysql安装】阿里云centos7环境mysql安装](https://blog.csdn.net/b_ingram/article/details/122396363)
-
-### 修改密码
-
-密码像4位数的验证码一样简单。
-
-```
-vi /etc/pam.d/system-auth
-password requisite pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type= lcredit=0 ucredit=0 dcredit=0 ocredit=0  minlen=4
-```
-
-```
-passwd root
-```
-
-参考：[csdn-Linux CentOS7 服务器密码策略配置修改](https://blog.csdn.net/Ahuuua/article/details/125333088)、[CentOS操作系统密码复杂度策略查看和设置](https://www.cnblogs.com/wwwcf1982603555/p/15560277.html)
 
 
 ### lrzsz 和 p7zip
