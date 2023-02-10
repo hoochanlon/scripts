@@ -1,0 +1,82 @@
+# 我的Linux入门
+
+一篇用爱发电的落后于时代的Linux折腾记录笔记。推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
+
+
+## Linux云服务器初体验
+
+### SSH连接主机相关
+
+连接主机输入主机密码，设置主机名。
+
+``` 
+# 连接主机
+ssh root@公网IP
+# 设置主机名
+hostnamectl set-hostname xiaohong
+# 正常设置主机名需要重启，执行bash刷新
+bash
+````
+
+现象：由于ssh的加密性质，电脑重装之后，远程输入密码就登陆不上了。解决办法：电脑设置一次VNC，此时需要删除ssh的hnown_hosts。
+
+```
+rm -rf ~/.ssh/known_hosts && rm -rf ~/.ssh/known_hosts.old
+```
+
+远程主机ssh拒绝，配置
+
+```
+vi /etc/ssh/sshd_config
+PasswordAuthentication yes
+PermitRootLogin yes
+systemctl restart sshd
+```
+
+掉线问题，主要看客户端，有些客户端长时间不操作会自动断开。系统默认就是不掉线的，除非配置在`/etc/profile `了 export TMOUT=300。改成如下便可。
+
+```
+vi /etc/ssh/sshd_config
+# ClientAliveInterval 0 # 客户端每隔多少秒向服务发送一个心跳数据，类似web响应。
+# ClientAliveCountMax 3 # 客户端多少秒没有相应，服务器自动断掉连接 
+ClientAliveInterval 30
+ClientAliveCountMax 86400
+: wq!
+# 并重启ssh服务。
+systemctl restart sshd
+```
+
+参考：[【mysql安装】阿里云centos7环境mysql安装](https://blog.csdn.net/b_ingram/article/details/122396363)
+
+### 修改密码
+
+密码像4位数的验证码一样简单。
+
+```
+vi /etc/pam.d/system-auth
+password requisite pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type= lcredit=0 ucredit=0 dcredit=0 ocredit=0  minlen=4
+```
+
+```
+passwd root
+```
+
+参考：[csdn-Linux CentOS7 服务器密码策略配置修改](https://blog.csdn.net/Ahuuua/article/details/125333088)、[CentOS操作系统密码复杂度策略查看和设置](https://www.cnblogs.com/wwwcf1982603555/p/15560277.html)
+
+
+### lrzsz 和 p7zip
+
+从Linux下载文件到本地，先安装lrzsz，`sz 对应的文件名` 即下载。`rz 对应的文件名` 即上传。
+
+```
+yum install lrzsz
+```
+
+换成别的压缩工具。自带解压上手起来，徒增学习成本，冗长的命令，不方便操作。
+
+```
+# a 添加压缩包 x 解压
+yum install -y p7zip
+```
+
+参考文档：https://wiki.archlinux.org/title/p7zip
