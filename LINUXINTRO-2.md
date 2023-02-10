@@ -1,16 +1,10 @@
-# 我的Linux入门（2023.2.10）
+# 我的Linux入门之限制程序联网
 
 一篇用爱发电的落后于时代的Linux折腾记录笔记。推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
 
-被黑客入侵主机挖矿后，我决定对垃圾的Linux毛坯房进行升级改造。
+## 用户组规则禁止程序联网
 
-## 禁止程序联网
-
-内核级的访问控制，比如SELinux，配置不当容易开不了机，而且很多操作也会受限，极其不方便。这里就只能列出用户规则与软件授权级的控制了。
-
-### 用户组规则限制
-
-阿里云客服给我找来了[“创建新用户，限制新用户联网”的解决方案](https://www.zhihu.com/question/419420632)，着实脑洞新奇。也确实，一个软件可能存在此相关的多个进程联网；而且还要一一知晓每个软件的联网进程名，这太反人类了。
+内核级的访问控制，比如SELinux，配置不当容易开不了机，而且很多操作也会受限，极其不方便。这里就只能列出用户规则与软件授权级的控制了。阿里云客服给我找来了[“创建新用户，限制新用户联网”的解决方案](https://www.zhihu.com/question/419420632)，着实脑洞新奇。也确实，一个软件可能存在此相关的多个进程联网；而且还要一一知晓每个软件的联网进程名，这太反人类了。
 
 ![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catzhihufwlinux.png)
 
