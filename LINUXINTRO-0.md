@@ -40,11 +40,10 @@ password requisite pam_pwquality.so try_first_pass local_users_only retry=3 auth
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remotessh
 ```
 
-设置ssh路径下的权限
+设置ssh路径下的权限，经过[码司机](https://blog.csdn.net/qq_39320261/article/details/128342057)实验，“/.ssh”与“ahthorized_keys”不得高于700，“/.ssh”的上层目录不得高于755。
 
 ```
-chmod 700 /home/userName && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
-
+chmod 700 /home/root && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 ```
 
 
@@ -69,7 +68,7 @@ service sshd restart
 
 * [csdn-设置ssh免密不起作用？彻底搞懂密钥】vscode在remote SSH免密远程登录](https://blog.csdn.net/weixin_42907822/article/details/125237307)
 * [cnblogs-ssh实现免密登录](https://www.cnblogs.com/hongdada/p/13045121.html)
-
+* [csdn-【问题解决】解决Linux配置SSH公钥后仍然需要输入密码的问题](https://blog.csdn.net/qq_39320261/article/details/128342057)
 
 ## SSH故障排除
 
