@@ -6,13 +6,36 @@
 
 ## 禁止程序联网
 
-### Linux奇葩防火墙
+内核级的访问控制，比如SELinux，配置不当容易开不了机，而且很多操作也会受限，极其不方便。这里就只能列出用户规则与软件授权级的控制了。
 
-Linux的逻辑和我们平常见到的图形操作系统Windows、macOS不太一样，指定一个某某程序，禁止它们联网。在Windows、macOS很容易，如[win7禁止应用程序联网](https://blog.csdn.net/linxi8693/article/details/107205322/)；可到了Linux，却不是很好办了...防火墙主要针对于web、ftp等这类资源访问服务器的。而且呢，这类不少的软件产品也是要钱的。看来正版Windows贵，使用起来也为广大人民群众所接受的产品，这也是有道理的。Linux难用但免费，不过是企业省钱，加之术业有专攻罢了。
+### 用户组规则限制
 
 阿里云客服给我找来了[“创建新用户，限制新用户联网”的解决方案](https://www.zhihu.com/question/419420632)，着实脑洞新奇。也确实，一个软件可能存在此相关的多个进程联网；而且还要一一知晓每个软件的联网进程名，这太反人类了。
 
 ![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catzhihufwlinux.png)
 
-现在的Linux，通过web访问，也有图形化的配置界面了，安装软件什么的，也如同Windows一样简单。就比如说[mdserver-web](https://github.com/midoks/mdserver-web)、[宝塔面板](https://www.bt.cn/new/index.html)，也难怪这么多卖防火墙的，像深信服、山石都是的，以及阿里搞什么加钱购买的云盾防火墙，就是这个理。
+<u>linux的权限采用的是文件-用户-用户组的模式，创建文件的用户具有文件的所有权限，一旦某个用户被突破，系统的风险的无限加大。</u>
 
+参考：
+
+* [csdn-LInux基础——SELinux](https://blog.csdn.net/qq_35258036/article/details/125932224)
+* [huaweicloud-Ubuntu Apparmor 简介以及如何配置 Apparmor 配置文件](https://bbs.huaweicloud.com/blogs/371946)
+* [csdn-SELinux如何永久禁用](https://blog.csdn.net/l_liangkk/article/details/114994446)
+* [aws-在EC2上对SELinux故障进行紧急恢复以及排查的思路及方法](https://aws.amazon.com/cn/blogs/china/ideas-and-methods-for-emergency-recovery-and-troubleshooting-of-selinux-faults-on-ec2/?nc1=h_ls)
+
+### Linux限制网络带宽— —Wondershaper
+
+[yum 和 epel 的详解](https://jiuaidu.com/jianzhan/741516/)，简单说就是安装包更多。
+
+```
+sudo yum install epel-release
+sudo yum install wondershaper
+sudo systemctl enable wondershaper.service
+sudo systemctl start wondershaper.service
+# 上行带宽 -d；下行带宽-u 512.
+sudo wondershaper -a eth0 -d 1024 -u 512
+# 解除限制
+sudo wondershaper -c eth0
+```
+
+参考：[在 Linux 中使用 Wondershaper 限制网络带宽](https://zhuanlan.zhihu.com/p/46121687)

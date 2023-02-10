@@ -80,3 +80,20 @@ yum install -y p7zip
 ```
 
 参考文档：https://wiki.archlinux.org/title/p7zip
+
+## 下载ClamAV和更新病毒库
+
+目前Linux的免费杀软跟玩具代码，安慰剂一样，挡不住挖矿病毒。
+
+```
+# freshclam为更新病毒库。
+yum install clamav && freshclam
+```
+
+扫描；-r：迭代目录；-l：指定路径；--max-dir-recursion：指定目录层级。
+
+```
+clamscan -r /etc --max-dir-recursion=5 -l /home/www/clamav-scan.log
+```
+
+类似软件还有河马查杀：https://www.shellpub.com/doc/hm_linux_usage.html
