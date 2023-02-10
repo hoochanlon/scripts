@@ -36,7 +36,9 @@ passwd root
 
 ### SSH免密登录
 
-
+```
+https://www.cnblogs.com/hongdada/p/13045121.html
+```
 
 
 ### SSH故障排除
