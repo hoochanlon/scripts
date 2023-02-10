@@ -1,4 +1,4 @@
-# 我的Linux入门之云服务器初体验
+# 我的Linux入门之阿里云（免费版）初体验
 
 一篇用爱发电的落后于时代的Linux折腾记录笔记。推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
 
