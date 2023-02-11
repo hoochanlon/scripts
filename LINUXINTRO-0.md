@@ -39,11 +39,13 @@ password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remotessh
 ```
 
-设置ssh路径下的权限，经过[码司机](https://blog.csdn.net/qq_39320261/article/details/128342057)实验，“/.ssh”与“ahthorized_keys”不得高于700，“/.ssh”的上层目录不得高于755。我自己的实验是root用户除外。
+设置ssh路径下的权限
 
 ```
 chmod 700 /home/xxx && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 ```
+
+[经“码司机”的实验](https://blog.csdn.net/qq_39320261/article/details/128342057)，“/.ssh”与“ahthorized_keys”不得高于700，“/.ssh”的上层目录不得高于755；而我自己的现场主机是root用户，所以并没什么权限方面的限制问题。
 
 
 ### 服务端
