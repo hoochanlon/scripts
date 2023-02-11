@@ -2,11 +2,13 @@
 
 [![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
 
-一开始只是图方便，放图片做图床的。偶尔随手上传自己的小脚本，结果却成了个折腾电脑的便利仓...
+一开始只是图方便，放图片做图床的。偶尔随手上传自己的小脚本，折腾电脑的文本（对于我来说博客更注重平常生活），结果却成了个折腾电脑的便利仓...
 
 * CHAETS 是快速复制粘贴指令的
 * INTRO 入门学习
 * NANO 是对病毒源码分析及总结防治
+
+脚本代码及病毒分析文章，仅供学习与交流使用，切勿做违法用途。
 
 ## 图床方案
 
