@@ -39,6 +39,13 @@ password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remotessh
 ```
 
+"-i"是指定公钥文件上传到服务器。
+
+```
+ssh-copy-id -i .ssh/id_rsa.pub user@server
+```
+
+输入密码，至此客户端完成操作，下面是服务器端，即远程主机的配置。
 
 ### 服务端
 
