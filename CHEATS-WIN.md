@@ -15,6 +15,12 @@ exit
 irm https://massgrave.dev/get | iex
 ```
 
+去你的！一步到位！我全都要！
+
+```
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start Switch.bat&&powershell -command "irm https://massgrave.dev/get|iex"
+```
+
 ### 提升管理权限
 
 https://zhidao.baidu.com/question/1431089222201948539.html 家庭版，嫌麻烦，没做
