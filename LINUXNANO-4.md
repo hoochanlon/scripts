@@ -37,7 +37,7 @@
 ![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-11%2023.24.56.png)
 
 
-## “ssh -D”专项分析
+## “ssh -D”事件专项分析
 
 经过一个病毒源码分析，综合来看，黑客也会自然拿我这台主机做肉鸡ddos别人，这与`ssh -D`颇有出入。`ssh -D`动态端口转发，比如，把发到B机器上面的请求，都转发到A机器上面，让A机器去执行请求，所执行的网络及其他服务请求，会消耗A机器的流量以及A主机的各项资源。
 
@@ -47,10 +47,19 @@
 
 阿里云客服对我的回复：“您那个ctrl +C只是中断了您输入密码的这个步骤，那个意思是，我已经和服务器通过非正常的方式连接，我从中偷偷的断开，不会对sshd服务有影响”，并且向我展示了`systemctl status sshd`妙用，查看有哪些主机进行ssh连接。
 
+蓝色的IP是阿里云，绿色的四川绵阳，红色的俄罗斯。
 
-![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/ssh-ima-na.png)
+![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/ssh-ima-na.png)
+
+被黑客入侵过多回，自己对阿里云这方面需求也少，就索性ban掉了ssh端口，有问题要咨询客服了才打开了。
+
+![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-12%2000.35.46.png)
 
 
+[查找谁在破解你linux服务器的密码?](https://blog.csdn.net/jiedao_liyk/article/details/78460072)，查找 `/var/log/secure`也是种办法。[sohu-记一次主机入侵攻防大战：firewalld指定的IP段端口访问控制 ](https://www.sohu.com/a/229348161_587184)
+
+
+也算发现不少问题
 
 参考：
 
