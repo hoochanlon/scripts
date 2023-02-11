@@ -2,7 +2,7 @@
 
 > 一篇用爱发电的落后于时代的Linux折腾记录笔记。推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
 
-注：被黑客连续入侵两次主机挖矿后，我决定对这Linux毛坯房进行升级改造。
+注：被黑客连续入侵两次主机挖矿后，我决定对这Linux毛坯房进行升级改造。SSH密钥单人还好，多人就先密码处理。可主机暴露在公网，为此也是思索出ban掉对方的策略。
 
 ## 禁止对方搞事 —— BAN IP
 
