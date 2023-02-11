@@ -87,8 +87,9 @@ rm -rf ~/.ssh/known_hosts && rm -rf ~/.ssh/known_hosts.old
 
 掉线问题，主要看客户端，有些客户端长时间不操作会自动断开。系统默认就是不掉线的，除非配置在`/etc/profile `了 export TMOUT=300。改成如下便可。
 
-```
 vi /etc/ssh/sshd_config
+
+```
 # ClientAliveInterval 0 # 客户端每隔多少秒向服务发送一个心跳数据，类似web响应。
 # ClientAliveCountMax 3 # 客户端多少秒没有相应，服务器自动断掉连接 
 ClientAliveInterval 30
@@ -96,5 +97,3 @@ ClientAliveCountMax 86400
 ```
 
 并重启ssh服务，`systemctl restart sshd`。
-
-参考：[【mysql安装】阿里云centos7环境mysql安装](https://blog.csdn.net/b_ingram/article/details/122396363)
