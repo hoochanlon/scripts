@@ -72,6 +72,12 @@ chmod 700 /home/xxx && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 
 ## SSH故障排除
 
+```
+> id_rsa 就是私钥文件
+> id_rsa.pub 就是公钥文件
+> known_host 就是记录你曾经远程连接过的机器信息文件
+```
+
 此类提示是远程主机未授权给本地
 
 ```
