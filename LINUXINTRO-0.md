@@ -1,6 +1,8 @@
 # 我的Linux入门之阿里云（免费版）初体验
 
-一篇用爱发电的落后于时代的Linux折腾记录笔记。推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
+> 推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
+
+一篇用爱发电的落后于时代的Linux折腾记录笔记，被黑客入侵连续入侵两次的新篇总结。
 
 ## SSH连接远程主机
 
@@ -56,8 +58,8 @@ ssh-copy-id -i .ssh/id_rsa.pub user@server
 PubkeyAuthentication yes
 # 允许Root登录
 PermitRootLogin yes
-# 设置是否使用口令验证
-PasswordAuthentication no
+# 设置是否使用口令验证。
+PasswordAuthentication no # no 代表任何人远程访问都只能通过密钥，除非去机房或VNC屏幕远程
 ```
 
 重启SSH服务，`systemctl restart sshd.service`。
