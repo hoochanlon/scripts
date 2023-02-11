@@ -1,4 +1,4 @@
-# 我的Linux入门之安全设置
+# 我的Linux入门之BAN IP的思索
 
 > 一篇用爱发电的落后于时代的Linux折腾记录笔记。推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
 
