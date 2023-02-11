@@ -30,8 +30,6 @@ password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 
 
 ## SSH免密登录快速配置
 
-注：这只是针对免密码登录的密钥访问形式，其他主机访问一样要输入密码，只是自己不输入罢了。
-
 ### 客户端
 
 本机会将这一登录信息保存在`~/.ssh/known_hosts`文件当中，再次登录到远程服务器不用输入密码。
@@ -44,7 +42,7 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remotessh
 设置ssh路径下的权限，经过[码司机](https://blog.csdn.net/qq_39320261/article/details/128342057)实验，“/.ssh”与“ahthorized_keys”不得高于700，“/.ssh”的上层目录不得高于755。我自己的实验是root用户除外。
 
 ```
-chmod 700 /home/root && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
+chmod 700 /home/xxx && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 ```
 
 
@@ -53,8 +51,6 @@ chmod 700 /home/root && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 编辑 /etc/ssh/sshd_config 文件，添加如下设置：
 
 ```
-# 设置是否使用RSA算法进行安全验证
-RSAAuthentication yes
 # 是否允许Public Key 
 PubkeyAuthentication yes
 # 允许Root登录
@@ -62,7 +58,8 @@ PermitRootLogin yes
 # 设置是否使用口令验证
 PasswordAuthentication no
 ```
-systemctl restart sshd.service
+
+重启SSH服务，`systemctl restart sshd.service`。
 
 
 参考：
