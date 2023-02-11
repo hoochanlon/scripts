@@ -72,6 +72,13 @@ PasswordAuthentication no
 
 ## SSH故障排除
 
+此类提示是远程主机未授权给本地
+
+```
+C:\Users\chanlonhoo>ssh root@101.x.xx.xxx
+root@101.x.xx.xxx: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+```
+
 现象：由于ssh的加密性质，电脑重装之后，远程输入密码就登陆不上了。解决办法：电脑设置一次VNC，此时需要删除ssh的hnown_hosts。
 
 ```
