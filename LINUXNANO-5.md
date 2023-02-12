@@ -23,7 +23,7 @@
 
 ## ssh -D
 
-紧接着接着就是`ssh -D`后面的一堆“乱码”。
+紧接着就是`ssh -D`后面的一堆“乱码”。
 
 ![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-12%2015.28.08.png)
 
