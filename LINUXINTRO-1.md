@@ -48,7 +48,14 @@ sendmail-whois[name=SSH, dest=your@email.com, sender=fail2ban@example.com,sender
 systemctl restart fail2ban
 ```
 
-参考：[oschina-Centos DenyHosts 禁止针对 linux sshd 的暴力破解](https://my.oschina.net/notbad/blog/338545)、[bbsmax-fail2ban的使用以及防暴力破解与邮件预警](https://www.bbsmax.com/A/QW5YD19MJm/)、[csdn-fail2ban配置教程 有效防止服务器被暴力破解](https://blog.csdn.net/qq_44293827/article/details/118641216)
+日志查看 `cat /var/log/fail2ban.log`
+
+参考：
+
+* [oschina-Centos DenyHosts 禁止针对 linux sshd 的暴力破解](https://my.oschina.net/notbad/blog/338545)
+* [bbsmax-fail2ban的使用以及防暴力破解与邮件预警](https://www.bbsmax.com/A/QW5YD19MJm/)
+* [csdn-fail2ban配置教程 有效防止服务器被暴力破解](https://blog.csdn.net/qq_44293827/article/details/118641216)
+* [百度知道-linux中wc -l指令用法，我知道怎么得到一个文件的内容行数，但是是怎么得到多个文件的内容的总行数](https://zhidao.baidu.com/question/1370474194322953939.html)
 
 
 ## 禁止随意乱发洪流，仅限于临时放开

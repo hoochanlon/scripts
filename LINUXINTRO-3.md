@@ -19,7 +19,9 @@ yum install -y p7zip
 yum install lrzsz
 ```
 
-## 进阶使用scp，上传下载文件（拷贝）。
+## 进阶使用scp，上传下载文件（拷贝）
+
+### 前提
 
 `vim /etc/ssh/sshd_config` 增加如下修改:
 
@@ -30,9 +32,15 @@ PermitRootLogin yes
 
 `systemctl restart sshd`重启服务。
 
-
-
 参考：[Permission denied (publickey,gssapi-keyex,gssapi-with-mic) 解决方法](https://blog.csdn.net/weixin_42549447/article/details/114535916)
+
+### 开始
+
+```
+ping 10x.xx.xx.xx -c 3
+```
+
+[cnblogs-scp拷贝文件夹](https://www.cnblogs.com/muhai/p/16657135.html)
 
 
 ## 下载ClamAV和更新病毒库

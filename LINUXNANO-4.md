@@ -52,21 +52,15 @@
 find / -name authorized_keys && find / -name id_rsa.pub
 ```
 
-
 保险起见，应做ssh密钥备份到本地，就算是黑客入侵，备份还原过去还是省事些。
 
 
-参考：
+### 参考
 
 * [csdn-SSH密钥提权](https://blog.csdn.net/qq_37407863/article/details/125574878)
 * [51cto-linux清除.sshd后门（udev）](https://blog.51cto.com/u_11742478/2050463)
 * [Hi技术分享-SSH删除密钥](https://www.hi917.com/detail/282.html)
 * [51cto-恼人的DLL后门完全清除秘诀 ](https://blog.51cto.com/xiong/13226?articleABtest=0)
-
-
-
-### 参考
-
 * [使用Medusa美杜莎暴力破解SSH密码-51CTO博客](https://blog.51cto.com/u_15766933/5630258)
 * [Docker SYS_ADMIN 容器逃逸原理解析 - FreeBuf网络安全行业门户](https://www.freebuf.com/vuls/264843.html)
 * [Linux默认端口，如何防止被恶意扫描](https://www.bilibili.com/read/cv6200341)
