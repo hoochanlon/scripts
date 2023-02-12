@@ -3,7 +3,6 @@
 > ***防治手段转到[LINUXINTRO-0 SSH密钥策略](/LINUXINTRO-0.md)与[LINUXINTRO-0 FAIL2BAN策略](/LINUXINTRO-1.md)。***
 > ***注：一旦主机被黑客破解，通常都会在主机登录上，驻留SSH密钥，以及其他软件服务等登录的通行证后门。***
 
-
 ## 入侵方式
 
 此前我好奇一个问题： 我的服务器都没有域名，黑客是什么扫到我的服务器公网地址的？针对这一问题我联系了阿里云客服。与之沟通答复及讨论，要点总结如下：
@@ -35,6 +34,13 @@
 黑客选择那种手段也会考虑成本
 
 ![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-11%2023.24.56.png)
+
+上回分析过病毒源码，这回来看个图, 顺便了解下[腾讯主机安全（云镜）捕获挖矿木马源码分析](https://s.tencent.com/research/report/1181.html)，加强理解。
+
+> 转 [cnblogs-双平台传播——活跃的H2Miner组织挖矿分析](https://www.cnblogs.com/bonelee/p/16378059.html)
+
+![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/c-3-1.jpg)
+
 
 ## 参考
 
