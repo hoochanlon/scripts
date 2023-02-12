@@ -2,8 +2,6 @@
 
 > ***防治手段转到[LINUXINTRO-0 SSH密钥策略](/LINUXINTRO-0.md)与[LINUXINTRO-0 FAIL2BAN策略](/LINUXINTRO-1.md)。***  
 > ***注：一旦主机被黑客破解，通常都会在主机登录上，驻留SSH密钥，以及其他软件服务等登录的通行证后门。***
- 
-经过一个病毒源码分析，综合来看，黑客也会自然拿我这台主机做肉鸡ddos别人，这与`ssh -D`颇有出入。`ssh -D`动态端口转发，比如，把发到B机器上面的请求，都转发到A机器上面，让A机器去执行请求，所执行的网络及其他服务请求，会消耗A机器的流量以及A主机的各项资源。
 
 ## 复盘
 
@@ -11,7 +9,7 @@
 
 ![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-11%2023.53.26.png)
 
-阿里云客服对我的回复：“您那个ctrl +C只是中断了您输入密码的这个步骤，那个意思是，我已经和服务器通过非正常的方式连接，我从中偷偷的断开，不会对sshd服务有影响”，并且向我展示了`systemctl status sshd`妙用，查看有哪些主机进行ssh连接。
+阿里云客服对我的回复：“您那个ctrl +C只是中断了您输入密码的这个步骤；那个意思是，我已经和服务器通过非正常的方式连接，我从中偷偷的断开，不会对sshd服务有影响。”并且向我展示了`systemctl status sshd`，查看有哪些主机进行ssh连接。（他意思应该是指黑客断开动态端口转发，不会影响到我正常ssh远程连接的使用。）
 
 ![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/ssh-ima-na.png)
 
@@ -19,13 +17,16 @@
 
 ![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-12%2000.35.46.png)
 
-立马查了下资料，[查找谁在破解你linux服务器的密码?](https://blog.csdn.net/jiedao_liyk/article/details/78460072)、[sohu-记一次主机入侵攻防大战：firewalld指定的IP段端口访问控制 ](https://www.sohu.com/a/229348161_587184)、[yingsoo-Linux常用命令last的使用方法详解(转载下载之家)](https://www.yingsoo.com/news/servers/69311.html)。
+由于我的“var/log/wtmp”和“utmp”被黑客删了，`last`、`lastb`二者来查看“尝试及登录过系统的用户”，也没什么效果了。但`journalctl`是可以的。我分析了下原因：一是他自身的编程知识水平，另一可能是有意而为之。有意为之要因推测：
 
-小结一些查看相关登录记录文件或命令：
+从[知乎专栏-linux系统下各种日志文件的介绍，查看及日志服务配置](https://zhuanlan.zhihu.com/p/298335887)等相关文章可看出，屏蔽日志可以说是比较麻烦的，而且熟悉Linux也不会给你可乘之机啊。挖矿一直都会有日志产生，反正小白即不会也不懂怎么看；再者，看着情况公网主机基本上遭人扫描、暴破也是常事了。觉得没必要`rm /var/log/journal/* -rf;systemctl restart systemd-journald`，这显得多此一举；以及我的主机禁用日志服务测试情况：就算清除日志与`disable`掉日志服务，开机一样会自启记录。
 
-```
+不由得想起`top`任务进程与`chkconfig`运行级别想关联，再联想又会牵涉到`.service`服务调用模块上；所以，现在还是要回到正题`ssh -D`上，这些层层关联稍后再梳理。
 
-```
+经过一次病毒源码分析，以及了解了黑客常见的几种入侵方式，综合来看，黑客也会自然拿我这台主机做肉鸡ddos别人。这与`ssh -D`颇有出入，`ssh -D`动态端口转发，比如：把发到B机器上面的请求，都转发到A机器上面；让A机器去执行请求，所执行的网络及其他服务请求，会消耗A机器的流量以及A主机的各项资源。再用A这台主机做跳板，又`ssh -D`动态转发到其他肉鸡上，可真算得上隐蔽。暴力破解我密码，自然会去查我主机IP，而且我的主机密码是符合复杂规律，但实际上又是特别简单的密码：“P@ssw0rd”。难怪这也解释了，为什么黑客会两次三番地入侵我主机。
+
+再来理解一遍，客服对我关于`ssh -D`疑问的答复：“我已经和服务器通过非正常的方式连接，我从中偷偷的断开，不会对sshd服务有影响。” 以及结合查找的文章资料[为什么ssh一关闭，程序就不再运行了？](https://blog.csdn.net/m0_46577050/article/details/122988064)
+
 
 
 参考：
@@ -35,6 +36,63 @@
 * [SSH 命令的三种代理功能（-L/-R/-D）](https://zhuanlan.zhihu.com/p/57630633)
 * [百度文库-第十章 守护进程与计算机网络安全](https://wenku.baidu.com/view/d29e1399cd2f0066f5335a8102d276a20029608c.html)
 * [51cto-守护进程与远程登录服务器](https://blog.51cto.com/wait0804/1783308)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 附录日志查询 （INTRO-3）
+
+日志完全清除命令 `rm /var/log/journal/* -rf;systemctl restart systemd-journald`；以及如下常用查看日志命令：
+
+```
+# 显示最近系统日志30行 
+journalctl -n 30
+
+# 查看ssh服务日志 
+journalctl -u sshd.service
+
+# 查看root用户日志
+journalctl _UID=0 -n 5
+
+# -x 是目录(catalog)的意思，在报错的信息下会，附加解决问题的网址 
+# -e  pager-end 从末尾开始看
+journalctl -xe
+```
+
+参考：
+
+* [csdn-journalctl -xe命令(系统日志查询)的使用](https://blog.csdn.net/enthan809882/article/details/104551777/)
+* [cnblogs-linux下的系统服务管理及日志管理](https://www.cnblogs.com/yuzhaokai0523/p/4453094.html)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
