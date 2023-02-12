@@ -46,6 +46,23 @@
 
 ### 清除SSH密钥后门
 
+查找主机上用户的ssh authorized_keys，再看看有没有公钥。
+
+``` 
+find / -name authorized_keys && find / -name id_rsa.pub
+```
+
+
+保险起见，应做ssh密钥备份到本地，就算是黑客入侵，备份还原过去还是省事些。
+
+
+参考：
+
+* [csdn-SSH密钥提权](https://blog.csdn.net/qq_37407863/article/details/125574878)
+* [51cto-linux清除.sshd后门（udev）](https://blog.51cto.com/u_11742478/2050463)
+* [Hi技术分享-SSH删除密钥](https://www.hi917.com/detail/282.html)
+* [51cto-恼人的DLL后门完全清除秘诀 ](https://blog.51cto.com/xiong/13226?articleABtest=0)
+
 
 
 ### 参考
