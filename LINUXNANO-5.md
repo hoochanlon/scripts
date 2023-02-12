@@ -3,9 +3,7 @@
 > ***防治手段转到[LINUXINTRO-0 SSH密钥策略](/LINUXINTRO-0.md)与[LINUXINTRO-0 FAIL2BAN策略](/LINUXINTRO-1.md)。***  
 > ***注：一旦主机被黑客破解，通常都会在主机登录上，驻留SSH密钥，以及其他软件服务等登录的通行证后门。***
 
-## 复盘
-
-再回顾一下我对阿里云客服的咨询
+## 回顾一下我对阿里云客服的咨询
 
 ![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-11%2023.53.26.png)
 
@@ -19,7 +17,7 @@
 
 由于我的“var/log/wtmp”和“utmp”被黑客删了，`last`、`lastb`二者来查看“尝试及登录过系统的用户”，也没什么效果了。但`journalctl`是可以的。我分析了下原因：一是他自身的编程知识水平，另一可能是有意而为之。有意为之要因推测：
 
-从[知乎专栏-linux系统下各种日志文件的介绍，查看及日志服务配置](https://zhuanlan.zhihu.com/p/298335887)等相关文章可看出，屏蔽日志可以说是比较麻烦的，而且熟悉Linux也不会给你可乘之机啊。挖矿一直都会有日志产生，反正小白即不会也不懂怎么看；再者，看着情况公网主机基本上遭人扫描、暴破也是常事了。觉得没必要`rm /var/log/journal/* -rf;systemctl restart systemd-journald`，这显得多此一举；以及我的主机禁用日志服务测试情况：就算清除日志与`disable`掉日志服务，开机一样会自启记录。
+&nbsp;&nbsp;&nbsp;从[知乎专栏-linux系统下各种日志文件的介绍，查看及日志服务配置](https://zhuanlan.zhihu.com/p/298335887)等相关文章可看出，屏蔽日志可以说是比较麻烦的，而且熟悉Linux也不会给你可乘之机啊。挖矿一直都会有日志产生，反正小白即不会也不懂怎么看；再者，看着情况公网主机基本上遭人扫描、暴破也是常事了。觉得没必要`rm /var/log/journal/* -rf;systemctl restart systemd-journald`，这显得多此一举；以及我的主机禁用日志服务测试情况：就算清除日志与`disable`掉日志服务，开机一样会自启记录。
 
 不由得想起`top`任务进程与`chkconfig`运行级别想关联，再联想又会牵涉到`.service`服务调用模块上；所以，现在还是要回到正题`ssh -D`上，这些层层关联稍后再梳理。
 
