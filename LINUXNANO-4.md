@@ -35,3 +35,11 @@
 黑客选择那种手段也会考虑成本
 
 ![ ](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-02-11%2023.24.56.png)
+
+参考资料：
+
+* [51cto-使用Medusa美杜莎暴力破解SSH密码 原创](https://blog.51cto.com/u_15766933/5630258)
+* [bilibili专栏-Linux默认端口，如何防止被恶意扫描](https://www.bilibili.com/read/cv6200341)
+* [Linux/centos减轻/防止DDoS攻击的轻量级小程序，软件防火墙 - 大概是个博客](https://dagai.net/archives/893)
+* [Docker SYS_ADMIN 容器逃逸原理解析 - FreeBuf网络安全行业门户](https://www.freebuf.com/vuls/264843.html)
+
