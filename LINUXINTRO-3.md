@@ -2,7 +2,6 @@
 
 > 一篇用爱发电的落后于时代的Linux折腾记录笔记。推荐Linux参考工具：[linux-command](https://wangchujiang.com/linux-command/)、[explainshell](https://www.explainshell.com)、[modern-unix](https://github.com/ibraheemdev/modern-unix)。
 
-
 ## 简单使用
 
 首先将压缩软件换成7zip。自带解压上手起来，徒增学习成本，冗长的命令，不方便操作。
@@ -13,39 +12,25 @@
 yum install -y p7zip
 ```
 
-从Linux下载文件到本地，先安装lrzsz，`sz 对应的文件名` 即下载。`rz 对应的文件名` 即上传（仅限文件类别）。
+## Mac使用SCP上传与拷贝文件
+
+先试试能不能ping通Linux，`ping 101.xx.xx.xx -c 3`。
+
+Mac上传文件到Linux
 
 ```
-yum install lrzsz
+scp /Users/chanlonhoo/Downloads/cake1.PNG root@101.xx.xxx.xxx:/
 ```
 
-## 进阶使用scp，上传下载文件（拷贝）
-
-### 前提
-
-`vim /etc/ssh/sshd_config` 增加如下修改:
+Mac从Linux上下载文件
 
 ```
-PasswordAuthentication yes
-PermitRootLogin yes
+scp root@101.xx.xx.xxx:/cake1.PNG /Users/chanlonhoo/Downloads
 ```
-
-`systemctl restart sshd`重启服务。
-
-参考：[Permission denied (publickey,gssapi-keyex,gssapi-with-mic) 解决方法](https://blog.csdn.net/weixin_42549447/article/details/114535916)
-
-### 开始
-
-```
-ping 10x.xx.xx.xx -c 3
-```
-
-[cnblogs-scp拷贝文件夹](https://www.cnblogs.com/muhai/p/16657135.html)
-
 
 ## 下载ClamAV和更新病毒库
 
-目前Linux的免费杀软跟玩具代码，安慰剂一样，挡不住挖矿病毒。
+目前Linux的免费杀软跟玩具代码、安慰剂一样，挡不住挖矿病毒。
 
 ```
 # freshclam为更新病毒库。
@@ -57,6 +42,4 @@ yum install clamav && freshclam
 ```
 clamscan -r /etc --max-dir-recursion=5 -l /home/www/clamav-scan.log
 ```
-
-类似软件还有河马查杀：https://www.shellpub.com/doc/hm_linux_usage.html
 
