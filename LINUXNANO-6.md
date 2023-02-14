@@ -29,7 +29,9 @@ Linux备份软件
 
 
 
-## 防止密码后门
+## 防止后门
+
+### ssh认证密钥与密码后门
 
 用`diff`、`colordiff`（需下载）比对文本，删除不认识的公钥。
 
@@ -44,6 +46,14 @@ auth required  pam_faillock.so preauth silent audit deny=3  unlock_time=300 even
 ```
 
 参考：[51cto-kdevtmpfsi挖矿病毒清除](https://blog.51cto.com/liuyj/5205391)
+
+### 绑定IP
+
+bind ip
+
+top -d 5
+
+
 
 
 ## 日志查询
