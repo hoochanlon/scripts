@@ -2,12 +2,17 @@
 
 日常备份及恢复快照是最简单省心的操作。没有有这方面措施的话，只能靠着经验来一步步梳理与排查了。
 
+## 查看并关闭异常任务
+
+使用`top`打开任务管理器，`kill -9 进程名`。
+
 ## 日志查询
 
 日志完全清除命令 `rm /var/log/journal/* -rf;systemctl restart systemd-journald`；以及如下常用查看日志命令：
 
+查看ssh服务日志，看下日常ssh被尝试登录的记录。 
+
 ```
-# 查看ssh服务日志，看下日常ssh被尝试登录的记录。 
 journalctl -u sshd.service
 ```
 
@@ -30,3 +35,4 @@ find /etc -mtime 1
 [csdn-linux中查看新增的文件](https://blog.csdn.net/qq_17576885/article/details/121995103)
 
 
+## 服务模块
