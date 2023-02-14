@@ -47,3 +47,4 @@ clamscan -r /etc --max-dir-recursion=5 -l /home/www/clamav-scan.log
 
 * [csdn-云服务器Linux挖矿病毒杀毒软件clamscan安装](https://blog.csdn.net/m0_59069586/article/details/126956289)
 * [51cto-Linux下杀毒软件（ClamAV）安装及使用](https://blog.51cto.com/u_9691128/4293334)
+* [betheme.net-centos7.6 yum安装clamav 进行病毒扫描查杀](https://betheme.net/news/txtlist_i98729v.html)
