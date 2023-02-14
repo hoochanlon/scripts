@@ -16,7 +16,11 @@
 
 ### 异常流量任务
 
+参考：[csdn-Linux定位流量异常指南](https://blog.csdn.net/q2365921/article/details/125006136)
 
+## 关闭传输端口
+
+ftp 、smb 是否开启，端口是否打开。
 
 
 ## 日志查询
