@@ -23,6 +23,9 @@
 ftp 、smb 是否开启，端口是否打开。
 
 
+[西安交大网络安全专题-挖矿病毒处置（Linux篇) ——从入门到放弃](http://wlaq.xjtu.edu.cn/info/1008/1945.htm)
+
+
 ## 日志查询
 
 日志完全清除命令 `rm /var/log/journal/* -rf;systemctl restart systemd-journald`；以及如下常用查看日志命令：
