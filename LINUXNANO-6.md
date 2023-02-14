@@ -2,6 +2,9 @@
 
 日常备份及恢复快照是最简单省心的操作。没有有这方面措施的话，只能靠着经验来一步步梳理与排查了。
 
+* [为什么 Linux 内核不适合国家防御](https://blog.yurunsoft.com/a/68.html)
+* [Linux系统安全隐患及加强安全管理的方法](https://www.cnblogs.com/myphoebe/archive/2011/08/09/2131982.html)
+
 ## 查看并关闭异常任务
 
 ### 使用`top`打开任务管理器，`kill -9 进程名`
