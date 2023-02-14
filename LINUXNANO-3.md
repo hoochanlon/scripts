@@ -36,7 +36,7 @@ EOL
 * [Linux *.service文件详解](https://blog.csdn.net/weixin_44352521/article/details/126679172)
 * [journalctl基本介绍](https://blog.csdn.net/weixin_45537987/article/details/106762104)
 
-`xxx 2>dev/null`屏蔽错误输出。`>/dev/null 2>&1`什么回显都不用。
+`xxx 2>dev/null`屏蔽错误输出。`>/dev/null 2>&1`什么回显都不用，言外之意就是抹掉记录。
 
 
 ```
