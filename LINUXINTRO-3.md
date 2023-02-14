@@ -43,3 +43,4 @@ yum install clamav && freshclam
 clamscan -r /etc --max-dir-recursion=5 -l /home/www/clamav-scan.log
 ```
 
+详请参考：[小梁同学-Linux 环境下防毒软件 ClamAV，yyds！！！](https://zhuanlan.zhihu.com/p/384200363)
