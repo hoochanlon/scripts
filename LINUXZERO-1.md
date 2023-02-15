@@ -126,7 +126,7 @@ PASS_MAX_DAYS 99999 # 99999表示永不过期。
 * [cnblogs-Linux启动过程详解](https://www.cnblogs.com/notepi/archive/2013/06/15/3137093.html)
 * [csdn-Linux系统启动流程（超详细）](https://blog.csdn.net/shuju1_/article/details/126201364)
 * [Linux启动管理 - /etc/rc.d/rc.local配置文件用法](http://c.biancheng.net/view/1023.html)
-
+* [cnblogs-linux 启动过程](https://www.cnblogs.com/rebrobot/p/16873847.html)
 
 
 ## 使用排查安全隐患脚本
