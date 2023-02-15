@@ -40,10 +40,10 @@ yum install clamav && freshclam
 扫描；-r：迭代目录；-l：指定路径；--max-dir-recursion：指定目录层级。
 
 ```
-clamscan -r /etc --max-dir-recursion=5 -l /home/www/clamav-scan.log
+clamscan -r /etc --max-dir-recursion=5 -l /var/log/clamav-scan.log
 ```
 
-扫描根目录，记录到日志，并删除可以文件。
+扫描根目录，记录到日志，并删除可疑文件。
 
 ```
 clamscan -r / -l /var/log/clamscan.log --remove

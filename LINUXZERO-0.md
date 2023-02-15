@@ -155,9 +155,20 @@ yum install clamav && freshclam
 扫描；-r：迭代目录；-l：指定路径；--max-dir-recursion：指定目录层级。
 
 ```
-clamscan -r /etc --max-dir-recursion=5 -l /home/www/clamav-scan.log
+clamscan -r /etc --max-dir-recursion=5 -l /var/log/clamav-scan.log
 ```
 
+扫描根目录，记录到日志，并删除可疑文件。
+
+```
+clamscan -r / -l /var/log/clamscan.log --remove
+```
+
+设置定时每晚的任务（非必要）
+
+```
+
+```
 
 
 
@@ -165,6 +176,10 @@ clamscan -r /etc --max-dir-recursion=5 -l /home/www/clamav-scan.log
 
 * [Linux命令之查看执行过的历史命令history](https://blog.csdn.net/cnds123321/article/details/124903516)
 * [bilibili专栏-应急响应专题（Linux应急响应）](https://www.bilibili.com/read/cv17867865/)
+* [csdn-云服务器Linux挖矿病毒杀毒软件clamscan安装](https://blog.csdn.net/m0_59069586/article/details/126956289)
+* [51cto-Linux下杀毒软件（ClamAV）安装及使用](https://blog.51cto.com/u_9691128/4293334)
+* [betheme.net-centos7.6 yum安装clamav 进行病毒扫描查杀](https://betheme.net/news/txtlist_i98729v.html)
+
 
 
 
