@@ -122,13 +122,14 @@ PASS_MAX_DAYS 99999 # 99999表示永不过期。
 
 ## 后续调整
 
-[clamav杀毒](https://github.com/Cisco-Talos/clamav)、linux安全隐患检查脚本[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)留着备用的同时，我打算做如下五步策略。
+[clamav杀毒](https://github.com/Cisco-Talos/clamav)、linux安全隐患检查脚本[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)留着备用的同时，我打算做如下六步策略。
 
 1. 使用fail2ban。
 2. 关闭root账户，将自己账户加入wheel组。
 3. 密码非Linux初始规律的简单变形密码，如：P@ssw0rd。
-4. 云主机绑定公司与家之间的IP范围（可选）
-5. 只限ssh密钥登录（可选）
+4. 将来自己在云存有数据资料什么，备份快照就十分有必要了。
+5. 云主机绑定公司与家之间的IP范围（可选）
+6. 只限ssh密钥登录（可选）
 
 
 
