@@ -11,6 +11,7 @@
 * Linux安全隐患排查脚本：[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)
 * 了解端口号知识：[csdn-计算机常用端口号大全](https://blog.csdn.net/weixin_42828010/article/details/127500199)。
 
+
 ## 排查异常任务及程序
 
 ### 查看命令记录与操作日志记录
@@ -41,17 +42,19 @@ ps：也可安装网卡流量监测程序并启动，查看异常的传输流量
 
 **48小时内被修改的文件 `find ./ -ctime -2`，并找出相关记录中的可疑文件。** 
 
-**`ll /etc/systemd/system/` ，查看可疑最近新增的服务模块并“rm”掉。** 
+**`ll /etc/systemd/system/` 查看可疑最近新增的服务模块；`chattr -i`+文件名，使得文件可以rm掉。**
 
-上面这一点是从挖矿病毒的其中一行 `sudo mv /tmp/c3pool_miner.service /etc/systemd/system/c3pool_miner.service` 启发。
-
-
+**`cat /etc/rc.local`，查看可疑的自启程序、服务、脚本等**
 
 
 
+参考：
 
+* [csdn-linux中查看新增的文件](https://blog.csdn.net/qq_17576885/article/details/121995103)
+* [Linux *.service文件详解](https://blog.csdn.net/weixin_44352521/article/details/126679172)
+* [腾讯云-Linux之init.d、rc.d文件夹说明](https://cloud.tencent.com/developer/article/1533529)
 
-参考：[csdn-linux中查看新增的文件](https://blog.csdn.net/qq_17576885/article/details/121995103)、[Linux *.service文件详解](https://blog.csdn.net/weixin_44352521/article/details/126679172)
+以及挖矿病毒源码 `sudo mv /tmp/c3pool_miner.service /etc/systemd/system/c3pool_miner.service` 启发。
 
 
 ## 检查账户相关的后门
