@@ -61,6 +61,10 @@ ps：也可安装网卡流量监测程序并启动，查看异常的传输流量
 以及挖矿病毒源码 `sudo mv /tmp/c3pool_miner.service /etc/systemd/system/c3pool_miner.service` 启发。
 
 
+## 检查环境变量
+
+
+
 ## 检查账户相关的后门
 
 若是黑客使用了 `echo > /var/log/wtmp &&  echo > /var/log/btmp` ，那么想用`lastlog | head -n 15` 看可疑用户登录记录就没辙了。
@@ -119,6 +123,50 @@ PASS_MAX_DAYS 99999 # 99999表示永不过期。
 * [cnblogs-linux中添加一个用户到指定用户组的两种方式，修改一个用户到指定用户组的一种方式](https://www.cnblogs.com/alonely/p/9425327.html)
 * [51cto-kdevtmpfsi挖矿病毒清除](https://blog.51cto.com/liuyj/5205391)
 * [【实用】防暴力破解服务器ssh登入次数](https://cloud.tencent.com/developer/article/2142596)
+
+## 快速使用自检脚本与杀软
+
+自检脚本：[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)；Linux杀软：[Cisco-Talos/clamAV](https://github.com/Cisco-Talos/clamav)。
+
+### 自检脚本快速使用
+
+安装脚本使用前提项“ the_silver_searcher”、“git”。
+
+```
+yum -y install the_silver_searcher && yum -y install git
+```
+
+git下载自检脚本，赋予读写执行权限并执行。
+
+```
+git clone https://github.com/al0ne/LinuxCheck.git &&\
+cd LinuxCheck && chmod u+x LinuxCheck.sh &&\
+ ./LinuxCheck.sh
+```
+
+### ClamAV简明使用
+
+安装ClamAV杀毒与更新病毒库
+
+```
+yum install clamav && freshclam
+```
+
+扫描；-r：迭代目录；-l：指定路径；--max-dir-recursion：指定目录层级。
+
+```
+clamscan -r /etc --max-dir-recursion=5 -l /home/www/clamav-scan.log
+```
+
+
+
+
+参考：
+
+* [Linux命令之查看执行过的历史命令history](https://blog.csdn.net/cnds123321/article/details/124903516)
+* [bilibili专栏-应急响应专题（Linux应急响应）](https://www.bilibili.com/read/cv17867865/)
+
+
 
 ## 后续调整
 

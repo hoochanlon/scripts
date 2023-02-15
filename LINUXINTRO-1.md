@@ -35,9 +35,9 @@ action = iptables[name=SSH,port=ssh,protocol=tcp]
 enabled = true
 filter = sshd
 logpath = /var/log/secure   #日志位置
-bantime =  30d              #封锁时间一个月
+bantime =  800              #封锁时间长达一月以上（24*30）
 maxretry = 2                #失败2次即封禁
-findtime = 180              #3分钟之内
+findtime = 3600              #1小时之内(60*60)
 # 可以定制化发送邮件
 sendmail-whois[name=SSH, dest=your@email.com, sender=fail2ban@example.com,sendername="Fail2Ban"]    
 ```

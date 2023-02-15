@@ -30,7 +30,7 @@ scp root@101.xx.xx.xxx:/cake1.PNG /Users/chanlonhoo/Downloads
 
 ## 下载ClamAV和更新病毒库
 
-目前Linux的免费杀软跟玩具代码、安慰剂一样，挡不住挖矿病毒。
+给自己来上安慰剂...
 
 ```
 # freshclam为更新病毒库。
@@ -42,6 +42,19 @@ yum install clamav && freshclam
 ```
 clamscan -r /etc --max-dir-recursion=5 -l /home/www/clamav-scan.log
 ```
+
+扫描根目录，记录到日志，并删除可以文件。
+
+```
+clamscan -r / -l /var/log/clamscan.log --remove
+```
+
+设置定时每晚的任务（非必要）
+
+```
+
+```
+
 
 详请参考：
 
