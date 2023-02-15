@@ -47,27 +47,26 @@ ps：也可安装网卡流量监测程序并启动，查看异常的传输流量
 
 ![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/2-1Q022.jpg)
 
+个人觉得`rpm -Va`验包的作用不是很大，我在重装过的腾讯云主机上试用了下，也会扫描出遗漏、改动什么的，而且耗时挺久的。`echo $PATH`看环境变量，倒是有点用，类似于排查软链接后门，在`.bash_profile`及`/etc/profile`临时看下情况就好了。
 
 参考：
 
 * [csdn-linux中查看新增的文件](https://blog.csdn.net/qq_17576885/article/details/121995103)
 * [Linux *.service文件详解](https://blog.csdn.net/weixin_44352521/article/details/126679172)
 * [腾讯云-Linux之init.d、rc.d文件夹说明](https://cloud.tencent.com/developer/article/1533529)
+* [csdn-rpm -Va 详解](https://blog.csdn.net/genglei1022/article/details/81352635)
+* [百度经验-如何修改Linux操作系统的环境变量？](https://jingyan.baidu.com/article/afd8f4de8b5fe275e286e9e5.html)
 * [cnblogs-Linux启动过程详解](https://www.cnblogs.com/notepi/archive/2013/06/15/3137093.html)
 * [csdn-Linux系统启动流程（超详细）](https://blog.csdn.net/shuju1_/article/details/126201364)
 * [Linux启动管理 - /etc/rc.d/rc.local配置文件用法](http://c.biancheng.net/view/1023.html)
 * [cnblogs-linux 启动过程](https://www.cnblogs.com/rebrobot/p/16873847.html)
 
-以及挖矿病毒源码 `sudo mv /tmp/c3pool_miner.service /etc/systemd/system/c3pool_miner.service` 启发。
-
-
-## 检查环境变量
-
+以及挖矿病毒源码 `sudo mv /tmp/c3pool_miner.service /etc/systemd/system/c3pool_miner.service` 启发，让我注意挖矿病毒在服务模块上，都还给我塞自启后门。
 
 
 ## 检查账户相关的后门
 
-若是黑客使用了 `echo > /var/log/wtmp &&  echo > /var/log/btmp` ，那么想用`lastlog | head -n 15` 看可疑用户登录记录就没辙了。
+若是黑客使用了 `echo > /var/log/wtmp &&  echo > /var/log/btmp` ，那么用这去`lastlog | head -n 15` 看可疑用户登录记录，就没辙了。详情看我在【病毒分析区】[记阿里云主机再一次被黑客恶意脚本攻击](https://www.52pojie.cn/thread-1743103-1-1.html)对病毒源码的解读。
 
 ### 检查可疑账户
 
@@ -164,13 +163,11 @@ clamscan -r /etc --max-dir-recursion=5 -l /var/log/clamav-scan.log
 clamscan -r / -l /var/log/clamscan.log --remove
 ```
 
-设置定时每晚的任务（非必要）
+设置定时，每晚3点执行杀毒（非必要，仅记录）
 
 ```
-
+0 3 * * * * clamscan -r / -l /var/log/clamscan.log --remove 
 ```
-
-
 
 参考：
 
@@ -179,8 +176,9 @@ clamscan -r / -l /var/log/clamscan.log --remove
 * [csdn-云服务器Linux挖矿病毒杀毒软件clamscan安装](https://blog.csdn.net/m0_59069586/article/details/126956289)
 * [51cto-Linux下杀毒软件（ClamAV）安装及使用](https://blog.51cto.com/u_9691128/4293334)
 * [betheme.net-centos7.6 yum安装clamav 进行病毒扫描查杀](https://betheme.net/news/txtlist_i98729v.html)
-
-
+* [cnblogs-Linux中定时任务](https://www.cnblogs.com/rxysg/p/15671784.html)
+* [csdn-Linux 定时任务详解](https://blog.csdn.net/yang_z_1/article/details/118072966)
+* [cnblogs-Linux Shell 中 > 和 >> 的异同点和应用场景](https://www.cnblogs.com/miracle-luna/p/11809725.html)
 
 
 ## 后续调整
