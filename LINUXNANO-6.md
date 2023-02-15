@@ -7,15 +7,22 @@
 
 ## 查看并关闭异常任务
 
-### 程序使用排查
+### 排查当前存在异常进程
 
 **使用`top`打开任务管理器，`kill -9 进程名`。** 参考：[pomit-Linux中的kill与kill -9](http://www.pomit.cn/tr/5063499771865601)。简单说，"-9"这参数就是不给程序收尾的时间，立马强行中止；这样的话，程序无法完成其下一步将要进行的计划。也可以`man`加单个指令，查看使用详情。
 
 **使用`crontab -l`查看所有的定时任务。** 参考：[csdn-阿里云ECS遭挖矿程序攻击解决方法（彻底清除挖矿程序，顺便下载了挖矿程序的脚本）](https://blog.csdn.net/NicolasLearner/article/details/119006769)、[csdn-crontab -r删除后恢复](https://blog.csdn.net/only_cyk/article/details/123550872)。
 
-**通过现有参考知识，排查可疑端口号 。0-1023：系统端口；1024-5000：各类应用程序端口；用户自定义：5001-65535。** 参考：[csdn-计算机常用端口号大全](https://blog.csdn.net/weixin_42828010/article/details/127500199)。
+**将`/var/spool/cron/用户名文件`的备份，覆盖掉感染病毒的主机定时任务文件。** 没有备份文件的话，就只能`cat /var/spool/cron/用户名文件`逐个通过`crontab -e`编辑去删除可疑任务了。
 
-**排查可疑PID，**
+### 排查修改文件
+
+48小时内被修改的文件。
+
+```
+find ./ -ctime -2
+```
+
 
 
 
@@ -30,6 +37,7 @@ yum install -y iftop && iftop -i eth0 -nNP
 使用`netstat -u -nat`，查看端口网络协议连接情况；并使用`lsof -i 4`查看ipv4访问情况，`kill -9`相应进程。为防止蠕虫病毒通过局域网内部传输的可能性，先临时关闭FTP（21）、SMB（139、445）。
 
 参考：[csdn-Linux定位流量异常指南](https://blog.csdn.net/q2365921/article/details/125006136)、[csdn-Linux 命令 | 常用命令 lsof 详解 + 实例](https://blog.csdn.net/nyist_zxp/article/details/115340302)
+
 
 
 
@@ -119,4 +127,9 @@ find /etc -mtime 1
 Linux备份软件
 
 
+**通过现有参考知识，排查可疑端口号 。0-1023：系统端口；1024-5000：各类应用程序端口；用户自定义：5001-65535。** 参考：[csdn-计算机常用端口号大全](https://blog.csdn.net/weixin_42828010/article/details/127500199)。
+
+
 [西安交大网络安全专题-挖矿病毒处置（Linux篇) ——从入门到放弃](http://wlaq.xjtu.edu.cn/info/1008/1945.htm)
+
+
