@@ -46,13 +46,24 @@ ps：也可安装网卡流量监测程序并启动，查看异常的传输流量
 
 **`cat /etc/rc.local`，查看可疑的自启程序、服务、脚本等**
 
+回顾与学习Linux启动流程，图转自：[Linux启动管理 - /etc/rc.d/rc.local配置文件用法](http://c.biancheng.net/view/1023.html)
+
+![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/2-1Q022.jpg)
+
+
 参考：
 
 * [csdn-linux中查看新增的文件](https://blog.csdn.net/qq_17576885/article/details/121995103)
 * [Linux *.service文件详解](https://blog.csdn.net/weixin_44352521/article/details/126679172)
 * [腾讯云-Linux之init.d、rc.d文件夹说明](https://cloud.tencent.com/developer/article/1533529)
+* [cnblogs-Linux启动过程详解](https://www.cnblogs.com/notepi/archive/2013/06/15/3137093.html)
+* [csdn-Linux系统启动流程（超详细）](https://blog.csdn.net/shuju1_/article/details/126201364)
+* [Linux启动管理 - /etc/rc.d/rc.local配置文件用法](http://c.biancheng.net/view/1023.html)
+* [cnblogs-linux 启动过程](https://www.cnblogs.com/rebrobot/p/16873847.html)
 
 以及挖矿病毒源码 `sudo mv /tmp/c3pool_miner.service /etc/systemd/system/c3pool_miner.service` 启发。
+
+
 
 
 ## 检查账户相关的后门
@@ -115,18 +126,6 @@ PASS_MAX_DAYS 99999 # 99999表示永不过期。
 * [【实用】防暴力破解服务器ssh登入次数](https://cloud.tencent.com/developer/article/2142596)
 
 
-## 回顾与学习Linux启动流程
-
-图转自：[Linux启动管理 - /etc/rc.d/rc.local配置文件用法](http://c.biancheng.net/view/1023.html)
-
-![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/2-1Q022.jpg)
-
-参考：
-
-* [cnblogs-Linux启动过程详解](https://www.cnblogs.com/notepi/archive/2013/06/15/3137093.html)
-* [csdn-Linux系统启动流程（超详细）](https://blog.csdn.net/shuju1_/article/details/126201364)
-* [Linux启动管理 - /etc/rc.d/rc.local配置文件用法](http://c.biancheng.net/view/1023.html)
-* [cnblogs-linux 启动过程](https://www.cnblogs.com/rebrobot/p/16873847.html)
 
 
 ## 使用排查安全隐患脚本
