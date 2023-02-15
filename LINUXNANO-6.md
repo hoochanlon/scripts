@@ -1,11 +1,15 @@
 # Linux中病毒后的排查
 
-日常备份及恢复快照是最简单省心的操作。没有有这方面措施的话，只能靠着经验来一步步梳理与排查了。
+日常备份及恢复快照是最简单省心的操作。没有有这方面措施的话，只能靠着经验来一步步梳理与排查了。其他信息参考：
 
 * [为什么 Linux 内核不适合国家防御](https://blog.yurunsoft.com/a/68.html)
 * [Linux系统安全隐患及加强安全管理的方法](https://www.cnblogs.com/myphoebe/archive/2011/08/09/2131982.html)
 * [bilibili专栏-应急响应专题（Linux应急响应）](https://www.bilibili.com/read/cv17867865/)
-* [al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)
+
+推荐：
+
+* Linux安全隐患排查脚本：[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)
+* 了解端口号知识：[csdn-计算机常用端口号大全](https://blog.csdn.net/weixin_42828010/article/details/127500199)。
 
 ## 查看并关闭异常任务
 
@@ -38,11 +42,19 @@ ps：也可安装网卡流量监测程序并启动，查看异常的传输流量
 
 ## 检查账户相关的后门
 
+若是黑客使用了 `echo > /var/log/wtmp &&  echo > /var/log/btmp` ，那么想用`lastlog | head -n 15` 看可疑用户登录记录就没辙了。
+
 ### 检查可疑账户
 
-`getent passwd {1000..60000}`，查看除root外的所有用户
+`getent passwd {1000..60000}`，查看除root外的所有用户。`id`+“用户名” 可查看用户所属组，并查看存在特权组的可疑用户 `cat /etc/group|grep wheel`。
 
-参考：[myfreax-Linux getent 命令列出所有用户](https://www.myfreax.com/linux-getent-command-to-list-all-users/amp/)
+删除用户`userdel -r 用户名`；将用户加入到组 `usermod -G wheel user01`。
+
+`echo "SU_WHEEL_ONLY yes" >> /etc/login.defs` 仅限wheel组用户可以sudo特权提升。`vi /etc/pam.d/su` 并检查sudo权限的配置文件，去掉如下指令注释，防止其他用户提权。
+
+```
+# auth required pam_wheel.so use_uid
+```
 
 ### ssh密钥后门
 
@@ -78,17 +90,33 @@ PASS_WARN_AGE 7 # 密码过期前多少天开始提示。
 PASS_MAX_DAYS 99999 # 99999表示永不过期。
 ```
 
-参考：[潇湘隐者-Linux账户密码过期安全策略设置](https://www.cnblogs.com/kerrycode/p/5600525.html)
+### 参考
+
+* [潇湘隐者-Linux账户密码过期安全策略设置](https://www.cnblogs.com/kerrycode/p/5600525.html)
+* [myfreax-Linux getent 命令列出所有用户](https://www.myfreax.com/linux-getent-command-to-list-all-users/amp/)
+* [csdn-Linux学习笔记之CentOS7的 wheel组](https://blog.csdn.net/kfepiza/article/details/124701762)
+* [csdn-wheel用户组 普用户禁止su 到root 用户设置 Linux](https://blog.csdn.net/MrFDd/article/details/118492246)
+* [cnblogs-linux中添加一个用户到指定用户组的两种方式，修改一个用户到指定用户组的一种方式](https://www.cnblogs.com/alonely/p/9425327.html)
 
 
 ## 服务模块
 
-需要备份的系统文件：
 
 
-**通过现有参考知识，排查可疑端口号 。0-1023：系统端口；1024-5000：各类应用程序端口；用户自定义：5001-65535。** 参考：[csdn-计算机常用端口号大全](https://blog.csdn.net/weixin_42828010/article/details/127500199)。
 
 
-[西安交大网络安全专题-挖矿病毒处置（Linux篇) ——从入门到放弃](http://wlaq.xjtu.edu.cn/info/1008/1945.htm)
+## 逐项排查
+
+
+### 检查其他自启程序
+
+
+### 使用排查安全隐患脚本
+
+
+### 使用clamav杀毒
+
+
+
 
 
