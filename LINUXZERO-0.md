@@ -25,7 +25,10 @@
 
 **使用`crontab -l`查看所有的定时任务。** 参考：[csdn-阿里云ECS遭挖矿程序攻击解决方法（彻底清除挖矿程序，顺便下载了挖矿程序的脚本）](https://blog.csdn.net/NicolasLearner/article/details/119006769)、[csdn-crontab -r删除后恢复](https://blog.csdn.net/only_cyk/article/details/123550872)。
 
-**将`/var/spool/cron/用户名文件`的备份，覆盖掉感染病毒的主机定时任务文件。** 没有备份文件的话，就只能`cat /var/spool/cron/用户名文件`逐个通过`crontab -e`编辑去删除可疑任务了。
+
+**将`/var/spool/cron/用户名文件`的备份，覆盖掉感染病毒的主机定时任务文件。** 没有备份文件的话，就只能`cat /var/spool/cron/用户名文件`，再逐个通过`crontab -e`编辑去删除可疑任务了。
+
+（注：定时任务并不会回显在终端，但可用注入文本`*/1 * * * * echo "hello world" >> hello.txt` 来调试，及查看日志`cat /var/log/cron`看结果。）
 
 ### 异常流量程序及传输端口
 
@@ -166,8 +169,9 @@ clamscan -r / -l /var/log/clamscan.log --remove
 设置定时，每晚3点执行杀毒（非必要，仅记录）
 
 ```
-0 3 * * * * clamscan -r / -l /var/log/clamscan.log --remove 
+0 3 * * * * clamscan -r / -l /var/log/clamscan.log --remove
 ```
+
 
 参考：
 
