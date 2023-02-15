@@ -5,9 +5,6 @@
 * [为什么 Linux 内核不适合国家防御](https://blog.yurunsoft.com/a/68.html)
 * [Linux系统安全隐患及加强安全管理的方法](https://www.cnblogs.com/myphoebe/archive/2011/08/09/2131982.html)
 * [bilibili专栏-应急响应专题（Linux应急响应）](https://www.bilibili.com/read/cv17867865/)
-
-推荐：
-
 * Linux安全隐患排查脚本：[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)
 * 了解端口号知识：[csdn-计算机常用端口号大全](https://blog.csdn.net/weixin_42828010/article/details/127500199)。
 
@@ -62,8 +59,6 @@ ps：也可安装网卡流量监测程序并启动，查看异常的传输流量
 * [cnblogs-linux 启动过程](https://www.cnblogs.com/rebrobot/p/16873847.html)
 
 以及挖矿病毒源码 `sudo mv /tmp/c3pool_miner.service /etc/systemd/system/c3pool_miner.service` 启发。
-
-
 
 
 ## 检查账户相关的后门
@@ -124,6 +119,17 @@ PASS_MAX_DAYS 99999 # 99999表示永不过期。
 * [cnblogs-linux中添加一个用户到指定用户组的两种方式，修改一个用户到指定用户组的一种方式](https://www.cnblogs.com/alonely/p/9425327.html)
 * [51cto-kdevtmpfsi挖矿病毒清除](https://blog.51cto.com/liuyj/5205391)
 * [【实用】防暴力破解服务器ssh登入次数](https://cloud.tencent.com/developer/article/2142596)
+
+## 后续调整
+
+[clamav杀毒](https://github.com/Cisco-Talos/clamav)、linux安全隐患检查脚本[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)留着备用的同时，我打算做如下五步策略。
+
+1. 使用fail2ban。
+2. 关闭root账户，将自己账户加入wheel组。
+3. 密码非Linux初始规律的简单变形密码，如：P@ssw0rd。
+4. 云主机绑定公司与家之间的IP范围（可选）
+5. 只限ssh密钥登录（可选）
+
 
 
 
