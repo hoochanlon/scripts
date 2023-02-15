@@ -119,7 +119,7 @@ PASS_MAX_DAYS 99999 # 99999表示永不过期。
 
 图转自：[Linux启动管理 - /etc/rc.d/rc.local配置文件用法](http://c.biancheng.net/view/1023.html)
 
-
+![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/2-1Q022.jpg)
 
 参考：
 
