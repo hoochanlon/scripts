@@ -11,7 +11,7 @@
 * Linux安全隐患排查脚本：[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)
 * 了解端口号知识：[csdn-计算机常用端口号大全](https://blog.csdn.net/weixin_42828010/article/details/127500199)。
 
-## 查看并关闭异常任务
+## 排查异常任务及程序
 
 ### 查看命令记录与操作日志记录
 
@@ -21,15 +21,13 @@
 
 参考：[csdn-journalctl -xe命令(系统日志查询)的使用](https://blog.csdn.net/enthan809882/article/details/104551777/)、[cnblogs-linux下的系统服务管理及日志管理](https://www.cnblogs.com/yuzhaokai0523/p/4453094.html)
 
-### 排查当前存在异常进程及可疑文件
+### 排查当前存在异常进程
 
 **使用`top`打开任务管理器，`kill -9 进程名`。** 参考：[pomit-Linux中的kill与kill -9](http://www.pomit.cn/tr/5063499771865601)。简单说，"-9"这参数就是不给程序收尾的时间，立马强行中止；这样的话，程序无法完成其下一步将要进行的计划。也可以`man`加单个指令，查看使用详情。
 
 **使用`crontab -l`查看所有的定时任务。** 参考：[csdn-阿里云ECS遭挖矿程序攻击解决方法（彻底清除挖矿程序，顺便下载了挖矿程序的脚本）](https://blog.csdn.net/NicolasLearner/article/details/119006769)、[csdn-crontab -r删除后恢复](https://blog.csdn.net/only_cyk/article/details/123550872)。
 
 **将`/var/spool/cron/用户名文件`的备份，覆盖掉感染病毒的主机定时任务文件。** 没有备份文件的话，就只能`cat /var/spool/cron/用户名文件`逐个通过`crontab -e`编辑去删除可疑任务了。
-
-**48小时内被修改的文件 `find ./ -ctime -2`，并找出相关记录中的可疑文件。** 参考：[csdn-linux中查看新增的文件](https://blog.csdn.net/qq_17576885/article/details/121995103)。
 
 ### 异常流量程序及传输端口
 
@@ -38,6 +36,22 @@
 ps：也可安装网卡流量监测程序并启动，查看异常的传输流量。`yum install -y iftop && iftop -i eth0 -nNP`，为防止蠕虫病毒通过局域网内部传输的可能性，先临时关闭FTP（21）、SMB（139、445）。
 
 参考：[csdn-Linux定位流量异常指南](https://blog.csdn.net/q2365921/article/details/125006136)、[csdn-Linux 命令 | 常用命令 lsof 详解 + 实例](https://blog.csdn.net/nyist_zxp/article/details/115340302)
+
+## 排查可疑文件、服务模块、自启程序
+
+**48小时内被修改的文件 `find ./ -ctime -2`，并找出相关记录中的可疑文件。** 
+
+**`ll /etc/systemd/system/` ，查看可疑最近新增的服务模块并“rm”掉。** 
+
+上面这一点是从挖矿病毒的其中一行 `sudo mv /tmp/c3pool_miner.service /etc/systemd/system/c3pool_miner.service` 启发。
+
+
+
+
+
+
+
+参考：[csdn-linux中查看新增的文件](https://blog.csdn.net/qq_17576885/article/details/121995103)、[Linux *.service文件详解](https://blog.csdn.net/weixin_44352521/article/details/126679172)
 
 
 ## 检查账户相关的后门
@@ -90,28 +104,20 @@ PASS_WARN_AGE 7 # 密码过期前多少天开始提示。
 PASS_MAX_DAYS 99999 # 99999表示永不过期。
 ```
 
-### 参考
 
 * [潇湘隐者-Linux账户密码过期安全策略设置](https://www.cnblogs.com/kerrycode/p/5600525.html)
 * [myfreax-Linux getent 命令列出所有用户](https://www.myfreax.com/linux-getent-command-to-list-all-users/amp/)
 * [csdn-Linux学习笔记之CentOS7的 wheel组](https://blog.csdn.net/kfepiza/article/details/124701762)
 * [csdn-wheel用户组 普用户禁止su 到root 用户设置 Linux](https://blog.csdn.net/MrFDd/article/details/118492246)
 * [cnblogs-linux中添加一个用户到指定用户组的两种方式，修改一个用户到指定用户组的一种方式](https://www.cnblogs.com/alonely/p/9425327.html)
-
-
-## 服务模块
-
-
+* [51cto-kdevtmpfsi挖矿病毒清除](https://blog.51cto.com/liuyj/5205391)
+* [【实用】防暴力破解服务器ssh登入次数](https://cloud.tencent.com/developer/article/2142596)
 
 
 
-## 逐项排查
 
 
-### 检查其他自启程序
-
-
-### 使用排查安全隐患脚本
+## 使用排查安全隐患脚本
 
 
 ### 使用clamav杀毒
