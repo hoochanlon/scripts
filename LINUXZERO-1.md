@@ -112,13 +112,15 @@
 * [csdn-Kali-登录暴力破解器工具-medusa使用](https://blog.csdn.net/weixin_44257023/article/details/126976129)
 * [简书-【network】开启网卡的混杂模式](https://www.jianshu.com/p/42d88c0c47db)
 
-## clamav 杀毒策略
+## 附：clamav 杀毒
 
-更新病毒库，MD5校验及特征码识别。
+更新病毒库，MD5校验及特征码识别。从文档上，我个人的理解上是没有启发式识别的。
 
 参考：
 
 * [clamav官网-faq-scan-alerts](https://docs.clamav.net/faq/faq-scan-alerts.html)
+* [华南理工大学-Linux服务器安装杀毒软件ClamAV 并配置邮件告警操作指南](https://web.scut.edu.cn/2022/0321/c32211a464688/page.htm)
+* [河马 webshell扫描器 for windows 使用手册](https://www.shellpub.com/doc/hm_win_usage.html)
 * [病毒吧官方账号-杀毒软件是怎么工作的？病毒吧来告诉你 ](https://www.bilibili.com/video/BV1zs4y1t7Lv)
 * [zabbx-clamav开源杀毒软件部署和使用](https://www.zabbx.cn/archives/clamav开源杀毒软件部署和使用)
 * [安全内参-五大网络空间攻击威胁及应对策略](https://www.secrss.com/articles/25492)
