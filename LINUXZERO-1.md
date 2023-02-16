@@ -105,6 +105,7 @@
 * [linuxcn-Linux 命令神器：lsof 入门](https://linux.cn/article-4099-1.html)
 * [Prayer-lsof,linux和unix下的一个诊断分析工具](http://www.cppblog.com/prayer/archive/2009/04/01/78596.html)
 * [csdn-Linux 权限管理_文件特殊权限SetUID、SetGID和Sticky BIT 学习总结（四）](https://blog.csdn.net/Superman_Gao/article/details/124536449)
+* [cnblogs-最详细Linux提权总结（建议收藏）](https://www.cnblogs.com/sfsec/p/15163907.html)
 
 
 ## clamav 杀毒策略
