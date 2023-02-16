@@ -56,7 +56,7 @@
 
 * [csdn-Linux history -w 与 history -a 功能区别](https://blog.csdn.net/weixin_44629980/article/details/124467009)
 * [简书 - /etc/profile - 环境变量](https://www.jianshu.com/p/1dd22f5b521a)
-* []()
+* [csdn - linux的/etc/rc.local文件(开机自启)](https://blog.csdn.net/ws_kfxd/article/details/110088503)
 
 ### 检查内容分解 下
 
