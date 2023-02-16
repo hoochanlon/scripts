@@ -33,12 +33,12 @@
 ### 检查内容分解 中
 
 * Bash配置检查：
-    * History （history -a 从缓存中取出历史记录，非w一次性取出）
-    * /etc/rc.local （）
-    * /etc/profile （这里修改会对所有用户起作用，全局的环境变量配置文件）
-    * $HOME/.profile （当前用户的家目录的有用，修改后，source更新）
-    * ~/.bash_profile （“～”实际上，这是root的家目录）
-    * ~/.bashrc （）
+    * History （**`history -a` 从缓存中取出历史记录。**）
+    * `/etc/rc.local` （**是`/etc/rc.d/rc.local`的软连接，查看自启服务的；**默认没有执行权限，需手动修改。）
+    * `/etc/profile` （**全局的环境变量配置文件**,这里修改会对所有用户起作用。）
+    * `$HOME/.profile` （**对当前用户的家目录的有用，修改后，`source`更新**）
+    * `~/.bash_profile` （**它只能登入的时候执行一次。**）
+    * `~/.bashrc` (**同`~/.bash_profile`，最大区别：shell script每次都会执行。**)
     * bash反弹shell
 * 环境变量检查：
     * PATH
@@ -57,6 +57,8 @@
 * [csdn-Linux history -w 与 history -a 功能区别](https://blog.csdn.net/weixin_44629980/article/details/124467009)
 * [简书 - /etc/profile - 环境变量](https://www.jianshu.com/p/1dd22f5b521a)
 * [csdn - linux的/etc/rc.local文件(开机自启)](https://blog.csdn.net/ws_kfxd/article/details/110088503)
+* [云海天教程网-bashrc与profile的区别](https://www.yht7.com/news/9382)
+
 
 ### 检查内容分解 下
 
