@@ -82,13 +82,14 @@
 * 文件检查：
     * 系统文件修改时间
     * 7天内改动文件、大于200M文件
-    * 可疑黑客文件（）、敏感文件、隐藏文件
-    * 临时目录/tmp 
-    * alias
-    * SUID：/usr/libexec/abrt-action-install-debuginfo-to-abrt-cache
-    * lsof +L1
+    * 可疑黑客文件（`.*wget、.*curl、.*openssl、.*mysql`，可以理解为黑客植入程序脚本的伪装）
+    * 敏感文件 （）
+    * 隐藏文件与临时目录/tmp 
+    * alias （检查建立过的别名）
+    * SUID：/usr/libexec/abrt-action-install-debuginfo-to-abrt-cache （简单理解为有suid授权的用户，等同于持有文件权限的尚方宝剑）
+    * lsof +L1 (寻找本地断开的打开文件，网上文章不少表示“显示所有打开的链接数小于1的文件”，真是看不明白...)
 * 基础配置检查：
-    * 系统配置信息、登陆用户、hosbv
+    * 系统配置信息、登陆用户、hosts
     * CPU使用率/CPU TOP15/内存占用 TOP15、内存占用/硬盘剩余空间
     * 硬盘挂载、常用软件
 * 网络/流量检查
@@ -97,6 +98,13 @@
     * 网络连接、网络流量、路由表、路由转发
     * DNS、ARP、IPTABLES
 * 用户信息检查：可登陆用户、登录信息、密码文件修改日期、sudoers（特权提升文件）
+
+参考：
+
+* [码农家园-linux命令 lsof](https://www.codenong.com/cs105817189/)
+* [linuxcn-Linux 命令神器：lsof 入门](https://linux.cn/article-4099-1.html)
+* [Prayer-lsof,linux和unix下的一个诊断分析工具](http://www.cppblog.com/prayer/archive/2009/04/01/78596.html)
+* [csdn-Linux 权限管理_文件特殊权限SetUID、SetGID和Sticky BIT 学习总结（四）](https://blog.csdn.net/Superman_Gao/article/details/124536449)
 
 
 ## clamav 杀毒策略
