@@ -83,7 +83,7 @@
     * 系统文件修改时间
     * 7天内改动文件、大于200M文件
     * 可疑黑客文件（`.*wget、.*curl、.*openssl、.*mysql`，可以理解为黑客植入程序脚本的伪装）
-    * 敏感文件 （）
+    * 敏感文件 （识别机制：Nikto、ettercap文件名等黑客工具，以及miner挖矿之类文件等）
     * 隐藏文件与临时目录/tmp 
     * alias （检查建立过的别名）
     * SUID：/usr/libexec/abrt-action-install-debuginfo-to-abrt-cache （简单理解为有suid授权的用户，等同于持有文件权限的尚方宝剑）
@@ -94,7 +94,7 @@
     * 硬盘挂载、常用软件
 * 网络/流量检查
     * ifconfig、网卡混杂模式、TCP连接类别
-    * 端口监听、对外开放端口
+    * 对外开放端口、端口监听(百度百科-端口监听：我们都知道远程访问一台机器的共享目录实际是访问139端口，那么只要对本机139的监听就可以察觉对远程的访问请求。)
     * 网络连接、网络流量、路由表、路由转发
     * DNS、ARP、IPTABLES
 * 用户信息检查：可登陆用户、登录信息、密码文件修改日期、sudoers（特权提升文件）
@@ -106,6 +106,8 @@
 * [Prayer-lsof,linux和unix下的一个诊断分析工具](http://www.cppblog.com/prayer/archive/2009/04/01/78596.html)
 * [csdn-Linux 权限管理_文件特殊权限SetUID、SetGID和Sticky BIT 学习总结（四）](https://blog.csdn.net/Superman_Gao/article/details/124536449)
 * [cnblogs-最详细Linux提权总结（建议收藏）](https://www.cnblogs.com/sfsec/p/15163907.html)
+* [csdn-中间人攻击——ettercap的使用](https://blog.csdn.net/m0_57069925/article/details/125198711)
+* [csdn-Kali-登录暴力破解器工具-medusa使用](https://blog.csdn.net/weixin_44257023/article/details/126976129)
 
 
 ## clamav 杀毒策略
