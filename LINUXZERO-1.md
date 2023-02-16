@@ -114,9 +114,11 @@
 
 ## clamav 杀毒策略
 
-
+更新病毒库，MD5校验及特征码识别。
 
 参考：
 
-* [docs.clamav-faq-scan-alerts](https://docs.clamav.net/faq/faq-scan-alerts.html)
+* [clamav官网-faq-scan-alerts](https://docs.clamav.net/faq/faq-scan-alerts.html)
+* [病毒吧官方账号-杀毒软件是怎么工作的？病毒吧来告诉你 ](https://www.bilibili.com/video/BV1zs4y1t7Lv)
 * [zabbx-clamav开源杀毒软件部署和使用](https://www.zabbx.cn/archives/clamav开源杀毒软件部署和使用)
+* [安全内参-五大网络空间攻击威胁及应对策略](https://www.secrss.com/articles/25492)
