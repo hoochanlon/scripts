@@ -1,14 +1,13 @@
 # Linux中病毒后的排查
 
-日常备份及恢复快照是最简单省心的操作。没有有这方面措施的话，只能靠着经验来一步步梳理与排查了。其他信息参考：
+## 前言
 
-* [为什么 Linux 内核不适合国家防御](https://blog.yurunsoft.com/a/68.html)
-* [Linux系统安全隐患及加强安全管理的方法](https://www.cnblogs.com/myphoebe/archive/2011/08/09/2131982.html)
-* [bilibili专栏-应急响应专题（Linux应急响应）](https://www.bilibili.com/read/cv17867865/)
-* Linux安全隐患排查脚本：[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)
-* 了解端口号知识：[csdn-计算机常用端口号大全](https://blog.csdn.net/weixin_42828010/article/details/127500199)。
+日常备份及恢复快照是最简单省心的操作。没有有这方面措施的话，只能靠着经验，以及思考可能性（编程逻辑、受众面相），并参考相关病毒处理的资料（附带病毒源码的解读最好；有精力的朋友，也可再查查知网有什么研究资料），来一步步梳理与排查了。中挖矿病毒什么的，排查这如下两大项，基本上也差不多了。后续可根据自己情况，装杀软、找云服务专员综合处理，看自己需求了。
 
-现在有了热心人写的脚本、思科开源的杀软，相对来说比之前省心力了不少。不想看这些繁琐排查记录的朋友，可以直接跳到[快速使用自检脚本与杀软](/LINUXZERO-0.md#L130)与[检查账户相关的后门](/LINUXZERO-0.md#L71)部分。
+1. 排查异常任务程序、服务模块，以及网络传输端口。
+2. 检查账户配置，如：密码、密钥与通行证存档、用户及用户组
+
+现在有了热心人写的脚本[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)、思科开源的杀软[clamav杀毒](https://github.com/Cisco-Talos/clamav)，相对来说比之前省心力了不少。不想看这些繁琐排查记录的朋友，对前言的Linux自检脚本与思科杀软clamav有个大概了解就好，然后直接跳到[快速使用自检脚本与杀软](/LINUXZERO-0.md#L130)与[检查账户相关的后门](/LINUXZERO-0.md#L71)部分。
 
 ## 排查异常任务及程序
 
@@ -59,6 +58,7 @@ ps：也可安装网卡流量监测程序并启动，查看异常的传输流量
 * [Linux *.service文件详解](https://blog.csdn.net/weixin_44352521/article/details/126679172)
 * [腾讯云-Linux之init.d、rc.d文件夹说明](https://cloud.tencent.com/developer/article/1533529)
 * [csdn-rpm -Va 详解](https://blog.csdn.net/genglei1022/article/details/81352635)
+* [csdn-计算机常用端口号大全](https://blog.csdn.net/weixin_42828010/article/details/127500199)。
 * [百度经验-如何修改Linux操作系统的环境变量？](https://jingyan.baidu.com/article/afd8f4de8b5fe275e286e9e5.html)
 * [cnblogs-Linux启动过程详解](https://www.cnblogs.com/notepi/archive/2013/06/15/3137093.html)
 * [csdn-Linux系统启动流程（超详细）](https://blog.csdn.net/shuju1_/article/details/126201364)
@@ -174,7 +174,6 @@ PASS_WARN_AGE 7 # 密码过期前多少天开始提示。
 PASS_MAX_DAYS 99999 # 99999表示永不过期。
 ```
 
-
 * [潇湘隐者-Linux账户密码过期安全策略设置](https://www.cnblogs.com/kerrycode/p/5600525.html)
 * [myfreax-Linux getent 命令列出所有用户](https://www.myfreax.com/linux-getent-command-to-list-all-users/amp/)
 * [csdn-Linux学习笔记之CentOS7的 wheel组](https://blog.csdn.net/kfepiza/article/details/124701762)
@@ -182,6 +181,8 @@ PASS_MAX_DAYS 99999 # 99999表示永不过期。
 * [cnblogs-linux中添加一个用户到指定用户组的两种方式，修改一个用户到指定用户组的一种方式](https://www.cnblogs.com/alonely/p/9425327.html)
 * [51cto-kdevtmpfsi挖矿病毒清除](https://blog.51cto.com/liuyj/5205391)
 * [【实用】防暴力破解服务器ssh登入次数](https://cloud.tencent.com/developer/article/2142596)
+* [为什么 Linux 内核不适合国家防御](https://blog.yurunsoft.com/a/68.html)
+* [Linux系统安全隐患及加强安全管理的方法](https://www.cnblogs.com/myphoebe/archive/2011/08/09/2131982.html)
 
 
 ## 后续调整
