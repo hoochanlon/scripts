@@ -93,9 +93,9 @@
     * CPU使用率/CPU TOP15/内存占用 TOP15、内存占用/硬盘剩余空间
     * 硬盘挂载、常用软件
 * 网络/流量检查
-    * ifconfig、网卡混杂模式、TCP连接类别
+    * ifconfig、网卡混杂模式(网络抓包工具就是网卡的混杂模式)、TCP连接类别
     * 对外开放端口、端口监听(百度百科-端口监听：我们都知道远程访问一台机器的共享目录实际是访问139端口，那么只要对本机139的监听就可以察觉对远程的访问请求。)
-    * 网络连接、网络流量、路由表、路由转发
+    * 网络连接、网络流量、路由表、路由转发(即路由中继)
     * DNS、ARP、IPTABLES
 * 用户信息检查：可登陆用户、登录信息、密码文件修改日期、sudoers（特权提升文件）
 
@@ -108,7 +108,7 @@
 * [cnblogs-最详细Linux提权总结（建议收藏）](https://www.cnblogs.com/sfsec/p/15163907.html)
 * [csdn-中间人攻击——ettercap的使用](https://blog.csdn.net/m0_57069925/article/details/125198711)
 * [csdn-Kali-登录暴力破解器工具-medusa使用](https://blog.csdn.net/weixin_44257023/article/details/126976129)
-
+* [简书-【network】开启网卡的混杂模式](https://www.jianshu.com/p/42d88c0c47db)
 
 ## clamav 杀毒策略
 
