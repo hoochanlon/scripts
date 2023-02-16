@@ -73,7 +73,7 @@
 * [简书-ELF文件运行时动态链接](https://www.jianshu.com/p/16e97c8e629f)
 * [cnblogs-LD_PRELOAD的偷梁换柱之能](https://www.cnblogs.com/net66/p/5609026.html)
 * [先知社区-蓝队基础：安全运维防护浅析](https://xz.aliyun.com/t/10197)
-* [BASH脚本基础：环境变量PROMPT_COMMAND介绍](https://blog.csdn.net/liumiaocn/article/details/104113262)
+* [csdn-BASH脚本基础：环境变量PROMPT_COMMAND介绍](https://blog.csdn.net/liumiaocn/article/details/104113262)
 * [温州市公安局网络安全保卫支队-我的云服务器被植入挖矿木马，CPU飙升200%](https://baijiahao.baidu.com/s?id=1717502061981148613&wfr=spider&for=pc)
 
 
