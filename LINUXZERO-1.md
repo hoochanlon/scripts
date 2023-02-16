@@ -99,9 +99,9 @@
 * 用户信息检查：可登陆用户、登录信息、密码文件修改日期、sudoers（特权提升文件）
 
 
-
 ## clamav 杀毒策略
 
+参考：
 
 * [docs.clamav-faq-scan-alerts](https://docs.clamav.net/faq/faq-scan-alerts.html)
 * [zabbx-clamav开源杀毒软件部署和使用](https://www.zabbx.cn/archives/clamav开源杀毒软件部署和使用)
