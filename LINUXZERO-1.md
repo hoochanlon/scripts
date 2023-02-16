@@ -79,3 +79,4 @@
 ## clamav 杀毒策略
 
 
+[docs.clamav-faq-scan-alerts](https://docs.clamav.net/faq/faq-scan-alerts.html)
