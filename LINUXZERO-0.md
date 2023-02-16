@@ -46,7 +46,7 @@ ps：也可安装网卡流量监测程序并启动，查看异常的传输流量
 
 **`cat /etc/rc.local`，查看可疑的自启程序、服务、脚本等**
 
-回顾与学习Linux启动流程，图转自：[Linux启动管理 - /etc/rc.d/rc.local配置文件用法](http://c.biancheng.net/view/1023.html)
+梳理Linux启动流程，图转自：[Linux启动管理 - /etc/rc.d/rc.local配置文件用法](http://c.biancheng.net/view/1023.html)
 
 ![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/2-1Q022.jpg)
 

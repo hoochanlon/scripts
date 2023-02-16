@@ -2,7 +2,7 @@
 
 ## LinuxCheck自检脚本功能陈列
 
-自检脚本功能陈列（非源码顺序，个人写作方便），以及个人对该脚本处理执行意义推测（括号内）：
+自检脚本功能陈列（非源码、仓库说明顺序，仅个人写作方便），以及个人对该脚本处理执行意义推测（括号内）：
 
 ### 检查内容分解 上
 
@@ -33,12 +33,12 @@
 ### 检查内容分解 中
 
 * Bash配置检查：
-    * History
-    * /etc/profile
-    * $HOME/.profile
-    * /etc/rc.local
-    * ~/.bash_profile
-    * ~/.bashrc 
+    * History （history -a 从缓存中取出历史记录，非w一次性取出）
+    * /etc/rc.local （）
+    * /etc/profile （这里修改会对所有用户起作用，全局的环境变量配置文件）
+    * $HOME/.profile （当前用户的家目录的有用，修改后，source更新）
+    * ~/.bash_profile （“～”实际上，这是root的家目录）
+    * ~/.bashrc （）
     * bash反弹shell
 * 环境变量检查：
     * PATH
@@ -52,6 +52,11 @@
     * Crontab
     * Crontab Backdoor
 
+参考：
+
+* [csdn-Linux history -w 与 history -a 功能区别](https://blog.csdn.net/weixin_44629980/article/details/124467009)
+* [简书 - /etc/profile - 环境变量](https://www.jianshu.com/p/1dd22f5b521a)
+* []()
 
 ### 检查内容分解 下
 
@@ -79,4 +84,5 @@
 ## clamav 杀毒策略
 
 
-[docs.clamav-faq-scan-alerts](https://docs.clamav.net/faq/faq-scan-alerts.html)
+* [docs.clamav-faq-scan-alerts](https://docs.clamav.net/faq/faq-scan-alerts.html)
+* [zabbx-clamav开源杀毒软件部署和使用](https://www.zabbx.cn/archives/clamav开源杀毒软件部署和使用)
