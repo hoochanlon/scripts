@@ -5,7 +5,7 @@
 * [温州市公安局网络安全保卫支队-我的云服务器被植入挖矿木马，CPU飙升200%](https://baijiahao.baidu.com/s?id=1717502061981148613&wfr=spider&for=pc)
 * [先知社区-linux常见backdoor及排查技术](https://xz.aliyun.com/t/10079)
 * [上海音乐学院-下周计算机病毒预报 （2022年10月17日至2022年10月23日）](https://netc.shcmusic.edu.cn/2022/1017/c1811a45093/pagem.htm)
-* [青藤云安全-攻防演练中常见的8种攻击方式及应对指南](https://www.qingteng.cn/think-tank/safety-study/62da497b59bbf700428a4334.html)
+* [华工物院研究生-【我为群众办实事】反“挖矿”复习范围全汇总！“全校统考卷”干货都在这里](https://mp.weixin.qq.com/s?__biz=MzUzOTQ4MTg0Nw==&mid=2247490046&idx=1&sn=ee95986fd473816f5945b4a335b724d1)
 
 ## LinuxCheck自检脚本功能陈列
 
@@ -124,3 +124,4 @@
 * [病毒吧官方账号-杀毒软件是怎么工作的？病毒吧来告诉你 ](https://www.bilibili.com/video/BV1zs4y1t7Lv)
 * [zabbx-clamav开源杀毒软件部署和使用](https://www.zabbx.cn/archives/clamav开源杀毒软件部署和使用)
 * [安全内参-五大网络空间攻击威胁及应对策略](https://www.secrss.com/articles/25492)
+* [青藤云安全-攻防演练中常见的8种攻击方式及应对指南](https://www.qingteng.cn/think-tank/safety-study/62da497b59bbf700428a4334.html)
