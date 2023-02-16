@@ -4,6 +4,8 @@
 
 * [温州市公安局网络安全保卫支队-我的云服务器被植入挖矿木马，CPU飙升200%](https://baijiahao.baidu.com/s?id=1717502061981148613&wfr=spider&for=pc)
 * [先知社区-linux常见backdoor及排查技术](https://xz.aliyun.com/t/10079)
+* [上海音乐学院-下周计算机病毒预报 （2022年10月17日至2022年10月23日）](https://netc.shcmusic.edu.cn/2022/1017/c1811a45093/pagem.htm)
+* [青藤云安全-攻防演练中常见的8种攻击方式及应对指南](https://www.qingteng.cn/think-tank/safety-study/62da497b59bbf700428a4334.html)
 
 ## LinuxCheck自检脚本功能陈列
 
@@ -111,6 +113,8 @@
 * [简书-【network】开启网卡的混杂模式](https://www.jianshu.com/p/42d88c0c47db)
 
 ## clamav 杀毒策略
+
+
 
 参考：
 
