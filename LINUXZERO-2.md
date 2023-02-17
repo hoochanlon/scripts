@@ -57,6 +57,8 @@ password requisite pam_pwquality.so try_first_pass local_users_only retry=3
 password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 ocredit=0  minlen=4
 ```
 
+具体参考：[learnku-Linux设定密码策略](https://learnku.com/articles/52174)
+
 ## 限定公司与家的IP
 
 ## fail2ban
