@@ -9,13 +9,11 @@
 参数说明：
 
 * -t 指定要创建的类型；-b 密钥长度；-f 指定文件名，名字随意。
+* "-i"是指定公钥文件上传到服务器。
 
 ```
-# 
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/remote_ssh
 ```
-
-"-i"是指定公钥文件上传到服务器。
 
 ```
 ssh-copy-id -i ~/.ssh/remote_ssh.pub user@server
