@@ -59,7 +59,6 @@ password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 
 
 具体参考：[learnku-Linux设定密码策略](https://learnku.com/articles/52174)
 
-## 限定公司与家的IP
 
 ## fail2ban
 
@@ -92,5 +91,25 @@ systemctl restart fail2ban
 ```
 
 日志查看 `cat /var/log/fail2ban.log`
+
+### config for home
+
+结合阿里云客服提供经验：在自己所在地，百度下“IP”查地址，限制在8-16台主机基本上够用的了。自身所处IP网段，由于运营商的不同，以及地区的不同，通常公司与家里公网IP差异是很大的。虽然公网IP是临时的，但一个在小范围的内，变动通常不大，也就基本只在最后A.B.C.D，D分段变动。
+
+`vi /etc/hosts.deny`
+
+```
+# 限制所有的ssh，除非从192.168.0.1/192.168.0.2 - 127上来。
+
+hosts.deny:in.sshd:ALL
+hosts.allow:in.sshd:192.168.0.1/255.255.255.254
+hosts.allow:in.sshd:192.168.0.2/255.255.255.254
+```
+
+`systemctl restart network` 
+
+配合[ME2在线工具-子网划分工具](http://www.metools.info/other/subnetmask160.html)子网划分工具，轻松解决。
+
+参考：[csdn-linux ip限制的两种设置方式](https://blog.csdn.net/sunsineq/article/details/119107500)
 
 
