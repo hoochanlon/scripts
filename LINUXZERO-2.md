@@ -45,6 +45,8 @@ PasswordAuthentication no # no 代表任何人远程访问都只能通过密钥�
 chmod 700 /home/xxx && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 ```
 
+[csdn-ssh_config和sshd_config配置文件](https://blog.csdn.net/mynumber1/article/details/123699660)，ssh_config和sshd_config都是ssh服务器的配置文件，二者区别在于，前者是针对客户端的配置文件，后者则是针对服务端的配置文件。
+
 ## 密码简化
 
 配置密码策略，修改密码得像4位数的验证码一样简单。vi /etc/pam.d/system-auth
