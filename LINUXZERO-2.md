@@ -6,15 +6,19 @@
 
 本机会将这一登录信息保存在`~/.ssh/known_hosts`文件当中，再次登录到远程服务器不用输入密码。
 
+参数说明：
+
+* -t 指定要创建的类型；-b 密钥长度；-f 指定文件名，名字随意。
+
 ```
-# 参数说明：-t 指定要创建的类型；-b 密钥长度；-f 指定文件名；id_rsa-remotessh 名字随意
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remotessh
+# 
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/remote_ssh
 ```
 
 "-i"是指定公钥文件上传到服务器。
 
 ```
-ssh-copy-id -i ~/.ssh/id_rsa.pub user@server
+ssh-copy-id -i ~/.ssh/remote_ssh.pub user@server
 ```
 
 从[腾讯云-Linux多台服务器共用密钥ssh自动登陆](https://cloud.tencent.com/developer/article/2036440)得知，一份公钥可登录多台远程主机。
