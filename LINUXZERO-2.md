@@ -14,12 +14,15 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remotessh
 "-i"是指定公钥文件上传到服务器。
 
 ```
-ssh-copy-id -i .ssh/id_rsa.pub user@server
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@server
 ```
 
-输入密码，至此客户端完成操作，下面是服务器端，即远程主机的配置。
+从[腾讯云-Linux多台服务器共用密钥ssh自动登陆](https://cloud.tencent.com/developer/article/2036440)得知，一份公钥可登录多台远程主机。
+
 
 ### 服务端
+
+配置服务端的ssh密钥验证策略，选择是混合模式、密码模式，还是限定密钥模式访问。
 
 编辑 /etc/ssh/sshd_config 文件，添加如下设置：
 
@@ -41,7 +44,6 @@ chmod 700 /home/xxx && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 ```
 
 ## 密码简化
-
 
 配置密码策略，修改密码得像4位数的验证码一样简单。vi /etc/pam.d/system-auth
 
@@ -86,4 +88,3 @@ systemctl restart fail2ban
 日志查看 `cat /var/log/fail2ban.log`
 
 
-***power by 老子他妈的就爱简单密码。***
