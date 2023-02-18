@@ -76,20 +76,22 @@ net.ipv4.icmp_echo_ignore_all=1
 
 启动防火墙 `systemctl enable firewalld && systemctl start firewalld`
 
-防火墙开启ICMP输入输出。
+#### 防火墙开启ICMP输入输出。
 
 ```
 iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
 ```
-防火墙ban掉对方ip
+#### 防火墙ban掉对方ip
+
+禁止192.168.128.137访问主机，如果要取消的话，将`--add`换成`--remove`就好
 
 ```
-## 禁止192.168.128.137访问主机，如果要取消的话，将`--add`换成`--remove`就好
 firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.128.137" drop'
+```
+参数：filter，本地数据限制；-s源地址，-d目的地址，-p协议，--dport端口，-j行为/REJECT拒绝/ACCEPT同意/DROP丢弃。
 
-## 细致到禁用对方主机具体访问端口的话，复制如下命令。
-## 参数：filter，本地数据限制；-s源地址，-d目的地址，-p协议，--dport端口，-j行为/REJECT拒绝/ACCEPT同意/DROP丢弃。 
+```
 firewall-cmd --direct  -add -rule ipv4 filter INPUT  1 -s  172.25.254.50  -p  tcp   -dport  22 -j  REJECT
 ```
 
