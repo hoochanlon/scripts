@@ -115,8 +115,12 @@ hosts.allow:in.sshd:192.168.0.2/255.255.255.254
 
 `systemctl restart network` 
 
+参考：
+
+* [gitee - /etc/hosts.deny不生效（版本移除，以及默认不支持问题）](https://gitee.com/openeuler/kernel/issues/I29Z76)
+* [try8-CentOS8网络配置教程（centos8，网卡重置命令变动）](https://try8.cn/article/10010)
+
 配合[ME2在线工具-子网划分工具](http://www.metools.info/other/subnetmask160.html)子网划分工具，轻松解决。
 
-参考：[csdn-linux ip限制的两种设置方式](https://blog.csdn.net/sunsineq/article/details/119107500)
 
 
