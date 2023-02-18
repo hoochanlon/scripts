@@ -82,12 +82,12 @@ net.ipv4.icmp_echo_ignore_all=1
 iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
 ```
-#### 放行自己IP，ban掉对方所有IP
+#### 仅放行自己IP示例
 
-```
-```
+加一条就好了，相当于是仅对这一个IP网段放行，别的就拒掉。
 
 ```·
+firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.0/24" port protocol="tcp" port="22" accept'
 ```
 
 #### 防火墙ban掉对方ip
@@ -104,5 +104,10 @@ firewall-cmd --direct  -add -rule ipv4 filter INPUT  1 -s  172.25.254.50  -p  tc
 ```
 
 
-参考：[博客园-Linux命令之firewall-cmd](https://www.cnblogs.com/diantong/p/9713915.html)、[csdn-Linux系统上的防火墙命令](https://blog.csdn.net/weixin_43780179/article/details/125046304)、[爱码网-linux下防火墙的管理工具firewall-cmd](https://www.likecs.com/show-203862572.html)。
+参考：
+
+* [博客园-Linux命令之firewall-cmd](https://www.cnblogs.com/diantong/p/9713915.html)
+* [chinaunix-Linux使用防火墙firewall-cmd限制ssh只允许从指定IP段或指定源IP访问](http://blog.chinaunix.net/uid-20329764-id-5845291.html)
+* [csdn-Linux系统上的防火墙命令](https://blog.csdn.net/weixin_43780179/article/details/125046304)
+* [爱码网-linux下防火墙的管理工具firewall-cmd](https://www.likecs.com/show-203862572.html)
 
