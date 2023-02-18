@@ -67,7 +67,7 @@ root执行sudo时不需要输入密码(sudoers文件中，有配置root ALL=(ALL
 
 二者任选，自己成为root，或加入wheel组。
 
-> 1. 
+1. [csdn-Linux系统中将普通用户权限提升至root权限](https://blog.csdn.net/weixin_45178128/article/details/103155720)
 
 
 ```
