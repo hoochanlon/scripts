@@ -101,15 +101,11 @@ systemctl restart fail2ban
 
 ### config for home
 
-
-
 自身所处IP网段，由于运营商的不同，以及地区的不同，通常公司与家里公网IP差异是很大的。虽然公网IP是临时的，但一个在小范围的内，通常变动不大。因为常常变动的话，一是要有足够的IP资源，二是运营商不断调配IP，也会极大增加维护人工时间与物力成本。更何况现在的家庭网络路由器都是公网IP一个IP共享给多个主机、移动终端上网，这也是少有变动。
 
 理解：[公网IP和内网IP有何区别？如何获得公网IP上网？ - ipshu的文章 - 知乎](https://zhuanlan.zhihu.com/p/558884673)
 
 hosts.deny，这种hosts等级的写入在CentOS8版本已废弃。用防火墙写规则吧。
-
-
 
 CentOS7/8
 
@@ -132,4 +128,38 @@ systemctl start NetworkManager
 配合[ME2在线工具-子网划分工具](http://www.metools.info/other/subnetmask160.html)子网划分工具，轻松解决。
 
 
+#### 防火墙
+
+***启动防火墙 `systemctl enable firewalld && systemctl start firewalld`***
+
+防火墙开启ICMP输入输出。
+
+```
+iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
+```
+
+***仅放行自己IP示例。加一条就好了，相当于是仅对这一个IP网段放行，别的就拒掉。***
+
+```·
+firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.0/24" port protocol="tcp" port="22" accept'
+```
+
+***防火墙ban掉对方ip 禁止192.168.128.137访问主机*** 如果要取消的话，将`--add`换成`--remove`就好。
+
+```
+firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.128.137" drop'
+```
+参数：filter，本地数据限制；-s源地址，-d目的地址，-p协议，--dport端口，-j行为/REJECT拒绝/ACCEPT同意/DROP丢弃。
+
+```
+firewall-cmd --direct  -add -rule ipv4 filter INPUT  1 -s  172.25.254.50  -p  tcp   -dport  22 -j  REJECT
+```
+
+参考：
+
+* [博客园-Linux命令之firewall-cmd](https://www.cnblogs.com/diantong/p/9713915.html)
+* [chinaunix-Linux使用防火墙firewall-cmd限制ssh只允许从指定IP段或指定源IP访问](http://blog.chinaunix.net/uid-20329764-id-5845291.html)
+* [csdn-Linux系统上的防火墙命令](https://blog.csdn.net/weixin_43780179/article/details/125046304)
+* [爱码网-linux下防火墙的管理工具firewall-cmd](https://www.likecs.com/show-203862572.html)
 
