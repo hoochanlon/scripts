@@ -70,6 +70,12 @@ root执行sudo时不需要输入密码(sudoers文件中，有配置root ALL=(ALL
 > 1. 
 
 
+```
+chmod u+w /etc/sudoers && echo "testuser       ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers \
+chmod u-w /etc/sudoers
+```
+
+
 > 2. 引用自 [csdn-Linux新增ssh登录用户并加入sudo组](https://blog.csdn.net/xiunai78/article/details/84578529)
 
 ```
