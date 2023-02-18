@@ -122,6 +122,7 @@ clamscan -r / -l /var/log/clamscan.log --remove
 * [betheme.net-centos7.6 yum安装clamav 进行病毒扫描查杀](https://betheme.net/news/txtlist_i98729v.html)
 * [cnblogs-Linux中定时任务](https://www.cnblogs.com/rxysg/p/15671784.html)
 * [csdn-Linux 定时任务详解](https://blog.csdn.net/yang_z_1/article/details/118072966)
+* [csdn-BASH脚本基础：环境变量PROMPT_COMMAND介绍](https://blog.csdn.net/liumiaocn/article/details/104113262)
 * [cnblogs-Linux Shell 中 > 和 >> 的异同点和应用场景](https://www.cnblogs.com/miracle-luna/p/11809725.html)
 
 ## 检查账户相关的后门
