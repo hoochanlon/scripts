@@ -58,7 +58,7 @@ clamscan -r / -l /var/log/clamscan.log --remove
 
 详请参考：
 
-* []()
+* [BASH脚本基础：环境变量PROMPT_COMMAND介绍](https://blog.csdn.net/liumiaocn/article/details/104113262)
 * [csdn-linux系统定时任务与延迟任务](https://blog.csdn.net/westos_yanzheng/article/details/126604664)
 * [csdn-云服务器Linux挖矿病毒杀毒软件clamscan安装](https://blog.csdn.net/m0_59069586/article/details/126956289)
 * [51cto-Linux下杀毒软件（ClamAV）安装及使用](https://blog.51cto.com/u_9691128/4293334)
