@@ -63,6 +63,9 @@ password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 
 
 ### 用户管理
 
+root执行sudo时不需要输入密码(sudoers文件中，有配置root ALL=(ALL) ALL这样一条规则，该文件必须使用"visudo"命令编辑)， 当用户执行sudo时，系统会主动寻找/etc/sudoers文件，判断该用户是否有执行sudo的权限。
+
+
 
 
 ## Love Ban IP
