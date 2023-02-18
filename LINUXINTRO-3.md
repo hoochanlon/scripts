@@ -49,7 +49,7 @@ clamscan -r /etc --max-dir-recursion=5 -l /var/log/clamav-scan.log
 clamscan -r / -l /var/log/clamscan.log --remove
 ```
 
-`crontab -e`设置定时任务，注意：定时任务通常都是后台静默运行，不会回显在终端。 
+`crontab -e`设置定时任务，注意：定时任务通常都是后台静默运行，不会回显在终端。 [LINUXZERO-0](./LINUXZERO-0)
 
 ```
 
