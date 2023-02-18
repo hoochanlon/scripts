@@ -103,15 +103,9 @@ systemctl restart fail2ban
 
 结合阿里云客服提供经验：在自己所在地，百度下“IP”查地址，限制在8-16台主机基本上够用的了。自身所处IP网段，由于运营商的不同，以及地区的不同，通常公司与家里公网IP差异是很大的。虽然公网IP是临时的，但一个在小范围的内，变动通常不大，也就基本只在最后A.B.C.D，D分段变动。
 
-`vi /etc/hosts.deny`
+hosts.deny，这种hosts等级的写入在CentOS8版本已废弃。用防火墙写规则吧。
 
-```
-# 限制所有的ssh，除非从192.168.0.1/192.168.0.2 - 127上来。
 
-hosts.deny:in.sshd:ALL
-hosts.allow:in.sshd:192.168.0.1/255.255.255.254
-hosts.allow:in.sshd:192.168.0.2/255.255.255.254
-```
 
 CentOS7/8
 
@@ -127,7 +121,7 @@ systemctl start NetworkManager
 
 * [gitee - /etc/hosts.deny不生效（版本移除，以及默认不支持问题）](https://gitee.com/openeuler/kernel/issues/I29Z76)
 * [try8-CentOS8网络配置教程（centos8，网卡重置命令变动）](https://try8.cn/article/10010)
-* [cikeblog-Linux下利用hosts.allow和hosts.deny限制IP登陆服务器](https://cikeblog.com/use-hosts-allow-and-hosts-deny-under-linux.html)
+* [csdn-CentOS8.5系统访问限制](https://blog.csdn.net/qq_41112887/article/details/121539810)
 
 配合[ME2在线工具-子网划分工具](http://www.metools.info/other/subnetmask160.html)子网划分工具，轻松解决。
 
