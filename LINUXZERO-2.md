@@ -127,6 +127,7 @@ systemctl start NetworkManager
 
 * [gitee - /etc/hosts.deny不生效（版本移除，以及默认不支持问题）](https://gitee.com/openeuler/kernel/issues/I29Z76)
 * [try8-CentOS8网络配置教程（centos8，网卡重置命令变动）](https://try8.cn/article/10010)
+* [cikeblog-Linux下利用hosts.allow和hosts.deny限制IP登陆服务器](https://cikeblog.com/use-hosts-allow-and-hosts-deny-under-linux.html)
 
 配合[ME2在线工具-子网划分工具](http://www.metools.info/other/subnetmask160.html)子网划分工具，轻松解决。
 
