@@ -47,17 +47,24 @@ chmod 700 /home/xxx && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 
 [csdn-ssh_config和sshd_config配置文件](https://blog.csdn.net/mynumber1/article/details/123699660)，ssh_config和sshd_config，前者是针对客户端的配置文件，后者则是针对服务端的配置文件。
 
-## 密码简化
+## 密码简化与用户管理
+
+### 密码简化
 
 配置密码策略，修改密码得像4位数的验证码一样简单。vi /etc/pam.d/system-auth
 
 ```
-# 密码验证三次，什么大小写特殊字符统统给我去掉
+# 新增自定义密码策略配置 密码验证三次 不限特殊字符、大小写、最低3位长度
 password requisite pam_pwquality.so try_first_pass local_users_only retry=3
 password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 ocredit=0  minlen=4
 ```
 
 具体参考：[learnku-Linux设定密码策略](https://learnku.com/articles/52174)
+
+### 用户管理
+
+
+
 
 
 ## fail2ban
