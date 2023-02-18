@@ -82,6 +82,14 @@ net.ipv4.icmp_echo_ignore_all=1
 iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
 ```
+#### 放行自己IP，ban掉对方所有IP
+
+```
+```
+
+```·
+```
+
 #### 防火墙ban掉对方ip
 
 禁止192.168.128.137访问主机，如果要取消的话，将`--add`换成`--remove`就好
@@ -94,6 +102,7 @@ firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192
 ```
 firewall-cmd --direct  -add -rule ipv4 filter INPUT  1 -s  172.25.254.50  -p  tcp   -dport  22 -j  REJECT
 ```
+
 
 参考：[博客园-Linux命令之firewall-cmd](https://www.cnblogs.com/diantong/p/9713915.html)、[csdn-Linux系统上的防火墙命令](https://blog.csdn.net/weixin_43780179/article/details/125046304)、[爱码网-linux下防火墙的管理工具firewall-cmd](https://www.likecs.com/show-203862572.html)。
 
