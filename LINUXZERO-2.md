@@ -113,7 +113,15 @@ hosts.allow:in.sshd:192.168.0.1/255.255.255.254
 hosts.allow:in.sshd:192.168.0.2/255.255.255.254
 ```
 
-`systemctl restart network` 
+CentOS7/8
+
+```
+systemctl restart network
+```
+
+```
+systemctl start NetworkManager
+```
 
 参考：
 
