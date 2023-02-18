@@ -74,12 +74,11 @@ net.ipv4.icmp_echo_ignore_all=1
 
 ### 防火墙
 
-防火墙开启ICMP。
+启动防火墙 `systemctl enable firewalld && systemctl start firewalld`
+
+防火墙开启ICMP输入输出。
 
 ```
-# 启动防火墙
-systemctl start firewalld
-# icmp，输入输出放开。
 iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
 ```
