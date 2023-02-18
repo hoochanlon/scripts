@@ -28,6 +28,14 @@ Mac从Linux上下载文件
 scp root@101.xx.xx.xxx:/cake1.PNG /Users/chanlonhoo/Downloads
 ```
 
+bash: scp: 未找到命令 lost connection；在Linux上安装便可解决。
+
+```
+yum install openssh-clients*
+```
+
+参考：[csdn-bash: scp: 未找到命令 lost connection](https://blog.csdn.net/weixin_44825767/article/details/112209810)
+
 ## 下载ClamAV和更新病毒库
 
 给自己来上安慰剂...
