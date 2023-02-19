@@ -2,6 +2,11 @@
 
 [![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
 
+一键调用windows版本切换与Windows/Office激活
+
+```
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start Switch.bat&&powershell -command "irm https://massgrave.dev/get|iex"
+```
 
 ---
 一开始只是图方便，放图片做图床的。偶尔随手上传自己的小脚本，折腾电脑的文本，结果却成了个折腾电脑的便利仓...对于我来说，博客更侧重日常生活，再专门的平台发稿就行了。
