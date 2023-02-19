@@ -16,6 +16,11 @@ CMD一键安装winrar注册激活
 powershell -command Invoke-WebRequest -Uri "https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/winrar_down_reg.bat" -OutFile "C:/Users/${env:UserName}/Downloads/winrar_down_reg.bat"&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
 ```
 
+CMD一键生成Emeditor序列号
+
+```
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/emeditor_random_keygen.ps1&&powershell -c emeditor_random_keygen.ps1
+```
 
 ---
 一开始只是图方便，放图片做图床的。偶尔随手上传自己的小脚本，折腾电脑的文本，结果却成了个折腾电脑的便利仓...对于我来说，博客更侧重日常生活，再专门的平台发稿就行了。
