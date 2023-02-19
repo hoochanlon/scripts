@@ -1,4 +1,4 @@
-echo -e "置顶：配置SSH服务端登录、口令验证、长会话响应心跳连接、IP范围限自家用。\n"
+echo -e "置顶：执行脚本需要使用 sudo bash 指令，配置SSH服务端登录、口令验证、长会话响应心跳连接、IP范围限自家用。\n"
 
 
 echo -e "----------配置服务端：Linux SSH，启动---------------\n"
@@ -50,8 +50,13 @@ password\trequisite\tpam_pwquality.so\tauthtok_type= minlen=4
 password\trequisite\tpam_pwquality.so dcredit=0 ocredit=0 lcredit=0 ucredit=0
 " >>/etc/pam.d/system-auth
 
-echo -e "\n简化用户密码规则，任意大小写/符号/纯数字，并可设4位长度\n"
+echo -e "简化用户密码规则，任意大小写/符号/纯数字，并可设4位长度\n"
 echo -e "服务器端已配置完成。\n"
+
+echo -e "\n-----服务端详情----\n"
+echo -e "查看Linux SSH各项配置：vi /etc/ssh/sshd_config \n"
+echo -e "查看Linux 密码策略各项配置：vi /etc/pam.d/system-auth \n"
+echo -e "本机将文件上传到Linux：scp ~/Desktop/simple_ssh.sh root@101.xxx.xxx.xxx:${HOMEPATH} \n"
 
 echo -e "---开始配置Windows/Mac客户端---------\n"
 echo -e "第二步，生成Windows/Mac主机上的SSH共钥。 \n"
@@ -62,11 +67,6 @@ echo -e "至此客户端配置完成，进阶定义，请使用：remote ssh for
 echo -e "如遇“Host key verification failed”，复制以下指令可解决：\n"
 echo "rm -rf ~/.ssh/known_hosts && rm -rf ~/.ssh/known_hosts.old"
 
-echo -e "\n-----服务端详情----\n"
-echo -e "查看Linux SSH各项配置：vi /etc/ssh/sshd_config \n"
-echo -e "查看Linux 密码策略各项配置：vi /etc/pam.d/system-auth \n"
-echo -e "本机将文件上传到Linux：scp ~/Desktop/simple_ssh.sh root@101.xxx.xxx.xxx:${HOMEPATH} \n"
-echo -e "sudo bash ./.simple_ssh.sh \n"
 # 删除自身
 rm -rf $0
 
