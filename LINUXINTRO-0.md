@@ -41,7 +41,7 @@ password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 
 ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519-remotessh
 ```
 
-自定义名称需额外配置Windows/Mac上的config文件。
+自定义名称需额外配置Windows/Mac上的 ~/.ssh/config 文件。
 
 ```
 Host 101.xxx.xxx.xxx
