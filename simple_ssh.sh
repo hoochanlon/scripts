@@ -24,7 +24,7 @@ PermitRootLogin yes # 是否允许Root登录
 PasswordAuthentication no # 设置是否使用口令验证
 ClientAliveInterval 30 # 客户端每隔多少秒向服务发送一个心跳数据，类似web响应。
 ClientAliveCountMax 86400  # 客户端多少秒没有相应，服务器自动断掉连接 
-# AllowUsers *@$get_my_ip *@127.0.0.1 # 注意再额外加上代理的公网IP，切代理会中断SSH
+AllowUsers *@$get_my_ip *@127.0.0.1 # 注意再额外加上代理的公网IP，切代理会中断SSH
 " \
 >>/etc/ssh/sshd_config
 
@@ -33,7 +33,6 @@ chmod 700 $HOME && chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys >/dev/null 2>&1
 systemctl restart sshd.service
 
-echo -e "\nSSH服务端密钥、密码登录、心跳响应，以及限制IP范围，已设置完成"
 
 
 #---------------账户密码简化要求-----------------------
@@ -50,27 +49,27 @@ password\trequisite\tpam_pwquality.so\tauthtok_type= minlen=4
 password\trequisite\tpam_pwquality.so dcredit=0 ocredit=0 lcredit=0 ucredit=0
 " >>/etc/pam.d/system-auth
 
-echo -e "简化用户密码规则，任意大小写/符号/纯数字，并可设4位长度\n"
-echo -e "服务器端已配置完成。\n"
+echo -e "\nSSH服务端密钥、登录策略、心跳响应，以及限制IP范围"
+echo -e "简化用户密码规则：任意大小写/符号/纯数字，并可设4位长度"
+echo -e "SSH服务端（Linux）所有设置均已完成。\n"
+echo -e "关于本次修改的服务端配置：\n"
+echo -e "SSH各项配置：vi /etc/ssh/sshd_config"
+echo -e "密码策略各项配置：vi /etc/pam.d/system-auth \n"
 
-echo -e "\n-----服务端详情----\n"
-echo -e "查看Linux SSH各项配置：vi /etc/ssh/sshd_config \n"
-echo -e "查看Linux 密码策略各项配置：vi /etc/pam.d/system-auth \n"
-echo -e "本机将文件上传到Linux：scp ~/Desktop/simple_ssh.sh root@101.xxx.xxx.xxx:${HOMEPATH} \n"
-
-echo -e "---开始配置Windows/Mac客户端---------\n"
-echo -e "第二步，生成Windows/Mac主机上的SSH共钥。 \n"
-echo -e 'ssh-keygen -t ed25519 -C "your@email.com" \n'
-echo -e "第三步，复制公钥到远程: \n"
-echo -e "ssh-copy-id -i ~/.ssh/id_ed25519.pub user@server \n"
-echo -e "至此客户端配置完成，进阶定义，请使用：remote ssh for vs code。\n"
+echo -e "---开始配置Windows/Mac客户端。进阶工具：remote ssh for vscode。---------\n"
+echo -e '第一步，生成Windows/Mac主机上的SSH共钥：ssh-keygen -t ed25519 -C "your@email.com" \n'
+echo -e "第二步，复制公钥到远程: ssh-copy-id -i ~/.ssh/id_ed25519.pub user@server \n"
+echo -e "至此客户端配置完成。\n"
+echo -e "------其他答疑------\n"
 echo -e "如遇“Host key verification failed”，复制以下指令可解决：\n"
-echo "rm -rf ~/.ssh/known_hosts && rm -rf ~/.ssh/known_hosts.old"
+echo -e "rm -rf ~/.ssh/known_hosts && rm -rf ~/.ssh/known_hosts.old\n"
+echo -e "免密登录成功后，sshd_config中可注释掉AllowUsers配置的IP白名单了，因为仅限你一台主机认证许可。"
+echo -e "你也可以安装fail2ban，或修改本代码，自定义IP活动范围，各省地区及运营商网段参考：http://ips.chacuo.net/view/s_GD \n"
 
 # 删除自身
 rm -rf $0
 
-
+# echo -e '本机将文件上传到Linux：scp ~/Desktop/simple_ssh.sh root@101.xxx.xxx.xxx:${HOMEPATH} \n'
 # 限制IP活动范围的五条说明
 
 # 1. 虽然公网IP是临时的，但一个在小范围的内，通常变动不大。
