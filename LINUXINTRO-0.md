@@ -38,13 +38,16 @@ password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 
 
 ```
 # 参数说明：-t 指定要创建的类型；-b 密钥长度；-f 指定文件名；id_rsa-remotessh 名字随意
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remotessh （旧机器适用）
-```
-
-2021及以后新版 `ed25519 -C "your@email"` 可加可不加
-
-```
 ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519-remotessh
+```
+
+自定义名称需额外配置Windows/Mac上的config文件。
+
+```
+Host 101.xxx.xxx.xxx
+  HostName 101.xxx.xxx.xxx
+  User root
+  IdentityFile ~/.ssh/ed25519-remotessh
 ```
 
 参考：[51cto-github更新sshkey](https://blog.51cto.com/u_15726470/5576074)
