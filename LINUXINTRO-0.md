@@ -38,13 +38,21 @@ password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 
 
 ```
 # 参数说明：-t 指定要创建的类型；-b 密钥长度；-f 指定文件名；id_rsa-remotessh 名字随意
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remotessh
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remotessh （旧机器适用）
 ```
+
+2021及以后新版 `ed25519 -C "your@email"` 可加可不加
+
+```
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519-remotessh
+```
+
+参考：[51cto-github更新sshkey](https://blog.51cto.com/u_15726470/5576074)
 
 "-i"是指定公钥文件上传到服务器。
 
 ```
-ssh-copy-id -i .ssh/id_rsa.pub user@server
+ssh-copy-id -i .ssh/id_ed25519.pub user@server
 ```
 
 输入密码，至此客户端完成操作，下面是服务器端，即远程主机的配置。
