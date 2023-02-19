@@ -40,10 +40,11 @@ curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple
 
 脚本代码及病毒分析文章，仅供学习与交流使用，切勿做违法用途。
 
-![ ](https://raw.githubusercontent.com/hoochanlon/hoochanlon/master/assets/github-contribution-grid-snake.svg)
 
 <!--
 [![telegram](https://img.shields.io/badge/telegram-:me-blue.svg?longCache=true&style=flat-square)](https://t.me/test) 
+
+![ ](https://raw.githubusercontent.com/hoochanlon/hoochanlon/master/assets/github-contribution-grid-snake.svg)
 -->
 
 ---
