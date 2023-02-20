@@ -18,7 +18,6 @@ get_my_ip_port=$(netstat -n|grep -i :22|awk '{print $5}'|sed -n '1p')
 # 编辑、修改配置权限、重启服务生效
 echo -e \
 "
-Port 22
 PubkeyAuthentication yes # 是否允许Public Key
 PermitRootLogin yes # 是否允许Root登录
 PasswordAuthentication no # 设置是否使用口令验证
