@@ -34,6 +34,12 @@ Powershell从XchangePDF Editor下载安装到生成许可证
 curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
 ```
 
+Linux 一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。
+
+```
+sudo bash -c $(curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/d-shell/main/simple_ssh.sh)
+```
+
 ---
 
 * CHAETS 快速复制粘贴指令的
