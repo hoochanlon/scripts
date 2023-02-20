@@ -23,7 +23,7 @@ PermitRootLogin yes # 是否允许Root登录
 PasswordAuthentication no # 设置是否使用口令验证
 ClientAliveInterval 30 # 客户端每隔多少秒向服务发送一个心跳数据，类似web响应。
 ClientAliveCountMax 86400  # 客户端多少秒没有相应，服务器自动断掉连接 
-AllowUsers *@$get_my_ip *@127.0.0.1 # 注意再额外加上代理的公网IP，切代理会中断SSH
+AllowUsers *@$get_my_ip *@127.0.0.1 # 刚登录上就立马切代理容易中断SSH连接。
 " \
 >>/etc/ssh/sshd_config
 
