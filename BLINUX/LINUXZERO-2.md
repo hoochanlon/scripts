@@ -104,18 +104,21 @@ echo auth       sufficient pam_wheel.so trust use_uid >> /etc/pam.d/su
 yum install -y fail2ban && systemctl enable fail2ban.service
 ```
 
-配置 `vi /etc/fail2ban/jail.conf`
+配置 `vi /etc/fail2ban/jail.local`
 
 ```
-# 注意时区问题：systemctl restart rsyslog
-# 注意端口号：我们修改ssh端口后，fail2ban也需要修改端口号
-action = iptables[name=SSH,port=ssh,protocol=tcp] 
-enabled = true
-filter = sshd
-logpath = /var/log/secure   #日志位置
-bantime =  800              #封锁时间长达一月以上（24*30）
-maxretry = 2                #失败2次即封禁
-findtime = 43200            #12小时之内(60*60*12)
+[DEFAULT]
+ignoreip=127.0.0.1＃用于指定哪些地址(IP/域名等)可以忽路fai12ban防御，空格分隔
+findtime=60＃检测扫描行为的时间窗口（单位：秒），和maxretry结合使用，60秒内失败2次即封禁
+maxretry=2＃检测扫描行为的次数，和findtime结合使用，60秒内失败2次即封禁
+bantime= -1＃封禁该ip的时间（单位：秒），-1为永久封禁
+banaction=iptables-allports#封禁该ip的端口
+
+[sshd]
+enabled=true#启用ssh扫描判断器
+port=22＃ssh的端口，如更换过ssh的默认端口请更改成相应端口
+filter=sshd#启用ssh扫描判断器
+logpath=/var/log/auth.1og#系统行为记录日志，一般无需改动
 # 可以定制化发送邮件
 sendmail-whois[name=SSH, dest=your@email.com, sender=fail2ban@example.com,sendername="Fail2Ban"]    
 ```
@@ -127,6 +130,8 @@ systemctl restart fail2ban
 ```
 
 日志查看 `cat /var/log/fail2ban.log`
+
+参考：[北京大学-fail2ban安装](https://its.pku.edu.cn/faq_fail2ban.jsp)
 
 ### config for home
 
