@@ -108,17 +108,17 @@ yum install -y fail2ban && systemctl enable fail2ban.service
 
 ```
 [DEFAULT]
-ignoreip=127.0.0.1＃用于指定哪些地址(IP/域名等)可以忽路fai12ban防御，空格分隔
-findtime=60＃检测扫描行为的时间窗口（单位：秒），和maxretry结合使用，60秒内失败2次即封禁
-maxretry=2＃检测扫描行为的次数，和findtime结合使用，60秒内失败2次即封禁
-bantime= -1＃封禁该ip的时间（单位：秒），-1为永久封禁
-banaction=iptables-allports#封禁该ip的端口
+ignoreip=127.0.0.1 ＃用于指定哪些地址(IP/域名等)可以忽路fai12ban防御，空格分隔
+findtime=60 ＃检测扫描行为的时间窗口（单位：秒），和maxretry结合使用，60秒内失败2次即封禁
+maxretry=2 ＃检测扫描行为的次数，和findtime结合使用，60秒内失败2次即封禁
+bantime= -1 ＃封禁该ip的时间（单位：秒），-1为永久封禁
+banaction=iptables-allports #封禁该ip的端口
 
 [sshd]
-enabled=true#启用ssh扫描判断器
-port=22＃ssh的端口，如更换过ssh的默认端口请更改成相应端口
-filter=sshd#启用ssh扫描判断器
-logpath=/var/log/auth.1og#系统行为记录日志，一般无需改动
+enabled=true #启用ssh扫描判断器
+port=22 ＃ssh的端口，如更换过ssh的默认端口请更改成相应端口
+filter=sshd #启用ssh扫描判断器
+logpath=/var/log/auth.log #系统行为记录日志，一般无需改动
 # 可以定制化发送邮件
 sendmail-whois[name=SSH, dest=your@email.com, sender=fail2ban@example.com,sendername="Fail2Ban"]    
 ```
