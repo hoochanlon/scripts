@@ -37,7 +37,7 @@ curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple
 阿里云Linux，一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。
 
 ```
-sudo bash -c $(curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/d-shell/main/simple_ssh.sh)
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ssh.sh)"
 ```
 
 ---
