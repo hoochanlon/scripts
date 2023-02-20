@@ -42,10 +42,10 @@ findtime = 3600              #1小时之内(60*60)
 sendmail-whois[name=SSH, dest=your@email.com, sender=fail2ban@example.com,sendername="Fail2Ban"]    
 ```
 
-启动服务 `systemctl start fail2ban.service`，fail2ban开始生效。
+启动服务，fail2ban开始生效。
 
 ```
-systemctl restart fail2ban
+systemctl enable fail2ban.service && systemctl restart fail2ban
 ```
 
 日志查看 `cat /var/log/fail2ban.log`
