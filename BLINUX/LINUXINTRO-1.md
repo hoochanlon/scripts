@@ -35,7 +35,7 @@ action = iptables[name=SSH,port=ssh,protocol=tcp]
 enabled = true
 filter = sshd
 logpath = /var/log/secure   #日志位置
-bantime =  800              #封锁时间长达一月以上（24*30）
+bantime =  2200              #封锁时间长达三月以上（24*30*3）
 maxretry = 2                #失败2次即封禁
 findtime = 3600              #1小时之内(60*60)
 # 可以定制化发送邮件
