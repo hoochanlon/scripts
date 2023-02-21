@@ -15,7 +15,6 @@ mkdir -p /etc/bak/fail2ban_conf/ && cp -p /etc/fail2ban/jail.conf /etc/bak/fail2
 # logpath  = /var/log/secure 系统行为记录日志，看发行版系统。
 
 echo -e "安装及配置fail2ban: 3次输入错误密码，封禁IP永久。\n"
-
 echo -e \
 "
 [DEFAULT]
@@ -29,12 +28,14 @@ enabled = true
 filter = sshd
 action = iptables[name=SSH, port=22, protocol=tcp] 
 logpath  = /var/log/secure
+
 " >> /etc/fail2ban/jail.local
 
 
 echo -e "加入守护进程，已设定自启，fail2ban现已启动 \n"
 systemctl enable fail2ban.service && systemctl start fail2ban.service
 echo -e "查看ban IP后续可使用： fail2ban-client status ssh-iptables"
+echo -e "以及解禁ban IP： fail2ban-client set ssh-iptables unbanip xxx.xxx.xxx.xxx \n"
 
 rm -rf $0
 # 报错调整参考：
