@@ -22,7 +22,7 @@ enabled = true
 filter = sshd
 action = iptables[name=SSH, port=22, protocol=tcp] # action - 指定被命中 IP 主机地址禁止其访问的行为
 logpath  = /var/log/secure #系统行为记录日志，一般无需改动
-" >> /etc/fail2ban/jail.local # 配置jail.local比jail.conf安全。
+" >> /etc/fail2ban/jail.local # 配置jail.local比jail.conf容错率高。
 
 
 echo -e "加入守护进程，已设定自启，fail2ban现已启动 \n"
