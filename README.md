@@ -2,7 +2,7 @@
 
 [![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
 
-一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...脚本代码及病毒分析文章，仅供学习与交流使用，切勿做违法用途。所有脚本与指令均需用管理员身份运行。
+一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...所有脚本与指令均需用管理员身份运行，脚本代码及病毒分析文章，也仅供学习与交流使用，切勿做违法用途。
 
 ### 一键搞定SSH登录、用户密码策略配置、Ban IP配置
 
