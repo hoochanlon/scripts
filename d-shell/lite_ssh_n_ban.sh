@@ -62,7 +62,7 @@ mkdir -p /etc/bak/fail2ban_conf/ && cp -p /etc/fail2ban/jail.conf /etc/bak/fail2
 echo -e \
 "
 [DEFAULT]
-ignoreip = 127.0.0.1 
+ignoreip = 127.0.0.1 $get_my_ip
 maxretry = 3 
 findtime  = 10 
 bantime = -1
