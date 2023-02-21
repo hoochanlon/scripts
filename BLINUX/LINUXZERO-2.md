@@ -63,12 +63,28 @@ password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 
 
 ### 用户管理
 
+腾讯云自建用户不能SSH登录，参考[码农家园-linux新建用户无法登录ssh](https://www.codenong.com/cs106546599/)。
+
+`vi /etc/sshd_config`
+
+```
+AllowGroups root username
+```
+
+重启服务
+
+```
+/etc/init.d/ssh restart
+```
+
+或在`/etc/passwd`文件中，修改username的组标识号。
+
+
 root执行sudo时不需要输入密码(sudoers文件中，有配置root ALL=(ALL) ALL这样一条规则，该文件必须使用"visudo"命令编辑)， 当用户执行sudo时，系统会主动寻找/etc/sudoers文件，判断该用户是否有执行sudo的权限。
 
 二者任选，自己成为root，或加入wheel组。
 
 1. [csdn-Linux系统中将普通用户权限提升至root权限](https://blog.csdn.net/weixin_45178128/article/details/103155720)
-
 
 ```
 chmod u+w /etc/sudoers && echo "testuser       ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers \
