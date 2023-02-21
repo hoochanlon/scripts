@@ -58,23 +58,20 @@ yum -y install git python3
 echo -e "安装及配置fail2ban: 3次输入错误密码，封禁IP永久。\n"
 # 备份原始文件
 mkdir -p /etc/bak/fail2ban_conf/ && cp -p /etc/fail2ban/jail.conf /etc/bak/fail2ban_conf/
-# 看来得做个定义输出，插入替换式使用。
+
 echo -e \
 "
 [DEFAULT]
-ignoreip = 127.0.0.1 ＃用于指定哪些地址(IP/域名等)可以忽路fai12ban防御，空格分隔
-maxretry = 3   #检测扫描行为的次数，和findtime结合使用，30秒内失败3次即封禁
-findtime  = 10 #在该时间段内超过尝试次数会被ban掉
-bantime = -1  #屏蔽时间，默认是秒，-1为永久封禁
-
-# “ssh-iptables”为模块配置名称，命令用法 fail2ban-client status + 模块名
-# 如：fail2ban-client status  ssh-iptables
+ignoreip = 127.0.0.1 
+maxretry = 3 
+findtime  = 10 
+bantime = -1
 
 [ssh-iptables] 
 enabled = true
 filter = sshd
-action = iptables[name=SSH, port=22, protocol=tcp] # action - 指定被命中 IP 主机地址禁止其访问的行为
-logpath  = /var/log/secure #系统行为记录日志，一般无需改动
+action = iptables[name=SSH, port=22, protocol=tcp] 
+logpath  = /var/log/secure
 " >> /etc/fail2ban/jail.local
 
 
