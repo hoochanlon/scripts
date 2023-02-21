@@ -35,7 +35,7 @@ logpath  = /var/log/secure
 echo -e "加入守护进程，已设定自启，fail2ban现已启动 \n"
 systemctl enable fail2ban.service && systemctl start fail2ban.service
 echo -e "查看ban IP后续可使用： fail2ban-client status ssh-iptables"
-echo -e "一集解禁ban IP： fail2ban-client set ssh-iptables unbanip xxx.xxx.xxx.xxx"
+echo -e "以及解禁ban IP： fail2ban-client set ssh-iptables unbanip xxx.xxx.xxx.xxx"
 
 rm -rf $0
 # 报错调整参考：
