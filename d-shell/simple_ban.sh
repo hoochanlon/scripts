@@ -16,7 +16,7 @@ get_my_ip=$(netstat -n|grep -i :22|awk '{print $5}'|cut -d":" -f1|sed -n '1p')
 # action - 指定被命中 IP 主机地址禁止其访问的行为
 # logpath  = /var/log/secure 系统行为记录日志，看发行版系统。
 
-echo -e "安装及配置fail2ban: 3次输入错误密码，封禁IP永久。\n"
+echo -e "安装及配置fail2ban: 除自己IP（$get_my_ip）不限外；其他IP访问，3次密码错误，直接封永久。\n"
 echo -e \
 "
 [DEFAULT]
