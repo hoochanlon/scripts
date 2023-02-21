@@ -22,7 +22,7 @@ ClientAliveInterval 30 # 客户端每隔多少秒向服务发送一个心跳数�
 ClientAliveCountMax 86400  # 客户端多少秒没有相应，服务器自动断掉连接 
 # AllowUsers *@$get_my_ip *@127.0.0.1 # 刚登录上就立马切代理容易中断SSH连接。
 " \
->>/etc/ssh/sshd_config
+> /etc/ssh/sshd_config
 
 # 该授权的授权，>/dev/null 2>&1 屏蔽报错，有不明白的查找注释的参考资料。
 chmod 700 $HOME && chmod 700 ~/.ssh 
