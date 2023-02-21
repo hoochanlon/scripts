@@ -29,7 +29,7 @@ filter = sshd
 action = iptables[name=SSH, port=22, protocol=tcp] 
 logpath  = /var/log/secure
 
-" >> /etc/fail2ban/jail.local
+" > /etc/fail2ban/jail.local
 
 
 echo -e "加入守护进程，已设定自启，fail2ban现已启动 \n"
