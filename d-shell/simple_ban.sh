@@ -35,11 +35,12 @@ logpath  = /var/log/secure
 echo -e "加入守护进程，已设定自启，fail2ban现已启动 \n"
 systemctl enable fail2ban.service && systemctl start fail2ban.service
 echo -e "查看ban IP后续可使用： fail2ban-client status ssh-iptables"
-echo -e "以及解禁ban IP： fail2ban-client set ssh-iptables unbanip xxx.xxx.xxx.xxx \n"
+echo -e "一集解禁ban IP： fail2ban-client set ssh-iptables unbanip xxx.xxx.xxx.xxx"
 
 rm -rf $0
 # 报错调整参考：
 # [stackoverflow-cant-enable-fail2ban-jail-sshd](https://stackoverflow.com/questions/42320994/cant-enable-fail2ban-jail-sshd)
+# ["the jail "ssh_iptables' does not exist" and "View fail2ban.log for errors"](https://github.com/fail2ban/fail2ban/issues/3463)
 # [fail2ban/issues/3462](https://github.com/fail2ban/fail2ban/issues/3462)
 # [learnku-如何使用 fail2ban 来防范 SSH 暴力破解？](https://learnku.com/server/t/36233)
 # [豆瓣-CentOS7 - 安装配置Fail2ban教程](https://www.douban.com/note/626688457/?_i=6892452FeAKN2V)
