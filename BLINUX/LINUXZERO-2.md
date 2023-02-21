@@ -1,6 +1,6 @@
 # 登录密码及授权密钥简配，限制与封禁IP，并锁Root
 
-## SSH密钥
+## SSH密钥与密码策略简化
 
 ### 客户端
 
@@ -47,8 +47,6 @@ chmod 700 /home/xxx && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 
 [csdn-ssh_config和sshd_config配置文件](https://blog.csdn.net/mynumber1/article/details/123699660)，ssh_config和sshd_config，前者是针对客户端的配置文件，后者则是针对服务端的配置文件。
 
-## 密码简化与用户管理
-
 ### 密码简化
 
 配置密码策略，修改密码得像4位数的验证码一样简单。vi /etc/pam.d/system-auth
@@ -58,6 +56,10 @@ chmod 700 /home/xxx && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 password requisite pam_pwquality.so try_first_pass local_users_only retry=3
 password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 ocredit=0  minlen=4
 ```
+
+
+## 用户管理
+
 
 具体参考：[learnku-Linux设定密码策略](https://learnku.com/articles/52174)
 
@@ -108,7 +110,17 @@ echo auth       required   pam_wheel.so group=wheel >> /etc/pam.d/su
 echo auth       sufficient pam_wheel.so trust use_uid >> /etc/pam.d/su
 ```
 
-其他参考：[cnblogs-linux下查看所有用户及所有用户组](https://www.cnblogs.com/pengyunjing/p/8543026.html)
+其他参考：[cnblogs-linux下查看所有用户及所有用户组](https://www.cnblogs.com/pengyunjing/p/8543026.html)、[csdn-Linux用户和组管理](https://blog.csdn.net/weixin_43770382/article/details/112755626)
+
+### 特权提升方式与密码破解
+
+#### 特权提升
+
+参考：[详细|Linux提权总结](https://blog.csdn.net/st3pby/article/details/127718846)、[腾讯新闻-Linux特权提升技术合集](https://view.inews.qq.com/k/20211015A001PB00?web_channel=wap&openApp=false)
+
+#### 密码破解
+
+[cnblogs-【THM】John The Ripper(hash破解工具)-学习](https://www.cnblogs.com/Hekeats-L/archive/2022/09/30/16745318.html)
 
 ## Ban IP的三种方式
 
