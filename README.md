@@ -4,7 +4,28 @@
 
 脚本代码及病毒分析文章，仅供学习与交流使用，切勿做违法用途。
 
----
+## 一键搞定SSH登录、用户密码策略配置、Ban IP配置
+
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_ssh_n_ban.sh)"
+```
+
+* <details><summary>SSH单项、fail2ban单项 click me! </summary>
+
+一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ssh.sh)"
+```
+
+一键fail2ban从下载到安装及生成配置与启动服务。
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ban.sh)"
+```
+
+</details>
 
 终端建议使用管理员身份运行。
 
@@ -30,12 +51,6 @@ Powershell从XchangePDF Editor下载安装到生成许可证
 
 ```
 curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
-```
-
-阿里云Linux，一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。
-
-```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ssh.sh)"
 ```
 
 ---
