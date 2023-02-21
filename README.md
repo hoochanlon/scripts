@@ -2,7 +2,7 @@
 
 [![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
 
-脚本代码及病毒分析文章，仅供学习与交流使用，切勿做违法用途。所有脚本与指令均需用管理员身份运行。
+一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...脚本代码及病毒分析文章，仅供学习与交流使用，切勿做违法用途。所有脚本与指令均需用管理员身份运行。
 
 ### 一键搞定SSH登录、用户密码策略配置、Ban IP配置
 
@@ -58,7 +58,6 @@ curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple
 
 对于我来说，博客更侧重日常生活，再专门的平台发稿就行了。现在想来那些在xx之家、xx论坛投稿的，也是聪明人。一边专修技能，一边注重生活，真是两不误。
 
-一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...
 
 <!--
 [![telegram](https://img.shields.io/badge/telegram-:me-blue.svg?longCache=true&style=flat-square)](https://t.me/test) 
