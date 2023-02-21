@@ -54,32 +54,40 @@ echo -e "安装fail2ban以及各项依赖"
 yum install epel-release -y && yum update -y
 yum install fail2ban-firewalld fail2ban-systemd -y 
 yum -y install git python3
-echo -e "配置fail2ban: 两次输入错误密码，除自己IP外，封禁IP永久。\n"
+
+echo -e "安装及配置fail2ban: 3次输入错误密码，封禁IP永久。\n"
+# 备份原始文件
+mkdir -p /etc/bak/fail2ban_conf/ && cp -p /etc/fail2ban/jail.conf /etc/bak/fail2ban_conf/
+# 看来得做个定义输出，插入替换式使用。
 echo -e \
 "
 [DEFAULT]
-ignoreip=127.0.0.1 $get_my_ip ＃用于指定哪些地址(IP/域名等)可以忽路fai12ban防御，空格分隔
-findtime=30 ＃检测扫描行为的时间窗口（单位：秒），和maxretry结合使用，30秒内失败2次即封禁
-maxretry=2 ＃检测扫描行为的次数，和findtime结合使用，30秒内失败2次即封禁
-bantime= -1 ＃封禁该ip的时间（单位：秒），-1为永久封禁
-banaction=iptables-allports #封禁该ip的端口
+ignoreip = 127.0.0.1 ＃用于指定哪些地址(IP/域名等)可以忽路fai12ban防御，空格分隔
+maxretry = 3   #检测扫描行为的次数，和findtime结合使用，30秒内失败3次即封禁
+findtime  = 10 #在该时间段内超过尝试次数会被ban掉
+bantime = -1  #屏蔽时间，默认是秒，-1为永久封禁
 
-[sshd]
-enabled=true #启用ssh扫描判断器
-port=22 ＃ssh的端口，如更换过ssh的默认端口请更改成相应端口
-filter=sshd #启用ssh扫描判断器
-logpath=/var/log/auth.log #系统行为记录日志，一般无需改动
+# “ssh-iptables”为模块配置名称，命令用法 fail2ban-client status + 模块名
+# 如：fail2ban-client status  ssh-iptables
+
+[ssh-iptables] 
+enabled = true
+filter = sshd
+action = iptables[name=SSH, port=22, protocol=tcp] # action - 指定被命中 IP 主机地址禁止其访问的行为
+logpath  = /var/log/secure #系统行为记录日志，一般无需改动
 " >> /etc/fail2ban/jail.local
 
-echo -e "加入守护进程，已设定自启，fail2ban现已启动"
+
+echo -e "加入守护进程，已设定自启，fail2ban现已启动 \n"
 systemctl enable fail2ban.service && systemctl start fail2ban.service
+
 
 #************所有设置完成，开始啰嗦的ECHO*********************
 
 echo -e "****点对点配置项简说*****"
-echo -e "查看ban IP后续可使用：cat /var/log/fail2ban.log"
 echo -e "服务端SSH各项配置：vi /etc/ssh/sshd_config"
-echo -e "服务端密码策略各项配置：vi /etc/pam.d/system-auth \n"
+echo -e "服务端密码策略各项配置：vi /etc/pam.d/system-auth"
+echo -e "查看ban IP后续可使用：fail2ban-client status ssh-iptables \n"
 
 echo -e '客户端生成密钥: ssh-keygen -t ed25519 -C "your@email.com"'
 echo -e "复制公钥到服务端: ssh-copy-id -i ~/.ssh/id_ed25519.pub user@server"
