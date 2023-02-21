@@ -55,7 +55,7 @@ yum install epel-release -y && yum update -y
 yum install fail2ban-firewalld fail2ban-systemd -y 
 yum -y install git python3
 
-echo -e "安装及配置fail2ban: 3次输入错误密码，封禁IP永久。\n"
+echo -e "安装及配置fail2ban: 除自己IP（$get_my_ip）不限外；其他IP访问，3次密码错误，直接封永久。\n"
 # 备份原始文件
 mkdir -p /etc/bak/fail2ban_conf/ && cp -p /etc/fail2ban/jail.conf /etc/bak/fail2ban_conf/
 
