@@ -44,10 +44,6 @@ password\trequisite\tpam_pwquality.so\tauthtok_type= minlen=4
 password\trequisite\tpam_pwquality.so dcredit=0 ocredit=0 lcredit=0 ucredit=0
 " >>/etc/pam.d/system-auth
 
-echo -e "\nSSH服务端密钥、登录策略、心跳响应，以及限制IP范围"
-echo -e "简化用户密码规则：任意大小写/符号/纯数字，并可设4位长度"
-echo -e "SSH服务端（Linux）所有设置均已完成。\n"
-
 #******************安装及配置fail2ban*****************************
 
 echo -e "安装fail2ban以及各项依赖"
@@ -55,7 +51,6 @@ yum install epel-release -y && yum update -y
 yum install fail2ban-firewalld fail2ban-systemd -y 
 yum -y install git python3
 
-echo -e "安装及配置fail2ban: 除自己IP（$get_my_ip）不限外；其他IP访问，3次密码错误，直接封永久。\n"
 # 备份原始文件
 mkdir -p /etc/bak/fail2ban_conf/ && cp -p /etc/fail2ban/jail.conf /etc/bak/fail2ban_conf/
 
@@ -78,6 +73,11 @@ logpath  = /var/log/secure
 echo -e "加入守护进程，已设定自启，fail2ban现已启动 \n"
 systemctl enable fail2ban.service && systemctl start fail2ban.service
 
+echo -e "-----------------服务端整体配置--------------------\n"
+echo -e "\nSSH服务端密钥、登录策略、心跳响应，以及限制IP范围"
+echo -e "简化用户密码规则：任意大小写/符号/纯数字，并可设4位长度"
+echo -e "fail2ban: 除自己IP（$get_my_ip）不限外；其他IP访问，3次密码错误，直接封永久。\n"
+echo -e "至此，SSH服务端（Linux）的所有设置，均已圆满完成。\n"
 
 #************所有设置完成，开始啰嗦的ECHO*********************
 
