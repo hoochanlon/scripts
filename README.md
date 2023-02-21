@@ -11,7 +11,7 @@
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_ssh_n_ban.sh)"
 ```
 
-* <details><summary>SSH单项、fail2ban单项 click me! </summary>
+<details><summary>SSH单项、fail2ban单项 click me! </summary>
 
 一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。
 
@@ -26,6 +26,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 ```
 
 </details>
+
 
 终端建议使用管理员身份运行。
 
