@@ -40,7 +40,9 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 ---
 
-一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...对于我来说，博客更侧重日常生活，再专门的平台发稿就行了。现在想来那些在xx之家、xx论坛投稿的，也是聪明人。一边专修技能，一边注重生活，真是两不误。
+一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...
+
+对于我来说，博客更侧重日常生活，再专门的平台发稿就行了。现在想来那些在xx之家、xx论坛投稿的，也是聪明人。一边专修技能，一边注重生活，真是两不误。
 
 <!--
 [![telegram](https://img.shields.io/badge/telegram-:me-blue.svg?longCache=true&style=flat-square)](https://t.me/test) 
