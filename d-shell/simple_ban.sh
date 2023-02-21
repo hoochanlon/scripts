@@ -4,6 +4,8 @@ yum -y install git python3
 
 # 备份原始文件
 mkdir -p /etc/bak/fail2ban_conf/ && cp -p /etc/fail2ban/jail.conf /etc/bak/fail2ban_conf/
+# 获取IP
+get_my_ip=$(netstat -n|grep -i :22|awk '{print $5}'|cut -d":" -f1|sed -n '1p')
 
 # “ssh-iptables”为模块配置名称，命令用法 fail2ban-client status + 模块名
 ## 如：fail2ban-client status  ssh-iptables
@@ -18,7 +20,7 @@ echo -e "安装及配置fail2ban: 3次输入错误密码，封禁IP永久。\n"
 echo -e \
 "
 [DEFAULT]
-ignoreip = 127.0.0.1 
+ignoreip = 127.0.0.1 $get_my_ip
 maxretry = 3 
 findtime  = 10 
 bantime = -1
