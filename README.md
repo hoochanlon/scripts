@@ -2,9 +2,9 @@
 
 [![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
 
-脚本代码及病毒分析文章，仅供学习与交流使用，切勿做违法用途。
+脚本代码及病毒分析文章，仅供学习与交流使用，切勿做违法用途。所有脚本与指令均需用管理员身份运行。
 
-## 一键搞定SSH登录、用户密码策略配置、Ban IP配置
+### 一键搞定SSH登录、用户密码策略配置、Ban IP配置
 
 
 ```
@@ -28,7 +28,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 </details>
 
 
-终端建议使用管理员身份运行。
+### Windows/Office/winrar/emeditor/xchange pdf 激活相关
 
 CMD一键调用windows版本切换与Windows/Office激活
 
