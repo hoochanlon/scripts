@@ -84,7 +84,8 @@ systemctl enable fail2ban.service && systemctl start fail2ban.service
 echo -e "****点对点配置项简说*****"
 echo -e "服务端SSH各项配置：vi /etc/ssh/sshd_config"
 echo -e "服务端密码策略各项配置：vi /etc/pam.d/system-auth"
-echo -e "查看ban IP后续可使用：fail2ban-client status ssh-iptables \n"
+echo -e "查看ban IP后续可使用：fail2ban-client status ssh-iptables"
+echo -e "解禁ban IP：fail2ban-client set ssh-iptables unbanip xxx.xxx.xxx.xxx \n"
 
 echo -e '客户端生成密钥: ssh-keygen -t ed25519 -C "your@email.com"'
 echo -e "复制公钥到服务端: ssh-copy-id -i ~/.ssh/id_ed25519.pub user@server"
