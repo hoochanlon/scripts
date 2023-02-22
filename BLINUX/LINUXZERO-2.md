@@ -67,7 +67,7 @@ password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 
 yum install -y fail2ban && systemctl enable fail2ban.service
 ```
 
-配置 `vi /etc/fail2ban/jail.local`
+配置 `vi /etc/fail2ban/jail.local` (复制时去掉中文注释。)
 
 ```
 [DEFAULT]
@@ -81,7 +81,7 @@ banaction=iptables-allports #封禁该ip的端口
 enabled=true #启用ssh扫描判断器
 port=22 ＃ssh的端口，如更换过ssh的默认端口请更改成相应端口
 filter=sshd #启用ssh扫描判断器
-logpath=/var/log/auth.log #系统行为记录日志，一般无需改动
+logpath=/var/log/secure.log #系统行为记录日志，看系统版本
 # 可以定制化发送邮件
 sendmail-whois[name=SSH, dest=your@email.com, sender=fail2ban@example.com,sendername="Fail2Ban"]    
 ```
