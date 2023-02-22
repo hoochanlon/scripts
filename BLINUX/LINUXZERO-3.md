@@ -5,7 +5,9 @@
 
 ### 用户管理
 
-腾讯云自建用户不能SSH登录，参考[码农家园-linux新建用户无法登录ssh](https://www.codenong.com/cs106546599/)。
+腾讯云自建用户不能SSH登录，一键登录的lighthouse，据[老唐笔记](https://oldtang.com/9823.html)测试所述，该账户是具有 root 权限的。
+
+参考[码农家园-linux新建用户无法登录ssh](https://www.codenong.com/cs106546599/)。
 
 `vi /etc/sshd_config`
 
