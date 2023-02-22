@@ -5,7 +5,7 @@
 
 ### 用户管理
 
-腾讯云自建用户不能SSH登录，一键登录的lighthouse，据[老唐笔记](https://oldtang.com/9823.html)测试所述，该账户是具有 root 权限的。
+一键登录的lighthouse，据[老唐笔记](https://oldtang.com/9823.html)测试所述，该账户是具有 root 权限的。腾讯云自建用户不能SSH登录，看了[百家号-Linux普通用户赋予root用户部分命令权限](https://baijiahao.baidu.com/s?id=1728181364820928878&wfr=spider&for=pc)这篇文章，普通用户权限可以说小得可怜，除了钻空子去提权、特定场景做特定事，基本上是个废的。
 
 参考[码农家园-linux新建用户无法登录ssh](https://www.codenong.com/cs106546599/)。
 
