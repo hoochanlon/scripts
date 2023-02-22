@@ -57,6 +57,78 @@ password requisite pam_pwquality.so try_first_pass local_users_only retry=3
 password requisite pam_pwquality.so authtok_type= lcredit=0 ucredit=0 dcredit=0 ocredit=0  minlen=4
 ```
 
+## 用户管理
+
+###  与Windows、Mac上的创建用户对比
+
+一键登录的lighthouse，据[老唐笔记](https://oldtang.com/9823.html)测试所述，该账户是具有 root 权限的，从`cat /etc/sudoers `的`lighthouse ALL=(ALL) NOPASSWD: ALL`可证 。
+
+腾讯云自建用户不能SSH登录，看了[百家号-Linux普通用户赋予root用户部分命令权限](https://baijiahao.baidu.com/s?id=1728181364820928878&wfr=spider&for=pc)这篇文章，普通用户权限可以说小得可怜，除了钻空子去提权、特定场景做特定事，基本上勉强算是个临时的访客用户。
+
+一、参考 [码农家园-linux新建用户无法登录ssh](https://www.codenong.com/cs106546599/)，让普通用户也可以ssh登录。
+
+1. `vi /etc/sshd_config` 添加 `AllowGroups root username` ([适用centos](https://zhuanlan.zhihu.com/p/451578551)，`AllowUsers *@x.x.x.x`就可以了)
+2. 重启服务 `/etc/init.d/ssh restart`
+3. 或者创建`home/username/.ssh/authorized_keys` 再将公钥导入
+
+二、普通用户的权限问题，加上个`chroot`指定特定环境，在这种沙盒的加持下，普通用户就更加做不了什么了。
+
+1. 小到不能正常挂载外置盘符
+
+   ```shell
+   %users ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom
+   ```
+
+2. 不能像我们正常配置网络、软件
+
+	```shell
+	%sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS
+	```
+
+### 配置成 wheel组 or ALL用户
+
+设置`ls -l` 成`ll`命令，并查看sudoers配置文件。
+
+```shell
+alias ll="ls -l" >> ~/.bashrc && ll /etc/sudoers
+```
+
+也就是修改文件加上的授权，修改完再取消就好了。也可以`visudo`来修改。权限部分参考：[菜鸟教程-Linux chmod命令](https://www.runoob.com/linux/linux-comm-chmod.html)
+
+```shell
+chmod u+w /etc/sudoers # 读写，u表示文件归属者
+chmod u-w /etc/sudoers # 只读
+```
+
+腾讯云lighthouse例子，“%”应该是代表组的意思。
+
+```shell
+## Allow root to run any commands anywhere 
+root	ALL=(ALL) 	ALL
+
+## Allows people in group wheel to run all commands
+%wheel	ALL=(ALL)	ALL
+
+## Read drop-in files from /etc/sudoers.d (the # here does not mean a comment)
+#includedir /etc/sudoers.d
+# su 不需要密码
+lighthouse ALL=(ALL) NOPASSWD: ALL
+```
+
+ ` vi /etc/ssh/ssh_config` 限制root ssh登录配置`PermitRootLogin no`。之后将wheel组的su，设置成免密sudo，`vi /etc/pam.d/su`，或取消注释`#auth`
+
+```shell
+sed -i '/#a/s/#a/a/g' /etc/pam.d/su
+```
+
+参考：
+
+* [csdn-Linux新增ssh登录用户并加入sudo组](https://blog.csdn.net/xiunai78/article/details/84578529)（入个门了解）
+* [csdn-Linux基础之系统安全及应用（su和sudo）](https://blog.csdn.net/fangxin_zonghuo/article/details/113944950)（pam模块解读）
+* [csdn-Linux学习笔记之 修改pam.d/su让wheel组用户su切换到root时不用输入密码](https://blog.csdn.net/kfepiza/article/details/124701784)（限制用户切换成root）
+* [csdn-sed -i 命令详解](https://blog.csdn.net/qq_42767455/article/details/104180726)（替换字符串）
+
+
 ## Ban IP的三种方式
 
 ### fail2ban
