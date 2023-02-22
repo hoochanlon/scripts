@@ -30,6 +30,16 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 </details>
 
+### 一键搞定Linux自定义创建具有管理员权限的用户
+
+* 自定义用户名
+* su、sudo及wheel组成员免密
+* sshd_config锁root远程登录，提高安全性
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/diy_add_wheel.sh)"
+```
+
 
 ### Windows/Office/winrar/emeditor/xchange pdf 激活相关
 
