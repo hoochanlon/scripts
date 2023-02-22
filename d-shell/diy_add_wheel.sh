@@ -67,4 +67,4 @@ echo -e "重新再SSH登录即生效， 现可使用 $user_name SSH登录Linux \
 # scp ~/Desktop/diy_add_wheel.sh root@10x.xxx.xxx.xx5:$HOMEPATH
 
 # 删除自身
-# rm -rf $0
+rm -rf $0
