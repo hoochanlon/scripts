@@ -6,9 +6,9 @@
 
 ### 一键搞定SSH登录、用户密码策略配置、Ban IP配置
 
-* SSH登录: 免密的密钥模式、心跳长时间连接，客户端不掉线 （单项部分是开启限定自己IP访问的，即 AllowUsers）
+* SSH登录: 免密的密钥模式、心跳长时间连接，客户端不掉线 
 * 密码策略: 不限特殊字符、大小写，并支持4～5位长度下限
-* Ban IP: 除自己IP外，30秒内短时间三次输错密码，永久封禁IP。(再次允许单项部分可以刷新自己公网IP配置)
+* Ban IP: 除自己IP外，30秒内短时间三次输错密码，永久封禁IP。
 
 ```
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_ssh_n_ban.sh)"
@@ -16,13 +16,13 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <details><summary>SSH单项、fail2ban单项 click me! </summary>
 
-一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。
+一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。（单项部分是开启限定自己IP访问的，即 AllowUsers）
 
 ```
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ssh.sh)"
 ```
 
-一键fail2ban从下载到安装及生成配置与启动服务。
+一键fail2ban从下载到安装及生成配置与启动服务。(再次允许单项部分可以刷新自己公网IP配置)
 
 ```
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ban.sh)"
