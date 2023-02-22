@@ -4,6 +4,8 @@
 
 一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...所有脚本与指令均需用管理员身份运行，脚本代码及病毒分析文章，也仅供学习与交流使用，切勿做违法用途。
 
+## 初始云服务器快速配置
+
 ### 一键搞定SSH登录、用户密码策略配置、Ban IP配置
 
 * SSH登录: 免密的密钥模式、心跳长时间连接，客户端不掉线 
@@ -40,8 +42,9 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/diy_add_wheel.sh)"
 ```
 
+## 激活相关
 
-### Windows/Office/winrar/emeditor/xchange pdf 激活相关
+### Windows/Office/winrar/emeditor/xchange pdf
 
 CMD一键调用windows版本切换与Windows/Office激活
 
