@@ -46,4 +46,4 @@ echo "wheelman 管理员用户创建，测试完成"
 # [csdn-Linux学习笔记之CentOS7的 wheel组](https://blog.csdn.net/kfepiza/article/details/124701762)
 # [51cto-Linux Shell脚本专栏_批量创建100用户并设置密码脚本_03](https://blog.51cto.com/gblfy/5652817#_38)
 
-# rm -rf $0
+rm -rf $0
