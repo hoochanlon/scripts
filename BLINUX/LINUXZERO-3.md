@@ -4,6 +4,8 @@
 * [51cto-linux 添加路由 ](https://blog.51cto.com/crazyming/568781)
 * [百家号-如何在 Linux 中使用 nmcli 命令配置 IP 网络](https://baijiahao.baidu.com/s?id=1752077717322308869&wfr=spider&for=pc&searchword=Linux网络配置nmui)（nmcli ）
 
+nmcli 永久生效的；ifconfig 临时生效。
+
 ### 特权提升方式与密码破解
 
 #### 特权提升
