@@ -1,4 +1,8 @@
+### 网络修改
 
+* [linux设置软链接](https://www.cnblogs.com/dengsheng/p/16313069.html)
+* [51cto-linux 添加路由 ](https://blog.51cto.com/crazyming/568781)
+* [百家号-如何在 Linux 中使用 nmcli 命令配置 IP 网络](https://baijiahao.baidu.com/s?id=1752077717322308869&wfr=spider&for=pc&searchword=Linux网络配置nmui)（nmcli ）
 
 ### 特权提升方式与密码破解
 
