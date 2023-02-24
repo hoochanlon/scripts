@@ -68,7 +68,7 @@ CMD一键生成Emeditor序列号
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/d-pwsh/main/emeditor_random_keygen.ps1&&powershell -c emeditor_random_keygen.ps1
 ```
 
-```
+
 
 Powershell一键IDM激活
 
