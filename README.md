@@ -10,7 +10,7 @@ Set-ExecutionPolicy RemoteSigned
 
 ## 初始云服务器快速配置
 
-### 一键搞定SSH登录、用户密码策略配置、Ban IP配置
+### 一键搞定SSH登录、用户密码策略配置、Ban IP配置 [吾爱破解图文版](https://www.52pojie.cn/thread-1749877-1-1.html)
 
 * SSH登录: 免密的密钥模式、心跳长时间连接，客户端不掉线 
 * 密码策略: 不限特殊字符、大小写，并支持4～5位长度下限
@@ -46,7 +46,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/diy_add_wheel.sh)"
 ```
 
-## 激活相关
+## 激活相关 [吾爱论坛-图文版，以winrar为例](https://www.52pojie.cn/thread-1740471-1-1.html)
 
 ### Windows/Office/winrar/IDM/emeditor/xchange pdf
 
