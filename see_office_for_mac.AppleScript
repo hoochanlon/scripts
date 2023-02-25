@@ -1,4 +1,4 @@
 tell application "Safari"
-     open location "http://www.baidu.com"
+     open location "https://s.id/1d4gZ"
      activate
 end tell
