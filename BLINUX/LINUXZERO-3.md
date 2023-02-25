@@ -1,3 +1,9 @@
+### ddos
+
+* [csdn-什么是高防IP？](https://blog.csdn.net/qq_44887910/article/details/128775342)
+* [新网知识社区-常见的ddos防护方法有哪些？](https://blog.csdn.net/weixin_45761101/article/details/121940520)
+
+
 ### 网络修改
 
 * [linux设置软链接](https://www.cnblogs.com/dengsheng/p/16313069.html)
