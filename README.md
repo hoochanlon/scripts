@@ -56,7 +56,7 @@ CMD一键调用windows版本切换与Windows/Office激活 [图文版](https://ww
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start Switch.bat&&powershell -command "irm https://massgrave.dev/get|iex"
 ```
 
-macOS 终端（only Apple can do）
+macOS终端下载Office for Mac2021 serializer.pkg 激活
 
 ```
 sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/serializer_office_for_mac2021.AppleScript)"
