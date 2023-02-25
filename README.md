@@ -56,6 +56,13 @@ CMD一键调用windows版本切换与Windows/Office激活 [图文版](https://ww
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start Switch.bat&&powershell -command "irm https://massgrave.dev/get|iex"
 ```
 
+macOS 终端（only Apple can do）
+
+```
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/serializer_office_for_mac2021.AppleScript)"
+```
+
+
 CMD一键安装winrar注册激活 [以winrar为例](https://www.52pojie.cn/thread-1740471-1-1.html)
 
 ```
@@ -67,8 +74,6 @@ CMD一键生成Emeditor序列号
 ```
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/d-pwsh/main/emeditor_random_keygen.ps1&&powershell -c emeditor_random_keygen.ps1
 ```
-
-
 
 Powershell一键IDM激活
 
