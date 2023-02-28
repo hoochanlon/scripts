@@ -48,6 +48,8 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 ### 一键搞定FTP
 
+不输密码版
+
 * 用户名:ftpuser 密码：P@ssw0rd
 * 共享目录： /var/ftp/share 
 * 限制越权出逃共享访问，可读写。
