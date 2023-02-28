@@ -116,20 +116,22 @@ sudo systemctl restart vsftpd
 echo -e "***调试专用代码***"
 echo 'scp /Users/chanlonhoo/Desktop/1.sh root@101.xxx.xxx.xxx:${HOMEPATH}'
 echo -e "rm -rf ~/.ssh/known_hosts && rm -rf ~/.ssh/known_hosts.old"
-echo -e "cat /etc/passwd;id ftpuser"
+echo -e "查看所有用户信息：cat /etc/passwd"
+echo -e "新建用户，添加FTP共享组：useradd -G ftpusers <用户名称>"
+echo -e "已有用户，添加FTP共享组：usermod -a -G ftpusers <用户名称>"
 echo -e "***************** \n"
 
 echo -e "\n ****************FTP基本说明与概况******************** \n"
 echo -e "FTP专属用户已创建完成：ftpuser；密码：P@ssw0rd"
 echo -e "FTP共享目录位置：cat /var/ftp/share"
-echo -e "核心配置文件：vi /etc/vsftpd/vsftpd.conf"
+echo -e "重要‼️：注意在阿里云安全组，或腾讯云服务器防火墙，放行21000端口。"
 
-echo -e "\nFTP相关配置简览"
-echo -e "新建用户，添加FTP共享组：useradd -G ftpusers <用户名称>"
-echo -e "已有用户，添加FTP共享组：usermod -a -G ftpusers <用户名称>"
-echo -e "查看FTP历史访问记录：/var/log/xferlog\n"
+echo -e "\n至此，FTP搭建已完成，下面是FTP相关配置简览"
+echo -e "查看FTP历史访问记录：/var/log/xferlog"
+echo -e "核心配置文件：vi /etc/vsftpd/vsftpd.conf\n"
 echo -e "Windows可以用文件管理器访问，就可以上传下载了。"
 echo -e "Mac推荐使用Cyberduck、FileZilla、ForkLift访问，自带访达对FTP功能支持不完善。\n"
+
 
 
 
