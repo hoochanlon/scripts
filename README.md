@@ -46,6 +46,17 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/diy_add_wheel.sh)"
 ```
 
+### 一键搞定FTP
+
+* 用户名:ftpuser 密码：P@ssw0rd
+* 共享目录： /var/ftp/share 
+* 限制越权出逃共享访问，可读写。
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_vsftpd.sh)"
+```
+
+
 ## 激活相关 
 
 ### Windows/Office/winrar/IDM/emeditor/xchange pdf
