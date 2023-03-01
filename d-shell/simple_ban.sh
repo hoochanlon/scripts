@@ -5,7 +5,8 @@ yum -y install git python3
 # 备份原始文件
 mkdir -p /etc/bak/fail2ban_conf/ && cp -p /etc/fail2ban/jail.conf /etc/bak/fail2ban_conf/
 # 获取IP
-get_my_ip=$(netstat -n|grep -i :22|awk '{print $5}'|cut -d":" -f1|sed -n '1p')
+# get_my_ip=$(netstat -n|grep -i :22|awk '{print $5}'|cut -d":" -f1|sed -n '1p')
+get_my_ip=$(who|awk '{print $5}'| cut -d '(' -f2 | cut -d ')' -f1|sed -n '1p')
 
 # “ssh-iptables”为模块配置名称，命令用法 fail2ban-client status + 模块名
 ## 如：fail2ban-client status  ssh-iptables

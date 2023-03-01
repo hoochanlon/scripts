@@ -12,8 +12,9 @@ mkdir -p /etc/bak/ssh && cp -p /etc/ssh/{ssh_config,sshd_config} /etc/bak/ssh
 # get_my_ip=$(netstat -t|awk '{print $5}'|grep -v -E '[a-zA-Z]|^10|^169|^172|^192'|cut -d":" -f1|sed -n '1p')
 
 # 筛选方式优化，选有:22就行了。
-get_my_ip=$(netstat -n|grep -i :22|awk '{print $5}'|cut -d":" -f1|sed -n '1p')
-get_my_ip_port=$(netstat -n|grep -i :22|awk '{print $5}'|sed -n '1p')
+# get_my_ip=$(netstat -n|grep -i :22|awk '{print $5}'|cut -d":" -f1|sed -n '1p')
+# get_my_ip_port=$(netstat -n|grep -i :22|awk '{print $5}'|sed -n '1p')
+get_my_ip=$(who|awk '{print $5}'| cut -d '(' -f2 | cut -d ')' -f1|sed -n '1p')
 
 # 编辑、修改配置权限、重启服务生效
 echo -e \
