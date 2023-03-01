@@ -124,7 +124,7 @@ echo -e "***************** \n"
 echo -e "\n ****************FTP基本说明与概况******************** \n"
 echo -e "FTP专属用户已创建完成：ftpuser；密码：P@ssw0rd"
 echo -e "FTP共享目录位置：cat /var/ftp/share"
-echo -e "重要‼️：注意在阿里云安全组，或腾讯云服务器防火墙，放行21000端口。"
+echo -e "重要‼️ 注意在阿里云安全组，或腾讯云服务器防火墙，放行21000端口。"
 
 echo -e "\n至此，FTP搭建已完成，下面是FTP相关配置简览"
 echo -e "查看FTP历史访问记录：/var/log/xferlog"
