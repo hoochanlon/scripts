@@ -133,6 +133,7 @@ sudo sed -i '7i\account    required     pam_access.so' /etc/pam.d/vsftpd
 ## 备份access.conf文件
 cp -rp /etc/security/access.conf{,.bak}
 ## 将最后一个规则定义为全部拒绝，表示只有自己允许的例外条件
+## 网上的配置可能存在过时，也就不需要加‘@’访问了，智能识别组名，等于是
 echo  -e "
 +:ftpusers:$get_my_ip
 -:ALL:ALL
@@ -167,7 +168,7 @@ echo -e "Mac推荐使用Cyberduck、FileZilla、ForkLift访问，自带访达对
 
 
 # 删除自身
-# rm -rf $0
+rm -rf $0
 
 # 可能该项说明对初次上手的用户是干扰
 # echo -e "用户访问其他目录限制配置文件：/etc/vsftpd/chroot_list"
