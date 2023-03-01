@@ -71,6 +71,16 @@ cp -rp /etc/vsftpd/vsftpd.conf{,.bak}
 # 详情：https://blog.csdn.net/doris_9800/article/details/104620510
 linux_public_ip=$(curl -s http://ip.tool.chinaz.com/ |grep 'class="fz24"' | awk -F '>|<' '{print$3}')
 
+# 获取Windows或Mac电脑的IP 客户端
+get_my_ip=$(who|awk '{print $5}'| cut -d '(' -f2 | cut -d ')' -f1)
+# 这获取IP的方式，有被混淆的风险，毕竟有ssh插队的风险，注释掉
+# get_my_ip=$(netstat -n|grep -i :22|awk '{print $5}'|cut -d":" -f1|sed -n '1p')
+
+# cut
+# -d 表示需要需要使用自定义切割符
+# -f2 表示对切割后的几块内容选择第2部分输出
+# -f1 表示对切割后的几块内容选择第1部分输出
+
 #------------------------------------------------------
 
 
@@ -126,6 +136,29 @@ touch /etc/vsftpd/chroot_list
 sudo sed -i '4s/^/#/' /etc/pam.d/vsftpd
 
 
+#------pam_access.so是模块，会调用到配置文件/etc/security/access.conf------
+# [csdn-实战vsftp针对用户和IP访问控制](https://blog.csdn.net/weixin_58400622/article/details/126438957)
+
+# /etc/pam.d/vsftpd （模块配置文件）
+## 备份/etc/pam.d/vsftpd
+cp -rp /etc/pam.d/vsftpd{,.bak}
+# 在第7行前插入模块
+sudo sed -i '7i\account    required     pam_access.so' /etc/pam.d/vsftpd
+
+# access.conf
+## 备份access.conf文件
+cp -rp /etc/security/access.conf{,.bak}
+## 将最后一个规则定义为全部拒绝，表示只有自己允许的例外条件
+echo  -e "
++:@ftpusers:$get_my_ip
+-:ALL:ALL
+
+" >> /etc/security/access.conf
+
+#---------------------------------------------------
+
+
+
 # 启动ftp服务。
 sudo systemctl restart vsftpd
 
@@ -144,7 +177,8 @@ echo -e "重要 ‼️ ：注意在阿里云安全组，或腾讯云服务器防
 
 echo -e "\n至此，FTP搭建已完成，下面是FTP相关配置简览"
 echo -e "查看FTP历史访问记录：/var/log/xferlog"
-echo -e "核心配置文件：vi /etc/vsftpd/vsftpd.conf\n"
+echo -e "核心配置文件：vi /etc/vsftpd/vsftpd.conf"
+echo -e "FTP限制用户及IP访问文件：vi /etc/security/access.conf\n"
 echo -e "Windows可以用文件管理器访问，就可以上传下载了。"
 echo -e "Mac推荐使用Cyberduck、FileZilla、ForkLift访问，自带访达对FTP功能支持不完善。\n"
 
