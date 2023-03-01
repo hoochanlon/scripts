@@ -127,7 +127,7 @@ sudo sed -i '4s/^/#/' /etc/pam.d/vsftpd
 
 
 # 启动ftp服务。
-sudo systemctl start vsftpd
+sudo systemctl restart vsftpd
 
 echo -e "***调试专用代码***"
 echo 'scp /Users/chanlonhoo/Desktop/1.sh root@101.xxx.xxx.xxx:${HOMEPATH}'
