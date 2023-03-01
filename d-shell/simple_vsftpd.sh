@@ -51,9 +51,20 @@ sudo chown -R ftpuser:ftpusers /var/ftp/share
 # 源目录文件备份 vsftpd.conf.bak
 cp -rp /etc/vsftpd/vsftpd.conf{,.bak}
 
-# 获取Linux的本机公网IP
+# 获取Linux的本机公网IP 服务器
 # 详情：https://blog.csdn.net/doris_9800/article/details/104620510
 linux_public_ip=$(curl -s http://ip.tool.chinaz.com/ |grep 'class="fz24"' | awk -F '>|<' '{print$3}')
+
+# 获取Windows或Mac电脑的IP 客户端
+get_my_ip=$(who|awk '{print $5}'| cut -d '(' -f2 | cut -d ')' -f1)
+
+# 这获取IP的方式，有被混淆的风险，毕竟有ssh插队的风险，注释掉
+# get_my_ip=$(netstat -n|grep -i :22|awk '{print $5}'|cut -d":" -f1|sed -n '1p')
+
+# cut
+# -d 表示需要需要使用自定义切割符
+# -f2 表示对切割后的几块内容选择第2部分输出
+# -f1 表示对切割后的几块内容选择第1部分输出
 
 #------------------------------------------------------
 
@@ -68,7 +79,7 @@ linux_public_ip=$(curl -s http://ip.tool.chinaz.com/ |grep 'class="fz24"' | awk 
 #*********************************************************************
 
 
-#-----------配置用户基本策略：禁匿名、将访问限制在规定目录、ipv4----------
+#-----------vsftpd.conf 配置用户基本策略：禁匿名、将访问限制在规定目录、ipv4 ----------
 
 # 在12行全局换成anonymous_enable=NO
 sed -i '12canonymous_enable=NO' /etc/vsftpd/vsftpd.conf
@@ -109,6 +120,27 @@ touch /etc/vsftpd/chroot_list
 # 注释第4行 auth required pam_shells.so 模块认证。
 sudo sed -i '4s/^/#/' /etc/pam.d/vsftpd
 
+#------pam_access.so是模块，会调用到配置文件/etc/security/access.conf------
+# [csdn-实战vsftp针对用户和IP访问控制](https://blog.csdn.net/weixin_58400622/article/details/126438957)
+
+# /etc/pam.d/vsftpd （模块配置文件）
+## 备份/etc/pam.d/vsftpd
+cp -rp /etc/pam.d/vsftpd{,.bak}
+# 在第7行前插入模块
+sudo sed -i '7i\account    required     pam_access.so' /etc/pam.d/vsftpd
+
+# access.conf
+## 备份access.conf文件
+cp -rp /etc/security/access.conf{,.bak}
+## 将最后一个规则定义为全部拒绝，表示只有自己允许的例外条件
+echo  -e "
++:@ftpusers:$get_my_ip
+-:ALL:ALL
+
+" >> /etc/security/access.conf
+
+#---------------------------------------------------
+
 
 # 重启ftp服务。
 sudo systemctl restart vsftpd
@@ -128,13 +160,14 @@ echo -e "重要‼️ 注意在阿里云安全组，或腾讯云服务器防火�
 
 echo -e "\n至此，FTP搭建已完成，下面是FTP相关配置简览"
 echo -e "查看FTP历史访问记录：/var/log/xferlog"
-echo -e "核心配置文件：vi /etc/vsftpd/vsftpd.conf\n"
+echo -e "核心配置文件：vi /etc/vsftpd/vsftpd.conf"
+echo -e "FTP限制用户及IP访问文件：vi /etc/security/access.conf\n"
 echo -e "Windows可以用文件管理器访问，就可以上传下载了。"
 echo -e "Mac推荐使用Cyberduck、FileZilla、ForkLift访问，自带访达对FTP功能支持不完善。\n"
 
 
 # 删除自身
-rm -rf $0
+# rm -rf $0
 
 # 可能该项说明对初次上手的用户是干扰
 # echo -e "用户访问其他目录限制配置文件：/etc/vsftpd/chroot_list"
@@ -173,7 +206,7 @@ rm -rf $0
 ## [csdn-Linux系统用户添加到用户组](https://blog.csdn.net/shenyunsese/article/details/124449334)
 ## [csdn-usermod命令的 -s使用方法](https://blog.csdn.net/qq_42276808/article/details/104145927)
 
-
+# cp -p /etc/ssh/{ssh_config,sshd_config,sshd_config.bak} 不可行
 ## Linux查看用户所属组 groups ftpuser 创建组：groupadd ftpusers 
 ## 新建用户并将其加入指定用户组,作为其主用户组（每个用户有且只有一个主用户组）
 ## 新建用户，并关联组
@@ -193,3 +226,14 @@ rm -rf $0
 # 这些才会去打开原本没有打开的端口，防火墙只不过在开启的时候会对这些端口做防护而已，并不是防火墙开的这些端口。
 # 比如80端口，你只有做了web应用，如iis等服务器上才会打开80端口，这时候防火墙可能会保护80端口，
 # 使外面的用户无法访问，但关闭了防火墙，防护取消就可以正常访问了，所以防火墙并不是打开80的根本
+
+
+#*******FTP安全性设置***************************
+
+# [cnblog-Linux Access.conf安全配置](https://www.cnblogs.com/yizhipanghu/p/14241923.html)
+# [zhihu-Linux access.conf 限制用户ssh/rsh登陆不生效的问题](https://zhuanlan.zhihu.com/p/525921900)
+# [csdn-实战vsftp针对用户和IP访问控制](https://blog.csdn.net/weixin_58400622/article/details/126438957)
+# [金步国-Linux PAM 学习笔记](http://www.jinbuguo.com/linux/pam.html)
+# [cnblogs-linux查看当前ssh登陆的ip](https://www.cnblogs.com/you-jia/p/4741717.html)
+# [cnblogs-linux shell脚本 如何去除变量中的小括号](https://blog.csdn.net/qq_25955145/article/details/116011951)
+# access.conf不生效很大程度与PAM有关。
