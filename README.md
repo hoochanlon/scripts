@@ -50,6 +50,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 * 共享目录： /var/ftp/share 
 * 限制越权出逃共享访问，可读写。
+* 安全，私有化，限定自己的公网IP访问。
 
 不输密码版，用户名:ftpuser 密码：P@ssw0rd
 
