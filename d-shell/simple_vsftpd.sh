@@ -56,7 +56,7 @@ cp -rp /etc/vsftpd/vsftpd.conf{,.bak}
 linux_public_ip=$(curl -s http://ip.tool.chinaz.com/ |grep 'class="fz24"' | awk -F '>|<' '{print$3}')
 
 # 获取Windows或Mac电脑的IP 客户端
-get_my_ip=$(who|awk '{print $5}'| cut -d '(' -f2 | cut -d ')' -f1)
+get_my_ip=$(who|awk '{print $5}'| cut -d '(' -f2 | cut -d ')' -f1|sed -n '1p')
 
 # 这获取IP的方式，有被混淆的风险，毕竟有ssh插队的风险，注释掉
 # get_my_ip=$(netstat -n|grep -i :22|awk '{print $5}'|cut -d":" -f1|sed -n '1p')
