@@ -5,6 +5,7 @@
 ## [csdn-腾讯云服务器FTP连接不上](https://blog.csdn.net/qq_40787608/article/details/123411675)
 ## [腾讯云-Linux 轻量应用服务器搭建 FTP 服务](https://cloud.tencent.com/document/product/1207/47638)
 ## [zhihu-vsftp新建用户无法登录？](https://www.zhihu.com/question/268255821/answer/622810196?utm_id=0)
+## [csdn-nc 探测端口_nc命令用法举例](https://blog.csdn.net/weixin_42542420/article/details/112486792)
 ##
 ## 往后可以用这款了，配置web云盘分享：https://github.com/zfile-dev/zfile
 ## 共享文件格式NFS、SMB、FTP、WebDAV 各有何优势：https://blog.csdn.net/hdxx2022/article/details/127490158
