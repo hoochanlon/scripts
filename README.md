@@ -48,15 +48,21 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 ### 一键搞定FTP
 
-不输密码版
-
-* 用户名:ftpuser 密码：P@ssw0rd
 * 共享目录： /var/ftp/share 
 * 限制越权出逃共享访问，可读写。
+
+不输密码版，用户名:ftpuser 密码：P@ssw0rd
 
 ```
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_vsftpd.sh)"
 ```
+
+自定义用户版
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_vsftpd.sh)"
+```
+
 
 
 ## 激活相关 
