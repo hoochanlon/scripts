@@ -32,15 +32,16 @@ yum install -y vsftpd
 yum install lsof -y
 sudo systemctl enable vsftpd
 # 启动成功，默认开启匿名访问，但无权限修改或上传。
-# sudo systemctl start vsftpd
+# 需提前打开否则在后面配置会报错。
+sudo systemctl start vsftpd
 
 sudo groupadd ftpusers
 # 接收用户输入流，并创建ftpusers组用户
-read -p "请输入用户名：" user_name && sudo useradd -g ftpusers $user_name
+read -p "请输入创建FTP共享的用户名：" user_name && sudo useradd -g ftpusers $user_name
 
 echo -e "$user_name 用户创建已完成 \n"
 
-echo "⚠️注意：Linux初始密码规则，创建密码需要符合大小写及特殊字符等各项要求‼️。"
+echo "⚠️  注意：Linux初始密码规则，创建密码需要符合大小写及特殊字符等各项要求  ‼️。"
 echo -e "若已配置密码策略，可无视上面这条提示信息。"
 echo -e "◉ 注：显示明文，方便密码核对后确认 \n"
 
@@ -139,7 +140,7 @@ echo -e "***************** \n"
 echo -e "\n ****************FTP基本说明与概况******************** \n"
 echo -e "FTP专属用户已创建完成：$user_name ；密码：$pass_word"
 echo -e "FTP共享目录位置：cat /var/ftp/share"
-echo -e "重要‼️：注意在阿里云安全组，或腾讯云服务器防火墙，放行21000端口。"
+echo -e "重要 ‼️ ：注意在阿里云安全组，或腾讯云服务器防火墙，放行21000端口。"
 
 echo -e "\n至此，FTP搭建已完成，下面是FTP相关配置简览"
 echo -e "查看FTP历史访问记录：/var/log/xferlog"
