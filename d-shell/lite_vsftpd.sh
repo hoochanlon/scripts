@@ -153,7 +153,7 @@ sudo sed -i '7i\account    required     pam_access.so' /etc/pam.d/vsftpd
 cp -rp /etc/security/access.conf{,.bak}
 ## 将最后一个规则定义为全部拒绝，表示只有自己允许的例外条件
 echo  -e "
-+:@ftpusers:$get_my_ip
++:ftpusers:$get_my_ip
 -:ALL:ALL
 
 " >> /etc/security/access.conf
