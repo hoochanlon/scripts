@@ -133,7 +133,8 @@ echo -e "Windows可以用文件管理器访问，就可以上传下载了。"
 echo -e "Mac推荐使用Cyberduck、FileZilla、ForkLift访问，自带访达对FTP功能支持不完善。\n"
 
 
-
+# 删除自身
+rm -rf $0
 
 # 可能该项说明对初次上手的用户是干扰
 # echo -e "用户访问其他目录限制配置文件：/etc/vsftpd/chroot_list"
