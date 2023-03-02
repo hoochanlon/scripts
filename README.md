@@ -4,9 +4,18 @@
 
 一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...所有脚本与指令均需用管理员身份运行，脚本代码及病毒分析文章，也仅供学习与交流使用，切勿做违法用途。
 
+powershell active
+
 ```
 Set-ExecutionPolicy RemoteSigned
 ```
+
+Mac查看当前Wi-Fi密码
+
+```
+sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_show_wifi.sh)"
+```
+
 
 ## 初始云服务器快速配置
 
