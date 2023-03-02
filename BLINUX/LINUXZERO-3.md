@@ -10,7 +10,7 @@
 
 虽说scp上传与下载也挺方便，但不方便目录的整体管理。而且刚入手学习Linux的人来说知道宝塔、Zfile各种面板的人也是少数，做一键脚本的目的也是帮助新人少走弯路。
 
-起手方式不需要了解虚拟用户映射及FTP验证、PAM模块原理，一键搞定FTP。
+起手方式不需要了解虚拟用户映射及FTP验证、PAM模块原理，一键搞定FTP。 [源码Git仓地址](https://github.com/hoochanlon/ihs-simple/blob/main/d-shell/lite_vsftpd.sh)
 
 ```
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_vsftpd.sh)"
