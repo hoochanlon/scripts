@@ -21,3 +21,19 @@ nmcli 永久生效的；ifconfig 临时生效。
 #### 密码破解
 
 [cnblogs-【THM】John The Ripper(hash破解工具)-学习](https://www.cnblogs.com/Hekeats-L/archive/2022/09/30/16745318.html)
+
+### 堡垒机
+
+* [jumpserver/jumpserver](https://github.com/jumpserver/jumpserver)
+
+### 云蜜罐
+
+* https://github.com/hacklcx/HFish
+* https://github.com/birdhan/SecurityProduct
+
+### 勒索病毒
+
+* https://www.nomoreransom.org/en/decryption-tools.html
+* https://lesuobingdu.360.cn
+* 
+
