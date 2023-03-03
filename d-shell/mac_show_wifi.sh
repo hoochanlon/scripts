@@ -26,8 +26,12 @@ echo '重启终端，自此以后，查看Wi-Fi密码，在终端输入："Wi-Fi
 
 
 # 草稿
-# 创建符号链接，权限拒绝没搞定
+# 创建符号链接，权限拒绝没搞定（已OK）
 # sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/bin/airport
+
+# 安装二维码工具
+# brew install qrencode > /dev/null 2>&1
+# qrencode -l M -t UTF8 -k "此处输入文字内容"
 
 # 取第一列不打印第一行
 # sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport en0 -s|awk 'NR == 1 {next} {print $1}' > wifiname.txt
@@ -42,6 +46,7 @@ echo '重启终端，自此以后，查看Wi-Fi密码，在终端输入："Wi-Fi
 
 
 # 参考
+# [爱玛网-Shell 生成二维码](https://www.likecs.com/show-203261345.html#sc=147)
 # [微信公众号-在Windows、Linux和Mac上查看Wi-Fi密码](https://mp.weixin.qq.com/s?__biz=MzUxODgzMDQ4NQ==&mid=2247512417&idx=3&sn=98a1775611a539d4162755f4b354d685&chksm=f980119bcef7988d2c02cc745edce9898f9686f2e7f0e12be3c7e9613836e83302449318a88c&scene=27)
 # [dovov-在MAC OS X上通过SHELL脚本获取无线SSID](https://www.dovov.com/mac-os-xshellssid.html)
 # [csdn-Mac 内置最强WI-FI抓包工具 Airport](https://blog.csdn.net/wank1259162/article/details/104916371)
