@@ -31,6 +31,10 @@ nmcli 永久生效的；ifconfig 临时生效。
 * [Error starting userland proxy: listen tcp4 0.0.0.0:8005: bind: address alrea](https://blog.csdn.net/qwq1518346864/article/details/117597351)
 * [xiebruce.top-macOS使用了代理也无法ping通google的原因及其解决办法](https://www.xiebruce.top/1718.html)
 * [csdn-Linux端口转发的几种常用方法](https://blog.csdn.net/u010680373/article/details/124779749)
+* [cnblogs-怎么让 Linux 进程在后台运行](https://www.cnblogs.com/iluoye/p/16620660.html)
+* [Podman一篇就学会](https://blog.csdn.net/hyhxy0206/article/details/121943182)
+* [爱码网-linux全局代理，终端走代理](https://www.likecs.com/show-205071856.html)
+* [【玩转docker】反向代理神器：Nginx Proxy Manager](https://zhuanlan.zhihu.com/p/536791628?utm_id=0)
 
 <s>yum install docker -y </s> 少走弯路，按官网配置
 
@@ -50,8 +54,4 @@ yum install -y httping
 httping -x 127.0.0.1:1087 -g https://www.google.com
 
 # 即便使用了代理，chatgpt依旧会检查是否为代理IP，而ban IP。
-
-
-# * [cnblogs-怎么让 Linux 进程在后台运行](https://www.cnblogs.com/iluoye/p/16620660.html)
-# * [Podman一篇就学会](https://blog.csdn.net/hyhxy0206/article/details/121943182)
 ```
