@@ -1,7 +1,10 @@
-### ddos
+### ddos、堡垒机、云蜜罐
 
 * [csdn-什么是高防IP？](https://blog.csdn.net/qq_44887910/article/details/128775342)
 * [新网知识社区-常见的ddos防护方法有哪些？](https://blog.csdn.net/weixin_45761101/article/details/121940520)
+* [jumpserver/jumpserver](https://github.com/jumpserver/jumpserver)
+* https://github.com/hacklcx/HFish
+* https://github.com/birdhan/SecurityProduct
 
 ### 网络修改
 
@@ -17,21 +20,17 @@ nmcli 永久生效的；ifconfig 临时生效。
 * [腾讯新闻-Linux特权提升技术合集](https://view.inews.qq.com/k/20211015A001PB00?web_channel=wap&openApp=false)
 * [cnblogs-【THM】John The Ripper(hash破解工具)-学习](https://www.cnblogs.com/Hekeats-L/archive/2022/09/30/16745318.html)
 
-### 堡垒机
-
-* [jumpserver/jumpserver](https://github.com/jumpserver/jumpserver)
-
-### 云蜜罐
-
-* https://github.com/hacklcx/HFish
-* https://github.com/birdhan/SecurityProduct
-
 ### 勒索病毒
 
 * https://www.nomoreransom.org/en/decryption-tools.html
 * https://lesuobingdu.360.cn
 
 ## docker
+
+* [www.freebuf.com-内网代理转发工具总结](https://www.freebuf.com/sectool/308049.html)
+* [Error starting userland proxy: listen tcp4 0.0.0.0:8005: bind: address alrea](https://blog.csdn.net/qwq1518346864/article/details/117597351)
+* [xiebruce.top-macOS使用了代理也无法ping通google的原因及其解决办法](https://www.xiebruce.top/1718.html)
+* [csdn-Linux端口转发的几种常用方法](https://blog.csdn.net/u010680373/article/details/124779749)
 
 <s>yum install docker -y </s> 少走弯路，按官网配置
 
@@ -52,11 +51,7 @@ httping -x 127.0.0.1:1087 -g https://www.google.com
 
 # 即便使用了代理，chatgpt依旧会检查是否为代理IP，而ban IP。
 
-参考
-* [www.freebuf.com-内网代理转发工具总结](https://www.freebuf.com/sectool/308049.html)
-* [Error starting userland proxy: listen tcp4 0.0.0.0:8005: bind: address alrea](https://blog.csdn.net/qwq1518346864/article/details/117597351)
-* [xiebruce.top-macOS使用了代理也无法ping通google的原因及其解决办法](https://www.xiebruce.top/1718.html)
-# * [csdn-Linux端口转发的几种常用方法](https://blog.csdn.net/u010680373/article/details/124779749)
+
 # * [cnblogs-怎么让 Linux 进程在后台运行](https://www.cnblogs.com/iluoye/p/16620660.html)
 # * [Podman一篇就学会](https://blog.csdn.net/hyhxy0206/article/details/121943182)
 ```
