@@ -35,6 +35,8 @@ nmcli 永久生效的；ifconfig 临时生效。
 * [Podman一篇就学会](https://blog.csdn.net/hyhxy0206/article/details/121943182)
 * [爱码网-linux全局代理，终端走代理](https://www.likecs.com/show-205071856.html)
 * [【玩转docker】反向代理神器：Nginx Proxy Manager](https://zhuanlan.zhihu.com/p/536791628?utm_id=0)
+* [cnblogs-Linux/CentOS设置全局代理（http）](https://www.cnblogs.com/EasonJim/p/9826681.html)
+* [cnblogs-linux centos7 yum安装 proxychains 全局socks代理工具](https://blog.csdn.net/whatday/article/details/128578654)
 
 <s>yum install docker -y </s> 少走弯路，按官网配置
 
