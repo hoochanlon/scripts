@@ -40,6 +40,8 @@ nmcli 永久生效的；ifconfig 临时生效。
 
 <s>yum install docker -y </s> 少走弯路，按官网配置
 
+Expert 优先级 proxychain 高，注意关闭expert proxy=xxxxx。
+
 ```
 # 查找端口进程
 netstat -tanlp
