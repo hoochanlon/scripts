@@ -103,7 +103,48 @@ ln -sf /usr/python/bin/python3.11 /usr/bin/python3
 
 从这次经历来看，python是一款相当依赖第三方工具包的脚本语言，shell倒还好。如果一个项目依赖于另一个工具包，而另一个工具包又依赖于另外的项目，那会过于套娃，体验极差。当前的虚拟环境工具更侧重于生成相关的python版本环境，虽然虚拟环境也附带有版本控制的功能，但如果要灵活地选择性的切换python版本，那还是版本控制工具更好。
 
-（感想：有时看的内容多了，还是停下来梳理下逻辑点。因为初次接触已经体系化但“小众”的东西，所翻阅到资料，根据我现在总结的经验，其实多数时候并不是依照框架体系一步步走的，而是跳跃式的知识逻辑。所以需要“停下来”建立逻辑点。）
+感想：有时看的内容多了，还是停下来梳理下逻辑点。因为初次接触已经体系化但“小众”的东西，所翻阅到资料，根据我现在总结的经验，其实多数时候并不是依照框架体系一步步走的，而是跳跃式的知识逻辑。所以需要“停下来”建立逻辑点。
+
+### pipx
+
+
+* [zhihu专栏-pipx - 为 Python 应用构建独立的安装与运行环境](https://zhuanlan.zhihu.com/p/330676831)
+* [csdn-安装poetry](https://blog.csdn.net/not_so_bad/article/details/127705403)
+
+
+
+
 
 ### 安装高版本python、python版本控制及虚拟环境
 
+https://github.com/pyenv/pyenv （需提前安装：`yum install -y git`）
+
+```shell
+
+#------ 下载与解压python-----------------
+
+wget https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz
+# x解压、v过程、f指定文件名
+tar -xf Python-3.11.2.tgz # 注意看解压名称。
+## 参考：[csdn-tar命令 zcvf,xvf的使用](https://blog.csdn.net/luolianxi/article/details/112915930)
+
+# --------- python版本管理工具-------------
+# 由于网络原因，过程会很久
+curl https://pyenv.run|bash
+# 配置环境
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+source ~/.bashrc
+
+
+# -------pipx包管理工具与poetry虚拟环境---------
+
+pip3 install pipx
+pipx install poetry
+pipx ensurepath
+source ~/.bashrc
+
+
+
+```
