@@ -1,4 +1,4 @@
-# python在Linux环境下编译安装
+# python在Linux环境下编译安装过程随想
 
 ## 查阅python简单安装相关信息汇总
 
@@ -71,7 +71,7 @@ yum -y install libffi libffi-dev
 
 2. 从[nginx安装过程中为啥同时需要zlib与zlib-devel，不是有zlib就可以了吗？](https://segmentfault.com/q/1010000041534545)问题的回答，得知是Linux发行版的分包策略所致，“运行环境”与“构建环境”相区分。
 
-### 官网下载编译安装
+### 官网下载编译安装（初步）
 
 [官网-在类Unix环境下使用Python](https://docs.python.org/zh-cn/3.11/using/unix.html#using-python-on-unix-platforms)
 
@@ -93,21 +93,17 @@ make && make install
 ln -sf /usr/python/bin/python3.11 /usr/bin/python3
 ```
 
-### 官方的遗留问题最终解决
+## 官方遗留问题的思考
 
-据[csdn-virtualenv系列 (1) · 导致Python多版本依赖困境的根源](https://blog.csdn.net/bluishglc/article/details/128300113)所提到的Virtualenv来管理python的多个版本，就python而言基本上是这个形势了，Java是maven之类的多版本共存管理。
+### poetry虚拟环境与Pyenv版本管理
 
-虚拟环境选型，[pythonguidecn-Pipenv & 虚拟环境](https://pythonguidecn.readthedocs.io/zh/latest/dev/virtualenvs.html)、[csdn-使用 pipenv/virtualenv 安装任意版本的python虚拟环境](https://blog.csdn.net/weixin_35757704/article/details/125761674)。
+据[csdn-virtualenv系列 (1) · 导致Python多版本依赖困境的根源](https://blog.csdn.net/bluishglc/article/details/128300113)所提到的Virtualenv来管理python的多个版本，就python而言基本上是这个形势了，Java是maven之类的多版本共存管理。虚拟环境选型，[pythonguidecn-Pipenv & 虚拟环境](https://pythonguidecn.readthedocs.io/zh/latest/dev/virtualenvs.html)、[csdn-使用 pipenv/virtualenv 安装任意版本的python虚拟环境](https://blog.csdn.net/weixin_35757704/article/details/125761674)。
 
-看了不少文章pipenv安装python都会创建一个相关目录，那我先了解下pipenv多版本共存原理，看看是不是一种共通的规则，还是文章作者自行定义的。
+看了不少文章pipenv安装python都会创建一个相关目录，那我先了解下pipenv多版本共存原理，看看是不是一种共通的规则，还是文章作者自行定义的。“首先设置一下编译要存放的目录，这里不要放到系统环境下，方便后续创建虚拟环境的管理”。[文章这样说](https://blog.csdn.net/weixin_35757704/article/details/125761674)，再结合当前环境，看来是有必要了。又从[python依赖管理和构建工具Poetry的原理以及用法](https://www.yisu.com/zixun/542969.html)以及后续的相关文章，我发现基本上没看到python版本的切换的内容，大多只是生成虚拟环境。为此也是额外去了解了[poetry管理python开发环境学习小记](https://blog.csdn.net/wuzhongqiang/article/details/125861099)所提到的“Pyenv”。
 
+从这次经历来看，python是一款相当依赖第三方工具包的脚本语言，shell倒还好。如果一个项目依赖于另一个工具包，而另一个工具包又依赖于另外的项目，那会过于套娃，体验极差。当前的虚拟环境工具更侧重于生成相关的python版本环境，虽然虚拟环境也附带有版本控制的功能，但如果要灵活地选择性的切换python版本，那还是版本控制工具更好。
 
+（感想：有时看的内容多了，还是停下来梳理下逻辑点。因为初次接触已经体系化但“小众”的东西，所翻阅到资料，根据我现在总结的经验，其实多数时候并不是依照框架体系一步步走的，而是跳跃式的知识逻辑。所以需要“停下来”建立逻辑点。）
 
-“首先设置一下编译要存放的目录，这里不要放到系统环境下，方便后续创建虚拟环境的管理”。[文章这样说](https://blog.csdn.net/weixin_35757704/article/details/125761674)，再结合当前环境，看来是有必要了。
+### 安装高版本python、python版本控制及虚拟环境
 
-```
-# 安装 pipenv
-pip3 install --user pipenv
-# 进入 虚拟环境的shell
-pipenv shell
-```
