@@ -110,7 +110,7 @@ ln -sf /usr/python/bin/python3.11 /usr/bin/python3
 
 * [zhihu专栏-pipx - 为 Python 应用构建独立的安装与运行环境](https://zhuanlan.zhihu.com/p/330676831)
 * [csdn-安装poetry](https://blog.csdn.net/not_so_bad/article/details/127705403)
-
+* [Linux中国​-Pipx：在隔离环境中安装和运行 Python 应用](https://zhuanlan.zhihu.com/p/73675447)
 
 
 
