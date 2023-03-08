@@ -86,7 +86,7 @@ wget https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz
 # x解压、v过程、f指定文件名
 tar -xf Python-3.11.2.tgz # 注意看解压名称。
 # 进入目录
-cd ~/Python3.11
+cd ~/Python-3.11.2
 # 指定安装路径
 ./configure --prefix=/usr/python
 # 编译安装
