@@ -114,6 +114,22 @@ ln -sf /usr/python/bin/python3.11 /usr/bin/python3
 
 
 
+### 相关报错
+
+
+```
+cat /tmp/python-build.20230309070648.138446.lo
+
+编译中断。
+
+Python build finished successfully!
+The necessary bits to build these optional modules were not found:
+_bz2                  _dbm                  _gdbm              
+_hashlib              _lzma                 _sqlite3           
+_ssl                  _tkinter              _uuid              
+nis                   readline                            
+```
+
 
 ### 安装高版本python、python版本控制及虚拟环境
 
@@ -145,6 +161,15 @@ pipx install poetry
 pipx ensurepath
 source ~/.bashrc
 
+#
+rm -rf ~/.pydistutils.cfg
+
+# 编译安装缺少依赖，额外补上依赖
+
+
+
+pyenv install 3.10
+pyenv global 3.10
 
 
 ```
