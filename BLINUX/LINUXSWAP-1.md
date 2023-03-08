@@ -17,8 +17,6 @@
 
 测试`nix-shell -p python311`安装与验证版本后，发现也这nix包管理器实际上也是管理包环境沙箱，类同于Mac下的PD虚拟机那种逻辑。还有比docker好的一点就是，名称和进程不会像docker管理的有些乱。
 
-还有种方式就是[csdn-virtualenv系列 (1) · 导致Python多版本依赖困境的根源](https://blog.csdn.net/bluishglc/article/details/128300113)所提到的python专属的虚拟环境：Virtualenv用来管理python的多个版本。
-
 ## 编译安装体验
 
 Linux终端的软件生态特性，照着他人博客来几乎一开始就必然失败的...所以先从基础的了解开始，再来慢慢编译安装、配置什么的。
@@ -95,4 +93,21 @@ make && make install
 ln -sf /usr/python/bin/python3.11 /usr/bin/python3
 ```
 
+### 官方的遗留问题最终解决
 
+据[csdn-virtualenv系列 (1) · 导致Python多版本依赖困境的根源](https://blog.csdn.net/bluishglc/article/details/128300113)所提到的Virtualenv来管理python的多个版本，就python而言基本上是这个形势了，Java是maven之类的多版本共存管理。
+
+虚拟环境选型，[pythonguidecn-Pipenv & 虚拟环境](https://pythonguidecn.readthedocs.io/zh/latest/dev/virtualenvs.html)、[csdn-使用 pipenv/virtualenv 安装任意版本的python虚拟环境](https://blog.csdn.net/weixin_35757704/article/details/125761674)。
+
+看了不少文章pipenv安装python都会创建一个相关目录，那我先了解下pipenv多版本共存原理，看看是不是一种共通的规则，还是文章作者自行定义的。
+
+
+
+“首先设置一下编译要存放的目录，这里不要放到系统环境下，方便后续创建虚拟环境的管理”。[文章这样说](https://blog.csdn.net/weixin_35757704/article/details/125761674)，再结合当前环境，看来是有必要了。
+
+```
+# 安装 pipenv
+pip3 install --user pipenv
+# 进入 虚拟环境的shell
+pipenv shell
+```
