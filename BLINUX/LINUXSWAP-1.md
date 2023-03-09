@@ -1,5 +1,17 @@
 # python在Linux环境下编译安装过程随想
 
+## 结论前置
+
+不想看大篇幅理解多版本安装python的过程，可以直接照着我自己整理的结论，便可。
+
+* nix可适用于多个不同场景的程序语言开发版本环境部署和测试，进入到其nix shell等于独立的虚拟环境。
+    * nix安装的程序，目前的维护状况，程序都比较新（2022.3.9），不用编译安装，直接走命令即可。
+* pyenv灵活地安装与切换python版本，搭配poetry可快速生成相应版本环境。
+* pipx升级依赖工具包方便，不用担心全局兼容问题。
+* 编译的程序通常会依赖各种包，这个要看开发者给出相应提示安装哪些包了。
+
+***优解：（pyenv+pipx+poetry） x [Thanks-Mirror](https://github.com/eryajf/Thanks-Mirror)***
+
 ## 查阅python简单安装相关信息汇总
 
 [Linux上面碰到鬼畜逆天级的软件依赖关系大家都是怎么解决的？ - 三级狗的回答 - 知乎](https://www.zhihu.com/question/291606128/answer/1194596591) 讲到了一些关键的要因，这也是他个人经验上的总结：
@@ -184,13 +196,3 @@ poetry env use $(which python3.9)
 ![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-03-09%2015.05.09.png)
 
 翻阅资料：[zhihu专栏-pipx - 为 Python 应用构建独立的安装与运行环境](https://zhuanlan.zhihu.com/p/330676831)、[csdn-安装poetry](https://blog.csdn.net/not_so_bad/article/details/127705403)、[Linux中国​-Pipx：在隔离环境中安装和运行 Python 应用](https://zhuanlan.zhihu.com/p/73675447)。
-
-## 收尾
-
-* nix可适用于多个不同场景的程序语言开发版本环境部署和测试，进入到其nix shell等于独立的虚拟环境。
-    * nix安装的程序，目前的维护状况，程序都比较新（2022.3.9），不用编译安装，直接走命令即可。
-* pyenv灵活地安装与切换python版本，搭配poetry可快速生成相应版本环境。
-* pipx升级依赖工具包方便，不用担心全局兼容问题。
-* 编译的程序通常会依赖各种包，这个要看开发者给出相应提示安装哪些包了。
-
-***优解：（pyenv+pipx+poetry） x [Thanks-Mirror](https://github.com/eryajf/Thanks-Mirror)***
