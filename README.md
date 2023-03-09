@@ -45,7 +45,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 </details>
 
-### 一键搞定Linux自定义创建具有管理员权限的用户
+### 一键搞定Linux自定义创建具有管理员权限的用户 [图文版](https://www.52pojie.cn/thread-1749877-1-1.html)
 
 * 自定义用户名
 * su、sudo及wheel组成员免密
@@ -55,7 +55,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/diy_add_wheel.sh)"
 ```
 
-### 一键搞定FTP
+### 一键搞定FTP [图文版](https://www.52pojie.cn/thread-1753070-1-1.html)
 
 * 共享目录： /var/ftp/share 
 * 限制越权出逃共享访问，可读写。
