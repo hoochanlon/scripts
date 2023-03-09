@@ -21,7 +21,7 @@
 
 Linux终端的软件生态特性，照着他人博客来几乎一开始就必然失败的...所以先从基础的了解开始，再来慢慢编译安装、配置什么的。
 
-### make
+### 对make的了解
 
 > 引用自 [webplus pro-浅析./configure、make、make install之间的关系](http://www.sudytech.com/_s80/65/c4/c3276a26052/page.psp)
 >
@@ -35,43 +35,7 @@ Linux终端的软件生态特性，照着他人博客来几乎一开始就必然
 
 补：这是对[cnblogs-编译安装](https://www.cnblogs.com/machangwei-8/p/15495528.html)的这些相关内容形象、生动化的说明；make veryclean的理解，可以将 定义执行规则的makefile文件删除，完完全全的“白手起家，自己造”了。
 
-### 不少博客中看到的python安装依赖项
-
-据[cnblogs-Linux下编译安装python3](https://www.cnblogs.com/freeweb/p/5181764.html)所说，“如果没有这些模块在后面使用会出现一些问题”。
-
-
-```shell
-# 涉及传输与压缩
-yum -y install zlib zlib-devel
-# 无损压缩数据相关的东西
-yum -y install bzip2 bzip2-devel
-# 屏幕绘制以及基于文本终端的图形互动功能的动态
-yum -y install ncurses ncurses-devel
-# 没有readline则交互式界面删除键和方向键都无法正常使用
-yum -y install readline readline-devel
-# openssl则不支持ssl相关的功能（我的理解是影响到python支持其相关增强功能）
-yum -y install openssl openssl-devel
-# openssl编译成静态库, 包含进工程的好处是可以避免系统中其他openssl版本的影响
-yum -y install openssl-static
-# 两个压缩工具
-yum -y install xz lzma xz-devel
-# 给Linux存放临时数据调用信息的数据库
-yum -y install sqlite sqlite-devel
-# [csdn-[转]GDBM学习笔记](https://blog.csdn.net/heiyeshuwu/article/details/51519388)
-# 从上方的文章得知，简单说就是数据持久化用的数据库系统。
-yum -y install gdbm gdbm-devel
-# 图形用户界面库
-yum -y install tk tk-devel
-# [cnblogs-外部函数接口 LibFFI](https://www.cnblogs.com/feng9exe/p/10396313.html) 
-# 从上方文章得知，是一种语言调用另一种语言的库
-yum -y install libffi libffi-dev
-```
-
-1. 这么多需要安装的依赖，我推测更大的可能是博客作者自己的需求，而不是python本身的必装项。我想，不少这方面转载及教程的笔者，可能混了许多的个人项，甚至一些依赖的作用关系，可能他自己也不清楚，只知道这样装不会错就行了。
-
-2. 从[nginx安装过程中为啥同时需要zlib与zlib-devel，不是有zlib就可以了吗？](https://segmentfault.com/q/1010000041534545)问题的回答，得知是Linux发行版的分包策略所致，“运行环境”与“构建环境”相区分。
-
-### 官网下载编译安装（初步）
+### 官网下载编译安装（单python版本环境）
 
 [官网-在类Unix环境下使用Python](https://docs.python.org/zh-cn/3.11/using/unix.html#using-python-on-unix-platforms)
 
@@ -93,7 +57,7 @@ make && make install
 ln -sf /usr/python/bin/python3.11 /usr/bin/python3
 ```
 
-## 官方遗留问题的思考
+## python多版本环境安装及官方遗留问题的思考
 
 ### poetry虚拟环境与Pyenv版本管理
 
@@ -105,21 +69,51 @@ ln -sf /usr/python/bin/python3.11 /usr/bin/python3
 
 感想：有时看的内容多了，还是停下来梳理下逻辑点。因为初次接触已经体系化但“小众”的东西，所翻阅到资料，根据我现在总结的经验，其实多数时候并不是依照框架体系一步步走的，而是跳跃式的知识逻辑。所以需要“停下来”建立逻辑点。
 
-### pipx
+### 从不少博客中看到的python安装依赖项分析
 
+据[cnblogs-Linux下编译安装python3](https://www.cnblogs.com/freeweb/p/5181764.html)所说，“如果没有这些模块在后面使用会出现一些问题”，顺便附上我自己翻阅资料的补充与解读注释。
 
-* [zhihu专栏-pipx - 为 Python 应用构建独立的安装与运行环境](https://zhuanlan.zhihu.com/p/330676831)
-* [csdn-安装poetry](https://blog.csdn.net/not_so_bad/article/details/127705403)
-* [Linux中国​-Pipx：在隔离环境中安装和运行 Python 应用](https://zhuanlan.zhihu.com/p/73675447)
+```shell
+# 更新yum源，yum更新，安装yum常用工具包
+# 因为部分工具是需要更新yum源及工具包依赖才能安装
+yum install epel-release && yum update &&  yum install yum-utils
+# 涉及传输与压缩；devel 表示开发库
+yum -y install zlib zlib-devel
+# 无损压缩数据相关的东西
+yum -y install bzip2 bzip2-devel
+# 屏幕绘制以及基于文本终端的图形互动功能的动态
+yum -y install ncurses ncurses-devel
+# 没有readline则交互式界面删除键和方向键都无法正常使用
+yum -y install readline readline-devel
+# openssl则不支持ssl相关的功能（我的理解是影响到python支持其相关增强功能）
+yum -y install openssl openssl-devel
+# openssl编译成静态库, 包含进工程的好处是可以避免系统中其他openssl版本的影响
+# 在centos 8测试下没有这个 penssl-static 文件
+# 观点验证：[cnblogs-centos8安装python3.8.5](https://www.cnblogs.com/tyjs09/p/14849249.html)
+yum -y install openssl-static
+# 两个压缩工具
+yum -y install xz lzma xz-devel
+# 给Linux存放临时数据调用信息的数据库
+yum -y install sqlite sqlite-devel
+# [csdn-[转]GDBM学习笔记](https://blog.csdn.net/heiyeshuwu/article/details/51519388)
+# 从上方的文章得知，简单说就是数据持久化用的数据库系统。
+yum -y install gdbm gdbm-devel
+# 图形用户界面库
+yum -y install tk tk-devel
+# [cnblogs-外部函数接口 LibFFI](https://www.cnblogs.com/feng9exe/p/10396313.html) 
+# 从上方文章得知，是一种语言调用另一种语言的库
+yum -y install libffi libffi-devel
+# uuid也装上
+yum -y install uuid uuid-devel
+```
 
+1. 这么多需要安装的依赖，我推测更大的可能是博客作者自己的需求，而不是python本身的必装项。我想，不少这方面转载及教程的笔者，可能混了许多的个人项，甚至一些依赖的作用关系，可能他自己也不清楚，只知道这样装不会错就行了。（安装python 3.10的推论）
+2. 从[nginx安装过程中为啥同时需要zlib与zlib-devel，不是有zlib就可以了吗？](https://segmentfault.com/q/1010000041534545)问题的回答，得知是Linux发行版的分包策略所致，“运行环境”与“构建环境”相区分。
+3. 较早的源头可能出自此处[python-forum.io-Libraries needed for python install?](https://python-forum.io/thread-5368.html)，依靠专业人士的解答得来的需要安装哪些依赖，广而告之。（安装python 3.9之后的想法）
 
-
-### 相关报错
-
+之所以做出第三点的推测，是由于我查看pyenv生成的 /tmp/python-build.log 出现以下报错的进一步推测。
 
 ```
-cat /tmp/python-build.20230309070648.138446.lo
-
 编译中断。
 
 Python build finished successfully!
@@ -130,21 +124,32 @@ _ssl                  _tkinter              _uuid
 nis                   readline                            
 ```
 
+最后，从1～3点推测：编译安装的开发者大概率一开始就认为我们是预知需要安装哪些依赖包的（专业性环境原因），随着使用人越来越多，为了推到更广的人群，后续高版本，开发者补上了一些依赖包。
+
+
+综合资料：
+
+* [python-forum.io-Libraries needed for python install?](https://python-forum.io/thread-5368.html) （讨论安装python需要的各种依赖）
+* [csdn-centos yum-utils包详解](https://blog.csdn.net/xixihahalelehehe/article/details/105625710) （yum常用工具集）
+* [Linux之一次性安装开发工具：yum groupinstall Development tools](https://www.cnblogs.com/zlslch/p/6033284.html) （同理于Mac的Xcode工具包）
+
+
 
 ### 安装高版本python、python版本控制及虚拟环境
 
-https://github.com/pyenv/pyenv （需提前安装：`yum install -y git`）
+http://rpmfind.net/linux/rpm2html/search.php?query=db4-devel(x86-64)
 
 ```shell
 
-#------ 下载与解压python-----------------
+# 更新yum源，安装yum常用工具包，yum更新
+yum install epel-release && yum install yum-utils && yum update
+# 安装python需要的各类依赖项目
+yum -y install zlib zlib-devel  bzip2 bzip2-devel ncurses ncurses-devel \
+readline readline-devel openssl openssl-devel xz lzma xz-devel sqlite sqlite-devel \
+gdbm gdbm-devel tk tk-devel libffi libffi-devel uuid uuid-devel
 
-wget https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz
-# x解压、v过程、f指定文件名
-tar -xf Python-3.11.2.tgz # 注意看解压名称。
-## 参考：[csdn-tar命令 zcvf,xvf的使用](https://blog.csdn.net/luolianxi/article/details/112915930)
 
-# --------- python版本管理工具-------------
+# --------- python版本管理工具 pyenv ----------
 # 由于网络原因，过程会很久
 curl https://pyenv.run|bash
 # 配置环境
@@ -153,23 +158,23 @@ echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 
-
-# -------pipx包管理工具与poetry虚拟环境---------
+# ------ 通过pipx简单安装python虚拟环境poetry ---------
 
 pip3 install pipx
 pipx install poetry
 pipx ensurepath
 source ~/.bashrc
+# rm -rf ~/.pydistutils.cfg
 
-#
-rm -rf ~/.pydistutils.cfg
-
-# 编译安装缺少依赖，额外补上依赖
-
-
-
-pyenv install 3.10
-pyenv global 3.10
-
+pyenv install 3.9
+pyenv global 3.9
 
 ```
+
+
+### pipx
+
+
+* [zhihu专栏-pipx - 为 Python 应用构建独立的安装与运行环境](https://zhuanlan.zhihu.com/p/330676831)
+* [csdn-安装poetry](https://blog.csdn.net/not_so_bad/article/details/127705403)
+* [Linux中国​-Pipx：在隔离环境中安装和运行 Python 应用](https://zhuanlan.zhihu.com/p/73675447)
