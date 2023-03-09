@@ -137,7 +137,7 @@ nis                   readline
 
 tip：发现一个Linux查找包的网站：http://rpmfind.net ，以及Linux config：https://linuxconfig.org
 
-不建议受限于网络环境，不建议一键脚本，不过可以复制粘贴去执行就是。
+受限于网络环境，不建议一键脚本，复制粘贴去执行就是；重在理解。
 
 ```shell
 
@@ -192,3 +192,5 @@ poetry env use $(which python3.9)
 * pyenv灵活地安装与切换python版本，搭配poetry可快速生成相应版本环境。
 * pipx升级依赖工具包方便，不用担心全局兼容问题。
 * 编译的程序通常会依赖各种包，这个要看开发者给出相应提示安装哪些包了。
+
+***优解：（pyenv+pipx+poetry） x [Thanks-Mirror](https://github.com/eryajf/Thanks-Mirror)***
