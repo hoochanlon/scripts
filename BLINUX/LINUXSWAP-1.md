@@ -181,6 +181,8 @@ poetry new env-python3.9 && cd env-python3.9
 poetry env use $(which python3.9)
 ```
 
+![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-03-09%2015.05.09.png)
+
 翻阅资料：[zhihu专栏-pipx - 为 Python 应用构建独立的安装与运行环境](https://zhuanlan.zhihu.com/p/330676831)、[csdn-安装poetry](https://blog.csdn.net/not_so_bad/article/details/127705403)、[Linux中国​-Pipx：在隔离环境中安装和运行 Python 应用](https://zhuanlan.zhihu.com/p/73675447)。
 
 ## 收尾
