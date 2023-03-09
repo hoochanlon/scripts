@@ -126,7 +126,6 @@ nis                   readline
 
 最后，从1～3点推测：编译安装的开发者大概率一开始就认为我们是预知需要安装哪些依赖包的（专业性环境原因），随着使用人越来越多，为了推到更广的人群，后续高版本，开发者补上了一些依赖包。
 
-
 综合资料：
 
 * [python-forum.io-Libraries needed for python install?](https://python-forum.io/thread-5368.html) （讨论安装python需要的各种依赖）
@@ -139,15 +138,22 @@ nis                   readline
 
 http://rpmfind.net/linux/rpm2html/search.php?query=db4-devel(x86-64)
 
+编写成shell脚本，如下：
+
 ```shell
 
-# 更新yum源，安装yum常用工具包，yum更新
-yum install epel-release && yum install yum-utils && yum update
+#----------------编译安装前的准备工作，yum升级与安装各种依赖 ---------------
+# 更新yum源，安装yum常用工具包，安装git，yum更新
+yum -y install epel-release yum-utils git && yum update 
 # 安装python需要的各类依赖项目
 yum -y install zlib zlib-devel  bzip2 bzip2-devel ncurses ncurses-devel \
 readline readline-devel openssl openssl-devel xz lzma xz-devel sqlite sqlite-devel \
 gdbm gdbm-devel tk tk-devel libffi libffi-devel uuid uuid-devel
+# 安装 rpmfind.net 所找的 db4 包
 
+
+# 同理于Mac下的Xcode开发者工具包
+# yum groupinstall development
 
 # --------- python版本管理工具 pyenv ----------
 # 由于网络原因，过程会很久
@@ -158,17 +164,19 @@ echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 
-# ------ 通过pipx简单安装python虚拟环境poetry ---------
-
+# -------pipx包管理工具与poetry虚拟环境---------
+# 因为通过pipx安装poetry，及其简单又不会出现其他报错
 pip3 install pipx
 pipx install poetry
 pipx ensurepath
 source ~/.bashrc
-# rm -rf ~/.pydistutils.cfg
 
+# rm -rf ~/.pydistutils.cfg
 pyenv install 3.9
 pyenv global 3.9
-
+poetry new env-python3.9
+cd env-python3.9
+poetry env use $(which python3.9)
 ```
 
 
