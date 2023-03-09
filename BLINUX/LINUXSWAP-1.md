@@ -124,7 +124,7 @@ _ssl                  _tkinter              _uuid
 nis                   readline                            
 ```
 
-最后，从1～3点推测：编译安装的开发者大概率一开始就认为我们是预知需要安装哪些依赖包的（专业性环境原因），随着使用人越来越多，为了推到更广的人群，后续高版本，开发者补上了一些依赖包。
+最后，从1～3点推测：编译安装的开发者大概率一开始认为我们是知道需要安装哪些依赖包的（不排除只是为了缩小体积...），随着使用人越来越多，为了推到更广的人群，后续高版本，开发者补上了一些依赖包。
 
 综合资料：
 
@@ -133,12 +133,11 @@ nis                   readline
 * [Linux之一次性安装开发工具：yum groupinstall Development tools](https://www.cnblogs.com/zlslch/p/6033284.html) （同理于Mac的Xcode工具包）
 
 
-
 ### 安装高版本python、python版本控制及虚拟环境
 
-http://rpmfind.net/linux/rpm2html/search.php?query=db4-devel(x86-64)
+tip：发现一个Linux查找包的网站：http://rpmfind.net ，以及Linux config：https://linuxconfig.org
 
-编写成shell脚本，如下：
+不建议受限于网络环境，不建议一键脚本，不过可以复制粘贴去执行就是。
 
 ```shell
 
@@ -149,14 +148,15 @@ yum -y install epel-release yum-utils git && yum update
 yum -y install zlib zlib-devel  bzip2 bzip2-devel ncurses ncurses-devel \
 readline readline-devel openssl openssl-devel xz lzma xz-devel sqlite sqlite-devel \
 gdbm gdbm-devel tk tk-devel libffi libffi-devel uuid uuid-devel
-# 安装 rpmfind.net 所找的 db4 包
+# 安装 rpmfind.net 所找的 db4 包（旧了）
+# yum localinstall http://rpmfind.net/linux/epel/7/x86_64/Packages/l/libdb4-devel-4.8.30-13.el7.x86_64.rpm
 
-
-# 同理于Mac下的Xcode开发者工具包
+# groupinstall development 同理于Mac下的Xcode开发者工具包
+# [unixmen-Yum ‘groupinstall’ – A Quick Introduction](https://www.unixmen.com/yum-groupinstall-a-quick-introduction/)
 # yum groupinstall development
 
 # --------- python版本管理工具 pyenv ----------
-# 由于网络原因，过程会很久
+# 由于网络原因，过程会很久 ，而且即容易失败。
 curl https://pyenv.run|bash
 # 配置环境
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
@@ -166,23 +166,27 @@ source ~/.bashrc
 
 # -------pipx包管理工具与poetry虚拟环境---------
 # 因为通过pipx安装poetry，及其简单又不会出现其他报错
+# 此外通过pipx安装的包，可照常升级，不会出现全局的兼容异常问题。
 pip3 install pipx
 pipx install poetry
 pipx ensurepath
+# 刷新配置好的环境变量
 source ~/.bashrc
-
 # rm -rf ~/.pydistutils.cfg
+
+## -----------从pyenv中安装不同版本的python-------- ##
 pyenv install 3.9
 pyenv global 3.9
-poetry new env-python3.9
-cd env-python3.9
+poetry new env-python3.9 && cd env-python3.9
 poetry env use $(which python3.9)
 ```
 
+翻阅资料：[zhihu专栏-pipx - 为 Python 应用构建独立的安装与运行环境](https://zhuanlan.zhihu.com/p/330676831)、[csdn-安装poetry](https://blog.csdn.net/not_so_bad/article/details/127705403)、[Linux中国​-Pipx：在隔离环境中安装和运行 Python 应用](https://zhuanlan.zhihu.com/p/73675447)。
 
-### pipx
+## 收尾
 
-
-* [zhihu专栏-pipx - 为 Python 应用构建独立的安装与运行环境](https://zhuanlan.zhihu.com/p/330676831)
-* [csdn-安装poetry](https://blog.csdn.net/not_so_bad/article/details/127705403)
-* [Linux中国​-Pipx：在隔离环境中安装和运行 Python 应用](https://zhuanlan.zhihu.com/p/73675447)
+* nix可适用于多个不同场景的程序语言开发版本环境部署和测试，进入到其nix shell等于独立的虚拟环境。
+    * nix安装的程序，目前的维护状况，程序都比较新（2022.3.9），不用编译安装，直接走命令即可。
+* pyenv灵活地安装与切换python版本，搭配poetry可快速生成相应版本环境。
+* pipx升级依赖工具包方便，不用担心全局兼容问题。
+* 编译的程序通常会依赖各种包，这个要看开发者给出相应提示安装哪些包了。
