@@ -10,3 +10,13 @@ pigcha|http://101.34.95.10:8081/misc/linux_tutorial (支持Linux cli)
 爱整事的小伙｜ https://zgq-inc.github.io/
 在线安装小火箭 | https://bwgbus.com/1584.html
 
+ihs：
+
+imgdh.com
+imgse.com
+imgtp.com
+catbox.moe
+imgbb.com
+www.helloimg.com
+www.imgurl.org
+postimages.org
