@@ -12,11 +12,12 @@ pigcha|http://101.34.95.10:8081/misc/linux_tutorial (支持Linux cli)
 
 ihs：
 
-imgdh.com
-imgse.com
-imgtp.com
-catbox.moe
-imgbb.com
+www.imgdh.com
+www.imgse.com
+www.imgtp.com
+www.catbox.moe
+www.imgbb.com
+www.hualigs.cn
 www.helloimg.com
 www.imgurl.org
-postimages.org
+www.postimages.org
