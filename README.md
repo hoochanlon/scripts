@@ -98,7 +98,7 @@ CMD一键安装winrar注册激活 [以winrar为例](https://www.52pojie.cn/threa
 powershell -command Invoke-WebRequest -Uri "https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/winrar_down_reg.bat" -OutFile "C:/Users/${env:UserName}/Downloads/winrar_down_reg.bat"&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
 ```
 
-CMD一键生成Emeditor序列号
+Powershell一键生成Emeditor序列号
 
 ```
 irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/emeditor_random_keygen.ps1|iex
