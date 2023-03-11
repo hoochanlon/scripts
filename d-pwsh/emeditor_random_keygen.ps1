@@ -32,7 +32,6 @@ Write-Output "win10/win11及未来更高版本以上：https://support.emeditor.
 
 # iwr https | iex 可能可以使用下UTF8
 
-
 <# 
 
 编码：GB2312，Mac调试powershell注意换回UTF8
