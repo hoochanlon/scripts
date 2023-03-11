@@ -24,17 +24,18 @@ Write-Output ""
 Write-Output "win10/win11及未来更高版本以上：https://support.emeditor.com/en/downloads/latest/installer/64"
 
 
-# 实验：
+<# 实验：
 
-# iwr https | iex 倒是不用再删除自身了
-# utf8显示中文会出问题，GB2312还是会出问题，可能iex只支持ansi显示了...
-# remove-item $MyInvocation.MyCommand.Path -force #删除脚本自身
+## iwr https | iex 倒是不用再删除自身了（ remove-item $MyInvocation.MyCommand.Path -force )
+## utf8显示中文会出问题，GB2312还是会出问题，可能iex只支持ansi显示了...
+## 编码：GB2312，Mac调试powershell注意换回UTF8
 
-# iwr https | iex 可能可以使用下UTF8
+## iwr https | iex 可能可以使用下UTF8 （方案已成功）
+## irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/emeditor_random_keygen.ps1|iex （新）
 
-<# 
+## curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/d-pwsh/main/emeditor_random_keygen.ps1 && 
+### powershell -c emeditor_random_keygen.ps1 （旧）
 
-编码：GB2312，Mac调试powershell注意换回UTF8
 
 参考链接：
 
