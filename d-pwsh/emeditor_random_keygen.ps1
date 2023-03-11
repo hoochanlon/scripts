@@ -1,6 +1,6 @@
-# å‘ç°ä¸€ä¸ªå‡çº§çš„aiuæ–‡ä»¶ï¼Œåˆ ä¸åˆ éšå–œå§ï¼Œ"C:\ProgramData\Emurasoft\EmEditor\updates\emed64_updates4u.aiu"
-# æ‘‡éª°å­1ï½6ç‚¹éšæœºé€‰ä¸€ä¸ª emeditor keyã€‚
-# $emeditor_v21_str;$getkey; é‡å¤å®šä¹‰å¢åŠ å¤šä½™çš„è¾“å‡ºæ˜¾ç¤º
+# ·¢ÏÖÒ»¸öÉı¼¶µÄaiuÎÄ¼ş£¬É¾²»É¾ËæÏ²°É£¬"C:\ProgramData\Emurasoft\EmEditor\updates\emed64_updates4u.aiu"
+# Ò¡÷»×Ó1¡«6µãËæ»úÑ¡Ò»¸ö emeditor key¡£
+# $emeditor_v21_str;$getkey; ÖØ¸´¶¨ÒåÔö¼Ó¶àÓàµÄÊä³öÏÔÊ¾
 $i =  (1..6|Get-Random)
 $emeditor_v21_str = switch ($i)
 {
@@ -12,25 +12,26 @@ $emeditor_v21_str = switch ($i)
 6 {"RABNAEEAWgBNAC0AWgBNADUANQA2AC0ASwA2AFoAWgBaAC0AOQA5AEwAVwA4AC0AVwBWADUAQgBUAA=="}
 }
 
-# ç¼–ç æµ‹è¯• [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("asdasdxzczc"));
+# ±àÂë²âÊÔ [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("asdasdxzczc"));
 $getkey = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String($emeditor_v21_str))
 Set-Clipboard -Value $getkey # Get-Clipboard
 
 Write-Output ""
-Write-Output "æ³¨å†Œåå­—éšä¾¿å¡«ä¸€ä¸ªï¼Œåºåˆ—å·ç²˜è´´è¿›å»å°±è¡Œäº†ã€‚åºåˆ—å·å·²å¤åˆ¶åˆ°ç²˜è´´æ¿ï¼š" $getkey
+Write-Output "×¢²áÃû×ÖËæ±ãÌîÒ»¸ö£¬ĞòÁĞºÅÕ³Ìù½øÈ¥¾ÍĞĞÁË¡£ĞòÁĞºÅÒÑ¸´ÖÆµ½Õ³Ìù°å£º" $getkey
 Write-Output ""
-Write-Output "xp/win7/server2008è¯·ä¸‹è½½ï¼šhttp://files.emeditor.com/emed32_14.8.1.exe"
+Write-Output "xp/win7/server2008ÇëÏÂÔØ£ºhttp://files.emeditor.com/emed32_14.8.1.exe"
 Write-Output ""
-Write-Output "win10/win11åŠæœªæ¥æ›´é«˜ç‰ˆæœ¬ä»¥ä¸Šï¼šhttps://support.emeditor.com/en/downloads/latest/installer/64"
+Write-Output "win10/win11¼°Î´À´¸ü¸ß°æ±¾ÒÔÉÏ£ºhttps://support.emeditor.com/en/downloads/latest/installer/64"
 
-# iwr https | iex å€’æ˜¯ä¸ç”¨å†åˆ é™¤è‡ªèº«äº†
-# remove-item $MyInvocation.MyCommand.Path -force #åˆ é™¤è„šæœ¬è‡ªèº«
+# iwr https | iex µ¹ÊÇ²»ÓÃÔÙÉ¾³ı×ÔÉíÁË
+# utf8ÏÔÊ¾ÖĞÎÄ»á³öÎÊÌâ
+# remove-item $MyInvocation.MyCommand.Path -force #É¾³ı½Å±¾×ÔÉí
 
 <# 
 
-ç¼–ç ï¼šGB2312ï¼ŒMacè°ƒè¯•powershellæ³¨æ„æ¢å›UTF8
+±àÂë£ºGB2312£¬Macµ÷ÊÔpowershell×¢Òâ»»»ØUTF8
 
-å‚è€ƒé“¾æ¥ï¼š
+²Î¿¼Á´½Ó£º
 
 https://www.educba.com/powershell-base64/
 https://www.52pojie.cn/thread-658917-1-1.html
@@ -42,7 +43,7 @@ https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.managem
 https://learn.microsoft.com/zh-cn/powershell/scripting/learn/deep-dives/everything-about-switch
 http://zhishichong.com/article/47563
 
-| DUANGï½ å˜å¾— KEY | æŠ›ç“¦æ‹œ ä¸€ç¾¤ç½‘å‹ä»¬|
+| DUANG¡« ¸ÂµÃ KEY | Å×Íß°İ Ò»ÈºÍøÓÑÃÇ|
 |:---------------------------------------------------------:|
 |DMAZM-WHY52-AX222-ZQJXN-79JXH|DSBZG-BF2XH-M9222-D5M8L-QCCXH|
 
