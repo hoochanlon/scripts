@@ -36,7 +36,6 @@ Write-Output "win10/win11及未来更高版本以上：https://support.emeditor.
 ## curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/d-pwsh/main/emeditor_random_keygen.ps1 && 
 ### powershell -c emeditor_random_keygen.ps1 （旧）
 
-
 参考链接：
 
 https://www.educba.com/powershell-base64/
