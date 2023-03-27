@@ -1,248 +1,260 @@
-@REM ------------- ÌØÈ¨Éı¼¶ ---------------------------
+@REM ------------- ç‰¹æƒå‡çº§ä¸å…³é—­UAC---------------------------
 
-@REM [csdn-ÈÃbatÅú´¦ÀíÒÔ¹ÜÀíÔ±È¨ÏŞÔËĞĞµÄÊµÏÖ·½·¨](https://blog.csdn.net/NeiHan2020/article/details/124982175)
-@REM ÈÃbatÆô¶¯Ê±£¬Ê×ÏÈµ÷ÓÃvbs½Å±¾£¬Í¨¹ıvbs½Å±¾£¬ÒÔ¹ÜÀíÔ±Éí·İµ÷ÓÃ¸ÃbatµÄ runas ²¿·Ö£¬×îºóË³±ã¶¨Î»½Å±¾µ±Ç°Ö´ĞĞ»·¾³£¨Ä¿Â¼£©
+@REM [csdn-è®©batæ‰¹å¤„ç†ä»¥ç®¡ç†å‘˜æƒé™è¿è¡Œçš„å®ç°æ–¹æ³•](https://blog.csdn.net/NeiHan2020/article/details/124982175)
+@REM è®©batå¯åŠ¨æ—¶ï¼Œé¦–å…ˆè°ƒç”¨vbsè„šæœ¬ï¼Œé€šè¿‡vbsè„šæœ¬ï¼Œä»¥ç®¡ç†å‘˜èº«ä»½è°ƒç”¨è¯¥batçš„ runas éƒ¨åˆ†ï¼Œæœ€åé¡ºä¾¿å®šä½è„šæœ¬å½“å‰æ‰§è¡Œç¯å¢ƒï¼ˆç›®å½•ï¼‰
 
 @ECHO off
 %1 C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
 cd /d "%~dp0"
 
-@REM ----------- ¼æÈİĞÔÊÓÍ¼ ----------------------------
+@REM å…³é—­UACï¼Œé‡å¯ç”Ÿæ•ˆ
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d 0 /f
 
-@REM ½«ËùÓĞÍøÕ¾¶¼¼ÓÈë¼æÈİĞÔÊÓÍ¼¡£
-@REM [cnblogs-×¢²á±í·¨ĞŞ¸ÄIE8°²È«¼¶±ğµÄ·½·¨](https://www.cnblogs.com/freeton/p/3675018.html)
-@REM ÔÚ¹úÄÚµÄ»·¾³£¬ÒªÇóÊ¹ÓÃIEä¯ÀÀÆ÷£¬Ë÷ĞÔÈ«¶¼Í³Ò»ÉèÖÃ³É¼æÈİÊÓÍ¼°É
+@REM ----------- å…¼å®¹æ€§è§†å›¾ ----------------------------
+
+@REM å°†æ‰€æœ‰ç½‘ç«™éƒ½åŠ å…¥å…¼å®¹æ€§è§†å›¾ã€‚
+@REM [cnblogs-æ³¨å†Œè¡¨æ³•ä¿®æ”¹IE8å®‰å…¨çº§åˆ«çš„æ–¹æ³•](https://www.cnblogs.com/freeton/p/3675018.html)
+@REM åœ¨å›½å†…çš„ç¯å¢ƒï¼Œè¦æ±‚ä½¿ç”¨IEæµè§ˆå™¨ï¼Œç´¢æ€§å…¨éƒ½ç»Ÿä¸€è®¾ç½®æˆå…¼å®¹è§†å›¾å§
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\BrowserEmulation" /v "AllSitesCompatibilityMode" /t REG_DWORD /d 1 /f
 
-@REM -------- Ö÷Ò³ÉèÖÃÓë·À½Ù³Ö --------------------------
-@REM  ×îĞÂµÄwin11ÏµÍ³ÒÑ¾­°ÑIEµÄÖ÷Ò³ÉèÖÃGUIÒÆ³ıÁË¡£
+@REM -------- ä¸»é¡µè®¾ç½®ä¸é˜²åŠ«æŒ --------------------------
+@REM  æœ€æ–°çš„win11ç³»ç»Ÿå·²ç»æŠŠIEçš„ä¸»é¡µè®¾ç½®GUIç§»é™¤äº†ã€‚
 
-@REM ÉèÖÃÖ÷Ò³
+@REM è®¾ç½®ä¸»é¡µ
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main" /v "Start Page" /t REG_SZ /d www.baidu.com /f
 
-@REM ·ÀÖ¹Ö÷Ò³²»±»¶ñÒâĞŞ¸Ä£¬Ô­Àí£ºÍâÀ´³ÌĞòÃ»ÓĞÕâÃ´¸ßµÄÈ¨ÏŞĞŞ¸ÄÕâÒ»Ïî¡£
+@REM é˜²æ­¢ä¸»é¡µä¸è¢«æ¶æ„ä¿®æ”¹ï¼ŒåŸç†ï¼šå¤–æ¥ç¨‹åºæ²¡æœ‰è¿™ä¹ˆé«˜çš„æƒé™ä¿®æ”¹è¿™ä¸€é¡¹ã€‚
 @REM reg add "HKCU\Software\Policies\Microsoft\Internet Explorer\Control Panel" /v HomePage /d 1 /f >nul
-@REM ¸ÃÖ¸ÁîÓÃÓÚ½â³ıËÀËø£¡ >nul ²»ÊäÈëÈÎºÎĞÅÏ¢¡£
+@REM è¯¥æŒ‡ä»¤ç”¨äºè§£é™¤æ­»é”ï¼ >nul ä¸è¾“å…¥ä»»ä½•ä¿¡æ¯ã€‚
 @REM reg delete "HKCU\Software\Policies\Microsoft\Internet Explorer\Control Panel" /v HomePage /f >nul
 
-@REM ·ÀÖ¹ edge ½Ù³Ö IE £¬¼´IEÄ¬ÈÏÆôÓÃµÚÈı·½À©Õ¹¡£
+@REM é˜²æ­¢ edge åŠ«æŒ IE ï¼Œå³IEé»˜è®¤å¯ç”¨ç¬¬ä¸‰æ–¹æ‰©å±•ã€‚
+@REM [[REG]ã€Œã‚µãƒ¼ãƒ‰ ãƒ‘ãƒ¼ãƒ†ã‚£è£½ã®ãƒ–ãƒ©ã‚¦ã‚¶ãƒ¼æ‹¡å¼µã‚’è¨±å¯ã™ã‚‹ã€ã‚’ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã§è¨­å®šã™ã‚‹æ–¹æ³•ã€IE11ç·¨ã€‘](https://automationlabo.com/wat/?p=4213)
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main" /v "Enable Browser Extensions" /t REG_SZ /d "NO" /f
 
-@REM ×¢²á±íĞŞ¸Ä£¬µ«²»¹Ø±ÕIEÄ¬ÈÏÆôÓÃµÚÈı·½À©Õ¹¡£(×îĞÂ°æµÄwin10/11ÏµÍ³»¹ÊÇµÃ¹ØµôIEÄ¬ÈÏÆôÓÃµÄµÚÈı·½À©Õ¹...Ë«¹ÜÆëÏÂ)
+@REM æ³¨å†Œè¡¨ä¿®æ”¹ï¼Œä½†ä¸å…³é—­IEé»˜è®¤å¯ç”¨ç¬¬ä¸‰æ–¹æ‰©å±•ã€‚(æœ€æ–°ç‰ˆçš„win10/11ç³»ç»Ÿè¿˜æ˜¯å¾—å…³æ‰IEé»˜è®¤å¯ç”¨çš„ç¬¬ä¸‰æ–¹æ‰©å±•...åŒç®¡é½ä¸‹)
+@REM https://techcommunity.microsoft.com/t5/enterprise/ie-to-edge-87-redirection-issues/m-p/1941961
 reg add "HKCU\Software\Microsoft\Edge\IEToEdge" /v "UpsellDisabled" /t REG_DWORD /d 0 /f
 reg add "HKCU\Software\Microsoft\Edge\IEToEdge" /v "RedirectionMode" /t REG_DWORD /d 0 /f
 reg add "HKCU\Software\Microsoft\Edge\IEToEdge" /v "QuietExpirationTime" /t REG_QWORD /d 0 /f
 
-@REM ------------- ¼ÓÈë¿ÉĞÅÈÎÕ¾µã -----------------
+@REM ------------- åŠ å…¥å¯ä¿¡ä»»ç«™ç‚¹ -----------------
 
-@REM /v²ÎÊıºóÃæÊÇ¡°http¡±£¬ÕâÒâÎ¶×ÅËü½«´´½¨»òĞŞ¸ÄÃûÎª¡°http¡±µÄ¼üÖµ¶Ô£»/t Ö¸¶¨type /d  Ö¸¶¨ÉèÖÃ»òĞŞ¸ÄµÄ×¢²á±íÏîµÄÖµ£» /f Ç¿ÖÆ
-@REM ÓÉÓÚ Ranges\Range100 ¶¼ÊÇÊı×Ö£¬»¹ÒªÅäÖÃÁ½´ÎÈß³¤µÄ¼üÖµ×¢²á£¬¸öÈË¸Ğ¾õ²»Èç ZoneMap\Domains ºÃ¹ÜÀí¡£
-@REM Ìí¼ÓÍøÖ·²¢Ö¸¶¨Îª¿ÉĞÅÈÎÕ½µã¡£0x00000002Îª2µÄÊ®Áù½øÖÆ¡£
+@REM /vå‚æ•°åé¢æ˜¯â€œhttpâ€ï¼Œè¿™æ„å‘³ç€å®ƒå°†åˆ›å»ºæˆ–ä¿®æ”¹åä¸ºâ€œhttpâ€çš„é”®å€¼å¯¹ï¼›/t æŒ‡å®štype /d  æŒ‡å®šè®¾ç½®æˆ–ä¿®æ”¹çš„æ³¨å†Œè¡¨é¡¹çš„å€¼ï¼› /f å¼ºåˆ¶
+@REM ç”±äº Ranges\Range100 éƒ½æ˜¯æ•°å­—ï¼Œè¿˜è¦é…ç½®ä¸¤æ¬¡å†—é•¿çš„é”®å€¼æ³¨å†Œï¼Œä¸ªäººæ„Ÿè§‰ä¸å¦‚ ZoneMap\Domains å¥½ç®¡ç†ã€‚
+@REM æ·»åŠ ç½‘å€å¹¶æŒ‡å®šä¸ºå¯ä¿¡ä»»æˆ˜ç‚¹ã€‚0x00000002ä¸º2çš„åå…­è¿›åˆ¶ã€‚
 
-@REM ÕâÀï»á´æÔÚĞÅÈÎÕ¾µãGUI½çÃæÉ¾³ı²»ÁËIPÕ¾µãµÄbug£¬¼´Ê¹ÓÃÊ¾ÀıÖĞµÄÁíÒ»·½·¨Ò²ÊÇÈç´Ë£¬ËùÒÔ×îºÃÉèÖÃÎªÓëIEä¯ÀÀÆ÷Ïà¹ØµÄÒµÎñ
+@REM è¿™é‡Œä¼šå­˜åœ¨ä¿¡ä»»ç«™ç‚¹GUIç•Œé¢åˆ é™¤ä¸äº†IPç«™ç‚¹çš„bugï¼Œå³ä½¿ç”¨ç¤ºä¾‹ä¸­çš„å¦ä¸€æ–¹æ³•ä¹Ÿæ˜¯å¦‚æ­¤ï¼Œæ‰€ä»¥æœ€å¥½è®¾ç½®ä¸ºä¸IEæµè§ˆå™¨ç›¸å…³çš„ä¸šåŠ¡
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\192.168.0.1" /v http /t REG_DWORD /d 0x00000002 /f
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\192.168.0.2" /v http /t REG_DWORD /d 0x00000002 /f
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\192.168.0.3" /v https /t REG_DWORD /d 0x00000002 /f
 
-@REM ÓĞÓòÃûµÄÍøÕ¾µ¹ÊÇ¿ÉÒÔÕı³£É¾³ı£¬IPµÄ¾ÍÖ»ÄÜÓÃ×¢²á±íÉ¾³ıÁË¡£
+@REM æœ‰åŸŸåçš„ç½‘ç«™å€’æ˜¯å¯ä»¥æ­£å¸¸åˆ é™¤ï¼ŒIPçš„å°±åªèƒ½ç”¨æ³¨å†Œè¡¨åˆ é™¤äº†ã€‚
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\baidu.com\www" /v http /t REG_DWORD /d 0x00000002 /f
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\bing.com\www" /v https /t REG_DWORD /d 0x00000002 /f
 
 
-@REM ----------------- IEÊÜĞÅÈÎµÄÕ¾µãÉèÖÃ£¬ÖğÌõ½â¶Á---------------------------
+@REM ----------------- IEå—ä¿¡ä»»çš„ç«™ç‚¹è®¾ç½®ï¼Œé€æ¡è§£è¯»---------------------------
 
-@REM [51cto-Ê¹ÓÃÓò×é²ßÂÔÉèÖÃIEÊÜĞÅÈÎÕ¾µã](https://blog.51cto.com/guozhengyuan/1393631)
+@REM ç›´æ¥å°†å¯ä¿¡ä»»æˆ˜ç‚¹çš„å®‰å…¨çº§åˆ«è°ƒè‡³æœ€ä½
+@REM reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "CurrentLevel" /t REG_DWORD /d 0x10000 /f 
+
+@REM ç›´æ¥å°†Intranet å†…éƒ¨ç½‘çš„å®‰å…¨çº§åˆ«è°ƒè‡³æœ€ä½
+@REM 0 æœ¬åœ°è®¡ç®—æœºåŒºåŸŸï¼›1 Intranet å†…éƒ¨ç½‘ï¼› 2 å—ä¿¡ä»»çš„ç«™ç‚¹åŒºåŸŸï¼›3 Internet å¤–ç½‘åŸŸï¼›4 å—é™åˆ¶çš„ç«™ç‚¹åŒºåŸŸã€‚
+@REM reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\1" /v "CurrentLevel" /t REG_DWORD /d 0x10000 /f 
+
+@REM [51cto-ä½¿ç”¨åŸŸç»„ç­–ç•¥è®¾ç½®IEå—ä¿¡ä»»ç«™ç‚¹](https://blog.51cto.com/guozhengyuan/1393631)
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "Flags" /t REG_DWORD /d 0x00047 /f
 
-@REM ½«IEÅäÖÃ²ßÂÔÓ¦ÓÃµ½ËùÓĞÓÃ»§¡£ ÔÚwin11µÄIEÉÏ³öÏÖ²»ÄÜ¼ÓÈë¿ÉĞÅÈÎÕ¾µãµÄbug
+@REM å°†IEé…ç½®ç­–ç•¥åº”ç”¨åˆ°æ‰€æœ‰ç”¨æˆ·ã€‚ åœ¨win11çš„IEä¸Šå‡ºç°ä¸èƒ½åŠ å…¥å¯ä¿¡ä»»ç«™ç‚¹çš„bug
 @REM https://www.itprotoday.com/compute-engines/jsi-tip-5130-how-can-i-manage-internet-explorer-security-zones-registry
 @REM reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings" /v SECURITY_HKLM_ONLY /t REG_DWORD /d 1 /f
 
-@REM ¸÷ÏîÅäÖÃ¼°Ä£°æ²éÔÄ£º
+@REM å„é¡¹é…ç½®åŠæ¨¡ç‰ˆæŸ¥é˜…ï¼š
 :: https://admx.help/?Category=InternetExplorer&Policy=Microsoft.Policies.InternetExplorer::IZ_Policy_TurnOnProtectedMode_9&Language=zh-cn
 :: https://admx.help/?Category=InternetExplorer&Policy=Microsoft.Policies.InternetExplorer::IZ_PolicyTrustedSitesZoneTemplate&Language=zh-cn
 
-@REM ÆôÓÃActiveX ¿Ø¼ş×Ô¶¯ÌáÊ¾£¬0£¬ÆôÓÃ£»3£¬½ûÓÃ¡£
+@REM å¯ç”¨ActiveX æ§ä»¶è‡ªåŠ¨æç¤ºï¼Œ0ï¼Œå¯ç”¨ï¼›3ï¼Œç¦ç”¨ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2201" /t REG_DWORD /d 0 /f
 
-@REM 0£¬ÆôÓÃ£»1£¬½ûÓÃ£»2£¬ÌáÊ¾¡£ÆôÓÃ Java Ğ¡³ÌĞò½Å±¾ 
+@REM 0ï¼Œå¯ç”¨ï¼›1ï¼Œç¦ç”¨ï¼›2ï¼Œæç¤ºã€‚å¯ç”¨ Java å°ç¨‹åºè„šæœ¬ 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1402" /t REG_DWORD /d 0 /f
 
-@REM 0£¬ÆôÓÃ; ÆôÓÃÏÂÔØÒÑÇ©ÃûµÄ ActiveX ¿Ø¼ş 
+@REM 0ï¼Œå¯ç”¨; å¯ç”¨ä¸‹è½½å·²ç­¾åçš„ ActiveX æ§ä»¶ 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1001" /t REG_DWORD /d 0 /f
 
-@REM 3£¬½ûÓÃ£»½ûÓÃÏÂÔØÎ´Ç©ÃûµÄ ActiveX ¿Ø¼ş
+@REM 3ï¼Œç¦ç”¨ï¼›ç¦ç”¨ä¸‹è½½æœªç­¾åçš„ ActiveX æ§ä»¶
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1004" /t REG_DWORD /d 1 /f
 
-@REM Ñ¡ÏîÖ»ÄÜ¸ú×ÅÎÄµµ×ß£¬¿ÉÄÜÊÇ¹¤³ÌÁ¿Ì«´óÁË£¬ËùÓĞÊı×ÖÑ¡Ïî²»Í³Ò»£¬±È½ÏÁèÂÒ¡£
-@REM ¼ÌĞø.....
+@REM é€‰é¡¹åªèƒ½è·Ÿç€æ–‡æ¡£èµ°ï¼Œå¯èƒ½æ˜¯å·¥ç¨‹é‡å¤ªå¤§äº†ï¼Œæ‰€æœ‰æ•°å­—é€‰é¡¹ä¸ç»Ÿä¸€ï¼Œæ¯”è¾ƒå‡Œä¹±ã€‚
+@REM ç»§ç»­.....
 
-@REM ½ûÓÃ½öÔÊĞí¾­¹ıÅú×¼µÄÓòÔÚÎ´¾­ÌáÊ¾µÄÇé¿öÏÂÊ¹ÓÃ ActiveX ¿Ø¼ş
+@REM ç¦ç”¨ä»…å…è®¸ç»è¿‡æ‰¹å‡†çš„åŸŸåœ¨æœªç»æç¤ºçš„æƒ…å†µä¸‹ä½¿ç”¨ ActiveX æ§ä»¶
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "120B" /t REG_DWORD /d 0 /f
 
-@REM ½ûÓÃÊ¹ÓÃµ¯³ö´°¿Ú×èÖ¹³ÌĞò
+@REM ç¦ç”¨ä½¿ç”¨å¼¹å‡ºçª—å£é˜»æ­¢ç¨‹åº
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1809" /t REG_DWORD /d 3 /f
 
-@REM ÆôÓÃÔÊĞí Internet Explorer WebBrowser ¿Ø¼şµÄ½Å±¾
+@REM å¯ç”¨å…è®¸ Internet Explorer WebBrowser æ§ä»¶çš„è„šæœ¬
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1206" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃÔÊĞí META REFRESH£¬ÔÊĞíÖØ¶¨Ïò
+@REM å¯ç”¨å…è®¸ META REFRESHï¼Œå…è®¸é‡å®šå‘
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1608" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃÔÊĞí Scriptlet£¬ÍøÒ³ÑéÖ¤ÂëÓÃµÃ×Å
+@REM å¯ç”¨å…è®¸ Scriptletï¼Œç½‘é¡µéªŒè¯ç ç”¨å¾—ç€
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1209" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃÔÊĞí¶ş½øÖÆÎÄ¼şºÍ½Å±¾ĞĞÎª
+@REM å¯ç”¨å…è®¸äºŒè¿›åˆ¶æ–‡ä»¶å’Œè„šæœ¬è¡Œä¸º
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2000" /t REG_DWORD /d 0 /f
 
-@REM ÔÊĞí¼ÓÔØ XAML ÎÄ¼ş£¬Ìá¹©ÁË¶Ô¶¯»­ºÍ3DÖÚ¶à·½ÃæµÄÖ§³Ö¡£
-:: [°Ù¶È°Ù¿Æ-XAML](https://baike.baidu.com/item/XAML/6123952?fr=aladdin)
+@REM å…è®¸åŠ è½½ XAML æ–‡ä»¶ï¼Œæä¾›äº†å¯¹åŠ¨ç”»å’Œ3Dä¼—å¤šæ–¹é¢çš„æ”¯æŒã€‚
+:: [ç™¾åº¦ç™¾ç§‘-XAML](https://baike.baidu.com/item/XAML/6123952?fr=aladdin)
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2402" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃÔÊĞí¼ÓÔØ XAML ä¯ÀÀÆ÷Ó¦ÓÃ³ÌĞò
+@REM å¯ç”¨å…è®¸åŠ è½½ XAML æµè§ˆå™¨åº”ç”¨ç¨‹åº
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2400" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃÔÊĞí¼ÓÔØ XPS ÎÄ¼ş
+@REM å¯ç”¨å…è®¸åŠ è½½ XPS æ–‡ä»¶
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2401" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃÔÊĞíÔÚÒ»¸ö´°¿ÚÖĞÍÏ¶¯²»Í¬ÓòÖĞµÄÄÚÈİ£¬**½ûÓÃ**
-@REM ·ÀÖ¹Ô±¹¤£¬ÂÒÍÏ¶¯µ¼ÖÂ´íµãÑ¡Ïî¡£
+@REM å¯ç”¨å…è®¸åœ¨ä¸€ä¸ªçª—å£ä¸­æ‹–åŠ¨ä¸åŒåŸŸä¸­çš„å†…å®¹ï¼Œ**ç¦ç”¨**
+@REM é˜²æ­¢å‘˜å·¥ï¼Œä¹±æ‹–åŠ¨å¯¼è‡´é”™ç‚¹é€‰é¡¹ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2708" /t REG_DWORD /d 3 /f
 
-@REM ÆôÓÃÔÊĞíÔÚ¶à¸ö´°¿ÚÖ®¼äÍÏ¶¯²»Í¬ÓòÖĞµÄÄÚÈİ£¬**½ûÓÃ**
+@REM å¯ç”¨å…è®¸åœ¨å¤šä¸ªçª—å£ä¹‹é—´æ‹–åŠ¨ä¸åŒåŸŸä¸­çš„å†…å®¹ï¼Œ**ç¦ç”¨**
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2709" /t REG_DWORD /d 3 /f
 
-@REM ÔÊĞíÔÚÍøÒ³ÉÏÊ¹ÓÃ¾ÉÃ½Ìå²¥·Å»ú²¥·ÅÊÓÆµºÍ¶¯»­£¬**½ûÓÃ**
-@REM ·ÀÖ¹Ô±¹¤¿´ÊÓÆµ£¬ÃşÓã
+@REM å…è®¸åœ¨ç½‘é¡µä¸Šä½¿ç”¨æ—§åª’ä½“æ’­æ”¾æœºæ’­æ”¾è§†é¢‘å’ŒåŠ¨ç”»ï¼Œ**ç¦ç”¨**
+@REM é˜²æ­¢å‘˜å·¥çœ‹è§†é¢‘ï¼Œæ‘¸é±¼
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "120A" /t REG_DWORD /d 3 /f
 
-@REM ÔÊĞí×ÖÌåÏÂÔØ
+@REM å…è®¸å­—ä½“ä¸‹è½½
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1604" /t REG_DWORD /d 0 /f
 
-@REM ÔÊĞí°²×°×ÀÃæÏîÄ¿£¬Ëü¿ÉÒÔÈÃÓÃ»§½« Web ÄÚÈİ×÷Îª×ÀÃæ±³¾° **ÌáÊ¾** ¡£
+@REM å…è®¸å®‰è£…æ¡Œé¢é¡¹ç›®ï¼Œå®ƒå¯ä»¥è®©ç”¨æˆ·å°† Web å†…å®¹ä½œä¸ºæ¡Œé¢èƒŒæ™¯ **æç¤º** ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1800" /t REG_DWORD /d 1 /f
 
-@REM ÔÊĞíÍÏ·ÅÎÄ¼ş»ò¸´ÖÆ/Õ³ÌùÎÄ¼ş
+@REM å…è®¸æ‹–æ”¾æ–‡ä»¶æˆ–å¤åˆ¶/ç²˜è´´æ–‡ä»¶
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1802" /t REG_DWORD /d 0 /f
 
-@REM ÔÊĞíÎÄ¼şÏÂÔØ
+@REM å…è®¸æ–‡ä»¶ä¸‹è½½
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1803" /t REG_DWORD /d 0 /f
 
-@REM ÔÊĞí»î¶¯½Å±¾£»½ûÓÃÔò»á×èÖ¹ÔËĞĞ¸ÃÇøÓòÖĞÒ³ÃæÉÏµÄ½Å±¾´úÂë¡£
+@REM å…è®¸æ´»åŠ¨è„šæœ¬ï¼›ç¦ç”¨åˆ™ä¼šé˜»æ­¢è¿è¡Œè¯¥åŒºåŸŸä¸­é¡µé¢ä¸Šçš„è„šæœ¬ä»£ç ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1400" /t REG_DWORD /d 0 /f
 
-@REM ÔÊĞíÓÉ½Å±¾Æô¶¯µÄ´°¿Ú£¬²»ÊÜ´óĞ¡»òÎ»ÖÃÏŞÖÆ 
+@REM å…è®¸ç”±è„šæœ¬å¯åŠ¨çš„çª—å£ï¼Œä¸å—å¤§å°æˆ–ä½ç½®é™åˆ¶ 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2102" /t REG_DWORD /d 0 /f
 
-@REM ÔÊĞíÍøÕ¾Ê¹ÓÃ½Å±¾´°¿ÚÌáÊ¾»ñµÃĞÅÏ¢
+@REM å…è®¸ç½‘ç«™ä½¿ç”¨è„šæœ¬çª—å£æç¤ºè·å¾—ä¿¡æ¯
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2105" /t REG_DWORD /d 0 /f
 
-@REM ÔÊĞíÍøÕ¾´ò¿ªÃ»ÓĞ×´Ì¬À¸»òµØÖ·À¸µÄ´°¿Ú
+@REM å…è®¸ç½‘ç«™æ‰“å¼€æ²¡æœ‰çŠ¶æ€æ æˆ–åœ°å€æ çš„çª—å£
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2104" /t REG_DWORD /d 0 /f
 
-@REM ÔÊĞíÍ¨¹ıÊÜÏŞÖÆµÄĞ­ÒéµÄ»î¶¯ÄÚÈİ·ÃÎÊÎÒµÄµçÄÔ£¬**ÌáÊ¾** 
+@REM å…è®¸é€šè¿‡å—é™åˆ¶çš„åè®®çš„æ´»åŠ¨å†…å®¹è®¿é—®æˆ‘çš„ç”µè„‘ï¼Œ**æç¤º** 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2300" /t REG_DWORD /d 1 /f
 
-@REM ÔÊĞíÍ¨¹ı½Å±¾´Ó¼ôÌù°å½øĞĞ¼ôÇĞ¡¢¸´ÖÆ»òÕ³Ìù²Ù×÷
+@REM å…è®¸é€šè¿‡è„šæœ¬ä»å‰ªè´´æ¿è¿›è¡Œå‰ªåˆ‡ã€å¤åˆ¶æˆ–ç²˜è´´æ“ä½œ
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1407" /t REG_DWORD /d 0 /f
 
-@REM ÔÊĞíÍ¨¹ı½Å±¾¸üĞÂ×´Ì¬À¸
+@REM å…è®¸é€šè¿‡è„šæœ¬æ›´æ–°çŠ¶æ€æ 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2103" /t REG_DWORD /d 0 /f
 
-@REM ¹Ø±Õ .NET Framework °²×°³ÌĞò£¬ **½ûÓÃ**
+@REM å…³é—­ .NET Framework å®‰è£…ç¨‹åºï¼Œ **ç¦ç”¨**
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2600" /t REG_DWORD /d 0 /f
 
-@REM ¹Ø±ÕÊ×´ÎÔËĞĞ¿Ø¼şÌáÊ¾
+@REM å…³é—­é¦–æ¬¡è¿è¡Œæ§ä»¶æç¤º
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1208" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃ MIME Ì½²é£¬Ö÷ÒªÓÃÀ´È·ÈÏÎÄ¼şÀàĞÍ¡£
-:: [Java»ñÈ¡ÎÄ¼şµÄMimeÀàĞÍµÄ¼¸ÖÖ·½Ê½×Ü½á](https://backend.devrank.cn/traffic-information/7082116610194065421)
+@REM å¯ç”¨ MIME æ¢æŸ¥ï¼Œä¸»è¦ç”¨æ¥ç¡®è®¤æ–‡ä»¶ç±»å‹ã€‚
+:: [Javaè·å–æ–‡ä»¶çš„Mimeç±»å‹çš„å‡ ç§æ–¹å¼æ€»ç»“](https://backend.devrank.cn/traffic-information/7082116610194065421)
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2100" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃ SmartScreen É¸Ñ¡Æ÷É¨Ãè£¬**½ûÓÃ**
+@REM å¯ç”¨ SmartScreen ç­›é€‰å™¨æ‰«æï¼Œ**ç¦ç”¨**
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2301" /t REG_DWORD /d 3 /f
 
-@REM ½ûÓÃ±£»¤Ä£Ê½
+@REM ç¦ç”¨ä¿æŠ¤æ¨¡å¼
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2500" /t REG_DWORD /d 3 /f
 
-@REM ÆôÓÃ¿çÕ¾µã½Å±¾É¸Ñ¡£¬**½ûÓÃ**
-@REM ÔÊĞí¿çÕ¾µã½Å±¾×¢Èë¡£
+@REM å¯ç”¨è·¨ç«™ç‚¹è„šæœ¬ç­›é€‰ï¼Œ**ç¦ç”¨**
+@REM å…è®¸è·¨ç«™ç‚¹è„šæœ¬æ³¨å…¥ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1409" /t REG_DWORD /d 3 /f
 
-@REM ÆôÓÃInternet Explorer ³ÊÏÖ¾É°æÉ¸Ñ¡Æ÷¡£×ö¼æÈİµÄ
+@REM å¯ç”¨Internet Explorer å‘ˆç°æ—§ç‰ˆç­›é€‰å™¨ã€‚åšå…¼å®¹çš„
 :: https://learn.microsoft.com/en-us/archive/blogs/ie_cn/ie10-release-preview-dx
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "270B" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃÔÚIFRAMEÖĞÆô¶¯Ó¦ÓÃ³ÌĞòºÍÎÄ¼ş
-@REM FRAMEÊÇHTML±êÇ©£¬×÷ÓÃÊÇÎÄµµÖĞµÄÎÄµµ£¬»òÕß¸¡¶¯µÄ¿ò¼Ü(FRAME)¡£iframeÔªËØ»á´´½¨°üº¬ÁíÍâÒ»¸öÎÄµµµÄÄÚÁª¿ò¼Ü£¨¼´ĞĞÄÚ¿ò¼Ü£©¡£
+@REM å¯ç”¨åœ¨IFRAMEä¸­å¯åŠ¨åº”ç”¨ç¨‹åºå’Œæ–‡ä»¶
+@REM FRAMEæ˜¯HTMLæ ‡ç­¾ï¼Œä½œç”¨æ˜¯æ–‡æ¡£ä¸­çš„æ–‡æ¡£ï¼Œæˆ–è€…æµ®åŠ¨çš„æ¡†æ¶(FRAME)ã€‚iframeå…ƒç´ ä¼šåˆ›å»ºåŒ…å«å¦å¤–ä¸€ä¸ªæ–‡æ¡£çš„å†…è”æ¡†æ¶ï¼ˆå³è¡Œå†…æ¡†æ¶ï¼‰ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1804" /t REG_DWORD /d 0 /f
 
-@REM ÔÚ²»Ì«ÑÏ¸ñµÄ Web ÄÚÈİÓòÖĞµÄÍøÕ¾¿ÉÒÔµ¼º½µ½´ËÇøÓò£¬**ÌáÊ¾**
+@REM åœ¨ä¸å¤ªä¸¥æ ¼çš„ Web å†…å®¹åŸŸä¸­çš„ç½‘ç«™å¯ä»¥å¯¼èˆªåˆ°æ­¤åŒºåŸŸï¼Œ**æç¤º**
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2101" /t REG_DWORD /d 1 /f
 
-@REM ÆôÓÃ¶Ô¿ÉÄÜ²»°²È«µÄÎÄ¼şÏÔÊ¾°²È«¾¯¸æ
+@REM å¯ç”¨å¯¹å¯èƒ½ä¸å®‰å…¨çš„æ–‡ä»¶æ˜¾ç¤ºå®‰å…¨è­¦å‘Š
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1806" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃ¶Ô±ê¼ÇÎª¿É°²È«Ö´ĞĞ½Å±¾µÄ ActiveX ¿Ø¼şÖ´ĞĞ½Å±¾£¬ÎŞĞëÓÃ»§¸ÉÔ¤¼´¿É×Ô¶¯½øĞĞ½Å±¾½»»¥¡£
+@REM å¯ç”¨å¯¹æ ‡è®°ä¸ºå¯å®‰å…¨æ‰§è¡Œè„šæœ¬çš„ ActiveX æ§ä»¶æ‰§è¡Œè„šæœ¬ï¼Œæ— é¡»ç”¨æˆ·å¹²é¢„å³å¯è‡ªåŠ¨è¿›è¡Œè„šæœ¬äº¤äº’ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1405" /t REG_DWORD /d 0 /f
 
-@REM ¶ÔÃ»ÓĞ±ê¼ÇÎª°²È«µÄ ActiveX ¿Ø¼ş½øĞĞ³õÊ¼»¯ºÍ½Å±¾ÔËĞĞ£¬**ÌáÊ¾**
+@REM å¯¹æ²¡æœ‰æ ‡è®°ä¸ºå®‰å…¨çš„ ActiveX æ§ä»¶è¿›è¡Œåˆå§‹åŒ–å’Œè„šæœ¬è¿è¡Œï¼Œ**æç¤º**
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1201" /t REG_DWORD /d 1 /f
 
-@REM ÓÃ»§Êı¾İ³Ö¾Ã»¯
-@REM ÓÃ»§¿ÉÒÔÔÚä¯ÀÀÆ÷ÀúÊ·¼ÇÂ¼¡¢ÊÕ²Ø¼Ğ¡¢XML ´æ´¢»òÖ±½ÓÔÚ±£´æµ½´ÅÅÌµÄÍøÒ³ÖĞ±£´æĞÅÏ¢¡£
+@REM ç”¨æˆ·æ•°æ®æŒä¹…åŒ–
+@REM ç”¨æˆ·å¯ä»¥åœ¨æµè§ˆå™¨å†å²è®°å½•ã€æ”¶è—å¤¹ã€XML å­˜å‚¨æˆ–ç›´æ¥åœ¨ä¿å­˜åˆ°ç£ç›˜çš„ç½‘é¡µä¸­ä¿å­˜ä¿¡æ¯ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1606" /t REG_DWORD /d 0 /f
 
-@REM ÔÊĞíÌá½»·Ç¼ÓÃÜ±íµ¥Êı¾İ
+@REM å…è®¸æäº¤éåŠ å¯†è¡¨å•æ•°æ®
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1601" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃÎÄ¼şÏÂÔØµÄ×Ô¶¯ÌáÊ¾
+@REM å¯ç”¨æ–‡ä»¶ä¸‹è½½çš„è‡ªåŠ¨æç¤º
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2200" /t REG_DWORD /d 0 /f
 
-:: ÏÔÊ¾»ìºÏÄÚÈİ£¬**ÌáÊ¾** °²È«(https://)ºÍ²»°²È«ÄÚÈİ(http://)
+:: æ˜¾ç¤ºæ··åˆå†…å®¹ï¼Œ**æç¤º** å®‰å…¨(https://)å’Œä¸å®‰å…¨å†…å®¹(http://)
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1609" /t REG_DWORD /d 1 /f
 
-@REM ÆôÓÃ¡°Ã»ÓĞÖ¤Êé»òÖ»ÓĞÒ»¸öÖ¤ÊéÊ±²»ÌáÊ¾½øĞĞ¿Í»§¶ËÖ¤ÊéÑ¡Ôñ¡±
-@REM ¶Ô¿ÉĞÅÈÎÕ¾µã£¬×Ô¶¯Ö¤ÊéÈ·ÈÏ
+@REM å¯ç”¨â€œæ²¡æœ‰è¯ä¹¦æˆ–åªæœ‰ä¸€ä¸ªè¯ä¹¦æ—¶ä¸æç¤ºè¿›è¡Œå®¢æˆ·ç«¯è¯ä¹¦é€‰æ‹©â€
+@REM å¯¹å¯ä¿¡ä»»ç«™ç‚¹ï¼Œè‡ªåŠ¨è¯ä¹¦ç¡®è®¤
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1A04" /t REG_DWORD /d 0 /f
 
-@REM ÓÃ»§Í¨¹ı HTML ±íµ¥ÉÏÔØÎÄ¼şÊ±·¢ËÍÂ·¾¶ĞÅÏ¢¡£
+@REM ç”¨æˆ·é€šè¿‡ HTML è¡¨å•ä¸Šè½½æ–‡ä»¶æ—¶å‘é€è·¯å¾„ä¿¡æ¯ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "160A" /t REG_DWORD /d 0 /f
 
-@REM ×Ô¶¯Ê¹ÓÃµ±Ç°ÓÃ»§ÃûºÍÃÜÂë×Ô¶¯µÇÂ¼
-@REM ÍøÂçÉÏµÄsmbÎÄ¼ş¹²Ïí
+@REM è‡ªåŠ¨ä½¿ç”¨å½“å‰ç”¨æˆ·åå’Œå¯†ç è‡ªåŠ¨ç™»å½•
+@REM ç½‘ç»œä¸Šçš„smbæ–‡ä»¶å…±äº«
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1A00" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃ´Ë²ßÂÔÉèÖÃ£¬Ôò Internet Explorer ²»»á¼ì²é·´¶ñÒâ³ÌĞò£¬ÒÔ²é¿´ÊÇ·ñ¿É°²È«´´½¨ ActiveX ¿Ø¼şÊµÀı¡£
+@REM å¯ç”¨æ­¤ç­–ç•¥è®¾ç½®ï¼Œåˆ™ Internet Explorer ä¸ä¼šæ£€æŸ¥åæ¶æ„ç¨‹åºï¼Œä»¥æŸ¥çœ‹æ˜¯å¦å¯å®‰å…¨åˆ›å»º ActiveX æ§ä»¶å®ä¾‹ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "270C" /t REG_DWORD /d 0 /f
 
-@REM ÓÃ»§¿ÉÒÔ¿çÓò´ò¿ª´°¿ÚºÍ¿ò¼Ü£¬²¢¿ÉÒÔ¿çÓò·ÃÎÊÓ¦ÓÃ³ÌĞò¡£
+@REM ç”¨æˆ·å¯ä»¥è·¨åŸŸæ‰“å¼€çª—å£å’Œæ¡†æ¶ï¼Œå¹¶å¯ä»¥è·¨åŸŸè®¿é—®åº”ç”¨ç¨‹åºã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1607" /t REG_DWORD /d 0 /f
 
-@REM REG_DWORD µÄÄ¬ÈÏ½øÖÆÊÇÊ®Áù½øÖÆ£¬ËüµÄÊıÖµ¿ÉÒÔÓÃÊ®½øÖÆ¡¢¶ş½øÖÆ·½Ê½À´±íÊ¾¡£
-@REM 196608 Ê®½øÖÆ£¬Èí¼şÆµµÀÈ¨ÏŞ£¬°²È«¼¶ - µÍ 
+@REM REG_DWORD çš„é»˜è®¤è¿›åˆ¶æ˜¯åå…­è¿›åˆ¶ï¼Œå®ƒçš„æ•°å€¼å¯ä»¥ç”¨åè¿›åˆ¶ã€äºŒè¿›åˆ¶æ–¹å¼æ¥è¡¨ç¤ºã€‚
+@REM 196608 åè¿›åˆ¶ï¼Œè½¯ä»¶é¢‘é“æƒé™ï¼Œå®‰å…¨çº§ - ä½ 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1E05" /t REG_DWORD /d 0x030000 /f
 
-@REM ÆôÓÃÔËĞĞ ActiveX ¿Ø¼şºÍ²å¼ş
+@REM å¯ç”¨è¿è¡Œ ActiveX æ§ä»¶å’Œæ’ä»¶
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1200" /t REG_DWORD /d 0 /f
 
-@REM ÆôÓÃÖ´ĞĞÎ´Ç©ÃûµÄÍĞ¹Ü×é¼ş¡£
+@REM å¯ç”¨æ‰§è¡Œæœªç­¾åçš„æ‰˜ç®¡ç»„ä»¶ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2004" /t REG_DWORD /d 0 /f
-@REM ÆôÓÃÖ´ĞĞÇ©ÃûµÄÍĞ¹Ü×é¼ş¡£
+@REM å¯ç”¨æ‰§è¡Œç­¾åçš„æ‰˜ç®¡ç»„ä»¶ã€‚
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2001" /t REG_DWORD /d 0 /f
 
-@REM ÓÃ»§¿ÉÒÔÔÚÇøÓòÖĞ¼ÓÔØÊ¹ÓÃ MSXML »ò ADO ·ÃÎÊÇøÓòÖĞÆäËûÕ¾µãÊı¾İµÄÒ³Ãæ
-@REM ÄÚ²¿Êı¾İ¿â·ÃÎÊ
+@REM ç”¨æˆ·å¯ä»¥åœ¨åŒºåŸŸä¸­åŠ è½½ä½¿ç”¨ MSXML æˆ– ADO è®¿é—®åŒºåŸŸä¸­å…¶ä»–ç«™ç‚¹æ•°æ®çš„é¡µé¢
+@REM å†…éƒ¨æ•°æ®åº“è®¿é—®
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1406" /t REG_DWORD /d 0 /f
 
-@REM Java È¨ÏŞ£¬°²È«¼¶ - µÍ£»196608 Ê®½øÖÆ
+@REM Java æƒé™ï¼Œå®‰å…¨çº§ - ä½ï¼›196608 åè¿›åˆ¶
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1C00" /t REG_DWORD /d 0x030000 /f
 
-@REM ±£Áô×Ö²¿·Ö£¬Èç£º Default1408Local¡¢Default140ATrusted¡¢Default1605Internet¡¢Default2302Restricted
+@REM ä¿ç•™å­—éƒ¨åˆ†ï¼Œå¦‚ï¼š Default1408Localã€Default140ATrustedã€Default1605Internetã€Default2302Restricted
 
-:: ÆğÏÈ²éÔÄµÄ×ÊÁÏ:[csdn-ĞŞ¸Ä×¢²á±íÀ´ĞŞ¸ÄIEµÄÉèÖÃ×ÊÁÏ»ã×Ü](https://blog.csdn.net/wangqiulin123456/article/details/17068649)
-:: Î¢Èí¹Ù·½ÒÑ½«¾É°æµÄIEÎÄµµ×ÊÁÏÉ¾³ıÁË£¬²»¹ı»¹ÊÇÕÒµ½ÁËÖëË¿Âí¼£¡£¶Ô±ÈÈçÏÂÁ½¸öÎÄµµ£¬¿ÉÒÔ·¢ÏÖÆä¶ËÄß¡£
-:: ¹ÀÃş×ÅÎ¢Èíµ±Ê±ÊÇÏë×öĞ©Ê²Ã´ÉèÖÃ£¬È»ºóÔÚ"ÊÜĞÅÈÎµÄÕ¾µãÇøÓòÄ£°å"°å¿é£¬¶ÔÕâĞ©±£ÁôÏî×öÁË±ğÓĞÒâÎ¶µÄ¶¨Òå
+:: èµ·å…ˆæŸ¥é˜…çš„èµ„æ–™:[csdn-ä¿®æ”¹æ³¨å†Œè¡¨æ¥ä¿®æ”¹IEçš„è®¾ç½®èµ„æ–™æ±‡æ€»](https://blog.csdn.net/wangqiulin123456/article/details/17068649)
+:: å¾®è½¯å®˜æ–¹å·²å°†æ—§ç‰ˆçš„IEæ–‡æ¡£èµ„æ–™åˆ é™¤äº†ï¼Œä¸è¿‡è¿˜æ˜¯æ‰¾åˆ°äº†è››ä¸é©¬è¿¹ã€‚å¯¹æ¯”å¦‚ä¸‹ä¸¤ä¸ªæ–‡æ¡£ï¼Œå¯ä»¥å‘ç°å…¶ç«¯å€ªã€‚
+:: ä¼°æ‘¸ç€å¾®è½¯å½“æ—¶æ˜¯æƒ³åšäº›ä»€ä¹ˆè®¾ç½®ï¼Œç„¶ååœ¨"å—ä¿¡ä»»çš„ç«™ç‚¹åŒºåŸŸæ¨¡æ¿"æ¿å—ï¼Œå¯¹è¿™äº›ä¿ç•™é¡¹åšäº†åˆ«æœ‰æ„å‘³çš„å®šä¹‰
 :: https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gppref/c05dc3bf-dcfc-4f46-8be2-8a78e46875a7
 
 @REM reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "140A" /t REG_DWORD /d 0 /f
@@ -251,11 +263,11 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\
 @REM reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "2302" /t REG_DWORD /d 0 /f
 
 
-@REM ------------ ¼æÈİĞÔÊÓÍ¼Ê¾Àı¡£----------------
-@REM %Temp% ÊÇÒ»¸ö±äÁ¿Ä¿Â¼£¬Ë«»÷winRARµÄÔËĞĞÎÄ¼ş³£±£´æÔÚÕâ
-@REM  [ĞÂÀË°®ÎÊÖªÊ¶´ïÈË-attrib -s -r -hÊÇÊ²Ã´ÒâË¼£¿](https://iask.sina.com.cn/b/3124185.html)
-@REM  attrib¸ü¸Äµ¥¸öÎÄ¼ş»òÄ¿Â¼µÄÊôĞÔ£¬RÖ»¶ÁÊôĞÔ -RÇå³ıÖ»¶ÁÊôĞÔ£»HÉèÖÃÒş²ØÊôĞÔ£»SÉèÖÃÏµÍ³ÊôĞÔ¡£
-@REM  del /f£ºÇ¿ÖÆÉ¾³ıÖ»¶ÁÎÄ¼ş¡£/s£ºÉ¾³ıËùÓĞ×ÓÄ¿Â¼ÖĞµÄÖ¸¶¨µÄÎÄ¼ş¡£/q£º°²¾²Ä£Ê½
+@REM ------------ å…¼å®¹æ€§è§†å›¾ç¤ºä¾‹ã€‚----------------
+@REM %Temp% æ˜¯ä¸€ä¸ªå˜é‡ç›®å½•ï¼ŒåŒå‡»winRARçš„è¿è¡Œæ–‡ä»¶å¸¸ä¿å­˜åœ¨è¿™
+@REM  [æ–°æµªçˆ±é—®çŸ¥è¯†è¾¾äºº-attrib -s -r -hæ˜¯ä»€ä¹ˆæ„æ€ï¼Ÿ](https://iask.sina.com.cn/b/3124185.html)
+@REM  attribæ›´æ”¹å•ä¸ªæ–‡ä»¶æˆ–ç›®å½•çš„å±æ€§ï¼ŒRåªè¯»å±æ€§ -Ræ¸…é™¤åªè¯»å±æ€§ï¼›Hè®¾ç½®éšè—å±æ€§ï¼›Sè®¾ç½®ç³»ç»Ÿå±æ€§ã€‚
+@REM  del /fï¼šå¼ºåˆ¶åˆ é™¤åªè¯»æ–‡ä»¶ã€‚/sï¼šåˆ é™¤æ‰€æœ‰å­ç›®å½•ä¸­çš„æŒ‡å®šçš„æ–‡ä»¶ã€‚/qï¼šå®‰é™æ¨¡å¼
 
 @REM If exist "%Temp%\~import.reg" (
 @REM  Attrib -R -S -H "%Temp%\~import.reg"
@@ -265,11 +277,11 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\
 @REM  Pause
 @REM )
 
-@REM ´Ó Internet Explorer\BrowserEmulation\ClearableListData\UserFilter µ¼Èë×¢²á±íµÄÓÃ·¨¡£
-@REM [IEä¯ÀÀÆ÷¼æÈİĞÔÊÓÍ¼ÉèÖÃÊı¾İ½âÎö](https://blog.csdn.net/thb_cn/article/details/125124565)
-@REM ¸ÃÎÄÕÂËäËµÃèÊöÏ¸ÖÂ£¬µ«¶ş½øÖÆ¡¢Ê®Áù½øÖÆ²¢²»ÊÊºÏ´ó¶àÊıÈË£¬¹ÊPASS
-@REM ¶øÇÒÕâÑùµÄ×ö·¨£¬Ò×µ¼ÖÂIE ¼æÈİĞÔÊÓÍ¼ÉèÖÃÎŞ·¨Ìí¼ÓÍøÕ¾£¬ÌáÊ¾¡°ÄãÊäÈëÁËÒ»¸öÎŞĞ§Óò¡±µÄ´íÎó
-:: [cnblogs-IE 11¼æÈİĞÔÊÓÍ¼ÉèÖÃÎŞ·¨Ìí¼ÓÍøÕ¾£¬ÌáÊ¾¡°ÄãÊäÈëÁËÒ»¸öÎŞĞ§Óò¡±](https://www.cnblogs.com/xiykj/p/13603024.html)
+@REM ä» Internet Explorer\BrowserEmulation\ClearableListData\UserFilter å¯¼å…¥æ³¨å†Œè¡¨çš„ç”¨æ³•ã€‚
+@REM [IEæµè§ˆå™¨å…¼å®¹æ€§è§†å›¾è®¾ç½®æ•°æ®è§£æ](https://blog.csdn.net/thb_cn/article/details/125124565)
+@REM è¯¥æ–‡ç« è™½è¯´æè¿°ç»†è‡´ï¼Œä½†äºŒè¿›åˆ¶ã€åå…­è¿›åˆ¶å¹¶ä¸é€‚åˆå¤§å¤šæ•°äººï¼Œæ•…PASS
+@REM è€Œä¸”è¿™æ ·çš„åšæ³•ï¼Œæ˜“å¯¼è‡´IE å…¼å®¹æ€§è§†å›¾è®¾ç½®æ— æ³•æ·»åŠ ç½‘ç«™ï¼Œæç¤ºâ€œä½ è¾“å…¥äº†ä¸€ä¸ªæ— æ•ˆåŸŸâ€çš„é”™è¯¯
+:: [cnblogs-IE 11å…¼å®¹æ€§è§†å›¾è®¾ç½®æ— æ³•æ·»åŠ ç½‘ç«™ï¼Œæç¤ºâ€œä½ è¾“å…¥äº†ä¸€ä¸ªæ— æ•ˆåŸŸâ€](https://www.cnblogs.com/xiykj/p/13603024.html)
 
 @REM > "%Temp%\~import.reg" ECHO Windows Registry Editor Version 5.00
 @REM >> "%Temp%\~import.reg" ECHO.
@@ -282,21 +294,23 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\
 @REM DEL "%Temp%\~import.reg"
 
 
-@REM ------- ¼ÓÈë¿ÉĞÅÈÎÕ¾µãÊ¾Àı ------------------------
+@REM ------- åŠ å…¥å¯ä¿¡ä»»ç«™ç‚¹ç¤ºä¾‹ ------------------------
 
-@REM ¿ÉĞÅÈÎÕ¾µãÉèÖÃ£¬¸ÄĞ´³ÉÄã×Ô¼ºĞèÒªÉèÖÃµÄÍøÖ·¼°µØÖ· RangeÊÇ·ÖÖ§·¶Î§µÄÒâË¼£¬Ã¿Ìí¼ÓÒ»¸öÓòÃû£¬Range1...2...3µÈµÈ
-@REM ¡°:Range¡±ÊÇÕâ¸öÌØ¶¨·¶Î§µÄÃû³Æ¡£Çë×¢Òâ£¬Ãû³ÆÇ°ÃæµÄÃ°ºÅÊÇ±ØĞèµÄ£¬ËäÈ»ÊÇ×Ö·û´®¼üÖµ£¬µ«ÒÔÊ¾Çø·ÖÍ¬Ãû¹ØÏµ¡£
-@REM REG_SZ ×Ö·û´®ÀàĞÍ£»REG_DWORD ÊıÖµÀàĞÍ£»½«¸ÃÏî·ÖÖ§Ö¸¶¨µ½ÊÜĞÅÈÎÁìÓò
-@REM 0 ±¾µØ¼ÆËã»úÇøÓò£»1 Intranet ÄÚ²¿Íø£» 2 ÊÜĞÅÈÎµÄÕ¾µãÇøÓò£»3 Internet ÍâÍøÓò£»4 ÊÜÏŞÖÆµÄÕ¾µãÇøÓò¡£
+@REM å¯ä¿¡ä»»ç«™ç‚¹è®¾ç½®ï¼Œæ”¹å†™æˆä½ è‡ªå·±éœ€è¦è®¾ç½®çš„ç½‘å€åŠåœ°å€ Rangeæ˜¯åˆ†æ”¯èŒƒå›´çš„æ„æ€ï¼Œæ¯æ·»åŠ ä¸€ä¸ªåŸŸåï¼ŒRange1...2...3ç­‰ç­‰
+@REM â€œ:Rangeâ€æ˜¯è¿™ä¸ªç‰¹å®šèŒƒå›´çš„åç§°ã€‚è¯·æ³¨æ„ï¼Œåç§°å‰é¢çš„å†’å·æ˜¯å¿…éœ€çš„ï¼Œè™½ç„¶æ˜¯å­—ç¬¦ä¸²é”®å€¼ï¼Œä½†ä»¥ç¤ºåŒºåˆ†åŒåå…³ç³»ã€‚
+@REM REG_SZ å­—ç¬¦ä¸²ç±»å‹ï¼›REG_DWORD æ•°å€¼ç±»å‹ï¼›å°†è¯¥é¡¹åˆ†æ”¯æŒ‡å®šåˆ°å—ä¿¡ä»»é¢†åŸŸ
+@REM 0 æœ¬åœ°è®¡ç®—æœºåŒºåŸŸï¼›1 Intranet å†…éƒ¨ç½‘ï¼› 2 å—ä¿¡ä»»çš„ç«™ç‚¹åŒºåŸŸï¼›3 Internet å¤–ç½‘åŸŸï¼›4 å—é™åˆ¶çš„ç«™ç‚¹åŒºåŸŸã€‚
 
 @REM reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Ranges\Range100" /v ":Range" /t REG_SZ /d 192.168.0.11 /f 
 @REM reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Ranges\Range100" /v "http" /t REG_DWORD /d 2 /f
 
-@REM -----------Ğ´´úÂëÉæ¼°µ½µÄ¹¤¾ß---------------------
+@REM -----------å†™ä»£ç æ¶‰åŠåˆ°çš„å·¥å…·---------------------
 
-@REM Ğ´ºÃµÄÅú´¦Àí¿ÉÒÔÓÃ Bat To Exe Converter´ò°ü³ÉexeÎÄ¼ş
-@REM WindowsÉèÖÃÖØÒªµÄ²Î¿¼ÍøÕ¾£ºhttps://admx.help
-@REM ×¢²á±í¹¤¾ß£ºhttps://registry-finder.com
-@REM ËÑË÷¹¤¾ß£ºhttps://www.voidtools.com/zh-cn/
+@REM å†™å¥½çš„æ‰¹å¤„ç†å¯ä»¥ç”¨ Bat To Exe Converteræ‰“åŒ…æˆexeæ–‡ä»¶
+@REM Windowsè®¾ç½®é‡è¦çš„å‚è€ƒç½‘ç«™ï¼šhttps://admx.help
+@REM æ³¨å†Œè¡¨å·¥å…·ï¼šhttps://registry-finder.com
+@REM æœç´¢å·¥å…·ï¼šhttps://www.voidtools.com/zh-cn/
+@REM å°é±¼å„¿win11 IEä¿®å¤å·¥å…·ï¼šhttps://www.yrxitong.com/h-nd-963.html
 
+ECHO "å·²å…³é—­UACï¼Œé‡å¯ç”µè„‘å°†ç”Ÿæ•ˆã€‚"
 pause
