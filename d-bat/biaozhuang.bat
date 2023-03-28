@@ -52,10 +52,11 @@ netsh interface ip add dns "以太网" 1.1.1.1
 
 @REM 建立smb共享盘映射 win7格式 
 @REM /persistent:yes 它告诉系统将指定的设置或配置持久保存到系统中。
-@REM net use * \\192.168.0.31\SMB服务漏洞补丁 123456 /user:test  /persistent:yes
+@REM 替换成你的共享盘IP与目录，以及用户名与密码； 123456是密码，test是用户名
+@REM net use * \\192.168.0.33\漏洞补丁 123456 /user:test  /persistent:yes
 
 @REM win10及以上格式
-net use * \\192.168.0.31\SMB服务漏洞补丁 /user:test 123456 /persistent:yes
+net use * \\192.168.0.33\漏洞补丁 /user:test 123456 /persistent:yes
 
 ::-------  建立smb共享盘映射 ---------
 
