@@ -18,9 +18,12 @@ wifi_password=$(
 # 打印Wi-Fi与Wi-Fi密码
 echo "Wi-Fi："$wifi_ssid;echo "Wi-Fi密码："$wifi_password
 
+# echo -e "Wi-Fi："$wifi_ssid \n Wi-Fi密码：$wifi_password" >> Wi-Fi密码.txt
+
 brew install qrencode > /dev/null 2>&1
 # 只屏蔽报错不屏蔽输出，2> /dev/null
 qrencode -l M -t UTF8 -s 4 -m 2 "WIFI:${wifi_ssid} Wi-Fi密码:${wifi_password}" 2> /dev/null
+
 EOF
 
 # 创建软链接文件夹
