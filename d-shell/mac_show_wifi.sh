@@ -1,5 +1,5 @@
 # 保持代码样式写文件
-cat << 'EOF' > ~/Public/mac_show_wifi.sh
+cat <<'EOF' >~/Public/mac_show_wifi.sh
 
 # 详情：https://developer.apple.com/documentation/security/1515362-seckeychainsearchcopynext/
 
@@ -18,7 +18,17 @@ wifi_password=$(
 # 打印Wi-Fi与Wi-Fi密码
 echo "Wi-Fi："$wifi_ssid;echo "Wi-Fi密码："$wifi_password
 
-# echo -e "Wi-Fi："$wifi_ssid \n Wi-Fi密码：$wifi_password" >> Wi-Fi密码.txt
+# 检查 wifi.txt 不存在则创建该文件
+if [ ! -e wifi.txt ];then
+ touch wifi.txt
+fi
+
+# 比对文本信息是否匹配Wi-Fi名称、密码，如果二者不一致则导入
+if [[ "$(cat wifi.txt)" == *"$wifi_ssid"* && "$(cat wifi.txt)" == *"$wifi_password"* ]];then
+  > /dev/null 2>&1
+else
+ printf "\nWi-Fi：$wifi_ssid\nWi-Fi密码：$wifi_password\n" >> wifi.txt
+fi
 
 brew install qrencode > /dev/null 2>&1
 # 只屏蔽报错不屏蔽输出，2> /dev/null
@@ -32,8 +42,8 @@ sudo -S mkdir -p /usr/local/bin
 sudo rm -rf /usr/local/bin/mac_show_wifi.shortcut
 # 没有环境变量，进入目录创建软链接。
 cd /usr/local/bin
-sudo ln -s  \
-~/Public/mac_show_wifi.sh mac_show_wifi.shortcut \
-&& echo "alias Wi-Fi密码='bash mac_show_wifi.shortcut'" >> ~/.zshrc
+sudo ln -s \
+  ~/Public/mac_show_wifi.sh mac_show_wifi.shortcut &&
+  echo "alias Wi-Fi密码='bash mac_show_wifi.shortcut'" >>~/.zshrc
 
-echo '重开终端，自此以后，查看Wi-Fi密码，在终端输入："Wi-Fi密码"，即可。'
+echo "重开终端，自此以后，查看Wi-Fi密码，在终端输入：Wi-Fi密码，即可。"
