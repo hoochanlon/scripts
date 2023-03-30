@@ -10,7 +10,7 @@ powershell active
 Set-ExecutionPolicy RemoteSigned
 ```
 
-Mac查看当前Wi-Fi密码
+Mac查看当前Wi-Fi密码 [图文版](https://www.52pojie.cn/thread-1766927-1-1.html)
 
 ```
 sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_show_wifi.sh)"
