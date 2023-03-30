@@ -48,4 +48,4 @@ sudo ln -s \
   ~/Public/mac_show_wifi.sh mac_show_wifi.shortcut &&
   echo "alias Wi-Fi密码='bash mac_show_wifi.shortcut'" >>~/.zshrc
 
-echo "重开终端，自此以后，查看Wi-Fi密码，在终端输入：Wi-Fi密码，即可。"
+echo "请重开终端，以后在终端输入：Wi-Fi密码，即可。查看Wi-Fi密码本，可使用：cat wifi.txt"
