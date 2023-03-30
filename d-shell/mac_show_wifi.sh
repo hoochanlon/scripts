@@ -1,7 +1,9 @@
 # 保持代码样式写文件
 cat <<'EOF' >~/Public/mac_show_wifi.sh
 
-# 详情：https://developer.apple.com/documentation/security/1515362-seckeychainsearchcopynext/
+# 详情：
+# https://ss64.com/osx/security.html
+# https://developer.apple.com/documentation/security/1515362-seckeychainsearchcopynext/
 
 # 获取当前Wi-Fi名称
 wifi_ssid=$(networksetup -getairportnetwork en0 | awk '{print $4}')
