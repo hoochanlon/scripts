@@ -4,11 +4,21 @@
 
 一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...所有脚本与指令均需用管理员身份运行，脚本代码及病毒分析文章，也仅供学习与交流使用，切勿做违法用途。
 
+## 环境变量
+
 powershell active
 
 ```
 Set-ExecutionPolicy RemoteSigned
 ```
+
+一键安装Java
+
+```
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/install_jdk.bat&&call install_jdk.bat
+```
+
+
 
 Mac查看当前Wi-Fi密码 [图文版](https://www.52pojie.cn/thread-1766927-1-1.html)
 
