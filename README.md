@@ -77,7 +77,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 ## 激活相关 
 
-### Windows/Office/winrar/IDM/emeditor/xchange pdf
+### Office/winrar/IDM/emeditor/xchange pdf
 
 CMD一键调用windows版本切换与Windows/Office激活 [图文版](https://www.52pojie.cn/thread-1743122-1-1.html)
 
@@ -114,6 +114,16 @@ Powershell从XchangePDF Editor下载安装到生成许可证
 
 ```
 curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
+```
+
+### Mac [图文版](https://github.com/hoochanlon/MyMacsAppCrack/tree/main/Shells)
+
+```
+svn export https://github.com/QiuChenly/MyMacsAppCrack/branches/main/Tools ~/Public/CrackTools  --force
+```
+
+```
+sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
 ```
 
 ---
