@@ -12,7 +12,7 @@ powershell active
 Set-ExecutionPolicy RemoteSigned
 ```
 
-一键安装Java
+一键安装Java [图文版](https://www.52pojie.cn/thread-1767872-1-1.html)
 
 ```
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/install_jdk.bat&&call install_jdk.bat
