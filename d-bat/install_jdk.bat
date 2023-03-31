@@ -1,31 +1,34 @@
-echo "ä¸‹è½½javaï¼Œå¹¶è‡ªåŠ¨å®‰è£…"
+echo "ÏÂÔØjava£¬²¢×Ô¶¯°²×°"
 @echo off
 :: IF NOT EXIST C:\Users\%USERNAME%\Downloads\java.msi (curl -o C:\Users\%USERNAME%\Downloads\java.msi https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi)
 curl -o C:\Users\%USERNAME%\Downloads\java.msi https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi
 
-@REM ç¼“ä¸€ç§’ï¼Œé™é»˜å®‰è£…java.msiï¼›/S /SP- /VERYSILENT /NORESTART /SUPPRESSMSGBOXES /FORCE
+@REM »ºÒ»Ãë£¬¾²Ä¬°²×°java.msi£»/S /SP- /VERYSILENT /NORESTART /SUPPRESSMSGBOXES /FORCE
 TIMEOUT /T 1&&start /wait C:\Users\%USERNAME%\Downloads\java.msi /quiet /passive
 
-@REM ::----- é…ç½®javaç¯å¢ƒ -------------------
+@REM ::----- ÅäÖÃjava»·¾³ -------------------
 
-@REM è®¾ç½®ç¯å¢ƒå˜é‡
+@REM ÉèÖÃ»·¾³±äÁ¿
 
-@REM JAVAHOME jdk-20 å–å€¼
+@REM JAVAHOME jdk-20 È¡Öµ
 :: https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi
 setx  JAVA_HOME "C:\Program Files\Java\jdk-20;"
 
 @REM PATH 
 setx  PATH "%%JAVA_HOME%%\bin;"
 
-echo "javaç¯å¢ƒå˜é‡é…ç½®æˆåŠŸ"
+echo "java»·¾³±äÁ¿ÅäÖÃ³É¹¦"
 
-@REM :------ ä¿ç•™é¡¹ï¼Œæ³¨é‡Š ---------------------------
+@REM :------ ±£ÁôÏî£¬×¢ÊÍ ---------------------------
 
-@REM %%asd%% é˜²æ­¢è½¬ä¹‰
+@REM %%asd%% ·ÀÖ¹×ªÒå
 
-@REM CLASSPATH å‚è€ƒ
+@REM CLASSPATH ²Î¿¼
 :: https://blog.csdn.net/weixin_44144786/article/details/119350075
 :: setx CLASSPATH ".;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;" 
 
-@REM java æ‰‹å·¥é…ç½®å‚è€ƒ
+@REM java ÊÖ¹¤ÅäÖÃ²Î¿¼
 :: https://github.com/dunwu/linux-tutorial/blob/master/docs/linux/soft/jdk-install.md
+
+@REM  Ğè¶îÍâ¹¤¾ß iconv
+:: curl http://example.com/script.bat | iconv -f utf-8 -t gbk | cmd.exe /c -
