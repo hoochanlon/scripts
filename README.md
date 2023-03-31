@@ -17,6 +17,60 @@ sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com
 ```
 
 
+
+## 激活相关 
+
+### Office/winrar/IDM/emeditor/xchange pdf
+
+CMD一键调用windows版本切换与Windows/Office激活 [图文版](https://www.52pojie.cn/thread-1743122-1-1.html)
+
+```
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start Switch.bat&&powershell -command "irm https://massgrave.dev/get|iex"
+```
+
+macOS终端下载Office for Mac2021 serializer.pkg 激活
+
+```
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/serializer_office_for_mac2021.AppleScript)"
+```
+
+
+CMD一键安装winrar注册激活 [以winrar为例](https://www.52pojie.cn/thread-1740471-1-1.html)
+
+```
+powershell -command Invoke-WebRequest -Uri "https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/winrar_down_reg.bat" -OutFile "C:/Users/${env:UserName}/Downloads/winrar_down_reg.bat"&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
+```
+
+Powershell一键生成Emeditor序列号
+
+```
+irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/emeditor_random_keygen.ps1|iex
+```
+
+Powershell一键IDM激活
+
+```
+iwr -useb https://ghproxy.com/https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/main/IAS.ps1 | iex
+```
+
+Powershell从XchangePDF Editor下载安装到生成许可证 
+
+```
+curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
+```
+
+### Mac [图文版](https://github.com/hoochanlon/MyMacsAppCrack/tree/main/Shells)
+
+```
+svn export https://github.com/QiuChenly/MyMacsAppCrack/branches/main/Tools ~/Public/CrackTools  --force
+```
+
+```
+sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
+```
+
+
+
 ## 初始云服务器快速配置
 
 ### 一键搞定SSH登录、用户密码策略配置、Ban IP配置 [图文版](https://www.52pojie.cn/thread-1749877-1-1.html)
@@ -71,59 +125,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 ```
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_vsftpd.sh)"
-```
-
-
-
-## 激活相关 
-
-### Office/winrar/IDM/emeditor/xchange pdf
-
-CMD一键调用windows版本切换与Windows/Office激活 [图文版](https://www.52pojie.cn/thread-1743122-1-1.html)
-
-```
-curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start Switch.bat&&powershell -command "irm https://massgrave.dev/get|iex"
-```
-
-macOS终端下载Office for Mac2021 serializer.pkg 激活
-
-```
-sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/serializer_office_for_mac2021.AppleScript)"
-```
-
-
-CMD一键安装winrar注册激活 [以winrar为例](https://www.52pojie.cn/thread-1740471-1-1.html)
-
-```
-powershell -command Invoke-WebRequest -Uri "https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/winrar_down_reg.bat" -OutFile "C:/Users/${env:UserName}/Downloads/winrar_down_reg.bat"&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
-```
-
-Powershell一键生成Emeditor序列号
-
-```
-irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/emeditor_random_keygen.ps1|iex
-```
-
-Powershell一键IDM激活
-
-```
-iwr -useb https://ghproxy.com/https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/main/IAS.ps1 | iex
-```
-
-Powershell从XchangePDF Editor下载安装到生成许可证 
-
-```
-curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
-```
-
-### Mac [图文版](https://github.com/hoochanlon/MyMacsAppCrack/tree/main/Shells)
-
-```
-svn export https://github.com/QiuChenly/MyMacsAppCrack/branches/main/Tools ~/Public/CrackTools  --force
-```
-
-```
-sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
 ```
 
 ---
