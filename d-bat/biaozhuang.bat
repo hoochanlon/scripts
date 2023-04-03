@@ -6,6 +6,10 @@
 %1 C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
 cd /d "%~dp0"
 
+@REM 默认以管理员权限运行 RegistryFinder.exe
+
+reg add "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "C:\Program Files\Registry Finder\RegistryFinder.exe"  /t REG_SZ /d "RUNASADMIN" /f
+
 @REM win10 开启 smb1 共享，重启生效
 :: https://admx.help/?Category=SecurityBaseline&Policy=Microsoft.Policies.SecGuide::Pol_SecGuide_0001_SMBv1_Server
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" /v "SMB1" /t REG_DWORD /d 1 /f
