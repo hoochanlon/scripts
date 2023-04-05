@@ -6,7 +6,8 @@
 @REM cd /d "%~dp0"
 :: ---------- 本地运行可打开特权提升 ---------------
 
-@REM %1 C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
+@REM 在线测试特权提升，切换本地目录执行注册表批量添加
+C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
 cd /d "%~s0"
 
 
