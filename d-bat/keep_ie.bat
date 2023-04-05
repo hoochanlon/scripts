@@ -8,7 +8,7 @@
 
 :: ---------- 在线测试特权提升 ---------------
 C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
-cd /d "%~dp0"
+cd /d %cd%
 :: ---------- 在线测试特权提升 ---------------
 
 
