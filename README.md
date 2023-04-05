@@ -24,6 +24,14 @@ win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thr
 curl -O  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/exifhelper.bat&&call exifhelper.bat
 ```
 
+IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1765347-1-1.html)
+
+```
+curl -O  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/keep_ie.bat&&call keep_ie.bat
+```
+
+
+
 ## Mac专题
 
 Mac查看当前Wi-Fi密码 [图文版](https://www.52pojie.cn/thread-1766927-1-1.html)
