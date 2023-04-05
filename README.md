@@ -21,8 +21,7 @@ curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-sim
 win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thread-1768841-1-1.html)
 
 ```
-powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/e
-xifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
+powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/exifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
 ```
 
 IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1765347-1-1.html)
