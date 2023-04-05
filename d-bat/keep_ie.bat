@@ -6,6 +6,9 @@
 @REM cd /d "%~dp0"
 :: ---------- 本地运行可打开特权提升 ---------------
 
+@REM %1 C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
+cd /d "%~s0"
+
 
 echo "win10正常使用就好，win11系统需先用小鱼儿IE修复工具，进行恢复IE11图标，再使用该工具防劫持。"
 
