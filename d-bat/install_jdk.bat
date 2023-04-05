@@ -19,6 +19,9 @@ setx  PATH "%%JAVA_HOME%%\bin;"
 
 echo "java环境变量配置成功"
 
+pause
+del %0
+
 @REM :------ 保留项，注释 ---------------------------
 
 @REM %%asd%% 防止转义
