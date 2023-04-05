@@ -38,7 +38,7 @@ Mac 一键支持NTFS [图文版](https://github.com/hoochanlon/Free-NTFS-For-Mac
 sudo /bin/bash -c "$(curl -fsSL https://cdn.statically.io/gh/hoochanlon/Free-NTFS-for-Mac/main/nigate.sh)"
 ```
 
-Mac 激活各类相关软件 [图文版](https://github.com/hoochanlon/MyMacsAppCrack/tree/main/Shells)
+Mac 激活各类相关软件 [图文版](https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells)
 
 ```
 sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
