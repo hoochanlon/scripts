@@ -15,7 +15,13 @@ Set-ExecutionPolicy RemoteSigned
 一键安装Java [图文版](https://www.52pojie.cn/thread-1767872-1-1.html)
 
 ```
-curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/install_jdk.bat&&call install_jdk.bat
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/install_jdk.bat&&call install_jdk.bat&&del %0
+```
+
+win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thread-1768841-1-1.html)
+
+```
+curl -O  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/exifhelper.bat&&call exifhelper.bat
 ```
 
 ## Mac专题
