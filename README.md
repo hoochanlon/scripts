@@ -69,11 +69,18 @@ Powershell从XchangePDF Editor下载安装到生成许可证
 curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
 ```
 
-Mac 各类相关软件 [图文版](https://github.com/hoochanlon/MyMacsAppCrack/tree/main/Shells)
+Mac 一键支持NTFS [图文版](https://github.com/hoochanlon/Free-NTFS-For-Mac)
+
+```
+/bin/bash -c "$(curl -fsSL https://cdn.statically.io/gh/hoochanlon/Free-NTFS-for-Mac/main/nigate.sh)"
+```
+
+Mac 激活各类相关软件 [图文版](https://github.com/hoochanlon/MyMacsAppCrack/tree/main/Shells)
 
 ```
 sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
 ```
+
 
 
 ## 初始云服务器快速配置
