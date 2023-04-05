@@ -4,8 +4,8 @@
 @REM 让bat启动时，首先调用vbs脚本，通过vbs脚本，以管理员身份调用该bat的 runas 部分，最后顺便定位脚本当前执行环境（目录）
 
 @ECHO off
-%%1 C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
-cd /d "%~dp0"
+@REM %%1 C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
+@REM cd /d "%~dp0"
 
 @REM 关闭UAC，重启生效
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d 0 /f
