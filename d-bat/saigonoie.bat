@@ -5,9 +5,10 @@
 
 @ECHO off
 
-@REM 适用于本地本机保存文件执行！管道传输的在线执行，有误。
-%1 C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
-cd /d "%~dp0"
+:: ---------- 本地运行可打开特权提升 （适用于本地本机保存文件执行！管道传输的在线执行，有报错。） ---------------
+@REM %1 C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
+@REM cd /d "%~dp0"
+:: ---------- 本地运行可打开特权提升 （适用于本地本机保存文件执行！管道传输的在线执行，有报错。） ---------------
 
 @REM 关闭UAC，重启生效
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d 0 /f
