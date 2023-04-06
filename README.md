@@ -4,9 +4,11 @@
 
 一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...所有脚本与指令均需用管理员身份运行，脚本代码及病毒分析文章，也仅供学习与交流使用，切勿做违法用途。
 
+Linux跨Windows平台工具：
+
 * cygwin: http://www.cygwin.com （类子系统）
 * gnuwin32:http://gnuwin32.sourceforge.net （保持原生环境，尽可能提供类似的方案）
-* minGW：http://www.mingw.org（同上）
+* minGW：http://www.mingw.org （同上）
 
 
 ## 环境变量
