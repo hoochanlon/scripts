@@ -7,8 +7,8 @@
 Linux迁移 Windows command 工具：
 
 * [cygwin](http://www.cygwin.com) 类子系统
-* [gnuwin32](http://gnuwin32.sourceforge.net) 保持原生环境，尽可能提供类似的方案
-* [minGW](http://www.mingw.org) 同上
+* [gnuwin32](http://gnuwin32.sourceforge.net)、[minGW](http://www.mingw.org)  保持原生环境，尽可能提供类似的方案
+
 
 
 ## 环境变量
