@@ -21,3 +21,7 @@ www.hualigs.cn
 www.helloimg.com
 www.imgurl.org
 www.postimages.org
+
+get software format
+
+* https://www.techno360.in/wise-care-365-pro-free/
