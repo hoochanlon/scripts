@@ -1,5 +1,12 @@
 @echo off
 
+:: ----------- 测试特权提升可行性 -----------
+
+@REM 右键运行或是管理员命令有些麻烦
+@REM 兼顾本地与网络加载，仅测试使用！
+@REM 由于需移动文件至设置环境目录，故上条 PASS
+
+
 :: ----------------- 检测环境变量 ------------
 
 @REM 设置环境变量
@@ -37,7 +44,6 @@ python -c "import qrcode_terminal; qrcode_terminal.draw('%data%')"
 
 ::------------ 移动文件至用户家目录 ---------------
 
-@REM 批处理判断文件%userprofile%\show_wifi.bat是否存在
 if not exist "c:\%userprofile%\show_wifi.bat" > nul (
     move "%~dp0\%~nx0" "%userprofile%\%~nx0"
 )
