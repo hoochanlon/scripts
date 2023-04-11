@@ -37,7 +37,7 @@ IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1765347-1-1.html)
 curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/keep_ie.bat|cmd
 ```
 
-win11一键显示当前WiFi密码
+win11一键显示当前WiFi与密码并生成二维码分享 [图文版](https://www.52pojie.cn/thread-1772481-1-1.html)
 
 ```
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/show_wifi.bat&&call show_wifi.bat
