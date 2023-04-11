@@ -56,7 +56,7 @@ if not exist "c:\%userprofile%\show_wifi.bat" > nul (
 @REM @REM "tokens=2 delims=:" 参数只能在 for 命令中使用，tokens=2 ，“:” 之后的第二文本
 @REM @REM  "%now_ssid: =%" 将所有空格置 nul
 @REM netsh wlan show profile /? 帮助文档
-@REM netsh wlan show profile name="GIADA-GNXS" key=clear
+@REM netsh wlan show profile name="G*****S" key=clear
 
 @REM @REM [csdn -for /f命令之—Delims和Tokens用法&总结](https://blog.csdn.net/kagurawill/article/details/114982328)
 @REM @REM [cnblogs -【No0000A4】DOS命令（cmd）批处理：替换字符串、截取字符串、扩充字符串、获取字符串长度](https://www.cnblogs.com/Chary/p/5825189.html)
