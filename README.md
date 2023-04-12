@@ -11,7 +11,7 @@ Linux迁移 Windows command 工具：
 
 
 
-## 环境变量
+## 环境适配
 
 powershell active
 
