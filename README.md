@@ -43,6 +43,12 @@ win11一键显示当前WiFi与密码并生成二维码分享 [图文版](https:/
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/show_wifi.bat&&call show_wifi.bat
 ```
 
+一键显示所有WiFi
+
+ ```
+ curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/oh_my_wifi.bat&&call oh_my_wifi.bat
+ ```
+
 
 ## Mac专题
 
