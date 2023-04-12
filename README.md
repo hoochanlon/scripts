@@ -46,7 +46,7 @@ curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-sim
 一键显示所有WiFi
 
  ```
- curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/oh_my_wifi.bat&&call oh_my_wifi.bat
+curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/oh_my_wifi.bat&&call oh_my_wifi.bat
  ```
 
 
