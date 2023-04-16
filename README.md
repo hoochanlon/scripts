@@ -101,7 +101,7 @@ Powershell一键生成Emeditor序列号
 irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/emeditor_random_keygen.ps1|iex
 ```
 
-Powershell一键IDM激活
+转载：Powershell一键IDM激活（[自己写的方案已失效，国内版权原因不做更新](https://github.com/hoochanlon/ihs-simple/blob/main/d-pwsh/fail_idm.ps1)）
 
 ```
 iwr -useb https://ghproxy.com/https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/main/IAS.ps1 | iex
