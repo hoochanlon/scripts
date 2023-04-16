@@ -3,6 +3,11 @@
 @REM 换行 echo\
 @REM 参考来源：https://www.52pojie.cn/thread-1768615-1-1.html
 
+@REM  特权提升，懒得右键或以管理员启动
+@%1 C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
+@cd /d "%~dp0"
+
+
 @echo off
 
 :Loop 
