@@ -37,7 +37,7 @@ powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple
 curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/nano_runas.bat&&call nano_runas.bat
 ```
 
-IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1765347-1-1.html)
+IE防Edge劫持
 
 ```
 curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/keep_ie.bat|cmd
