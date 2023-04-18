@@ -34,4 +34,7 @@ ali213.net
 asd
 asdf
 qwer
+pass
+password
+passwd
 P@ssw0rd
