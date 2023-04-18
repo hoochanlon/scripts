@@ -54,6 +54,13 @@ curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-sim
  ```
 curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/oh_my_wifi.bat&&call oh_my_wifi.bat
  ```
+ 
+
+ 一键RAR密码爆破 [图文版](https://www.52pojie.cn/thread-1775357-1-1.html)
+ 
+ ```
+ curl -Os https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/seven_z_sensei.bat&&call seven_z_sensei.bat
+ ```
 
 
 ## Mac专题
