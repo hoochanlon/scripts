@@ -122,7 +122,7 @@ Powershell从XchangePDF Editor下载安装到生成许可证
 curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
 ```
 
-## 初始云服务器快速配置
+## Linux毛坯房安全改造
 
 一键搞定SSH登录、用户密码策略配置、Ban IP配置 [图文版](https://www.52pojie.cn/thread-1749877-1-1.html)
 
