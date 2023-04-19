@@ -90,6 +90,12 @@ macOS终端下载Office for Mac2021 serializer.pkg 激活
 sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/serializer_office_for_mac2021.AppleScript)"
 ```
 
+ 一键RAR密码爆破
+ 
+ ```
+ bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/7z_rar_sensei.sh)"
+ ```
+
 ## 移花接木
 
 CMD一键调用windows版本切换与Windows/Office激活 [图文版](https://www.52pojie.cn/thread-1743122-1-1.html)
