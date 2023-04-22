@@ -10,6 +10,16 @@ Linux迁移 Windows command 工具：
 * [cygwin](http://www.cygwin.com) 类子系统
 * [gnuwin32](http://gnuwin32.sourceforge.net)、[minGW](http://www.mingw.org)  保持原生环境，尽可能提供类似的方案
 
+
+python环境问题
+
+* pyenv+pipx+poetry
+ * pyenv灵活地安装与切换python版本，搭配poetry可快速生成相应版本环境。
+ * pipx升级依赖工具包方便，不用担心全局兼容问题。
+ * 编译的程序通常会依赖各种包，这个要看开发者给出相应提示安装哪些包了。
+
+miniconda、anaconda这类python发行版，依赖库齐全。
+
 对于我来说，博客更侧重日常生活，基本上不会往里塞计网专业上的东西，更多的是个人见闻与人文社科。至于所谓“技术”方面的东西，找个专门的平台发稿就行了。现在想来，那些在xx之家、xx论坛投稿的，也是聪明人。SEO、宣传什么的就交由他们去吧。
 
 ## 环境适配
