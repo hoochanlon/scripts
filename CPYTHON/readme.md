@@ -1,6 +1,6 @@
 # 用 chatgpt 学 python 简单示例
 
-### API
+### 爬虫API
 
 以下是Python爬虫相关文档，可以供您参考：
 
