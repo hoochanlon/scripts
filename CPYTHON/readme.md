@@ -16,6 +16,7 @@
 
 这些文档包含了Python爬虫中常用的工具和技术的详细介绍和使用方法。通过阅读这些文档，您可以更深入地了解Python爬虫的工作原理、常见问题和解决方案等内容，并且能够根据自己的需求来选择合适的工具和库进行开发。以下是常用的Python爬虫库和框架以及它们的主要目的：
 
+```
 * requests：一个Python HTTP客户端库，可以轻松地向Web服务器发送HTTP请求并获取响应数据。
 * BeautifulSoup：一个HTML和XML解析器，用于从Web页面中提取信息或解析XML结构化文档。
 * Scrapy：一个Python Web爬虫框架，可以通过简化爬虫开发流程来快速抓取大量网页数据。
@@ -24,5 +25,6 @@
 * Regex：Python标准库中的正则表达式模块，用于匹配和搜索字符串文本中的模式。
 * PDFKit：一个Python wkhtmltopdf包装器，可以使用HTML和CSS生成PDF文件。
 * WeasyPrint：用于将HTML和CSS转换为PDF文件的Python库。
+```
 
 这些库和框架都有其独特的功能和用途，并且可以混合使用以实现更复杂的爬虫任务。例如，您可以使用requests和BeautifulSoup来解析静态网页，然后使用Selenium来模拟用户行为，抓取动态网页数据。此外，PyQuery可以与BeautifulSoup一起使用，帮助您更方便地操作HTML元素。最后，PDFKit和WeasyPrint可以帮助您将爬取到的数据转换为PDF格式进行保存和共享。
