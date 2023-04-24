@@ -21,13 +21,15 @@ python环境问题
 
 对于我来说，博客更侧重日常生活，基本上不会往里塞计网专业上的东西，更多的是个人见闻与人文社科。至于所谓“技术”方面的东西，找个专门的平台发稿就行了。现在想来，那些在xx之家、xx论坛投稿的，也是聪明人。SEO、宣传什么的就交由他们去吧。
 
-## 环境适配
+## 细枝末节
 
 powershell active
 
 ```
 Set-ExecutionPolicy RemoteSigned
 ```
+
+## 环境适配
 
 一键安装Java [图文版](https://www.52pojie.cn/thread-1767872-1-1.html)
 
