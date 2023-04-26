@@ -36,7 +36,7 @@ url = 'https://www.baidu.com/'
 html = requests.get(url, headers=headers).content
 ```
 
-## 获取网站指定元素内容
+## 获取网站指定元素内容0.1
 
 因为是实时数据，所以会显示为 "世界人口： 数据获取中..."，只能通过webui自动化来实现了。
 
@@ -63,3 +63,42 @@ print("世界人口：", world_population_element.text)
 ```
 
 通过 [cnblogs -（数据科学学习手札50）基于Python的网络数据采集-selenium篇（上）](https://www.cnblogs.com/feffery/p/9570171.html)、[csdn-基于python爬虫————静态页面和动态页面爬取](https://blog.csdn.net/qq_52661119/article/details/119854694) 这两篇文章，看来目前的通行办法就是webUI自动化了。
+
+
+## 获取网站指定元素内容0.2
+
+```
+import sys
+from selenium import webdriver
+from bs4 import BeautifulSoup
+
+driver = webdriver.Chrome()  # 声明浏览器对象，使用 Chrome 浏览器
+driver.get("https://www.worldometers.info/cn/")  # 跳转到指定网址
+
+# 获取网页源码并传给 BeautifulSoup 解析
+soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+# 使用 select_one() 方法获取第一个匹配要求的元素
+current_population_words = soup.select_one('span.item')
+
+# 使用 select_one() 方法获取第一个匹配要求的元素
+current_population_numbers = soup.select_one('span.rts-counter')
+
+# BS文档：https://beautifulsoup.cn
+# selenium：https://selenium-python-zh.readthedocs.io/en/latest/index.html
+
+print(current_population_words.text, current_population_numbers.text)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
