@@ -90,10 +90,111 @@ current_population_numbers = soup.select_one('span.rts-counter')
 print(current_population_words.text, current_population_numbers.text)
 ```
 
+## demo
+
+遍历 https://www.worldometers.info/cn 列表统计
+
+```python
+from selenium import webdriver
+from bs4 import BeautifulSoup
+
+# 参考
+# BS文档：https://beautifulsoup.cn
+# selenium：https://selenium-python-zh.readthedocs.io/en/latest/index.html
+
+driver = webdriver.Chrome()  # 声明浏览器对象，使用 Chrome 浏览器
+driver.get("https://www.worldometers.info/cn/")  # 跳转到指定网址
+
+# 获取网页源码并传给 BeautifulSoup 解析
+soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+# 查找所有 <span class=item /> 与 <span class=rts-counter />
+current_population_words = soup.find_all('span',class_='item')
+current_population_num = soup.find_all('span',class_='rts-counter')
+
+for current_population_words in current_population_words:
+    print(current_population_words.text)
+
+for current_population_num in current_population_num:
+    print(current_population_num.text)
+```
+
+## 格式左右不对齐
+
+```python
+# 创建一个名为 "output.csv" 的 CSV 文件
+with open("output.csv", "w", newline='', encoding='utf-8-sig') as csvfile:
+    # 指定列名
+    fieldnames = ['Column A', 'Column B']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    # 写入表头
+    writer.writeheader()
+    for current_population_words in current_population_words:
+        # 写入数据
+        writer.writerow({'Column A': current_population_words.text})
+
+    for current_population_num in current_population_num:
+        writer.writerow({'Column B': current_population_num.text})
+```
+
+## 理想情况
+
+A列数与比B列数相一致，但堕胎项存在重复
+
+```python
+# 查找所有 <span class=item /> 与 <span class=rts-counter />
+current_population_words = soup.find_all('span',class_='item')
+current_population_num = soup.find_all('span',class_='rts-counter')
 
 
+# 创建一个名为 "output.csv" 的 CSV 文件
+with open("output.csv", "w", newline='', encoding='utf-8-sig') as csvfile:
+    # 指定列名
+    fieldnames = ['Column A', 'Column B']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    # 写入表头
+    writer.writeheader()
+
+    for i in range(num_elements):
+        row_data = {'Column A': current_population_words[i].text, 'Column B': current_population_num[i].text}
+        writer.writerow(row_data)
+```
+
+## 卡bug
+
+最后通过if continue这样卡bug搞定，故意从53行开始，而excel却是按着52行表写的，抵消掉了多余重复行带来的困扰。
+
+```python
+# 重复值标记
+duplicate_value = 1
+# 下标数以current_population_num为准
+num_elements = len(current_population_num)
+
+# 创建一个名为 "output.csv" 的 CSV 文件
+with open("output.csv", "w", newline='', encoding='utf-8-sig') as csvfile:
+    # 指定列名
+    fieldnames = ['Column A','Column B']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
 
+# 创建一个名为 "output.csv" 的 CSV 文件
+with open("output.csv", "w", newline='', encoding='utf-8-sig') as csvfile:
+    # 指定列名
+    fieldnames = ['Column A', 'Column B']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    # 写入表头
+    writer.writeheader()
+
+    for i in range(num_elements):
+        duplicate_value = duplicate_value+1
+        if duplicate_value == 52:
+            continue
+        row_data = {'Column A': current_population_words[i].text, 'Column B': current_population_num[i].text}
+        writer.writerow(row_data)
+```
 
 
 
