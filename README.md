@@ -47,12 +47,6 @@ win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thr
 powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/exifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
 ```
 
-一键调用设置程序是否以管理员权限运行
-
-```
-curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/nano_runas.bat&&call nano_runas.bat
-```
-
 ## 环境适配
 
 一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
@@ -71,6 +65,12 @@ IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html)
 
 ```
 curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/keep_ie.bat|cmd
+```
+
+一键调用设置程序是否以管理员权限运行
+
+```
+curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/nano_runas.bat&&call nano_runas.bat
 ```
 
 win11一键显示当前WiFi与密码并生成二维码分享 [图文版](https://www.52pojie.cn/thread-1772481-1-1.html)
