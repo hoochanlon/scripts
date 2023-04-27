@@ -29,6 +29,12 @@ powershell active，以及微PE显示IP脚本 `explorer https://github.com/hooch
 Set-ExecutionPolicy RemoteSigned
 ```
 
+ 一键安装打印机原理代码 [图文版](https://www.52pojie.cn/thread-1776328-1-1.html)
+ 
+ ```
+ https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/install_public_network_hp_printer_driver.bat
+ ```
+
 win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thread-1768841-1-1.html)
 
 ```
@@ -41,14 +47,13 @@ powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple
 curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/nano_runas.bat&&call nano_runas.bat
 ```
 
+## 环境适配
+
 一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
 ```
-
-
-## 环境适配
 
 一键安装Java [图文版](https://www.52pojie.cn/thread-1767872-1-1.html)
 
@@ -74,14 +79,12 @@ curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-sim
 curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/oh_my_wifi.bat&&call oh_my_wifi.bat
  ```
  
-
  一键RAR密码爆破 [图文版](https://www.52pojie.cn/thread-1775357-1-1.html)
  
  ```
  curl -Os https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/seven_z_sensei.bat&&call seven_z_sensei.bat
  ```
-
-
+ 
 ## Mac专题
 
 Mac查看当前Wi-Fi密码 [图文版](https://www.52pojie.cn/thread-1766927-1-1.html)
