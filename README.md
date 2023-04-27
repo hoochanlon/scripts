@@ -29,6 +29,12 @@ powershell active，以及微PE显示IP脚本 `explorer https://github.com/hooch
 Set-ExecutionPolicy RemoteSigned
 ```
 
+Windows关闭代理设置
+
+```
+netsh winhttp reset proxy
+```
+
  一键安装打印机原理代码 [图文版](https://www.52pojie.cn/thread-1776328-1-1.html)
  
  ```
