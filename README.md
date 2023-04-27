@@ -29,14 +29,6 @@ powershell active
 Set-ExecutionPolicy RemoteSigned
 ```
 
-## 环境适配
-
-一键安装Java [图文版](https://www.52pojie.cn/thread-1767872-1-1.html)
-
-```
-curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/install_jdk.bat&&call install_jdk.bat
-```
-
 win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thread-1768841-1-1.html)
 
 ```
@@ -47,6 +39,21 @@ powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple
 
 ```
 curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/nano_runas.bat&&call nano_runas.bat
+```
+
+一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
+
+```
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
+```
+
+
+## 环境适配
+
+一键安装Java [图文版](https://www.52pojie.cn/thread-1767872-1-1.html)
+
+```
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/install_jdk.bat&&call install_jdk.bat
 ```
 
 IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html)
