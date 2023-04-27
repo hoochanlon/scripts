@@ -23,14 +23,11 @@ python环境问题
 
 ## 细枝末节
 
-powershell active
+powershell active，以及微PE显示IP脚本 `explorer https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/weipe_showip.bat`
 
 ```
 Set-ExecutionPolicy RemoteSigned
 ```
-
-微PE显示IP脚本 `explorer https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/weipe_showip.bat`
-
 
 win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thread-1768841-1-1.html)
 
