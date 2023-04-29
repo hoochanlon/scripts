@@ -56,3 +56,19 @@ with open("worldometers_{}.csv".format(formatted_time), "w", newline='', encodin
         row_data = {'Column A': current_population_words[i].text, 'Column B': current_population_num[i].text}
         writer.writerow(row_data)
 
+# ------------新增：删除多余字符，并另存为xlsx （2023-4-29）--------------
+# 1. csv可操作性不如Excel，故另存为xlsx。
+# 2. 将文本数值转换为数值反倒远不如Excel方便，PASS。
+
+
+# 读取CSV文件
+df = pd.read_csv("worldometers_{}.csv".format(formatted_time))
+
+# 定位到39、40行A列并删除-=符号
+df.loc[38:39, 'Column A'] = df.loc[38:39, 'Column A'].apply(lambda x: x.replace('-=', ''))
+
+# 将修改后的数据保存为xlsx文件，将B列转为正常的数值类型
+df.to_excel("worldometers_{}.xlsx".format(formatted_time), index=False)
+
+# 删除原始CSV文件
+os.remove("worldometers_{}.csv".format(formatted_time))
