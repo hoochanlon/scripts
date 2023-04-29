@@ -2,6 +2,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import csv
 from datetime import datetime
+import pandas as pd
 
 # 参考
 # BS文档：https://beautifulsoup.cn
