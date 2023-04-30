@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 from datetime import datetime
 import pandas as pd
+import os
 
 
 # 参考
