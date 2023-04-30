@@ -29,6 +29,13 @@ powershell active，以及微PE显示IP脚本 `explorer https://github.com/hooch
 Set-ExecutionPolicy RemoteSigned
 ```
 
+重置macOS ~/.zshrc （仅环境变量配置失误，造成不可逆后果使用）
+
+```
+export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin
+sudo rm -rf ~/.zshrc
+```
+
 Windows关闭代理设置
 
 ```
