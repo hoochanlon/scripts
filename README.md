@@ -21,6 +21,20 @@ python环境问题
 
 对于我来说，博客更侧重日常生活，基本上不会往里塞计网专业上的东西，更多的是个人见闻与人文社科。至于所谓“技术”方面的东西，找个专门的平台发稿就行了。现在想来，那些在xx之家、xx论坛投稿的，也是聪明人。SEO、宣传什么的就交由他们去吧。
 
+## 资讯分析
+
+一键获取中国新闻网资讯
+
+```
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
+```
+
+一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
+
+```
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
+```
+
 ## 细枝末节
 
 powershell active，以及微PE显示IP脚本 `explorer https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/weipe_showip.bat`
@@ -55,12 +69,6 @@ powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple
 ```
 
 ## 环境适配
-
-一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
-
-```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
-```
 
 一键安装Java [图文版](https://www.52pojie.cn/thread-1767872-1-1.html)
 
