@@ -32,8 +32,8 @@ sheet['A1'] = '栏目'
 sheet['B1'] = '标题'
 sheet['C1'] = '时间'
 
-# 遍历页码从1到10
-for page_num in range(1,11):
+# 遍历页码从1到2页
+for page_num in range(1,3):
     # f-string
     url = f"https://www.chinanews.com.cn/scroll-news/news{page_num}.html"
 
