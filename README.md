@@ -23,7 +23,7 @@ python环境问题
 
 ## 资讯分析
 
-一键获取中国新闻网资讯
+一键获取中国新闻网资讯 [图文版](https://www.52pojie.cn/thread-1780608-1-1.html)
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
