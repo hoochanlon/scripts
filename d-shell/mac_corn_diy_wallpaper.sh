@@ -28,8 +28,8 @@ cat <<EOF > my_desktop_cron
 # 周一傍晚六点半，自定义壁纸
 30 18 * * 1 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "$diy_wallpaper"'
 
-# 周一至周四，晚上休息时间十一点十分，切换系统壁纸
-10 23 * * 1-4 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "$sys_wallpaper"'
+# 周一至周四，晚上休息时间十二点十分，切换系统壁纸
+10 24 * * 1-4 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "$sys_wallpaper"'
 
 # 周五傍晚六点半，自定义壁纸
 30 18 * * 5 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "$diy_wallpaper"'
