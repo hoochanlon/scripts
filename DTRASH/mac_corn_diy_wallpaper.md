@@ -64,7 +64,7 @@ Mac系统壁纸位置，以Monterey为例（还原准备）
 **总结的四点**：
 
 1. Mac使用`crontab -e` 的前置条件：一、换nano，二、 `brew install nvim`
-2. 理论上，macOS当屏幕锁定或休眠，系统在锁定或休眠会将大部分进程挂起，不会运行 `crontab` 中的任务，以达到减小开支及省电目的；但我的测试：Mac充电状态、放电状态的息屏，解锁后还是会更改的，实际上亮之前就已经改了。
+2. 理论上，macOS当屏幕锁定或休眠，系统在锁定或休眠会将大部分进程挂起，不会运行 `crontab` 中的任务，以达到减小开支及省电目的；但我的测试：Mac充电状态、放电状态的息屏，解锁后还是会更改的，实际上亮之前就已经改了。如果是关机的话，时间就跳过待下一次这个时间点了。
 3. 使用 `launchd` ，编写个 plist 文件，加入守护进程。效果上也没多大差异，而且编码复杂度过高，不划算，故没考虑在内。
 4. `crontab`是以当前用户执行的，sudo 之后会临时变成root，应使用`sudo -u $USER `，保持当前用户名执行。
 
@@ -170,6 +170,10 @@ printf "\n 定时壁纸任务已完成。\n"
 ```
 
 测试效果
+
+```
+ bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
+```
 
 ![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-05-03%2014.57.26.png)
 
