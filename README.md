@@ -43,6 +43,13 @@ powershell active，以及微PE显示IP脚本 `explorer https://github.com/hooch
 Set-ExecutionPolicy RemoteSigned
 ```
 
+一键爬取bing壁纸
+
+```
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
+```
+
+
 重置macOS ~/.zshrc （仅环境变量配置失误，造成不可逆后果使用）
 
 ```
