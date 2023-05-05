@@ -16,7 +16,7 @@ headers = {
 
 # 循环3次，即从首页到第三页
 # "pageNum" 页码；pageSize，最多9张图。
-for i in range(3):
+for i in range(4):
     data = {
         "pageNum": i,
         "pageSize": 9
