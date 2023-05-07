@@ -10,7 +10,6 @@ Linux迁移 Windows command 工具：
 * [cygwin](http://www.cygwin.com) 类子系统
 * [gnuwin32](http://gnuwin32.sourceforge.net)、[minGW](http://www.mingw.org)  保持原生环境，尽可能提供类似的方案
 
-
 python环境问题
 
 * pyenv+pipx+poetry
@@ -23,16 +22,30 @@ python环境问题
 
 ## 资讯分析
 
+
+一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
+
+```
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
+```
+
 一键获取中国新闻网资讯 [图文版](https://www.52pojie.cn/thread-1780608-1-1.html)
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
 ```
 
-一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
+一键获取今日头条&抖音热搜、百度热搜
 
 ```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today.py)"
+```
+
+
+一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
+
+```
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
 ```
 
 ## 细枝末节
@@ -42,13 +55,6 @@ powershell active，以及微PE显示IP脚本 `explorer https://github.com/hooch
 ```
 Set-ExecutionPolicy RemoteSigned
 ```
-
-一键爬取bing壁纸
-
-```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
-```
-
 
 重置macOS ~/.zshrc （仅环境变量配置失误，造成不可逆后果使用）
 
