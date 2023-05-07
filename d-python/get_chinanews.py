@@ -15,7 +15,8 @@ from datetime import datetime
 # 获取当前时间
 now = datetime.now()
 # 将时间格式化为指定的字符串格式
-formatted_time = now.strftime('%Y-%-m-%-d')
+# formatted_time = now.strftime('%Y-%-m-%-d')
+formatted_time = now.strftime('%Y-%m-%d')
 
 # 创建一个Workbook对象，用于Excel的读写
 wb = Workbook()
