@@ -75,6 +75,35 @@ def write_news_to_sheet(news_list: list, sheet_name: str, wb: Workbook):
     ws.cell(row=1, column=3, value='指数（万）')
 
 
+def delete_empty_rows(sheet_name: str, wb: Workbook):
+    """
+    删除指定工作表中的空行
+    :param sheet_name: 工作表名称
+    :param wb: Excel 工作簿对象
+    """
+    ws = wb[sheet_name]
+    for row in ws.iter_rows():
+        if all(cell.value is None for cell in row):
+            ws.delete_rows(row[0].row)
+
+
+def calculate_average_index(sheet_name: str, wb: Workbook):
+    """
+    计算指定工作表中热搜新闻的平均指数
+    :param sheet_name: 工作表名称
+    :param wb: Excel 工作簿对象
+    :return: 平均指数
+    """
+    ws = wb[sheet_name]
+    total_index = 0
+    count = 0
+    for row in ws.iter_rows(min_row=2, min_col=3, max_col=3):
+        for cell in row:
+            total_index += cell.value
+            count += 1
+    return total_index / count
+
+
 def main():
     default_dir = os.path.join(os.path.expanduser("~"), "Desktop")
     save_path_xlsx_file = os.path.join(default_dir,
@@ -89,6 +118,8 @@ def main():
     for url, sheet_name in zip(urls, sheet_names):
         news_list = get_news_from_url(url)
         write_news_to_sheet(news_list, sheet_name, wb)
+        delete_empty_rows(sheet_name, wb)
+        print(sheet_name + ' 平均指数:' + calculate_average_index(sheet_name, wb))
 
     default_sheet = wb['Sheet']
     wb.remove(default_sheet)
