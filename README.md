@@ -234,10 +234,9 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 ![ ](https://raw.githubusercontent.com/hoochanlon/hoochanlon/master/assets/github-contribution-grid-snake.svg)
 -->
 
-一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...所有脚本与指令均需用管理员身份运行，脚本代码及病毒分析文章，也仅供学习与交流使用，切勿做违法用途。
-
-
 ---
+
+一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...所有脚本与指令均需用管理员身份运行，脚本代码及病毒分析文章，也仅供学习与交流使用，切勿做违法用途。
 
 Linux迁移 Windows command 工具：
 
