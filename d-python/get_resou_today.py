@@ -64,7 +64,7 @@ def resou_to_excel(url, sheet_name, wb):
 
 # 在此处添加需要爬取的URL和sheet名称 
 urls = ['http://resou.today/art/11.html', 'http://resou.today/art/22.html', 'http://resou.today/art/10.html'] 
-sheet_names = ['sheet1', 'sheet2', 'sheet3']
+sheet_names = ['今日头条热榜', '抖音时事热榜', '百度热搜']
 
 # 创建了一个新的Excel工作簿
 wb = Workbook()
