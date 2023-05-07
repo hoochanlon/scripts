@@ -92,6 +92,7 @@ def main():
 
     default_sheet = wb['Sheet']
     wb.remove(default_sheet)
+    wb.save(save_path_xlsx_file)
 
 
 if __name__ == '__main__':
