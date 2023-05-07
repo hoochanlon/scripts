@@ -1,4 +1,5 @@
 import requests 
+import os
 from bs4 import BeautifulSoup 
 from openpyxl import Workbook 
 from datetime import datetime
@@ -7,6 +8,12 @@ from datetime import datetime
 now = datetime.now() 
 # 将时间格式化为指定的字符串格式 
 formatted_time = now.strftime('%Y-%m-%d')
+
+
+# 拼接成桌面目录
+default_dir = os.path.join(os.path.expanduser("~"), "Desktop")
+# 拼接图片保存路径
+save_path_xlsx_file = os.path.join(default_dir, "resoubang_{}.xlsx".format(formatted_time))
 
 # ---------- 获取相关热搜新闻保存到xlsx ------------------
 
@@ -76,4 +83,4 @@ for i in range(len(urls)):
 # 删除默认生成的空白 sheet
 default_sheet = wb['Sheet']
 wb.remove(default_sheet)
-wb.save('resoubang_{}.xlsx'.format(formatted_time))
+wb.save(save_path_xlsx_file)
