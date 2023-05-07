@@ -119,7 +119,7 @@ def main():
         news_list = get_news_from_url(url)
         write_news_to_sheet(news_list, sheet_name, wb)
         delete_empty_rows(sheet_name, wb)
-        print(sheet_name + ' 平均指数:' + calculate_average_index(sheet_name, wb))
+         print(sheet_name + ' 平均指数:' + str(calculate_average_index(sheet_name, wb)))
 
     default_sheet = wb['Sheet']
     wb.remove(default_sheet)
