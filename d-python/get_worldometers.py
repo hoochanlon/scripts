@@ -26,7 +26,7 @@ current_population_words = soup.find_all('span',class_='item')
 current_population_num = soup.find_all('span',class_='rts-counter')
 
 
-# ---------- 新增：以时间作为文件名后缀（2023-4-26） ---------------
+# ---------- 新增：以时间作为文件名后缀（2023-04-26） ---------------
 
 # 获取当前时间
 now = datetime.now()
