@@ -32,7 +32,7 @@ current_population_num = soup.find_all('span',class_='rts-counter')
 now = datetime.now()
 
 # 将时间格式化为指定的字符串格式
-formatted_time = now.strftime('%Y-%-m-%-d')
+formatted_time = now.strftime('%Y-%m-%d')
 
 
 # ------------ 将获取的数据提取出特定列 ---------------------------
