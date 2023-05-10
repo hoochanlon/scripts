@@ -167,7 +167,8 @@ def write_news_to_sheet(news_list: list, sheet_name: str, wb: Workbook):
         for cell in row:
             if cell.column == 1 or cell.column == 3:
                 if isinstance(cell.value, str) and not cell.value.isnumeric():
-                    cell.value = cell.value.replace('[置顶]', '0w') # 去除字符串中的 '[置顶]' 字符
+                    # 去除字符串中的 '[置顶]' 字符，185为2、3、4排名的平均值（实时）
+                    cell.value = cell.value.replace('[置顶]', '185w') 
                 if isinstance(cell.value, str) and cell.value.isnumeric():
                     cell.value = int(cell.value)
                 elif isinstance(cell.value, str):
@@ -177,7 +178,6 @@ def write_news_to_sheet(news_list: list, sheet_name: str, wb: Workbook):
     ws.cell(row=1, column=4, value='情感得分')
     
 
-# 对新闻进行分类
 def write_category_to_sheet(sheet_name: str, wb: Workbook):
     """
     将新闻事件的关键词分类信息写入到 Excel 工作表中的第五列中
@@ -209,9 +209,10 @@ def write_category_to_sheet(sheet_name: str, wb: Workbook):
                         break
                 if category:
                     break
+        if not category:
+            category = '其他'
         ws.cell(row=row[0].row, column=5, value=category)
     ws.cell(row=1, column=5, value='分类')
-
 
 def main():
     default_dir = os.path.join(os.path.expanduser("~"), "Desktop")
