@@ -143,6 +143,8 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
   bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
  ```
  
+一键安装打印机 [自在拉基 - Mac打印机一键安装 ](https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html)（转发朋友的，没需求，所以没写，原理都差不多。）
+
 
 ## 移花接木
 
@@ -164,7 +166,7 @@ Powershell一键生成Emeditor序列号
 irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/emeditor_random_keygen.ps1|iex
 ```
 
-转载：Powershell一键IDM激活（[自己写的方案已失效，国内版权原因不做更新](https://github.com/hoochanlon/ihs-simple/blob/main/d-pwsh/fail_idm.ps1)）
+Powershell一键IDM激活（[自己写的方案已失效，国内版权原因不做更新](https://github.com/hoochanlon/ihs-simple/blob/main/d-pwsh/fail_idm.ps1)）
 
 ```
 iwr -useb https://ghproxy.com/https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/main/IAS.ps1 | iex
