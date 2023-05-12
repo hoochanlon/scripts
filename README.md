@@ -26,7 +26,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 * 自动化分类，匹配率：93%, 91%, 81% 区间左右（其中，微博噪音最大，失真度最高，信息价值也最低。）
 * 文本情感平均值、每条数值分析
 * 词频统计（三者共存的热搜，说明为持久公共热度，信息密度较高）
-* 开发中：词组分析（定语状语叠加，判断新闻标题引导情绪、植入观念占比成分，选型[斯坦福大学语言模型 Stanza](https://stanfordnlp.github.io/stanza/)）
+* 开发中：词组分析（定语状语叠加，判断新闻标题引导情绪、植入观念占比成分，选型 [斯坦福大学语言模型 Stanza](https://stanfordnlp.github.io/stanza/)）
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today.py)"
