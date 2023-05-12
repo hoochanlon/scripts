@@ -230,7 +230,6 @@ def write_news_to_sheet(news_list: list, sheet_name: str, wb: Workbook):
     ws.cell(row=1, column=5, value='分类')
     
 
-
 def main():
 
     urls = ['http://resou.today/art/11.html', 'http://resou.today/art/22.html','http://resou.today/art/6.html']
@@ -238,6 +237,7 @@ def main():
 
     wb = Workbook()
 
+    wb.remove(wb['Sheet'])
     for url, sheet_name in zip(urls, sheet_names):
         news_list = get_news_from_url(url)
         # 写入网页解析的数据到xlsx
@@ -246,19 +246,19 @@ def main():
         delete_empty_rows(sheet_name, wb)
         # 分类
         write_category_to_sheet(sheet_name, wb)
-        # 词频统计
-        calculate_word_count(sheet_names, wb)
+
         # 统计平均指数、各表平均情感值
         average_index, sentiment_score = calculate_average_index_and_sentiment_score(sheet_name, wb)
         print(f'{sheet_name} 平均指数:{average_index:.2f} 情感得分: {sentiment_score:.2f}')
     
+    # 词频统计
+    calculate_word_count(sheet_names, wb)
+
     # 进行跨平台处理保存路径
-    default_dir = os.path.join(os.path.expanduser("~"), "Desktop")
-    # 拼接
-    save_path_xlsx_file = os.path.join(default_dir, "resoubang_{}.xlsx".format(get_formatted_time()))
-    # 删除空表
-    default_sheet = wb['Sheet'];wb.remove(default_sheet)
-    # 保存为指定文件
+    save_path_xlsx_file = os.path.join(os.path.join(os.path.expanduser("~"), "Desktop"), 
+                                       "resoubang_{}.xlsx".format(get_formatted_time()))
+    # 删除空表，并保存为指定文件
+    # wb.remove(wb['Sheet']);wb.save(save_path_xlsx_file)
     wb.save(save_path_xlsx_file)
 
 # 如果当前模块是被其他模块导入的，则该条件语句下面的代码将不会被执行。
