@@ -23,9 +23,10 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 
 一键获取今日头条、抖音、微博热搜
 
-* 自动化分类，匹配率：96%, 92%, 85% 区间左右（其中，微博垃圾信息，噪音最大）
-* 文本情感分析（平均值、每条文本数值、词频统计）
-* 词组分析开发中（情绪、定语状语叠加）
+* 自动化分类，匹配率：93%, 91%, 81% 区间左右（其中，微博噪音最大，失真度最高，信息价值也最低。）
+* 文本情感平均值、每条数值分析
+* 词频统计（三者共存的热搜，说明为持久公共热度，信息密度较高）
+* 词组分析开发中（定语状语叠加，判断新闻标题引导情绪、植入观念占比成分）
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today.py)"
