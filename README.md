@@ -21,7 +21,11 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
 ```
 
-一键获取今日头条、抖音、微博热搜（自动化分类，匹配率：96%, 92%, 85% 区间左右，词组分析开发中）
+一键获取今日头条、抖音、微博热搜
+
+* 自动化分类，匹配率：96%, 92%, 85% 区间左右（其中，微博垃圾信息，噪音最大）
+* 文本情感分析（平均值、每条文本数值、词频统计）
+* 词组分析开发中（情绪、定语状语叠加）
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today.py)"
