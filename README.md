@@ -8,7 +8,6 @@
 
 ## 资讯分析与图片采集
 
-
 一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
 
 ```
@@ -21,12 +20,11 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
 ```
 
-一键获取今日头条、抖音、微博热搜
+一键获取今日头条、抖音、微博热搜，只要定语、状语叠得多，总能是宣传大好形势的新闻。
 
 * 自动化分类，匹配率：93%, 91%, 81% 区间左右（其中，微博噪音最大，失真度最高，信息价值也最低。）
 * 词频统计（三者共存的热搜，说明为持久公共热度，信息密度较高）
 * 文本情感平均值、每条标题的情感数值（主：人为置顶热搜的文本情绪强烈程度）
-* 开发中：词组分析（定语状语叠加，判断新闻标题引导情绪、植入观念占比成分，选型 [斯坦福大学语言模型 Stanza](https://stanfordnlp.github.io/stanza/)）
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today.py)"
