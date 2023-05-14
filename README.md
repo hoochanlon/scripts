@@ -22,13 +22,26 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 
 一键获取今日头条、抖音、微博热搜，只要定语、状语叠得多，总能是宣传大好形势的新闻。
 
-* 自动化分类，整体匹配率：81%~94% 区间左右（其中，微博噪音最大，失真度最高，信息价值也最低。）
-* 词频统计（三者共存的热搜，说明为持久公共热度，信息密度较高）
-* 文本情感平均值、每条标题的情感数值（主：人为置顶热搜的文本情绪强烈程度）
-
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today.py)"
 ```
+
+* 自动化分类；整体匹配率：81%~94% 区间左右；其中，微博噪音最大，失真度最高，信息价值也最低。
+* 词频统计；三者共存的热搜，说明为持久公共热度，信息密度较高。
+* 文本情感平均值、每条标题的情感数值；主：人为置顶热搜的文本情绪强烈程度。
+* 词性分析；定语状语叠加，引导与被植入意识成分用词。（get_resou_today_s）
+
+选型：[斯坦福 Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)，[清华 ThuLAC](https://github.com/thunlp/THULAC-Python)虽然不错但比较封闭，AI的魔法略显麻烦。
+
+```
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
+```
+
+
+
+
+
+
 
 
 一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
