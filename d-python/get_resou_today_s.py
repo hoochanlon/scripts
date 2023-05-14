@@ -301,14 +301,15 @@ def load_stanza_to_sheet():
     wb = openpyxl.load_workbook(get_save_path_xlsx_file())
 
     # 获取Sheet1、Sheet2和Sheet3表格对象
-    sheet1 = wb['今日头条热榜']
-    sheet2 = wb['抖音时事热榜']
-    sheet3 = wb['微博热搜']
+    # sheet1 = wb['今日头条热榜']
 
-    # 在Sheet1、Sheet2和Sheet3中添加特定词性列
-    add_special_pos_columns(sheet1)
-    add_special_pos_columns(sheet2)
-    add_special_pos_columns(sheet3)
+    # 在Sheet1中添加特定词性列
+    # add_special_pos_columns(sheet1)
+
+    # 遍历工作表名称并添加特殊词性列
+    for sheet_name in ['今日头条热榜', '抖音时事热榜', '微博热搜']:
+        sheet = wb[sheet_name]
+        add_special_pos_columns(sheet)
 
     #保存Excel工作簿
     wb.save(get_save_path_xlsx_file())
@@ -319,7 +320,7 @@ def main():
     result_list =  fenmenbielei()
     load_stanza_to_sheet()
    
-    print("热搜词性分析已加载完成，现开始计算各表热搜的指数、文本情感的平均值 \n")
+    print("\n热搜词性分析已加载完成，现开始计算各表热搜的指数、文本情感的平均值 \n")
     # 使用 zip 函数可以将数组打包为一个迭代器
     for sheet_name, result in zip(['今日头条热榜', '抖音时事热榜', '微博热搜'], result_list):
         average_index, sentiment_score = result
