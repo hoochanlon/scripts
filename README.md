@@ -31,7 +31,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 * 文本情感平均值、每条标题的情感数值；主：人为置顶热搜的文本情绪强烈程度。
 * 词性分析；定语状语叠加，引导与被植入意识成分用词。（get_resou_today_s）
 
-选型：[清华 ThuLAC](https://github.com/thunlp/THULAC-Python)虽然不错但比较封闭，AI的魔法略显麻烦；故选型 [斯坦福 Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)。
+选型：[ThuLAC](https://github.com/thunlp/THULAC-Python)虽然不错但比较封闭，AI的魔法略显麻烦；故选型 [Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)。
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
