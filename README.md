@@ -8,6 +8,8 @@
 
 ## 资讯分析与图片采集
 
+### 资讯分析
+
 一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
 
 ```
@@ -38,12 +40,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
 ```
 
-
-
-
-
-
-
+### 图片采集
 
 一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
 
