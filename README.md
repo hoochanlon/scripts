@@ -22,7 +22,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
 ```
 
-**一键获取今日头条、抖音、微博热搜。**
+**一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html)**
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today.py)"
