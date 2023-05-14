@@ -34,7 +34,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 
 新增：词性分析（get_resou_today_s）；只要定语、状语叠得多，总能是宣传形势大好。标记可能存有引导与被植入意识成分用词。
 
-选型：[ThuLAC](https://github.com/thunlp/THULAC-Python)虽然不错但比较封闭，AI的魔法略显麻烦；故选型 [Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)。
+选型：[ThuLAC](https://github.com/thunlp/THULAC-Python)虽不错，但较封闭，AI的魔法略显麻烦；故选型 [Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)，也够用啦。
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
