@@ -190,7 +190,8 @@ def write_category_to_sheet(sheet_name: str, wb: Workbook):
                 if category:
                     break
         if not category:
-            category = '其他'
+            # category = '其他'
+            category = '综合'
         ws.cell(row=row[0].row, column=5, value=category)
 
 
