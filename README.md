@@ -28,7 +28,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today.py)"
 ```
 
-* 自动化分类；整体匹配率：81%~94% 区间左右；其中，微博噪音最大，失真度最高，信息价值也最低。
+* 自动化分类；整体匹配率：81%~94% 区间左右；其中，微博噪音三者最大，失真度偏高，信息价值低，话题含水量大。
 * 词频统计；三者共存的热搜，说明为持久公共热度，信息密度较高。
 * 文本情感平均值、每条标题的情感数值；主：人为置顶热搜的文本情绪强烈程度。
 
