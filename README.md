@@ -58,7 +58,6 @@ Set-ExecutionPolicy RemoteSigned
 
 ```
 export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin; sudo rm -rf ~/.zshrc
-
 ```
 
 Windows关闭代理设置
