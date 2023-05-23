@@ -28,11 +28,11 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today.py)"
 ```
 
-* 自动化分类；整体匹配率：84%~96% 区间左右；其中，微博噪音三者最大，失真度偏高，信息价值低，话题含水量大。
+* 自动化分类；整体匹配率：84%~96% 区间左右。
 * 词频统计；三者共存的热搜，说明为持久公共热度，信息密度较高。
 * 文本情感平均值、每条标题的情感数值；主：人为置顶热搜的文本情绪强烈程度。
 
-新增：词性分析（get_resou_today_s）；只要定语、状语叠得多，总能是宣传形势大好。标记可能存有引导与被植入意识成分用词。选型：[ThuLAC](https://github.com/thunlp/THULAC-Python)虽不错，但较封闭，AI的魔法略显麻烦；故选型 [Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)，也够用。
+新增：词性分析（get_resou_today_s）；只要定语、状语叠得多，总能是宣传形势大好。标记可能存有引导与被植入意识成分用词。选型：[ThuLAC](https://github.com/thunlp/THULAC-Python)虽不错，但较封闭，AI的魔法略显麻烦；故选型 [Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)，也够用。微博在自动化分类中，噪音三者最大，失真度偏高，信息价值低，话题含水量大。各家平台的热搜标题也存有未标识谣言成分 [国家辟谣平台查询](https://www.piyao.org.cn/pysjk/frontsql.htm)
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
