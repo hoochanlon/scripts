@@ -34,7 +34,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 
 新增：词性分析（get_resou_today_s）；只要定语、状语叠得多，总能是宣传形势大好。标记可能存有引导与被植入意识成分用词。选型：[ThuLAC](https://github.com/thunlp/THULAC-Python)虽不错，但较封闭，AI的魔法略显麻烦；故选型 [Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)，也够用。
 
-微博在自动化分类中，噪音三者最大，失真度偏高，信息价值低，话题含水量大。各家平台的热搜标题也存有未标识谣言成分 [国家辟谣平台查询](https://www.piyao.org.cn/pysjk/frontsql.htm)、[网络辟谣标签工作专区](https://www.piyao.org.cn/bq/index.htm)、[谣言曝光台](https://www.piyao.org.cn/yybgt/index.htm)
+微博在自动化分类中，噪音三者最大，失真度偏高，信息价值低，话题含水量大。各家平台的热搜标题也存有未标识谣言成分，最好用[国家辟谣平台查询](https://www.piyao.org.cn/pysjk/frontsql.htm)、[网络辟谣标签工作专区](https://www.piyao.org.cn/bq/index.htm)、[谣言曝光台](https://www.piyao.org.cn/yybgt/index.htm)工具来识别。
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
