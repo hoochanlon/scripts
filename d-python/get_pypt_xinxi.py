@@ -1,10 +1,10 @@
-
 import os
 import time
+import json
 import jieba
 import jieba.analyse
+import thulac
 import base64
-import json
 import requests
 from datetime import datetime
 import urllib.request
@@ -93,7 +93,7 @@ def selenium_url_parse(url):
         EC.visibility_of_element_located((By.CSS_SELECTOR, 'div.more')))
 
     # 每次加载数据为20个，拿x次加载的数据内容，不过i其实是从0算起。
-    x = 9
+    x = 1
     for i in range(x):
         time.sleep(3);more.click()
 
@@ -127,8 +127,7 @@ def aphla()->str:
    
 
 def baseinfo_write_to_excel(rumor_contents) -> list:
-    # 创建一个Workbook对象
-    workbook = Workbook()
+
     # 获取默认sheet
     sheet = workbook.active
     # 将默认sheet的名称更改为"谣言分析"
@@ -160,13 +159,22 @@ def baseinfo_write_to_excel(rumor_contents) -> list:
         sheet.cell(row=i+2, column=4, value=category)
         sheet.cell(row=i+2, column=5, value=sentiment)
 
+    ciyu_tongji_fenxi()
 
-    # 第二步：词频统计
+    # 保存Excel文件
+    workbook.save(get_save_path_xlsx_file())
+
+# 词频统计与语法分析
+def ciyu_tongji_fenxi(): 
+    '''
+    该部分隶属于 baseinfo_write_to_excel(rumor_contents)管理
+    '''
     # 创建新的sheet
     sheet_freq = workbook.create_sheet(title='词频统计')
     # 写入表头
     sheet_freq['A1'] = '词语'
     sheet_freq['B1'] = '出现次数'
+    sheet_freq['C1'] = '词性'
 
     # 要去掉的字词和符号
     # stop_words = ['是', '的', '了', '，', '。', '？']
@@ -174,8 +182,7 @@ def baseinfo_write_to_excel(rumor_contents) -> list:
     # 停用词文件
     stopwords_file = 'https://ghproxy.com/https://raw.githubusercontent.com/goto456/stopwords/master/cn_stopwords.txt'
     # 请求停用词库
-    response = requests.get(stopwords_file)
-    stopwords = response.content.decode('utf-8').split('\n')
+    stopwords = requests.get(stopwords_file).content.decode('utf-8').split('\n')
 
     # 分词并统计词频
     word_count = Counter()
@@ -186,20 +193,37 @@ def baseinfo_write_to_excel(rumor_contents) -> list:
                 word_count[word] += 1
 
     # 取前15个词语
-    top_15 = word_count.most_common(15)
+    top = word_count.most_common(15)
+
+# 使用THULAC进行词性标注
+    word_pos = []
+    for word, count in top:
+        tup = thu.cut(word)
+        if tup:
+            word_pos.append((word, tup[0][1]))
+
 
     # 写入词频统计结果
     row = 2  # 从第二行开始写入
-    for i, (word, count) in enumerate(top_15):
+    for i, (word, count) in enumerate(top):
         sheet_freq.cell(row=row+i, column=1, value=word)
         sheet_freq.cell(row=row+i, column=2, value=count)
-
-    # 保存Excel文件
-    workbook.save(get_save_path_xlsx_file())
+        
+        pos_str = ''
+        for w, pos in word_pos:
+            if w == word:
+                pos_str += pos + ' '
+        sheet_freq.cell(row=row+i, column=3, value=pos_str)
 
 def main():
-    global data_list  # 声明 data_list 是全局变量
-
+    global thu
+    global data_list  
+    global workbook 
+    
+    # 全局加载中文模型
+    thu = thulac.thulac()
+    # 全局创建一个Workbook对象
+    workbook = Workbook()
     data_list = selenium_url_parse(aphla())
     baseinfo_write_to_excel(data_list)
 
