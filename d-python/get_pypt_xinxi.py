@@ -192,8 +192,9 @@ def ciyu_tongji_fenxi():
             if word not in stopwords:
                 word_count[word] += 1
 
-    # 取前15个词语
-    top = word_count.most_common(15)
+    # 取前 y 个词语
+    y = 15
+    top = word_count.most_common(y)
 
 # 使用THULAC进行词性标注
     word_pos = []
