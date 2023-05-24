@@ -203,7 +203,6 @@ def ciyu_tongji_fenxi():
         if tup:
             word_pos.append((word, tup[0][1]))
 
-
     # 写入词频统计结果
     row = 2  # 从第二行开始写入
     for i, (word, count) in enumerate(top):
@@ -213,21 +212,33 @@ def ciyu_tongji_fenxi():
         pos_str = ''
         for w, pos in word_pos:
             if w == word:
-                pos_str += pos + ' '
+                # pos_str += pos + ' '
+                pos_str += pos_dict.get(pos, pos) + ' '
         sheet_freq.cell(row=row+i, column=3, value=pos_str)
 
 def main():
     global thu
     global data_list  
-    global workbook 
+    global workbook
+    global pos_dict 
     
     # 全局加载中文模型
     thu = thulac.thulac()
     # 全局创建一个Workbook对象
     workbook = Workbook()
-    data_list = selenium_url_parse(aphla())
-    baseinfo_write_to_excel(data_list)
+    # 参考链接：https://github.com/thunlp/THULAC#词性解释
+    pos_dict = {
+                "n": "名词","np": "人名","ns": "地名","ni": "机构名","nz": "其他专名",
+                "m": "数词","q": "量词","mq": "数量词","t": "时间词","f": "方位词","s": "处所词",
+                "v": "动词","vm": "能愿动词","vd": "趋向动词","a": "形容词","d": "副词",
+                "h": "前接成分", "k": "后接成分", "i": "习语", "j": "简称",
+                "r": "代词","c": "连词","p": "介词","u": "助词","y": "语气助词",
+                "e": "叹词","o": "拟声词","g": "语素","w": "标点","x": "其他"
+    }
+
 
 # 如果当前模块是被其他模块导入的，则该条件语句下面的代码将不会被执行。
 if __name__ == '__main__':
     main()
+    data_list = selenium_url_parse(aphla())
+    baseinfo_write_to_excel(data_list)
