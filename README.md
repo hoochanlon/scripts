@@ -8,21 +8,7 @@
 
 ---
 
-## 资讯分析与图片采集
-
-### 资讯分析
-
-一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
-
-```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
-```
-
-一键获取中国新闻网资讯 [图文版](https://www.52pojie.cn/thread-1780608-1-1.html)
-
-```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
-```
+## 资讯分析
 
 **一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html)**
 
@@ -43,15 +29,26 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_rumor_analysis.py)"
 ```
 
-### 图片采集
+一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
+
+```
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
+```
+
+一键获取中国新闻网资讯 [图文版](https://www.52pojie.cn/thread-1780608-1-1.html)
+
+```
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
+```
+
+
+## 细枝末节
 
 一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
 ```
-
-## 细枝末节
 
 powershell active，以及微PE显示IP脚本 `explorer https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/weipe_showip.bat`
 
