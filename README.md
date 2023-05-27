@@ -21,6 +21,14 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 
 微博在自动化分类中，噪音三者最大，信息价值低，话题含水量大，失真度偏高；各家平台的热搜标题也存有未标识谣言成分，最好用[国家辟谣平台查询](https://www.piyao.org.cn/pysjk/frontsql.htm)鉴别其真伪；虽然娱乐属性极重，但微博其本身具有一对多公共属性的社交模式，当某个社会事件被挂上热搜，它可在短时间内迅速传播信息，引发公众的关注和讨论。
 
+推荐论文：
+
+毛贺祺《大数据背景下微博热搜的新闻阅读服务功能》吉林大学新闻学专业硕士学位论文，2017.3<br>
+喻国明《大数据分析下的中国社会舆情 总体态势与结构性特征》中国人民大学学报，2013年第５期<br>
+王小新《当前我国受众网络新闻的阅读倾向——以百度热搜词为例》《今传媒》，2013年第9期<br>
+许诺《基于百度热搜新闻词的社会风险事件5W提取研究》《系统工程理论与实践》，2022年第40卷第2期<br>
+
+
 **自动化谣言分析（NLP：[ThuLAC](https://github.com/thunlp/THULAC-Python)）**
 
 功能大体与上例相当，对词频的较高词语进行语法分析。
@@ -44,7 +52,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
  
 ---
 
-## 资讯分析例篇
+## 资讯简例
 
 一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
 
