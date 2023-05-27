@@ -8,7 +8,7 @@
 
 ## 资讯分析
 
-**一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html)**
+**一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html) （NLP：[Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)）**
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
@@ -17,7 +17,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 * 自动化分类；整体匹配率：84%~96% 区间左右。
 * 词频统计；三者共存的热搜，说明为持久公共热度，信息密度较高。
 * 文本情感平均值、每条标题的情感数值；主：人为置顶热搜的文本情绪强烈程度。
-* 词性分析（NLP：[Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)）；标记可能存有引导与被植入意识成分用词，只要定语、状语叠得多，总能是宣传正态形势。
+* 词性分析；标记可能存有引导与被植入意识成分用词，只要定语、状语叠得多，总能是宣传正态形势。
 
 微博在自动化分类中，噪音三者最大，信息价值低，话题含水量大，失真度偏高；各家平台的热搜标题也存有未标识谣言成分，最好用[国家辟谣平台查询](https://www.piyao.org.cn/pysjk/frontsql.htm)鉴别其真伪；虽然娱乐属性极重，但微博其本身具有一对多公共属性的社交模式，当某个社会事件被挂上热搜，它可在短时间内迅速传播信息，引发公众的关注和讨论。
 
