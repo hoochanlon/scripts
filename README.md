@@ -23,11 +23,27 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 
 微博在自动化分类中，噪音三者最大，信息价值低，话题含水量大，失真度偏高；各家平台的热搜标题也存有未标识谣言成分，最好用[国家辟谣平台查询](https://www.piyao.org.cn/pysjk/frontsql.htm)鉴别其真伪；虽然娱乐属性极重，但微博其本身具有一对多公共属性的社交模式，当某个社会事件被挂上热搜，它可在短时间内迅速传播信息，引发公众的关注和讨论。
 
-自动化谣言分析（NLP：[ThuLAC](https://github.com/thunlp/THULAC-Python)）
+**自动化谣言分析（NLP：[ThuLAC](https://github.com/thunlp/THULAC-Python)）**
+
+功能大体与上例相当，对词频的较高词语进行语法分析。
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_rumor_analysis.py)"
 ```
+
+对谣言的定义：阿尔波特(Gordom W.Allport)和波兹曼(Leo Postman)最早为谣言下了定义,即谣言是一个与当时事件相关联的命题,是为了使人相信,一般以口传媒介的方式在人们之间流传,但是却缺乏具体的资料以证实其确切性。<sup>[1]<sup>
+
+目前,在突发事件中的各类谣言中,有明确目标性和破坏性的攻击型谣言和以实现政治、经济等利益为目标的宣传型或牟利型谣言出现的频率较低。多数谣言是出于恐惧心理和基于错误的认识判断而形成的。<sup>[2]<sup> 从这次的谣言收集分析已证明，最大的两个类别是，社会话题与健康饮食，两者分别占比48%、43%。
+ 
+
+---
+ 
+[1-2] 胡琦，《社会科学家·全媒体时代网络谣言产生的心理机制与治理路径》2022年11月，第11期，总第307期，137页
+ 
+ 
+---
+
+## 资讯分析例篇
 
 一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
 
