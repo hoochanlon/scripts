@@ -1,4 +1,4 @@
-## 资讯分析
+## 常见平台热搜与辟谣信息分析
 
 ### 一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html) （NLP：[Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)）
 
