@@ -1,6 +1,6 @@
 ## 资讯分析
 
-**一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html) （NLP：[Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)）**
+### 一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html) （NLP：[Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)）**
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
@@ -21,7 +21,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 * 许诺《基于百度热搜新闻词的社会风险事件5W提取研究》《系统工程理论与实践》，2022年第40卷第2期<br>
 
 
-**自动化谣言分析（NLP：[ThuLAC](https://github.com/thunlp/THULAC-Python)）**
+### 自动化收集辟谣条目及语言分析（NLP：[ThuLAC](https://github.com/thunlp/THULAC-Python)）
 
 功能大体与上例相当，对词频的较高词语进行语法分析。
 
