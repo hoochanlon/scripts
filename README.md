@@ -6,7 +6,7 @@
 
 **免责声明：仅面向研究与学习交流之用，切勿用于其他用途！**
 
-## 资讯分析 [PRO](./zixfx.md)
+## 资讯分析 [SSS](./zixfx.md)
 
 **一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html) （NLP：[Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)）**
 
