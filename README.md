@@ -39,6 +39,37 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
 ```
 
+## 因企业硬性需求
+
+IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html)
+
+```
+curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/keep_ie.bat|cmd
+```
+
+一键永久关闭Windows更新设置
+
+```
+curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/stop_update.bat|cmd
+```
+
+一键恢复被关闭的Windows更新设置
+
+```
+curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/re_update.bat|cmd
+```
+
+一键调用设置程序是否以管理员权限运行
+
+```
+curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/nano_runas.bat&&call nano_runas.bat
+```
+
+去掉win10/win11热搜条目（需注销或重启） [admx.help 上见](https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn)
+
+```
+reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f
+```
 
 ## 细枝末节
 
@@ -58,12 +89,6 @@ Set-ExecutionPolicy RemoteSigned
 
 ```
 export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin; sudo rm -rf ~/.zshrc
-```
-
-去掉win10/win11热搜条目（需注销或重启） [admx.help 上见](https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn)
-
-```
-reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f
 ```
 
 Windows关闭代理设置
@@ -90,18 +115,6 @@ powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple
 
 ```
 curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/install_jdk.bat&&call install_jdk.bat
-```
-
-IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html)
-
-```
-curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/keep_ie.bat|cmd
-```
-
-一键调用设置程序是否以管理员权限运行
-
-```
-curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/nano_runas.bat&&call nano_runas.bat
 ```
 
 win11一键显示当前WiFi与密码并生成二维码分享 [图文版](https://www.52pojie.cn/thread-1772481-1-1.html)
