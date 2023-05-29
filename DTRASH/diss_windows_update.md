@@ -25,15 +25,15 @@ https://www.52pojie.cn/thread-1777560-1-1.html)。我整体分析这些收集来
 
 16:26，运行stop_update.bat前。
 
-![image-20230529214310695](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/image-20230529214310695.png)
+![](https://s2.xptou.com/2023/05/29/6474c502bbc26.png)
 
 16:28，运行stop_update.bat后，出现“某些设置由你的组织来管理”红字，以及红色星号标识“你的组织已关闭更新”。
 
-![image-20230529214449518](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/image-20230529214449518.png)
+![](https://s2.xptou.com/2023/05/29/6474c5032516d.png)
 
 此状态下重启后是能完成最后一波更新的，因电脑性能，更新用了10分钟不等，中途走开了一会。
 
-![image-20230529215126561](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/image-20230529215126561.png)
+![](https://s2.xptou.com/2023/05/29/6474c5054eba8.png)
 
 整体效果是令人满意的。
 
@@ -122,11 +122,11 @@ pause
 
 re_update.bat 恢复更新启动
 
-![image-20230529215758840](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/image-20230529215758840.png)
+![](https://s2.xptou.com/2023/05/29/6474c5d6eae76.png)
 
 重启电脑后效果
 
-![image-20230529215947512](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/image-20230529215947512.png)
+![](https://s2.xptou.com/2023/05/29/6474c5df88147.png)
 
 **re_update.bat** 附源码：https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/re_update.bat
 
@@ -214,23 +214,23 @@ pause
 
 ### Win11实测效果
 
-运行stop_update前 与 运行stop_update后
+**运行stop_update前 与 运行stop_update后**
 
-![catch2023-05-29 19.42.13](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-05-29%2019.42.13.png)
+![](https://s2.xptou.com/2023/05/29/6474c6d5a61fb.png)
 
-![catch2023-05-29 19.44.00](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-05-29%2019.44.00.png)
+![](https://s2.xptou.com/2023/05/29/6474c6db32115.png)
 
 **stop_update**，安装完最后一波更新与重启后效果
 
-![catch2023-05-29 20.01.19](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-05-29%2020.01.19.png)
+![](https://s2.xptou.com/2023/05/29/6474c7a50cd6a.png)
 
-![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-05-29%2020.03.32.png)
+![](https://s2.xptou.com/2023/05/29/6474c7b14c6a5.png)
 
 **re_update** 运行后与重启效果
 
-![catch2023-05-29 20.04.37](/Users/chanlonhoo/Pictures/屏幕截图/catch2023-05-29 20.04.37.png)
+![](https://s2.xptou.com/2023/05/29/6474c859dcb8d.png)
 
-![catch2023-05-29 20.05.57](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-05-29%2020.05.57.png)
+![](https://s2.xptou.com/2023/05/29/6474c86028bb7.png)
 
 ### 在线实测效果
 
@@ -240,9 +240,9 @@ pause
 curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/stop_update.bat|cmd
 ```
 
-![catch2023-05-29 22.30.26](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-05-29%2022.30.26.png)
+![](https://s2.xptou.com/2023/05/29/6474c8dc2221b.png)
 
-![catch2023-05-29 22.35.48](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-05-29%2022.35.48.png)
+![](https://s2.xptou.com/2023/05/29/6474c8e23395c.png)
 
 re_update测试
 
@@ -250,6 +250,7 @@ re_update测试
 curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/re_update.bat|cmd
 ```
 
-![catch2023-05-29 22.38.21](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-05-29%2022.38.21.png)
+![](https://s2.xptou.com/2023/05/29/6474c921c65de.png)
 
-![catch2023-05-29 22.40.54](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-05-29%2022.40.54.png)
+![](https://s2.xptou.com/2023/05/29/6474c933c3798.png)
+
