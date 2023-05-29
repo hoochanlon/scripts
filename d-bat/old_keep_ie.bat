@@ -1,4 +1,4 @@
-@REM  "win10Õı³£Ê¹ÓÃ¾ÍºÃ£¬win11ÏµÍ³ĞèÏÈÓÃĞ¡Óã¶ùIEĞŞ¸´¹¤¾ß£¬½øĞĞ»Ö¸´IE11Í¼±ê£¬ÔÙÊ¹ÓÃ¸Ã¹¤¾ß·À½Ù³Ö¡£"
+@REM  "win10æ­£å¸¸ä½¿ç”¨å°±å¥½ï¼Œwin11ç³»ç»Ÿéœ€å…ˆç”¨å°é±¼å„¿IEä¿®å¤å·¥å…·ï¼Œè¿›è¡Œæ¢å¤IE11å›¾æ ‡ï¼Œå†ä½¿ç”¨è¯¥å·¥å…·é˜²åŠ«æŒã€‚"
 
 @echo off
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main" /v "Enable Browser Extensions" /t REG_SZ /d "NO" /f
@@ -7,7 +7,7 @@ reg add "HKCU\Software\Microsoft\Edge\IEToEdge" /v "RedirectionMode" /t REG_DWOR
 reg add "HKCU\Software\Microsoft\Edge\IEToEdge" /v "QuietExpirationTime" /t REG_QWORD /d 0 /f
 
 @REM  -----------------------------------------------------------------------------
-@REM "·ÀEdge½Ù³ÖIEä¯ÀÀÆ÷£¬ÒÑ´¦ÀíÍê³É£¡"
+@REM "é˜²EdgeåŠ«æŒIEæµè§ˆå™¨ï¼Œå·²å¤„ç†å®Œæˆï¼"
 
 pause
 del %0
