@@ -47,7 +47,7 @@ IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html)
 curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/keep_ie.bat|cmd
 ```
 
-一键永久关闭Windows更新设置
+一键永久关闭Windows更新设置 [图文版](https://www.52pojie.cn/thread-1791338-1-1.html)
 
 ```
 curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/stop_update.bat|cmd
@@ -57,6 +57,12 @@ curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d
 
 ```
 curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/re_update.bat|cmd
+```
+
+一键开启或关闭Windows defender实时保护
+
+```
+curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat
 ```
 
 一键调用设置程序是否以管理员权限运行
