@@ -2,9 +2,34 @@
 
 [![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
 
-一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了...所有脚本与指令均需用管理员身份运行，脚本代码及病毒分析文章，也仅供学习与交流使用，切勿做违法用途。
+## 前言
 
-**免责声明：仅面向研究与学习交流之用，切勿用于其他用途！**
+一开始只是用来做图床，图省事方便偶尔随手上传自己的小脚本，结果却成了脚本库。至于所谓“技术”方面的东西，找个专门的平台发稿就行了。现在想来，那些在xx之家、xx论坛投稿的，也是聪明人。SEO、宣传什么的就交由他们去吧。
+
+免责声明：所有脚本与指令、病毒分析文章，仅面向研究与学习交流之用，切勿用于其他非法用途！
+
+## 小提示
+
+<details>
+<summary><B> 点击详情 </B></summary>
+
+Linux迁移 Windows command 工具：
+
+* [cygwin](http://www.cygwin.com) 类子系统
+* [gnuwin32](http://gnuwin32.sourceforge.net)、[minGW](http://www.mingw.org)  保持原生环境，尽可能提供类似的方案
+
+python环境问题
+
+* pyenv+pipx+poetry
+  * pyenv灵活地安装与切换python版本，搭配poetry可快速生成相应版本环境。
+  * pipx升级依赖工具包方便，不用担心全局兼容问题。
+  * 编译的程序通常会依赖各种包，这个要看开发者给出相应提示安装哪些包了。
+* miniconda、anaconda这类python发行版，依赖库齐全。
+
+Windows开启PowerShell功能 `Set-ExecutionPolicy RemoteSigned`
+
+</details>
+
 
 ## 资讯收集（小试牛刀）
 
@@ -79,8 +104,6 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 <details>
 <summary><B> 点击详情 </B></summary>
 
-开启PowerShell功能 `Set-ExecutionPolicy RemoteSigned`
-
 IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html)
 
 ```
@@ -110,7 +133,6 @@ curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs
 ```
 netsh winhttp reset proxy
 ```
-
 
 一键调用设置程序是否以管理员权限运行
 
@@ -343,19 +365,5 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 [网络辟谣标签工作专区](https://www.piyao.org.cn/bq/index.htm)、[谣言曝光台](https://www.piyao.org.cn/yybgt/index.htm)
 -->
 
----
 
-Linux迁移 Windows command 工具：
 
-* [cygwin](http://www.cygwin.com) 类子系统
-* [gnuwin32](http://gnuwin32.sourceforge.net)、[minGW](http://www.mingw.org)  保持原生环境，尽可能提供类似的方案
-
-python环境问题
-
-* pyenv+pipx+poetry
-  * pyenv灵活地安装与切换python版本，搭配poetry可快速生成相应版本环境。
-  * pipx升级依赖工具包方便，不用担心全局兼容问题。
-  * 编译的程序通常会依赖各种包，这个要看开发者给出相应提示安装哪些包了。
-* miniconda、anaconda这类python发行版，依赖库齐全。
-
-对于我来说，博客更侧重日常生活，基本上不会往里塞计网专业上的东西，更多的是个人见闻与人文社科。至于所谓“技术”方面的东西，找个专门的平台发稿就行了。现在想来，那些在xx之家、xx论坛投稿的，也是聪明人。SEO、宣传什么的就交由他们去吧。
