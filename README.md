@@ -26,8 +26,6 @@ python环境问题
   * 编译的程序通常会依赖各种包，这个要看开发者给出相应提示安装哪些包了。
 * miniconda、anaconda这类python发行版，依赖库齐全。
 
-Windows开启PowerShell功能 `Set-ExecutionPolicy RemoteSigned`
-
 </details>
 
 
@@ -109,6 +107,8 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 
 <details>
 <summary><B> 点击详情 </B></summary>
+ 
+ 首先，确保你的系统已开启 PowerShell，打开PowerShell功能：`Set-ExecutionPolicy RemoteSigned`
  
  一键使用，本地下载使用转GB2312编码
  
