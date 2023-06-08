@@ -123,7 +123,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
  1. 检查主机主动共享协议相关信息
  1. 检查电脑休眠、开关机、程序崩溃等信息
  1. 执行1～6选项的所有功能
- 1. 桌面生成驱动检查、当天事件、近一月系统唤醒频次、威胁概况分析报表
+ 1. 生成驱动检查、当天事件、一周内系统唤醒频次、月度威胁概况分析报表
  
 </details>
 
