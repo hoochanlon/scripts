@@ -15,7 +15,6 @@ function sel_man {
     Write-Host "3. 该脚本信息量较大，建议全屏使用；其他见：" -ForegroundColor Green -NoNewLine
     Write-Host "https://github.com/hoochanlon/ihs-simple `n" -ForegroundColor Blue
     
-    Write-Host " [0] 远程调用函数查看开发说明" -ForegroundColor DarkYellow -BackgroundColor DarkGray
     Write-Host " [1] 检查IP与网络设备连接状态" -ForegroundColor Green
     Write-Host " [2] 检查打印机状态" -ForegroundColor Green
     Write-Host " [3] 检查硬盘、CPU、内存、显卡等基础驱动信息" -ForegroundColor Green
@@ -960,12 +959,6 @@ function try_csv_xlsx {
 
 }
 
-# remote_man
-function remote_man {
-    $url = "https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/jixian_win_man.ps1"
-    Invoke-Expression ((New-Object Net.WebClient).DownloadString($url))
-    jixian_yuanc_man
-}
 
 # switch
 function select_option {
@@ -984,11 +977,6 @@ function select_option {
 
         switch ($key) {
 
-            48 {
-                # 数字键 0
-                # 测试远程调用
-                remote_man
-            }
             49 {
                 # 数字键 1
                 if (!$has_checked_sys) {
@@ -1063,6 +1051,8 @@ function select_option {
             }
             191 {
                 # 键盘 /？
+                # 远程调用
+                # Invoke-Expression ((New-Object Net.WebClient).DownloadString($url));$function 
                 sel_man
             }
             Default {
