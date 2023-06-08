@@ -1,150 +1,151 @@
-# Ê¹ÓÃËµÃ÷
+# ä½¿ç”¨è¯´æ˜
+# ä¸‹è½½åˆ°æœ¬åœ°ä½¿ç”¨ï¼Œéœ€è½¬æˆ GB2312 ç¼–ç ï¼Œå¦åˆ™ä¸­æ–‡ä¹±ç 
 function sel_man {
 
-    # ¿ªÆôPowerShell£ºSet-ExecutionPolicy RemoteSigned
-    # ¹Ø±ÕPowerShell£ºSet-ExecutionPolicy Restricted
-    # ±ğÃû²éÑ¯£ºGet-Alias ls
+    # å¼€å¯PowerShellï¼šSet-ExecutionPolicy RemoteSigned
+    # å…³é—­PowerShellï¼šSet-ExecutionPolicy Restricted
+    # åˆ«åæŸ¥è¯¢ï¼šGet-Alias | Where-Object { $_.Definition -eq 'ForEach-Object' }
 
     Clear-Host
     Write-Host "`n*************************************************************" -ForegroundColor Green
-    Write-Host "`nÎÂÜ°ÌáÊ¾£º`n" -ForegroundColor Green
-    Write-Host "1. ½Å±¾ÊÊÓÃWindows10¼°ÒÔÉÏ²Ù×÷ÏµÍ³£¬²¢È·±£Ö÷»úÒÑ¿ªÆôPowerShell¹¦ÄÜ" -ForegroundColor Green
-    Write-Host "2. Ö÷»úÆôÓÃ/½ûÓÃ PowerShellÖ¸Áî£º " -ForegroundColor Green -nonewline
+    Write-Host "`næ¸©é¦¨æç¤ºï¼š`n" -ForegroundColor Green
+    Write-Host "1. è„šæœ¬é€‚ç”¨Windows10åŠä»¥ä¸Šæ“ä½œç³»ç»Ÿï¼Œå¹¶ç¡®ä¿ä¸»æœºå·²å¼€å¯PowerShellåŠŸèƒ½" -ForegroundColor Green
+    Write-Host "2. ä¸»æœºå¯ç”¨/ç¦ç”¨ PowerShellæŒ‡ä»¤ï¼š " -ForegroundColor Green -nonewline
     Write-Host "Set-ExecutionPolicy RemoteSigned / Set-ExecutionPolicy Restricted" -ForegroundColor DarkYellow
-    Write-Host "3. ¸Ã½Å±¾ĞÅÏ¢Á¿½Ï´ó£¬½¨ÒéÈ«ÆÁÊ¹ÓÃ£»ÆäËû¼û£º" -ForegroundColor Green -NoNewLine
+    Write-Host "3. è¯¥è„šæœ¬ä¿¡æ¯é‡è¾ƒå¤§ï¼Œå»ºè®®å…¨å±ä½¿ç”¨ï¼›å…¶ä»–è§ï¼š" -ForegroundColor Green -NoNewLine
     Write-Host "https://github.com/hoochanlon/ihs-simple `n" -ForegroundColor Blue
     
-    Write-Host " [0] Ô¶³Ìµ÷ÓÃº¯Êı²é¿´¿ª·¢ËµÃ÷" -ForegroundColor DarkYellow -BackgroundColor DarkGray
-    Write-Host " [1] ¼ì²éIPÓëÍøÂçÉè±¸Á¬½Ó×´Ì¬" -ForegroundColor Green
-    Write-Host " [2] ¼ì²é´òÓ¡»ú×´Ì¬" -ForegroundColor Green
-    Write-Host " [3] ¼ì²éÓ²ÅÌ¡¢CPU¡¢ÄÚ´æ¡¢ÏÔ¿¨µÈ»ù´¡Çı¶¯ĞÅÏ¢" -ForegroundColor Green
-    Write-Host " [4] ¼ì²éÉè±¸°²È«ĞÔ¡¢½üÆÚÉı¼¶²¹¶¡¡¢¶¨Ê±ÈÎÎñÏî" -ForegroundColor Green
-    Write-Host " [5] ¼ì²éÖ÷»úÖ÷¶¯¹²ÏíĞ­ÒéÏà¹ØĞÅÏ¢" -ForegroundColor Green
-    Write-Host " [6] ¼ì²éµçÄÔĞİÃß¡¢¿ª¹Ø»ú¡¢³ÌĞò±ÀÀ£µÈĞÅÏ¢" -ForegroundColor Green
-    Write-Host " [7] Ö´ĞĞ1¡«6Ñ¡ÏîµÄËùÓĞ¹¦ÄÜ" -ForegroundColor Green
-    Write-Host " [8] Éú³ÉÇı¶¯¼ì²é¡¢µ±ÌìÊÂ¼ş¡¢½üÒ»ÔÂÏµÍ³Æô¶¯Æµ´Î·ÖÎö±¨±í" -ForegroundColor Green
-    Write-Host " [9] ²é¿´Ö¸µ¼½¨ÒéÓë¿ª·¢ËµÃ÷ `n" -ForegroundColor Green
+    Write-Host " [0] è¿œç¨‹è°ƒç”¨å‡½æ•°æŸ¥çœ‹å¼€å‘è¯´æ˜" -ForegroundColor DarkYellow -BackgroundColor DarkGray
+    Write-Host " [1] æ£€æŸ¥IPä¸ç½‘ç»œè®¾å¤‡è¿æ¥çŠ¶æ€" -ForegroundColor Green
+    Write-Host " [2] æ£€æŸ¥æ‰“å°æœºçŠ¶æ€" -ForegroundColor Green
+    Write-Host " [3] æ£€æŸ¥ç¡¬ç›˜ã€CPUã€å†…å­˜ã€æ˜¾å¡ç­‰åŸºç¡€é©±åŠ¨ä¿¡æ¯" -ForegroundColor Green
+    Write-Host " [4] æ£€æŸ¥è®¾å¤‡å®‰å…¨æ€§ã€è¿‘æœŸå‡çº§è¡¥ä¸ã€å®šæ—¶ä»»åŠ¡é¡¹" -ForegroundColor Green
+    Write-Host " [5] æ£€æŸ¥ä¸»æœºä¸»åŠ¨å…±äº«åè®®ç›¸å…³ä¿¡æ¯" -ForegroundColor Green
+    Write-Host " [6] æ£€æŸ¥ç”µè„‘ä¼‘çœ ã€å¼€å…³æœºã€ç¨‹åºå´©æºƒç­‰ä¿¡æ¯" -ForegroundColor Green
+    Write-Host " [7] æ‰§è¡Œ1ï½6é€‰é¡¹çš„æ‰€æœ‰åŠŸèƒ½" -ForegroundColor Green
+    Write-Host " [8] ç”Ÿæˆé©±åŠ¨æ£€æŸ¥ã€å½“å¤©äº‹ä»¶ã€è¿‘ä¸€æœˆç³»ç»Ÿå¯åŠ¨é¢‘æ¬¡åˆ†ææŠ¥è¡¨" -ForegroundColor Green
+    Write-Host " [9] æŸ¥çœ‹æŒ‡å¯¼å»ºè®®ä¸å¼€å‘è¯´æ˜ `n" -ForegroundColor Green
     Write-Host "`**************************************************************`n" -ForegroundColor Green
     
-    Write-Host "°´ Ctrl + C ¿ÉÍË³ö£¬¼üÈë /£¿²éÔÄ¸ÃÌáÊ¾Ñ¡Ïî£¬Êı×Ö¼ü£¨¿ÉÁ¬Ğø£©Ñ¡ÔñÏàÓ¦¹¦ÄÜ£º" -ForegroundColor Green -NoNewLine
+    Write-Host "æŒ‰ Ctrl + C å¯é€€å‡ºï¼Œé”®å…¥ /ï¼ŸæŸ¥é˜…è¯¥æç¤ºé€‰é¡¹ï¼Œæ•°å­—é”®ï¼ˆå¯è¿ç»­ï¼‰é€‰æ‹©ç›¸åº”åŠŸèƒ½ï¼š" -ForegroundColor Green -NoNewLine
 
 }
 
-# ²éÔÄÖ¸µ¼½¨ÒéÓë¿ª·¢ËµÃ÷
+# æŸ¥é˜…æŒ‡å¯¼å»ºè®®ä¸å¼€å‘è¯´æ˜
 function dev_man {
 
     # cls
     Write-Host "`n"
-    Write-Host "### ²éÔÄ¿ª·¢ÎÄµµËµÃ÷ ###`n" -ForegroundColor Cyan
+    Write-Host "### æŸ¥é˜…å¼€å‘æ–‡æ¡£è¯´æ˜ ###`n" -ForegroundColor Cyan
 
     Write-Host "@Author https://github.com/hoochanlon`n" 
 
-    Write-Host "#Çı¶¯¡¤Éè±¸Çı¶¯ĞÅÏ¢±í²é¿´`n" -ForegroundColor Yellow
-    Write-Host "* Problem£¨ÎÊÌâ£©ÊÇÓëÉè±¸»òÇı¶¯Ïà¹ØµÄÒ»¸ö»ò¶à¸öÎÊÌâµÄÃèÊö¡£¿ÉÄÜµÄÖµ°üÀ¨ÎŞ·¨Æô¶¯¡¢´íÎó¡¢³åÍ»µÈ¡£" 
-    Write-Host "* ConfigManagerUserConfig£¨ÅäÖÃ¹ÜÀíÆ÷ÓÃ»§ÅäÖÃ£©Ö¸Ê¾Éè±¸»òÇı¶¯ÊÇ·ñÓÉÓÃ»§»òÏµÍ³½øĞĞÁËÅäÖÃ¸ü¸Ä¡£" 
-    Write-Host "* ClassGuid£¨Àà±ğ GUID£©ÊÇÇı¶¯ËùÊôÉè±¸ÀàĞÍµÄ GUID£¨È«¾ÖÎ¨Ò»±êÊ¶·û£©¡£"
-    Write-Host "* Manufacturer£¨ÖÆÔìÉÌ£©ÊÇÉú²úÉè±¸»òÇı¶¯µÄ¹«Ë¾»ò×éÖ¯µÄÃû³Æ¡£" 
-    Write-Host "* Present£¨ÊÇ·ñ´æÔÚ£©Ö¸Ê¾Éè±¸ÊÇ·ñ´æÔÚÓÚÏµÍ³ÉÏ¡£"
-    Write-Host "* Service£¨·şÎñ£©ÊÇ¸ºÔğ¹ÜÀíÉè±¸»òÇı¶¯µÄ Windows ·şÎñµÄÃû³Æ¡£"
-    Write-Host "* Problem£ºCM_PROB_PHANTOM ±íÊ¾Éè±¸±»²Ù×÷ÏµÍ³±ê¼ÇÎª¡°Ğé¼Ù¡±µÄÉè±¸£¬Ëğ»µ¡¢¶ªÊ§¡¢Î´ÕıÈ·°²×°¡£"
-    Write-Host "* Problem£ºCM_PROB_NONE ×´Ì¬Ê±£¬ËüÓ¦¸Ã¿ÉÒÔÕı³£¹¤×÷£¬Ã»ÓĞÈÎºÎ¹ÊÕÏ»ò´íÎó¡£`n"
-    Write-Host "ÏêÇé¼û£º" -ForegroundColor Yellow -NoNewline; Write-Host "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/device-manager-problem-codes" -ForegroundColor Blue
+    Write-Host "#é©±åŠ¨Â·è®¾å¤‡é©±åŠ¨ä¿¡æ¯è¡¨æŸ¥çœ‹`n" -ForegroundColor Yellow
+    Write-Host "* Problemï¼ˆé—®é¢˜ï¼‰æ˜¯ä¸è®¾å¤‡æˆ–é©±åŠ¨ç›¸å…³çš„ä¸€ä¸ªæˆ–å¤šä¸ªé—®é¢˜çš„æè¿°ã€‚å¯èƒ½çš„å€¼åŒ…æ‹¬æ— æ³•å¯åŠ¨ã€é”™è¯¯ã€å†²çªç­‰ã€‚" 
+    Write-Host "* ConfigManagerUserConfigï¼ˆé…ç½®ç®¡ç†å™¨ç”¨æˆ·é…ç½®ï¼‰æŒ‡ç¤ºè®¾å¤‡æˆ–é©±åŠ¨æ˜¯å¦ç”±ç”¨æˆ·æˆ–ç³»ç»Ÿè¿›è¡Œäº†é…ç½®æ›´æ”¹ã€‚" 
+    Write-Host "* ClassGuidï¼ˆç±»åˆ« GUIDï¼‰æ˜¯é©±åŠ¨æ‰€å±è®¾å¤‡ç±»å‹çš„ GUIDï¼ˆå…¨å±€å”¯ä¸€æ ‡è¯†ç¬¦ï¼‰ã€‚"
+    Write-Host "* Manufacturerï¼ˆåˆ¶é€ å•†ï¼‰æ˜¯ç”Ÿäº§è®¾å¤‡æˆ–é©±åŠ¨çš„å…¬å¸æˆ–ç»„ç»‡çš„åç§°ã€‚" 
+    Write-Host "* Presentï¼ˆæ˜¯å¦å­˜åœ¨ï¼‰æŒ‡ç¤ºè®¾å¤‡æ˜¯å¦å­˜åœ¨äºç³»ç»Ÿä¸Šã€‚"
+    Write-Host "* Serviceï¼ˆæœåŠ¡ï¼‰æ˜¯è´Ÿè´£ç®¡ç†è®¾å¤‡æˆ–é©±åŠ¨çš„ Windows æœåŠ¡çš„åç§°ã€‚"
+    Write-Host "* Problemï¼šCM_PROB_PHANTOM è¡¨ç¤ºè®¾å¤‡è¢«æ“ä½œç³»ç»Ÿæ ‡è®°ä¸ºâ€œè™šå‡â€çš„è®¾å¤‡ï¼ŒæŸåã€ä¸¢å¤±ã€æœªæ­£ç¡®å®‰è£…ã€‚"
+    Write-Host "* Problemï¼šCM_PROB_NONE çŠ¶æ€æ—¶ï¼Œå®ƒåº”è¯¥å¯ä»¥æ­£å¸¸å·¥ä½œï¼Œæ²¡æœ‰ä»»ä½•æ•…éšœæˆ–é”™è¯¯ã€‚`n"
+    Write-Host "è¯¦æƒ…è§ï¼š" -ForegroundColor Yellow -NoNewline; Write-Host "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/device-manager-problem-codes" -ForegroundColor Blue
 
-    Write-Host "`n#×¢²á±í¡¤×¢²á±í¸ÅÒªËµÃ÷ `n" -ForegroundColor Yellow
-    Write-Host "* HKLM£º¸Ã¸ù¼ü°üÀ¨±¾µØ¼ÆËã»úµÄÏµÍ³ĞÅÏ¢£¬°üÀ¨Ó²¼şºÍ²Ù×÷ÏµÍ³ĞÅÏ¢£¬°²È«Êı¾İºÍ¼ÆËã»ú×¨ÓÃµÄ¸÷ÀàÈí¼şÉèÖÃĞÅÏ¢" 
-    Write-Host "* HKU£ºÕâĞ©ĞÅÏ¢¸æËßÏµÍ³µ±Ç°ÓÃ»§Ê¹ÓÃµÄÍ¼±ê£¬¼¤»îµÄ³ÌĞò×é£¬¿ªÊ¼²Ëµ¥µÄÄÚÈİÒÔ¼°ÑÕÉ«¡¢×ÖÌå¡£ " 
-    Write-Host "* HkCU£º¸Ã¸ù¼ü°üÀ¨µ±Ç°µÇÂ¼ÓÃ»§µÄÅäÖÃĞÅÏ¢£¬°üÀ¨»·¾³±äÁ¿£¬¸öÈË³ÌĞòÒÔ¼°×ÀÃæÉèÖÃµÈ¡£" 
-    Write-Host "* HKCC: Ó²¼şµÄÅäÖÃĞÅÏ¢¡£ÆäÊµHKEY_LOCAL_MACHINE¡¢ HKEY_USERS¡¢ÕâÁ½¸ö²ÅÊÇÕæÕıµÄ×¢²á±í¼ü£¬ÆäËû¶¼ÊÇ´ÓÄ³¸ö·ÖÖ§Ó³Éä³öÀ´µÄ£¬Ïàµ±ÓÚ¿ì½İ¼ü·½Ê½»òÊÇ±ğÃû¡£`n" 
+    Write-Host "`n#æ³¨å†Œè¡¨Â·æ³¨å†Œè¡¨æ¦‚è¦è¯´æ˜ `n" -ForegroundColor Yellow
+    Write-Host "* HKLMï¼šè¯¥æ ¹é”®åŒ…æ‹¬æœ¬åœ°è®¡ç®—æœºçš„ç³»ç»Ÿä¿¡æ¯ï¼ŒåŒ…æ‹¬ç¡¬ä»¶å’Œæ“ä½œç³»ç»Ÿä¿¡æ¯ï¼Œå®‰å…¨æ•°æ®å’Œè®¡ç®—æœºä¸“ç”¨çš„å„ç±»è½¯ä»¶è®¾ç½®ä¿¡æ¯" 
+    Write-Host "* HKUï¼šè¿™äº›ä¿¡æ¯å‘Šè¯‰ç³»ç»Ÿå½“å‰ç”¨æˆ·ä½¿ç”¨çš„å›¾æ ‡ï¼Œæ¿€æ´»çš„ç¨‹åºç»„ï¼Œå¼€å§‹èœå•çš„å†…å®¹ä»¥åŠé¢œè‰²ã€å­—ä½“ã€‚ " 
+    Write-Host "* HkCUï¼šè¯¥æ ¹é”®åŒ…æ‹¬å½“å‰ç™»å½•ç”¨æˆ·çš„é…ç½®ä¿¡æ¯ï¼ŒåŒ…æ‹¬ç¯å¢ƒå˜é‡ï¼Œä¸ªäººç¨‹åºä»¥åŠæ¡Œé¢è®¾ç½®ç­‰ã€‚" 
+    Write-Host "* HKCC: ç¡¬ä»¶çš„é…ç½®ä¿¡æ¯ã€‚å…¶å®HKEY_LOCAL_MACHINEã€ HKEY_USERSã€è¿™ä¸¤ä¸ªæ‰æ˜¯çœŸæ­£çš„æ³¨å†Œè¡¨é”®ï¼Œå…¶ä»–éƒ½æ˜¯ä»æŸä¸ªåˆ†æ”¯æ˜ å°„å‡ºæ¥çš„ï¼Œç›¸å½“äºå¿«æ·é”®æ–¹å¼æˆ–æ˜¯åˆ«åã€‚`n" 
 
-    Write-Host "`n* ×¢²á±í²Î¿¼ÍøÕ¾£º" -ForegroundColor Yellow
+    Write-Host "`n* æ³¨å†Œè¡¨å‚è€ƒç½‘ç«™ï¼š" -ForegroundColor Yellow
     Write-Host "    https://admx.help" -ForegroundColor Blue 
     Write-Host "    https://learn.microsoft.com/zh-cn/windows/win32/apiindex/windows-api-list" -ForegroundColor Blue 
 
-    Write-Host "`n* ×¢²á±í·ÖÎö¼°¸ÄĞ´¹¤¾ß£º" -ForegroundColor Yellow
-    Write-Host "   ×¢²á±í·ÖÎö¹¤¾ß£º" -ForegroundColor Yellow -nonewline; Write-Host "https://www.nirsoft.net/utils/regscanner.html" -ForegroundColor Blue
-    Write-Host "   ×¢²á±í¸ÄĞ´¹¤¾ß£º" -ForegroundColor Yellow -nonewline; Write-Host "https://registry-finder.com" -ForegroundColor Blue
+    Write-Host "`n* æ³¨å†Œè¡¨åˆ†æåŠæ”¹å†™å·¥å…·ï¼š" -ForegroundColor Yellow
+    Write-Host "   æ³¨å†Œè¡¨åˆ†æå·¥å…·ï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://www.nirsoft.net/utils/regscanner.html" -ForegroundColor Blue
+    Write-Host "   æ³¨å†Œè¡¨æ”¹å†™å·¥å…·ï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://registry-finder.com" -ForegroundColor Blue
 
-    Write-Host "`n#ÈÕÖ¾¡¤ÊÂ¼ş¼¶±ğ£º`n" -ForegroundColor Yellow  
-    Write-Host " 1. ĞÅÏ¢ (Information)£¬ÊÇÕı³£µÄ²Ù×÷ĞĞÎª»òÏµÍ³×´Ì¬µÄÇáÎ¢±ä»¯£¬µ«²¢²»±íÊ¾ÏµÍ³´æÔÚÈÎºÎÎÊÌâ»ò´íÎó¡£" 
-    Write-Host " 2. ¾¯¸æ (Warning)£¬£¬·¢ÏÖÒÑ´æÔÚµÄÎÊÌâ»òÇ±ÔÚµÄ´íÎó£¬Æğµ½ÔçÆÚµÄÖ¸Ê¾×÷ÓÃ¡£" 
-    Write-Host " 3. ´íÎó (Error)£¬±íÊ¾Ä³¸ö²Ù×÷»òÈÎÎñÎ´ÄÜÍê³É»òÍê³É²»ÕıÈ·£¬ĞèÒªÒıÆğ×¢Òâ¡£`n" 
-    Write-Host 'ÔÚ Windows ÊÂ¼şÖĞ£¬¡°³É¹¦ÉóºË¡±ºÍ¡°Ê§°ÜÉóºË¡±Êµ¼ÊÉÏ²»ÊÇ×÷ÎªÊÂ¼ş¼¶±ğ½øĞĞ±¨¸æµÄ£¬¶øÊÇ×÷ÎªÊÂ¼ş·ÖÀà»òÊÂ¼şÔ´Ö®Ò»¡£'
-    Write-Host "ÊÂ¼şID¶ÔÓ¦¶à¸ö²»Í¬·ÖÀàµÄÈÕÖ¾£¬¶øÃ¿¸ö²»Í¬·ÖÀàµÄÈÕÖ¾¶Ô¶¨Î»µÄ¼¶±ğ£¬Ò²¸÷²»ÏàÍ¬¡£`n" 
+    Write-Host "`n#æ—¥å¿—Â·äº‹ä»¶çº§åˆ«ï¼š`n" -ForegroundColor Yellow  
+    Write-Host " 1. ä¿¡æ¯ (Information)ï¼Œæ˜¯æ­£å¸¸çš„æ“ä½œè¡Œä¸ºæˆ–ç³»ç»ŸçŠ¶æ€çš„è½»å¾®å˜åŒ–ï¼Œä½†å¹¶ä¸è¡¨ç¤ºç³»ç»Ÿå­˜åœ¨ä»»ä½•é—®é¢˜æˆ–é”™è¯¯ã€‚" 
+    Write-Host " 2. è­¦å‘Š (Warning)ï¼Œï¼Œå‘ç°å·²å­˜åœ¨çš„é—®é¢˜æˆ–æ½œåœ¨çš„é”™è¯¯ï¼Œèµ·åˆ°æ—©æœŸçš„æŒ‡ç¤ºä½œç”¨ã€‚" 
+    Write-Host " 3. é”™è¯¯ (Error)ï¼Œè¡¨ç¤ºæŸä¸ªæ“ä½œæˆ–ä»»åŠ¡æœªèƒ½å®Œæˆæˆ–å®Œæˆä¸æ­£ç¡®ï¼Œéœ€è¦å¼•èµ·æ³¨æ„ã€‚`n" 
+    Write-Host 'åœ¨ Windows äº‹ä»¶ä¸­ï¼Œâ€œæˆåŠŸå®¡æ ¸â€å’Œâ€œå¤±è´¥å®¡æ ¸â€å®é™…ä¸Šä¸æ˜¯ä½œä¸ºäº‹ä»¶çº§åˆ«è¿›è¡ŒæŠ¥å‘Šçš„ï¼Œè€Œæ˜¯ä½œä¸ºäº‹ä»¶åˆ†ç±»æˆ–äº‹ä»¶æºä¹‹ä¸€ã€‚'
+    Write-Host "äº‹ä»¶IDå¯¹åº”å¤šä¸ªä¸åŒåˆ†ç±»çš„æ—¥å¿—ï¼Œè€Œæ¯ä¸ªä¸åŒåˆ†ç±»çš„æ—¥å¿—å¯¹å®šä½çš„çº§åˆ«ï¼Œä¹Ÿå„ä¸ç›¸åŒã€‚`n" 
    
-    Write-Host "#ÈÕÖ¾¡¤³ÌĞò±êÊ¶·û `n" -ForegroundColor Yellow
-    Write-Host "Ã¿¸öÊÂ¼şÌá¹©³ÌĞò¶¼ÓĞÎ¨Ò»µÄ ProviderName¡£ÒÔÏÂÊÇÏµÍ³ÈÕÖ¾ÖĞ£¬Æä³£¼ûµÄ²¿·ÖÊ¾Àı£º`n"
-    Write-Host "* Microsoft-Windows-Kernel-Power£ºÌá¹©ÁËÓëÏµÍ³µçÔ´¹ÜÀíÏà¹ØµÄÊÂ¼ş£¬ÀıÈçÏµÍ³¹ÒÆğ¡¢»Ö¸´¡¢¹Ø»ú¡¢ÖØÆôµÈ¡£" 
-    Write-Host "* Microsoft-Windows-Kernel-General£ºÌá¹©ÁËÓë²Ù×÷ÏµÍ³ÄÚºËÏà¹ØµÄÊÂ¼ş£¬ÀıÈçÆô¶¯»ò¹Ø±Õ²Ù×÷ÏµÍ³¡¢ÄÚºË³õÊ¼»¯¡¢Çı¶¯³ÌĞò¼ÓÔØµÈ¡£" 
-    Write-Host "* Microsoft-Windows-Wininit£ºÌá¹©ÁËÓëÏµÍ³Òıµ¼ºÍ³õÊ¼»¯Ïà¹ØµÄÊÂ¼ş£¬ÀıÈçÆô¶¯³õÊ¼»¯½ø³Ì¡¢¼ì²éÎÄ¼şÏµÍ³¡¢¼ÓÔØÏµÍ³Çı¶¯³ÌĞòµÈ¡£" 
-    Write-Host "* Microsoft-Windows-Security-Auditing£ºÌá¹©ÁËÓë°²È«Éó¼ÆºÍÉóºËÏà¹ØµÄÊÂ¼ş£¬ÀıÈçÓÃ»§µÇÂ½¡¢È¨ÏŞ¸ü¸Ä¡¢ÎÄ¼şºÍ¶ÔÏó·ÃÎÊµÈ¡£" 
-    Write-Host "* Microsoft-Windows-DistributedCOM£ºÌá¹©ÁËÓë·Ö²¼Ê½Ó¦ÓÃ³ÌĞòÏà¹ØµÄÊÂ¼ş£¬ÀıÈç·Ö²¼Ê½COMµ÷ÓÃµÄÊ§°Ü¡¢È¨ÏŞÎÊÌâ¡¢RPC·şÎñÆ÷ÎŞ·¨Ê¹ÓÃµÈ¡£" 
-    Write-Host "* Microsoft-Windows-DNS-Client£º·şÎñ¸ºÔğ½«ÓòÃû½âÎöÎªÏàÓ¦µÄ IP µØÖ·£¬²¢½«Æä»º´æÒÔÌá¸ßĞÔÄÜ¡£" 
-    Write-Host "* Service Control Manager£ºÊÂ¼şÍ¨³£¼ÇÂ¼ÁËÏµÍ³Æô¶¯¡¢·şÎñÆô¶¯/Í£Ö¹¡¢·şÎñ±ÀÀ£µÈÓë·şÎñÏà¹ØµÄÊÂ¼ş¡£"
-    Write-Host "* LsaSrv£º ÊÇÖ¸ Windows ÏµÍ³ÖĞÓë±¾µØ°²È«ÈÏÖ¤·şÎñ¡£ÈçÓÃ»§µÄµÇÂ¼¡¢×¢Ïú¡¢ÃÜÂëÖØÖÃ£¬ÒÔ¼° NTLM ºÍ KerberosµÈ¡£" 
-    Write-Host "* User32£º ´óÁ¿ÓÃÓÚ´¦Àí GUI£¨Í¼ĞÎÓÃ»§½çÃæ£©ÔªËØºÍÓÃ»§½»»¥µÄÏµÍ³ API¡£"
-    Write-Host "`nÒÔÉÏ½öÊÇ³£¼ûµÄ¼¸¸ö ProviderName Ê¾Àı£¬Êµ¼ÊÉÏ»¹ÓĞºÜ¶àÆäËûµÄ ProviderName£¬Æä×÷ÓÃºÍ¹¦ÄÜÒ²¸÷²»ÏàÍ¬£¬¿É¸ù¾İĞèÒª½øĞĞ²éÑ¯¡£"
+    Write-Host "#æ—¥å¿—Â·ç¨‹åºæ ‡è¯†ç¬¦ `n" -ForegroundColor Yellow
+    Write-Host "æ¯ä¸ªäº‹ä»¶æä¾›ç¨‹åºéƒ½æœ‰å”¯ä¸€çš„ ProviderNameã€‚ä»¥ä¸‹æ˜¯ç³»ç»Ÿæ—¥å¿—ä¸­ï¼Œå…¶å¸¸è§çš„éƒ¨åˆ†ç¤ºä¾‹ï¼š`n"
+    Write-Host "* Microsoft-Windows-Kernel-Powerï¼šæä¾›äº†ä¸ç³»ç»Ÿç”µæºç®¡ç†ç›¸å…³çš„äº‹ä»¶ï¼Œä¾‹å¦‚ç³»ç»ŸæŒ‚èµ·ã€æ¢å¤ã€å…³æœºã€é‡å¯ç­‰ã€‚" 
+    Write-Host "* Microsoft-Windows-Kernel-Generalï¼šæä¾›äº†ä¸æ“ä½œç³»ç»Ÿå†…æ ¸ç›¸å…³çš„äº‹ä»¶ï¼Œä¾‹å¦‚å¯åŠ¨æˆ–å…³é—­æ“ä½œç³»ç»Ÿã€å†…æ ¸åˆå§‹åŒ–ã€é©±åŠ¨ç¨‹åºåŠ è½½ç­‰ã€‚" 
+    Write-Host "* Microsoft-Windows-Wininitï¼šæä¾›äº†ä¸ç³»ç»Ÿå¼•å¯¼å’Œåˆå§‹åŒ–ç›¸å…³çš„äº‹ä»¶ï¼Œä¾‹å¦‚å¯åŠ¨åˆå§‹åŒ–è¿›ç¨‹ã€æ£€æŸ¥æ–‡ä»¶ç³»ç»Ÿã€åŠ è½½ç³»ç»Ÿé©±åŠ¨ç¨‹åºç­‰ã€‚" 
+    Write-Host "* Microsoft-Windows-Security-Auditingï¼šæä¾›äº†ä¸å®‰å…¨å®¡è®¡å’Œå®¡æ ¸ç›¸å…³çš„äº‹ä»¶ï¼Œä¾‹å¦‚ç”¨æˆ·ç™»é™†ã€æƒé™æ›´æ”¹ã€æ–‡ä»¶å’Œå¯¹è±¡è®¿é—®ç­‰ã€‚" 
+    Write-Host "* Microsoft-Windows-DistributedCOMï¼šæä¾›äº†ä¸åˆ†å¸ƒå¼åº”ç”¨ç¨‹åºç›¸å…³çš„äº‹ä»¶ï¼Œä¾‹å¦‚åˆ†å¸ƒå¼COMè°ƒç”¨çš„å¤±è´¥ã€æƒé™é—®é¢˜ã€RPCæœåŠ¡å™¨æ— æ³•ä½¿ç”¨ç­‰ã€‚" 
+    Write-Host "* Microsoft-Windows-DNS-Clientï¼šæœåŠ¡è´Ÿè´£å°†åŸŸåè§£æä¸ºç›¸åº”çš„ IP åœ°å€ï¼Œå¹¶å°†å…¶ç¼“å­˜ä»¥æé«˜æ€§èƒ½ã€‚" 
+    Write-Host "* Service Control Managerï¼šäº‹ä»¶é€šå¸¸è®°å½•äº†ç³»ç»Ÿå¯åŠ¨ã€æœåŠ¡å¯åŠ¨/åœæ­¢ã€æœåŠ¡å´©æºƒç­‰ä¸æœåŠ¡ç›¸å…³çš„äº‹ä»¶ã€‚"
+    Write-Host "* LsaSrvï¼š æ˜¯æŒ‡ Windows ç³»ç»Ÿä¸­ä¸æœ¬åœ°å®‰å…¨è®¤è¯æœåŠ¡ã€‚å¦‚ç”¨æˆ·çš„ç™»å½•ã€æ³¨é”€ã€å¯†ç é‡ç½®ï¼Œä»¥åŠ NTLM å’Œ Kerberosç­‰ã€‚" 
+    Write-Host "* User32ï¼š å¤§é‡ç”¨äºå¤„ç† GUIï¼ˆå›¾å½¢ç”¨æˆ·ç•Œé¢ï¼‰å…ƒç´ å’Œç”¨æˆ·äº¤äº’çš„ç³»ç»Ÿ APIã€‚"
+    Write-Host "`nä»¥ä¸Šä»…æ˜¯å¸¸è§çš„å‡ ä¸ª ProviderName ç¤ºä¾‹ï¼Œå®é™…ä¸Šè¿˜æœ‰å¾ˆå¤šå…¶ä»–çš„ ProviderNameï¼Œå…¶ä½œç”¨å’ŒåŠŸèƒ½ä¹Ÿå„ä¸ç›¸åŒï¼Œå¯æ ¹æ®éœ€è¦è¿›è¡ŒæŸ¥è¯¢ã€‚"
 
-    Write-Host "`n* ÊÂ¼şID²éÑ¯£º" -ForegroundColor Yellow
+    Write-Host "`n* äº‹ä»¶IDæŸ¥è¯¢ï¼š" -ForegroundColor Yellow
     Write-Host "   https://www.ultimatewindowssecurity.com/securitylog/encyclopedia" -ForegroundColor Blue
     Write-Host "   https://www.myeventlog.com/search/find" -ForegroundColor Blue
-    Write-Host "`n* °²È«±êÊ¶·û²éÑ¯£º" -ForegroundColor Yellow -NoNewline
+    Write-Host "`n* å®‰å…¨æ ‡è¯†ç¬¦æŸ¥è¯¢ï¼š" -ForegroundColor Yellow -NoNewline
     Write-Host "https://rootclay.gitbook.io/windows-access-control/qi-an-quan-biao-shi-fu `n" -ForegroundColor Blue  
-    Write-Host "`n* PowerShellÄ£¿é×é¼şÏßË÷²éÑ¯£º" -ForegroundColor Yellow
+    Write-Host "`n* PowerShellæ¨¡å—ç»„ä»¶çº¿ç´¢æŸ¥è¯¢ï¼š" -ForegroundColor Yellow
     Write-Host "    https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps" -ForegroundColor Blue
     
-    Write-Host "`nÈÕÖ¾¼ÇÂ¼¿ª¹Ø»úµÄÏÖ×´ËµÃ÷£º`n"
-    Write-Host "1. Í³¼ÆÊÂ¼ş6005¡¢6006¡¢557²¢²»ÄÜ¾«È·»ñÈ¡µ½¿ª¹Ø»úÊ±¼ä£¬6005 ºÍ 6006Ö»ÊÇ·Ö±ğ¼ÇÂ¼ÎªEventLogµÄÆô¶¯ºÍ¹Ø±ÕÊÂ¼ş¡£"
-    Write-Host "2. µ«ÊÇÕâĞ©ÊÂ¼şÖ»¼ÇÂ¼ÁËÏµÍ³µÄ²Ù×÷×´Ì¬£¬¶øÃ»ÓĞ¼ÇÂ¼Êµ¼ÊµÄ¿ª»úºÍ¹Ø»úÊ±¼ä¡£"
-    Write-Host "3. 557 ¸ÃÊÂ¼şËä±¾ÖÊº¬ÒåÊÇÖ¸²Ù×÷ÏµÍ³ÒÑ³É¹¦¿ªÊ¼Æô¶¯£¬ÖµµÃ×¢ÒâÊÇ£º"
-    Write-Host '   "Active" ±íÊ¾ÏµÍ³´¦ÓÚ»î¶¯×´Ì¬£¬ÕâÒ²¿ÉÄÜÏµÍ³ÕıÔÚÔËĞĞÄ³Ğ©Ó¦ÓÃ³ÌĞò¡¢¼ÆËã/´¦ÀíÒ»Ğ©ÈÎÎñ£¬»òµÈ´ıÓÃ»§²Ù×÷¡£'
-    Write-Host '   Òò´Ë£¬ÔÚÆô¶¯Ê± "Active" ¿ÉÄÜÊÇÓÉ²Ù×÷ÏµÍ³×Ô¶¯µ÷ÓÃµÄÄ³Ğ©·şÎñ»òÓ¦ÓÃ³ÌĞòÒıÆğµÄ£¬±ÈÈçËøÆÁ½âËø¡£'
-    Write-Host "4. ÊÂ¼ş 12 ÓëÊÂ¼ş 13 µÄ System ÈÕÖ¾ÖĞ£¬WindowsÊÇÃ÷È·¶¨ÒåÎªÏµÍ³Æô¶¯Óë¹Ø±ÕµÄ¡£"
+    Write-Host "`næ—¥å¿—è®°å½•å¼€å…³æœºçš„ç°çŠ¶è¯´æ˜ï¼š`n"
+    Write-Host "1. ç»Ÿè®¡äº‹ä»¶6005ã€6006ã€557å¹¶ä¸èƒ½ç²¾ç¡®è·å–åˆ°å¼€å…³æœºæ—¶é—´ï¼Œ6005 å’Œ 6006åªæ˜¯åˆ†åˆ«è®°å½•ä¸ºEventLogçš„å¯åŠ¨å’Œå…³é—­äº‹ä»¶ã€‚"
+    Write-Host "2. ä½†æ˜¯è¿™äº›äº‹ä»¶åªè®°å½•äº†ç³»ç»Ÿçš„æ“ä½œçŠ¶æ€ï¼Œè€Œæ²¡æœ‰è®°å½•å®é™…çš„å¼€æœºå’Œå…³æœºæ—¶é—´ã€‚"
+    Write-Host "3. 557 è¯¥äº‹ä»¶è™½æœ¬è´¨å«ä¹‰æ˜¯æŒ‡æ“ä½œç³»ç»Ÿå·²æˆåŠŸå¼€å§‹å¯åŠ¨ï¼Œå€¼å¾—æ³¨æ„æ˜¯ï¼š"
+    Write-Host '   "Active" è¡¨ç¤ºç³»ç»Ÿå¤„äºæ´»åŠ¨çŠ¶æ€ï¼Œè¿™ä¹Ÿå¯èƒ½ç³»ç»Ÿæ­£åœ¨è¿è¡ŒæŸäº›åº”ç”¨ç¨‹åºã€è®¡ç®—/å¤„ç†ä¸€äº›ä»»åŠ¡ï¼Œæˆ–ç­‰å¾…ç”¨æˆ·æ“ä½œã€‚'
+    Write-Host '   å› æ­¤ï¼Œåœ¨å¯åŠ¨æ—¶ "Active" å¯èƒ½æ˜¯ç”±æ“ä½œç³»ç»Ÿè‡ªåŠ¨è°ƒç”¨çš„æŸäº›æœåŠ¡æˆ–åº”ç”¨ç¨‹åºå¼•èµ·çš„ï¼Œæ¯”å¦‚é”å±è§£é”ã€‚'
+    Write-Host "4. äº‹ä»¶ 12 ä¸äº‹ä»¶ 13 çš„ System æ—¥å¿—ä¸­ï¼ŒWindowsæ˜¯æ˜ç¡®å®šä¹‰ä¸ºç³»ç»Ÿå¯åŠ¨ä¸å…³é—­çš„ã€‚"
     Write-Host " "
-    Write-Host "**ĞèÒª×¢ÒâµÄÊÇ£¬ÕâÖÖ·½·¨µÄ¾«¶ÈÈ¡¾öÓÚ²Ù×÷ÏµÍ³ÈÕÖ¾µÄÈÕÖ¾¼ÇÂ¼¼¶±ğºÍÈÕÖ¾ÎÄ¼ş´óĞ¡ÏŞÖÆ¡£**" -ForegroundColor Yellow
-    Write-Host "**Èç¹ûÈÕÖ¾ÂúÁË²¢ÇÒ±»½Ø¶ÏÁË£¬ÕâĞ©ÊÂ¼şÒ²¿ÉÄÜ²»»á°üº¬ÍêÕûµÄÀúÊ·¼ÇÂ¼¡£**" -ForegroundColor Yellow
+    Write-Host "**éœ€è¦æ³¨æ„çš„æ˜¯ï¼Œè¿™ç§æ–¹æ³•çš„ç²¾åº¦å–å†³äºæ“ä½œç³»ç»Ÿæ—¥å¿—çš„æ—¥å¿—è®°å½•çº§åˆ«å’Œæ—¥å¿—æ–‡ä»¶å¤§å°é™åˆ¶ã€‚**" -ForegroundColor Yellow
+    Write-Host "**å¦‚æœæ—¥å¿—æ»¡äº†å¹¶ä¸”è¢«æˆªæ–­äº†ï¼Œè¿™äº›äº‹ä»¶ä¹Ÿå¯èƒ½ä¸ä¼šåŒ…å«å®Œæ•´çš„å†å²è®°å½•ã€‚**" -ForegroundColor Yellow
 
-    Write-Host "`n#×ÀÃæ¼¼Êõ¡¤³£¼û¹ÊÕÏÖ¸µ¼ĞŞ¸´`n"  -ForegroundColor Cyan
-    Write-host "* Ó¦ÓÃ³ÌĞòÎŞ·¨·ÃÎÊ Internet µ¼ÖÂÎŞ·¨Æô¶¯£º"  -ForegroundColor Yellow -nonewline; Write-Host "netsh winsock reset"  -ForegroundColor Green
-    Write-host "* ½â¾öSMB¹²ÏíÅÌ²ĞÁôÕËºÅ£º"  -ForegroundColor Yellow -nonewline; Write-Host "net stop workstation & net start workstation"  -ForegroundColor Green
-    Write-Host "* UÅÌ¹ÊÕÏĞŞ¸´£º" -ForegroundColor Yellow -nonewline; Write-host "chkdsk UÅÌÅÌ·û: /f" -ForegroundColor Green
-    Write-Host "* ÏµÍ³ÎÄ¼şÍêÕûĞÔÉ¨Ãè£º" -ForegroundColor Yellow -nonewline; Write-Host "sfc /scannow"  -ForegroundColor Green 
-    Write-Host "* ÏµÍ³DCOM×é¼ş×¢²á£º" -ForegroundColor Yellow -nonewline; Write-Host "regsvr32 C:\Windows\System32\ole32.dll"  -ForegroundColor Green
-    Write-Host "* ¼ì²éÏµÍ³Ó³ÏñÍêÕûĞÔ£º" -ForegroundColor Yellow -nonewline; Write-Host "DISM /Online /Cleanup-Image /RestoreHealth"  -ForegroundColor Green
-    Write-Host "* ÓĞ¹ØÆäËûdllÒì³££¬¿ÉÏÂÔØ°²×°vc++ÔËĞĞ¿â£¬½â¾ö³õÆÚÎÊÌâ£º" -ForegroundColor Yellow
+    Write-Host "`n#æ¡Œé¢æŠ€æœ¯Â·å¸¸è§æ•…éšœæŒ‡å¯¼ä¿®å¤`n"  -ForegroundColor Cyan
+    Write-host "* åº”ç”¨ç¨‹åºæ— æ³•è®¿é—® Internet å¯¼è‡´æ— æ³•å¯åŠ¨ï¼š"  -ForegroundColor Yellow -nonewline; Write-Host "netsh winsock reset"  -ForegroundColor Green
+    Write-host "* è§£å†³SMBå…±äº«ç›˜æ®‹ç•™è´¦å·ï¼š"  -ForegroundColor Yellow -nonewline; Write-Host "net stop workstation & net start workstation"  -ForegroundColor Green
+    Write-Host "* Uç›˜æ•…éšœä¿®å¤ï¼š" -ForegroundColor Yellow -nonewline; Write-host "chkdsk Uç›˜ç›˜ç¬¦: /f" -ForegroundColor Green
+    Write-Host "* ç³»ç»Ÿæ–‡ä»¶å®Œæ•´æ€§æ‰«æï¼š" -ForegroundColor Yellow -nonewline; Write-Host "sfc /scannow"  -ForegroundColor Green 
+    Write-Host "* ç³»ç»ŸDCOMç»„ä»¶æ³¨å†Œï¼š" -ForegroundColor Yellow -nonewline; Write-Host "regsvr32 C:\Windows\System32\ole32.dll"  -ForegroundColor Green
+    Write-Host "* æ£€æŸ¥ç³»ç»Ÿæ˜ åƒå®Œæ•´æ€§ï¼š" -ForegroundColor Yellow -nonewline; Write-Host "DISM /Online /Cleanup-Image /RestoreHealth"  -ForegroundColor Green
+    Write-Host "* æœ‰å…³å…¶ä»–dllå¼‚å¸¸ï¼Œå¯ä¸‹è½½å®‰è£…vc++è¿è¡Œåº“ï¼Œè§£å†³åˆæœŸé—®é¢˜ï¼š" -ForegroundColor Yellow
     Write-Host "  * " -ForegroundColor Yellow -NoNewline; Write-Host "https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170 `n" -ForegroundColor Blue
 
-    Write-Host "#×ÀÃæ¼¼Êõ¡¤ÍøÂçÅäÖÃ`n"  -ForegroundColor  Cyan
+    Write-Host "#æ¡Œé¢æŠ€æœ¯Â·ç½‘ç»œé…ç½®`n"  -ForegroundColor  Cyan
 
-    Write-Host "±¸·İIPÉèÖÃµ½×ÀÃæ ip_config_bak.txt" -ForegroundColor Yellow
+    Write-Host "å¤‡ä»½IPè®¾ç½®åˆ°æ¡Œé¢ ip_config_bak.txt" -ForegroundColor Yellow
     Write-Host " "
     Write-Host "netsh interface ip show config > C:%homepath%\Desktop\ip_config_bak.txt" -ForegroundColor Green
     Write-Host " "
-    Write-Host "¾²Ì¬IP¡¢×ÓÍøÑÚÂë¡¢Íø¹Ø" -ForegroundColor Yellow
+    Write-Host "é™æ€IPã€å­ç½‘æ©ç ã€ç½‘å…³" -ForegroundColor Yellow
     Write-Host " "
-    Write-Host 'netsh interface ip set address "ÒÔÌ«Íø" static 192.168.1.1 255.255.255.0  192.168.1.11'  -ForegroundColor Green
+    Write-Host 'netsh interface ip set address "ä»¥å¤ªç½‘" static 192.168.1.1 255.255.255.0  192.168.1.11'  -ForegroundColor Green
     Write-Host " "
-    Write-Host "¾²Ì¬DNSÉèÖÃ" -ForegroundColor Yellow
+    Write-Host "é™æ€DNSè®¾ç½®" -ForegroundColor Yellow
     Write-host `
         '
-    netsh interface ip set dns "ÒÔÌ«Íø" static 208.67.222.222 primary && netsh interface ip add dns "ÒÔÌ«Íø" 114.114.114.114
+    netsh interface ip set dns "ä»¥å¤ªç½‘" static 208.67.222.222 primary && netsh interface ip add dns "ä»¥å¤ªç½‘" 114.114.114.114
     ' -ForegroundColor Green
     
-    Write-host "`n×Ô¶¯ÍøÂç»ñÈ¡`n"  -ForegroundColor Yellow
-    Write-Host 'netsh interface ip set address "ÒÔÌ«Íø" source=dhcp'  -ForegroundColor Green
-    Write-Host 'netsh interface ip set dns "ÒÔÌ«Íø" dhcp' -ForegroundColor Green 
+    Write-host "`nè‡ªåŠ¨ç½‘ç»œè·å–`n"  -ForegroundColor Yellow
+    Write-Host 'netsh interface ip set address "ä»¥å¤ªç½‘" source=dhcp'  -ForegroundColor Green
+    Write-Host 'netsh interface ip set dns "ä»¥å¤ªç½‘" dhcp' -ForegroundColor Green 
 
-    Write-host "`n#×ÀÃæ¼¼Êõ¡¤×°»ú`n"  -ForegroundColor Cyan
+    Write-host "`n#æ¡Œé¢æŠ€æœ¯Â·è£…æœº`n"  -ForegroundColor Cyan
 
-    Write-Host "1. ÏµÍ³/Office¼¤»î£º" -ForegroundColor Yellow -NoNewline; Write-Host 'powershell -c "irm https://massgrave.dev/get|iex"' -ForegroundColor Green
-    Write-host "2. ¹Ø±Õ·À»ğÇ½£º" -ForegroundColor Yellow -NoNewline; Write-Host 'netsh advfirewall set allprofiles state off'  -ForegroundColor Green
-    Write-host "3. ¹Ø±ÕUAC£º" -ForegroundColor Yellow -NoNewline; 
+    Write-Host "1. ç³»ç»Ÿ/Officeæ¿€æ´»ï¼š" -ForegroundColor Yellow -NoNewline; Write-Host 'powershell -c "irm https://massgrave.dev/get|iex"' -ForegroundColor Green
+    Write-host "2. å…³é—­é˜²ç«å¢™ï¼š" -ForegroundColor Yellow -NoNewline; Write-Host 'netsh advfirewall set allprofiles state off'  -ForegroundColor Green
+    Write-host "3. å…³é—­UACï¼š" -ForegroundColor Yellow -NoNewline; 
     Write-host 'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d 0 /f' -ForegroundColor Green
-    Write-host "4. ¿ªÆôSMB1£º" -ForegroundColor Yellow -NoNewline; 
+    Write-host "4. å¼€å¯SMB1ï¼š" -ForegroundColor Yellow -NoNewline; 
     Write-Host 'reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" /v "SMB1" /t REG_DWORD /d 1 /f'  -ForegroundColor Green
-    Write-host "5. SMBÅÌÉèÖÃ£º" -ForegroundColor Yellow -NoNewline;
-    Write-Host 'net use * \\192.168.0.33\Â©¶´²¹¶¡ /user:test 123456 /persistent:yes'  -ForegroundColor Green
-    Write-host "6. ×Ô¶¯»¯¾²Ä¬°²×°Èí¼ş£º" -ForegroundColor Yellow -NoNewline; Write-Host 'C:\path\your software\Setup.exe /s /qn' -ForegroundColor Green
-    Write-Host "7. ÏÔÊ¾´ËµçÄÔ¡¢¿ØÖÆÃæ°åÍ¼±ê¡¢À©Õ¹Ãû£¨¸´ÖÆ³ÈÉ«´úÂë¼´¿É£©"  -ForegroundColor Yellow
+    Write-host "5. SMBç›˜è®¾ç½®ï¼š" -ForegroundColor Yellow -NoNewline;
+    Write-Host 'net use * \\192.168.0.33\æ¼æ´è¡¥ä¸ /user:test 123456 /persistent:yes'  -ForegroundColor Green
+    Write-host "6. è‡ªåŠ¨åŒ–é™é»˜å®‰è£…è½¯ä»¶ï¼š" -ForegroundColor Yellow -NoNewline; Write-Host 'C:\path\your software\Setup.exe /s /qn' -ForegroundColor Green
+    Write-Host "7. æ˜¾ç¤ºæ­¤ç”µè„‘ã€æ§åˆ¶é¢æ¿å›¾æ ‡ã€æ‰©å±•åï¼ˆå¤åˆ¶æ©™è‰²ä»£ç å³å¯ï¼‰"  -ForegroundColor Yellow
     Write-Host `
         '
         reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" /v "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" /t REG_DWORD /d 0 /f
@@ -153,14 +154,14 @@ function dev_man {
         reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d 0 /f
         ' -ForegroundColor DarkYellow
 
-    Write-Host "8. PE²é¿´IPµØÖ·£º`n"  -ForegroundColor Yellow
+    Write-Host "8. PEæŸ¥çœ‹IPåœ°å€ï¼š`n"  -ForegroundColor Yellow
     Write-Host `
         '
         REG LOAD HKLM\TempLookIp C:\Windows\System32\config\SYSTEM & REG QUERY HKLM\TempLookIp\ControlSet001\services\Tcpip\Parameters\interfaces /s
         '  -ForegroundColor DarkYellow
 
     Write-Host " "
-    Write-Host "9. IE·À½Ù³Ö£¨win10Õı³£Ê¹ÓÃ¾ÍºÃ£¬win11ĞèÏÈÓÃĞ¡Óã¶ùIEĞŞ¸´¹¤¾ß£¬»Ö¸´IE11¿ì½İ·½Ê½£¬ÔÙÊ¹ÓÃ¸Ã´úÂë¡££©£º`n" -ForegroundColor Yellow
+    Write-Host "9. IEé˜²åŠ«æŒï¼ˆwin10æ­£å¸¸ä½¿ç”¨å°±å¥½ï¼Œwin11éœ€å…ˆç”¨å°é±¼å„¿IEä¿®å¤å·¥å…·ï¼Œæ¢å¤IE11å¿«æ·æ–¹å¼ï¼Œå†ä½¿ç”¨è¯¥ä»£ç ã€‚ï¼‰ï¼š`n" -ForegroundColor Yellow
     Write-Host `
         '
         reg add "HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main" /v "Enable Browser Extensions" /t REG_SZ /d "NO" /f
@@ -169,34 +170,34 @@ function dev_man {
         reg add "HKCU\Software\Microsoft\Edge\IEToEdge" /v "QuietExpirationTime" /t REG_QWORD /d 0 /f
         ' -ForegroundColor DarkYellow
     
-    Write-Host "10. ½ûÓÃÊµÊ±±£»¤ `n" -ForegroundColor Yellow
+    Write-Host "10. ç¦ç”¨å®æ—¶ä¿æŠ¤ `n" -ForegroundColor Yellow
     Write-Host `
         '
         REG DELETE "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v DisableRealtimeMonitoring /f 2>nul 1>nul
         ' -ForegroundColor DarkYellow
 
-    Write-Host "`n11. ÆôÓÃÊµÊ±±£»¤ `n" -ForegroundColor Yellow
+    Write-Host "`n11. å¯ç”¨å®æ—¶ä¿æŠ¤ `n" -ForegroundColor Yellow
     Write-Host `
         '
         REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v DisableRealtimeMonitoring /t REG_DWORD /d 1 /f 1>nul
         ' -ForegroundColor DarkYellow
 
-    Write-Host "`n12. ¹Ø±Õwin10/win11 ËÑË÷ÈÈËÑ `n" -ForegroundColor Yellow
+    Write-Host "`n12. å…³é—­win10/win11 æœç´¢çƒ­æœ `n" -ForegroundColor Yellow
     Write-Host "    reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f" -ForegroundColor DarkYellow
 
     Write-Host " "
-    Write-Host "`n#×ÀÃæ¼¼Êõ¡¤ĞİÃß¡¢Ë¯Ãß×¨Ìâ`n"  -ForegroundColor  Cyan
+    Write-Host "`n#æ¡Œé¢æŠ€æœ¯Â·ä¼‘çœ ã€ç¡çœ ä¸“é¢˜`n"  -ForegroundColor  Cyan
 
-    Write-Host "ĞİÃß¡¢Ë¯ÃßµÄÇø±ğ£º`n" -ForegroundColor Yellow
-    Write-Host "* ĞİÃß£º½«ÏµÍ³×´Ì¬±£´æµ½Ó²ÅÌ£¬¹Ø±ÕËùÓĞÉè±¸£¬µçÄÔÑ¡ÔñÁËĞİÃß£¬Óë¹Ø»úÍ¬ÀíÊÇ²»ºÄµçµÄ£¬ÔÙ´Î»½ĞÑÊ±£¬ÏµÍ³´ÓÓ²ÅÌ»Ö¸´Êı¾İ¡£" -ForegroundColor Yellow
-    Write-Host "* Ë¯Ãß£º½«ÏµÍ³×´Ì¬±£´æµ½ÄÚ´æ£¬¹Ø±ÕËùÓĞÉè±¸£¬ÏµÍ³½øÈëµÍ¹¦ºÄ×´Ì¬£»Æô¶¯¿ì£¬Ò»µ©²åÏß°å£¨ÊĞÍø¹©µç£©¶Ïµç£¬Ë¯ÃßÊÇÎŞ·¨±£´æÊı¾İµÄ¡£`n" -ForegroundColor Yellow
-    Write-Host '¾ßÌå¸ÅÄî¿É²Î¿¼£¬"²©¿ÍÔ° - µçÄÔË¯Ãß£¨sleep£©ºÍĞİÃß£¨Hibernate£©µÄÇø±ğ£¬ÒÔ¼°ĞİÃß¹¦ÄÜµÄÉèÖÃ"£º' -ForegroundColor Yellow
+    Write-Host "ä¼‘çœ ã€ç¡çœ çš„åŒºåˆ«ï¼š`n" -ForegroundColor Yellow
+    Write-Host "* ä¼‘çœ ï¼šå°†ç³»ç»ŸçŠ¶æ€ä¿å­˜åˆ°ç¡¬ç›˜ï¼Œå…³é—­æ‰€æœ‰è®¾å¤‡ï¼Œç”µè„‘é€‰æ‹©äº†ä¼‘çœ ï¼Œä¸å…³æœºåŒç†æ˜¯ä¸è€—ç”µçš„ï¼Œå†æ¬¡å”¤é†’æ—¶ï¼Œç³»ç»Ÿä»ç¡¬ç›˜æ¢å¤æ•°æ®ã€‚" -ForegroundColor Yellow
+    Write-Host "* ç¡çœ ï¼šå°†ç³»ç»ŸçŠ¶æ€ä¿å­˜åˆ°å†…å­˜ï¼Œå…³é—­æ‰€æœ‰è®¾å¤‡ï¼Œç³»ç»Ÿè¿›å…¥ä½åŠŸè€—çŠ¶æ€ï¼›å¯åŠ¨å¿«ï¼Œä¸€æ—¦æ’çº¿æ¿ï¼ˆå¸‚ç½‘ä¾›ç”µï¼‰æ–­ç”µï¼Œç¡çœ æ˜¯æ— æ³•ä¿å­˜æ•°æ®çš„ã€‚`n" -ForegroundColor Yellow
+    Write-Host 'å…·ä½“æ¦‚å¿µå¯å‚è€ƒï¼Œ"åšå®¢å›­ - ç”µè„‘ç¡çœ ï¼ˆsleepï¼‰å’Œä¼‘çœ ï¼ˆHibernateï¼‰çš„åŒºåˆ«ï¼Œä»¥åŠä¼‘çœ åŠŸèƒ½çš„è®¾ç½®"ï¼š' -ForegroundColor Yellow
     Write-Host "    https://www.cnblogs.com/fatherofbeauty/p/16351107.html" -ForegroundColor Blue
    
-    Write-Host "`n½»Á÷µçÓëÖ±Á÷µçÖÃÁãĞİÃß¡¢Ë¯Ãß£¬²¢½ûÓÃĞİÃß¡££¨½»Á÷£ºac£¬½ÓÍ¨µçÔ´£»Ö±Á÷£ºdc£¬ÓÃµç³Ø£©`n" -ForegroundColor Yellow; 
+    Write-Host "`näº¤æµç”µä¸ç›´æµç”µç½®é›¶ä¼‘çœ ã€ç¡çœ ï¼Œå¹¶ç¦ç”¨ä¼‘çœ ã€‚ï¼ˆäº¤æµï¼šacï¼Œæ¥é€šç”µæºï¼›ç›´æµï¼šdcï¼Œç”¨ç”µæ± ï¼‰`n" -ForegroundColor Yellow; 
     Write-Host `
         '
-        # ½»Á÷µçÓëÖ±Á÷µçÖÃÁãĞİÃß
+        # äº¤æµç”µä¸ç›´æµç”µç½®é›¶ä¼‘çœ 
         ' -NoNewline
     Write-Host `
         '
@@ -206,7 +207,7 @@ function dev_man {
         ' -ForegroundColor DarkYellow
     Write-Host `
         '
-        # ½»Á÷µçÓëÖ±Á÷µçÖÃÁãË¯Ãß
+        # äº¤æµç”µä¸ç›´æµç”µç½®é›¶ç¡çœ 
         ' -NoNewline
     Write-Host `
         '
@@ -216,17 +217,17 @@ function dev_man {
         ' -ForegroundColor DarkYellow
     Write-Host `
         '
-        # ½ûÓÃĞİÃß
+        # ç¦ç”¨ä¼‘çœ 
         ' -NoNewline
     Write-Host `
         '
         powercfg -h off
         ' -ForegroundColor DarkYellow
 
-    Write-Host "`nÉèÖÃ½»Á÷µçÓëÖ±Á÷µçµÄÆÁÄ»ÏÔÊ¾Ê±¼ä£¨Ä¬ÈÏµ¥Î»ÎªÃë£©£º`n" -ForegroundColor Yellow; 
+    Write-Host "`nè®¾ç½®äº¤æµç”µä¸ç›´æµç”µçš„å±å¹•æ˜¾ç¤ºæ—¶é—´ï¼ˆé»˜è®¤å•ä½ä¸ºç§’ï¼‰ï¼š`n" -ForegroundColor Yellow; 
     Write-Host `
         '
-        # ½»Á÷£ºac£¬½ÓÍ¨µçÔ´
+        # äº¤æµï¼šacï¼Œæ¥é€šç”µæº
         ' -NoNewline     
     Write-Host `
         '
@@ -235,34 +236,34 @@ function dev_man {
 
     Write-Host `
         '
-        # Ö±Á÷£ºdc£¬ÓÃµç³Ø
+        # ç›´æµï¼šdcï¼Œç”¨ç”µæ± 
         ' -NoNewline
     Write-Host `
         '
         powercfg -setdcvalueindex SCHEME_BALANCED SUB_VIDEO VIDEOIDLE 120
         ' -ForegroundColor DarkYellow
   
-    Write-Host '¹ØÓÚ"ÔÊĞí¼ÆËã»ú¹Ø±Õ´ËÉè±¸ÒÔ½ÚÊ¡µçÔ´"½ûÓÃÉèÖÃ£¬¿É²Î¿¼£º' -ForegroundColor Yellow
+    Write-Host 'å…³äº"å…è®¸è®¡ç®—æœºå…³é—­æ­¤è®¾å¤‡ä»¥èŠ‚çœç”µæº"ç¦ç”¨è®¾ç½®ï¼Œå¯å‚è€ƒï¼š' -ForegroundColor Yellow
     Write-Host "    https://learn.microsoft.com/zh-CN/troubleshoot/windows-client/networking/power-management-on-network-adapter" -ForegroundColor Blue
     Write-Host " "
-    Write-Host 'ÒÔÏÂÎªÈ¡Ïû¹´Ñ¡"ÔÊĞí¼ÆËã»ú¹Ø±Õ´ËÉè±¸ÒÔ½ÚÊ¡µçÔ´£¬£¨¹´Ñ¡ Ä¬ÈÏÖµ 0 ¼´¿É£»È¡Ïû¹´Ñ¡ 24£©"' -ForegroundColor Yellow
+    Write-Host 'ä»¥ä¸‹ä¸ºå–æ¶ˆå‹¾é€‰"å…è®¸è®¡ç®—æœºå…³é—­æ­¤è®¾å¤‡ä»¥èŠ‚çœç”µæºï¼Œï¼ˆå‹¾é€‰ é»˜è®¤å€¼ 0 å³å¯ï¼›å–æ¶ˆå‹¾é€‰ 24ï¼‰"' -ForegroundColor Yellow
     Write-Host " "
     Write-Host `
         '
         reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0001" /v PnPCapabilities /t REG_DWORD /d 24 /f
         ' -ForegroundColor DarkYellow
 
-    Write-Host "`n#²¹³ä¡¤¹²ÏíËµÃ÷ `n" -ForegroundColor Cyan
+    Write-Host "`n#è¡¥å……Â·å…±äº«è¯´æ˜ `n" -ForegroundColor Cyan
 
-    Write-Host "`n ÓĞ±ğÓÚ¶Ë¿ÚÁ÷Á¿¼à²â·ÖÎö£¬Õâ¸ö¹²Ïí·şÎñ¼ì²âÖ÷ÒªÕë¶ÔÓÚ¾ÖÓòÍøÆóÒµ·ÇĞÅÏ¢ÖÊÁ¿²¿¡¢¿ª·¢Ó¦ÓÃ²¿Í¬ÊÂµÄÖ÷»ú¼ì²â£¬Òò´ËÒ²½ÏÈİÒ×²ì¾õ³öÆäÖ÷»úµÄ¿ÉÒÉĞÔ¡£`n" -ForegroundColor Yellow
-    Write-Host 'ÁíÍâ£¬httpÏà±ÈÓÚSMB¡¢FTP¸üÎª·±Ëö¸´ÔÓ£¬±È½Ï"×¨Òµ»¯"£¬ÓÉÓÚÃæÏòÊÜÖÚµÄ²»Í¬£¬¹Ê²»ÄÉÈë¼ì²â·¶Î§¡£' -ForegroundColor Yellow; Write-Host "`nSMBÁĞ±í¸ÅÒª£º"
-    Write-Host '1. ADMIN$ ±íÊ¾ Windows ²Ù×÷ÏµÍ³µÄ°²×°Ä¿Â¼£¨Í¨³£ÎªC:\Windows£©µÄ¹²ÏíÄ¿Â¼¡£¸Ã¹²ÏíÖ»ÓĞ¹ÜÀíÔ±ÕÊ»§²ÅÄÜ·ÃÎÊ£¬ÓÃÓÚ½øĞĞÔ¶³Ì¹ÜÀí²Ù×÷¡£'
-    Write-Host '2. C$ ±íÊ¾Õû¸öÏµÍ³Çı¶¯Æ÷£¨Í¨³£Îª C:\£©µÄ¹²ÏíÄ¿Â¼¡£¸Ã¹²ÏíÔÊĞíÓµÓĞ¹ÜÀíÔ±È¨ÏŞµÄÓÃ»§Í¨¹ıÍøÂç½øĞĞ¶ÔÏµÍ³¸ùÄ¿Â¼µÄ·ÃÎÊ¡£'
-    Write-Host '3. IPC$ ¹²Ïí¿ÉÄÜ±»ÀÄÓÃµÄÔ­ÒòÊÇ£¬ËüÊÇÒ»¸öÌØÊâµÄ¹²Ïí£¬ÔÊĞíÓÃ»§ÔÚ²»ĞèÒª½øĞĞÉí·İÑéÖ¤µÄÇé¿öÏÂ½¨Á¢Á¬½Ó¡£'
-    Write-Host ' 3.1 ÕâÒâÎ¶×Å¹¥»÷Õß¿ÉÒÔÊ¹ÓÃÒ»Ğ©¹¤¾ßºÍ¼¼Êõ£¨Èç¶Ë¿ÚÉ¨Ãè¡¢Ô¶³Ì×ÀÃæÁ¬½ÓµÈ£©À´·ÃÎÊ IPC$ ¹²Ïí£¬²¢³¢ÊÔÀûÓÃÏµÍ³Â©¶´½øĞĞ¹¥»÷¡£'
-    Write-Host ' 3.2 ½ûÓÃIPC¿ÉÄÜ»á¶ÔÆäËû·şÎñ²úÉú¸ºÃæÓ°Ïì£¬Èç£ºÎÄ¼ş¹²Ïí¡¢AD»î¶¯Ä¿Â¼¡¢Ô¶³Ì¹ÜÀí¹¤¾ß¡¢ÏµÍ³±¸·İºÍ»¹Ô­¡£'
+    Write-Host "`n æœ‰åˆ«äºç«¯å£æµé‡ç›‘æµ‹åˆ†æï¼Œè¿™ä¸ªå…±äº«æœåŠ¡æ£€æµ‹ä¸»è¦é’ˆå¯¹äºå±€åŸŸç½‘ä¼ä¸šéä¿¡æ¯è´¨é‡éƒ¨ã€å¼€å‘åº”ç”¨éƒ¨åŒäº‹çš„ä¸»æœºæ£€æµ‹ï¼Œå› æ­¤ä¹Ÿè¾ƒå®¹æ˜“å¯Ÿè§‰å‡ºå…¶ä¸»æœºçš„å¯ç–‘æ€§ã€‚`n" -ForegroundColor Yellow
+    Write-Host 'å¦å¤–ï¼Œhttpç›¸æ¯”äºSMBã€FTPæ›´ä¸ºç¹çå¤æ‚ï¼Œæ¯”è¾ƒ"ä¸“ä¸šåŒ–"ï¼Œç”±äºé¢å‘å—ä¼—çš„ä¸åŒï¼Œæ•…ä¸çº³å…¥æ£€æµ‹èŒƒå›´ã€‚' -ForegroundColor Yellow; Write-Host "`nSMBåˆ—è¡¨æ¦‚è¦ï¼š"
+    Write-Host '1. ADMIN$ è¡¨ç¤º Windows æ“ä½œç³»ç»Ÿçš„å®‰è£…ç›®å½•ï¼ˆé€šå¸¸ä¸ºC:\Windowsï¼‰çš„å…±äº«ç›®å½•ã€‚è¯¥å…±äº«åªæœ‰ç®¡ç†å‘˜å¸æˆ·æ‰èƒ½è®¿é—®ï¼Œç”¨äºè¿›è¡Œè¿œç¨‹ç®¡ç†æ“ä½œã€‚'
+    Write-Host '2. C$ è¡¨ç¤ºæ•´ä¸ªç³»ç»Ÿé©±åŠ¨å™¨ï¼ˆé€šå¸¸ä¸º C:\ï¼‰çš„å…±äº«ç›®å½•ã€‚è¯¥å…±äº«å…è®¸æ‹¥æœ‰ç®¡ç†å‘˜æƒé™çš„ç”¨æˆ·é€šè¿‡ç½‘ç»œè¿›è¡Œå¯¹ç³»ç»Ÿæ ¹ç›®å½•çš„è®¿é—®ã€‚'
+    Write-Host '3. IPC$ å…±äº«å¯èƒ½è¢«æ»¥ç”¨çš„åŸå› æ˜¯ï¼Œå®ƒæ˜¯ä¸€ä¸ªç‰¹æ®Šçš„å…±äº«ï¼Œå…è®¸ç”¨æˆ·åœ¨ä¸éœ€è¦è¿›è¡Œèº«ä»½éªŒè¯çš„æƒ…å†µä¸‹å»ºç«‹è¿æ¥ã€‚'
+    Write-Host ' 3.1 è¿™æ„å‘³ç€æ”»å‡»è€…å¯ä»¥ä½¿ç”¨ä¸€äº›å·¥å…·å’ŒæŠ€æœ¯ï¼ˆå¦‚ç«¯å£æ‰«æã€è¿œç¨‹æ¡Œé¢è¿æ¥ç­‰ï¼‰æ¥è®¿é—® IPC$ å…±äº«ï¼Œå¹¶å°è¯•åˆ©ç”¨ç³»ç»Ÿæ¼æ´è¿›è¡Œæ”»å‡»ã€‚'
+    Write-Host ' 3.2 ç¦ç”¨IPCå¯èƒ½ä¼šå¯¹å…¶ä»–æœåŠ¡äº§ç”Ÿè´Ÿé¢å½±å“ï¼Œå¦‚ï¼šæ–‡ä»¶å…±äº«ã€ADæ´»åŠ¨ç›®å½•ã€è¿œç¨‹ç®¡ç†å·¥å…·ã€ç³»ç»Ÿå¤‡ä»½å’Œè¿˜åŸã€‚'
 
-    Write-Host "`n#²¹³ä¡¤ÓĞ¹Ø Windows defender ÎÄµµ `n" -ForegroundColor Cyan
+    Write-Host "`n#è¡¥å……Â·æœ‰å…³ Windows defender æ–‡æ¡£ `n" -ForegroundColor Cyan
 
     Write-Host `
         '
@@ -272,79 +273,79 @@ function dev_man {
 
     Write-Host `
         '
-        ¹ØÓÚ Get-MpThreatDetection µÄÏêÏ¸ÊôĞÔĞÅÏ¢£¬¿É²Î¿¼£ºhttps://powershell.one/wmi/root/microsoft/windows/defender/msft_mpthreatdetection
+        å…³äº Get-MpThreatDetection çš„è¯¦ç»†å±æ€§ä¿¡æ¯ï¼Œå¯å‚è€ƒï¼šhttps://powershell.one/wmi/root/microsoft/windows/defender/msft_mpthreatdetection
         ' -ForegroundColor Green
 
 
-    Write-Host "`n#½áÓï`n" -ForegroundColor  Cyan
+    Write-Host "`n#ç»“è¯­`n" -ForegroundColor  Cyan
 
-    Write-Host "PowerShellÊÇÒ»¸öÇ¿´óµÄ½Å±¾ÓïÑÔ£¬¿ÉÊµÏÖ¶àÖÖÏµÍ³¼¶²Ù×÷¹¦ÄÜ£¬¶Ô×Ô¶¯»¯¹ÜÀíWindowsÏµÍ³Ê®·ÖÓĞÀû¡£" 
-    Write-Host "PowerShellÊµÏÖµÄWindows»ùÏß¼ì²é½Å±¾£¬¿ÉÊµÏÖ¶ÔÏµÍ³»ù´¡ĞÅÏ¢¡¢ÍøÂçÁ¬½Ó¡¢´òÓ¡»ú×´Ì¬¡¢·À»ğÇ½×´Ì¬¡¢Ó²ÅÌ¡¢CPU¡¢ÄÚ´æĞÅÏ¢µÈµÄ¼ì²é¡£`n"
-    Write-Host "`n±àĞ´»ùÏß¼ì²é½Å±¾£¬Éæ¼°µ½¶àÖÖ¼¼Êõ£¬ÈçÏÂ£º"
-    Write-Host "1. ³£¼û×ÀÃæÎÊÌâ½â¾ö·½°¸£º×ÀÃæÔËÎ¬Éæ¼°µ½µÄÈí¼ş¡¢Ó²¼ş¡¢ÍøÂç¡¢ÏµÍ³¡¢°²È«µÈ¶à¸ö·½Ãæ¡£"
-    Write-Host "2. ´úÂëÊµÏÖÉæ¼°µ½Ï¸½Ú£ºÈçºÎ»ñÈ¡ÏµÍ³ĞÅÏ¢¡¢ÈçºÎ»ñÈ¡×¢²á±íĞÅÏ¢¡¢ÈçºÎ»ñÈ¡ÊÂ¼şÈÕÖ¾ĞÅÏ¢¡¢ÈçºÎ»ñÈ¡WMIĞÅÏ¢µÈ¡£"
-    Write-Host "2.1 ´úÂëÊµÏÖÉæ¼°µ½Éè¼ÆË¼Ïë£ºÈçºÎ²éÑ¯½á¹¹¡¢»ù±¾ÔËĞĞÂß¼­¡¢Òì³£´¦ÀíµÈ¡£"
-    Write-Host "3. ²éÔÄÎÄµµÓëÑéÖ¤£º¹Ø¼ü×Ö¡¢°¸Àı¡¢µ÷ÊÔ¡¢ÊµÑé¡¢·´¸´²éÔÄ¡£`n"
-    Write-Host "ÈçÓĞÒÉÎÊ¼°ÒÅÂ©²»µ±Ö®´¦£¬¿ÉÁªÏµ×÷ÕßÓÊÏä hoochanlon@outlook.com £¬ÒÔ¼°·ÃÎÊGitHubÏîÄ¿µØÖ·£º" -NoNewline -ForegroundColor Yellow
+    Write-Host "PowerShellæ˜¯ä¸€ä¸ªå¼ºå¤§çš„è„šæœ¬è¯­è¨€ï¼Œå¯å®ç°å¤šç§ç³»ç»Ÿçº§æ“ä½œåŠŸèƒ½ï¼Œå¯¹è‡ªåŠ¨åŒ–ç®¡ç†Windowsç³»ç»Ÿååˆ†æœ‰åˆ©ã€‚" 
+    Write-Host "PowerShellå®ç°çš„WindowsåŸºçº¿æ£€æŸ¥è„šæœ¬ï¼Œå¯å®ç°å¯¹ç³»ç»ŸåŸºç¡€ä¿¡æ¯ã€ç½‘ç»œè¿æ¥ã€æ‰“å°æœºçŠ¶æ€ã€é˜²ç«å¢™çŠ¶æ€ã€ç¡¬ç›˜ã€CPUã€å†…å­˜ä¿¡æ¯ç­‰çš„æ£€æŸ¥ã€‚`n"
+    Write-Host "`nç¼–å†™åŸºçº¿æ£€æŸ¥è„šæœ¬ï¼Œæ¶‰åŠåˆ°å¤šç§æŠ€æœ¯ï¼Œå¦‚ä¸‹ï¼š"
+    Write-Host "1. å¸¸è§æ¡Œé¢é—®é¢˜è§£å†³æ–¹æ¡ˆï¼šæ¡Œé¢è¿ç»´æ¶‰åŠåˆ°çš„è½¯ä»¶ã€ç¡¬ä»¶ã€ç½‘ç»œã€ç³»ç»Ÿã€å®‰å…¨ç­‰å¤šä¸ªæ–¹é¢ã€‚"
+    Write-Host "2. ä»£ç å®ç°æ¶‰åŠåˆ°ç»†èŠ‚ï¼šå¦‚ä½•è·å–ç³»ç»Ÿä¿¡æ¯ã€å¦‚ä½•è·å–æ³¨å†Œè¡¨ä¿¡æ¯ã€å¦‚ä½•è·å–äº‹ä»¶æ—¥å¿—ä¿¡æ¯ã€å¦‚ä½•è·å–WMIä¿¡æ¯ç­‰ã€‚"
+    Write-Host "2.1 ä»£ç å®ç°æ¶‰åŠåˆ°è®¾è®¡æ€æƒ³ï¼šå¦‚ä½•æŸ¥è¯¢ç»“æ„ã€åŸºæœ¬è¿è¡Œé€»è¾‘ã€å¼‚å¸¸å¤„ç†ç­‰ã€‚"
+    Write-Host "3. æŸ¥é˜…æ–‡æ¡£ä¸éªŒè¯ï¼šå…³é”®å­—ã€æ¡ˆä¾‹ã€è°ƒè¯•ã€å®éªŒã€åå¤æŸ¥é˜…ã€‚`n"
+    Write-Host "å¦‚æœ‰ç–‘é—®åŠé—æ¼ä¸å½“ä¹‹å¤„ï¼Œå¯è”ç³»ä½œè€…é‚®ç®± hoochanlon@outlook.com ï¼Œä»¥åŠè®¿é—®GitHubé¡¹ç›®åœ°å€ï¼š" -NoNewline -ForegroundColor Yellow
     Write-Host "https://github.com/hoochanlon/ihs-simple " -NoNewline -ForegroundColor Blue
-    Write-Host "£¬Í¬Ê±»¶Ó­×ÉÑ¯ÓëÖ¸Õı¡£" -ForegroundColor Yellow
+    Write-Host "ï¼ŒåŒæ—¶æ¬¢è¿å’¨è¯¢ä¸æŒ‡æ­£ã€‚" -ForegroundColor Yellow
 
-    Write-Host "`n#¸½Â¼¡¤ITÔËÎ¬¼¼Êõ·ÖÎö¹¤¾ß`n"  -ForegroundColor  Cyan
+    Write-Host "`n#é™„å½•Â·ITè¿ç»´æŠ€æœ¯åˆ†æå·¥å…·`n"  -ForegroundColor  Cyan
 
-    Write-Host "`n* ¾ÖÓòÍøÍøÂç·ÖÎö¹¤¾ß£º" -ForegroundColor Yellow
-    Write-Host "    advanced-ip-scanner£º" -ForegroundColor Yellow -nonewline; Write-Host "https://www.advanced-ip-scanner.com" -ForegroundColor Blue
-    Write-Host "    wireshark£º" -ForegroundColor Yellow -nonewline; Write-Host "https://www.wireshark.org" -ForegroundColor Blue
+    Write-Host "`n* å±€åŸŸç½‘ç½‘ç»œåˆ†æå·¥å…·ï¼š" -ForegroundColor Yellow
+    Write-Host "    advanced-ip-scannerï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://www.advanced-ip-scanner.com" -ForegroundColor Blue
+    Write-Host "    wiresharkï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://www.wireshark.org" -ForegroundColor Blue
 
-    Write-Host "`n* ÏµÍ³¸÷ÏîĞÔÄÜ·ÖÎö¹¤¾ß£º" -ForegroundColor Yellow
-    Write-Host "   Í¼À­¶¡¹¤¾ßÏä£º" -ForegroundColor Yellow -nonewline; Write-Host "http://www.tbtool.cn" -ForegroundColor Blue
-    Write-Host "   windirstat£º" -ForegroundColor Yellow -nonewline; Write-Host "https://windirstat.net" -ForegroundColor Blue
-    Write-Host "   sysinternals£º" -ForegroundColor Yellow -nonewline; Write-Host "https://docs.microsoft.com/zh-cn/sysinternals/downloads/process-explorer" -ForegroundColor Blue
+    Write-Host "`n* ç³»ç»Ÿå„é¡¹æ€§èƒ½åˆ†æå·¥å…·ï¼š" -ForegroundColor Yellow
+    Write-Host "   å›¾æ‹‰ä¸å·¥å…·ç®±ï¼š" -ForegroundColor Yellow -nonewline; Write-Host "http://www.tbtool.cn" -ForegroundColor Blue
+    Write-Host "   windirstatï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://windirstat.net" -ForegroundColor Blue
+    Write-Host "   sysinternalsï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://docs.microsoft.com/zh-cn/sysinternals/downloads/process-explorer" -ForegroundColor Blue
 
-    Write-Host "`n* PowerShellÄ£¿é×é¼ş£º" -ForegroundColor Yellow
+    Write-Host "`n* PowerShellæ¨¡å—ç»„ä»¶ï¼š" -ForegroundColor Yellow
     Write-Host "    https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps" -ForegroundColor Blue
     Write-Host "    https://www.powershellgallery.com" -ForegroundColor Blue
 
-    Write-Host "`n* ×¢²á±í·ÖÎö¹¤¾ß£º" -ForegroundColor Yellow
-    Write-Host "   admx.help£º" -ForegroundColor Yellow -nonewline; Write-Host "https://admx.help" -ForegroundColor Blue 
-    Write-Host "   regscanner£º" -ForegroundColor Yellow -nonewline; Write-Host "https://www.nirsoft.net/utils/regscanner.html" -ForegroundColor Blue
-    Write-Host "   registry-finder£º" -ForegroundColor Yellow -nonewline; Write-Host "https://registry-finder.com" -ForegroundColor Blue
+    Write-Host "`n* æ³¨å†Œè¡¨åˆ†æå·¥å…·ï¼š" -ForegroundColor Yellow
+    Write-Host "   admx.helpï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://admx.help" -ForegroundColor Blue 
+    Write-Host "   regscannerï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://www.nirsoft.net/utils/regscanner.html" -ForegroundColor Blue
+    Write-Host "   registry-finderï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://registry-finder.com" -ForegroundColor Blue
 
-    Write-Host "`n* ÊÂ¼şID·ÖÎö¹¤¾ß£º" -ForegroundColor Yellow
-    Write-Host "   myeventlog£º" -ForegroundColor Yellow -nonewline; Write-Host "https://www.myeventlog.com/search/find" -ForegroundColor Blue
-    Write-Host "   ultimatewindowssecurity£º" -ForegroundColor Yellow -nonewline; Write-Host "https://www.ultimatewindowssecurity.com/securitylog/encyclopedia" -ForegroundColor Blue
+    Write-Host "`n* äº‹ä»¶IDåˆ†æå·¥å…·ï¼š" -ForegroundColor Yellow
+    Write-Host "   myeventlogï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://www.myeventlog.com/search/find" -ForegroundColor Blue
+    Write-Host "   ultimatewindowssecurityï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://www.ultimatewindowssecurity.com/securitylog/encyclopedia" -ForegroundColor Blue
    
-    Write-Host "`n#¸½Â¼¡¤Èí¼ş·ÖÎöÉæ¼°Ïî£º`n" -ForegroundColor  Cyan
-    Write-Host "1. ´úÂë·ÖÎö£ºÈí¼ş·ÖÎöÍ¨³£Éæ¼°¶ÔÓ¦ÓÃ³ÌĞòÔ´´úÂëµÄÏêÏ¸·ÖÎö¡£" -ForegroundColor Yellow
-    Write-Host "2. Â©¶´É¨Ãè£ºÍ¨¹ıÂ©¶´É¨Ãè¹¤¾ß¿ÉÒÔ×Ô¶¯·¢ÏÖÈí¼şÖĞµÄ°²È«Â©¶´¡£" -ForegroundColor Yellow
-    Write-Host "3. ¾²Ì¬·ÖÎö£º¾²Ì¬·ÖÎöÊÇÖ¸¶ÔÔ´´úÂë½øĞĞ·ÖÎöÒÔ·¢ÏÖÇ±ÔÚÎÊÌâ£¬¶ø²»ÊÇÔËĞĞ´úÂë²¢¹Û²ìÆäĞĞÎª¡£" -ForegroundColor Yellow
-    Write-Host "4. ¶¯Ì¬·ÖÎö£º¶¯Ì¬·ÖÎöÊÇÖ¸ÔÚÔËĞĞÊ±¶ÔÓ¦ÓÃ³ÌĞò½øĞĞ·ÖÎöÒÔ¹Û²ìÆäĞĞÎª¡£" -ForegroundColor Yellow
-    Write-Host "5. ÄæÏò¹¤³Ì£ºÄæÏò¹¤³ÌÊÇÖ¸Ê¹ÓÃ·´»ã±àÆ÷ºÍÆäËû¼¼Êõ·ÖÎöÒÑ±àÒëµÄ´úÂëÒÔ·¢ÏÖ³ÌĞòµÄÄÚ²¿»úÖÆ¡£" -ForegroundColor Yellow
-    Write-Host "6. ·´×÷±×·ÖÎö£º·´×÷±×·ÖÎöÊÇÖ¸¶ÔÓÎÏ·ºÍÓ¦ÓÃ³ÌĞò½øĞĞ·ÖÎö£¬ÒÔ¼ì²âºÍ´ò»÷×÷±×ĞĞÎª¡£" -ForegroundColor Yellow
-    Write-Host "7. °²È«Éó¼Æ£º°²È«Éó¼ÆÊÇÖ¸¶ÔÈí¼ş½øĞĞÏêÏ¸µÄÉó²é£¬ÒÔÈ·¶¨ÆäÊÇ·ñ·ûºÏÌØ¶¨µÄ°²È«±ê×¼»ò·¨¹æ¡£" -ForegroundColor Yellow
+    Write-Host "`n#é™„å½•Â·è½¯ä»¶åˆ†ææ¶‰åŠé¡¹ï¼š`n" -ForegroundColor  Cyan
+    Write-Host "1. ä»£ç åˆ†æï¼šè½¯ä»¶åˆ†æé€šå¸¸æ¶‰åŠå¯¹åº”ç”¨ç¨‹åºæºä»£ç çš„è¯¦ç»†åˆ†æã€‚" -ForegroundColor Yellow
+    Write-Host "2. æ¼æ´æ‰«æï¼šé€šè¿‡æ¼æ´æ‰«æå·¥å…·å¯ä»¥è‡ªåŠ¨å‘ç°è½¯ä»¶ä¸­çš„å®‰å…¨æ¼æ´ã€‚" -ForegroundColor Yellow
+    Write-Host "3. é™æ€åˆ†æï¼šé™æ€åˆ†ææ˜¯æŒ‡å¯¹æºä»£ç è¿›è¡Œåˆ†æä»¥å‘ç°æ½œåœ¨é—®é¢˜ï¼Œè€Œä¸æ˜¯è¿è¡Œä»£ç å¹¶è§‚å¯Ÿå…¶è¡Œä¸ºã€‚" -ForegroundColor Yellow
+    Write-Host "4. åŠ¨æ€åˆ†æï¼šåŠ¨æ€åˆ†ææ˜¯æŒ‡åœ¨è¿è¡Œæ—¶å¯¹åº”ç”¨ç¨‹åºè¿›è¡Œåˆ†æä»¥è§‚å¯Ÿå…¶è¡Œä¸ºã€‚" -ForegroundColor Yellow
+    Write-Host "5. é€†å‘å·¥ç¨‹ï¼šé€†å‘å·¥ç¨‹æ˜¯æŒ‡ä½¿ç”¨åæ±‡ç¼–å™¨å’Œå…¶ä»–æŠ€æœ¯åˆ†æå·²ç¼–è¯‘çš„ä»£ç ä»¥å‘ç°ç¨‹åºçš„å†…éƒ¨æœºåˆ¶ã€‚" -ForegroundColor Yellow
+    Write-Host "6. åä½œå¼Šåˆ†æï¼šåä½œå¼Šåˆ†ææ˜¯æŒ‡å¯¹æ¸¸æˆå’Œåº”ç”¨ç¨‹åºè¿›è¡Œåˆ†æï¼Œä»¥æ£€æµ‹å’Œæ‰“å‡»ä½œå¼Šè¡Œä¸ºã€‚" -ForegroundColor Yellow
+    Write-Host "7. å®‰å…¨å®¡è®¡ï¼šå®‰å…¨å®¡è®¡æ˜¯æŒ‡å¯¹è½¯ä»¶è¿›è¡Œè¯¦ç»†çš„å®¡æŸ¥ï¼Œä»¥ç¡®å®šå…¶æ˜¯å¦ç¬¦åˆç‰¹å®šçš„å®‰å…¨æ ‡å‡†æˆ–æ³•è§„ã€‚" -ForegroundColor Yellow
 
-    Write-Host "`n#¸½Â¼¡¤ĞÅÏ¢°²È«×ÊÁÏÕ¾µã¾ÛºÏ" -ForegroundColor  Cyan
+    Write-Host "`n#é™„å½•Â·ä¿¡æ¯å®‰å…¨èµ„æ–™ç«™ç‚¹èšåˆ" -ForegroundColor  Cyan
     Write-Host " "
     Write-Host "----------------------------------------" -ForegroundColor Yellow
-    Write-Host "ËÑË÷¼¼ÇÉ£ºÒ»¡¢Ä¿µÄÃ÷È·£»¶ş¡¢ÄıÁ·¹Ø¼ü´Ê£»Èı¡¢Ñ°ÕÒÕı·´Á½°¸Àı£¬·ÖÎö²¢±È¶Ô¡£ÈçÊ¾£¨ÒÔ´ËÀàÍÆ£©£º" -ForegroundColor Yellow
-    Write-Host "[CSDN - PowerShell¹¥»÷Óë¼ì²â](https://blog.csdn.net/Ping_Pig/article/details/108976627)" -ForegroundColor Magenta
+    Write-Host "æœç´¢æŠ€å·§ï¼šä¸€ã€ç›®çš„æ˜ç¡®ï¼›äºŒã€å‡ç»ƒå…³é”®è¯ï¼›ä¸‰ã€å¯»æ‰¾æ­£åä¸¤æ¡ˆä¾‹ï¼Œåˆ†æå¹¶æ¯”å¯¹ã€‚å¦‚ç¤ºï¼ˆä»¥æ­¤ç±»æ¨ï¼‰ï¼š" -ForegroundColor Yellow
+    Write-Host "[CSDN - PowerShellæ”»å‡»ä¸æ£€æµ‹](https://blog.csdn.net/Ping_Pig/article/details/108976627)" -ForegroundColor Magenta
     Write-Host "----------------------------------------" -ForegroundColor Yellow
     Write-Host " "
 
-    Write-Host "`n* IT¼¼Êõ¿¯ÎÄÍøÕ¾£º" -ForegroundColor Yellow
-    Write-Host "   superuser£º" -ForegroundColor Yellow -nonewline; Write-Host "https://superuser.com" -ForegroundColor Blue
+    Write-Host "`n* ITæŠ€æœ¯åˆŠæ–‡ç½‘ç«™ï¼š" -ForegroundColor Yellow
+    Write-Host "   superuserï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://superuser.com" -ForegroundColor Blue
     Write-Host "   minitool news" -ForegroundColor Yellow -nonewline; Write-Host "https://www.minitool.com/news/automatic-sample-submission-off.html" -ForegroundColor Blue
-    Write-Host "   Îá°®ÆÆ½â" -ForegroundColor Yellow -nonewline; Write-Host "https://www.52pojie.cn/forum-10-1.html" -ForegroundColor Blue
-    Write-Host "   ÏÈÖªÉçÇø" -ForegroundColor Yellow -nonewline; Write-Host "https://xz.aliyun.com/search?keyword=thinkphp" -ForegroundColor Blue
-    Write-Host "   freebuf£º" -ForegroundColor Yellow -nonewline; Write-Host "https://www.freebuf.com" -ForegroundColor Blue
-    Write-Host "   ÓßÇé²É¼¯ÏµÍ³£º" -ForegroundColor Yellow -nonewline; Write-Host "https://www.axtx.net" -ForegroundColor Blue
-    Write-Host "   ¸÷Àà»¥ÁªÍøIT¼¼ÊõÔÓÎÄ£º" -ForegroundColor Yellow -nonewline; Write-Host "https://www.zadmei.com" -ForegroundColor Blue
+    Write-Host "   å¾çˆ±ç ´è§£" -ForegroundColor Yellow -nonewline; Write-Host "https://www.52pojie.cn/forum-10-1.html" -ForegroundColor Blue
+    Write-Host "   å…ˆçŸ¥ç¤¾åŒº" -ForegroundColor Yellow -nonewline; Write-Host "https://xz.aliyun.com/search?keyword=thinkphp" -ForegroundColor Blue
+    Write-Host "   freebufï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://www.freebuf.com" -ForegroundColor Blue
+    Write-Host "   èˆ†æƒ…é‡‡é›†ç³»ç»Ÿï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://www.axtx.net" -ForegroundColor Blue
+    Write-Host "   å„ç±»äº’è”ç½‘ITæŠ€æœ¯æ‚æ–‡ï¼š" -ForegroundColor Yellow -nonewline; Write-Host "https://www.zadmei.com" -ForegroundColor Blue
 
-    Write-Host "`n#¸½Â¼¡¤ASCII ART`n" -ForegroundColor  Cyan
+    Write-Host "`n#é™„å½•Â·ASCII ART`n" -ForegroundColor  Cyan
     Write-Host " "
     Write-Host "-----------------------------------------------------------------------" -ForegroundColor Yellow
-    Write-Host "Éú³É ASCII ÒÕÊõÍ¼Æ¬" -ForegroundColor Yellow
+    Write-Host "ç”Ÿæˆ ASCII è‰ºæœ¯å›¾ç‰‡" -ForegroundColor Yellow
     Write-Host " [ASCII ART](https://ascii.co.uk/art)" -ForegroundColor Magenta
-    Write-Host " [ASCII Art Generator](https://wiki.archlinuxcn.org/zh-hans/ASCII_ÒÕÊõ)" -ForegroundColor Magenta
+    Write-Host " [ASCII Art Generator](https://wiki.archlinuxcn.org/zh-hans/ASCII_è‰ºæœ¯)" -ForegroundColor Magenta
     Write-Host "-----------------------------------------------------------------------" -ForegroundColor Yellow
     Write-Host " "
     Write-Host @"
@@ -370,14 +371,27 @@ function dev_man {
 
 "@ -ForegroundColor DarkGreen
 
+<# ------- å€’è®¡æ—¶
+
+    # å°±ä¸¤ä½æ•°å§ï¼ŒæŠ˜ä¸­æ–¹æ¡ˆï¼Œå½“å°äº100ç§’æ—¶ï¼Œæˆ–åˆ°äº†1åˆ†é’Ÿæ—¶é‡‡ç”¨
+    # $t = 11
+    # while ($t -ge 0) {
+    #     Write-Host ($t.ToString("D2")) -NoNewline
+    #     Start-Sleep -Seconds 1
+    #     Write-Host -NoNewline "`b`b`b`r"
+    #     $t--
+    # }
+
+    #>
+
 }
 
-# ¼ì²éÖ÷»úÃû¡¢ÏµÍ³°²×°ÈÕÆÚ¡¢Æô¶¯Ê±¼ä¡¢ÔËĞĞÊ±¼ä¡¢ÏµÍ³¼Ü¹¹
+# æ£€æŸ¥ä¸»æœºåã€ç³»ç»Ÿå®‰è£…æ—¥æœŸã€å¯åŠ¨æ—¶é—´ã€è¿è¡Œæ—¶é—´ã€ç³»ç»Ÿæ¶æ„
 function check_sys {
 
     Clear-Host
     Write-Host "`n"
-    Write-Host "### Ö÷»ú»ù´¡ĞÅÏ¢ ###" -ForegroundColor Cyan
+    Write-Host "### ä¸»æœºåŸºç¡€ä¿¡æ¯ ###" -ForegroundColor Cyan
 
     Get-ComputerInfo | Select-Object -Property `
         OsRegisteredUser, CsDomain, CsDNSHostName, OsName,
@@ -385,33 +399,33 @@ function check_sys {
     | Out-Host
 }
 
-# ¼ì²éIPÓëÍøÂçÉè±¸Á¬½Ó×´Ì¬
+# æ£€æŸ¥IPä¸ç½‘ç»œè®¾å¤‡è¿æ¥çŠ¶æ€
 function check_ip {
 
-    Write-Host "### ¼ì²éÍøÂç»ù±¾Á¬½ÓÇé¿ö ###`n" -ForegroundColor Cyan
+    Write-Host "### æ£€æŸ¥ç½‘ç»œåŸºæœ¬è¿æ¥æƒ…å†µ ###`n" -ForegroundColor Cyan
 
-    Write-Host "--- ¼ì²éIPµØÖ· ---"  -ForegroundColor Yellow
-    netsh interface ipv4 show addresses "ÒÔÌ«Íø"
-    netsh interface ipv4 show dnsservers "ÒÔÌ«Íø"
+    Write-Host "--- æ£€æŸ¥IPåœ°å€ ---"  -ForegroundColor Yellow
+    netsh interface ipv4 show addresses "ä»¥å¤ªç½‘"
+    netsh interface ipv4 show dnsservers "ä»¥å¤ªç½‘"
     netsh winhttp show proxy
 
-    Write-Host "--- ¼ì²éÁ¬½Ó¾ÖÓòÍøÍøÂç×´Ì¬ ---`n"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥è¿æ¥å±€åŸŸç½‘ç½‘ç»œçŠ¶æ€ ---`n"  -ForegroundColor Yellow
     $result = Get-NetConnectionProfile | Select-Object -Property Name, InterfaceAlias, NetworkCategory
     if ($result) {
         $result | Out-Host
     }
     else {
-        Write-Host "´ËÍøÂç´æÔÚÒì³£¡£`n" -ForegroundColor DarkRed
+        Write-Host "æ­¤ç½‘ç»œå­˜åœ¨å¼‚å¸¸ã€‚`n" -ForegroundColor DarkRed
     }
-    Write-Host "### ¼ì²éÍøÂç»ù±¾Á¬½ÓÇé¿ö£¬ÒÑÍê³É`n" -ForegroundColor Green
+    Write-Host "### æ£€æŸ¥ç½‘ç»œåŸºæœ¬è¿æ¥æƒ…å†µï¼Œå·²å®Œæˆ`n" -ForegroundColor Green
 }
 
-# ¼ì²é´òÓ¡»ú×´Ì¬ÏêÇé£¨ĞÂÔö£ºÏÔÊ¾ÆÁ¹¦ÄÜ£©
+# æ£€æŸ¥æ‰“å°æœºçŠ¶æ€è¯¦æƒ…ï¼ˆæ–°å¢ï¼šæ˜¾ç¤ºå±åŠŸèƒ½ï¼‰
 function check_printer {
 
-    Write-Host "### ¼ì¼ì²é´òÓ¡»ú×´Ì¬ ###`n" -ForegroundColor Cyan
+    Write-Host "### æ£€æ£€æŸ¥æ‰“å°æœºçŠ¶æ€ ###`n" -ForegroundColor Cyan
 
-    Write-Host "--- ¼ì²é´òÓ¡»ú·şÎñ£¬ÒÔ¼°Á¬½Ó´òÓ¡»úÊıÁ¿ ---"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥æ‰“å°æœºæœåŠ¡ï¼Œä»¥åŠè¿æ¥æ‰“å°æœºæ•°é‡ ---"  -ForegroundColor Yellow
     Get-Service | findstr "Spooler" | Out-Host
 
     $result = Get-Printer | Select-Object Name, PrinterStatus
@@ -419,69 +433,69 @@ function check_printer {
         $result | Out-Host
     }
     else {
-        Write-Host "Ã»ÓĞÅäÖÃÈÎºÎĞéÄâ»òÊµÌå´òÓ¡»ú" -ForegroundColor DarkRed
+        Write-Host "æ²¡æœ‰é…ç½®ä»»ä½•è™šæ‹Ÿæˆ–å®ä½“æ‰“å°æœº" -ForegroundColor DarkRed
     }
    
-    Write-Host "--- ¼ì²éÊÇ·ñ´æÔÚÄ¬ÈÏ´òÓ¡»ú ---"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥æ˜¯å¦å­˜åœ¨é»˜è®¤æ‰“å°æœº ---"  -ForegroundColor Yellow
     
     $result = Get-CimInstance -Class Win32_Printer | Where-Object { $_.Default -eq $true } | Select-Object Name 
     if ($result) {
         $result | Out-Host
     }
     else {
-        Write-Host "Ã»ÓĞÅäÖÃÄ¬ÈÏ´òÓ¡»ú" -ForegroundColor Magenta
+        Write-Host "æ²¡æœ‰é…ç½®é»˜è®¤æ‰“å°æœº" -ForegroundColor Magenta
     }
 
-    Write-Host "--- ¼ì²éÊÇ·ñ´æÔÚÉ¨ÃèÒÇ·şÎñ ---"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥æ˜¯å¦å­˜åœ¨æ‰«æä»ªæœåŠ¡ ---"  -ForegroundColor Yellow
    
     $result = Get-Service stisvc
     if ($result) {
         $result | Out-Host
     }
     else {
-        Write-Host "É¨ÃèÒÇ·şÎñÈ±Ê§" -ForegroundColor Magenta
+        Write-Host "æ‰«æä»ªæœåŠ¡ç¼ºå¤±" -ForegroundColor Magenta
     }
     
-    Write-Host "`n### ¼ì²é´òÓ¡»ú×´Ì¬£¬ÒÑÍê³É`n" -ForegroundColor Green
+    Write-Host "`n### æ£€æŸ¥æ‰“å°æœºçŠ¶æ€ï¼Œå·²å®Œæˆ`n" -ForegroundColor Green
 } 
 
-# ¼ì²éÓ²ÅÌ¡¢CPU¡¢ÄÚ´æĞÅÏ¢
+# æ£€æŸ¥ç¡¬ç›˜ã€CPUã€å†…å­˜ä¿¡æ¯
 function check_disk_cpu_mem {
 
-    # [math]::Round ÓÃÓÚµ÷ÓÃ .NET Framework ÖĞµÄ¾²Ì¬·½·¨»òÊôĞÔ¡£
+    # [math]::Round ç”¨äºè°ƒç”¨ .NET Framework ä¸­çš„é™æ€æ–¹æ³•æˆ–å±æ€§ã€‚
     # https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-7.3
     
-    Write-Host "### ¿ªÊ¼¼ì²éÓ²ÅÌ¡¢CPU¡¢ÄÚ´æ¡¢ÏµÍ³»ù´¡Çı¶¯ ###`n"  -ForegroundColor Cyan
+    Write-Host "### å¼€å§‹æ£€æŸ¥ç¡¬ç›˜ã€CPUã€å†…å­˜ã€ç³»ç»ŸåŸºç¡€é©±åŠ¨ ###`n"  -ForegroundColor Cyan
 
-    Write-Host "--- ¼ì²éÓ²ÅÌÀàĞÍÓëÈİÁ¿ ---"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥ç¡¬ç›˜ç±»å‹ä¸å®¹é‡ ---"  -ForegroundColor Yellow
     $result = Get-PhysicalDisk 
     if ($result) {
         $result | Out-Host
     }
     else {
-        Write-Host "»ñÈ¡²»µ½Ó²ÅÌÀàĞÍÓëÈİÁ¿`n"  -ForegroundColor Red
+        Write-Host "è·å–ä¸åˆ°ç¡¬ç›˜ç±»å‹ä¸å®¹é‡`n"  -ForegroundColor Red
     }
    
-    Write-Host "--- ¼ì²éÓ²ÅÌ·ÖÇø¼°¿ÉÓÃ¿Õ¼ä ---"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥ç¡¬ç›˜åˆ†åŒºåŠå¯ç”¨ç©ºé—´ ---"  -ForegroundColor Yellow
     $result = Get-Volume
     if ($result) {
         $result | Out-Host
     }
     else {
-        Write-Host "»ñÈ¡²»µ½Ó²ÅÌ·ÖÇø¼°¿ÉÓÃ¿Õ¼ä`n"  -ForegroundColor Red
+        Write-Host "è·å–ä¸åˆ°ç¡¬ç›˜åˆ†åŒºåŠå¯ç”¨ç©ºé—´`n"  -ForegroundColor Red
     }
 
-    Write-Host "--- ¼ì²éCPU²ÎÊı ---"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥CPUå‚æ•° ---"  -ForegroundColor Yellow
     $result = Get-CimInstance -Class Win32_Processor | Select-Object Caption, MaxClockSpeed 
     if ($result) {
         $result | Out-Host
     }
     else {
-        Write-Host "»ñÈ¡²»µ½CPU²ÎÊı`n"  -ForegroundColor Red
+        Write-Host "è·å–ä¸åˆ°CPUå‚æ•°`n"  -ForegroundColor Red
     }
 
-    Write-Host "--- ¼ì²éÄÚ´æÌõ²ÎÊı¡¢ÀàĞÍ ---`n"  -ForegroundColor Yellow
-    Write-Host "DDR1: 400 MHzÒÔÏÂ£»DDR2: 800 MHzÒÔÏÂ£»DDR3: 2133 MHzÒÔÏÂ£»DDR4: 3200 MHzÒÔÏÂ¡£" 
+    Write-Host "--- æ£€æŸ¥å†…å­˜æ¡å‚æ•°ã€ç±»å‹ ---`n"  -ForegroundColor Yellow
+    Write-Host "DDR1: 400 MHzä»¥ä¸‹ï¼›DDR2: 800 MHzä»¥ä¸‹ï¼›DDR3: 2133 MHzä»¥ä¸‹ï¼›DDR4: 3200 MHzä»¥ä¸‹ã€‚" 
     
     $result = Get-CimInstance -Class Win32_PhysicalMemory | 
     Select-Object -Property BankLabel, 
@@ -491,11 +505,11 @@ function check_disk_cpu_mem {
         $result | Out-Host
     }
     else {
-        Write-Host "»ñÈ¡²»µ½ÄÚ´æÌõ²ÎÊı¡¢ÀàĞÍ`n"  -ForegroundColor Red
+        Write-Host "è·å–ä¸åˆ°å†…å­˜æ¡å‚æ•°ã€ç±»å‹`n"  -ForegroundColor Red
     }
 
     
-    Write-Host "--- ¼ì²éµçÄÔÏÔÊ¾²ÎÊı×´Ì¬ ---"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥ç”µè„‘æ˜¾ç¤ºå‚æ•°çŠ¶æ€ ---"  -ForegroundColor Yellow
 
     $videoController = Get-CimInstance -Class Win32_VideoController -ErrorAction SilentlyContinue
 
@@ -523,22 +537,22 @@ function check_disk_cpu_mem {
         if ([string]::IsNullOrEmpty($MaxRefreshRate)) { $MaxRefreshRate = "N/A" }
         
         Write-Host " "
-        Write-Host "ÏÔ¿¨Çı¶¯£º$Name"
-        Write-Host "Çı¶¯°æ±¾£º$DriverVersion"
-        Write-Host "×´Ì¬£º$Status"
-        Write-Host "ÏÔ´æ(GB)£º$AdapterRAM"
-        Write-Host "Æ½Ì¨¼æÈİĞÔ£º$AdapterCompatibility"
-        Write-Host "×î´óË¢ĞÂÂÊ£º$MaxRefreshRate"
-        Write-Host "µ±Ç°Ë®Æ½·Ö±æÂÊ£º$CurrentHorizontalResolution"
-        Write-Host "µ±Ç°´¹Ö±·Ö±æÂÊ£º$CurrentVerticalResolution"
-        Write-Host "ÊÓÆµÄ£Ê½ÃèÊö£º$VideoModeDescription"
+        Write-Host "æ˜¾å¡é©±åŠ¨ï¼š$Name"
+        Write-Host "é©±åŠ¨ç‰ˆæœ¬ï¼š$DriverVersion"
+        Write-Host "çŠ¶æ€ï¼š$Status"
+        Write-Host "æ˜¾å­˜(GB)ï¼š$AdapterRAM"
+        Write-Host "å¹³å°å…¼å®¹æ€§ï¼š$AdapterCompatibility"
+        Write-Host "æœ€å¤§åˆ·æ–°ç‡ï¼š$MaxRefreshRate"
+        Write-Host "å½“å‰æ°´å¹³åˆ†è¾¨ç‡ï¼š$CurrentHorizontalResolution"
+        Write-Host "å½“å‰å‚ç›´åˆ†è¾¨ç‡ï¼š$CurrentVerticalResolution"
+        Write-Host "è§†é¢‘æ¨¡å¼æè¿°ï¼š$VideoModeDescription"
         Write-Host " "
     }
     else {
-        Write-Host "Î´ÄÜ¼ì²âµ½ Video Controller¡£`n"
+        Write-Host "æœªèƒ½æ£€æµ‹åˆ° Video Controllerã€‚`n"
     }
 
-    Write-Host "`n--- ¼ì²éÏÔÊ¾ÆÁÉè±¸ÏêÇé ---`n"  -ForegroundColor Yellow
+    Write-Host "`n--- æ£€æŸ¥æ˜¾ç¤ºå±è®¾å¤‡è¯¦æƒ… ---`n"  -ForegroundColor Yellow
 
     $monitor_id = Get-CimInstance -Namespace root\wmi -ClassName WmiMonitorID | Select-Object -First 1
 
@@ -569,102 +583,102 @@ function check_disk_cpu_mem {
         Write-Host "Year of Manufacture: $YearOfManufacture"
     }
     else {
-        Write-Host "`nÃ»ÓĞ²éÑ¯µ½Ïà¹ØÏÔÊ¾ÆÁ¾ßÌåĞÅÏ¢¡£`n" -ForegroundColor Red
+        Write-Host "`næ²¡æœ‰æŸ¥è¯¢åˆ°ç›¸å…³æ˜¾ç¤ºå±å…·ä½“ä¿¡æ¯ã€‚`n" -ForegroundColor Red
     }
 
-    Write-Host "`n--- ¼ì²éÖ÷°åĞÅÏ¢ ---"  -ForegroundColor Yellow
+    Write-Host "`n--- æ£€æŸ¥ä¸»æ¿ä¿¡æ¯ ---"  -ForegroundColor Yellow
 
     $result = Get-CimInstance -Class Win32_BaseBoard | Select-Object Manufacturer, Product, Model, SerialNumber
     if ($result) {
         $result | Format-List
     }
     else {
-        Write-Host "`nÎ´²éÑ¯µ½Ö÷°åĞÅÏ¢`n"  -ForegroundColor Green
+        Write-Host "`næœªæŸ¥è¯¢åˆ°ä¸»æ¿ä¿¡æ¯`n"  -ForegroundColor Green
     }
 
-    Write-Host "`n--- ¼ì²éÇı¶¯ÊÇ·ñ´æÓĞÒì³£ ---`n"  -ForegroundColor Yellow
+    Write-Host "`n--- æ£€æŸ¥é©±åŠ¨æ˜¯å¦å­˜æœ‰å¼‚å¸¸ ---`n"  -ForegroundColor Yellow
     $result = Get-PnpDevice | Where-Object { $_.Status -ne "Ok" }
     if ($result) {
         $result | Select-Object FriendlyName, Status | Out-Host
     }
     else {
-        Write-Host "Éè±¸Çı¶¯ÔË×ªÕı³£`n"  -ForegroundColor Green
+        Write-Host "è®¾å¤‡é©±åŠ¨è¿è½¬æ­£å¸¸`n"  -ForegroundColor Green
     }
-    Write-Host "### ¼ì²éÓ²ÅÌ¡¢CPU¡¢ÄÚ´æ¡¢ÏµÍ³»ù´¡Çı¶¯£¬ÒÑÍê³É`n"  -ForegroundColor Green
+    Write-Host "### æ£€æŸ¥ç¡¬ç›˜ã€CPUã€å†…å­˜ã€ç³»ç»ŸåŸºç¡€é©±åŠ¨ï¼Œå·²å®Œæˆ`n"  -ForegroundColor Green
 }
 
-# ²é¿´·À»ğÇ½×´Ì¬ÒÔ¼°ÊÇ·ñ¿ª·ÅÌØ¶¨¶Ë¿Ú¹æÔò£¨³õÆÚ¹¦ÄÜ£©
-# ¼ì²éÉè±¸°²È«ĞÔ¡¢½üÆÚÉı¼¶²¹¶¡¡¢¶¨Ê±ÈÎÎñÏî
+# æŸ¥çœ‹é˜²ç«å¢™çŠ¶æ€ä»¥åŠæ˜¯å¦å¼€æ”¾ç‰¹å®šç«¯å£è§„åˆ™ï¼ˆåˆæœŸåŠŸèƒ½ï¼‰
+# æ£€æŸ¥è®¾å¤‡å®‰å…¨æ€§ã€è¿‘æœŸå‡çº§è¡¥ä¸ã€å®šæ—¶ä»»åŠ¡é¡¹
 function check_fw {
 
-    Write-Host "### ¼ì²éÉè±¸°²È«ĞÔ¡¢½üÆÚÉı¼¶²¹¶¡¡¢¶¨Ê±ÈÎÎñÏî ###`n" -ForegroundColor Cyan
+    Write-Host "### æ£€æŸ¥è®¾å¤‡å®‰å…¨æ€§ã€è¿‘æœŸå‡çº§è¡¥ä¸ã€å®šæ—¶ä»»åŠ¡é¡¹ ###`n" -ForegroundColor Cyan
 
-    Write-Host "--- ¼ì²âWindows defenderÊµÊ±±£»¤×´Ì¬ ---"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æµ‹Windows defenderå®æ—¶ä¿æŠ¤çŠ¶æ€ ---"  -ForegroundColor Yellow
     Get-MpComputerStatus | Select-Object -Property RealTimeProtectionEnabled, AntivirusEnabled | Out-Host
    
-    Write-Host "--- ¼ì²â·À»ğÇ½ÊÇ·ñ¿ªÆô ---"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æµ‹é˜²ç«å¢™æ˜¯å¦å¼€å¯ ---"  -ForegroundColor Yellow
     Get-NetFirewallProfile | Select-Object Name, Enabled | Out-Host
 
-    Write-Host "--- ¹ØÓÚÔ¶³Ì×ÀÃæÓëICMP ping·À»ğÇ½²ßÂÔÊÇ·ñÆôÓÃ ---"  -ForegroundColor Yellow
-    Get-NetFirewallRule -DisplayName "Ô¶³Ì×ÀÃæ*", "ºËĞÄÍøÂçÕï¶Ï*ICMPv4*" | Select-Object DisplayName, Enabled | Out-Host
+    Write-Host "--- å…³äºè¿œç¨‹æ¡Œé¢ä¸ICMP pingé˜²ç«å¢™ç­–ç•¥æ˜¯å¦å¯ç”¨ ---"  -ForegroundColor Yellow
+    Get-NetFirewallRule -DisplayName "è¿œç¨‹æ¡Œé¢*", "æ ¸å¿ƒç½‘ç»œè¯Šæ–­*ICMPv4*" | Select-Object DisplayName, Enabled | Out-Host
 
-    Write-Host "--- ¼ì²éÖ÷»ú°²×°²¹¶¡½ü¿ö ---`n"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥ä¸»æœºå®‰è£…è¡¥ä¸è¿‘å†µ ---`n"  -ForegroundColor Yellow
     Get-HotFix | Sort-Object -Property InstalledOn -Descending | Select-Object -First 9 | Out-Host
 
-    Write-Host "--- ¼ì²é·ÇÖ÷»úÏµÍ³ĞÔµÄ¼Æ»®ÈÎÎñ ---`n"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥éä¸»æœºç³»ç»Ÿæ€§çš„è®¡åˆ’ä»»åŠ¡ ---`n"  -ForegroundColor Yellow
 
     Get-ScheduledTask | Where-Object { $_.TaskPath -notlike "*Microsoft*" -and $_.TaskName -notlike "*Microsoft*" } `
     | Get-ScheduledTaskInfo | Select-Object TaskName, LastRunTime, NextRunTime | Format-table
 
-    Write-Host "--- ÏµÍ³¼¶Èí¼ş×ÔÆô¼ì²é (Run) ---`n" -ForegroundColor Yellow
+    Write-Host "--- ç³»ç»Ÿçº§è½¯ä»¶è‡ªå¯æ£€æŸ¥ (Run) ---`n" -ForegroundColor Yellow
 
     Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -ErrorAction SilentlyContinue `
     | Select-Object * -ExcludeProperty PSPath, PSChildName, PSDrive, PSParentPath, PSProvider, *Microsoft* | Format-List
 
-    Write-Host "--- ÓÃ»§¼¶Èí¼ş×ÔÆô¼ì²é (Run) ---`n" -ForegroundColor Yellow
+    Write-Host "--- ç”¨æˆ·çº§è½¯ä»¶è‡ªå¯æ£€æŸ¥ (Run) ---`n" -ForegroundColor Yellow
 
     Get-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" -ErrorAction SilentlyContinue `
     | Select-Object * -ExcludeProperty PSPath, PSChildName, PSDrive, PSParentPath, PSProvider, *Microsoft* | Format-List
 
-    Write-Host "--- ÏµÍ³¼¶ÓëÓÃ»§¼¶Èí¼şÖ»ÉúĞ§Ò»´Î×ÔÆôµÄ¼ì²é (RunOnce) ---`n" -ForegroundColor Yellow
+    Write-Host "--- ç³»ç»Ÿçº§ä¸ç”¨æˆ·çº§è½¯ä»¶åªç”Ÿæ•ˆä¸€æ¬¡è‡ªå¯çš„æ£€æŸ¥ (RunOnce) ---`n" -ForegroundColor Yellow
 
-    # ÏµÍ³¼¶ HKLM
+    # ç³»ç»Ÿçº§ HKLM
     $run_once_path = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce"
     if ((-not (Test-Path $run_once_path)) -or ($null -eq (Get-ItemProperty -Path $run_once_path))) {
-        # Write-Warning "Î´ÕÒµ½ RunOnce ÊôĞÔ¡£"
-        Write-Host "Ã»ÓĞ·¢ÏÖÏµÍ³¼¶µÄÒ»´ÎĞÔ×ÔÆôÏî`n" -ForegroundColor Green
+        # Write-Warning "æœªæ‰¾åˆ° RunOnce å±æ€§ã€‚"
+        Write-Host "æ²¡æœ‰å‘ç°ç³»ç»Ÿçº§çš„ä¸€æ¬¡æ€§è‡ªå¯é¡¹`n" -ForegroundColor Green
     }
     else {
         Get-ItemProperty -Path $run_once_path `
         | Select-Object * -ExcludeProperty PSPath, PSChildName, PSDrive, PSParentPath, PSProvider, *Microsoft* | Format-List
     }
-    # ÓÃ»§¼¶ HKCU
+    # ç”¨æˆ·çº§ HKCU
     if (-not (Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce")) { 
-        Write-Host "Ã»ÓĞ·¢ÏÖÓÃ»§¼¶µÄÒ»´ÎĞÔ×ÔÆôÏî`n"  -ForegroundColor Green
+        Write-Host "æ²¡æœ‰å‘ç°ç”¨æˆ·çº§çš„ä¸€æ¬¡æ€§è‡ªå¯é¡¹`n"  -ForegroundColor Green
     }
     else {
         Get-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" `
         | Select-Object * -ExcludeProperty PSPath, PSChildName, PSDrive, PSParentPath, PSProvider, *Microsoft* | Format-List
     }
 
-    Write-Host "### ¼ì²éÉè±¸°²È«ĞÔ¡¢½üÆÚÉı¼¶²¹¶¡¡¢¶¨Ê±ÈÎÎñÏî£¬ÒÑÍê³É`n" -ForegroundColor Green
+    Write-Host "### æ£€æŸ¥è®¾å¤‡å®‰å…¨æ€§ã€è¿‘æœŸå‡çº§è¡¥ä¸ã€å®šæ—¶ä»»åŠ¡é¡¹ï¼Œå·²å®Œæˆ`n" -ForegroundColor Green
 }
 
-# ¹²Ïí¼ì²é£¨°üÀ¨£º¹²Ïí¶Ë¿Ú¡¢¹²ÏíÎÄ¼ş£©
+# å…±äº«æ£€æŸ¥ï¼ˆåŒ…æ‹¬ï¼šå…±äº«ç«¯å£ã€å…±äº«æ–‡ä»¶ï¼‰
 function check_share {
 
-    Write-Host "### ¼ì²éÖ÷»úÖ÷¶¯¹²Ïí°²È«¸Å¿ö£¨½ö×ö»ù´¡ĞÔ¼ì²â£ºÄ¬ÈÏ¶Ë¿Ú¡¢¹²ÏíÎÄ¼ş£© ###`n" -ForegroundColor Cyan
+    Write-Host "### æ£€æŸ¥ä¸»æœºä¸»åŠ¨å…±äº«å®‰å…¨æ¦‚å†µï¼ˆä»…åšåŸºç¡€æ€§æ£€æµ‹ï¼šé»˜è®¤ç«¯å£ã€å…±äº«æ–‡ä»¶ï¼‰ ###`n" -ForegroundColor Cyan
 
-    Write-Host "--- ¼ì²â·À»ğÇ½ÊÇ·ñ¿ªÆô£¨ÎªÁË·½±ã²é¿´£© ---"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æµ‹é˜²ç«å¢™æ˜¯å¦å¼€å¯ï¼ˆä¸ºäº†æ–¹ä¾¿æŸ¥çœ‹ï¼‰ ---"  -ForegroundColor Yellow
     Get-NetFirewallProfile | Select-Object Name, Enabled | Out-Host
 
-    Write-Host "--- ¼ì²éÖ÷»ú·ÃÎÊ¾ÖÓòÍø×ÊÔ´µÄsmb 1.0¹¦ÄÜÊÇ·ñ¿ªÆô ---"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥ä¸»æœºè®¿é—®å±€åŸŸç½‘èµ„æºçš„smb 1.0åŠŸèƒ½æ˜¯å¦å¼€å¯ ---"  -ForegroundColor Yellow
     Get-WindowsOptionalFeature -Online | Where-Object FeatureName -eq "SMB1Protocol" | Out-Host
 
-    Write-Host "--- ¼ì²éÖ÷»úÊÇ·ñ´æÔÚÓÃsmb¹²ÏíÎÄ¼ş¸øÆäËûµçÄÔ ---`n" -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥ä¸»æœºæ˜¯å¦å­˜åœ¨ç”¨smbå…±äº«æ–‡ä»¶ç»™å…¶ä»–ç”µè„‘ ---`n" -ForegroundColor Yellow
 
-    # https://support.microsoft.com/zh-cn/windows/ÔÚ-windows-ÖĞÍ¨¹ıÍøÂç¹²ÏíÎÄ¼ş-b58704b2-f53a-4b82-7bc1-80f9994725bf
-    Write-Host "SMB·şÎñ¼ì²â"
+    # https://support.microsoft.com/zh-cn/windows/åœ¨-windows-ä¸­é€šè¿‡ç½‘ç»œå…±äº«æ–‡ä»¶-b58704b2-f53a-4b82-7bc1-80f9994725bf
+    Write-Host "SMBæœåŠ¡æ£€æµ‹"
     Get-Service | Where-Object { $_.Name -match 'LanmanServer' } | Out-Host
 
     $result = Get-SmbShare | Select-Object Name, Path, Description
@@ -672,80 +686,80 @@ function check_share {
         $result | Out-Host
     }
     else {
-        Write-Host "Ã»ÓĞ·¢ÏÖ¹²ÏíÎÄ¼ş¡£`n" -ForegroundColor Green
+        Write-Host "æ²¡æœ‰å‘ç°å…±äº«æ–‡ä»¶ã€‚`n" -ForegroundColor Green
     }
 
-    Write-Host "--- ¼ì²éÖ÷»úÊÇ·ñ´æÔÚftp¹²Ïí·şÎñ ---" -ForegroundColor Yellow
-    # https://juejin.cn/s/windows²é¿´ftp·şÎñÊÇ·ñ¿ªÆô
+    Write-Host "--- æ£€æŸ¥ä¸»æœºæ˜¯å¦å­˜åœ¨ftpå…±äº«æœåŠ¡ ---" -ForegroundColor Yellow
+    # https://juejin.cn/s/windowsæŸ¥çœ‹ftpæœåŠ¡æ˜¯å¦å¼€å¯
     $result = Get-Service | Where-Object { $_.Name -match 'ftp' }
     if ($result) {
         $result | Out-Host
     }
     else {
-        Write-Host "`nÃ»ÓĞ·¢ÏÖÖ÷¶¯µÄFTP·şÎñ¡£`n" -ForegroundColor Green
+        Write-Host "`næ²¡æœ‰å‘ç°ä¸»åŠ¨çš„FTPæœåŠ¡ã€‚`n" -ForegroundColor Green
     }
 
-    Write-Host "--- Ô¶³Ì×ÀÃæ´¦ÓÚ´ò¿ª×´Ì¬£º0 ´ò¿ª£¬1 ¹Ø±Õ ---" -ForegroundColor Yellow
+    Write-Host "--- è¿œç¨‹æ¡Œé¢å¤„äºæ‰“å¼€çŠ¶æ€ï¼š0 æ‰“å¼€ï¼Œ1 å…³é—­ ---" -ForegroundColor Yellow
     Get-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -Name "fDenyTSConnections" | Select-Object fDenyTSConnections | Out-Host
 
-    # Ô¶³Ì×ÀÃæ·şÎñ
+    # è¿œç¨‹æ¡Œé¢æœåŠ¡
     Get-Service | Where-Object { $_.Name -match 'TermService' } | Out-Host
 
-    Write-Host "--- ¼ì²éÒ»¸öÔÂÄÚÊÇ·ñ·¢Éú¿ÉÒÉµÄÔ¶³Ì×ÀÃæ£¨RDP£©µÇÂ¼ĞĞÎª ---`n"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥ä¸€ä¸ªæœˆå†…æ˜¯å¦å‘ç”Ÿå¯ç–‘çš„è¿œç¨‹æ¡Œé¢ï¼ˆRDPï¼‰ç™»å½•è¡Œä¸º ---`n"  -ForegroundColor Yellow
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Security';
         ID        = 4624, 4625;
         StartTime = (Get-Date).Date.AddDays(-30);
-        Message   = '*Ô¶³Ì×ÀÃæ*'
+        Message   = '*è¿œç¨‹æ¡Œé¢*'
     } -ErrorAction SilentlyContinue
     if ($result) {
-        $result | Out-GridView -Title "¿ÉÒÉµÄÔ¶³Ì×ÀÃæ£¨RDP£©ĞĞÎª¼ÇÂ¼±í"
+        $result | Out-GridView -Title "å¯ç–‘çš„è¿œç¨‹æ¡Œé¢ï¼ˆRDPï¼‰è¡Œä¸ºè®°å½•è¡¨"
     }
     else {
-        Write-Host "½ü30ÌìÄÚÎ´Ôø·¢Éú¿ÉÒÉµÄÔ¶³Ì×ÀÃæµÇÂ¼ĞĞÎª¡£`n" -ForegroundColor Green
+        Write-Host "è¿‘30å¤©å†…æœªæ›¾å‘ç”Ÿå¯ç–‘çš„è¿œç¨‹æ¡Œé¢ç™»å½•è¡Œä¸ºã€‚`n" -ForegroundColor Green
     }
-    Write-Host "### ·ÀÓù¼ì²é£¨°üÀ¨£º¹²Ïí¶Ë¿Ú¡¢¹²ÏíÎÄ¼ş£©£¬ÒÑÍê³É`n" -ForegroundColor Green
+    Write-Host "### é˜²å¾¡æ£€æŸ¥ï¼ˆåŒ…æ‹¬ï¼šå…±äº«ç«¯å£ã€å…±äº«æ–‡ä»¶ï¼‰ï¼Œå·²å®Œæˆ`n" -ForegroundColor Green
 }
 
-# ÊÂ¼ş²éÑ¯
+# äº‹ä»¶æŸ¥è¯¢
 function check_key_events {
     
-    Write-Host "### ¼ì²éµçÄÔĞİÃß¡¢¿ª¹Ø»ú¡¢³ÌĞò±ÀÀ£µÈÊÂ¼ş ###`n" -ForegroundColor Cyan
+    Write-Host "### æ£€æŸ¥ç”µè„‘ä¼‘çœ ã€å¼€å…³æœºã€ç¨‹åºå´©æºƒç­‰äº‹ä»¶ ###`n" -ForegroundColor Cyan
 
-    # ²é¿´±¾µØÓÃ»§¼°ÓÃ»§×é
-    Write-Host "--- ²é¿´±¾µØÓÃ»§×´Ì¬ ---`n" -ForegroundColor Yellow
+    # æŸ¥çœ‹æœ¬åœ°ç”¨æˆ·åŠç”¨æˆ·ç»„
+    Write-Host "--- æŸ¥çœ‹æœ¬åœ°ç”¨æˆ·çŠ¶æ€ ---`n" -ForegroundColor Yellow
     localuser | Out-Host
     Get-LocalGroupMember -Group Administrators | Out-Host
 
-    Write-Host "--- ¼ì²éÃÜÂëÎ´ÉèÖÃµÄ±¾µØÓÃ»§ ---`n" -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥å¯†ç æœªè®¾ç½®çš„æœ¬åœ°ç”¨æˆ· ---`n" -ForegroundColor Yellow
     Get-LocalUser | Where-Object { $null -eq $_.Password } | Select-Object Name | Out-Host
 
-    # ĞÂÔö£º¶ÀÁ¢¼ì²éÏµÍ³Ë¯Ãß×´Ì¬
-    # ĞİÃßÓëË¯ÃßµÄÇø±ğ£ºhttps://www.cnblogs.com/fatherofbeauty/p/16351107.html
-    Write-Host "--- ¼ì²éÊÇ·ñ¿ªÆôË¯Ãß¹¦ÄÜ¡£ £¨½»Á÷£º½ÓÍ¨µçÔ´£»Ö±Á÷£ºÓÃµç³Ø£©---`n" -ForegroundColor Yellow
-    Write-Host '×¢£ºÈç¹ûÊÇÌ¨Ê½»ú¡¢ĞéÄâ»ú¿ÉºöÂÔ¡°¹Ø±Õ»ò´ò¿ª¸Ç×Ó¹¦ÄÜ¡±µÄĞÅÏ¢ÄÚÈİ' -ForegroundColor Green
+    # æ–°å¢ï¼šç‹¬ç«‹æ£€æŸ¥ç³»ç»Ÿç¡çœ çŠ¶æ€
+    # ä¼‘çœ ä¸ç¡çœ çš„åŒºåˆ«ï¼šhttps://www.cnblogs.com/fatherofbeauty/p/16351107.html
+    Write-Host "--- æ£€æŸ¥æ˜¯å¦å¼€å¯ç¡çœ åŠŸèƒ½ã€‚ ï¼ˆäº¤æµï¼šæ¥é€šç”µæºï¼›ç›´æµï¼šç”¨ç”µæ± ï¼‰---`n" -ForegroundColor Yellow
+    Write-Host 'æ³¨ï¼šå¦‚æœæ˜¯å°å¼æœºã€è™šæ‹Ÿæœºå¯å¿½ç•¥â€œå…³é—­æˆ–æ‰“å¼€ç›–å­åŠŸèƒ½â€çš„ä¿¡æ¯å†…å®¹' -ForegroundColor Green
 
     powercfg -q SCHEME_BALANCED SUB_SLEEP STANDBYIDLE; powercfg -q SCHEME_BALANCED SUB_BUTTONS | Out-Host
 
-    Write-Host "--- ×î½üÒ»ÖÜµÄÏµÍ³Æô¶¯Æµ´Î ---"  -ForegroundColor Yellow
+    Write-Host "--- æœ€è¿‘ä¸€å‘¨çš„ç³»ç»Ÿå¯åŠ¨é¢‘æ¬¡ ---"  -ForegroundColor Yellow
     $result = Get-WinEvent -FilterHashtable @{
         LogName      = 'System'
         ProviderName = 'Microsoft-Windows-Kernel-General'
-        Id           = 12 # Ïà¶ÔÓÚ13£¬12ÊÇÏµÍ³Æô¶¯£¬13ÊÇÏµÍ³¹Ø±Õ£»¾Í577À´Ëµ£¬12¸üÄÜ×¼È·¼ÇÂ¼ÏµÍ³Æô¶¯Æµ´Î¡£
+        Id           = 12 # ç›¸å¯¹äº13ï¼Œ12æ˜¯ç³»ç»Ÿå¯åŠ¨ï¼Œ13æ˜¯ç³»ç»Ÿå…³é—­ï¼›å°±577æ¥è¯´ï¼Œ12æ›´èƒ½å‡†ç¡®è®°å½•ç³»ç»Ÿå¯åŠ¨é¢‘æ¬¡ã€‚
         StartTime    = (Get-Date).AddDays(-7)
     } -ErrorAction SilentlyContinue
     if ($result) {
 
-        $result | Out-GridView -Title "Ò»ÖÜµÄÏµÍ³Æô¶¯Æµ´Î½ü¿ö"
+        $result | Out-GridView -Title "ä¸€å‘¨çš„ç³»ç»Ÿå¯åŠ¨é¢‘æ¬¡è¿‘å†µ"
         $sum = ($result | Measure-Object).Count
-        Write-Host "×î½ü7ÌìÏµÍ³Æô¶¯×Ü¼Æ:"$sum, "`n×î½ü7ÌìÆ½¾ùÃ¿ÌìÆô¶¯ÏµÍ³´ÎÊı:"$([math]::Round($sum / 7, 2)) -ForegroundColor Green
+        Write-Host "æœ€è¿‘7å¤©ç³»ç»Ÿå¯åŠ¨æ€»è®¡:"$sum, "`næœ€è¿‘7å¤©å¹³å‡æ¯å¤©å¯åŠ¨ç³»ç»Ÿæ¬¡æ•°:"$([math]::Round($sum / 7, 2)) -ForegroundColor Green
 
-        # ¼ÆËãÃ¿ÌìµÄ¿ª¹Ø»ú´ÎÊı²¢ÕÒµ½×î´óÖµ
+        # è®¡ç®—æ¯å¤©çš„å¼€å…³æœºæ¬¡æ•°å¹¶æ‰¾åˆ°æœ€å¤§å€¼
         $dateCounts = @{}
         foreach ($event in $result) {
-            # ×ª³É×Ö·û´®£¬Ö»±£ÁôÈÕÆÚ²¿·Ö
+            # è½¬æˆå­—ç¬¦ä¸²ï¼Œåªä¿ç•™æ—¥æœŸéƒ¨åˆ†
             $date = $event.TimeCreated.ToShortDateString()
-            # Èç¹ûÈÕÆÚÒÑ´æÔÚ£¬´ÎÊı¼Ó1£¬·ñÔò³õÊ¼»¯Îª1
+            # å¦‚æœæ—¥æœŸå·²å­˜åœ¨ï¼Œæ¬¡æ•°åŠ 1ï¼Œå¦åˆ™åˆå§‹åŒ–ä¸º1
             if ($dateCounts.Contains($date)) {
                 $dateCounts[$date] += 1
             }
@@ -753,18 +767,18 @@ function check_key_events {
                 $dateCounts[$date] = 1
             }
         }
-        # ÕÒµ½×î´óÖµ
+        # æ‰¾åˆ°æœ€å¤§å€¼
         $maxDate = ($dateCounts.GetEnumerator() | Sort-Object -Property Value -Descending | Select-Object -First 1).Name
         $maxCount = $dateCounts[$maxDate]
-        Write-Host "Æô¶¯ÏµÍ³×î¶àÆµ´ÎµÄÈÕÆÚ: $maxDate, ÒÔ¼°Æô¶¯´ÎÊı: $maxCount" -ForegroundColor Cyan
+        Write-Host "å¯åŠ¨ç³»ç»Ÿæœ€å¤šé¢‘æ¬¡çš„æ—¥æœŸ: $maxDate, ä»¥åŠå¯åŠ¨æ¬¡æ•°: $maxCount" -ForegroundColor Cyan
 
     }
     else {
-        Write-Host "Ã»ÓĞÕÒµ½×î½ü7ÌìµÄÆô¶¯Êı¾İ¡£"-ForegroundColor DarkRed
+        Write-Host "æ²¡æœ‰æ‰¾åˆ°æœ€è¿‘7å¤©çš„å¯åŠ¨æ•°æ®ã€‚"-ForegroundColor DarkRed
     }
 
-    # 41 ·ÇÕı³£¿ª»ú£¬6008 Òì³£¹Ø»ú
-    Write-Host "`n--- ×î½ü2ÖÜÄÚÊÇ·ñ´æÔÚ·ÇÕı³£¿ª»úÓëÒì³£¹Ø»ú ---`n" -ForegroundColor Yellow
+    # 41 éæ­£å¸¸å¼€æœºï¼Œ6008 å¼‚å¸¸å…³æœº
+    Write-Host "`n--- æœ€è¿‘2å‘¨å†…æ˜¯å¦å­˜åœ¨éæ­£å¸¸å¼€æœºä¸å¼‚å¸¸å…³æœº ---`n" -ForegroundColor Yellow
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'System'
         Id        = 41, 6008
@@ -775,15 +789,15 @@ function check_key_events {
         $result | Out-Host
     }
     else {
-        Write-Host "×î½ü2ÖÜ¿ª¹Ø»ú£¬Õı³£¡£`n" -ForegroundColor Green
+        Write-Host "æœ€è¿‘2å‘¨å¼€å…³æœºï¼Œæ­£å¸¸ã€‚`n" -ForegroundColor Green
     }
         
 
-    Write-Host "--- ×î½ü7ÌìÄÚÊÇ·ñ´æÔÚÀ¶ÆÁ»ò±ÀÀ£ÏÖÏó ---`n"  -ForegroundColor Yellow
+    Write-Host "--- æœ€è¿‘7å¤©å†…æ˜¯å¦å­˜åœ¨è“å±æˆ–å´©æºƒç°è±¡ ---`n"  -ForegroundColor Yellow
     # https://social.microsoft.com/Forums/zh-CN/068ccdf2-96f4-484d-a5cb-df05f59e1959/win1020107202142659730475221202010720214id1000652921001?forum=window7betacn
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'System'
-        Id        = 1001 # ÊÂ¼şID 1001¶ÔÓ¦¶à¸öLogName£¬¶øÃ¿¸öLogName¶Ô1001¶¨Î»µÄ¼¶±ğ£¬Ò²¸÷²»ÏàÍ¬¡£
+        Id        = 1001 # äº‹ä»¶ID 1001å¯¹åº”å¤šä¸ªLogNameï¼Œè€Œæ¯ä¸ªLogNameå¯¹1001å®šä½çš„çº§åˆ«ï¼Œä¹Ÿå„ä¸ç›¸åŒã€‚
         StartTime = (Get-Date).AddDays(-7)
     } -ErrorAction SilentlyContinue
 
@@ -791,88 +805,88 @@ function check_key_events {
         $result | Out-Host
     }
     else {
-        Write-Host "½ü7ÌìÄÚÎ´Ôø³öÏÖÀ¶ÆÁ»ò±ÀÀ£ÏÖÏó¡£`n" -ForegroundColor Green
+        Write-Host "è¿‘7å¤©å†…æœªæ›¾å‡ºç°è“å±æˆ–å´©æºƒç°è±¡ã€‚`n" -ForegroundColor Green
     }
 
-    Write-Host "--- ¼ì²é½üÆÚ¼°µ±Ç°Ê±¼ä¶Î£¬ÊÇ·ñÓĞÒì³£¾¯¸æºÍ´íÎóÊÂ¼ş ---`n"  -ForegroundColor Yellow
+    Write-Host "--- æ£€æŸ¥è¿‘æœŸåŠå½“å‰æ—¶é—´æ®µï¼Œæ˜¯å¦æœ‰å¼‚å¸¸è­¦å‘Šå’Œé”™è¯¯äº‹ä»¶ ---`n"  -ForegroundColor Yellow
 
     do {
-        # »ñÈ¡ÓÃ»§ÊäÈëµÄÈÕÆÚºÍÊ±¼ä
-        $dateTimeString = Read-Host "ÇëÊäÈëÈÕÆÚºÍÊ±¼ä£¨¸ñÊ½Îª yyyy-MM-dd HH:mm£©"
+        # è·å–ç”¨æˆ·è¾“å…¥çš„æ—¥æœŸå’Œæ—¶é—´
+        $dateTimeString = Read-Host "è¯·è¾“å…¥æ—¥æœŸå’Œæ—¶é—´ï¼ˆæ ¼å¼ä¸º yyyy-MM-dd HH:mmï¼‰"
     
         try {
-            # Ê¹ÓÃ Get-Date ³¢ÊÔ½«×Ö·û´®×ª»»ÎªÈÕÆÚÊ±¼ä¶ÔÏó
+            # ä½¿ç”¨ Get-Date å°è¯•å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºæ—¥æœŸæ—¶é—´å¯¹è±¡
             $startTime = Get-Date $dateTimeString
             break
         }
         catch {
-            # Èç¹û×ª»»Ê§°Ü£¬ÔòÌáÊ¾ÓÃ»§ÖØĞÂÊäÈë
-            Write-Host "ÊäÈëµÄ¸ñÊ½ÎŞĞ§£¬ÇëÖØĞÂÊäÈë¡£" -ForegroundColor Yellow
+            # å¦‚æœè½¬æ¢å¤±è´¥ï¼Œåˆ™æç¤ºç”¨æˆ·é‡æ–°è¾“å…¥
+            Write-Host "è¾“å…¥çš„æ ¼å¼æ— æ•ˆï¼Œè¯·é‡æ–°è¾“å…¥ã€‚" -ForegroundColor Yellow
         }
     } while ($true)
     
-    # ¹¹½¨É¸Ñ¡Ìõ¼ş²¢»ñÈ¡Òì³£ÊÂ¼ş
+    # æ„å»ºç­›é€‰æ¡ä»¶å¹¶è·å–å¼‚å¸¸äº‹ä»¶
     $filter = @{
         LogName   = 'Application', 'System', 'Security'
         StartTime = $startTime
     }
     
     $events = Get-WinEvent -FilterHashtable $filter -ErrorAction SilentlyContinue `
-    | Where-Object { $_.LevelDisplayName -eq "¾¯¸æ" -or $_.LevelDisplayName -eq "´íÎó" } 
+    | Where-Object { $_.LevelDisplayName -eq "è­¦å‘Š" -or $_.LevelDisplayName -eq "é”™è¯¯" } 
 
     if ($events) {
-        $events | Out-GridView -Title "½üÆÚ¼°µ±Ç°Òì³£¾¯¸æºÍ´íÎóÊÂ¼ş·ÖÎö±í"
+        $events | Out-GridView -Title "è¿‘æœŸåŠå½“å‰å¼‚å¸¸è­¦å‘Šå’Œé”™è¯¯äº‹ä»¶åˆ†æè¡¨"
     }
     else {
-        Write-Host "Î´ÕÒµ½ÈÎºÎÒì³£ÊÂ¼ş¡£" -ForegroundColor Green
+        Write-Host "æœªæ‰¾åˆ°ä»»ä½•å¼‚å¸¸äº‹ä»¶ã€‚" -ForegroundColor Green
     }
-    Write-Host "`n### ¼ì²éµçÄÔĞİÃß¡¢¿ª¹Ø»ú¡¢³ÌĞò±ÀÀ£µÈÊÂ¼ş£¬ÒÑÍê³É`n" -ForegroundColor Green
+    Write-Host "`n### æ£€æŸ¥ç”µè„‘ä¼‘çœ ã€å¼€å…³æœºã€ç¨‹åºå´©æºƒç­‰äº‹ä»¶ï¼Œå·²å®Œæˆ`n" -ForegroundColor Green
 }
     
-# Éú³É»ùÏß¼ì²é±¨±í
+# ç”ŸæˆåŸºçº¿æ£€æŸ¥æŠ¥è¡¨
 function try_csv_xlsx {
 
-    Write-Host '### Éú³É"Éè±¸ĞÅÏ¢"¡¢"ÊÂ¼ş»ã×Ü"¡¢"»½ĞÑÆµ´Î"¡¢"Windows defenderÍşĞ²¸Å¿ö"·ÖÎö±¨±í ###' -ForegroundColor Cyan; Write-Host " "
+    Write-Host '### ç”Ÿæˆ"è®¾å¤‡ä¿¡æ¯"ã€"äº‹ä»¶æ±‡æ€»"ã€"å”¤é†’é¢‘æ¬¡"ã€"Windows defenderå¨èƒæ¦‚å†µ"åˆ†ææŠ¥è¡¨ ###' -ForegroundColor Cyan; Write-Host " "
 
-    # ¼ì²é PowerShell °æ±¾ÊÇ·ñÖ§³Ö ImportExcel Ä£¿é
+    # æ£€æŸ¥ PowerShell ç‰ˆæœ¬æ˜¯å¦æ”¯æŒ ImportExcel æ¨¡å—
     if ($PSVersionTable.PSVersion.Major -lt 5) {
-        Write-Host "µ±Ç° PowerShell °æ±¾²»Ö§³Ö ImportExcel Ä£¿é£¬Çë¸üĞÂÖÁ PowerShell 5 ¼°ÒÔÉÏ°æ±¾¡£" -ForegroundColor Red
+        Write-Host "å½“å‰ PowerShell ç‰ˆæœ¬ä¸æ”¯æŒ ImportExcel æ¨¡å—ï¼Œè¯·æ›´æ–°è‡³ PowerShell 5 åŠä»¥ä¸Šç‰ˆæœ¬ã€‚" -ForegroundColor Red
         return
     }
 
-    # ³¢ÊÔ°²×° ImportExcel Ä£¿é
+    # å°è¯•å®‰è£… ImportExcel æ¨¡å—
     try {
         if (!(Get-Module -Name ImportExcel -ListAvailable)) { 
             Install-Module ImportExcel -Force 
         }
     }
     catch {
-        Write-Host "°²×° ImportExcel Ä£¿éÊ§°Ü£¬ÇëÈ·±£ËùÓÃÍøÂç´¦ÓÚÕı³£ÁªÍø×´Ì¬£º" -ForegroundColor Red
+        Write-Host "å®‰è£… ImportExcel æ¨¡å—å¤±è´¥ï¼Œè¯·ç¡®ä¿æ‰€ç”¨ç½‘ç»œå¤„äºæ­£å¸¸è”ç½‘çŠ¶æ€ï¼š" -ForegroundColor Red
         Write-Host $_.Exception.Message -ForegroundColor Red
         return
     }
     
 
-    # »ñÈ¡µ±Ç°ÓÃ»§µÄ×ÀÃæÄ¿Â¼Â·¾¶£¬±È ${env:username}/desktop ¾ßÓĞ¿ÉÒÆÖ²ĞÔ¡£
+    # è·å–å½“å‰ç”¨æˆ·çš„æ¡Œé¢ç›®å½•è·¯å¾„ï¼Œæ¯” ${env:username}/desktop å…·æœ‰å¯ç§»æ¤æ€§ã€‚
     $desktop_path = [Environment]::GetFolderPath('Desktop')
-    $report_path = Join-Path $desktop_path ((Get-Date).ToString('yyyy-MM-dd') + '»ùÏß¼ì²é±¨±í.xlsx')
+    $report_path = Join-Path $desktop_path ((Get-Date).ToString('yyyy-MM-dd') + 'åŸºçº¿æ£€æŸ¥æŠ¥è¡¨.xlsx')
 
-    Write-Host "`nÉè±¸ĞÅÏ¢¡¢µ±ÌìÄ¿Ç°µÄÊÂ¼şÍ³¼Æ¡¢Ò»ÔÂ¹¤×÷ÈÕ£¨24Ìì£©»½ĞÑÆµ´Î£¬±íÏîÕıÔÚÉú³ÉÖĞ... `n" -ForegroundColor Yellow
+    Write-Host "`nè®¾å¤‡ä¿¡æ¯ã€å½“å¤©ç›®å‰çš„äº‹ä»¶ç»Ÿè®¡ã€ä¸€æœˆå·¥ä½œæ—¥ï¼ˆ24å¤©ï¼‰å”¤é†’é¢‘æ¬¡ï¼Œè¡¨é¡¹æ­£åœ¨ç”Ÿæˆä¸­... `n" -ForegroundColor Yellow
 
-    # Çı¶¯ĞÅÏ¢
+    # é©±åŠ¨ä¿¡æ¯
     $result = Get-PnpDevice | Select-Object `
         Class, FriendlyName, Problem, `
         Status, ConfigManagerUserConfig, SystemName, `
         ClassGuid, Manufacturer, Present, Service -ErrorAction SilentlyContinue
 
     if ($result) {
-        $result | Export-Excel -Path $report_path -WorksheetName "Éè±¸ĞÅÏ¢"
+        $result | Export-Excel -Path $report_path -WorksheetName "è®¾å¤‡ä¿¡æ¯"
     }
     else {
-        Write-Host 'Î´²éÑ¯µ½ÈÎºÎÆ¥ÅäĞÅÏ¢£¬Çë¼ì²éÕË»§È¨ÏŞ¡¢ÊÂ¼şÈÕÖ¾µÈÉèÖÃÎÊÌâ¡£' -ForegroundColor Yellow
+        Write-Host 'æœªæŸ¥è¯¢åˆ°ä»»ä½•åŒ¹é…ä¿¡æ¯ï¼Œè¯·æ£€æŸ¥è´¦æˆ·æƒé™ã€äº‹ä»¶æ—¥å¿—ç­‰è®¾ç½®é—®é¢˜ã€‚' -ForegroundColor Yellow
     }
 
-    # µ±Ìì½ØÖ¹½Å±¾ÔËĞĞÊ±¼äµÄÊÂ¼şÍ³¼Æ
+    # å½“å¤©æˆªæ­¢è„šæœ¬è¿è¡Œæ—¶é—´çš„äº‹ä»¶ç»Ÿè®¡
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
         StartTime = (Get-Date).Date
@@ -882,13 +896,13 @@ function try_csv_xlsx {
     TimeCreated, ContainerLog, LevelDisplayName, TaskDisplayName -ErrorAction SilentlyContinue
 
     if ($result) {
-        $result | Export-Excel -Path $report_path -WorksheetName "ÊÂ¼ş»ã×Ü"
+        $result | Export-Excel -Path $report_path -WorksheetName "äº‹ä»¶æ±‡æ€»"
     }
     else {
-        Write-Host 'Î´ÕÒµ½ÈÎºÎÆ¥ÅäÌõÄ¿£¬Çë¼ì²éÏµÍ³È¨ÏŞ¡¢ÊÂ¼şÈÕÖ¾µÈÉèÖÃÎÊÌâ¡£' -ForegroundColor Yellow
+        Write-Host 'æœªæ‰¾åˆ°ä»»ä½•åŒ¹é…æ¡ç›®ï¼Œè¯·æ£€æŸ¥ç³»ç»Ÿæƒé™ã€äº‹ä»¶æ—¥å¿—ç­‰è®¾ç½®é—®é¢˜ã€‚' -ForegroundColor Yellow
     }
 
-    # ½üÒ»ÔÂ¹¤×÷ÈÕ»½ĞÑÏµÍ³Í³¼Æ
+    # è¿‘ä¸€æœˆå·¥ä½œæ—¥å”¤é†’ç³»ç»Ÿç»Ÿè®¡
     $result = Get-WinEvent -FilterHashtable @{
         LogName      = 'System'
         ProviderName = 'Microsoft-Windows-Kernel-Power'
@@ -900,49 +914,49 @@ function try_csv_xlsx {
 
         $result | Select-Object Message, Id, Level, ProviderName, ProviderId, 
         LogName, MachineName, TimeCreated, LevelDisplayName `
-        | Export-Excel -Path $report_path -WorksheetName "»½ĞÑÆµ´Î"
+        | Export-Excel -Path $report_path -WorksheetName "å”¤é†’é¢‘æ¬¡"
 
     }
     else {
-        Write-Host 'Î´ÕÒµ½ÈÎºÎÆ¥ÅäµÄÊÂ¼ş£¬¹Ê²»¼ÇÂ¼"»½ĞÑÆµ´Î"¸ÃÏî±¨±í¡£' -ForegroundColor Yellow
+        Write-Host 'æœªæ‰¾åˆ°ä»»ä½•åŒ¹é…çš„äº‹ä»¶ï¼Œæ•…ä¸è®°å½•"å”¤é†’é¢‘æ¬¡"è¯¥é¡¹æŠ¥è¡¨ã€‚' -ForegroundColor Yellow
     }
 
-    Write-Host "`nÉè±¸ĞÅÏ¢¡¢µ±ÌìÄ¿Ç°µÄÊÂ¼şÍ³¼Æ¡¢Ò»ÔÂ¹¤×÷ÈÕ£¨24Ìì£©»½ĞÑÆµ´Î£¬±íÏîÒÑÉú³É `n" -ForegroundColor Green
+    Write-Host "`nè®¾å¤‡ä¿¡æ¯ã€å½“å¤©ç›®å‰çš„äº‹ä»¶ç»Ÿè®¡ã€ä¸€æœˆå·¥ä½œæ—¥ï¼ˆ24å¤©ï¼‰å”¤é†’é¢‘æ¬¡ï¼Œè¡¨é¡¹å·²ç”Ÿæˆ `n" -ForegroundColor Green
 
-    # sqllite ½áºÏ Get-MpThreatDetection ºÍ Get-MpThreat ²ÅÄÜµÃµ½ÀíÏëÊı¾İ¡£
-    # ÕıºÃÏÈÓÃExcelÀ´µ¼Èë Get-MpThreatDetection Óë Get-MpThreat °²È«ĞÅÏ¢Í³¼Æ¡£
+    # sqllite ç»“åˆ Get-MpThreatDetection å’Œ Get-MpThreat æ‰èƒ½å¾—åˆ°ç†æƒ³æ•°æ®ã€‚
+    # æ­£å¥½å…ˆç”¨Excelæ¥å¯¼å…¥ Get-MpThreatDetection ä¸ Get-MpThreat å®‰å…¨ä¿¡æ¯ç»Ÿè®¡ã€‚
 
-    Write-Host "`n×îºó½×¶Î£¬30ÌìÄÚ Windows defender ÍşĞ²¸Å¿ö±íÏîÉú³ÉÖĞ... `n" -ForegroundColor Yellow
+    Write-Host "`næœ€åé˜¶æ®µï¼Œ30å¤©å†… Windows defender å¨èƒæ¦‚å†µè¡¨é¡¹ç”Ÿæˆä¸­... `n" -ForegroundColor Yellow
 
-    # ×î½ü 30 ÌìÄÚµÄÍşĞ²¼ì²â¼ÇÂ¼
+    # æœ€è¿‘ 30 å¤©å†…çš„å¨èƒæ£€æµ‹è®°å½•
     $result = Get-MpThreatDetection `
     | Select-Object ActionSuccess, CurrentThreatExecutionStatusID, `
         DetectionID, DetectionSourceTypeID,	DomainUser,	InitialDetectionTime, LastThreatStatusChangeTime, `
         ProcessName, ThreatID, ThreatStatusID -ErrorAction SilentlyContinue
 
     if ($result) {
-        $result | Export-Excel -Path $report_path -WorksheetName "ÍşĞ²¼ÇÂ¼¼ì²â"
+        $result | Export-Excel -Path $report_path -WorksheetName "å¨èƒè®°å½•æ£€æµ‹"
     }
     else {
-        Write-Host 'Î´ÕÒµ½ÈÎºÎÆ¥ÅäµÄÊÂ¼ş£¬¹Ê²»¼ÇÂ¼"ÍşĞ²¼ÇÂ¼¼ì²â"¸ÃÏî±¨±í¡£' -ForegroundColor Yellow
+        Write-Host 'æœªæ‰¾åˆ°ä»»ä½•åŒ¹é…çš„äº‹ä»¶ï¼Œæ•…ä¸è®°å½•"å¨èƒè®°å½•æ£€æµ‹"è¯¥é¡¹æŠ¥è¡¨ã€‚' -ForegroundColor Yellow
     }           
 
-    # ×î½ü 30 ÌìÄÚµÄÍşĞ²Àà±ğ
+    # æœ€è¿‘ 30 å¤©å†…çš„å¨èƒç±»åˆ«
     $result = Get-MpThreat `
     | Select-Object CategoryID, DidThreatExecute, IsActive, RollupStatus, `
         SeverityID, ThreatID, ThreatName -ErrorAction SilentlyContinue
 
     if ($result) {
-        $result | Export-Excel -Path $report_path -WorksheetName "ÍşĞ²Àà±ğÏêÇé"
+        $result | Export-Excel -Path $report_path -WorksheetName "å¨èƒç±»åˆ«è¯¦æƒ…"
     }
     else {
-        Write-Host 'Î´ÕÒµ½ÈÎºÎÆ¥ÅäµÄÊÂ¼ş£¬¹Ê²»¼ÇÂ¼"ÍşĞ²Àà±ğÏêÇé"¸ÃÏî±¨±í¡£' -ForegroundColor Yellow
+        Write-Host 'æœªæ‰¾åˆ°ä»»ä½•åŒ¹é…çš„äº‹ä»¶ï¼Œæ•…ä¸è®°å½•"å¨èƒç±»åˆ«è¯¦æƒ…"è¯¥é¡¹æŠ¥è¡¨ã€‚' -ForegroundColor Yellow
     }    
     
-    Write-Host "`n×îºó½×¶Î£¬Windows defenderÍşĞ²¸Å¿ö±íÏî£¬ÒÑÉú³É `n" -ForegroundColor Yellow
+    Write-Host "`næœ€åé˜¶æ®µï¼ŒWindows defenderå¨èƒæ¦‚å†µè¡¨é¡¹ï¼Œå·²ç”Ÿæˆ `n" -ForegroundColor Yellow
 
     Write-Host " "
-    Write-Host '### ÏµÍ³×ÀÃæÎ»ÖÃ£¬»ùÏß¼ì²é±¨±íÒÑÉú³É¡£' -ForegroundColor Green; Write-Host "`n"
+    Write-Host '### ç³»ç»Ÿæ¡Œé¢ä½ç½®ï¼ŒåŸºçº¿æ£€æŸ¥æŠ¥è¡¨å·²ç”Ÿæˆã€‚' -ForegroundColor Green; Write-Host "`n"
 
 }
 
@@ -956,7 +970,7 @@ function remote_man {
 # switch
 function select_option {
 
-    # Ê¹ÓÃËµÃ÷
+    # ä½¿ç”¨è¯´æ˜
     sel_man
 
     $valid_option = $true
@@ -964,19 +978,19 @@ function select_option {
 
     while ($valid_option) {
      
-        # ĞéÄâ°´¼ücodeÓë¶ÔÓ¦¼üÅÌÏî²Î¿¼
+        # è™šæ‹ŸæŒ‰é”®codeä¸å¯¹åº”é”®ç›˜é¡¹å‚è€ƒ
         # https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
         $key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown").VirtualKeyCode
 
         switch ($key) {
 
             48 {
-                # Êı×Ö¼ü 0
-                # ²âÊÔÔ¶³Ìµ÷ÓÃ
+                # æ•°å­—é”® 0
+                # æµ‹è¯•è¿œç¨‹è°ƒç”¨
                 remote_man
             }
             49 {
-                # Êı×Ö¼ü 1
+                # æ•°å­—é”® 1
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
@@ -984,7 +998,7 @@ function select_option {
                 check_ip
             }
             50 {
-                # Êı×Ö¼ü 2
+                # æ•°å­—é”® 2
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
@@ -992,7 +1006,7 @@ function select_option {
                 check_printer
             }
             51 {
-                # Êı×Ö¼ü 3
+                # æ•°å­—é”® 3
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
@@ -1000,7 +1014,7 @@ function select_option {
                 check_disk_cpu_mem
             }
             52 {
-                # Êı×Ö¼ü 4
+                # æ•°å­—é”® 4
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
@@ -1008,7 +1022,7 @@ function select_option {
                 check_fw
             }
             53 {
-                # Êı×Ö¼ü 5
+                # æ•°å­—é”® 5
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
@@ -1016,7 +1030,7 @@ function select_option {
                 check_share
             }
             54 {
-                # Êı×Ö¼ü 6
+                # æ•°å­—é”® 6
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
@@ -1024,7 +1038,7 @@ function select_option {
                 check_key_events
             }
             55 {
-                # Êı×Ö¼ü 7
+                # æ•°å­—é”® 7
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
@@ -1036,7 +1050,7 @@ function select_option {
                 check_key_events
             }
             56 {
-                # Êı×Ö¼ü 8
+                # æ•°å­—é”® 8
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
@@ -1044,11 +1058,11 @@ function select_option {
                 try_csv_xlsx
             }
             57 {
-                # Êı×Ö¼ü 9
+                # æ•°å­—é”® 9
                 dev_man
             }
             191 {
-                # ¼üÅÌ /£¿
+                # é”®ç›˜ /ï¼Ÿ
                 sel_man
             }
             Default {
@@ -1060,121 +1074,3 @@ function select_option {
 }
 
 select_option
-
-
-<# ------ ²İ¸å
-    
-    powershell Ô­Éú²»Ö§³ÖÖ±½Óµ¼³öxlsx£ºInstall-Module -Name ImportExcel ¡£
-    Export-Excel -Path "C:\events.xlsx" -AutoSize ²»ÓÃ¹ØĞÄ±àÂëÎÊÌâ
-    Ã»ÓĞ ImportExcel Ä£¿é¾ÍÏÈ°²×°ÔÙËµ
-
-    # Get-WinEvent -FilterHashtable @{
-    #     LogName='Application','System','Security'
-    #     StartTime=(Get-Date).Date
-    # } `
-    # | Export-Csv -Path "C:\events.csv" -Encoding UTF8 
-
-    #>
-
-<# ------ ¹ıÊ± Get-WmiObject£¬×ª Get-CimInstance 
-
-# $result = Get-WmiObject -Class Win32_Printer | Where-Object { $_.Default -eq $true } | Select-Object Name 
-
-# Get-WmiObject -Class Win32_Processor | Select-Object Caption, MaxClockSpeed | Out-Host
-
-# Get-WmiObject -Class Win32_PhysicalMemory | 
-#     Select-Object -Property BankLabel, 
-#     @{Name = "Capacity(GB)"; Expression = { [math]::Round($_.Capacity / 1GB, 2) } }, 
-#     DeviceLocator, PartNumber, SerialNumber, Speed | Out-Host
-
-#>
-    
-<# ------- µ¹¼ÆÊ±
-
-    # ¾ÍÁ½Î»Êı°É£¬ÕÛÖĞ·½°¸£¬µ±Ğ¡ÓÚ100ÃëÊ±£¬»òµ½ÁË1·ÖÖÓÊ±²ÉÓÃ
-    # $t = 11
-    # while ($t -ge 0) {
-    #     Write-Host ($t.ToString("D2")) -NoNewline
-    #     Start-Sleep -Seconds 1
-    #     Write-Host -NoNewline "`b`b`b`r"
-    #     $t--
-    # }
-
-    #>
-
-<# ------- µ÷Õû
-
-    # Get-WmiObject -Class Win32_PnPSignedDriver | Select-Object -Property DeviceName, Manufacturer, Status| Out-Host
-    # $drivers = Get-WmiObject Win32_SystemDriver | Where-Object { $_.Status -ne "OK" } | Format-List Caption, Status
-    
-    # Write-Host "--- ×î½üÒ»ÖÜÏµÍ³»½ĞÑÆµ´Î ---"  -ForegroundColor Yellow
-    # # https://learn.microsoft.com/zh-cn/powershell/scripting/samples/creating-get-winevent-queries-with-filterhashtable?view=powershell-7.3
-    # $result = Get-WinEvent -FilterHashtable @{
-    #     LogName      = 'System'
-    #     ProviderName = 'Microsoft-Windows-Kernel-Power'
-    #     Id           = 577
-    #     StartTime    = (Get-Date).AddDays(-7)
-    # } -ErrorAction SilentlyContinue
-    # if ($result) {
-
-    #     $result | Out-GridView -Title "Ò»ÖÜµÄ»½ĞÑÆµ´Î½ü¿ö"
-    #     $sum = ($result | Measure-Object).Count
-    #     Write-Host "×î½ü7Ìì»½ĞÑ×Ü¼Æ:"$sum, "`n×î½ü7ÌìÆ½¾ùÃ¿Ìì»½ĞÑÏµÍ³´ÎÊı:"$([math]::Round($sum / 7, 2)) -ForegroundColor Green
-
-    #     # ¼ÆËãÃ¿ÌìµÄ¿ª¹Ø»ú´ÎÊı²¢ÕÒµ½×î´óÖµ
-    #     $dateCounts = @{}
-    #     foreach ($event in $result) {
-    #         # ×ª³É×Ö·û´®£¬Ö»±£ÁôÈÕÆÚ²¿·Ö
-    #         $date = $event.TimeCreated.ToShortDateString()
-    #         # Èç¹ûÈÕÆÚÒÑ´æÔÚ£¬´ÎÊı¼Ó1£¬·ñÔò³õÊ¼»¯Îª1
-    #         if ($dateCounts.Contains($date)) {
-    #             $dateCounts[$date] += 1
-    #         }
-    #         else {
-    #             $dateCounts[$date] = 1
-    #         }
-    #     }
-    #     # ÕÒµ½×î´óÖµ
-    #     $maxDate = ($dateCounts.GetEnumerator() | Sort-Object -Property Value -Descending | Select-Object -First 1).Name
-    #     $maxCount = $dateCounts[$maxDate]
-    #     Write-Host "»½ĞÑÏµÍ³×î¶àÆµ´ÎµÄÈÕÆÚ: $maxDate, ÒÔ¼°Æä»½ĞÑ´ÎÊı: $maxCount" -ForegroundColor Cyan
-
-    # }
-    # else {
-    #     Write-Host "Ã»ÓĞÕÒµ½×î½ü7ÌìµÄËøÆÁ»½ĞÑÏµÍ³Êı¾İ¡£"-ForegroundColor DarkRed
-    # }
-   
-    #>
-
-<#----- ±£Áô»ù´¡²¿·Ö
-    
-    # # ´ÓÓÃ»§ÊäÈëÖĞ»ñÈ¡ÈÕÆÚºÍÊ±¼ä
-    # $dateTimeString = Read-Host "ÇëÊäÈëÈÕÆÚºÍÊ±¼ä£¨¸ñÊ½Îª yyyy-MM-dd HH:mm£©"
-
-    # # ¹¹½¨ÆğÊ¼Ê±¼ä
-    # $startTime = Get-Date $dateTimeString
-
-    # # »ñÈ¡½üÆÚÒì³£ÊÂ¼ş
-    # Get-WinEvent -FilterHashtable @{
-    #     LogName='Application','System','Security'
-    #     StartTime=$startTime
-    # } `
-    # | Where-Object {$_.LevelDisplayName -eq "¾¯¸æ" -or $_.LevelDisplayName -eq "´íÎó"} `
-    # | Out-GridView -Title "½üÆÚ¼°µ±Ç°Òì³£¾¯¸æºÍ´íÎóÊÂ¼ş·ÖÎö±í"
-    
-    #>
-    
-<#
-
-    # ±¾µØµ÷ÓÃpowershell½Å±¾º¯Êı 
-    # function localhost_man {
-
-    #     # »ñÈ¡µ±Ç°ÓÃ»§µÄ×ÀÃæÄ¿Â¼Â·¾¶£¬±È ${env:username}/desktop ¾ßÓĞ¿ÉÒÆÖ²ĞÔ¡£
-    #     $desktop_path = [Environment]::GetFolderPath('Desktop')
-    #     $report_path = Join-Path $desktop_path ('jixian_win_man.ps1')
-    #     # µ÷ÓÃº¯Êı
-    #     . $report_path
-    #     jixian_yuanc_man
-    # }
-
-    #>
