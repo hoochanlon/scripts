@@ -749,7 +749,7 @@ function check_key_events {
     } -ErrorAction SilentlyContinue
     if ($result) {
 
-        $result | Out-GridView -Title "一周的系统启动频次近况"
+        $result | Out-Host
         $sum = ($result | Measure-Object).Count
         Write-Host "最近7天系统启动总计:"$sum, "`n最近7天平均每天启动系统次数:"$([math]::Round($sum / 7, 2)) -ForegroundColor Green
 
@@ -901,7 +901,7 @@ function try_csv_xlsx {
         Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Yellow
     }
 
-    # 近一月工作日唤醒系统统计
+    # 近一月工作日重启系统统计
     $result = Get-WinEvent -FilterHashtable @{
         LogName      = 'System'
         ProviderName = 'Microsoft-Windows-Kernel-Power'
@@ -913,11 +913,11 @@ function try_csv_xlsx {
 
         $result | Select-Object Message, Id, Level, ProviderName, ProviderId, 
         LogName, MachineName, TimeCreated, LevelDisplayName `
-        | Export-Excel -Path $report_path -WorksheetName "唤醒频次"
+        | Export-Excel -Path $report_path -WorksheetName "重启频次"
 
     }
     else {
-        Write-Host '未找到任何匹配的事件，故不记录"唤醒频次"该项报表。' -ForegroundColor Yellow
+        Write-Host '未找到任何匹配的事件，故不记录"唤醒频次"该项报表。' 
     }
 
     Write-Host "`n设备信息、当天目前的事件统计、一周工作日唤醒频次，表项已生成 `n" -ForegroundColor Green
@@ -937,7 +937,7 @@ function try_csv_xlsx {
         $result | Export-Excel -Path $report_path -WorksheetName "威胁记录检测"
     }
     else {
-        Write-Host '未找到任何匹配的事件，故不记录"威胁记录检测"该项报表。' -ForegroundColor Yellow
+        Write-Host '未找到任何匹配的事件，故不记录"威胁记录检测"该项报表。' 
     }           
 
     # 最近 30 天内的威胁类别
@@ -949,7 +949,7 @@ function try_csv_xlsx {
         $result | Export-Excel -Path $report_path -WorksheetName "威胁类别详情"
     }
     else {
-        Write-Host '未找到任何匹配的事件，故不记录"威胁类别详情"该项报表。' -ForegroundColor Yellow
+        Write-Host '未找到任何匹配的事件，故不记录"威胁类别详情"该项报表。'
     }    
     
     Write-Host "`n最后阶段，Windows defender威胁概况表项，已生成 `n" -ForegroundColor Yellow
@@ -976,57 +976,56 @@ function select_option {
         $key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown").VirtualKeyCode
 
         switch ($key) {
-
-            49 {
-                # 数字键 1
+            { $_ -in 49,97 } {
+                # 数字键 1 和 数字键小键盘 1
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
                 }
                 check_ip
             }
-            50 {
-                # 数字键 2
+            { $_ -in 50,98 } {
+                # 数字键 2 和 数字键小键盘 2
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
                 }
                 check_printer
             }
-            51 {
-                # 数字键 3
+            { $_ -in 51,99 } {
+                # 数字键 3 和 数字键小键盘 3
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
                 }
                 check_disk_cpu_mem
             }
-            52 {
-                # 数字键 4
+            { $_ -in 52,100 } {
+                # 数字键 4 和 数字键小键盘 4
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
                 }
                 check_fw
             }
-            53 {
-                # 数字键 5
+            { $_ -in 53,101 } {
+                # 数字键 5 和 数字键小键盘 5
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
                 }
                 check_share
             }
-            54 {
-                # 数字键 6
+            { $_ -in 54,102 } {
+                # 数字键 6 和 数字键小键盘 6
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
                 }
                 check_key_events
             }
-            55 {
-                # 数字键 7
+            { $_ -in 55,103 } {
+                # 数字键 7 和 数字键小键盘 7
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
@@ -1037,17 +1036,21 @@ function select_option {
                 check_disk_cpu_mem
                 check_key_events
             }
-            56 {
-                # 数字键 8
+            { $_ -in 56,104 } {
+                # 数字键 8 和 数字键小键盘 8
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
                 }
                 try_csv_xlsx
             }
-            57 {
-                # 数字键 9
+            { $_ -in 57,105 } {
+                # 数字键 9 和 数字键小键盘 9
                 dev_man
+                if (!$has_checked_sys) {
+                    check_sys
+                    $has_checked_sys = $true
+                }
             }
             191 {
                 # 键盘 /？
@@ -1059,7 +1062,7 @@ function select_option {
                 # $valid_option = $false
                 continue
             }
-        }
+        }        
     }
 }
 
