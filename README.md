@@ -105,17 +105,33 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 
 </details>
 
+## Windows桌面技术基线检查
+
+<details>
+<summary><B> 点击详情 </B></summary>
+ 
+ 一键使用，本地下载使用转GB2312编码
+ 
+```
+ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/jixian_win.ps1|iex
+```
+ 
+ 1. 检查IP与网络设备连接状态
+ 1. 检查打印机状态
+ 1. 检查硬盘、CPU、内存、显卡等基础驱动信息
+ 1. 检查设备安全性、近期升级补丁、定时任务项
+ 1. 检查主机主动共享协议相关信息
+ 1. 检查电脑休眠、开关机、程序崩溃等信息
+ 1. 执行1～6选项的所有功能
+ 1. 生成驱动检查、当天事件、近一月系统启动频次分析报表
+ 
+</details>
+
 ## 因企业硬性需求
 
 <details>
 <summary><B> 点击详情 </B></summary>
  
-Windows桌面技术基线检查
- 
-```
- irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/jixian_win.ps1|iex
-```
-
 IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html)
 
 ```
