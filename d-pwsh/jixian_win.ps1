@@ -747,8 +747,8 @@ function check_key_events {
         Id           = 12 # 相对于13，12是系统启动，13是系统关闭；就577来说，12更能准确记录系统启动频次。
         StartTime    = (Get-Date).AddDays(-7)
     } -ErrorAction SilentlyContinue
-    if ($result) {
 
+    if ($result) {
         $result | Out-Host
         $sum = ($result | Measure-Object).Count
         Write-Host "最近7天系统启动总计:"$sum, "`n最近7天平均每天启动系统次数:"$([math]::Round($sum / 7, 2)) -ForegroundColor Green
@@ -845,7 +845,7 @@ function check_key_events {
 # 生成基线检查报表
 function try_csv_xlsx {
 
-    Write-Host '### 生成"设备信息"、"事件汇总"、"唤醒频次"、"Windows defender威胁概况"分析报表 ###' -ForegroundColor Cyan; Write-Host " "
+    Write-Host '### 生成"设备信息"、"事件汇总"、"重启频次"、"Windows defender威胁概况"分析报表 ###' -ForegroundColor Cyan; Write-Host " "
 
     # 检查 PowerShell 版本是否支持 ImportExcel 模块
     if ($PSVersionTable.PSVersion.Major -lt 5) {
@@ -870,7 +870,7 @@ function try_csv_xlsx {
     $desktop_path = [Environment]::GetFolderPath('Desktop')
     $report_path = Join-Path $desktop_path ((Get-Date).ToString('yyyy-MM-dd') + '基线检查报表.xlsx')
 
-    Write-Host "`n设备信息、当天目前的事件统计、一周工作日唤醒频次，表项正在生成中，请耐心等待几分钟时间... `n" -ForegroundColor Yellow
+    Write-Host "`n设备信息、当天目前的事件统计、近一月工作日重启频次，表项正在生成中，请耐心等待几分钟时间... `n" -ForegroundColor Yellow
 
     # 驱动信息
     $result = Get-PnpDevice | Select-Object `
@@ -906,7 +906,7 @@ function try_csv_xlsx {
         LogName      = 'System'
         ProviderName = 'Microsoft-Windows-Kernel-Power'
         Id           = 577
-        StartTime    = (Get-Date).AddDays(-7)
+        StartTime    = (Get-Date).AddDays(-25)
     } -ErrorAction SilentlyContinue
 
     if ($result) {
