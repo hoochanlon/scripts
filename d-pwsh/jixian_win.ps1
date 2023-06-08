@@ -23,7 +23,7 @@ function sel_man {
     Write-Host " [5] 检查主机主动共享协议相关信息" -ForegroundColor Green
     Write-Host " [6] 检查电脑休眠、开关机、程序崩溃等信息" -ForegroundColor Green
     Write-Host " [7] 执行1～6选项的所有功能" -ForegroundColor Green
-    Write-Host " [8] 生成驱动检查、当天事件、近一月系统唤醒频次、威胁概况分析报表" -ForegroundColor Green
+    Write-Host " [8] 生成驱动检查、当天事件、一周内系统唤醒频次、月度威胁概况分析报表" -ForegroundColor Green
     Write-Host " [9] 查看指导建议与开发说明 `n" -ForegroundColor Green
     Write-Host "`**************************************************************`n" -ForegroundColor Green
     
@@ -871,7 +871,7 @@ function try_csv_xlsx {
     $desktop_path = [Environment]::GetFolderPath('Desktop')
     $report_path = Join-Path $desktop_path ((Get-Date).ToString('yyyy-MM-dd') + '基线检查报表.xlsx')
 
-    Write-Host "`n设备信息、当天目前的事件统计、一月工作日（24天）唤醒频次，表项正在生成中... `n" -ForegroundColor Yellow
+    Write-Host "`n设备信息、当天目前的事件统计、一周工作日唤醒频次，表项正在生成中，请耐心等待几分钟时间... `n" -ForegroundColor Yellow
 
     # 驱动信息
     $result = Get-PnpDevice | Select-Object `
@@ -907,7 +907,7 @@ function try_csv_xlsx {
         LogName      = 'System'
         ProviderName = 'Microsoft-Windows-Kernel-Power'
         Id           = 577
-        StartTime    = (Get-Date).AddDays(-24)
+        StartTime    = (Get-Date).AddDays(-7)
     } -ErrorAction SilentlyContinue
 
     if ($result) {
@@ -921,7 +921,7 @@ function try_csv_xlsx {
         Write-Host '未找到任何匹配的事件，故不记录"唤醒频次"该项报表。' -ForegroundColor Yellow
     }
 
-    Write-Host "`n设备信息、当天目前的事件统计、一月工作日（24天）唤醒频次，表项已生成 `n" -ForegroundColor Green
+    Write-Host "`n设备信息、当天目前的事件统计、一周工作日唤醒频次，表项已生成 `n" -ForegroundColor Green
 
     # sqllite 结合 Get-MpThreatDetection 和 Get-MpThreat 才能得到理想数据。
     # 正好先用Excel来导入 Get-MpThreatDetection 与 Get-MpThreat 安全信息统计。
