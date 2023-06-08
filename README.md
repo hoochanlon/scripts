@@ -109,6 +109,12 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 
 <details>
 <summary><B> 点击详情 </B></summary>
+ 
+Windows桌面技术基线检查
+ 
+```
+ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/jixian_win.ps1|iex
+```
 
 IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html)
 
