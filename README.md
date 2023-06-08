@@ -113,7 +113,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
  一键使用，本地下载使用转GB2312编码
  
 ```
- irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/jixian_win.ps1|iex
+ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/frontline_helpdesk.ps1|iex
 ```
  
  1. 检查IP与网络设备连接状态
