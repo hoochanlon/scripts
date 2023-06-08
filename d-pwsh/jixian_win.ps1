@@ -23,7 +23,7 @@ function sel_man {
     Write-Host " [5] 检查主机主动共享协议相关信息" -ForegroundColor Green
     Write-Host " [6] 检查电脑休眠、开关机、程序崩溃等信息" -ForegroundColor Green
     Write-Host " [7] 执行1～6选项的所有功能" -ForegroundColor Green
-    Write-Host " [8] 生成驱动检查、当天事件、近一月系统启动频次分析报表" -ForegroundColor Green
+    Write-Host " [8] 生成驱动检查、当天事件、近一月系统唤醒频次、威胁概况分析报表" -ForegroundColor Green
     Write-Host " [9] 查看指导建议与开发说明 `n" -ForegroundColor Green
     Write-Host "`**************************************************************`n" -ForegroundColor Green
     
