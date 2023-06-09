@@ -125,6 +125,8 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
  
 </details>
 
+Linux基线检查（PR）见：[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)
+
 ## Linux毛坯房安全改造
 
 <details>
