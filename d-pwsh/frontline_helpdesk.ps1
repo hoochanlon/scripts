@@ -20,9 +20,9 @@ function sel_man {
     Write-Host " [3] 检查硬盘、CPU、内存、显卡等基础驱动信息" -ForegroundColor Green
     Write-Host " [4] 检查设备安全性、近期升级补丁、定时任务项" -ForegroundColor Green
     Write-Host " [5] 检查主机主动共享协议相关信息" -ForegroundColor Green
-    Write-Host " [6] 检查电脑休眠、开关机、程序崩溃等信息" -ForegroundColor Green
+    Write-Host " [6] 检查电脑休眠、重启频次、异常关机、程序崩溃等信息" -ForegroundColor Green
     Write-Host " [7] 执行1～6选项的所有功能" -ForegroundColor Green
-    Write-Host " [8] 生成驱动检查、当天事件、一周内系统唤醒频次、月度威胁概况分析报表" -ForegroundColor Green
+    Write-Host " [8] 生成驱动检查、当天事件、月度已存威胁概况分析报表" -ForegroundColor Green
     Write-Host " [9] 查看指导建议与开发说明 `n" -ForegroundColor Green
     Write-Host "`**************************************************************`n" -ForegroundColor Green
     
@@ -401,6 +401,7 @@ function check_sys {
 # 检查IP与网络设备连接状态
 function check_ip {
 
+    Write-Host " "
     Write-Host "### 检查网络基本连接情况 ###`n" -ForegroundColor Cyan
 
     Write-Host "--- 检查IP地址 ---"  -ForegroundColor Yellow
@@ -422,6 +423,7 @@ function check_ip {
 # 检查打印机状态详情（新增：显示屏功能）
 function check_printer {
 
+    Write-Host " "
     Write-Host "### 检检查打印机状态 ###`n" -ForegroundColor Cyan
 
     Write-Host "--- 检查打印机服务，以及连接打印机数量 ---"  -ForegroundColor Yellow
@@ -464,6 +466,7 @@ function check_disk_cpu_mem {
     # [math]::Round 用于调用 .NET Framework 中的静态方法或属性。
     # https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-7.3
     
+    Write-Host " "
     Write-Host "### 开始检查硬盘、CPU、内存、系统基础驱动 ###`n"  -ForegroundColor Cyan
 
     Write-Host "--- 检查硬盘类型与容量 ---"  -ForegroundColor Yellow
@@ -610,6 +613,7 @@ function check_disk_cpu_mem {
 # 检查设备安全性、近期升级补丁、定时任务项
 function check_fw {
 
+    Write-Host " "
     Write-Host "### 检查设备安全性、近期升级补丁、定时任务项 ###`n" -ForegroundColor Cyan
 
     Write-Host "--- 检测Windows defender实时保护状态 ---"  -ForegroundColor Yellow
@@ -666,6 +670,7 @@ function check_fw {
 # 共享检查（包括：共享端口、共享文件）
 function check_share {
 
+    Write-Host " "
     Write-Host "### 检查主机主动共享安全概况（仅做基础性检测：默认端口、共享文件） ###`n" -ForegroundColor Cyan
 
     Write-Host "--- 检测防火墙是否开启（为了方便查看） ---"  -ForegroundColor Yellow
@@ -723,6 +728,7 @@ function check_share {
 # 事件查询
 function check_key_events {
     
+    Write-Host " "
     Write-Host "### 检查电脑休眠、开关机、程序崩溃等事件 ###`n" -ForegroundColor Cyan
 
     # 查看本地用户及用户组
@@ -740,18 +746,18 @@ function check_key_events {
 
     powercfg -q SCHEME_BALANCED SUB_SLEEP STANDBYIDLE; powercfg -q SCHEME_BALANCED SUB_BUTTONS | Out-Host
 
-    Write-Host "--- 最近一周的系统启动频次 ---"  -ForegroundColor Yellow
+    Write-Host "--- 最近两周的系统重启频次 ---"  -ForegroundColor Yellow
     $result = Get-WinEvent -FilterHashtable @{
         LogName      = 'System'
         ProviderName = 'Microsoft-Windows-Kernel-General'
-        Id           = 12 # 相对于13，12是系统启动，13是系统关闭；就577来说，12更能准确记录系统启动频次。
-        StartTime    = (Get-Date).AddDays(-7)
+        Id           = 577 # 相对于13，12是系统启动，13是系统关闭；就577来说，12更能准确记录系统启动频次。
+        StartTime    = (Get-Date).AddDays(-14)
     } -ErrorAction SilentlyContinue
 
     if ($result) {
         $result | Out-Host
         $sum = ($result | Measure-Object).Count
-        Write-Host "最近7天系统启动总计:"$sum, "`n最近7天平均每天启动系统次数:"$([math]::Round($sum / 7, 2)) -ForegroundColor Green
+        Write-Host "重启系统总计:"$sum, "`n平均每天重启次数:"$([math]::Round($sum / 14, 2)) -ForegroundColor Green
 
         # 计算每天的开关机次数并找到最大值
         $dateCounts = @{}
@@ -769,11 +775,11 @@ function check_key_events {
         # 找到最大值
         $maxDate = ($dateCounts.GetEnumerator() | Sort-Object -Property Value -Descending | Select-Object -First 1).Name
         $maxCount = $dateCounts[$maxDate]
-        Write-Host "启动系统最多频次的日期: $maxDate, 以及启动次数: $maxCount" -ForegroundColor Cyan
+        Write-Host "重启系统最多次数的日期: $maxDate, 以及重启次数: $maxCount" -ForegroundColor Cyan
 
     }
     else {
-        Write-Host "没有找到最近7天的启动数据。"-ForegroundColor DarkRed
+        Write-Host "没有找到最近14天的重启数据。"-ForegroundColor DarkRed
     }
 
     # 41 非正常开机，6008 异常关机
@@ -785,12 +791,12 @@ function check_key_events {
     } -ErrorAction SilentlyContinue
 
     if ($result) {
+        # $result | Out-GridView -Title "最近2周内是否存在非正常开机与异常关机"
         $result | Out-Host
     }
     else {
         Write-Host "最近2周开关机，正常。`n" -ForegroundColor Green
     }
-        
 
     Write-Host "--- 最近7天内是否存在蓝屏或崩溃现象 ---`n"  -ForegroundColor Yellow
     # https://social.microsoft.com/Forums/zh-CN/068ccdf2-96f4-484d-a5cb-df05f59e1959/win1020107202142659730475221202010720214id1000652921001?forum=window7betacn
@@ -845,7 +851,8 @@ function check_key_events {
 # 生成基线检查报表
 function try_csv_xlsx {
 
-    Write-Host '### 生成"设备信息"、"事件汇总"、"重启频次"、"Windows defender威胁概况"分析报表 ###' -ForegroundColor Cyan; Write-Host " "
+    Write-Host " "
+    Write-Host '### 生成"设备信息"、"事件汇总"、"Windows defender威胁概况"分析报表 ###' -ForegroundColor Cyan; Write-Host " "
 
     # 检查 PowerShell 版本是否支持 ImportExcel 模块
     if ($PSVersionTable.PSVersion.Major -lt 5) {
@@ -870,29 +877,31 @@ function try_csv_xlsx {
     $desktop_path = [Environment]::GetFolderPath('Desktop')
     $report_path = Join-Path $desktop_path ((Get-Date).ToString('yyyy-MM-dd') + '基线检查报表.xlsx')
 
-    Write-Host "`n设备信息、当天目前的事件统计、近一月工作日重启频次，表项正在生成中，请耐心等待几分钟时间... `n" -ForegroundColor Yellow
+    Write-Host "`n设备信息、当天目前的事件统计等项，正在生成中，请耐心等待几分钟时间... `n" -ForegroundColor Yellow
 
     # 驱动信息
+    #  -ErrorAction SilentlyContinue
     $result = Get-PnpDevice | Select-Object `
         Class, FriendlyName, Problem, `
         Status, ConfigManagerUserConfig, SystemName, `
-        ClassGuid, Manufacturer, Present, Service -ErrorAction SilentlyContinue
+        ClassGuid, Manufacturer, Present, Service
 
     if ($result) {
         $result | Export-Excel -Path $report_path -WorksheetName "设备信息"
     }
     else {
-        Write-Host '未查询到任何匹配信息，请检查账户权限、事件日志等设置问题。' -ForegroundColor Yellow
+        Write-Host '未查询到任何匹配信息，请检查账户权限、事件日志等设置问题。'
     }
 
-    # 当天截止脚本运行时间的事件统计
+    Write-Host "`n 驱动信息汇总已完成，正在生成当天截止脚本运行时间的事件统计`n" -ForegroundColor Yellow
+
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
         StartTime = (Get-Date).Date
     }   | Select-Object `
         Message, Id, Level, 
     ProviderName, LogName, MachineName, UserId,
-    TimeCreated, ContainerLog, LevelDisplayName, TaskDisplayName -ErrorAction SilentlyContinue
+    TimeCreated, ContainerLog, LevelDisplayName, TaskDisplayName
 
     if ($result) {
         $result | Export-Excel -Path $report_path -WorksheetName "事件汇总"
@@ -901,61 +910,38 @@ function try_csv_xlsx {
         Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Yellow
     }
 
-    # 近一月工作日重启系统统计
-    $result = Get-WinEvent -FilterHashtable @{
-        LogName      = 'System'
-        ProviderName = 'Microsoft-Windows-Kernel-Power'
-        Id           = 577
-        StartTime    = (Get-Date).AddDays(-25)
-    } -ErrorAction SilentlyContinue
-
-    if ($result) {
-
-        $result | Select-Object Message, Id, Level, ProviderName, ProviderId, 
-        LogName, MachineName, TimeCreated, LevelDisplayName `
-        | Export-Excel -Path $report_path -WorksheetName "重启频次"
-
-    }
-    else {
-        Write-Host '未找到任何匹配的事件，故不记录"唤醒频次"该项报表。' 
-    }
-
-    Write-Host "`n设备信息、当天目前的事件统计、一周工作日唤醒频次，表项已生成 `n" -ForegroundColor Green
-
     # sqllite 结合 Get-MpThreatDetection 和 Get-MpThreat 才能得到理想数据。
     # 正好先用Excel来导入 Get-MpThreatDetection 与 Get-MpThreat 安全信息统计。
-
-    Write-Host "`n最后阶段，30天内 Windows defender 威胁概况表项生成中... `n" -ForegroundColor Yellow
-
+    
     # 最近 30 天内的威胁检测记录
+    Write-Host '正在检测已存威胁，并生成相关月度报告（如果没有，将不生成该项报表）' -ForegroundColor Yellow
+    
     $result = Get-MpThreatDetection `
     | Select-Object ActionSuccess, CurrentThreatExecutionStatusID, `
         DetectionID, DetectionSourceTypeID,	DomainUser,	InitialDetectionTime, LastThreatStatusChangeTime, `
-        ProcessName, ThreatID, ThreatStatusID -ErrorAction SilentlyContinue
+        ProcessName, ThreatID, ThreatStatusID
 
     if ($result) {
         $result | Export-Excel -Path $report_path -WorksheetName "威胁记录检测"
     }
     else {
-        Write-Host '未找到任何匹配的事件，故不记录"威胁记录检测"该项报表。' 
+        Write-Host '未检测出威胁事件。可能原因：第三方杀软接管，或者未开启 Windows defender。'
     }           
 
     # 最近 30 天内的威胁类别
     $result = Get-MpThreat `
     | Select-Object CategoryID, DidThreatExecute, IsActive, RollupStatus, `
-        SeverityID, ThreatID, ThreatName -ErrorAction SilentlyContinue
+        SeverityID, ThreatID, ThreatName
 
     if ($result) {
         $result | Export-Excel -Path $report_path -WorksheetName "威胁类别详情"
     }
     else {
-        Write-Host '未找到任何匹配的事件，故不记录"威胁类别详情"该项报表。'
+        Write-Host '未检测出威胁事件。可能原因：第三方杀软接管，或者未开启 Windows defender。'
     }    
     
-    Write-Host "`n最后阶段，Windows defender威胁概况表项，已生成 `n" -ForegroundColor Yellow
-
     Write-Host " "
-    Write-Host '### 系统桌面位置，基线检查报表已生成。' -ForegroundColor Green; Write-Host "`n"
+    Write-Host '### 基线检查报表已生成，请在桌面位置查阅。' -ForegroundColor Green; Write-Host "`n"
 
 }
 
