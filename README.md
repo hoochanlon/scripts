@@ -8,10 +8,8 @@
 
 免责声明：所有脚本与指令、病毒分析文章，仅面向研究与学习交流之用，切勿用于其他非法用途！
 
-## 小提示
-
 <details>
-<summary><B> 点击详情 </B></summary>
+<summary><B> other </B></summary>
 
 Linux迁移 Windows command 工具：
 
@@ -125,6 +123,63 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
  1. 执行1～6选项的所有功能
  1. 生成驱动检查、当天事件、一周内系统唤醒频次、月度威胁概况分析报表
  
+</details>
+
+## Linux毛坯房安全改造
+
+<details>
+<summary><B> 点击详情 </B></summary>
+
+### 一键搞定SSH登录、用户密码策略配置、Ban IP配置 [图文版](https://www.52pojie.cn/thread-1749877-1-1.html)
+
+* SSH登录: 免密的密钥模式、心跳长时间连接，客户端不掉线 
+* 密码策略: 不限特殊字符、大小写，并支持4～5位长度下限
+* Ban IP: 除自己IP外，30秒内短时间三次输错密码，永久封禁IP。
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_ssh_n_ban.sh)"
+```
+
+SSH单项配置：一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。（单项部分是开启限定自己IP访问的，即 AllowUsers）
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ssh.sh)"
+```
+
+fail2ban单项配置：一键fail2ban从下载到安装及生成配置与启动服务。(再次允许单项部分可以刷新自己公网IP配置)
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ban.sh)"
+```
+
+### 一键搞定Linux自定义创建具有管理员权限的用户 [图文版](https://www.52pojie.cn/thread-1749877-1-1.html)
+
+* 自定义用户名
+* su、sudo及wheel组成员免密
+* sshd_config锁root远程登录，提高安全性
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/diy_add_wheel.sh)"
+```
+
+### 一键搞定FTP [图文版](https://www.52pojie.cn/thread-1753070-1-1.html)
+
+* 共享目录： /var/ftp/share 
+* 限制越权出逃共享访问，可读写。
+* 安全，私有化，限定自己的公网IP访问。
+
+不输密码版，用户名:ftpuser 密码：P@ssw0rd
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_vsftpd.sh)"
+```
+
+自定义用户版
+
+```
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_vsftpd.sh)"
+```
+
 </details>
 
 ## 因企业硬性需求
@@ -323,63 +378,6 @@ Powershell从XchangePDF Editor下载安装到生成许可证
 
 ```
 curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
-```
-
-</details>
-
-## Linux毛坯房安全改造
-
-<details>
-<summary><B> 点击详情 </B></summary>
-
-### 一键搞定SSH登录、用户密码策略配置、Ban IP配置 [图文版](https://www.52pojie.cn/thread-1749877-1-1.html)
-
-* SSH登录: 免密的密钥模式、心跳长时间连接，客户端不掉线 
-* 密码策略: 不限特殊字符、大小写，并支持4～5位长度下限
-* Ban IP: 除自己IP外，30秒内短时间三次输错密码，永久封禁IP。
-
-```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_ssh_n_ban.sh)"
-```
-
-SSH单项配置：一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。（单项部分是开启限定自己IP访问的，即 AllowUsers）
-
-```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ssh.sh)"
-```
-
-fail2ban单项配置：一键fail2ban从下载到安装及生成配置与启动服务。(再次允许单项部分可以刷新自己公网IP配置)
-
-```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ban.sh)"
-```
-
-### 一键搞定Linux自定义创建具有管理员权限的用户 [图文版](https://www.52pojie.cn/thread-1749877-1-1.html)
-
-* 自定义用户名
-* su、sudo及wheel组成员免密
-* sshd_config锁root远程登录，提高安全性
-
-```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/diy_add_wheel.sh)"
-```
-
-### 一键搞定FTP [图文版](https://www.52pojie.cn/thread-1753070-1-1.html)
-
-* 共享目录： /var/ftp/share 
-* 限制越权出逃共享访问，可读写。
-* 安全，私有化，限定自己的公网IP访问。
-
-不输密码版，用户名:ftpuser 密码：P@ssw0rd
-
-```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_vsftpd.sh)"
-```
-
-自定义用户版
-
-```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_vsftpd.sh)"
 ```
 
 </details>
