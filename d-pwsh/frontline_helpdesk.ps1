@@ -21,7 +21,7 @@ function sel_man {
     Write-Host " [4] 检查设备安全性、近期升级补丁、定时任务项" -ForegroundColor Green
     Write-Host " [5] 检查主机主动共享协议相关信息" -ForegroundColor Green
     Write-Host " [6] 检查电脑休眠、重启频次、异常关机、程序崩溃等信息" -ForegroundColor Green
-    Write-Host " [7] 执行1～6选项的所有功能" -ForegroundColor Green
+    Write-Host " [7] 执行1～6选项的所有功能" -ForegroundColor Green -BackgroundColor DarkGray
     Write-Host ' [8] 生成"驱动检查"、"当天警告事件"、"logon/logoff 活动记录"、"月度已存威胁概况"分析报表' -ForegroundColor Green
     Write-Host " [9] 查看指导建议与开发说明 `n" -ForegroundColor Green
     Write-Host "`**************************************************************`n" -ForegroundColor Green
