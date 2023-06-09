@@ -921,8 +921,8 @@ function try_csv_xlsx {
         LogName   = 'Application', 'System', 'Security'
         StartTime = (Get-Date).Date
     } | Where-Object { $_.LevelDisplayName -in "错误", "警告", "关键"
-    } | Select-Object Id, Level, ProviderName, LogName, `
-        TimeCreated, LevelDisplayName, Message, TaskDisplayName
+    } | Select-Object Message, Id, Level, ProviderName, LogName, `
+        TimeCreated, LevelDisplayName
 
     if ($result) {
         $result | Export-Excel -Path $report_path -WorksheetName "事件汇总"
