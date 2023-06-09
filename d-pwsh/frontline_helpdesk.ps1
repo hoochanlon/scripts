@@ -15,14 +15,14 @@ function sel_man {
     Write-Host "3. 该脚本信息量较大，建议全屏使用；其他见：" -ForegroundColor Green -NoNewLine
     Write-Host "https://github.com/hoochanlon/ihs-simple `n" -ForegroundColor Blue
     
-    Write-Host " [1] 检查IP与网络设备连接状态" -ForegroundColor Green
-    Write-Host " [2] 检查打印机状态" -ForegroundColor Green
+    Write-Host " [1] 检查IP与网络设备连接近况" -ForegroundColor Green
+    Write-Host " [2] 检查打印机、打印池、扫描仪状态" -ForegroundColor Green
     Write-Host " [3] 检查硬盘、CPU、内存、显卡等基础驱动信息" -ForegroundColor Green
     Write-Host " [4] 检查设备安全性、近期升级补丁、定时任务项" -ForegroundColor Green
     Write-Host " [5] 检查主机主动共享协议相关信息" -ForegroundColor Green
     Write-Host " [6] 检查电脑休眠、重启频次、异常关机、程序崩溃等信息" -ForegroundColor Green
     Write-Host " [7] 执行1～6选项的所有功能" -ForegroundColor Green
-    Write-Host " [8] 生成驱动检查、当天事件、月度已存威胁概况分析报表" -ForegroundColor Green
+    Write-Host ' [8] 生成"驱动检查"、"当天警告事件"、"logon/logoff 活动记录"、"月度已存威胁概况"分析报表' -ForegroundColor Green
     Write-Host " [9] 查看指导建议与开发说明 `n" -ForegroundColor Green
     Write-Host "`**************************************************************`n" -ForegroundColor Green
     
@@ -275,7 +275,6 @@ function dev_man {
         关于 Get-MpThreatDetection 的详细属性信息，可参考：https://powershell.one/wmi/root/microsoft/windows/defender/msft_mpthreatdetection
         ' -ForegroundColor Green
 
-
     Write-Host "`n#结语`n" -ForegroundColor  Cyan
 
     Write-Host "PowerShell是一个强大的脚本语言，可实现多种系统级操作功能，对自动化管理Windows系统十分有利。" 
@@ -310,6 +309,7 @@ function dev_man {
     Write-Host "   registry-finder：" -ForegroundColor Yellow -nonewline; Write-Host "https://registry-finder.com" -ForegroundColor Blue
 
     Write-Host "`n* 事件ID分析工具：" -ForegroundColor Yellow
+    Write-Host "    Win10_Events_ID_useful：" -ForegroundColor Yellow -nonewline; Write-Host "https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx" -ForegroundColor Blue
     Write-Host "   myeventlog：" -ForegroundColor Yellow -nonewline; Write-Host "https://www.myeventlog.com/search/find" -ForegroundColor Blue
     Write-Host "   ultimatewindowssecurity：" -ForegroundColor Yellow -nonewline; Write-Host "https://www.ultimatewindowssecurity.com/securitylog/encyclopedia" -ForegroundColor Blue
    
@@ -370,7 +370,7 @@ function dev_man {
 
 "@ -ForegroundColor DarkGreen
 
-<# ------- 倒计时
+    <# ------- 倒计时
 
     # 就两位数吧，折中方案，当小于100秒时，或到了1分钟时采用
     # $t = 11
@@ -417,10 +417,28 @@ function check_ip {
     else {
         Write-Host "此网络存在异常。`n" -ForegroundColor DarkRed
     }
+
+    Write-Host "--- 检查近期是否存在IP冲突 ---`n"  -ForegroundColor Yellow
+    
+    $result = Get-WinEvent -FilterHashtable @{
+        LogName   = 'System'
+        StartTime = (Get-Date).Date.Day(-7)
+    } | Where-Object {
+        ($_.Id -in 4199)
+    } | Select-Object Id, Level, ProviderName, LogName, `
+        TimeCreated, LevelDisplayName, TaskDisplayName
+    
+    if ($result) {
+        $result | Out-Host
+    }
+    else {
+        Write-Host "主机近期没有存在IP冲突事件。`n" -ForegroundColor Green
+    }
+
     Write-Host "### 检查网络基本连接情况，已完成`n" -ForegroundColor Green
 }
 
-# 检查打印机状态详情（新增：显示屏功能）
+# 检查打印机状态详情
 function check_printer {
 
     Write-Host " "
@@ -428,6 +446,9 @@ function check_printer {
 
     Write-Host "--- 检查打印机服务，以及连接打印机数量 ---"  -ForegroundColor Yellow
     Get-Service | findstr "Spooler" | Out-Host
+
+    Write-Host "--- 检查打印池是否有文件 ---"  -ForegroundColor Yellow
+    Get-ChildItem C:\Windows\System32\spool\PRINTERS
 
     $result = Get-Printer | Select-Object Name, PrinterStatus
     if ($result) {
@@ -852,7 +873,7 @@ function check_key_events {
 function try_csv_xlsx {
 
     Write-Host " "
-    Write-Host '### 生成"设备信息"、"事件汇总"、"Windows defender威胁概况"分析报表 ###' -ForegroundColor Cyan; Write-Host " "
+    Write-Host '### 生成"设备信息"、"事件汇总"、"活动记录"、"Windows defender威胁概况"分析报表 ###' -ForegroundColor Cyan; Write-Host " "
 
     # 检查 PowerShell 版本是否支持 ImportExcel 模块
     if ($PSVersionTable.PSVersion.Major -lt 5) {
@@ -877,7 +898,7 @@ function try_csv_xlsx {
     $desktop_path = [Environment]::GetFolderPath('Desktop')
     $report_path = Join-Path $desktop_path ((Get-Date).ToString('yyyy-MM-dd') + '基线检查报表.xlsx')
 
-    Write-Host "`n设备信息、当天目前的事件统计等项，正在生成中，请耐心等待几分钟时间... `n" -ForegroundColor Yellow
+    Write-Host "`n设备信息、当天警告事件，正在生成中，请耐心等待几分钟时间... `n" -ForegroundColor Yellow
 
     # 驱动信息
     #  -ErrorAction SilentlyContinue
@@ -895,16 +916,33 @@ function try_csv_xlsx {
 
     Write-Host "`n 驱动信息汇总已完成，正在生成当天截止脚本运行时间的事件统计`n" -ForegroundColor Yellow
 
+    # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
         StartTime = (Get-Date).Date
-    }   | Select-Object `
-        Message, Id, Level, 
-    ProviderName, LogName, MachineName, UserId,
-    TimeCreated, ContainerLog, LevelDisplayName, TaskDisplayName
+    } | Where-Object { $_.LevelDisplayName -in "错误", "警告", "关键"
+    } | Select-Object Id, Level, ProviderName, LogName, `
+        TimeCreated, LevelDisplayName, Message, TaskDisplayName
 
     if ($result) {
         $result | Export-Excel -Path $report_path -WorksheetName "事件汇总"
+    }
+    else {
+        Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Yellow
+    }
+
+    Write-Host "`n 追加：一周 logon/logoff 活动时间记录`n" -ForegroundColor Yellow
+    
+    $result = Get-WinEvent -FilterHashtable @{
+        LogName   = 'Application', 'System', 'Security'
+        StartTime = (Get-Date).AddDays(-7)
+    } | Where-Object {
+        ($_.Id -in 4648, 4634)
+    } |Select-Object MachineName, Id, Level, ProviderName, LogName,  `
+    TimeCreated, ContainerLog, LevelDisplayName, TaskDisplayName
+
+    if ($result) {
+        $result | Export-Excel -Path $report_path -WorksheetName "活动记录"
     }
     else {
         Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Yellow
@@ -962,7 +1000,7 @@ function select_option {
         $key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown").VirtualKeyCode
 
         switch ($key) {
-            { $_ -in 49,97 } {
+            { $_ -in 49, 97 } {
                 # 数字键 1 和 数字键小键盘 1
                 if (!$has_checked_sys) {
                     check_sys
@@ -970,7 +1008,7 @@ function select_option {
                 }
                 check_ip
             }
-            { $_ -in 50,98 } {
+            { $_ -in 50, 98 } {
                 # 数字键 2 和 数字键小键盘 2
                 if (!$has_checked_sys) {
                     check_sys
@@ -978,7 +1016,7 @@ function select_option {
                 }
                 check_printer
             }
-            { $_ -in 51,99 } {
+            { $_ -in 51, 99 } {
                 # 数字键 3 和 数字键小键盘 3
                 if (!$has_checked_sys) {
                     check_sys
@@ -986,7 +1024,7 @@ function select_option {
                 }
                 check_disk_cpu_mem
             }
-            { $_ -in 52,100 } {
+            { $_ -in 52, 100 } {
                 # 数字键 4 和 数字键小键盘 4
                 if (!$has_checked_sys) {
                     check_sys
@@ -994,7 +1032,7 @@ function select_option {
                 }
                 check_fw
             }
-            { $_ -in 53,101 } {
+            { $_ -in 53, 101 } {
                 # 数字键 5 和 数字键小键盘 5
                 if (!$has_checked_sys) {
                     check_sys
@@ -1002,7 +1040,7 @@ function select_option {
                 }
                 check_share
             }
-            { $_ -in 54,102 } {
+            { $_ -in 54, 102 } {
                 # 数字键 6 和 数字键小键盘 6
                 if (!$has_checked_sys) {
                     check_sys
@@ -1010,7 +1048,7 @@ function select_option {
                 }
                 check_key_events
             }
-            { $_ -in 55,103 } {
+            { $_ -in 55, 103 } {
                 # 数字键 7 和 数字键小键盘 7
                 if (!$has_checked_sys) {
                     check_sys
@@ -1022,7 +1060,7 @@ function select_option {
                 check_disk_cpu_mem
                 check_key_events
             }
-            { $_ -in 56,104 } {
+            { $_ -in 56, 104 } {
                 # 数字键 8 和 数字键小键盘 8
                 if (!$has_checked_sys) {
                     check_sys
@@ -1030,7 +1068,7 @@ function select_option {
                 }
                 try_csv_xlsx
             }
-            { $_ -in 57,105 } {
+            { $_ -in 57, 105 } {
                 # 数字键 9 和 数字键小键盘 9
                 dev_man
                 if (!$has_checked_sys) {
