@@ -87,6 +87,7 @@ function dev_man {
     Write-Host "`n* 事件ID查询：" -ForegroundColor Yellow
     Write-Host "   https://www.ultimatewindowssecurity.com/securitylog/encyclopedia" -ForegroundColor Blue
     Write-Host "   https://www.myeventlog.com/search/find" -ForegroundColor Blue
+    Write-Host "   https://www.chicagotech.net/wineventid.htm" -ForegroundColor Blue
     Write-Host "`n* 安全标识符查询：" -ForegroundColor Yellow -NoNewline
     Write-Host "https://rootclay.gitbook.io/windows-access-control/qi-an-quan-biao-shi-fu `n" -ForegroundColor Blue  
     Write-Host "`n* PowerShell模块组件线索查询：" -ForegroundColor Yellow
