@@ -861,7 +861,7 @@ function check_key_events {
     }
     
     $events = Get-WinEvent -FilterHashtable $filter -ErrorAction SilentlyContinue `
-    | Where-Object { $_.LevelDisplayName -eq "警告" -or $_.LevelDisplayName -eq "错误" } 
+    | Where-Object { $_.LevelDisplayName -in "错误", "警告", "关键" } 
 
     if ($events) {
         $events | Out-GridView -Title "近期及当前异常警告和错误事件分析表"
