@@ -767,20 +767,23 @@ function check_key_events {
 
     powercfg -q SCHEME_BALANCED SUB_SLEEP STANDBYIDLE; powercfg -q SCHEME_BALANCED SUB_BUTTONS | Out-Host
 
-    Write-Host "--- 最近两周的系统重启频次 ---"  -ForegroundColor Yellow
+    Write-Host "--- 最近两周的重启频次 ---"  -ForegroundColor Yellow
+
+    # 参考：[codeantenna - windows系统日志开关机、重启日志事件](https://codeantenna.com/a/QEcwIkyexa)
+    # 当有多个ID描述一个词汇时，注意检查 Message 属性，对其的细微区分
     $result = Get-WinEvent -FilterHashtable @{
         LogName      = 'System'
         ProviderName = 'Microsoft-Windows-Kernel-General'
-        Id           = 577 # 相对于13，12是系统启动，13是系统关闭；就577来说，12更能准确记录系统启动频次。
+        Id           = 1074 
         StartTime    = (Get-Date).AddDays(-14)
     } -ErrorAction SilentlyContinue
 
     if ($result) {
         $result | Out-Host
         $sum = ($result | Measure-Object).Count
-        Write-Host "重启系统总计:"$sum, "`n平均每天重启次数:"$([math]::Round($sum / 14, 2)) -ForegroundColor Green
+        Write-Host "重启总计:"$sum, "次；平均每天重启:"$([math]::Round($sum / 14, 2)),"次" -ForegroundColor Green
 
-        # 计算每天的开关机次数并找到最大值
+        # 计算每天的重启次数并找到最大值
         $dateCounts = @{}
         foreach ($event in $result) {
             # 转成字符串，只保留日期部分
@@ -796,7 +799,7 @@ function check_key_events {
         # 找到最大值
         $maxDate = ($dateCounts.GetEnumerator() | Sort-Object -Property Value -Descending | Select-Object -First 1).Name
         $maxCount = $dateCounts[$maxDate]
-        Write-Host "重启系统最多次数的日期: $maxDate, 以及重启次数: $maxCount" -ForegroundColor Cyan
+        Write-Host "重启最多次数的日期: $maxDate, 以及该天重启次数: $maxCount" -ForegroundColor Cyan
 
     }
     else {
@@ -816,7 +819,7 @@ function check_key_events {
         $result | Out-Host
     }
     else {
-        Write-Host "最近2周开关机，正常。`n" -ForegroundColor Green
+        Write-Host "最近2周开关机操作，正常。`n" -ForegroundColor Green
     }
 
     Write-Host "--- 最近7天内是否存在蓝屏或崩溃现象 ---`n"  -ForegroundColor Yellow
