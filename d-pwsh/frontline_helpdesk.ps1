@@ -422,7 +422,7 @@ function check_ip {
     
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'System'
-        StartTime = (Get-Date).Date.Day(-7)
+        StartTime = (Get-Date).Date.AddDays(-14)
     } | Where-Object {
         ($_.Id -in 4199)
     } | Select-Object Id, Level, ProviderName, LogName, `
@@ -952,7 +952,7 @@ function try_csv_xlsx {
     # 正好先用Excel来导入 Get-MpThreatDetection 与 Get-MpThreat 安全信息统计。
     
     # 最近 30 天内的威胁检测记录
-    Write-Host '正在检测已存威胁，并生成相关月度报告（如果没有，将不生成该项报表）' 
+    Write-Host '正在检测已存威胁，并生成相关月度的报告（如果没有，将不生成该项报表）' 
     
     $result = Get-MpThreatDetection `
     | Select-Object ActionSuccess, CurrentThreatExecutionStatusID, `
