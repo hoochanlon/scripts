@@ -114,15 +114,16 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
  irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/frontline_helpdesk.ps1|iex
 ```
  
- 1. 检查IP与网络设备连接状态
- 1. 检查打印机状态
- 1. 检查硬盘、CPU、内存、显卡等基础驱动信息
- 1. 检查设备安全性、近期升级补丁、定时任务项
- 1. 检查主机主动共享协议相关信息
- 1. 检查电脑休眠、开关机、程序崩溃等信息
- 1. 执行1～6选项的所有功能
- 1. 生成驱动检查、当天事件、一周内系统唤醒频次、月度威胁概况分析报表
- 
+1. 检查IP与网络设备连接近况
+1. 检查打印机、打印池、扫描仪状态
+1. 检查硬盘、CPU、内存、显卡等基础驱动信息
+1. 检查设备安全性、近期升级补丁、定时任务项
+1. 检查主机主动共享协议相关信息
+1. 检查电脑休眠、重启频次、异常关机、程序崩溃等信息
+1. 执行1～6选项的所有功能
+1. 生成"驱动检查"、"当天警告事件"、"logon/logoff 活动记录"、"月度已存威胁概况"分析报表
+1. 查看指导建议与开发说明 
+
 </details>
 
 Linux基线检查（PR）见：[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)
