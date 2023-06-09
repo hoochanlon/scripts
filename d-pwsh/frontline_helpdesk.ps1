@@ -773,10 +773,10 @@ function check_key_events {
     # 当有多个ID描述一个词汇时，注意检查 Message 属性，对其的细微区分
     $result = Get-WinEvent -FilterHashtable @{
         LogName      = 'System'
-        ProviderName = 'Microsoft-Windows-Kernel-General'
+        ProviderName = 'User32'
         Id           = 1074 
         StartTime    = (Get-Date).AddDays(-14)
-    } -ErrorAction SilentlyContinue
+    } 
 
     if ($result) {
         $result | Out-Host
