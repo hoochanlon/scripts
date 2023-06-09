@@ -911,7 +911,7 @@ function try_csv_xlsx {
         ClassGuid, Manufacturer, Present, Service
 
     if ($result) {
-        $result | Export-Excel -Path $report_path -WorksheetName "设备信息"
+        $result | Export-Excel -Path $report_path -WorksheetName "载体驱动信息"
     }
     else {
         Write-Host '未查询到任何匹配信息，请检查账户权限、事件日志等设置问题。'
@@ -928,7 +928,7 @@ function try_csv_xlsx {
         TimeCreated, LevelDisplayName
 
     if ($result) {
-        $result | Export-Excel -Path $report_path -WorksheetName "事件汇总"
+        $result | Export-Excel -Path $report_path -WorksheetName '预警事件汇总'
     }
     else {
         Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Red
@@ -945,7 +945,7 @@ function try_csv_xlsx {
     TimeCreated, ContainerLog, LevelDisplayName, TaskDisplayName
 
     if ($result) {
-        $result | Export-Excel -Path $report_path -WorksheetName "活动记录"
+        $result | Export-Excel -Path $report_path -WorksheetName "主机出录活动"
     }
     else {
         Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Red
