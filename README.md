@@ -114,6 +114,8 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
  irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/frontline_helpdesk.ps1|iex
 ```
  
+功能概览：
+ 
 1. 检查IP与网络设备连接近况
 1. 检查打印机、打印池、扫描仪状态
 1. 检查硬盘、CPU、内存、显卡等基础驱动信息
