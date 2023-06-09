@@ -914,7 +914,7 @@ function try_csv_xlsx {
         Write-Host '未查询到任何匹配信息，请检查账户权限、事件日志等设置问题。'
     }
 
-    Write-Host "`n 驱动信息汇总已完成，正在生成当天截止脚本运行时间的事件统计`n" -ForegroundColor Yellow
+    Write-Host "`n 驱动信息汇总已完成，正在生成截止目前的当天重要事件统计`n"
 
     # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
     $result = Get-WinEvent -FilterHashtable @{
@@ -928,10 +928,10 @@ function try_csv_xlsx {
         $result | Export-Excel -Path $report_path -WorksheetName "事件汇总"
     }
     else {
-        Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Yellow
+        Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Red
     }
 
-    Write-Host "`n 追加：一周 logon/logoff 活动时间记录`n" -ForegroundColor Yellow
+    Write-Host "`n 追加：一周 logon/logoff 活动时间记录`n"
     
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
@@ -945,14 +945,14 @@ function try_csv_xlsx {
         $result | Export-Excel -Path $report_path -WorksheetName "活动记录"
     }
     else {
-        Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Yellow
+        Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Red
     }
 
     # sqllite 结合 Get-MpThreatDetection 和 Get-MpThreat 才能得到理想数据。
     # 正好先用Excel来导入 Get-MpThreatDetection 与 Get-MpThreat 安全信息统计。
     
     # 最近 30 天内的威胁检测记录
-    Write-Host '正在检测已存威胁，并生成相关月度报告（如果没有，将不生成该项报表）' -ForegroundColor Yellow
+    Write-Host '正在检测已存威胁，并生成相关月度报告（如果没有，将不生成该项报表）' 
     
     $result = Get-MpThreatDetection `
     | Select-Object ActionSuccess, CurrentThreatExecutionStatusID, `
@@ -963,7 +963,7 @@ function try_csv_xlsx {
         $result | Export-Excel -Path $report_path -WorksheetName "威胁记录检测"
     }
     else {
-        Write-Host '未检测出威胁事件。可能原因：第三方杀软接管，或者未开启 Windows defender。'
+        Write-Host '未检测出威胁事件。可能原因：第三方杀软接管，或者未开启 Windows defender。' -ForegroundColor Magenta
     }           
 
     # 最近 30 天内的威胁类别
@@ -975,7 +975,7 @@ function try_csv_xlsx {
         $result | Export-Excel -Path $report_path -WorksheetName "威胁类别详情"
     }
     else {
-        Write-Host '未检测出威胁事件。可能原因：第三方杀软接管，或者未开启 Windows defender。'
+        Write-Host '未检测出威胁事件。可能原因：第三方杀软接管，或者未开启 Windows defender。' -ForegroundColor Magenta
     }    
     
     Write-Host " "
