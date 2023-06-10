@@ -353,7 +353,7 @@ sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com
 macOS终端下载Office for Mac2021 serializer.pkg 激活
 
 ```
-sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/serializer_office_for_mac2021.AppleScript)"
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/office2021.scpt)"
 ```
 
  一键RAR密码爆破 [图文版](https://www.52pojie.cn/thread-1775990-1-1.html)
