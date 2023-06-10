@@ -332,8 +332,8 @@ function dev_man {
     Write-Host " "
 
     Write-Host "n* 推荐好文：`n" -ForegroundColor Yellow
-    Write-Host "[南京农业大学 - Windows操作系统配置安全基线标准与操作指南](https://net.njau.edu.cn/__local/3/30/38/FB38F23775A9BC8DCCF498280E2_5EC87E05_98C4A.pdf)" -ForegroundColor Magenta
-    Write-Host "[freebuf - 等保2.0看这一篇就够了](https://www.freebuf.com/articles/network/344946.html)" -ForegroundColor Magenta
+    Write-Host "    [南京农业大学 - Windows操作系统配置安全基线标准与操作指南](https://net.njau.edu.cn/__local/3/30/38/FB38F23775A9BC8DCCF498280E2_5EC87E05_98C4A.pdf)" -ForegroundColor Magenta
+    Write-Host "    [freebuf - 等保2.0看这一篇就够了](https://www.freebuf.com/articles/network/344946.html)" -ForegroundColor Magenta
 
     Write-Host "`n* IT技术刊文、论坛网站：" -ForegroundColor Yellow
     Write-Host "   superuser：" -ForegroundColor Yellow -nonewline; Write-Host "https://superuser.com" -ForegroundColor Blue
@@ -941,14 +941,15 @@ function try_csv_xlsx {
     Write-Host "`n正在统计五天内截止目前的重要事件，时间较长请耐心等待...`n" -ForegroundColor Yellow
     # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
     # 后续参考：https://learn.microsoft.com/en-us/answers/questions/961608/event-id-6155-(the-lsa-package-is-not-signed-as-ex
+
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
         StartTime = (Get-Date).Date.AddDays(-5).AddHours(8.5)
         EndTime   = (Get-Date)
     } | Where-Object {
-        $_.LevelDisplayName -in "错误","关键" `
+        $_.LevelDisplayName -in "错误","关键"
     } | Select-Object Id, Level, ProviderName, LogName, `
-        TimeCreated, LevelDisplayName, Message, TaskDisplayName
+        TimeCreated, LevelDisplayName, Message, @{Name="TaskDisplayName"; Expression={If($_.TaskDisplayName){$_.TaskDisplayName}else{'N/A'}}}
     
     if ($result) {
         $result | Export-Excel -Path $report_path -WorksheetName '预警事件汇总'
