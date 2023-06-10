@@ -934,16 +934,15 @@ function try_csv_xlsx {
     # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
-        StartTime = (Get-Date).Date.AddDays(-3).AddHours(9)
-        EndTime   = (Get-Date).Date.AddDays(-3).AddHours(18)
+        StartTime = (Get-Date).Date.AddDays(-3).AddHours(8.5)
+        EndTime   = (Get-Date)
     } | Where-Object {
         $_.LevelDisplayName -in "错误","警告","关键" `
         -and $_.Id -notin 134, 1014, 8233, 10010, 10016 `
-        -or $_.Id -in 4648, 4634, 4199, 6013, 4803, 4802, 4800, 4801
+        # -or $_.Id -in 4648, 4634, 4199, 6013, 4803, 4802, 4800, 4801
     } | Select-Object Id, Level, ProviderName, LogName, `
         TimeCreated, LevelDisplayName, Message, TaskDisplayName
     
-
     if ($result) {
         $result | Export-Excel -Path $report_path -WorksheetName '预警事件汇总'
     }
