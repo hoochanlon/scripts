@@ -101,13 +101,14 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 
 </details>
 
-## Windows桌面技术基线检查
+## Windows桌面技术基线检查 [图文版](https://www.52pojie.cn/thread-1795749-1-1.html)
+
+首先，确保你的系统已开启 PowerShell，打开PowerShell功能：`Set-ExecutionPolicy RemoteSigned`
 
 <details>
 <summary><B> 点击详情 </B></summary>
  
- 首先，确保你的系统已开启 PowerShell，打开PowerShell功能：`Set-ExecutionPolicy RemoteSigned`
- 
+
  一键使用，本地下载使用转GB2312编码
  
 ```
