@@ -930,7 +930,7 @@ function try_csv_xlsx {
     # } | Select-Object Message, Id, Level, ProviderName, LogName, `
     #     TimeCreated, LevelDisplayName
 
-    Write-Host "`n正在生成三天内截止目前的重要事件统计，时间较长请耐心等待...`n" -ForegroundColor Yellow
+    Write-Host "`n正在统计三天内截止目前的重要事件，时间较长请耐心等待...`n" -ForegroundColor Yellow
     # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
@@ -947,7 +947,7 @@ function try_csv_xlsx {
         $result | Export-Excel -Path $report_path -WorksheetName '预警事件汇总'
     }
     else {
-        Write-Host '近三天事件内没有发现有关“警告”、“错误”、“关键”等报警信息，一切正常。' -ForegroundColor Green
+        Write-Host '近三天没有发现有关“警告”、“错误”、“关键”等报警信息（一切正常，故不生成该项报表）。' -ForegroundColor Green
     }
 
     Write-Host "`n 追加：一周 logon/logoff 活动时间记录`n"
