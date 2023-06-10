@@ -350,6 +350,12 @@ Mac 激活各类相关软件 [图文版](https://github.com/QiuChenly/MyMacsAppC
 sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
 ```
 
+macOS MS-AutoUpdate 一键带走
+
+```
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/no_ms_autoupdate.scpt)"
+```
+
 macOS终端下载Office for Mac2021 serializer.pkg 激活
 
 ```
