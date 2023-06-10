@@ -331,6 +331,10 @@ function dev_man {
     Write-Host "----------------------------------------" -ForegroundColor Yellow
     Write-Host " "
 
+    Write-Host "n* 推荐好文：`n" -ForegroundColor Yellow
+    Write-Host "[南京农业大学 - Windows操作系统配置安全基线标准与操作指南](https://net.njau.edu.cn/__local/3/30/38/FB38F23775A9BC8DCCF498280E2_5EC87E05_98C4A.pdf)" -ForegroundColor Magenta
+    Write-Host "[freebuf - 等保2.0看这一篇就够了](https://www.freebuf.com/articles/network/344946.html)" -ForegroundColor Magenta
+
     Write-Host "`n* IT技术刊文、论坛网站：" -ForegroundColor Yellow
     Write-Host "   superuser：" -ForegroundColor Yellow -nonewline; Write-Host "https://superuser.com" -ForegroundColor Blue
     Write-Host "   minitool news：" -ForegroundColor Yellow -nonewline; Write-Host "https://www.minitool.com/news/automatic-sample-submission-off.html" -ForegroundColor Blue
