@@ -22,7 +22,7 @@ function sel_man {
     Write-Host " [5] 检查主机主动共享协议相关信息" -ForegroundColor Green
     Write-Host " [6] 检查电脑休眠、重启频次、异常关机、程序崩溃等信息" -ForegroundColor Green
     Write-Host " [7] 执行1～6选项的所有功能" -ForegroundColor Green -BackgroundColor DarkGray
-    Write-Host ' [8] 生成"驱动检查"、"3天内预警事件"、"logon/logoff 活动记录"、"月度已存威胁概况"分析报表' -ForegroundColor Green
+    Write-Host ' [8] 生成"驱动检查"、"五天内预警事件"、"logon/logoff 活动记录"、"月度已存威胁概况"分析报表' -ForegroundColor Green
     Write-Host " [9] 查看指导建议与开发说明 `n" -ForegroundColor Green
     Write-Host "`**************************************************************`n" -ForegroundColor Green
     
@@ -928,18 +928,21 @@ function try_csv_xlsx {
     #     StartTime = (Get-Date).Date
     # } | Where-Object { $_.LevelDisplayName -in "错误", "警告", "关键"
     # } | Select-Object Message, Id, Level, ProviderName, LogName, `
-    #     TimeCreated, LevelDisplayName
+    #     TimeCreated, LevelDisplayName | Where-Object {
+    #     $_.LevelDisplayName -in "错误","警告","关键" `
+    #     -and $_.Id -notin 134, 1014, 8233, 10010, 10016, 6155 `
+    #     -or $_.Id -in 4648, 4634, 4199, 6013, 4803, 4802, 4800, 4801
+    # } 
 
-    Write-Host "`n正在统计三天内截止目前的重要事件，时间较长请耐心等待...`n" -ForegroundColor Yellow
+    Write-Host "`n正在统计五天内截止目前的重要事件，时间较长请耐心等待...`n" -ForegroundColor Yellow
     # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
+    # 后续参考：https://learn.microsoft.com/en-us/answers/questions/961608/event-id-6155-(the-lsa-package-is-not-signed-as-ex
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
-        StartTime = (Get-Date).Date.AddDays(-3).AddHours(8.5)
+        StartTime = (Get-Date).Date.AddDays(-5).AddHours(8.5)
         EndTime   = (Get-Date)
     } | Where-Object {
-        $_.LevelDisplayName -in "错误","警告","关键" `
-        -and $_.Id -notin 134, 1014, 8233, 10010, 10016 `
-        # -or $_.Id -in 4648, 4634, 4199, 6013, 4803, 4802, 4800, 4801
+        $_.LevelDisplayName -in "错误","关键" `
     } | Select-Object Id, Level, ProviderName, LogName, `
         TimeCreated, LevelDisplayName, Message, TaskDisplayName
     
@@ -947,7 +950,7 @@ function try_csv_xlsx {
         $result | Export-Excel -Path $report_path -WorksheetName '预警事件汇总'
     }
     else {
-        Write-Host '近三天没有发现有关“警告”、“错误”、“关键”等报警信息（一切正常，故不生成该项报表）。' -ForegroundColor Green
+        Write-Host '近五天内，没有发现有关“警告”、“错误”、“关键”等报警信息（一切正常，故不生成该项报表）。' -ForegroundColor Green
     }
 
     Write-Host "`n 追加：一周 logon/logoff 活动时间记录`n"
@@ -971,7 +974,7 @@ function try_csv_xlsx {
     # 正好先用Excel来导入 Get-MpThreatDetection 与 Get-MpThreat 安全信息统计。
     
     # 最近 30 天内的威胁检测记录
-    Write-Host '正在检测已存威胁，并生成相关月度的报告（如果没有，将不生成该项报表）' 
+    Write-Host '正在检测已存威胁，并生成月度概况报表（如果没有，将不生成该项报表）' 
     
     $result = Get-MpThreatDetection `
     | Select-Object ActionSuccess, CurrentThreatExecutionStatusID, `
