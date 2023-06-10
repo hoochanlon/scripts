@@ -79,6 +79,8 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_rumor_analysis.py)"
 ```
+ 
+urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
 
 对谣言的定义：阿尔波特(Gordom W.Allport)和波兹曼(Leo Postman)最早为谣言下了定义,即谣言是一个与当时事件相关联的命题,是为了使人相信,一般以口传媒介的方式在人们之间流传,但是却缺乏具体的资料以证实其确切性。[^《全媒体时代网络谣言产生的心理机制与治理路径》]
 
