@@ -1,1 +1,2 @@
 *.json linguist-detectable=false
+*.scpt AppleScript
