@@ -22,7 +22,7 @@ function sel_man {
     Write-Host " [5] 检查主机主动共享协议相关信息" -ForegroundColor Green
     Write-Host " [6] 检查电脑休眠、重启频次、异常关机、程序崩溃等信息" -ForegroundColor Green
     Write-Host " [7] 执行1～6选项的所有功能" -ForegroundColor Green -BackgroundColor DarkGray
-    Write-Host ' [8] 生成"驱动检查"、"当天警告事件"、"logon/logoff 活动记录"、"月度已存威胁概况"分析报表' -ForegroundColor Green
+    Write-Host ' [8] 生成"驱动检查"、"3天内预警事件"、"logon/logoff 活动记录"、"月度已存威胁概况"分析报表' -ForegroundColor Green
     Write-Host " [9] 查看指导建议与开发说明 `n" -ForegroundColor Green
     Write-Host "`**************************************************************`n" -ForegroundColor Green
     
@@ -331,9 +331,10 @@ function dev_man {
     Write-Host "----------------------------------------" -ForegroundColor Yellow
     Write-Host " "
 
-    Write-Host "`n* IT技术刊文网站：" -ForegroundColor Yellow
+    Write-Host "`n* IT技术刊文、论坛网站：" -ForegroundColor Yellow
     Write-Host "   superuser：" -ForegroundColor Yellow -nonewline; Write-Host "https://superuser.com" -ForegroundColor Blue
-    Write-Host "   minitool news" -ForegroundColor Yellow -nonewline; Write-Host "https://www.minitool.com/news/automatic-sample-submission-off.html" -ForegroundColor Blue
+    Write-Host "   minitool news：" -ForegroundColor Yellow -nonewline; Write-Host "https://www.minitool.com/news/automatic-sample-submission-off.html" -ForegroundColor Blue
+    Write-Host "   stack overflow：" -ForegroundColor Yellow -nonewline; Write-Host "https://stackoverflow.com" -ForegroundColor Blue
     Write-Host "   吾爱破解" -ForegroundColor Yellow -nonewline; Write-Host "https://www.52pojie.cn/forum-10-1.html" -ForegroundColor Blue
     Write-Host "   先知社区" -ForegroundColor Yellow -nonewline; Write-Host "https://xz.aliyun.com/search?keyword=thinkphp" -ForegroundColor Blue
     Write-Host "   freebuf：" -ForegroundColor Yellow -nonewline; Write-Host "https://www.freebuf.com" -ForegroundColor Blue
@@ -776,7 +777,7 @@ function check_key_events {
         LogName      = 'System'
         ProviderName = 'User32'
         Id           = 1074 
-        StartTime    = (Get-Date).AddDays(-14)
+        StartTime    = (Get-Date).Date.AddDays(-14)
     } 
 
     if ($result) {
@@ -812,7 +813,7 @@ function check_key_events {
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'System'
         Id        = 41, 6008
-        StartTime = (Get-Date).AddDays(-14)
+        StartTime = (Get-Date).Date.AddDays(-14)
     } -ErrorAction SilentlyContinue
 
     if ($result) {
@@ -828,7 +829,7 @@ function check_key_events {
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'System'
         Id        = 1001 # 事件ID 1001对应多个LogName，而每个LogName对1001定位的级别，也各不相同。
-        StartTime = (Get-Date).AddDays(-7)
+        StartTime = (Get-Date).Date.AddDays(-7)
     } -ErrorAction SilentlyContinue
 
     if ($result) {
@@ -902,7 +903,7 @@ function try_csv_xlsx {
     $desktop_path = [Environment]::GetFolderPath('Desktop')
     $report_path = Join-Path $desktop_path ((Get-Date).ToString('yyyy-MM-dd') + '基线检查报表.xlsx')
 
-    Write-Host "`n设备信息、当天警告事件，正在生成中，请耐心等待几分钟时间... `n" -ForegroundColor Yellow
+    Write-Host "`n设备信息、预警事件汇总，正在生成中，请耐心等待几分钟时间... `n" -ForegroundColor Yellow
 
     # 驱动信息
     #  -ErrorAction SilentlyContinue
@@ -918,28 +919,43 @@ function try_csv_xlsx {
         Write-Host '未查询到任何匹配信息，请检查账户权限、事件日志等设置问题。'
     }
 
-    Write-Host "`n 驱动信息汇总已完成，正在生成截止目前的当天重要事件统计`n"
+    Write-Host "驱动信息汇总已完成" -ForegroundColor Green
+    
+    # Write-Host "`n正在生成截止目前的当天重要事件统计...`n" -ForegroundColor Yellow
+    # # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
+    # $result = Get-WinEvent -FilterHashtable @{
+    #     LogName   = 'Application', 'System', 'Security'
+    #     StartTime = (Get-Date).Date
+    # } | Where-Object { $_.LevelDisplayName -in "错误", "警告", "关键"
+    # } | Select-Object Message, Id, Level, ProviderName, LogName, `
+    #     TimeCreated, LevelDisplayName
 
+    Write-Host "`n正在生成三天内截止目前的重要事件统计，时间较长请耐心等待...`n" -ForegroundColor Yellow
     # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
-        StartTime = (Get-Date).Date
-    } | Where-Object { $_.LevelDisplayName -in "错误", "警告", "关键"
-    } | Select-Object Message, Id, Level, ProviderName, LogName, `
-        TimeCreated, LevelDisplayName
+        StartTime = (Get-Date).Date.AddDays(-3).AddHours(9)
+        EndTime   = (Get-Date).Date.AddDays(-3).AddHours(18)
+    } | Where-Object {
+        $_.LevelDisplayName -in "错误","警告","关键" `
+        -and $_.Id -notin 134, 1014, 8233, 10010, 10016 `
+        -or $_.Id -in 4648, 4634, 4199, 6013, 4803, 4802, 4800, 4801
+    } | Select-Object Id, Level, ProviderName, LogName, `
+        TimeCreated, LevelDisplayName, Message, TaskDisplayName
+    
 
     if ($result) {
         $result | Export-Excel -Path $report_path -WorksheetName '预警事件汇总'
     }
     else {
-        Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Red
+        Write-Host '近三天事件内没有发现有关“警告”、“错误”、“关键”等报警信息，一切正常。' -ForegroundColor Green
     }
 
     Write-Host "`n 追加：一周 logon/logoff 活动时间记录`n"
     
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
-        StartTime = (Get-Date).AddDays(-7)
+        StartTime = (Get-Date).Date.AddDays(-7)
     } | Where-Object {
         ($_.Id -in 4648, 4634)
     } |Select-Object MachineName, Id, Level, ProviderName, LogName,  `
@@ -1074,11 +1090,11 @@ function select_option {
             }
             { $_ -in 57, 105 } {
                 # 数字键 9 和 数字键小键盘 9
-                dev_man
                 if (!$has_checked_sys) {
                     check_sys
                     $has_checked_sys = $true
                 }
+                dev_man
             }
             191 {
                 # 键盘 /？
