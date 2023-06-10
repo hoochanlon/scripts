@@ -844,11 +844,24 @@ function check_key_events {
         Write-Host "近7天内未曾出现蓝屏或崩溃现象。`n" -ForegroundColor Green
     }
 
+    shoudong_check
+
+    Write-Host "`n### 检查电脑休眠、开关机、程序崩溃等事件，已完成`n" -ForegroundColor Green
+}
+
+# 手动输入检查
+function shoudong_check{
+
     Write-Host "--- 输入时间段，并检查与当前时间点，是否有异常警告和错误事件 ---`n"  -ForegroundColor Yellow
 
     do {
         # 获取用户输入的日期和时间
-        $dateTimeString = Read-Host "请输入日期和时间，格式为 yyyy-MM-dd HH:mm（如：2023-06-09 13:01）"
+        $dateTimeString = Read-Host "请输入日期和时间，格式为 yyyy-MM-dd HH:mm（如：2023-06-09 13:01）或者输入 K 跳过"
+
+        if ($dateTimeString -eq 'K' -or $dateTimeString -eq 'k') {
+            Write-Host "已跳过。" -ForegroundColor Yellow
+            return
+        }
     
         try {
             # 使用 Get-Date 尝试将字符串转换为日期时间对象
@@ -876,7 +889,6 @@ function check_key_events {
     else {
         Write-Host "未找到任何异常事件。" -ForegroundColor Green
     }
-    Write-Host "`n### 检查电脑休眠、开关机、程序崩溃等事件，已完成`n" -ForegroundColor Green
 }
     
 # 生成基线检查报表
