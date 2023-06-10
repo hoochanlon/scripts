@@ -245,6 +245,7 @@ function dev_man {
   
     Write-Host '关于"允许计算机关闭此设备以节省电源"禁用设置，可参考：' -ForegroundColor Yellow
     Write-Host "    https://learn.microsoft.com/zh-CN/troubleshoot/windows-client/networking/power-management-on-network-adapter" -ForegroundColor Blue
+    Write-Host "    https://learn.microsoft.com/zh-tw/windows-hardware/design/device-experiences/modern-standby-sleepstudy" -ForegroundColor Blue
     Write-Host " "
     Write-Host '以下为取消勾选"允许计算机关闭此设备以节省电源，（勾选 默认值 0 即可；取消勾选 24）"' -ForegroundColor Yellow
     Write-Host " "
@@ -825,7 +826,7 @@ function check_key_events {
         $result | Out-Host
     }
     else {
-        Write-Host "最近2周开关机操作，正常。`n" -ForegroundColor Green
+        Write-Host "最近2周手动开关机操作，正常。`n" -ForegroundColor Green
     }
 
     Write-Host "--- 最近7天内是否存在蓝屏或崩溃现象 ---`n"  -ForegroundColor Yellow
@@ -843,11 +844,11 @@ function check_key_events {
         Write-Host "近7天内未曾出现蓝屏或崩溃现象。`n" -ForegroundColor Green
     }
 
-    Write-Host "--- 检查近期及当前时间段，是否有异常警告和错误事件 ---`n"  -ForegroundColor Yellow
+    Write-Host "--- 输入时间段，并检查与当前时间点，是否有异常警告和错误事件 ---`n"  -ForegroundColor Yellow
 
     do {
         # 获取用户输入的日期和时间
-        $dateTimeString = Read-Host "请输入日期和时间（格式为 yyyy-MM-dd HH:mm）"
+        $dateTimeString = Read-Host "请输入日期和时间，格式为 yyyy-MM-dd HH:mm（如：2023-06-09 13:01）"
     
         try {
             # 使用 Get-Date 尝试将字符串转换为日期时间对象
@@ -918,12 +919,11 @@ function try_csv_xlsx {
 
     if ($result) {
         $result | Export-Excel -Path $report_path -WorksheetName "载体驱动信息"
+        Write-Host "驱动信息汇总已完成" -ForegroundColor Green
     }
     else {
         Write-Host '未查询到任何匹配信息，请检查账户权限、事件日志等设置问题。'
     }
-
-    Write-Host "驱动信息汇总已完成" -ForegroundColor Green
     
     # Write-Host "`n正在生成截止目前的当天重要事件统计...`n" -ForegroundColor Yellow
     # # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
@@ -942,7 +942,8 @@ function try_csv_xlsx {
     # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
     # 后续参考：https://learn.microsoft.com/en-us/answers/questions/961608/event-id-6155-(the-lsa-package-is-not-signed-as-ex
 
-    $result = Get-WinEvent -FilterHashtable @{
+    $elapsedTime = (Measure-Command {
+        $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
         StartTime = (Get-Date).Date.AddDays(-5).AddHours(8.5)
         EndTime   = (Get-Date)
@@ -957,8 +958,11 @@ function try_csv_xlsx {
     else {
         Write-Host '近五天内，没有发现有关“警告”、“错误”、“关键”等报警信息（一切正常，故不生成该项报表）。' -ForegroundColor Green
     }
+}).TotalSeconds
 
-    Write-Host "`n 追加：一周 logon/logoff 活动时间记录`n"
+    Write-Host "筛选统计五天内重要事件，用时 ${elapsedTime} 秒。" -ForegroundColor Yellow
+
+    Write-Host "`n 追加：一周 logon/logoff 活动时间记录、三天系统电源使用报告 `n"
     
     $result = Get-WinEvent -FilterHashtable @{
         LogName   = 'Application', 'System', 'Security'
@@ -975,11 +979,14 @@ function try_csv_xlsx {
         Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Red
     }
 
+    powercfg /spr /duration 3
+
     # sqllite 结合 Get-MpThreatDetection 和 Get-MpThreat 才能得到理想数据。
     # 正好先用Excel来导入 Get-MpThreatDetection 与 Get-MpThreat 安全信息统计。
     
     # 最近 30 天内的威胁检测记录
-    Write-Host '正在检测已存威胁，并生成月度概况报表（如果没有，将不生成该项报表）' 
+    Write-Host " "
+    Write-Host '正在检测已存威胁，并生成月度概况报表（如果没有，将不生成该项报表）' -ForegroundColor Yellow
     
     $result = Get-MpThreatDetection `
     | Select-Object ActionSuccess, CurrentThreatExecutionStatusID, `
