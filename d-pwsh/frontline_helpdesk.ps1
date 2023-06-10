@@ -946,7 +946,7 @@ function try_csv_xlsx {
     TimeCreated, ContainerLog, LevelDisplayName, TaskDisplayName
 
     if ($result) {
-        $result | Export-Excel -Path $report_path -WorksheetName "主机出录活动"
+        $result | Export-Excel -Path $report_path -WorksheetName "登出与登录"
     }
     else {
         Write-Host '未找到任何匹配条目，请检查系统权限、事件日志等设置问题。' -ForegroundColor Red
