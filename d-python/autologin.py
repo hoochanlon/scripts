@@ -1,6 +1,7 @@
 from DrissionPage import ChromiumPage
 from selenium import webdriver
 from DrissionPage import Drission, MixPage
+from webdriver_manager.chrome import ChromeDriverManager
 
 # pip3 install selenium
 # pip3 install DrissionPage
@@ -8,7 +9,7 @@ from DrissionPage import Drission, MixPage
 # https://github.com/g1879/DrissionPage/issues/2
 
 # 用 selenium 原生代码创建 WebDriver 对象
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(ChromeDriverManager().install())
 # 把 WebDriver 对象传入 Drission 对象
 dr = Drission(driver_or_options=driver)
 page = MixPage(drission=dr)
