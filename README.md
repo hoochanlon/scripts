@@ -51,7 +51,9 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 <details>
 <summary><B> 点击详情 </B></summary>
 
-### 一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html) （NLP：[Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)）
+### 头条、抖音、微博热搜采集分析
+ 
+一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html) （NLP：[Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)）
 
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
@@ -440,8 +442,11 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
 
 ## 参考文献
 
-集中板块：常见平台热搜与辟谣信息分析，详情
+主题章节：
 
+* 【常见平台热搜与辟谣信息分析·头条、抖音、微博热搜采集分析】
+* 【常见平台热搜与辟谣信息分析·自动化收集辟谣条目及语言分析】
+* 【常见平台热搜与辟谣信息分析·B站饭圈层弹幕收集】
 
 <!--
 [![telegram](https://img.shields.io/badge/telegram-:me-blue.svg?longCache=true&style=flat-square)](https://t.me/test) 
