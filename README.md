@@ -358,7 +358,7 @@ macOS MS-AutoUpdate 一键带走
 sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/no_ms_autoupdate.scpt)"
 ```
 
-macOS终端下载Office for Mac2021 serializer.pkg 激活
+自动化下载 Office Mac2021 激活工具
 
 ```
 sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/office2021.scpt)"
