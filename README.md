@@ -125,10 +125,14 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
   bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
  ```
  
+最后，转朋友的：[自在拉基 - Mac打印机一键安装](https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html)。（没需求，所以没写；原理都差不多，确实挺厉害的。）
+ 
 </details>
 
 
 ## Linux云主机毛坯房安全改造
+
+购买云服务商的云主机，基本上没有任何防护措施，每天都有各地的不法分子扫描公网，并不断进行远程暴破入侵主机。所以需要额外的防治措施。
 
 <details>
 <summary><B> 点击详情 </B></summary>
@@ -288,8 +292,6 @@ powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple
 <details>
 <summary><B> 点击详情 </B></summary>
  
-### Windows
- 
 CMD获取本机公网详情
  
 ```
@@ -302,7 +304,7 @@ Shell获取本机公网详情（需安装 `brew install jq`）
  curl -s https://freeipapi.com/api/json/$(curl -s https://api.ipify.org) | jq .
 ```
 
-一键安装打印机原理代码 [图文版](https://www.52pojie.cn/thread-1776328-1-1.html)。Mac见：[自在拉基 - Mac打印机一键安装 ](https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html)（转朋友的，没需求，所以没写，原理都差不多，不过挺厉害。）
+一键安装打印机原理代码 [图文版](https://www.52pojie.cn/thread-1776328-1-1.html)。
  
 ```
  https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/install_public_network_hp_printer_driver.bat
@@ -313,7 +315,6 @@ powershell active，以及微PE显示IP脚本
 ```
 explorer https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/weipe_showip.bat
 ```
- 
 
 一键安装Java [图文版](https://www.52pojie.cn/thread-1767872-1-1.html)
 
