@@ -75,6 +75,11 @@ Linux基线检查（PR）见：[al0ne/LinuxCheck](https://github.com/al0ne/Linux
 1. **允许所有来源： `sudo spctl --master-disable`**
 2. **恢复模式下，关闭SIP：`csrutil disable`**
 3. **解除苹果签名验证系统的校验隔离：`sudo xattr -d com.apple.quarantine`**
+4. **运行终端工具包前提 —— homebrew，复制如下指令安装**
+
+```
+/bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
+```
 
 <details>
 <summary><B> 点击详情 </B></summary>
