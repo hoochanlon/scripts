@@ -132,7 +132,7 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
 
 ## Linux云主机毛坯房安全改造
 
-购买云服务商的云主机，基本上没有任何防护措施，每天都有各地的不法分子扫描公网，并不断进行远程暴破入侵主机。所以需要额外的防治措施。
+购买云服务商提供的云主机，系统基本没有任何的安全软件保护。每天都有各地不法分子扫描公网，并不断远程暴破、入侵主机。所以需要采取防治措施。
 
 <details>
 <summary><B> 点击详情 </B></summary>
