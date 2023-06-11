@@ -350,11 +350,18 @@ curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs
 </details>
 
 
-## 新闻资讯收集
+## 常见平台热搜与辟谣信息分析
+
+对人文社科期刊、论文研究对象综合性分析：
+
+* 数据收集、过滤、分类归档
+* "平均/极值"基础数学统计；自然语言处理等
+* 观点交流、意见分享等
 
 <details>
 <summary><B> 点击详情 </B></summary>
-
+ 
+### 新闻资讯收集（序·小试牛刀）
 
 一键获取中国新闻网资讯 [图文版](https://www.52pojie.cn/thread-1780608-1-1.html)
 
@@ -367,14 +374,6 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 ```
 python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
 ```
-
-</details>
-
-
-## 常见平台热搜与辟谣信息分析
-
-<details>
-<summary><B> 点击详情 </B></summary>
 
 ### 头条、抖音、微博热搜采集分析
  
