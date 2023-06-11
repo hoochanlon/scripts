@@ -303,7 +303,7 @@ powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple
 一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
 
 ```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
+python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
 ```
  
 CMD获取本机公网详情
@@ -374,13 +374,13 @@ curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs
 一键获取中国新闻网资讯 [图文版](https://www.52pojie.cn/thread-1780608-1-1.html)
 
 ```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
+python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
 ```
  
 一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
 
 ```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
+python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
 ```
 
 ### 头条、抖音、微博热搜采集分析
@@ -388,7 +388,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html) （NLP：[Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)）
 
 ```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
+python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
 ```
 
 * 自动化分类；整体匹配率：84%~96% 区间左右。
@@ -411,7 +411,7 @@ python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/ho
 功能大体与上例相当，对词频的较高词语进行语法分析。
 
 ```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_rumor_analysis.py)"
+python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_rumor_analysis.py)"
 ```
  
 urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
@@ -454,6 +454,12 @@ urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
  
 
 </details>
+
+开始前，请准备先安装pip工具包
+
+```
+pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-txt/requirements.txt
+```
 
 
 ## 参考文献
