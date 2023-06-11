@@ -163,6 +163,66 @@ Linux基线检查（PR）见：[al0ne/LinuxCheck](https://github.com/al0ne/Linux
 
 </details>
 
+## Mac基础使用入门
+
+想要自由使用Mac步骤：
+
+1. **允许所有来源： `sudo spctl --master-disable`**
+2. **恢复模式下，关闭SIP：`csrutil disable`**
+3. **解除苹果签名验证系统的校验隔离：`sudo xattr -d com.apple.quarantine`**
+
+<details>
+<summary><B> 点击详情 </B></summary>
+
+重置macOS ~/.zshrc （仅环境变量配置失误，造成不可逆后果使用）
+
+```
+export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin; sudo rm -rf ~/.zshrc
+```
+
+Mac查看当前Wi-Fi密码 [图文版](https://www.52pojie.cn/thread-1766927-1-1.html)
+
+```
+sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_show_wifi.sh)"
+```
+
+Mac 一键支持NTFS [图文版](https://github.com/hoochanlon/Free-NTFS-For-Mac)
+
+```
+sudo /bin/bash -c "$(curl -fsSL https://cdn.statically.io/gh/hoochanlon/Free-NTFS-for-Mac/main/nigate.sh)"
+```
+
+Mac 激活各类相关软件 [图文版](https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells)
+
+```
+sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
+```
+
+macOS MS-AutoUpdate 一键带走
+
+```
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/no_ms_autoupdate.scpt)"
+```
+
+ 一键RAR密码爆破 [图文版](https://www.52pojie.cn/thread-1775990-1-1.html)
+ 
+ ```
+ bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/7z_rar_sensei.sh)"
+ ```
+
+自动化下载 Office Mac2021 激活工具
+
+```
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/office2021.scpt)"
+```
+
+一键定时切换壁纸，一面工作，一面生活
+ 
+ ```
+  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
+ ```
+ 
+</details>
 
 
 ## Linux云主机毛坯房安全改造
@@ -377,67 +437,6 @@ curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs
  ```
 
  </details>
- 
-## Mac专题
-
-想要自由使用Mac步骤：
-
-1. **允许所有来源： `sudo spctl --master-disable`**
-2. **恢复模式下，关闭SIP：`csrutil disable`**
-3. **解除苹果签名验证系统的校验隔离：`sudo xattr -d com.apple.quarantine`**
-
-<details>
-<summary><B> 点击详情 </B></summary>
-
-重置macOS ~/.zshrc （仅环境变量配置失误，造成不可逆后果使用）
-
-```
-export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin; sudo rm -rf ~/.zshrc
-```
-
-Mac查看当前Wi-Fi密码 [图文版](https://www.52pojie.cn/thread-1766927-1-1.html)
-
-```
-sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_show_wifi.sh)"
-```
-
-Mac 一键支持NTFS [图文版](https://github.com/hoochanlon/Free-NTFS-For-Mac)
-
-```
-sudo /bin/bash -c "$(curl -fsSL https://cdn.statically.io/gh/hoochanlon/Free-NTFS-for-Mac/main/nigate.sh)"
-```
-
-Mac 激活各类相关软件 [图文版](https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells)
-
-```
-sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
-```
-
-macOS MS-AutoUpdate 一键带走
-
-```
-sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/no_ms_autoupdate.scpt)"
-```
-
- 一键RAR密码爆破 [图文版](https://www.52pojie.cn/thread-1775990-1-1.html)
- 
- ```
- bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/7z_rar_sensei.sh)"
- ```
-
-自动化下载 Office Mac2021 激活工具
-
-```
-sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/office2021.scpt)"
-```
-
-一键定时切换壁纸，一面工作，一面生活
- 
- ```
-  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
- ```
- 
-</details>
 
 
 ## 参考文献
