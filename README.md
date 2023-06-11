@@ -26,6 +26,8 @@ python环境问题
 
 </details>
 
+平台：Windows/Mac/Linux。涉及：桌面基线排查、软件激活破解、免杀及特权执行、主机安全加固、人文社科信息数据分析等。
+
 ## Windows桌面技术基线检查 
 
 首先，确保你的系统已开启 PowerShell
