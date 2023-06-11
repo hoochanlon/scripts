@@ -123,7 +123,7 @@ urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
 
 ## Windows桌面技术基线检查 [图文版](https://www.52pojie.cn/thread-1795749-1-1.html)
 
-首先，确保你的系统已开启 PowerShell，
+首先，确保你的系统已开启 PowerShell
 
 * **打开PowerShell功能：`Set-ExecutionPolicy RemoteSigned`**
 * ***关闭PowerShell功能：`Set-ExecutionPolicy Restricted`***
@@ -150,9 +150,18 @@ urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
 8. 生成"设备驱动检查"、"五天内预警事件"、"登录登出活动记录"、"月度已存威胁概况"分析报表
 9. 查看指导建议与开发说明 
 
+BTW
+ 
+Linux基线检查（PR）见：[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)。对于Mac来说，这些安全服务的维护成本，不适用于中小企业。
+ 
+* [Apple - Mac系统部署](https://www.apple.com.cn/business/docs/site/Mac_Deployment_Overview.pdf)
+* [vmware - 企业采购苹果设备的正确姿势-abm](https://blogs.vmware.com/china/2019/10/08/企业采购苹果设备的正确姿势-abm/)
+
+[CSDN - 企业管理Mac电脑的三种方式](https://blog.csdn.net/smartbenson/article/details/50636012)
+
 </details>
 
-Linux基线检查（PR）见：[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)
+
 
 ## Linux毛坯房安全改造
 
