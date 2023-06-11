@@ -121,7 +121,7 @@ urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
 
 </details>
 
-## Windows桌面技术基线检查 [图文版](https://www.52pojie.cn/thread-1795749-1-1.html)
+## Windows桌面技术基线检查 
 
 首先，确保你的系统已开启 PowerShell
 
@@ -132,7 +132,7 @@ urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
 <summary><B> 点击详情 </B></summary>
  
 
- 一键使用，本地下载使用转GB2312编码
+ 一键使用，本地下载使用转GB2312编码 [图文版](https://www.52pojie.cn/thread-1795749-1-1.html)
  
 ```
  irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/frontline_helpdesk.ps1|iex
