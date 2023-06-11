@@ -163,7 +163,7 @@ Linux基线检查（PR）见：[al0ne/LinuxCheck](https://github.com/al0ne/Linux
 
 
 
-## Linux毛坯房安全改造
+## Linux云主机毛坯房安全改造
 
 <details>
 <summary><B> 点击详情 </B></summary>
