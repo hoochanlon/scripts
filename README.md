@@ -242,6 +242,11 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v Disa
 
 ## 移花接木与细枝末节
 
+
+* Windows/Office、winrar、emeditor、idm、XchangePDF
+* Wi-Fi、bing壁纸、PE查看局域网IP、解析主机IP运营商及归属地查询
+* 更多...
+
 <details>
 <summary><B> 点击详情 </B></summary>
  
