@@ -333,6 +333,12 @@ explorer https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/weipe_showip.b
 
 ### Mac
  
+ 获取本机公网详情（需安装 `brew install jq`）
+ 
+ ```
+ curl -s https://freeipapi.com/api/json/$(curl -s https://api.ipify.org) | jq .
+ ```
+ 
  自动化下载 Office Mac2021 激活工具
 
 ```
