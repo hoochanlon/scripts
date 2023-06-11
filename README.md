@@ -309,6 +309,12 @@ powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple
 <summary><B> 点击详情 </B></summary>
  
 ### Windows
+ 
+获取本机公网详情
+ 
+```
+powershell -c irm "https://freeipapi.com/api/json/$(irm http://api.ipify.org)"
+```
 
 powershell active，以及微PE显示IP脚本 
 
