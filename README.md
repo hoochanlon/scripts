@@ -366,6 +366,16 @@ curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs
 * 分词、文本情绪值计算汇总（自然语言处理）
 * 观点交流、意见分享等
 
+前提：
+
+一、开始前，请准备先安装pip工具包
+
+```
+pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-txt/requirements.txt
+```
+
+二、 stanza 模型需要外网连接
+
 <details>
 <summary><B> 点击详情 </B></summary>
  
@@ -455,11 +465,6 @@ urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
 
 </details>
 
-开始前，请准备先安装pip工具包
-
-```
-pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-txt/requirements.txt
-```
 
 
 ## 参考文献
