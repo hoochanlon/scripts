@@ -273,7 +273,13 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v Disa
 
 <details>
 <summary><B> 点击详情 </B></summary>
+ 
+一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
 
+```
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
+```
+ 
 CMD一键调用windows版本切换与Windows/Office激活 [图文版](https://www.52pojie.cn/thread-1743122-1-1.html)
 
 ```
@@ -309,7 +315,7 @@ win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thr
 ```
 powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/exifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
 ```
-
+ 
 </details>
 
 ## 细枝末节
@@ -319,60 +325,30 @@ powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple
  
 ### Windows
  
-获取本机公网详情
+CMD获取本机公网详情
  
 ```
 powershell -c irm "https://freeipapi.com/api/json/$(irm http://api.ipify.org)"
 ```
 
+Shell获取本机公网详情（需安装 `brew install jq`）
+ 
+```
+ curl -s https://freeipapi.com/api/json/$(curl -s https://api.ipify.org) | jq .
+```
+
+一键安装打印机原理代码 [图文版](https://www.52pojie.cn/thread-1776328-1-1.html)。Mac见：[自在拉基 - Mac打印机一键安装 ](https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html)（转朋友的，没需求，所以没写，原理都差不多，不过挺厉害。）
+ 
+```
+ https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/install_public_network_hp_printer_driver.bat
+```
+ 
 powershell active，以及微PE显示IP脚本 
 
 ```
 explorer https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/weipe_showip.bat
 ```
-
- 一键安装打印机原理代码 [图文版](https://www.52pojie.cn/thread-1776328-1-1.html)
  
- ```
- https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/install_public_network_hp_printer_driver.bat
- ```
- 
-[自在拉基 - Mac打印机一键安装 ](https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html)（转朋友的，没需求，所以没写，原理都差不多，不过挺厉害。）
- 
-
-### Mac
- 
- 获取本机公网详情（需安装 `brew install jq`）
- 
- ```
- curl -s https://freeipapi.com/api/json/$(curl -s https://api.ipify.org) | jq .
- ```
- 
- 自动化下载 Office Mac2021 激活工具
-
-```
-sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/office2021.scpt)"
-```
- 
- 一键定时切换壁纸，一面工作，一面生活
- 
- ```
-  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
- ```
-
-</details>
-
-
-## 家用常规
-
-<details>
-<summary><B> 点击详情 </B></summary>
-
-一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
-
-```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
-```
 
 一键安装Java [图文版](https://www.52pojie.cn/thread-1767872-1-1.html)
 
@@ -445,6 +421,18 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
  
  ```
  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/7z_rar_sensei.sh)"
+ ```
+
+自动化下载 Office Mac2021 激活工具
+
+```
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/office2021.scpt)"
+```
+
+一键定时切换壁纸，一面工作，一面生活
+ 
+ ```
+  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
  ```
  
 </details>
