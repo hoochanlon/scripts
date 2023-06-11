@@ -404,9 +404,9 @@ curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs
 
 想要自由使用Mac步骤：
 
-**1. 允许所有来源： `sudo spctl --master-disable`**
-**2. 恢复模式下，关闭SIP：`csrutil disable`**
-**3. 解除苹果签名验证系统的校验隔离：`sudo xattr -d com.apple.quarantine`**
+1. **允许所有来源： `sudo spctl --master-disable`**
+2. **恢复模式下，关闭SIP：`csrutil disable`**
+3. **解除苹果签名验证系统的校验隔离：`sudo xattr -d com.apple.quarantine`**
 
 <details>
 <summary><B> 点击详情 </B></summary>
