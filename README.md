@@ -260,10 +260,55 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v Disa
 
 </details>
 
+## 移花接木
+
+<details>
+<summary><B> 点击详情 </B></summary>
+
+CMD一键调用windows版本切换与Windows/Office激活 [图文版](https://www.52pojie.cn/thread-1743122-1-1.html)
+
+```
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start Switch.bat&&powershell -command "irm https://massgrave.dev/get|iex"
+```
+
+CMD一键安装winrar注册激活 [图文版](https://www.52pojie.cn/thread-1740471-1-1.html)
+
+```
+powershell -command Invoke-WebRequest -Uri "https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/winrar_down_reg.bat" -OutFile "C:/Users/${env:UserName}/Downloads/winrar_down_reg.bat"&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
+```
+
+Powershell一键生成Emeditor序列号
+
+```
+irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/emeditor_random_keygen.ps1|iex
+```
+
+Powershell一键IDM激活（[自己写的方案已失效，国内版权原因不做更新](https://github.com/hoochanlon/ihs-simple/blob/main/d-pwsh/fail_idm.ps1)）
+
+```
+iwr -useb https://ghproxy.com/https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/main/IAS.ps1 | iex
+```
+
+Powershell从XchangePDF Editor下载安装到生成许可证 
+
+```
+curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
+```
+ 
+win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thread-1768841-1-1.html)
+
+```
+powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/exifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
+```
+
+</details>
+
 ## 细枝末节
 
 <details>
 <summary><B> 点击详情 </B></summary>
+ 
+### Windows
 
 powershell active，以及微PE显示IP脚本 
 
@@ -276,12 +321,23 @@ explorer https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/weipe_showip.b
  ```
  https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/install_public_network_hp_printer_driver.bat
  ```
+ 
+[自在拉基 - Mac打印机一键安装 ](https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html)（转朋友的，没需求，所以没写，原理都差不多，不过挺厉害。）
+ 
 
-win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thread-1768841-1-1.html)
+### Mac
+ 
+ 自动化下载 Office Mac2021 激活工具
 
 ```
-powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/exifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/office2021.scpt)"
 ```
+ 
+ 一键定时切换壁纸，一面工作，一面生活
+ 
+ ```
+  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
+ ```
 
 </details>
 
@@ -358,64 +414,15 @@ macOS MS-AutoUpdate 一键带走
 sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/no_ms_autoupdate.scpt)"
 ```
 
-自动化下载 Office Mac2021 激活工具
-
-```
-sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/office2021.scpt)"
-```
-
  一键RAR密码爆破 [图文版](https://www.52pojie.cn/thread-1775990-1-1.html)
  
  ```
  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/7z_rar_sensei.sh)"
  ```
  
- 一键定时切换壁纸，一面工作，一面生活
- 
- ```
-  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
- ```
- 
-[自在拉基 - Mac打印机一键安装 ](https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html)（转朋友的，没需求，所以没写，原理都差不多，不过挺厉害。）
-
 </details>
 
-## 移花接木
 
-<details>
-<summary><B> 点击详情 </B></summary>
-
-CMD一键调用windows版本切换与Windows/Office激活 [图文版](https://www.52pojie.cn/thread-1743122-1-1.html)
-
-```
-curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start Switch.bat&&powershell -command "irm https://massgrave.dev/get|iex"
-```
-
-CMD一键安装winrar注册激活 [图文版](https://www.52pojie.cn/thread-1740471-1-1.html)
-
-```
-powershell -command Invoke-WebRequest -Uri "https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/winrar_down_reg.bat" -OutFile "C:/Users/${env:UserName}/Downloads/winrar_down_reg.bat"&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
-```
-
-Powershell一键生成Emeditor序列号
-
-```
-irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/emeditor_random_keygen.ps1|iex
-```
-
-Powershell一键IDM激活（[自己写的方案已失效，国内版权原因不做更新](https://github.com/hoochanlon/ihs-simple/blob/main/d-pwsh/fail_idm.ps1)）
-
-```
-iwr -useb https://ghproxy.com/https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/main/IAS.ps1 | iex
-```
-
-Powershell从XchangePDF Editor下载安装到生成许可证 
-
-```
-curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
-```
-
-</details>
 
 
 
