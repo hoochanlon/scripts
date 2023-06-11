@@ -352,7 +352,7 @@ curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs
 
 ## 常见平台热搜与辟谣信息分析
 
-对人文社科期刊、论文研究对象综合性分析：
+对人文社科期刊、论文研究对象进行跨学科、基础调研（不限于同事访谈、网络论坛问卷调查）等综合性分析：
 
 * 数据收集、过滤、分类归档
 * "平均/极值"基础数学统计；自然语言处理等
