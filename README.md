@@ -157,7 +157,7 @@ Linux基线检查（PR）见：[al0ne/LinuxCheck](https://github.com/al0ne/Linux
 * [Apple - Mac系统部署](https://www.apple.com.cn/business/docs/site/Mac_Deployment_Overview.pdf)
 * [vmware - 企业采购苹果设备的正确姿势-abm](https://blogs.vmware.com/china/2019/10/08/企业采购苹果设备的正确姿势-abm/)
 
-[CSDN - 企业管理Mac电脑的三种方式](https://blog.csdn.net/smartbenson/article/details/50636012)
+大环境下，这篇文章 [CSDN - 企业管理Mac电脑的三种方式](https://blog.csdn.net/smartbenson/article/details/50636012)提及的管理办法，都算得上是防控得当，可对比Windows来说，却挺不够看的。
 
 </details>
 
