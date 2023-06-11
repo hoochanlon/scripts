@@ -79,7 +79,7 @@ def get_element_data(element) -> dict:
 
 def selenium_url_parse(url):
     # 创建 WebDriver 对象，这里使用 Chrome 浏览器
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(ChromeDriverManager().install())
 
     # 访问网页
     driver.get(url)
