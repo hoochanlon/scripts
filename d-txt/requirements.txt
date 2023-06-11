@@ -1,11 +1,12 @@
+bs4
 jieba
+stanza
 thulac
 selenium
+DrissionPage
 webdriver-manager
 openpyxl
 requests
-bs4
 snownlp
-jieba
 urllib3
-stanza
+
