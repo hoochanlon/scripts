@@ -189,7 +189,9 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 </details>
 
-## 因企业硬性需求
+## 企业系统基础环境需求
+
+主要涉及：IE、Windows defender、Windows更新
 
 <details>
 <summary><B> 点击详情 </B></summary>
@@ -238,16 +240,12 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v Disa
 
 </details>
 
-## 移花接木
+## 移花接木与细枝末节
 
 <details>
 <summary><B> 点击详情 </B></summary>
  
-一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
-
-```
-python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
-```
+### 移花接木
  
 CMD一键调用windows版本切换与Windows/Office激活 [图文版](https://www.52pojie.cn/thread-1743122-1-1.html)
 
@@ -285,12 +283,13 @@ win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thr
 powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/exifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
 ```
  
-</details>
+### 细枝末节
+ 
+一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
 
-## 细枝末节
-
-<details>
-<summary><B> 点击详情 </B></summary>
+```
+python -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
+```
  
 CMD获取本机公网详情
  
@@ -339,8 +338,9 @@ curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs
  ```
  curl -Os https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/seven_z_sensei.bat&&call seven_z_sensei.bat
  ```
+ 
+</details>
 
- </details>
 
 ## 新闻资讯收集
 
