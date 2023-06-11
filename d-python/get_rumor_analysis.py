@@ -15,7 +15,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
+
  
 
 # 分类
@@ -80,7 +80,7 @@ def get_element_data(element) -> dict:
 
 def selenium_url_parse(url):
     # 创建 WebDriver 对象，这里使用 Chrome 浏览器
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver = webdriver.Chrome()
 
     # 访问网页
     driver.get(url)
