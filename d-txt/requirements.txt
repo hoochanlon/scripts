@@ -1,4 +1,7 @@
-os
+jieba
+thulac
+selenium
+webdriver-manager
 datetime
 openpyxl
 requests
