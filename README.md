@@ -196,11 +196,14 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <details>
 <summary><B> 点击详情 </B></summary>
  
-IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html)
+IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html) 
 
 ```
 curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/keep_ie.bat|cmd
 ```
+ 
+* 注【1】：[域控环境IE模版 图文](https://www.52pojie.cn/thread-1765347-1-1.html) 
+* 注【2】：代码地址：https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/saigonoie.bat
 
 一键永久关闭Windows更新设置 [图文版](https://www.52pojie.cn/thread-1791338-1-1.html)
 
