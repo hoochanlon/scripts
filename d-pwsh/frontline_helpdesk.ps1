@@ -411,10 +411,10 @@ function check_ip {
     Write-Host " "
     Write-Host "### 检查网络基本连接情况 ###`n" -ForegroundColor Cyan
 
-    Write-Host "--- 检查IP地址 ---"  -ForegroundColor Yellow
+    Write-Host "--- 检查IP地址，以及是否开启代理（1 开启；0 关闭） ---"  -ForegroundColor Yellow
     netsh interface ipv4 show addresses "以太网"
     netsh interface ipv4 show dnsservers "以太网"
-    netsh winhttp show proxy
+    Get-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' | Select-Object ProxyEnable
 
     Write-Host "--- 检查连接局域网网络状态 ---`n"  -ForegroundColor Yellow
     $result = Get-NetConnectionProfile | Select-Object -Property Name, InterfaceAlias, NetworkCategory
