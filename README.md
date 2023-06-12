@@ -230,12 +230,6 @@ curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d
 curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat
 ```
 
-一键关闭Windows代理设置
-
-```
-netsh winhttp reset proxy
-```
-
 一键调用设置程序是否以管理员权限运行
 
 ```
