@@ -733,7 +733,7 @@ function check_fw {
         $result|Format-List
     }
 
-    Write-Host "n`--- 检查系统核心文件是否被 Deny ---`n" -ForegroundColor Yellow
+    Write-Host "`n--- 检查系统核心文件是否被 Deny ---`n" -ForegroundColor Yellow
    $result = Get-Acl -Path C:\Windows\System32\*|Where-Object{$_.AccessToString -like "*Deny*"}|Select-Object Path
    if ($null -eq $result) {
         Write-Host "没有找到相关记录，注意检查是否以管理员运行脚本`n" -ForegroundColor DarkMagenta
