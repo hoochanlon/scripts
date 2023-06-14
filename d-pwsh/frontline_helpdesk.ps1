@@ -18,7 +18,7 @@ function sel_man {
     Write-Host " [1] 检查IP与网络设备连接近况" -ForegroundColor Green
     Write-Host " [2] 检查打印机、打印池、扫描仪状态" -ForegroundColor Green
     Write-Host " [3] 检查硬盘、CPU、内存、显卡等基础驱动信息" -ForegroundColor Green
-    Write-Host " [4] 检查设备安全性、近期升级补丁、定时任务项" -ForegroundColor Green
+    Write-Host " [4] 检查设备安全性、近期升级补丁、定时任务项、证书策略、系统核心文件控制访问状况" -ForegroundColor Green
     Write-Host " [5] 检查主机主动共享协议相关信息" -ForegroundColor Green
     Write-Host " [6] 检查电脑休眠、重启频次、异常关机、程序崩溃等信息" -ForegroundColor Green
     Write-Host " [7] 执行1～6选项的所有功能" -ForegroundColor Green -BackgroundColor DarkGray
@@ -275,6 +275,28 @@ function dev_man {
     Write-Host `
         '
         关于 Get-MpThreatDetection 的详细属性信息，可参考：https://powershell.one/wmi/root/microsoft/windows/defender/msft_mpthreatdetection
+        ' -ForegroundColor Green
+    
+    Write-Host "`n#其他·新发现 `n" -ForegroundColor Cyan
+
+    Write-Host `
+        '
+        关于映像劫持，可参考：https://attack.mitre.org/techniques/T1546/012/
+        ' -ForegroundColor Green
+    
+        Write-Host `
+        '
+        * 关于软件证书限制，可参考：https://baijiahao.baidu.com/s?id=1669306160103456552&wfr=spider&for=pc
+        * 以及证书库实验证书：https://github.com/the1812/Malware-Patch/tree/master/src/MalwarePatch/Certificates
+        ' -ForegroundColor Green
+        Write-Host `
+        '
+        针对system32文件的授权检查，正常情况下这四者都是处于 Deny 状态，如果还有其他项，那么就很可能存有异常项。  
+        Microsoft.PowerShell.Core\FileSystem::C:\Windows\System32\FxsTmp
+        Microsoft.PowerShell.Core\FileSystem::C:\Windows\System32\Recovery
+        Microsoft.PowerShell.Core\FileSystem::C:\Windows\System32\SleepStudy
+        Microsoft.PowerShell.Core\FileSystem::C:\Windows\System32\WDI
+        虚拟机则没有FxsTmp该项，注意查阅相关资料，检查可疑被 Deny 的dll文件的具体作用。 
         ' -ForegroundColor Green
 
     Write-Host "`n#结语`n" -ForegroundColor  Cyan
@@ -642,7 +664,7 @@ function check_disk_cpu_mem {
 function check_fw {
 
     Write-Host " "
-    Write-Host "### 检查设备安全性、近期升级补丁、定时任务项 ###`n" -ForegroundColor Cyan
+    Write-Host "### 检查设备安全性、近期升级补丁、定时任务项、证书策略、系统核心文件控制访问状况 ###`n" -ForegroundColor Cyan
 
     Write-Host "--- 检测Windows defender实时保护状态 ---"  -ForegroundColor Yellow
     Get-MpComputerStatus | Select-Object -Property RealTimeProtectionEnabled, AntivirusEnabled | Out-Host
@@ -692,7 +714,34 @@ function check_fw {
         | Select-Object * -ExcludeProperty PSPath, PSChildName, PSDrive, PSParentPath, PSProvider, *Microsoft* | Format-List
     }
 
-    Write-Host "### 检查设备安全性、近期升级补丁、定时任务项，已完成`n" -ForegroundColor Green
+    Write-Host "--- 恶意映像劫持检查 ---`n" -ForegroundColor Yellow
+   
+    $result = Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\*" | Where-Object { $_.debugger -eq "\" }
+    if ($null -eq $result) {
+        Write-Host "没有恶意映像劫持的注册表`n" -ForegroundColor Green
+    }else {
+        $result|Select-Object{$_.PSPath}|Format-List
+    }
+
+    Write-Host "`n--- 禁用证书检查 ---`n" -ForegroundColor Yellow
+
+    # Get-ChildItem -Path 'Cert:\LocalMachine\Root' | Format-List *
+    $result = Get-ChildItem -Path 'Cert:\LocalMachine\Disallowed' | Select-Object Subject, PSPath, NotBefore, NotAfter, Thumbprint
+    if ($null -eq $result) {
+        Write-Host "没有禁用证书检查设置`n" -ForegroundColor Green
+    }else {
+        $result|Format-List
+    }
+
+    Write-Host "n`--- 检查系统核心文件是否被 Deny ---`n" -ForegroundColor Yellow
+   $result = Get-Acl -Path C:\Windows\System32\*|Where-Object{$_.AccessToString -like "*Deny*"}|Select-Object Path
+   if ($null -eq $result) {
+        Write-Host "没有找到相关记录，注意检查是否以管理员运行脚本`n" -ForegroundColor DarkMagenta
+    }else {
+        $result|Format-List
+    }
+
+    Write-Host "### 检查设备安全性、近期升级补丁、定时任务项、证书策略、系统核心文件控制访问状况，已完成`n" -ForegroundColor Green
 }
 
 # 共享检查（包括：共享端口、共享文件）
