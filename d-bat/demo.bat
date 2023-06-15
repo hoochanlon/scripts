@@ -199,5 +199,9 @@ rem 连接网络打印机 通用
 
 详情见：https://github.com/hoochanlon/ihs-simple/blob/main/d-ipynb/打印机自动化安装研究.ipynb
 
+rem 连接网络打印机 通用
+@REM rundll32 printui.dll,PrintUIEntry /if /b ""  /r "IP_%printerIP%" /m "Generic / Text Only"
 
+@REM 已安装惠普打印机驱动，特例测试
+@REM rundll32 printui.dll,PrintUIEntry /if /b ""  /r "IP_%printerIP%" /m "HP Universal Printing PCL 6"
 
