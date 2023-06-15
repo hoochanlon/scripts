@@ -1,21 +1,21 @@
 
-@echo "½«µ±Ç°»·¾³Í³Ò»»»³É C:\Windows\System32" 
+@echo "å°†å½“å‰ç¯å¢ƒç»Ÿä¸€æ¢æˆ C:\Windows\System32" 
 @pushd C:\Windows\System32
 
-@echo ÕıÔÚÏÂÔØ chromium87£¬ÇëÉÔºò....
+@echo æ­£åœ¨ä¸‹è½½ chromium87ï¼Œè¯·ç¨å€™....
 
 @set chromium87_url="https://bluepload.unstable.life/selif/chromev870428088.exe"
 @set chromium87="Chrome_V87.0.4280.88.exe"
 @powershell -c "(New-Object System.Net.WebClient).DownloadFile('%chromium87_url%', '%userprofile%/Downloads/%chromium87%')"
 
-@echo ÕıÔÚÏÂÔØflash£¬ÇëÉÔºò....
+@echo æ­£åœ¨ä¸‹è½½flashï¼Œè¯·ç¨å€™....
 
 @set cleanflash_url="https://bluepload.unstable.life/selif/cleanflash3400282installer1.exe"
 @set cleanflash="cleanflash3400282installer1.exe"
 @powershell -c "(New-Object System.Net.WebClient).DownloadFile('%cleanflash_url%', '%userprofile%/Downloads/%cleanflash%')"
 
 @echo
-echo flash²¢²»ÍêÈ«Ö§³Ö¾²Ä¬°²×°£¬½«²ÉÈ¡°ë×Ô¶¯°²×°Ä£Ê½
+echo flashå¹¶ä¸å®Œå…¨æ”¯æŒé™é»˜å®‰è£…ï¼Œå°†é‡‡å–åŠè‡ªåŠ¨å®‰è£…æ¨¡å¼
 
 %userprofile%\Downloads\Chrome_V87.0.4280.88.exe
 
