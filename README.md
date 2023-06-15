@@ -202,7 +202,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 ## 企业系统基础环境需求
 
-主要涉及：IE、Windows defender、Windows更新
+主要涉及：IE、Windows defender、Windows更新、打印机安装
 
 <details>
 <summary><B> 点击详情 </B></summary>
@@ -245,6 +245,8 @@ curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs
 ```
 reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f
 ```
+
+最后，打印机安装详情见：[打印机自动化安装研究.ipynb](./d-ipynb/打印机自动化安装研究.ipynb)
 
 </details>
 
