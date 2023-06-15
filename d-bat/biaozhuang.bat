@@ -177,3 +177,27 @@ REG LOAD HKLM\TempLookIp C:\Windows\System32\config\SYSTEM
 
 ::-- 最后关于powershell的运行策略 ----------------
 
+@echo off
+set printerIP=192.168.0.252
+
+echo 检查网络打印机 %printerIP% 是否在线...
+ping -n 1 %printerIP% > nul
+if %errorlevel% neq 0 (
+    echo 不在线 %printerIP% 稍后试
+    pause
+    exit
+)
+
+rem 连接网络打印机 通用
+@REM rundll32 printui.dll,PrintUIEntry /if /b ""  /r "IP_%printerIP%" /m "Generic / Text Only"
+
+@REM 已安装惠普打印机驱动，特例测试
+@REM rundll32 printui.dll,PrintUIEntry /if /b ""  /r "IP_%printerIP%" /m "HP Universal Printing PCL 6"
+
+
+:: ---------------- 静默安装打印机驱动 -------------------------
+
+详情见：https://github.com/hoochanlon/ihs-simple/blob/main/d-ipynb/打印机自动化安装研究.ipynb
+
+
+
