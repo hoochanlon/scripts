@@ -333,7 +333,7 @@ function dev_man {
     Write-Host "   registry-finder：" -ForegroundColor Yellow -nonewline; Write-Host "https://registry-finder.com" -ForegroundColor Blue
 
     Write-Host "`n* 事件ID分析工具：" -ForegroundColor Yellow
-    Write-Host "    Win10_Events_ID_useful：" -ForegroundColor Yellow -nonewline; Write-Host "https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx" -ForegroundColor Blue
+    Write-Host "    Win10_Events_ID_useful：" -ForegroundColor Yellow -nonewline; Write-Host "https://github.com/hoochanlon/ihs-simple/blob/main/AQUICK/BITRH/Win10_Events_ID_useful.xlsx" -ForegroundColor Blue
     Write-Host "   myeventlog：" -ForegroundColor Yellow -nonewline; Write-Host "https://www.myeventlog.com/search/find" -ForegroundColor Blue
     Write-Host "   ultimatewindowssecurity：" -ForegroundColor Yellow -nonewline; Write-Host "https://www.ultimatewindowssecurity.com/securitylog/encyclopedia" -ForegroundColor Blue
    
