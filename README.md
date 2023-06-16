@@ -106,7 +106,7 @@ Mac 一键支持NTFS [图文版](https://github.com/hoochanlon/Free-NTFS-For-Mac
 sudo -u $USER python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/mac_ntfs_ninja.py)"
 ```
 
-Mac 激活各类相关软件 [图文版](https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells)
+Mac 激活各类相关软件 [图文版](https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells)（DMCA）
 
 ```
 sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
