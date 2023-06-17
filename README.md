@@ -469,10 +469,9 @@ urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
 [^B站的CP向混剪视频为例]:  
     1. 石小溪《“再生影像”的双重媒介特性与文化逻辑 —— B站的“CP向”混剪视频为例》，《电影文学》2022年第23期，27页
 
-
 ## 参考文献
 
-注：由于研究范围较广泛，部分专题涉及内容较深，因此采用独立开题综述具体内容，并放置相关链接的形式。故此处参考文献列表仅限于 README.Markdown
+注：由于研究范围较广泛，部分专题涉及内容较深，因此采用 ipynb 独立开题综述具体内容，并放置相关链接的形式（脚注问题：https://github.com/jupyter/notebook/issues/1287#issuecomment-451080550 ）。故此处参考文献列表仅限于 README.Markdown
 
 <!--
 [![telegram](https://img.shields.io/badge/telegram-:me-blue.svg?longCache=true&style=flat-square)](https://t.me/test) 
