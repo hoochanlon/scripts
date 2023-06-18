@@ -2,7 +2,7 @@
 
 ## 🧙‍♂️[![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
 
-⚠️ 由于该项目README复合扩展HTML标签较多，[自带的网页渲染器效果](https://hoochanlon.github.io/ihs-simple/)对此方面优化不完善。[请返回到项目主页，查看全面的排版内容](https://github.com/hoochanlon/ihs-simple)。项目代码涉及到部分组件版本兼容问题 [点击此处](./d-ipynb/平台兼容问题.ipynb)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
+🟢 由于该项目README复合扩展HTML标签较多，[自带的网页渲染器效果](https://hoochanlon.github.io/ihs-simple/)对此方面优化不完善。[请返回到项目主页，查看全面的排版内容](https://github.com/hoochanlon/ihs-simple)。项目代码涉及到部分组件版本兼容问题 [点击此处](./d-ipynb/平台兼容问题.ipynb)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
 
 > 系统平台：Windows/Mac/Linux。 脚本语言：多种、不限；我流，按需编写。 研究对象：基础信息自动化、云主机远程安全处理、社会科学信息化及数据分析。
 >
