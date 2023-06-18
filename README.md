@@ -8,7 +8,7 @@
 
 项目代码涉及到部分组件版本兼容问题 [点击此处](./d-ipynb/平台兼容问题.ipynb)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
 
-## [github.io/ihs-simple](https://hoochanlon.github.io/ihs-simple) 注意事项
+## [github.io/ihs-simple](https://hoochanlon.github.io/ihs-simple) 特别说明
 
 🟢 由于该项目README复合扩展HTML标签较多，自带的网页渲染器效果对此方面优化不完善。请返回到 [hoochanlon/ihs-simple](https://github.com/hoochanlon/ihs-simple) 项目主页，查看全面的排版内容。
 
