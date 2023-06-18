@@ -1,15 +1,13 @@
-# ***<s>[ihs-simple](https://github.com/hoochanlon/ihs-simple/blob/main/THINGS.md#picgo)</s>***
-
 [![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
 
 ## 🧙‍♂️
+
+⚠️ 由于该项目README复合扩展HTML标签较多，[自带的网页渲染器效果](https://hoochanlon.github.io/ihs-simple/)对此方面优化不完善。[请返回到项目主页，查看全面的排版内容](https://github.com/hoochanlon/ihs-simple)。项目代码涉及到部分组件版本兼容问题 [点击此处](./d-ipynb/平台兼容问题.ipynb)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
 
 > 系统平台：Windows/Mac/Linux。 脚本语言：多种、不限；我流，按需编写。 研究对象：基础信息自动化、云主机远程安全处理、社会科学信息化及数据分析。
 >
 > 跨学科信息化综合应用：桌面基线排查、软件激活破解、免杀及特权执行、渗透式支援固件识别读写、主机账户密码空值检测、Wi-Fi密码扫描、云主机终端安全加固、主机系统日志分析、自然语言处理、人文社科信息数据分析等。
 
-
-由于该项目README复合扩展HTML标签较多，[自带的网页渲染器效果](https://hoochanlon.github.io/ihs-simple/)对此方面优化不完善。[请返回到项目主页，查看全面的排版内容](https://github.com/hoochanlon/ihs-simple)。项目代码涉及到部分组件版本兼容问题 [点击此处](./d-ipynb/平台兼容问题.ipynb)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
 
 ```
 一开始只是用来做图床，为图省事方便，自己就偶尔随手上传小脚本，结果却成了各类程序语言脚本库。至于所谓 “技术” 方面的东西，找个专门的平台发稿就行了。现在想来，那些在xx之家、xx论坛投稿的笔者也是聪明人。SEO、宣传聚流，什么的...那就交由他们去吧。
