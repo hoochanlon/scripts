@@ -6,8 +6,6 @@
 
 跨学科信息化综合应用：桌面基线排查、软件激活破解、免杀及特权执行、渗透式支援固件识别读写、主机账户密码空值检测、Wi-Fi密码扫描、云主机终端安全加固、主机系统日志分析、自然语言处理、人文社科信息数据分析等。
 
-一开始只是用来做图床，为图省事方便，自己就偶尔随手上传小脚本，结果却成了各类程序语言脚本库。至于所谓 “技术” 方面的东西，找个专门的平台发稿就行了。现在想来，那些在xx之家、xx论坛投稿的笔者也是聪明人。SEO、宣传聚流，什么的...那就交由他们去吧。
-
 免责声明：所有脚本与指令、病毒分析文章，仅面向研究与学习交流之用，切勿用于其他非法用途！
 
 ## Windows桌面技术基线检查 
@@ -16,8 +14,6 @@
 
 * **打开PowerShell功能：`Set-ExecutionPolicy RemoteSigned`**
 * ***关闭PowerShell功能：`Set-ExecutionPolicy Restricted`***
-
-🟢 由于该项目README复合扩展HTML标签较多，[自带的网页渲染器效果](https://hoochanlon.github.io/ihs-simple/)对此方面优化不完善。[请返回到项目主页，查看全面的排版内容](https://github.com/hoochanlon/ihs-simple)。项目代码涉及到部分组件版本兼容问题 [点击此处](./d-ipynb/平台兼容问题.ipynb)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
 
 <details>
 <summary><B> 点击详情 </B></summary>
@@ -435,6 +431,10 @@ urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
 
 [^职场辱虐的情绪影响和行为反应研究]:
     1. 黄俊《传播创新研究（第四辑）· 职场辱虐的情绪影响和行为反应研究、B站等社交媒体的传播研究》149页
+
+## https://hoochanlon.github.io/ihs-simple 注意事项
+
+🟢 由于该项目README复合扩展HTML标签较多，自带的网页渲染器效果对此方面优化不完善。[请返回到项目主页，查看全面的排版内容](https://github.com/hoochanlon/ihs-simple)。项目代码涉及到部分组件版本兼容问题 [点击此处](./d-ipynb/平台兼容问题.ipynb)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
 
 ## 参考文献
 
