@@ -4,33 +4,13 @@
 
 ## 🧙‍♂️
 
-
 > 系统平台：Windows/Mac/Linux。 脚本语言：多种、不限；我流，按需编写。 研究对象：基础信息自动化、云主机远程安全处理、社会科学信息化及数据分析。
 >
-> 跨学科信息化综合应用：桌面基线排查、软件激活破解、免杀及特权执行、渗透式支援固件识别读写、主机账户密码空值检测、Wi-Fi密码扫描、云主机终端安全加固、主机系统日志分析、自然语言处理、人文社科信息数据分析等。有关自动化信息处理生成的报告报表，可查阅 d-xlsx 目录了解详情。
-
+> 跨学科信息化综合应用：桌面基线排查、软件激活破解、免杀及特权执行、渗透式支援固件识别读写、主机账户密码空值检测、Wi-Fi密码扫描、云主机终端安全加固、主机系统日志分析、自然语言处理、人文社科信息数据分析等。
+>
+> 有关[兼容性问题见](https://github.com/hoochanlon/ihs-simple/blob/main/d-ipynb/平台兼容问题.ipynb)，自动化信息处理生成的报告报表，可查阅 d-xlsx 目录了解详情。
 
 一开始只是用来做图床，为图省事方便，自己就偶尔随手上传小脚本，结果却成了各类程序语言脚本库。至于所谓 “技术” 方面的东西，找个专门的平台发稿就行了。现在想来，那些在xx之家、xx论坛投稿的笔者也是聪明人。SEO、宣传聚流，什么的...那就交由他们去吧。
-
-<details>
-<summary><B> other </B></summary>
-
-Linux迁移 Windows command 工具：
-
-* [cygwin](http://www.cygwin.com) 类子系统
-* [gnuwin32](http://gnuwin32.sourceforge.net)、[minGW](http://www.mingw.org)  保持原生环境，尽可能提供类似的方案
-
-python环境问题
-
-* pyenv+pipx+poetry
-  * pyenv灵活地安装与切换python版本，搭配poetry可快速生成相应版本环境。
-  * pipx升级依赖工具包方便，不用担心全局兼容问题。
-  * 编译的程序通常会依赖各种包，这个要看开发者给出相应提示安装哪些包了。
-* miniconda、anaconda这类python发行版，依赖库齐全。
-
-jupyter 脚注问题：https://github.com/jupyter/notebook/issues/1287#issuecomment-451080550 ，另外注意此类方法需下载文件到本地才能正常使用。
-
-</details>
 
 免责声明：所有脚本与指令、病毒分析文章，仅面向研究与学习交流之用，切勿用于其他非法用途！
 
@@ -44,7 +24,6 @@ jupyter 脚注问题：https://github.com/jupyter/notebook/issues/1287#issuecomm
 <details>
 <summary><B> 点击详情 </B></summary>
  
-
  一键使用，本地下载使用转GB2312编码 [图文版](https://www.52pojie.cn/thread-1795749-1-1.html)
  
 ```
