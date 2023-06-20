@@ -241,7 +241,7 @@ python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/h
 一键下载微软官方设计壁纸
 
 1. ruby 在Windows平台融入性，一体化程度不如Linux/macOS。
-2. 基于国内与台湾网络环境考量，不做原生写入处理，改用aira2下载。
+2. 基于国内网络环境考量，不做原生写入处理，改用aira2下载，以便监控进度。
 
 ```
 ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-ruby/get_msdesign_wallpapers.rb)"
