@@ -227,6 +227,8 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v Disa
 
 ## 壁纸设定
 
+一面工作，一面生活。
+
 <details>
 <summary><B> 点击详情 </B></summary>
 
@@ -239,7 +241,7 @@ python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/h
 一键下载微软官方设计壁纸
 
 ```
-ruby "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-ruby/get_msdesign_wallpapers.rb)"
+ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-ruby/get_msdesign_wallpapers.rb)"
 ```
 
 一键定时切换壁纸，一面工作，一面生活（Mac）
