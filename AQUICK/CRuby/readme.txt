@@ -5,3 +5,11 @@ titles.first(3).each do |title| 语法糖
 
 存在不少语法糖，难怪说所谓简洁。
 
+通过对语法糖的了解反倒是很让代码与逻辑更完善。
+
+```
+# 将解压出来的文件夹移动到指定目录下
+puts "正在移动解压后的文件夹到 #{theme_path} ..."
+FileUtils.move(Dir.glob(File.join(unzip_path, '**', '*')), theme_path, :force => true)
+```
+
