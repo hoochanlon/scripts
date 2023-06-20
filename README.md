@@ -109,12 +109,6 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
 ```
 sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/office2021.scpt)"
 ```
-
-一键定时切换壁纸，一面工作，一面生活
- 
- ```
-  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
- ```
  
 最后，转朋友的：[自在拉基 - Mac打印机一键安装](https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html)。（没需求，所以没写；原理都差不多，确实挺厉害的。）
  
@@ -230,11 +224,37 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v Disa
 
 </details>
 
+
+## 壁纸设定
+
+<details>
+<summary><B> 点击详情 </B></summary>
+
+一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
+
+```
+python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
+```
+
+一键下载微软官方设计壁纸
+
+```
+ruby "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-ruby/get_msdesign_wallpapers.rb)"
+```
+
+一键定时切换壁纸，一面工作，一面生活（Mac）
+ 
+ ```
+  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
+ ```
+
+</details>
+
 ## 移花接木与细枝末节
 
 
 * Windows/Office、winrar、emeditor、idm、XchangePDF
-* Wi-Fi、bing壁纸、PE查看局域网IP、解析主机IP运营商及归属地查询
+* Wi-Fi、PE查看局域网IP、解析主机IP运营商及归属地查询
 * 其他更多...
 
 <details>
@@ -279,12 +299,6 @@ powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple
 ```
  
 ### 细枝末节
- 
-一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
-
-```
-python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
-```
  
 CMD获取本机公网详情
  
