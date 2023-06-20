@@ -224,7 +224,6 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v Disa
 
 </details>
 
-
 ## 壁纸设定
 
 一面工作，一面生活。
@@ -241,7 +240,8 @@ python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/h
 一键下载微软官方设计壁纸
 
 1. ruby 在Windows平台融入性，一体化程度不如Linux/macOS。
-2. 基于国内网络环境考量，不做原生写入处理，改用aira2下载，以便监控进度。
+2. ruby 必须在3.0以上版本
+3. 基于国内网络环境考量，不做原生写入处理，改用aira2下载，以便监控进度。
 
 ```
 ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-ruby/get_msdesign_wallpapers.rb)"
