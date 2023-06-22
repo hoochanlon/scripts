@@ -186,7 +186,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <details>
 <summary><b>点击详情</b></summary>
 
-<h3>IE防Edge劫持 <a href="https://www.52pojie.cn/thread-1774349-1-1.html">图文版</a></h3>
+<p>IE防Edge劫持 <a href="https://www.52pojie.cn/thread-1774349-1-1.html">图文版</a></p>
 
 <pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/keep_ie.bat|cmd</code></pre>
 
@@ -195,15 +195,15 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <li>注【2】：代码地址：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat">https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat</a></li>
 </ul>
 
-<h3>一键永久关闭Windows更新设置 <a href="https://www.52pojie.cn/thread-1791338-1-1.html">图文版</a></h3>
+<p>一键永久关闭Windows更新设置 <a href="https://www.52pojie.cn/thread-1791338-1-1.html">图文版</a></p>
 
 <pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/stop_update.bat|cmd</code></pre>
 
-<h3>一键恢复被关闭的Windows更新设置</h3>
+<p>一键恢复被关闭的Windows更新设置</p>
 
 <pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/re_update.bat|cmd</code></pre>
 
-<h3>一键开启或关闭Windows defender实时保护</h3>
+<p>一键开启或关闭Windows defender实时保护</p>
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat</code></pre>
 
@@ -211,11 +211,11 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/nano_runas.bat&&call nano_runas.bat</code></pre>
 
-<pre>去掉win10/win11热搜条目（需注销或重启） <a href="https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn">admx.help 上见</a></pre>
+<p>去掉win10/win11热搜条目（需注销或重启） <a href="https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn">admx.help 上见</a></p>
 
 <pre><code>reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f</code></pre>
 
-<pre>钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="./d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></pre>
+<p>钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="./d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
 
 </details>
 
@@ -226,11 +226,11 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <details>
 <summary><b>点击详情</b></summary>
 
-<h3>一键爬取bing壁纸 <a href="https://www.52pojie.cn/thread-1781868-1-1.html">图文版</a></h3>
+<p>一键爬取bing壁纸 <a href="https://www.52pojie.cn/thread-1781868-1-1.html">图文版</a></p>
 
 <pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_bing_wallpapers.py)"</code></pre>
 
-<h3>一键下载微软官方设计壁纸</h3>
+<p>一键下载微软官方设计壁纸</p>
 
 <ol>
 <li>ruby 在Windows平台融入性，一体化程度不如Linux/macOS。</li>
@@ -240,7 +240,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <pre><code>ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_msdesign_wallpapers.rb)"</code></pre>
 
-<h3>一键定时切换壁纸，一面工作，一面生活（Mac）</h3>
+<p>一键定时切换壁纸，一面工作，一面生活（Mac）</p>
 
 <pre><code>bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_corn_diy_wallpaper.sh)"</code></pre>
 
