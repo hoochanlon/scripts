@@ -66,54 +66,53 @@ Linux基线检查（PR）见：<a href="https://github.com/al0ne/LinuxCheck">al0
 ```
 
 <details>
-<summary><B> 点击详情 </B></summary>
+<summary><b>点击详情</b></summary>
 
 重置macOS ~/.zshrc （仅环境变量配置失误，造成不可逆后果使用）
 
-```
+<pre><code>
 export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin; sudo rm -rf ~/.zshrc
-```
+</code></pre>
 
-Mac查看当前Wi-Fi密码 [图文版](https://www.52pojie.cn/thread-1766927-1-1.html)
+Mac查看当前Wi-Fi密码 <a href="https://www.52pojie.cn/thread-1766927-1-1.html">图文版</a>
 
-```
+<pre><code>
 sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_show_wifi.sh)"
-```
+</code></pre>
 
-Mac 一键支持NTFS [图文版](https://github.com/hoochanlon/Free-NTFS-For-Mac)
+Mac 一键支持NTFS <a href="https://github.com/hoochanlon/Free-NTFS-For-Mac">图文版</a>
 
-```
-sudo -u $USER python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/mac_ntfs_ninja.py)"
-```
+<pre><code>
+sudo -u $USER python3 −c"(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/mac_ntfs_ninja.py)"
+</code></pre>
 
-Mac 激活各类相关软件 [图文版](https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells)（DMCA）
+Mac 激活各类相关软件 <a href="https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells">图文版</a>（DMCA）
 
-```
+<pre><code>
 sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
-```
+</code></pre>
 
 macOS MS-AutoUpdate 一键带走
 
-```
+<pre><code>
 sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-apple/no_ms_autoupdate.scpt)"
-```
+</code></pre>
 
- 一键RAR密码爆破 [图文版](https://www.52pojie.cn/thread-1775990-1-1.html)
- 
- ```
- bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/7z_rar_sensei.sh)"
- ```
+一键RAR密码爆破 <a href="https://www.52pojie.cn/thread-1775990-1-1.html">图文版</a>
+
+<pre><code>
+bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/7z_rar_sensei.sh)"
+</code></pre>
 
 自动化下载 Office Mac2021 激活工具
 
-```
+<pre><code>
 sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-apple/office2021.scpt)"
-```
- 
-最后，转朋友的：[自在拉基 - Mac打印机一键安装](https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html)。（没需求，所以没写；原理都差不多，确实挺厉害的。）
- 
-</details>
+</code></pre>
 
+最后，转朋友的：<a href="https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html">自在拉基 - Mac打印机一键安装</a>。（没需求，所以没写；原理都差不多，确实挺厉害的。）
+
+</details>
 
 ## Linux云主机毛坯房安全改造
 
