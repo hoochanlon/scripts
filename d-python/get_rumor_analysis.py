@@ -144,7 +144,7 @@ def baseinfo_write_to_excel(rumor_contents) -> list:
 
     # 21：58 新增自动化分类
     # 从URL获取JSON数据，调用在线分类字典 json
-    response = urllib.request.urlopen('https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-json/fenlei_pypt.json')
+    response = urllib.request.urlopen('https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-json/fenlei_pypt.json')
     json_data = response.read().decode('utf-8')
     # 解析JSON数据
     category_keywords = json.loads(json_data)

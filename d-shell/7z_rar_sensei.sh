@@ -13,7 +13,7 @@
 
 # 不存在就下载密码本
 if [ ! -f ~/Downloads/rarpasswd.txt ]; then
-    curl -o ~/Downloads/rarpasswd.txt https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-txt/rarpasswd.txt
+    curl -o ~/Downloads/rarpasswd.txt https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-txt/rarpasswd.txt
 fi
 
 # 保存密码本为基本路径格式

@@ -157,7 +157,7 @@ def write_category_to_sheet(sheet_name: str, wb: Workbook):
 
     # 调用在线分类字典 json
     # 从URL获取JSON数据
-    response = urllib.request.urlopen('https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/AQUICK/category_news.json')
+    response = urllib.request.urlopen('https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/AQUICK/category_news.json')
     json_data = response.read().decode('utf-8')
 
     # 解析JSON数据

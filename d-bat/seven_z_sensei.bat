@@ -7,7 +7,7 @@ echo\
 python -c "import datetime;now=datetime.datetime.now();print('起始时间是：', now)" 2>nul > rar_time_log.txt
 
 @REM 判断是否存在密码本，没有则下载
-IF NOT EXIST "C:\Users\%USERNAME%\Downloads\rarpasswd.txt" > nul (curl -o C:\Users\%USERNAME%\Downloads\rarpasswd.txt https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-txt/rarpasswd.txt)
+IF NOT EXIST "C:\Users\%USERNAME%\Downloads\rarpasswd.txt" > nul (curl -o C:\Users\%USERNAME%\Downloads\rarpasswd.txt https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-txt/rarpasswd.txt)
 
 echo/
 @REM 设置7z为常用变量
@@ -97,7 +97,7 @@ echo\
 @REM )
 
 @REM 加载密码本
-@REM https://github.com/hoochanlon/ihs-simple/raw/main/d-txt/rarpasswd.txt
+@REM https://github.com/hoochanlon/scripts/raw/main/d-txt/rarpasswd.txt
 @REM https://statically.io/convert/
 @REM http 会成301状态码，注意是https
 

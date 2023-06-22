@@ -13,7 +13,7 @@ function sel_man {
     Write-Host "2. 主机启用/禁用 PowerShell指令： " -ForegroundColor Green -nonewline
     Write-Host "Set-ExecutionPolicy RemoteSigned / Set-ExecutionPolicy Restricted" -ForegroundColor DarkYellow
     Write-Host "3. 该脚本信息量较大，建议全屏使用；其他见：" -ForegroundColor Green -NoNewLine
-    Write-Host "https://github.com/hoochanlon/ihs-simple `n" -ForegroundColor Blue
+    Write-Host "https://github.com/hoochanlon/scripts `n" -ForegroundColor Blue
     
     Write-Host " [1] 检查IP与网络设备连接近况" -ForegroundColor Green
     Write-Host " [2] 检查打印机、打印池、扫描仪状态" -ForegroundColor Green
@@ -309,7 +309,7 @@ function dev_man {
     Write-Host "2.1 代码实现涉及到设计思想：如何查询结构、基本运行逻辑、异常处理等。"
     Write-Host "3. 查阅文档与验证：关键字、案例、调试、实验、反复查阅。`n"
     Write-Host "如有疑问及遗漏不当之处，可联系作者邮箱 hoochanlon@outlook.com ，以及访问GitHub项目地址：" -NoNewline -ForegroundColor Yellow
-    Write-Host "https://github.com/hoochanlon/ihs-simple " -NoNewline -ForegroundColor Blue
+    Write-Host "https://github.com/hoochanlon/scripts " -NoNewline -ForegroundColor Blue
     Write-Host "，同时欢迎咨询与指正。" -ForegroundColor Yellow
 
     Write-Host "`n#附录·IT运维技术分析工具`n"  -ForegroundColor  Cyan
@@ -333,7 +333,7 @@ function dev_man {
     Write-Host "   registry-finder：" -ForegroundColor Yellow -nonewline; Write-Host "https://registry-finder.com" -ForegroundColor Blue
 
     Write-Host "`n* 事件ID分析工具：" -ForegroundColor Yellow
-    Write-Host "    Win10_Events_ID_useful：" -ForegroundColor Yellow -nonewline; Write-Host "https://github.com/hoochanlon/ihs-simple/blob/main/AQUICK/BITRH/Win10_Events_ID_useful.xlsx" -ForegroundColor Blue
+    Write-Host "    Win10_Events_ID_useful：" -ForegroundColor Yellow -nonewline; Write-Host "https://github.com/hoochanlon/scripts/blob/main/AQUICK/BITRH/Win10_Events_ID_useful.xlsx" -ForegroundColor Blue
     Write-Host "   myeventlog：" -ForegroundColor Yellow -nonewline; Write-Host "https://www.myeventlog.com/search/find" -ForegroundColor Blue
     Write-Host "   ultimatewindowssecurity：" -ForegroundColor Yellow -nonewline; Write-Host "https://www.ultimatewindowssecurity.com/securitylog/encyclopedia" -ForegroundColor Blue
    
@@ -989,7 +989,7 @@ function try_csv_xlsx {
     }
     
     # Write-Host "`n正在生成截止目前的当天重要事件统计...`n" -ForegroundColor Yellow
-    # # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
+    # # 事件ID，见：https://github.com/hoochanlon/scripts/blob/main/BITRH/Win10_Events_ID_useful.xlsx
     # $result = Get-WinEvent -FilterHashtable @{
     #     LogName   = 'Application', 'System', 'Security'
     #     StartTime = (Get-Date).Date
@@ -1002,7 +1002,7 @@ function try_csv_xlsx {
     # } 
 
     Write-Host "`n正在统计五天内截止目前的重要事件，时间较长请耐心等待...`n" -ForegroundColor Yellow
-    # 事件ID，见：https://github.com/hoochanlon/ihs-simple/blob/main/BITRH/Win10_Events_ID_useful.xlsx
+    # 事件ID，见：https://github.com/hoochanlon/scripts/blob/main/BITRH/Win10_Events_ID_useful.xlsx
     # 后续参考：https://learn.microsoft.com/en-us/answers/questions/961608/event-id-6155-(the-lsa-package-is-not-signed-as-ex
 
     $elapsedTime = (Measure-Command {
