@@ -17,34 +17,38 @@
 * ***关闭PowerShell功能：`Set-ExecutionPolicy Restricted`***
 
 <details>
-<summary><B> 点击详情 </B></summary>
- 
- 一键使用，本地下载使用转GB2312编码 [图文版](https://www.52pojie.cn/thread-1795749-1-1.html)
- 
-```
- irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/frontline_helpdesk.ps1|iex
-```
- 
+<summary><b>点击详情</b></summary>
+
+一键使用，本地下载使用转GB2312编码 <a href="https://www.52pojie.cn/thread-1795749-1-1.html">图文版</a>
+
+<pre><code>
+irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/frontline_helpdesk.ps1|iex
+</code></pre>
+
 功能概览：
- 
-1. 检查IP与网络设备连接近况
-2. 检查打印机、打印池、扫描仪状态
-3. 检查硬盘、CPU、内存、显卡等基础驱动信息
-4. 检查设备安全性、近期升级补丁、定时任务项、证书策略、系统核心文件控制访问状况
-5. 检查主机主动共享协议相关信息
-6. 检查电脑休眠、重启频次、异常关机、程序崩溃等信息
-7. 执行1～6选项的所有功能
-8. 生成"设备驱动检查"、"五天内预警事件"、"登录登出活动记录"、"月度已存威胁概况"分析报表
-9. 查看指导建议与开发说明 
+
+<ol>
+<li>检查IP与网络设备连接近况</li>
+<li>检查打印机、打印池、扫描仪状态</li>
+<li>检查硬盘、CPU、内存、显卡等基础驱动信息</li>
+<li>检查设备安全性、近期升级补丁、定时任务项、证书策略、系统核心文件控制访问状况</li>
+<li>检查主机主动共享协议相关信息</li>
+<li>检查电脑休眠、重启频次、异常关机、程序崩溃等信息</li>
+<li>执行1～6选项的所有功能</li>
+<li>生成"设备驱动检查"、"五天内预警事件"、"登录登出活动记录"、"月度已存威胁概况"分析报表</li>
+<li>查看指导建议与开发说明</li>
+</ol>
 
 BTW
- 
-Linux基线检查（PR）见：[al0ne/LinuxCheck](https://github.com/al0ne/LinuxCheck)。对于Mac来说，这些安全服务的维护成本，不适用于中小企业。
- 
-* [Apple - Mac系统部署](https://www.apple.com.cn/business/docs/site/Mac_Deployment_Overview.pdf)
-* [vmware - 企业采购苹果设备的正确姿势-abm](https://blogs.vmware.com/china/2019/10/08/企业采购苹果设备的正确姿势-abm/)
 
-大环境下，这篇文章 [CSDN - 企业管理Mac电脑的三种方式](https://blog.csdn.net/smartbenson/article/details/50636012)提及的管理办法，都算得上是防控得当，可对比Windows来说，却挺不够看的。
+Linux基线检查（PR）见：<a href="https://github.com/al0ne/LinuxCheck">al0ne/LinuxCheck</a>。对于Mac来说，这些安全服务的维护成本，不适用于中小企业。
+
+<ul>
+<li><a href="https://www.apple.com.cn/business/docs/site/Mac_Deployment_Overview.pdf">Apple - Mac系统部署</a></li>
+<li><a href="https://blogs.vmware.com/china/2019/10/08/企业采购苹果设备的正确姿势-abm/">vmware - 企业采购苹果设备的正确姿势-abm</a></li>
+</ul>
+
+大环境下，这篇文章 <a href="https://blog.csdn.net/smartbenson/article/details/50636012">CSDN - 企业管理Mac电脑的三种方式</a>提及的管理办法，都算得上是防控得当，可对比Windows来说，却挺不够看的。
 
 </details>
 
