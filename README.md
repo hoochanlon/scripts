@@ -119,57 +119,63 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
 购买云服务商提供的云主机，系统基本没有任何的安全软件保护。每天都有各地不法分子扫描公网，并不断远程暴破、入侵主机。所以需要采取防治措施。
 
 <details>
-<summary><B> 点击详情 </B></summary>
+<summary><b>点击详情</b></summary>
 
-### 一键搞定SSH登录、用户密码策略配置、Ban IP配置 [图文版](https://www.52pojie.cn/thread-1749877-1-1.html)
+<h3>一键搞定SSH登录、用户密码策略配置、Ban IP配置 <a href="https://www.52pojie.cn/thread-1749877-1-1.html">图文版</a></h3>
 
-* SSH登录: 免密的密钥模式、心跳长时间连接，客户端不掉线 
-* 密码策略: 不限特殊字符、大小写，并支持4～5位长度下限
-* Ban IP: 除自己IP外，30秒内短时间三次输错密码，永久封禁IP。
+<ul>
+<li>SSH登录: 免密的密钥模式、心跳长时间连接，客户端不掉线</li>
+<li>密码策略: 不限特殊字符、大小写，并支持4～5位长度下限</li>
+<li>Ban IP: 除自己IP外，30秒内短时间三次输错密码，永久封禁IP。</li>
+</ul>
 
-```
+<pre><code>
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/lite_ssh_n_ban.sh)"
-```
+</code></pre>
 
-SSH单项配置：一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。（单项部分是开启限定自己IP访问的，即 AllowUsers）
+<p>SSH单项配置：一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。（单项部分是开启限定自己IP访问的，即 AllowUsers）</p>
 
-```
+<pre><code>
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_ssh.sh)"
-```
+</code></pre>
 
-fail2ban单项配置：一键fail2ban从下载到安装及生成配置与启动服务。(再次允许单项部分可以刷新自己公网IP配置)
+<p>fail2ban单项配置：一键fail2ban从下载到安装及生成配置与启动服务。(再次允许单项部分可以刷新自己公网IP配置)</p>
 
-```
+<pre><code>
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_ban.sh)"
-```
+</code></pre>
 
-### 一键搞定Linux自定义创建具有管理员权限的用户 [图文版](https://www.52pojie.cn/thread-1749877-1-1.html)
+<h3>一键搞定Linux自定义创建具有管理员权限的用户 <a href="https://www.52pojie.cn/thread-1749877-1-1.html">图文版</a></h3>
 
-* 自定义用户名
-* su、sudo及wheel组成员免密
-* sshd_config锁root远程登录，提高安全性
+<ul>
+<li>自定义用户名</li>
+<li>su、sudo及wheel组成员免密</li>
+<li>sshd_config锁root远程登录，提高安全性</li>
+</ul>
 
-```
+<pre><code>
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/diy_add_wheel.sh)"
-```
+</code></pre>
 
-### 一键搞定FTP [图文版](https://www.52pojie.cn/thread-1753070-1-1.html)
+<h3>一键搞定FTP <a href="https://www.52pojie.cn/thread-1753070-1-1.html">图文版</a></h3>
 
-* 共享目录： /var/ftp/share 
-* 限制越权出逃共享访问，可读写。
-* 安全，私有化，限定自己的公网IP访问。
+<ul>
+<li>共享目录： /var/ftp/share </li>
+<li>限制越权出逃共享访问，可读写。</li>
+<li>安全，私有化，限定自己的公网IP访问。</li>
+</ul>
 
-不输密码版，用户名:ftpuser 密码：P@ssw0rd
+<p>不输密码版，用户名:ftpuser 密码：P@ssw0rd</p>
 
-```
+<pre><code>
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_vsftpd.sh)"
-```
+</code></pre>
 
-自定义用户版
+<p>自定义用户版</p>
 
-```
+<pre><code>
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/lite_vsftpd.sh)"
-```
+</code></pre>
 
 </details>
 
@@ -178,48 +184,38 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 主要涉及：IE、Windows defender、Windows更新、钉钉静默安装、打印机自动化安装
 
 <details>
-<summary><B> 点击详情 </B></summary>
- 
-IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html) 
+<summary><b>点击详情</b></summary>
 
-```
-curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/keep_ie.bat|cmd
-```
- 
-* 注【1】：[域控环境IE模版 图文](https://www.52pojie.cn/thread-1765347-1-1.html) 
-* 注【2】：代码地址：https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat
+<h3>IE防Edge劫持 <a href="https://www.52pojie.cn/thread-1774349-1-1.html">图文版</a></h3>
 
-一键永久关闭Windows更新设置 [图文版](https://www.52pojie.cn/thread-1791338-1-1.html)
+<p><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/keep_ie.bat|cmd</code></p>
 
-```
-curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/stop_update.bat|cmd
-```
+<ul>
+<li>注【1】：<a href="https://www.52pojie.cn/thread-1765347-1-1.html">域控环境IE模版 图文</a></li>
+<li>注【2】：代码地址：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat">https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat</a></li>
+</ul>
 
-一键恢复被关闭的Windows更新设置
+<h3>一键永久关闭Windows更新设置 <a href="https://www.52pojie.cn/thread-1791338-1-1.html">图文版</a></h3>
 
-```
-curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/re_update.bat|cmd
-```
+<p><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/stop_update.bat|cmd</code></p>
 
-一键开启或关闭Windows defender实时保护
+<h3>一键恢复被关闭的Windows更新设置</h3>
 
-```
-curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat
-```
+<p><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/re_update.bat|cmd</code></p>
 
-一键调用设置程序是否以管理员权限运行
+<h3>一键开启或关闭Windows defender实时保护</h3>
 
-```
-curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/nano_runas.bat&&call nano_runas.bat
-```
+<p><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat</code></p>
 
-去掉win10/win11热搜条目（需注销或重启） [admx.help 上见](https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn)
+<h3>一键调用设置程序是否以管理员权限运行</h3>
 
-```
-reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f
-```
+<p><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/nano_runas.bat&&call nano_runas.bat</code></p>
 
-钉钉静默安装源码： [fuck_dingding.bat](./d-bat/fuck_dingding.bat)；打印机安装详情见：[打印机自动化安装研究.ipynb](./d-ipynb/打印机自动化安装研究.ipynb)
+<p>去掉win10/win11热搜条目（需注销或重启） <a href="https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn">admx.help 上见</a></p>
+
+<p><code>reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f</code></p>
+
+<p>钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="./d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
 
 </details>
 
