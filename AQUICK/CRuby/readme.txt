@@ -13,3 +13,8 @@ puts "正在移动解压后的文件夹到 #{theme_path} ..."
 FileUtils.move(Dir.glob(File.join(unzip_path, '**', '*')), theme_path, :force => true)
 ```
 
+开放格式API：https://www.fileformat.com/zh/
+
+https://www.tairaengineer-note.com/ruby-rubyxl-specify-sheet-name/
+
+https://www.cnblogs.com/dajianshi/p/11613060.html
