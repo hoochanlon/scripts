@@ -224,29 +224,25 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 一面工作，一面生活。
 
 <details>
-<summary><B> 点击详情 </B></summary>
+<summary><b>点击详情</b></summary>
 
-一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
+<h3>一键爬取bing壁纸 <a href="https://www.52pojie.cn/thread-1781868-1-1.html">图文版</a></h3>
 
-```
-python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_bing_wallpapers.py)"
-```
+<p><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_bing_wallpapers.py)"</code></p>
 
-一键下载微软官方设计壁纸
+<h3>一键下载微软官方设计壁纸</h3>
 
-1. ruby 在Windows平台融入性，一体化程度不如Linux/macOS。
-2. ruby 必须在3.0以上版本
-3. 基于国内网络环境考量，不做原生写入处理，改用aira2下载，以便监控进度。
+<ol>
+<li>ruby 在Windows平台融入性，一体化程度不如Linux/macOS。</li>
+<li>ruby 必须在3.0以上版本</li>
+<li>基于国内网络环境考量，不做原生写入处理，改用aira2下载，以便监控进度。</li>
+</ol>
 
-```
-ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_msdesign_wallpapers.rb)"
-```
+<p><code>ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_msdesign_wallpapers.rb)"</code></p>
 
-一键定时切换壁纸，一面工作，一面生活（Mac）
- 
- ```
-  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_corn_diy_wallpaper.sh)"
- ```
+<h3>一键定时切换壁纸，一面工作，一面生活（Mac）</h3>
+
+<p><code>bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_corn_diy_wallpaper.sh)"</code></p>
 
 </details>
 
@@ -258,96 +254,81 @@ ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hooc
 * 其他更多...
 
 <details>
-<summary><B> 点击详情 </B></summary>
- 
-### 移花接木
- 
-CMD一键调用windows版本切换与Windows/Office激活 [图文版](https://www.52pojie.cn/thread-1743122-1-1.html)
+<summary><b>点击查看详情</b></summary>
 
-```
-curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&&TIMEOUT /T 1&&start Switch.bat&&powershell -command "irm https://massgrave.dev/get|iex"
-```
+<h3>移花接木</h3>
 
-CMD一键安装winrar注册激活
+<p>CMD一键调用windows版本切换与Windows/Office激活 <a href="https://www.52pojie.cn/thread-1743122-1-1.html">图文版</a></p>
 
-```
-powershell -command Invoke-WebRequest -Uri "https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/winrar_down_reg.bat" -OutFile "C:/Users/${env:UserName}/Downloads/winrar_down_reg.bat"&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
-```
+<pre><code>curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windows10-VersionSwitcher/master/Switch.bat&amp;&amp;TIMEOUT /T 1&&start Switch.bat&&powershell -command "irm https://massgrave.dev/get|iex"</code></pre>
 
-Powershell一键生成Emeditor序列号
+<p>CMD一键安装winrar注册激活</p>
 
-```
-irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/emeditor_random_keygen.ps1|iex
-```
+<pre><code>powershell -command Invoke-WebRequest -Uri "https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/winrar_down_reg.bat" -OutFile "C:/Users/${env:UserName}/Downloads/winrar_down_reg.bat"&&TIMEOUT /T 1&&start /b C:\Users%username%\Downloads\winrar_down_reg.bat
+</code></pre>
 
-Powershell一键IDM激活（[自己写的方案已失效，国内版权原因不做更新](https://github.com/hoochanlon/scripts/blob/main/d-pwsh/fail_idm.ps1)）
+<p>Powershell一键生成Emeditor序列号</p>
 
-```
-iwr -useb https://ghproxy.com/https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/main/IAS.ps1 | iex
-```
+<pre><code>irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/emeditor_random_keygen.ps1|iex
+</code></pre>
 
-Powershell从XchangePDF Editor下载安装到生成许可证 
+<p>Powershell一键IDM激活（<a href="https://github.com/hoochanlon/scripts/blob/main/d-pwsh/fail_idm.ps1">自己写的方案已失效，国内版权原因不做更新</a>）</p>
 
-```
-curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
-```
- 
-win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thread-1768841-1-1.html)
+<pre><code>iwr -useb https://ghproxy.com/https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/main/IAS.ps1 | iex
+</code></pre>
 
-```
-powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/exifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
-```
- 
-### 细枝末节
- 
-CMD获取本机公网详情
- 
-```
-powershell -c irm "https://freeipapi.com/api/json/$(irm http://api.ipify.org)"
-```
+<p>Powershell从XchangePDF Editor下载安装到生成许可证</p>
 
-Shell获取本机公网详情（需安装 `brew install jq`）
- 
-```
- curl -s https://freeipapi.com/api/json/$(curl -s https://api.ipify.org) | jq .
-```
+<pre><code>curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
+</code></pre>
 
-一键安装打印机原理代码 [图文版](https://www.52pojie.cn/thread-1776328-1-1.html)。
- 
-```
- https://github.com/hoochanlon/scripts/blob/main/d-bat/install_public_network_hp_printer_driver.bat
-```
- 
-powershell active，以及微PE显示IP脚本 
+<p>win7 打开图片报错“内存不足” <a href="https://www.52pojie.cn/thread-1768841-1-1.html">图文版</a></p>
 
-```
-explorer https://github.com/hoochanlon/scripts/blob/main/d-bat/weipe_showip.bat
-```
+<pre><code>powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/exifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
+</code></pre>
 
-一键安装Java [图文版](https://www.52pojie.cn/thread-1767872-1-1.html)
+<h3>细枝末节</h3>
 
-```
-curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/install_jdk.bat&&call install_jdk.bat
-```
+<p>CMD获取本机公网详情</p>
 
-win11一键显示当前WiFi与密码并生成二维码分享 [图文版](https://www.52pojie.cn/thread-1772481-1-1.html)
+<pre><code>powershell -c irm "https://freeipapi.com/api/json/$(irm http://api.ipify.org)"
+</code></pre>
 
-```
-curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/show_wifi.bat&&call show_wifi.bat
-```
+<p>Shell获取本机公网详情（需安装 <code>brew install jq</code>）</p>
 
-一键显示所有WiFi
+<pre><code>curl -s https://freeipapi.com/api/json/$(curl -s https://api.ipify.org) | jq .
+</code></pre>
 
- ```
-curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/oh_my_wifi.bat&&call oh_my_wifi.bat
- ```
- 
- 一键RAR密码爆破 [图文版](https://www.52pojie.cn/thread-1775357-1-1.html)
- 
- ```
- curl -Os https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/seven_z_sensei.bat&&call seven_z_sensei.bat
- ```
- 
+<p>一键安装打印机原理代码 <a href="https://www.52pojie.cn/thread-1776328-1-1.html">图文版</a></p>
+
+<pre><code>https://github.com/hoochanlon/scripts/blob/main/d-bat/install_public_network_hp_printer_driver.bat
+</code></pre>
+
+<p>powershell active，以及微PE显示IP脚本</p>
+
+<pre><code>explorer https://github.com/hoochanlon/scripts/blob/main/d-bat/weipe_showip.bat
+</code></pre>
+
+<p>一键安装Java <a href="https://www.52pojie.cn/thread-1767872-1-1.html">图文版</a></p>
+
+<pre><code>curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/install_jdk.bat&amp;&amp;call install_jdk.bat
+</code></pre>
+
+<p>win11一键显示当前WiFi与密码并生成二维码分享 <a href="https://www.52pojie.cn/thread-1772481-1-1.html">图文版</a></p>
+
+<pre><code>curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/show_wifi.bat&amp;&amp;call show_wifi.bat
+</code></pre>
+
+<p>一键显示所有WiFi</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/oh_my_wifi.bat&amp;&amp;call oh_my_wifi.bat
+</code></pre>
+
+<p>一键RAR密码爆破 <a href="https://www.52pojie.cn/thread-1775357-1-1.html">图文版</a></p>
+
+<pre><code>curl -Os https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/seven_z_sensei.bat&amp;&amp;call seven_z_sensei.bat
+</code></pre>
+
 </details>
 
 
@@ -366,70 +347,70 @@ curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scr
 pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-txt/requirements.txt
 ```
 
-
 <details>
-<summary><B> 点击详情 </B></summary>
- 
-### 新闻资讯收集（序·小试牛刀）
+<summary>点击详情</summary>
 
-一键获取中国新闻网资讯 [图文版](https://www.52pojie.cn/thread-1780608-1-1.html)
+<h3>新闻资讯收集（序·小试牛刀）</h3>
 
-```
-python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_chinanews.py)"
-```
- 
-一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
+<p>一键获取中国新闻网资讯 <a href="https://www.52pojie.cn/thread-1780608-1-1.html">图文版</a></p>
 
-```
-python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_worldometers.py)"
-```
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_chinanews.py)"
+</code></pre>
 
-### 头条、抖音、微博热搜采集分析
- 
-一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html) （NLP：[Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)）
+<p>一键生成全球信息报表 <a href="https://www.52pojie.cn/thread-1779165-1-1.html">图文版</a></p>
 
-```
-python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_resou_today_s.py)"
-```
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_worldometers.py)"
+</code></pre>
 
-* 自动化分类；整体匹配率：84%~96% 区间左右。
-* 词频统计；三者共存的热搜，说明为持久公共热度，信息密度较高。
-* 文本情感平均值、每条标题的情感数值；主：人为置顶热搜的文本情绪强烈程度。
-* 词性分析；标记可能存有引导与被植入意识成分用词，只要定语、状语叠得多，总能是宣传正态形势。
+<h3>头条、抖音、微博热搜采集分析</h3>
 
-微博在自动化分类中，噪音三者最大，信息价值低，话题含水量大，失真度偏高；各家平台的热搜标题也存有未标识谣言成分，最好用[国家辟谣平台查询](https://www.piyao.org.cn/pysjk/frontsql.htm)鉴别其真伪；虽然娱乐属性极重，但微博其本身具有一对多公共属性的社交模式，当某个社会事件被挂上热搜，它可在短时间内迅速传播信息，引发公众的关注和讨论。
+<p>一键获取今日头条、抖音、微博热搜。<a href="https://www.52pojie.cn/thread-1785460-1-1.html">图文版</a> （NLP：Stanza</p>
 
-推荐论文：
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_resou_today_s.py)"
+</code></pre>
 
-* 毛贺祺《大数据背景下微博热搜的新闻阅读服务功能》吉林大学新闻学专业硕士学位论文，2017.3<br>
-* 喻国明《大数据分析下的中国社会舆情 总体态势与结构性特征》中国人民大学学报，2013年第５期<br>
-* 王小新《当前我国受众网络新闻的阅读倾向——以百度热搜词为例》《今传媒》，2013年第9期<br>
-* 许诺《基于百度热搜新闻词的社会风险事件5W提取研究》《系统工程理论与实践》，2022年第40卷第2期<br>
+<ul>
+<li>自动化分类；整体匹配率：84%~96% 区间左右。</li>
+<li>词频统计；三者共存的热搜，说明为持久公共热度，信息密度较高。</li>
+<li>文本情感平均值、每条标题的情感数值；主：人为置顶热搜的文本情绪强烈程度。</li>
+<li>词性分析；标记可能存有引导与被植入意识成分用词，只要定语、状语叠得多，总能是宣传正态形势。</li>
+</ul>
 
+<p>微博在自动化分类中，噪音三者最大，信息价值低，话题含水量大，失真度偏高；各家平台的热搜标题也存有未标识谣言成分，最好用<a href="https://www.piyao.org.cn/pysjk/frontsql.htm">国家辟谣平台查询</a>鉴别其真伪；虽然娱乐属性极重，但微博其本身具有一对多公共属性的社交模式，当某个社会事件被挂上热搜，它可在短时间内迅速传播信息，引发公众的关注和讨论。</p>
 
-### 自动化收集辟谣条目及语言分析（NLP：[ThuLAC](https://github.com/thunlp/THULAC-Python)）
+<p>推荐论文：</p>
 
-功能大体与上例相当，对词频的较高词语进行语法分析。
+<ul>
+<li>毛贺祺《大数据背景下微博热搜的新闻阅读服务功能》吉林大学新闻学专业硕士学位论文，2017.3</li>
+<li>喻国明《大数据分析下的中国社会舆情 总体态势与结构性特征》中国人民大学学报，2013年第５期</li>
+<li>王小新《当前我国受众网络新闻的阅读倾向——以百度热搜词为例》《今传媒》，2013年第9期</li>
+<li>许诺《基于百度热搜新闻词的社会风险事件5W提取研究》《系统工程理论与实践》，2022年第40卷第2期</li>
+</ul>
 
-```
-python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_rumor_analysis.py)"
-```
- 
-urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
+<h3>自动化收集辟谣条目及语言分析（NLP：ThuLAC）</h3>
 
-对谣言的定义：阿尔波特(Gordom W.Allport)和波兹曼(Leo Postman)最早为谣言下了定义,即谣言是一个与当时事件相关联的命题,是为了使人相信,一般以口传媒介的方式在人们之间流传,但是却缺乏具体的资料以证实其确切性。（胡琦，2022）
+<p>功能大体与上例相当，对词频的较高词语进行语法分析。</p>
 
-谣言概念界定：究其本质而言,谣言普遍具有的属性,一是广泛传播，二是不确定性,基于此，本文将谣言界定为被广泛传播的、含有极大的不确定性的信息。“不确定性”主要是指对信息真实与否的不确定性。（雷霞，2023）
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_rumor_analysis.py)"
+</code></pre>
 
-目前,在突发事件中的各类谣言中,有明确目标性和破坏性的攻击型谣言和以实现政治、经济等利益为目标的宣传型或牟利型谣言出现的频率较低。多数谣言是出于恐惧心理和基于错误的认识判断而形成的。（胡琦，2022） 从这次的谣言收集分析已证明，最大的两个类别是，社会话题与健康饮食，两者分别占比48%、43%。
- 
-但“后真相”时代多元文化的糅合共存和碎片化的解读方式加剧了民众的价值分歧,侵蚀了信任防线。一方面，复杂的利益诉求、多元的社会思潮与多样的传播方式交织叠加，催生出“后真相”时代多元的网络文化，加大了主流与非主流文化之间的碰撞和摩擦。虽然非主流文化是主流文化的有益补充，但诸如佛系文化、网红文化、躺平文化等难免有背离主流文化的消极因素，尤其是污丑文化、拜金文化等更是尽显畸形审美和金钱至上的错误思想，若不加警惕和批判，极易误导一些认知不足、阅历不够的受众，诱发政治偏见,不断冲击和侵蚀业已形成的政治信任。另一方面，“后真相”时代人们面对海量信息，惯以碎片化的方式拼凑事实、解读真相。一旦关涉社会分化、利益分配、政治腐败和政策失误等复杂的政治谣言鉴别，人们极易陷入碎片化信息的不断解读和重组,制造出多种“真相”,并借此持续发酵,非但无益于阻断网络政治谣言的传播，反而会频繁质疑已有政治共识,造成政治信任的流失，为谣言惑众创设了可能。（杨芸伊,赵惜群，2022）
+<p>urllib3：<a href="https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175">https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175</a></p>
+
+<p>对谣言的定义：阿尔波特（Gordom W.Allport）和波兹曼（Leo Postman）最早为谣言下了定义，即谣言是一个与当时事件相关联的命题，是为了使人相信，一般以口传媒介的方式在人们之间流传，但是却缺乏具体的资料以证实其确切性。（胡琦，2022）</p>
+
+<p>谣言概念界定：究其本质而言，谣言普遍具有的属性，一是广泛传播，二是不确定性，基于此，本文将谣言界定为被广泛传播的、含有极大的不确定性的信息。“不确定性”主要是指对信息真实与否的不确定性。（雷霞，2023）</p>
+
+<p>目前，在突发事件中的各类谣言中，有明确目标性和破坏性的攻击型谣言和以实现政治、经济等利益为目标的宣传型或牟利型谣言出现的频率较低。多数谣言是出于恐惧心理和基于错误的认识判断而形成的。（胡琦，2022） 从这次的谣言收集分析已证明，最大的两个类别是，社会话题与健康饮食，两者分别占比48%、43%。</p>
+
+<p>但“后真相”时代多元文化的糅合共存和碎片化的解读方式加剧了民众的价值分歧，侵蚀了信任防线。一方面，复杂的利益诉求、多元的社会思潮与多样的传播方式交织叠加，催生出“后真相”时代多元的网络文化，加大了主流与非主流文化之间的碰撞和摩擦。虽然非主流文化是主流文化的有益补充，但诸如佛系文化、网红文化、躺平文化等难免有背离主流文化的消极因素，尤其是污丑文化、拜金文化等更是尽显畸形审美和金钱至上的错误思想，若不加警惕和批判，极易误导一些认知不足、阅历不够的受众，诱发政治偏见，不断冲击和侵蚀业已形成的政治信任。另一方面，“后真相”时代人们面对海量信息，惯以碎片化的方式拼凑事实、解读真相。一旦关涉社会分化、利益分配、政治腐败和政策失误等复杂的政治谣言鉴别，人们极易陷入碎片化信息的不断解读和重组,制造出多种“真相”,并借此持续发酵,非但无益于阻断网络政治谣言的传播，反而会频繁质疑已有政治共识,造成政治信任的流失，为谣言惑众创设了可能。（杨芸伊,赵惜群，2022）</p>
 
 就参考（杨芸伊,赵惜群，2022） 来说，个人生活无非涉及钱的吃穿住行，社会分化也是正常现象，“个人-集体”、“集体-个人”的差异、非一致性，这话更多“是以国家建设为中心”为首纲。下面这两条信息很值得参考研究：
 
-* [知乎 - 如何看待央视新视频【靠力气赚钱心里才踏实，是无数平凡人的生活信仰】?](https://www.zhihu.com/question/587740721/answer/2952171143)
-* [bilibili - 说我摸，说我摆，谁在意劳动者的无奈？](https://www.bilibili.com/video/BV1ss4y1M72E)
- 
+<ul>
+<li><a href="https://www.zhihu.com/question/587740721/answer/2952171143">知乎 - 如何看待央视新视频【靠力气赚钱心里才踏实，是无数平凡人的生活信仰】?</a></li>
+<li><a href="https://www.bilibili.com/video/BV1ss4y1M72E">bilibili - 说我摸，说我摆，谁在意劳动者的无奈？</a></li>
+</ul>
+
 </details>
 
 文本分析工作内容，如下引用图（黄俊，2021）。目的性都差不多，只不过方式略有不同而已，殊途同归了，算是。
