@@ -1,4 +1,4 @@
-## 免责声明：所有内容仅面向信息研究、学习交流等，正常合规化使用，谢谢。
+## 免责声明：所有内容仅面向信息研究、学习交流等，正常合规化使用。谢谢。
 
 ## 🧙‍♂️[![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
 
