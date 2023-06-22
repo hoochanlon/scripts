@@ -22,7 +22,7 @@
  一键使用，本地下载使用转GB2312编码 [图文版](https://www.52pojie.cn/thread-1795749-1-1.html)
  
 ```
- irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/frontline_helpdesk.ps1|iex
+ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/frontline_helpdesk.ps1|iex
 ```
  
 功能概览：
@@ -73,13 +73,13 @@ export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin; sudo rm -rf ~/.zshrc
 Mac查看当前Wi-Fi密码 [图文版](https://www.52pojie.cn/thread-1766927-1-1.html)
 
 ```
-sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_show_wifi.sh)"
+sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_show_wifi.sh)"
 ```
 
 Mac 一键支持NTFS [图文版](https://github.com/hoochanlon/Free-NTFS-For-Mac)
 
 ```
-sudo -u $USER python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/mac_ntfs_ninja.py)"
+sudo -u $USER python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/mac_ntfs_ninja.py)"
 ```
 
 Mac 激活各类相关软件 [图文版](https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells)（DMCA）
@@ -91,19 +91,19 @@ sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com
 macOS MS-AutoUpdate 一键带走
 
 ```
-sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/no_ms_autoupdate.scpt)"
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-apple/no_ms_autoupdate.scpt)"
 ```
 
  一键RAR密码爆破 [图文版](https://www.52pojie.cn/thread-1775990-1-1.html)
  
  ```
- bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/7z_rar_sensei.sh)"
+ bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/7z_rar_sensei.sh)"
  ```
 
 自动化下载 Office Mac2021 激活工具
 
 ```
-sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-apple/office2021.scpt)"
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-apple/office2021.scpt)"
 ```
  
 最后，转朋友的：[自在拉基 - Mac打印机一键安装](https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html)。（没需求，所以没写；原理都差不多，确实挺厉害的。）
@@ -125,19 +125,19 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
 * Ban IP: 除自己IP外，30秒内短时间三次输错密码，永久封禁IP。
 
 ```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_ssh_n_ban.sh)"
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/lite_ssh_n_ban.sh)"
 ```
 
 SSH单项配置：一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。（单项部分是开启限定自己IP访问的，即 AllowUsers）
 
 ```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ssh.sh)"
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_ssh.sh)"
 ```
 
 fail2ban单项配置：一键fail2ban从下载到安装及生成配置与启动服务。(再次允许单项部分可以刷新自己公网IP配置)
 
 ```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_ban.sh)"
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_ban.sh)"
 ```
 
 ### 一键搞定Linux自定义创建具有管理员权限的用户 [图文版](https://www.52pojie.cn/thread-1749877-1-1.html)
@@ -147,7 +147,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 * sshd_config锁root远程登录，提高安全性
 
 ```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/diy_add_wheel.sh)"
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/diy_add_wheel.sh)"
 ```
 
 ### 一键搞定FTP [图文版](https://www.52pojie.cn/thread-1753070-1-1.html)
@@ -159,13 +159,13 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 不输密码版，用户名:ftpuser 密码：P@ssw0rd
 
 ```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/simple_vsftpd.sh)"
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_vsftpd.sh)"
 ```
 
 自定义用户版
 
 ```
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/lite_vsftpd.sh)"
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/lite_vsftpd.sh)"
 ```
 
 </details>
@@ -180,34 +180,34 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 IE防Edge劫持 [图文版](https://www.52pojie.cn/thread-1774349-1-1.html) 
 
 ```
-curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/keep_ie.bat|cmd
+curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/keep_ie.bat|cmd
 ```
  
 * 注【1】：[域控环境IE模版 图文](https://www.52pojie.cn/thread-1765347-1-1.html) 
-* 注【2】：代码地址：https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/saigonoie.bat
+* 注【2】：代码地址：https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat
 
 一键永久关闭Windows更新设置 [图文版](https://www.52pojie.cn/thread-1791338-1-1.html)
 
 ```
-curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/stop_update.bat|cmd
+curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/stop_update.bat|cmd
 ```
 
 一键恢复被关闭的Windows更新设置
 
 ```
-curl -L  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/re_update.bat|cmd
+curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/re_update.bat|cmd
 ```
 
 一键开启或关闭Windows defender实时保护
 
 ```
-curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat
+curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat
 ```
 
 一键调用设置程序是否以管理员权限运行
 
 ```
-curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/nano_runas.bat&&call nano_runas.bat
+curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/nano_runas.bat&&call nano_runas.bat
 ```
 
 去掉win10/win11热搜条目（需注销或重启） [admx.help 上见](https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn)
@@ -230,7 +230,7 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v Disa
 一键爬取bing壁纸 [图文版](https://www.52pojie.cn/thread-1781868-1-1.html)
 
 ```
-python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_bing_wallpapers.py)"
+python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_bing_wallpapers.py)"
 ```
 
 一键下载微软官方设计壁纸
@@ -240,13 +240,13 @@ python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/h
 3. 基于国内网络环境考量，不做原生写入处理，改用aira2下载，以便监控进度。
 
 ```
-ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-ruby/get_msdesign_wallpapers.rb)"
+ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_msdesign_wallpapers.rb)"
 ```
 
 一键定时切换壁纸，一面工作，一面生活（Mac）
  
  ```
-  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-shell/mac_corn_diy_wallpaper.sh)"
+  bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_corn_diy_wallpaper.sh)"
  ```
 
 </details>
@@ -272,16 +272,16 @@ curl -O https://ghproxy.com/https://raw.githubusercontent.com/TerryHuangHD/Windo
 CMD一键安装winrar注册激活
 
 ```
-powershell -command Invoke-WebRequest -Uri "https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/winrar_down_reg.bat" -OutFile "C:/Users/${env:UserName}/Downloads/winrar_down_reg.bat"&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
+powershell -command Invoke-WebRequest -Uri "https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/winrar_down_reg.bat" -OutFile "C:/Users/${env:UserName}/Downloads/winrar_down_reg.bat"&&TIMEOUT /T 1&&start /b C:\Users\%username%\Downloads\winrar_down_reg.bat
 ```
 
 Powershell一键生成Emeditor序列号
 
 ```
-irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/emeditor_random_keygen.ps1|iex
+irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/emeditor_random_keygen.ps1|iex
 ```
 
-Powershell一键IDM激活（[自己写的方案已失效，国内版权原因不做更新](https://github.com/hoochanlon/ihs-simple/blob/main/d-pwsh/fail_idm.ps1)）
+Powershell一键IDM激活（[自己写的方案已失效，国内版权原因不做更新](https://github.com/hoochanlon/scripts/blob/main/d-pwsh/fail_idm.ps1)）
 
 ```
 iwr -useb https://ghproxy.com/https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/main/IAS.ps1 | iex
@@ -290,13 +290,13 @@ iwr -useb https://ghproxy.com/https://raw.githubusercontent.com/lstprjct/IDM-Act
 Powershell从XchangePDF Editor下载安装到生成许可证 
 
 ```
-curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-pwsh/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
+curl https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/xchange_v8_active.ps1 -Outfile xchange_v8_active.ps1 | powershell -c xchange_v8_active.ps1
 ```
  
 win7 打开图片报错“内存不足” [图文版](https://www.52pojie.cn/thread-1768841-1-1.html)
 
 ```
-powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/ihs-simple/raw/main/d-bat/exifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
+powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/exifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
 ```
  
 ### 细枝末节
@@ -316,37 +316,37 @@ Shell获取本机公网详情（需安装 `brew install jq`）
 一键安装打印机原理代码 [图文版](https://www.52pojie.cn/thread-1776328-1-1.html)。
  
 ```
- https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/install_public_network_hp_printer_driver.bat
+ https://github.com/hoochanlon/scripts/blob/main/d-bat/install_public_network_hp_printer_driver.bat
 ```
  
 powershell active，以及微PE显示IP脚本 
 
 ```
-explorer https://github.com/hoochanlon/ihs-simple/blob/main/d-bat/weipe_showip.bat
+explorer https://github.com/hoochanlon/scripts/blob/main/d-bat/weipe_showip.bat
 ```
 
 一键安装Java [图文版](https://www.52pojie.cn/thread-1767872-1-1.html)
 
 ```
-curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/install_jdk.bat&&call install_jdk.bat
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/install_jdk.bat&&call install_jdk.bat
 ```
 
 win11一键显示当前WiFi与密码并生成二维码分享 [图文版](https://www.52pojie.cn/thread-1772481-1-1.html)
 
 ```
-curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/show_wifi.bat&&call show_wifi.bat
+curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/show_wifi.bat&&call show_wifi.bat
 ```
 
 一键显示所有WiFi
 
  ```
-curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/oh_my_wifi.bat&&call oh_my_wifi.bat
+curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/oh_my_wifi.bat&&call oh_my_wifi.bat
  ```
  
  一键RAR密码爆破 [图文版](https://www.52pojie.cn/thread-1775357-1-1.html)
  
  ```
- curl -Os https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-bat/seven_z_sensei.bat&&call seven_z_sensei.bat
+ curl -Os https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/seven_z_sensei.bat&&call seven_z_sensei.bat
  ```
  
 </details>
@@ -364,7 +364,7 @@ curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs
 前提：开始前，先复制如下指令安装 pip 工具包。涉及到斯坦福大学语言模型 [stanza](https://stanfordnlp.github.io/stanza) 处理的数据需要外网连接。
 
 ```
-pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-txt/requirements.txt
+pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-txt/requirements.txt
 ```
 
 
@@ -376,13 +376,13 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 一键获取中国新闻网资讯 [图文版](https://www.52pojie.cn/thread-1780608-1-1.html)
 
 ```
-python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_chinanews.py)"
+python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_chinanews.py)"
 ```
  
 一键生成全球信息报表 [图文版](https://www.52pojie.cn/thread-1779165-1-1.html)
 
 ```
-python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_worldometers.py)"
+python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_worldometers.py)"
 ```
 
 ### 头条、抖音、微博热搜采集分析
@@ -390,7 +390,7 @@ python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/h
 一键获取今日头条、抖音、微博热搜。[图文版](https://www.52pojie.cn/thread-1785460-1-1.html) （NLP：[Stanza](https://stanfordnlp.github.io/stanza/data_objects.html)）
 
 ```
-python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_resou_today_s.py)"
+python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_resou_today_s.py)"
 ```
 
 * 自动化分类；整体匹配率：84%~96% 区间左右。
@@ -413,7 +413,7 @@ python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/h
 功能大体与上例相当，对词频的较高词语进行语法分析。
 
 ```
-python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/ihs-simple/main/d-python/get_rumor_analysis.py)"
+python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_rumor_analysis.py)"
 ```
  
 urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
@@ -435,7 +435,7 @@ urllib3：https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175
 
 文本分析工作内容，如下引用图（黄俊，2021）。目的性都差不多，只不过方式略有不同而已，殊途同归了，算是。
 
-![](https://cdn.jsdelivr.net/gh/hoochanlon/ihs-simple/AQUICK/catch2023-06-17%2019.25.52.png)
+![](https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-17%2019.25.52.png)
 
 
 ## 参考文献
