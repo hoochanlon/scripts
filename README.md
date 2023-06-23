@@ -332,6 +332,29 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 </details>
 
 
+## 新闻资讯基础信息收集
+
+
+<details>
+<summary>点击详情</summary>
+
+<p>一键获取中国新闻网资讯 <a href="https://www.52pojie.cn/thread-1780608-1-1.html">图文版</a></p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_chinanews.py)"
+</code></pre>
+
+<p>一键获取中国新闻网资讯 Ruby版</p>
+
+<pre><code>ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_chinanews.rb)"
+</code></pre>
+
+<p>一键生成全球信息报表 <a href="https://www.52pojie.cn/thread-1779165-1-1.html">图文版</a></p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_worldometers.py)"
+</code></pre>
+
+</details>
+
 ## 常见平台热搜与辟谣信息分析
 
 对人文社科期刊、论文研究对象进行跨学科、基础调研（不限于同事访谈、网络论坛问卷调查）等综合性分析。
@@ -349,18 +372,6 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 
 <details>
 <summary>点击详情</summary>
-
-<h3>新闻资讯收集（序·小试牛刀）</h3>
-
-<p>一键获取中国新闻网资讯 <a href="https://www.52pojie.cn/thread-1780608-1-1.html">图文版</a></p>
-
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_chinanews.py)"
-</code></pre>
-
-<p>一键生成全球信息报表 <a href="https://www.52pojie.cn/thread-1779165-1-1.html">图文版</a></p>
-
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_worldometers.py)"
-</code></pre>
 
 <h3>头条、抖音、微博热搜采集分析</h3>
 
