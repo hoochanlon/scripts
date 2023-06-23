@@ -223,6 +223,13 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 一面工作，一面生活。
 
+<ol>
+<li>ruby 必须在3.0以上版本</li>
+<li>ruby 在Windows平台融入性，一体化程度不如Linux/macOS。</li>
+<li>通过此次ruby抓图及文本处理，ruby支持的功能库远不如python，适用基础简单的爬虫操作。</li>
+<li>基于国内网络环境考量，不做原生写入处理，改用aira2下载，以便监控进度。</li>
+</ol>
+
 <details>
 <summary><b>点击详情</b></summary>
 
@@ -230,13 +237,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_bing_wallpapers.py)"</code></pre>
 
-<p>一键下载微软官方设计壁纸</p>
-
-<ol>
-<li>ruby 在Windows平台融入性，一体化程度不如Linux/macOS。</li>
-<li>ruby 必须在3.0以上版本</li>
-<li>基于国内网络环境考量，不做原生写入处理，改用aira2下载，以便监控进度。</li>
-</ol>
+<p>一键下载微软官方设计壁纸 ruby </p>
 
 <pre><code>ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_msdesign_wallpapers.rb)"</code></pre>
 
@@ -247,7 +248,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 </details>
 
 ## 移花接木与细枝末节
-
 
 * Windows/Office、winrar、emeditor、idm、XchangePDF
 * Wi-Fi、PE查看局域网IP、解析主机IP运营商及归属地查询
@@ -334,6 +334,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 ## 新闻资讯基础信息收集
 
+初上手时的基础操作，简单收集信息测试。
 
 <details>
 <summary>点击详情</summary>
