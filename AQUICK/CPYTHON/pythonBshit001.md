@@ -60,3 +60,9 @@ curl -G 'https://api.bilibili.com/x/credit/blocked/info' \
 ```
 
 出处：https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/docs/blackroom/banlist.md
+
+## 评论
+
+热门评论API：https://api.bilibili.com/x/v2/reply/main?next=1&type=1&oid=402448083
+
+评论点赞数：https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/docs/comment/readme.md
