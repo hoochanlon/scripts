@@ -249,7 +249,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 ## 移花接木与细枝末节
 
-这部分都是自己发现好玩的，根据不少作者的源码执行特征及目的，而做的二创改写，并加工成调用指令。
+这部分都是自己发现好玩的，根据不少参考网上资料的文章、源码、神Key，结合自己的思考分析，而做的二创改写，并加工成调用指令。
 
 * Windows/Office、winrar、emeditor、idm、XchangePDF
 * Wi-Fi、PE查看局域网IP、解析主机IP运营商及归属地查询
