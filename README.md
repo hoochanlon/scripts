@@ -181,7 +181,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 ## 企业系统基础环境需求
 
-主要涉及：IE、Windows defender、Windows更新、钉钉静默安装、打印机自动化安装
+主要涉及：IE、Windows defender、Windows更新、Flash & Chrome v87、钉钉静默安装、打印机自动化安装
 
 <details>
 <summary><b>点击详情</b></summary>
