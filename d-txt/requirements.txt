@@ -10,4 +10,4 @@ requests
 snownlp
 urllib3
 you-get
-
+lxml
