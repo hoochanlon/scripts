@@ -11,3 +11,5 @@ snownlp
 urllib3
 you-get
 lxml
+wordcloud
+matplotlib
