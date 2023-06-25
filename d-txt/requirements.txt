@@ -13,3 +13,4 @@ you-get
 lxml
 wordcloud
 matplotlib
+statistics
