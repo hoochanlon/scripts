@@ -2,7 +2,7 @@
 
 https://account.bilibili.com/api/member/getCardByMid?mid=212535360
 
-https://api.bilibili.com/x/space/acc/info?mid=298220126    （容易风控）
+https://api.bilibili.com/x/space/acc/info?mid=298220126（容易风控）
 
 价值信息：
 
@@ -112,4 +112,12 @@ webUI自动化，登录b站，获取元素内容，加载json，获取IP归属�
 
 1. 用你的浏览器，打开开发者工具，找到cookie
 1. https://uutool.cn/cookie2json/ 将cookie转换为json格式
+
+## webdriver
+
+webdriver的源文件通常不太固定。
+
+![](https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/image-20230626235547297.png)
+
+![image-20230626235547297](https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/image-20230626235547297.png)
 
