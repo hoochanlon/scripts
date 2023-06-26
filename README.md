@@ -451,7 +451,7 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 ![](https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-17%2019.25.52.png)
 
 
-## 对B站Z世代用户评论、弹幕调研
+## B站Z世代用户评论、弹幕调研
 
 详情见：[亚文化视域评论及弹幕调研](https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb)。
 
