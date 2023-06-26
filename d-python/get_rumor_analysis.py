@@ -80,7 +80,15 @@ def get_element_data(element) -> dict:
 
 def selenium_url_parse(url):
     # 创建 WebDriver 对象，这里使用 Chrome 浏览器
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    # driver = webdriver.Chrome(ChromeDriverManager().install())
+
+    # 获取当前操作系统类型
+    if platform.system() == "Windows":
+        # Windows 平台
+        driver = webdriver.Chrome()
+    else:
+        # 其他平台
+        driver = webdriver.Chrome(ChromeDriverManager().install())
 
     # 访问网页
     driver.get(url)
