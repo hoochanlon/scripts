@@ -234,7 +234,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/fxxk_chxxa.bat&&call fxxk_chxxa.bat</code></pre>
 
-<p>钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="./d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
+<p>钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
 
 </details>
 
