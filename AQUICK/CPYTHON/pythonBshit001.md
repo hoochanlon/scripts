@@ -2,7 +2,7 @@
 
 https://account.bilibili.com/api/member/getCardByMid?mid=212535360
 
-https://api.bilibili.com/x/space/acc/info?mid=298220126（容易风控）
+https://api.bilibili.com/x/space/acc/info?mid=298220126    （容易风控）
 
 价值信息：
 
