@@ -2,6 +2,8 @@
 
 https://account.bilibili.com/api/member/getCardByMid?mid=212535360
 
+https://api.bilibili.com/x/space/acc/info?mid=298220126（容易风控）
+
 价值信息：
 
 性别、年龄真实的参考性不大，只能读出如今世代的人们，不少对隐私方面还蛮重视的。
@@ -65,4 +67,49 @@ curl -G 'https://api.bilibili.com/x/credit/blocked/info' \
 
 热门评论API：https://api.bilibili.com/x/v2/reply/main?next=1&type=1&oid=402448083
 
+差不多：https://api.bilibili.com/x/v2/reply?jsonp&type=1&oid=402448083&sort=2&pn=
+
 评论点赞数：https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/docs/comment/readme.md
+
+json格式值
+
+```shell
+# 用户ID
+json['data']['replies'][0]['member']['mid']
+
+# 用户名
+json['data']['replies'][0]['member']['uname']
+
+# 评论
+json['data']['replies'][0]['content']['message']
+
+# 归属地
+json['data']['replies'][0]['reply_control']['location']
+
+# 时间戳
+json['data']['replies'][0]['ctime']
+
+# 点赞数
+json['data']['replies'][0]['like']
+
+# 总回复
+json['data']['replies'][0]['reply_control']['sub_reply_entry_text']
+```
+
+## 差异
+
+在浏览器常规访问下能正常通过`json['data']['replies'][0]['reply_control']['location']` 调用。
+
+但是不带cookie是无法获取到`json['data']['replies'][0]['reply_control']['location']`的，不存在这一项。
+
+webUI自动化，登录b站，获取元素内容，加载json，获取IP归属。
+
+默认值及最大是20条评论
+
+评论取出来的条目数有时候是20条，有时候是15条，每条评论都不一定是一样的。
+
+## cookie
+
+1. 用你的浏览器，打开开发者工具，找到cookie
+1. https://uutool.cn/cookie2json/ 将cookie转换为json格式
+
