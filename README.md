@@ -89,6 +89,12 @@ Mac查看当前Wi-Fi密码 <a href="https://www.52pojie.cn/thread-1766927-1-1.ht
 sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_show_wifi.sh)"
 </code></pre>
 
+GitHub的ipynb文件地址 转换 在线ipynb查看链接粘贴。（Ruby）
+
+<pre><code>
+ruby -e "$(wget -qO- https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/nbview.rb)"
+</code></pre>
+
 Mac 一键支持NTFS <a href="https://github.com/hoochanlon/Free-NTFS-For-Mac">图文版</a>
 
 <pre><code>
