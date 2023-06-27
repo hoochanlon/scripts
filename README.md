@@ -381,19 +381,18 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 对人文社科期刊、论文研究对象进行跨学科、基础调研（不限于同事访谈、网络论坛问卷调查）等综合性分析。
 
+* html网页解析、webui自动化
 * 数据收集、过滤、分类归档
-* "平均/极值"基础数学统计
-* 分词、文本情绪值计算汇总（自然语言处理）
-* 观点交流、意见分享等
+* "平均/极值"基础数学统计、分词、文本情绪值计算汇总（自然语言处理）
+
+<details>
+<summary>点击详情</summary>
 
 前提：开始前，先复制如下指令安装 pip 工具包。涉及到斯坦福大学语言模型 [stanza](https://stanfordnlp.github.io/stanza) 处理的数据需要外网连接。
 
 ```
 pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-txt/requirements.txt
 ```
-
-<details>
-<summary>点击详情</summary>
 
 <h3>头条、抖音、微博热搜采集分析</h3>
 
@@ -446,10 +445,6 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 
 </details>
 
-文本分析工作内容，如下引用图（黄俊，2021）。目的性都差不多，只不过方式略有不同而已，殊途同归了，算是。
-
-![](https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-17%2019.25.52.png)
-
 ## B站用户评论、弹幕调研
 
 脚本功能如下：
@@ -483,6 +478,10 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 实际上，不同的停用词表都有其的适用范围。教育机构语料库大多由文献期刊构成，因此复旦、川大等教育科研机构的停用词表，更适合文献与邮件文本。而门户网站的语料库更适合新闻报道，各有其特点。（2017，官琴, 邓三鸿, 王昊）
 
 文本发掘及分词统计涉及到的停用词问题，借助 [goto456/stopwords](https://github.com/goto456/stopwords) 提供的哈工大、川大、百度的停用词语料库，以及从CSDN收集到复旦停用词本进行整合，强化文本对“经济”、“社会”、“文艺”聚类效果，从而达到更精准命中关键词的目的。
+
+文本分析工作内容，如下引用图（黄俊，2021）。目的性都差不多，只不过方式略有不同而已，殊途同归了，算是。
+
+<img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-17%2019.25.52.png" />
 
 <h3>选题对象研究</h3>
 
