@@ -454,15 +454,15 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 
 脚本功能如下：
 
-<p>程序功能明细：</p>
 
-<ol>
-<li>视频标题、作者、发布时间、播放量、收藏量、分享量、累计弹幕、评论数、视频简介、视频类别、视频链接、封面链接。</li>
-<li>100条弹幕、情绪值、词性分析、发表时间、用户ID</li>
-<li>20篇热门评论、点赞数、情绪值、话题回复条目、会员ID、会员名、评论时间。</li>
-<li>威力增强：弹幕：用户名、生日、注册时间、粉丝数、关注数（cookie）；评论：显示评论用户的IP归属地（webbui）。</li>
-<li>最后生成xlsx，文本情绪值中位数、词频统计、词云、柱形统计图。</li>
-</ol>
+1. 视频标题、作者、发布时间、播放量、收藏量、分享量、累计弹幕、评论数、视频简介、视频类别、视频链接、封面链接。
+1. 100条弹幕、情绪值、词性分析、发表时间、用户ID</li>
+1. 20篇热门评论、点赞数、情绪值、话题回复条目、会员ID、会员名、评论时间。
+1. 威力增强：弹幕：用户名、生日、注册时间、粉丝数、关注数（cookie）；评论：显示评论用户的IP归属地（webbui）。
+1. 最后生成xlsx，文本情绪值中位数、词频统计、词云、柱形统计图。
+
+<details>
+<summary>点击详情</summary>
 
 前提：先确保你的基础库组件完善
 
@@ -474,9 +474,6 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 <pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_bv_baseinfo.py)"
 </code></pre>
 
-
-<details>
-<summary>点击详情</summary>
 
 <h3>文本基础分析 </h3>
 
