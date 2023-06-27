@@ -396,7 +396,7 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 
 <h3>头条、抖音、微博热搜采集分析</h3>
 
-<p>一键获取今日头条、抖音、微博热搜。<a href="https://www.52pojie.cn/thread-1785460-1-1.html">图文版</a> （NLP：Stanza</p>
+<p>一键获取今日头条、抖音、微博热搜。<a href="https://www.52pojie.cn/thread-1785460-1-1.html">图文版</a> （NLP：Stanza）</p>
 
 <pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_resou_today_s.py)"
 </code></pre>
@@ -419,9 +419,9 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 <li>许诺《基于百度热搜新闻词的社会风险事件5W提取研究》《系统工程理论与实践》，2022年第40卷第2期</li>
 </ul>
 
-<h3>自动化收集辟谣条目及语言分析（NLP：ThuLAC）</h3>
+<h3>自动化收集辟谣条目及语言分析</h3>
 
-<p>功能大体与上例相当，对词频的较高词语进行语法分析。</p>
+<p>功能大体与上例相当，对词频的较高词语进行语法分析。（NLP：ThuLAC）</p>
 
 <pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_rumor_analysis.py)"
 </code></pre>
