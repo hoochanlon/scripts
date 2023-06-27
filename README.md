@@ -453,9 +453,27 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 
 ## B站Z世代用户评论、弹幕调研
 
+<details>
+<summary>点击详情</summary>
+
+<h3>文本基础分析 </h3>
+
+停用词文本聚类综合统计分析，见下图（2017，官琴, 邓三鸿, 王昊）
+
+<img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-27%2011.00.31.png" />
+
+实际上，不同的停用词表都有其的适用范围。教育机构语料库大多由文献期刊构成，因此复旦、川大等教育科研机构的停用词表，更适合文献与邮件文本。而门户网站的语料库更适合新闻报道，各有其特点。（2017，官琴, 邓三鸿, 王昊）
+
 文本发掘及分词统计涉及到的停用词问题，借助 [goto456/stopwords](https://github.com/goto456/stopwords) 提供的哈工大、川大、百度的停用词语料库，以及从CSDN收集到复旦停用词本进行整合，强化文本对“经济”、“社会”、“文艺”聚类效果，从而达到更精准命中关键词的目的。
 
-详情见：[亚文化视域评论及弹幕调研](https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb)。
+
+详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb">亚文化视域评论及弹幕调研</a>
+
+</details>
+
+
+
+
 
 ## 参考文献
 
@@ -465,6 +483,7 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 雷霞《老年群体的谣言认知不协调及其纠偏机制》，《现代传播》2023年第3期<br>
 杨芸伊,赵惜群 《“后真相”时代网络政治谣言的表征、归因及治理》，湖南科技大学学报(社会科学版)，2022年第11期，155页<br>
 黄俊《传播创新研究（第四辑）· 职场辱虐的情绪影响和行为反应研究、B站等社交媒体的传播研究》2021年12月，149页<br>
+官琴, 邓三鸿, 王昊 《数据分析与知识发现·中文文本聚类常用停用词表对比研究》2017年第3期，76页 <br>
 
 <!--
 [![telegram](https://img.shields.io/badge/telegram-:me-blue.svg?longCache=true&style=flat-square)](https://t.me/test) 
