@@ -98,7 +98,7 @@ ruby -e "$(wget -qO- https://ghproxy.com/https://raw.githubusercontent.com/hooch
 Mac 一键支持NTFS <a href="https://github.com/hoochanlon/Free-NTFS-For-Mac">图文版</a>
 
 <pre><code>
-sudo -u $USER python3 −c "(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/mac_ntfs_ninja.py)"
+sudo -u $USER python3 −c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/mac_ntfs_ninja.py)"
 </code></pre>
 
 Mac 激活各类相关软件 <a href="https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells">图文版</a>（DMCA）
