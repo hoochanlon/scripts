@@ -450,8 +450,7 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 
 ![](https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-17%2019.25.52.png)
 
-
-## B站Z世代用户评论、弹幕调研
+## B站用户评论、弹幕调研
 
 <details>
 <summary>点击详情</summary>
@@ -466,8 +465,9 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 
 文本发掘及分词统计涉及到的停用词问题，借助 [goto456/stopwords](https://github.com/goto456/stopwords) 提供的哈工大、川大、百度的停用词语料库，以及从CSDN收集到复旦停用词本进行整合，强化文本对“经济”、“社会”、“文艺”聚类效果，从而达到更精准命中关键词的目的。
 
+<h3>具体选题 </h3>
 
-详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb">亚文化视域评论及弹幕调研</a>
+除了<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb">对亚文化视域评论及弹幕调研</a>，此外还进行一些有关“社会”、“教育”等领域展开统计调查分析。
 
 </details>
 
