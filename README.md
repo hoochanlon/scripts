@@ -452,6 +452,29 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 
 ## B站用户评论、弹幕调研
 
+脚本功能如下：
+
+<p>程序功能明细：</p>
+
+<ol>
+<li>视频标题、作者、发布时间、播放量、收藏量、分享量、累计弹幕、评论数、视频简介、视频类别、视频链接、封面链接。</li>
+<li>100条弹幕、情绪值、词性分析、发表时间、用户ID</li>
+<li>20篇热门评论、点赞数、情绪值、话题回复条目、会员ID、会员名、评论时间。</li>
+<li>威力增强：弹幕：用户名、生日、注册时间、粉丝数、关注数（cookie）；评论：显示评论用户的IP归属地（webbui）。</li>
+<li>最后生成xlsx，文本情绪值中位数、词频统计、词云、柱形统计图。</li>
+</ol>
+
+前提：先确保你的基础库组件完善
+
+<pre><code>pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-txt/requirements.txt
+</code></pre>
+
+然后运行该脚本
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_bv_baseinfo.py)"
+</code></pre>
+
+
 <details>
 <summary>点击详情</summary>
 
@@ -468,11 +491,7 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 <h3>具体选题 </h3>
 
 除了<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb">对亚文化视域评论及弹幕调研</a>，此外还进行一些有关“社会”、“教育”等领域展开统计调查分析。
-
 </details>
-
-
-
 
 
 ## 参考文献
