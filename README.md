@@ -464,7 +464,7 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 <pre><code>pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-txt/requirements.txt
 </code></pre>
 
-然后运行该脚本
+然后运行该脚本 <a href="https://www.52pojie.cn/thread-1802357-1-1.html">图文版</a>
 
 <pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_bv_baseinfo.py)"
 </code></pre>
