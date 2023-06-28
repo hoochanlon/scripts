@@ -196,7 +196,10 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 ## 企业系统基础环境需求
 
-主要涉及：IE、Windows defender、Windows更新、Flash & Chrome v87、钉钉静默安装、打印机自动化安装
+主要涉及：
+
+* IE、Windows defender、Windows更新、Flash & Chrome v87、钉钉静默安装、打印机自动化安装
+* C盘空间释放：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作（C盘灭霸脚本）
 
 <details>
 <summary><b>点击详情</b></summary>
@@ -221,6 +224,10 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <p>一键开启或关闭Windows defender实时保护</p>
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat</code></pre>
+
+<p>C盘灭霸脚本：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/mieba.bat&&call mieba.bat</code></pre>
 
 <p>一键调用设置程序是否以管理员权限运行</p>
 
