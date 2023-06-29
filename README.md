@@ -80,8 +80,15 @@ Linux基线检查（PR）见：<a href="https://github.com/al0ne/LinuxCheck">al0
 重置macOS ~/.zshrc （仅环境变量配置失误，造成不可逆后果使用）
 
 <pre><code>
+defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool false
+</code></pre>
+
+关闭Safari浏览器的腾讯安全浏览
+
+<pre><code>
 export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin; sudo rm -rf ~/.zshrc
 </code></pre>
+
 
 Mac查看当前Wi-Fi密码 <a href="https://www.52pojie.cn/thread-1766927-1-1.html">图文版</a>
 
