@@ -77,13 +77,13 @@ Linux基线检查（PR）见：<a href="https://github.com/al0ne/LinuxCheck">al0
 <details>
 <summary><b>点击详情</b></summary>
 
-重置macOS ~/.zshrc （仅环境变量配置失误，造成不可逆后果使用）
+关闭Safari浏览器的腾讯安全浏览
 
 <pre><code>
 defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool false
 </code></pre>
 
-关闭Safari浏览器的腾讯安全浏览
+重置macOS ~/.zshrc （仅环境变量配置失误，造成不可逆后果使用）
 
 <pre><code>
 export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin; sudo rm -rf ~/.zshrc
