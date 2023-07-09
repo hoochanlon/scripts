@@ -27,5 +27,12 @@ https://www.zhihu.com/api/v4/questions/562083816/feeds?page=3&session_id=1688854
 * [cnblogs - 知乎加密参数x-zse-96详解](https://www.cnblogs.com/xiaowangba9494/p/15934907.html)
 * [知乎 - 分析 分析 知乎加密算法 最新 x-zse-96](https://zhuanlan.zhihu.com/p/419576219)
 * [csdn -2021年6月知乎指定问题信息爬取 & x-zse-96 2.0版本加密破解分析 爬虫破解反扒思路](https://blog.csdn.net/qq_26394845/article/details/118183245)
+* [思否 - 某乎搜索接口zse96参数逆向分析【2022.11版本】](https://segmentfault.com/a/1190000042751896)
+* [52pojie - 某乎x-zse-96签名算法python重写(出处: 吾爱破解论坛)](https://www.52pojie.cn/thread-1631378-1-1.html)
+
+npm idealTree:lib: sill idealTree buildDeps
+
+* [csdn - 设置npm源的几种方式](https://blog.csdn.net/u010856177/article/details/126851940)
+* [ERROR:Node Sass version 7.0.1 is incompatible with ^4.0.0.](https://www.cnblogs.com/Merrys/p/16905691.html)
 
 
