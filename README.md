@@ -389,6 +389,10 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_worldometers.py)"
 </code></pre>
 
+<p>一键收集知乎前五条精选回答摘要</p>
+
+<pre><code>python3 -c "$(curl -fsSL https://github.com/hoochanlon/scripts/blob/main/d-python/zhihu_answers_demo.py)"</code></pre>
+
 </details>
 
 ## 常见平台热搜与辟谣信息分析
