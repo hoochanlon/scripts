@@ -248,6 +248,10 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/fxxk_chxxa.bat&&call fxxk_chxxa.bat</code></pre>
 
+<p>一键安装禁止Chrome浏览器更新</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/deny_chrome_update.bat&&call deny_chrome_update.bat</code></pre>
+
 <p>钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
 
 </details>
