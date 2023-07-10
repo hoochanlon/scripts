@@ -505,9 +505,12 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 
 <img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-17%2019.25.52.png" />
 
-<h3>选题对象研究</h3>
+</details>
 
-除了对亚文化视域评论及弹幕调研，此外还进行一些有关“社会”、“教育”等领域展开统计调查分析。
+## 选题对象研究
+
+<details>
+<summary>点击详情</summary>
 
 <h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb">亚文化视域评论及弹幕调研总结</a></h3>
 
