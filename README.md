@@ -367,7 +367,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 </details>
 
 
-## 新闻资讯基础信息收集
+## 资讯基础信息收集
 
 初上手时的基础操作，简单收集信息测试。
 
