@@ -16,3 +16,4 @@ matplotlib
 statistics
 pandas
 selectolax
+fitz
