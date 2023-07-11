@@ -75,6 +75,9 @@ if %errorlevel% neq 0 (
         @REM start /wait "" "C:\Program Files (x86)\Google\Chrome\Application\!CURRENT_VERSION!\Installer\setup.exe" -uninstall -system-level
         start /wait "" "!SetupPath!!CURRENT_VERSION!\Installer\setup.exe" --uninstall --system-level --verbose-logging --force-uninstall
 
+        echo 清除个人历史记录数据...
+        rd /s /q "%userprofile%\AppData\Local\Google\Chrome\User Data"
+
         REM 安装目标版本的 Chrome
         echo 安装 Chrome 版本 %CHROME_VERSION%...
         start /wait "" "%my_chrome_file_path%"
