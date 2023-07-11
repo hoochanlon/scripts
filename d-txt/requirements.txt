@@ -18,3 +18,4 @@ pandas
 selectolax
 fitz
 frontend
+PyMuPDF
