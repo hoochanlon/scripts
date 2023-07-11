@@ -1,4 +1,4 @@
-@REM 注意将下载的代码编码另转GB2312格式，目前GitHub上直接修改会成UTF8格式，否则在Windows系统会出现乱码。
+@REM 注意将下载的代码编码另转GB2312格式，否则在Windows系统会出现乱码。
 @echo off
 @%1 C:\Windows\SysWOW64\mshta.exe vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
 @cd /d "%~dp0"
@@ -72,7 +72,7 @@ if %errorlevel% neq 0 (
         REM 卸载当前版本的 Chrome
         echo 卸载当前 Chrome 版本 !CURRENT_VERSION!...
         @REM start /wait "" "C:\Program Files (x86)\Google\Chrome\Application\!CURRENT_VERSION!\Installer\setup.exe" -uninstall -system-level
-        start /wait "" "!SetupPath!"  -uninstall -system-level
+        start /wait "" "!SetupPath!!CURRENT_VERSION!\Installer\setup.exe" --uninstall --system-level --verbose-logging --force-uninstall
 
         REM 安装目标版本的 Chrome
         echo 安装 Chrome 版本 %CHROME_VERSION%...
