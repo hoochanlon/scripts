@@ -20,4 +20,4 @@ fitz
 frontend
 PyMuPDF
 wxPython
-
+pysimplegui
