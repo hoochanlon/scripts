@@ -69,12 +69,15 @@ if %errorlevel% neq 0 (
             exit /b
         )
 
+        taskkill /f /im chrome.exe >nul 2>&1
         REM 卸载当前版本的 Chrome
         echo 卸载当前 Chrome 版本 !CURRENT_VERSION!...
         @REM https://answers.microsoft.com/en-us/windows/forum/all/uninstall-silently-google-chrome-by-command-line/0b35fde7-3f8a-473d-9a41-ca1946616bbb
         @REM start /wait "" "C:\Program Files (x86)\Google\Chrome\Application\!CURRENT_VERSION!\Installer\setup.exe" -uninstall -system-level
-        start /wait "" "!SetupPath!!CURRENT_VERSION!\Installer\setup.exe" --uninstall --system-level --verbose-logging --force-uninstall
-
+        start /wait "" "!SetupPath!!CURRENT_VERSION!\Installer\setup.exe" --uninstall --force-uninstall
+        IF EXIST "!SetupPath!!CURRENT_VERSION!\Installer\setup.exe" (
+            start /wait "" "!SetupPath!!CURRENT_VERSION!\Installer\setup.exe" --uninstall --system-level --force-uninstall
+        )
         echo 清除个人历史记录数据...
         rd /s /q "%userprofile%\AppData\Local\Google\Chrome\User Data"
 
