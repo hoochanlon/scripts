@@ -99,6 +99,13 @@ IF NOT EXIST "%userprofile%\AppData\Local\Google\Update" (
 @REM 对文件授予Everyone组完全控制权限
 @REM icacls "C:\Windows\System32\usosvc.dll" /grant "Everyone":F
 
+:: 以系统管理员权限访问：https://www.cnblogs.com/qingfeng1903/p/9437978.html
+:: psexec -i -d -s cmd.exe
+:: whoami
+
+:: 对单个文件夹设置权限
+::icacls "C:\1" /deny "Everyone":(OI)(CI)(RX)
+
 :: 对文件夹拒绝指定用户或组的访问权限 (OI)(CI) 表示要应用到对象和子对象的权限，(RX) 表示拒绝读取和执行权限。
 icacls "%userprofile%\AppData\Local\Google\Update" /deny "Everyone":(OI)(CI)RX
 
