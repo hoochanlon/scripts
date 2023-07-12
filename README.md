@@ -96,6 +96,12 @@ Mac查看当前Wi-Fi密码 <a href="https://www.52pojie.cn/thread-1766927-1-1.ht
 sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_show_wifi.sh)"
 </code></pre>
 
+Mac查看常用系统信息
+
+<pre><code>
+sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_systeminfo.sh)"
+</code></pre>
+
 GitHub的ipynb文件地址 转换 在线ipynb查看链接粘贴。（Ruby）
 
 <pre><code>
