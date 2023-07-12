@@ -252,6 +252,11 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/deny_chrome_update.bat&&call deny_chrome_update.bat</code></pre>
 
+<p>一键PDFtoPNG</p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/PDFtoPNG.py)"</code></pre>
+
+
 <p> 安装指定chrome，并禁用升级：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/only_install_chrome65.bat"> only_install_chrome65.bat </a>;钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
 
 </details>
@@ -390,7 +395,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <p>一键生成全球信息报表 <a href="https://www.52pojie.cn/thread-1779165-1-1.html">图文版</a></p>
 
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_worldometers.py)"
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_worldometers.py)"
 </code></pre>
 
 <p>一键收集知乎前五条精选回答摘要</p>
