@@ -9,7 +9,7 @@
 * 系统平台：Windows/Mac/Linux；脚本语言：多种、不限；我流，按需编写。 
 * 研究对象：基础信息自动化、云主机/本地桌面安全处理、社会科学信息化及数据分析。
 
-项目代码涉及到部分组件版本兼容问题 [点击此处](./d-ipynb/平台兼容问题.ipynb)；关于ipynb无法在GitHub进行预览，[请查看这里](https://blog.reviewnb.com/jupyter-notebook-not-rendering-on-github/)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
+项目代码涉及到部分组件版本兼容问题 <a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/平台兼容问题.ipynb">点击此处</a>；关于ipynb无法在GitHub进行预览，[请查看这里](https://blog.reviewnb.com/jupyter-notebook-not-rendering-on-github/)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
 
 ***[关于我](https://hoochanlon.github.io/hoochanlon)***
 
