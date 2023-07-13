@@ -2,6 +2,10 @@
 
 ## 前言
 
+***关于我***
+
+![Metrics](https://metrics.lecoq.io/hoochanlon?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&achievements=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&achievements=false&achievements.threshold=S&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&config.timezone=Asia%2FShanghai)
+
 ***项目介绍***
 
 跨学科信息化综合应用与分析：桌面基线排查、软件激活破解、免杀及特权执行、渗透式支援固件识别读写、主机账户密码空值检测、Wi-Fi密码扫描、云主机终端安全加固、主机系统日志分析、自然语言处理、人文社科信息数据分析等。
@@ -10,9 +14,6 @@
 * 研究对象：基础信息自动化、云主机/本地桌面安全处理、社会科学信息化及数据分析。
 
 项目代码涉及到部分组件版本兼容问题 <a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/平台兼容问题.ipynb">点击此处</a>；关于ipynb无法在GitHub进行预览，[请查看这里](https://blog.reviewnb.com/jupyter-notebook-not-rendering-on-github/)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
-
-![Metrics](https://metrics.lecoq.io/hoochanlon?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&achievements=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&achievements=false&achievements.threshold=S&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&config.timezone=Asia%2FShanghai)
-
 
 ## Windows桌面技术基线检查 
 
