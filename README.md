@@ -547,7 +547,7 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 
 </details>
 
-<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《“帝吧出征”事件中话语表达与社群动员研究》.ipynb"></a>“帝吧出征”事件中话语表达与社群动员研究</h3>
+<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《“帝吧出征”事件中话语表达与社群动员研究》.ipynb"></a>读《“帝吧出征”事件中话语表达与社群动员研究》</h3>
 
 当群体的文化与他们倡导的价值目标重合时，形成了一种动力机制，促使群体成员对帝吧社群的多角度文化认同和集体互动。帝吧通过整齐划一的动员基础，深刻影响了其群体成员的价值观念和思维方式，从而调动了粉丝的积极性和团结性来支持社群的集体活动。
 
