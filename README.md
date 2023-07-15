@@ -545,7 +545,7 @@ pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent
 
 积极因素：1. 从横向上看，改革开放开阔了我们的思想理论视野，使马克思主义的相对地位下降；2. 从纵向上看，我们创造出中国特色社会主义理论等新的理论，也使马克思主义的相对重要性减弱；3. 人们现在愈来愈能够对马克思学说采取科学分析的态度，亦使马克思主义的威望从顶峰回落。
 
-<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《“帝吧出征”事件中话语表达与社群动员研究》.ipynb"></a>读《“帝吧出征”事件中话语表达与社群动员研究》</h3>
+<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《“帝吧出征”事件中话语表达与社群动员研究》.ipynb">读《“帝吧出征”事件中话语表达与社群动员研究》</a></h3>
 
 当群体的文化与他们倡导的价值目标重合时，形成了一种动力机制，促使群体成员对帝吧社群的多角度文化认同和集体互动。帝吧通过整齐划一的动员基础，深刻影响了其群体成员的价值观念和思维方式，从而调动了粉丝的积极性和团结性来支持社群的集体活动。
 
