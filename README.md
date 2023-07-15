@@ -466,7 +466,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <li><a href="https://www.bilibili.com/video/BV1ss4y1M72E">bilibili - 说我摸，说我摆，谁在意劳动者的无奈？</a></li>
 </ul>
 
-<i><b>参考文献</b></i><br>
+<i><b>参考文献</b></i><br><br>
 <span id="fn1-black"><a href="#fn1">[1]</a> 胡琦, 全媒体时代网络谣言产生的心理机制与治理路径,P135，137, [J]社会科学家, 2022(11)</span><br>
 <span id="fn2-black"><a href="#fn2">[2]</a> 雷霞, 老年群体的谣言认知不协调及其纠偏机制, [J]现代传播, 2023(3)</span><br>
 <span id="fn3-black"><a href="#fn3">[3]</a> 杨芸伊, 赵惜群, “后真相”时代网络政治谣言的表征、归因及治理,P155, [J]湖南科技大学学报(社会科学版)，2022(11)</span><br>
@@ -499,20 +499,19 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <h3>文本基础分析 </h3>
 
-停用词文本聚类综合统计分析，见下图 <span id="fn4"><a href="#fn4-black">（2017，官琴, 邓三鸿, 王昊）</a> </span></p>
+停用词文本聚类综合统计分析，见下图<span id="fn4"><a href="#fn4-black"><sup>1</sup></a></span></p>
 
 <img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-27%2011.00.31.png" />
 
-<p>实际上，不同的停用词表都有其的适用范围。教育机构语料库大多由文献期刊构成，因此复旦、川大等教育科研机构的停用词表，更适合文献与邮件文本。而门户网站的语料库更适合新闻报道，各有其特点。<span id="fn4"><a href="#fn4-black">（2017，官琴, 邓三鸿, 王昊）</a> </span></p>
+<p>实际上，不同的停用词表都有其的适用范围。教育机构语料库大多由文献期刊构成，因此复旦、川大等教育科研机构的停用词表，更适合文献与邮件文本。而门户网站的语料库更适合新闻报道，各有其特点。
 
 <p>文本发掘及分词统计涉及到的停用词问题，借助 [goto456/stopwords](https://github.com/goto456/stopwords) 提供的哈工大、川大、百度的停用词语料库，以及从CSDN收集到复旦停用词本进行整合，强化文本对“经济”、“社会”、“文艺”聚类效果，从而达到更精准命中关键词的目的。</p>
 
-<p>文本分析工作内容，如下引用图<span id="fn5"><a href="#fn5-black">（黄俊，2021）</span>。目的性都差不多，只不过方式略有不同而已，殊途同归了，算是。</p>
+<p>文本分析工作内容，如下引用图<span id="fn5"><a href="#fn5-black"><sup>2</sup></span>。目的性都差不多，只不过方式略有不同而已，殊途同归了，算是。</p>
 
 <img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-17%2019.25.52.png" />
 
-<i><b>参考文献</b></i>
-
+<i><b>参考文献</b></i><br><br>
 <span id="fn4-black"><a href="#fn4">[1]</a> 黄俊, 职场辱虐的情绪影响和行为反应研究、B站等社交媒体的传播研究,P149,[J]传播创新研究, 2021(12)<br>
 <span id="fn5-black"><a href="#fn5">[2]</a> 官琴, 邓三鸿, 王昊, 中文文本聚类常用停用词表对比研究,P76,[J]数据分析与知识发现,2017(3) <br>
 
@@ -565,7 +564,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 因此，“帝吧出征”可以被看作是一种集体动员和舆论引导的活动，通过符号、话语和情感的共同作用，调动粉丝的参与和支持，从而形成一种极化的群体行动力量。这种行动将网络暴力赋予了“民族主义”和“爱国主义”的正义化形象，使其在群体中得到广泛的接受和支持。
 
 </details>
-
 
 ## 参考文献（社会学选题对象基础研究）
 
