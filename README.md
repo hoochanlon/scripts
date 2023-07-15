@@ -499,7 +499,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <h3>文本基础分析 </h3>
 
-停用词文本聚类综合统计分析，见下图<span id="fn4"><a href="#fn4-black"><sup>1</sup></a></span></p>
+停用词文本聚类综合统计分析，见下图<span id="fn4"><a href="#fn4-black"><sup>1</sup></a></span>
 
 <img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-27%2011.00.31.png" />
 
@@ -507,7 +507,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <p>文本发掘及分词统计涉及到的停用词问题，借助 [goto456/stopwords](https://github.com/goto456/stopwords) 提供的哈工大、川大、百度的停用词语料库，以及从CSDN收集到复旦停用词本进行整合，强化文本对“经济”、“社会”、“文艺”聚类效果，从而达到更精准命中关键词的目的。</p>
 
-<p>文本分析工作内容，如下引用图<span id="fn5"><a href="#fn5-black"><sup>2</sup></span>。目的性都差不多，只不过方式略有不同而已，殊途同归了，算是。</p>
+文本分析工作内容，如下引用图<span id="fn5"><a href="#fn5-black"><sup>2</sup></span>。目的性都差不多，只不过方式略有不同而已，殊途同归了，算是。
 
 <img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-17%2019.25.52.png" />
 
