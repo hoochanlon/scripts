@@ -513,7 +513,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <span id="fn4-black"><a href="#fn4">[1]</a> 黄俊, 职场辱虐的情绪影响和行为反应研究、B站等社交媒体的传播研究,P149,[J]传播创新研究, 2021(12)</span><br>
 <span id="fn5-black"><a href="#fn5">[2]</a> 官琴, 邓三鸿, 王昊, 中文文本聚类常用停用词表对比研究,P76,[J]数据分析与知识发现,2017(3) </span><br>
 
-</details><span>bug</span>
 </details>
 
 <h2> 社会学选题对象基础研究 </h2>
@@ -523,13 +522,13 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <details>
 <summary>点击详情</summary>
 
-<i><b><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb">亚文化视域评论及弹幕调研总结</a></b></i>
+<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb">亚文化视域评论及弹幕调研总结</h4>
 
 <p>整体来说，后情感时代，让我发现人的情感体验是多元的。单从就“嗑CP”、“萌宠”话题的被采访人语录来看，就得出部分被采访人思维单一、理想化。这是不可靠的，不能一概而论。比较切实的观点应该是，部分被采访人对此类信息可能并不在意，或对这方面未有较深入的认知与关注。并且，该项数据并不能对采访人的情绪、思维、行为逻辑做定论，只是某些事物的关联，需要去理清事情的真相与内在逻辑，这些都要花时间下功夫研究的。</p>
 
-<i><b><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/民生及时评类新闻基础分析.ipynb">民生及时评类新闻媒体与受众行为浅析</a></b></i>
+<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/民生及时评类新闻基础分析.ipynb">民生及时评类新闻媒体与受众行为浅析</a></h4>
 
-<b>民生时评媒体积极方面行为作用</b>
+<p><b>民生时评媒体积极方面行为作用</b></p>
 
 <p>在单向度的社会<span id="fn6"><sup><a href="#fn6-black">1</a></sup></span>中，不同地域的人往往面临着相似的生活困境与社会纠纷，经由媒体选择典型民生个例加以报道，很容易使民众获得切身体会，产生跨地域的情感共鸣。而在此基础上的时评，遵守实事求是的原则，通过解释报道框架<span id="fn7"><sup><a href="#fn7-black">2</a></sup></span>，对各类舆论热点事件进行科学理性的分析，同时提出面向未来的可行性建设性方案。从一定程度上缓释社会矛盾，疏导大众情绪，有促进开启民智的作用。不过，额外强调一点：开启民智目是民众具备批判性思维，自主思考和客观分析问题；它强调的是社会共同进步的需要，而不是贬低民众的智识水平及行为能力。</p>
 
@@ -537,13 +536,13 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <p>一方面受众因切身体会共鸣感、猎奇感等作用下接收民生、时评信息，而另一方面身处风险社会<span id="fn8"><sup><a href="#fn8-black">3</a></sup></span>中、受众对严肃内容产生了排斥心理，需要一个可供闲谈与娱乐的话题排解忧虑，获得快感、同时也在探求相同爱好的趣缘群体。由此，这也可以解释我之前的疑问 “为什么我看同事日常精干处理工作事务，但涉及到电视剧、新闻报道却是人云亦云没多少见解，像个白痴一样？” 总的说来，舆论失焦现象也是必然且常态的现象。用户对新闻标题的猎奇点击，对事件的耐心等待与深入思考已不符合这方面一部分受众用户的期望了。在注意力、精力有限的情况下，这部分受众用户从而转向其他具有话题性、娱乐性的闲谈讨论，爆米花式的休闲娱乐（吃瓜）以此舒缓压力获得快感。</p>
 
-<i><b><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/“小粉红”群体分析.ipynb">“小粉红”群体分析</a></b></i>
+<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/“小粉红”群体分析.ipynb">“小粉红”群体分析</a></h4>
 
 <p>“小粉红”一词来自于民间对网络爱国青年群体的称呼，“小”指的是年龄小，虽然很稚嫩，但是精力充沛、一腔热血；“粉”指的是网络上流行的特有的表达方式，比如语言卖萌，又经常使用各种萌系表情，另外由于小，单纯的生活阅历使得“小粉红”的心智还没有定型；“红”指的是苗正根红，红色在中国的语境下通常代表了中国共产党，这里的“红”表达了“小粉红”强烈的爱党爱国爱领袖情怀。<span id="fn9"><sup><a href="#fn9-black">4</a></sup></span></p>
 
 <p>刘芳对小粉红群体的定义是准确的。她进一步将该群体细分为不同的年龄段、社会阶层以及职业背景。在18至24岁的范围内，学生群体在小粉红中占据了很大比例，其中多数来自无产阶级家庭。然而，在旧牛帆模型流行之前的分类中，也有相当数量的小粉红来自城市中产阶级家庭，这一点也需要我们注意。无论如何，这两个群体都有一个共同点，即小粉红拥有较强的社会消费能力和购买力，并且相对承受较少的社会压力，同时也是中国改革开放国力日益强盛的受益者与见证者。</p>
 
-<i><b><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《论马克思主义威望下降的原因》.ipynb">读【董德刚：论马克思主义威望下降的原因】</a></b></i>
+<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《论马克思主义威望下降的原因》.ipynb">读【董德刚：论马克思主义威望下降的原因】</a></h4>
 
 <p>马克思主义威望下降的原因：</p>
 
@@ -551,7 +550,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <p>积极因素：1. 从横向上看，改革开放开阔了我们的思想理论视野，使马克思主义的相对地位下降；2. 从纵向上看，我们创造出中国特色社会主义理论等新的理论，也使马克思主义的相对重要性减弱；3. 人们现在愈来愈能够对马克思学说采取科学分析的态度，亦使马克思主义的威望从顶峰回落。</p>
 
-<i><b><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《“帝吧出征”事件中话语表达与社群动员研究》.ipynb">读《“帝吧出征”事件中话语表达与社群动员研究》</a></b></i>
+<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《“帝吧出征”事件中话语表达与社群动员研究》.ipynb">读《“帝吧出征”事件中话语表达与社群动员研究》</h4>
 
 <p><b>帝吧出征：群体动员与舆论引导</b></p>
 
@@ -563,7 +562,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 </details>
 
-<i><b>参考文献</b></i>
+<p><i><b>参考文献</b></i></p>
 
 > 注：由于研究范围较广泛，部分专题涉及内容较深，因此采用 ipynb 独立开题综述具体内容，并放置相关链接的形式。故此处参考文献列表仅限于 README.Markdown
 
