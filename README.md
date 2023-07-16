@@ -562,17 +562,17 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <p>因此，“帝吧出征”可以被看作是一种集体动员和舆论引导的活动，通过符号、话语和情感的共同作用，调动粉丝的参与和支持，从而形成一种极化的群体行动力量。这种行动将网络暴力赋予了“民族主义”和“爱国主义”的正义化形象，使其在群体中得到广泛的接受和支持。</p>
 
-<i><b>参考文献</b></i><br><br>
+</details>
 
-<p>注：由于研究范围较广泛，部分专题涉及内容较深，因此采用 ipynb 独立开题综述具体内容，并放置相关链接的形式。故此处参考文献列表仅限于 README.Markdown </p>
+<i><b>参考文献</b></i>
+
+> 注：由于研究范围较广泛，部分专题涉及内容较深，因此采用 ipynb 独立开题综述具体内容，并放置相关链接的形式。故此处参考文献列表仅限于 README.Markdown
 
 <span id="fn6-black"><a href="#fn6">[1]</a> <a href="http://www.rmlt.com.cn/2014/0729/298965.shtml">范晓丽, 李超, “单向度的人”及其对当代中国的启示,[M]人民论坛网, 2014(7)]</a><br></span>
 <span id="fn7-black"><a href="#fn7">[2]</a> <a href="http://media.people.com.cn/n/2015/0312/c150620-26682877.html">李煜申, 邢天意, 新闻网站报道的媒介框架差异分析 ——基于人民网等四家新闻网站的“8.3鲁甸地震事故”再现对比研究, [M]人民网研究院,2015(03) </a><br>
 <span id="fn8-black"><a href="#fn8">[3]</a> <a href="http://www.xml-data.org/KXYSH/html/22ddadf4-325e-41ce-b447-82a9129abf51.htm">张文霞, 赵延东, 风险社会：概念的提出及研究进展, [M]知网协办, 2011(1)</a><br>
 <span id="fn9-black"><a href="#fn9">[4]</a> 刘芳,“小粉红”社会责任承担的现实考量与提升路径研究,P9-13, [M]湖南大学硕士学位论文,2019</span><br>
 
-
-</details>
 
 
 
