@@ -571,6 +571,8 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 </details>
 
+图文版参照：https://www.52pojie.cn/thread-1802357-1-1.html
+
 
 <!--
 [![telegram](https://img.shields.io/badge/telegram-:me-blue.svg?longCache=true&style=flat-square)](https://t.me/test) 
