@@ -524,29 +524,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <details>
 <summary>点击详情</summary>
 
-</details>
-
-
-
-<!--
-[![telegram](https://img.shields.io/badge/telegram-:me-blue.svg?longCache=true&style=flat-square)](https://t.me/test) 
-
-![ ](https://raw.githubusercontent.com/hoochanlon/hoochanlon/master/assets/github-contribution-grid-snake.svg)
-
-[网络辟谣标签工作专区](https://www.piyao.org.cn/bq/index.htm)、[谣言曝光台](https://www.piyao.org.cn/yybgt/index.htm)
-
-***[关于我](https://hoochanlon.github.io/hoochanlon)***
-
-[![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
-
-![Metrics](https://metrics.lecoq.io/hoochanlon?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&achievements=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&achievements=false&achievements.threshold=S&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&config.timezone=Asia%2FShanghai)
-
--->
-
-
-
-<!--
-
 <i><b><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb">亚文化视域评论及弹幕调研总结</a></b></i>
 
 <p>整体来说，后情感时代，让我发现人的情感体验是多元的。单从就“嗑CP”、“萌宠”话题的被采访人语录来看，就得出部分被采访人思维单一、理想化。这是不可靠的，不能一概而论。比较切实的观点应该是，部分被采访人对此类信息可能并不在意，或对这方面未有较深入的认知与关注。并且，该项数据并不能对采访人的情绪、思维、行为逻辑做定论，只是某些事物的关联，需要去理清事情的真相与内在逻辑，这些都要花时间下功夫研究的。</p>
@@ -595,6 +572,27 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <span id="fn9-black"><a href="#fn9">[4]</a> 刘芳,“小粉红”社会责任承担的现实考量与提升路径研究,P9-13, [M]湖南大学硕士学位论文,2019</span><br>
 
 
+</details>
 
+
+
+<!--
+[![telegram](https://img.shields.io/badge/telegram-:me-blue.svg?longCache=true&style=flat-square)](https://t.me/test) 
+
+![ ](https://raw.githubusercontent.com/hoochanlon/hoochanlon/master/assets/github-contribution-grid-snake.svg)
+
+[网络辟谣标签工作专区](https://www.piyao.org.cn/bq/index.htm)、[谣言曝光台](https://www.piyao.org.cn/yybgt/index.htm)
+
+***[关于我](https://hoochanlon.github.io/hoochanlon)***
+
+[![blog](https://img.shields.io/badge/%F0%9F%94%97blog-hoochanlon-lightgrey.svg?longCache=true&style=flat-square)](https://hoochanlon.github.io/) [![outlook](https://img.shields.io/badge/%F0%9F%93%A7hotmail-@邮箱联系-blue.svg?longCache=true&style=flat-square)](mailto:hoochanlon@outlook.com)[![](https://img.shields.io/github/followers/hoochanlon?color=green&style=social)](https://github.com/hoochanlon) [![](https://img.shields.io/github/stars/hoochanlon?color=green&style=social)](https://github.com/hoochanlon)
+
+![Metrics](https://metrics.lecoq.io/hoochanlon?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&achievements=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&achievements=false&achievements.threshold=S&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&config.timezone=Asia%2FShanghai)
+
+-->
+
+
+
+<!--
 
 -->
