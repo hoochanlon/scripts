@@ -513,8 +513,8 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <span id="fn4-black"><a href="#fn4">[1]</a> 黄俊, 职场辱虐的情绪影响和行为反应研究、B站等社交媒体的传播研究,P149,[J]传播创新研究, 2021(12)</span><br>
 <span id="fn5-black"><a href="#fn5">[2]</a> 官琴, 邓三鸿, 王昊, 中文文本聚类常用停用词表对比研究,P76,[J]数据分析与知识发现,2017(3) </span><br>
 
+</details><span>bug</span>
 </details>
-
 
 <h2> 社会学选题对象基础研究 </h2>
 
@@ -551,9 +551,9 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <p>积极因素：1. 从横向上看，改革开放开阔了我们的思想理论视野，使马克思主义的相对地位下降；2. 从纵向上看，我们创造出中国特色社会主义理论等新的理论，也使马克思主义的相对重要性减弱；3. 人们现在愈来愈能够对马克思学说采取科学分析的态度，亦使马克思主义的威望从顶峰回落。</p>
 
-<i><b><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《“帝吧出征”事件中话语表达与社群动员研究》.ipynb">读《“帝吧出征”事件中话语表达与社群动员研究》</a></i></b>
+<i><b><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《“帝吧出征”事件中话语表达与社群动员研究》.ipynb">读《“帝吧出征”事件中话语表达与社群动员研究》</a></b></i>
 
-<b>帝吧出征：群体动员与舆论引导</b>
+<p><b>帝吧出征：群体动员与舆论引导</b></p>
 
 <p>当群体的文化与他们倡导的价值目标重合时，形成了一种动力机制，促使群体成员对帝吧社群的多角度文化认同和集体互动。帝吧通过整齐划一的动员基础，深刻影响了其群体成员的价值观念和思维方式，从而调动了粉丝的积极性和团结性来支持社群的集体活动。</p>
 
