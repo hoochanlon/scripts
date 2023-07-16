@@ -564,7 +564,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <p><i><b>参考文献</b></i></p>
 
-> 注：由于研究范围较广泛，部分专题涉及内容较深，因此采用 ipynb 独立开题综述具体内容，并放置相关链接的形式。故此处参考文献列表仅限于 README.Markdown
+<p><i>注：由于研究范围较广泛，部分专题涉及内容较深，因此采用 ipynb 独立开题综述具体内容，并放置相关链接的形式。故此处参考文献列表仅限于 README.Markdown</i></p>
 
 <span id="fn6-black"><a href="#fn6">[1]</a> <a href="http://www.rmlt.com.cn/2014/0729/298965.shtml">范晓丽, 李超, “单向度的人”及其对当代中国的启示,[M]人民论坛网, 2014(7)]</a><br></span>
 <span id="fn7-black"><a href="#fn7">[2]</a> <a href="http://media.people.com.cn/n/2015/0312/c150620-26682877.html">李煜申, 邢天意, 新闻网站报道的媒介框架差异分析 ——基于人民网等四家新闻网站的“8.3鲁甸地震事故”再现对比研究, [M]人民网研究院,2015(03) </a><br>
