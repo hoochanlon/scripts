@@ -477,7 +477,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 脚本功能如下：
 
-
 1. 视频标题、作者、发布时间、播放量、收藏量、分享量、累计弹幕、评论数、视频简介、视频类别、视频链接、封面链接。
 1. 100条弹幕、情绪值、词性分析、发表时间、用户ID
 1. 20篇热门评论、点赞数、情绪值、话题回复条目、会员ID、会员名、评论时间。
@@ -516,7 +515,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <span id="fn5-black"><a href="#fn5">[2]</a> 官琴, 邓三鸿, 王昊, 中文文本聚类常用停用词表对比研究,P76,[J]数据分析与知识发现,2017(3) </span><br>
 
 </details>
-
 
 ## 社会学选题对象基础研究（部分）
 
