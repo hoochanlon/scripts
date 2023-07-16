@@ -513,7 +513,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <span id="fn4-black"><a href="#fn4">[1]</a> 黄俊, 职场辱虐的情绪影响和行为反应研究、B站等社交媒体的传播研究,P149,[J]传播创新研究, 2021(12)</span><br>
 <span id="fn5-black"><a href="#fn5">[2]</a> 官琴, 邓三鸿, 王昊, 中文文本聚类常用停用词表对比研究,P76,[J]数据分析与知识发现,2017(3) </span><br>
 
-<!-- </details> -->
+</details> 
 
 图文版参照：https://www.52pojie.cn/thread-1802357-1-1.html
 
