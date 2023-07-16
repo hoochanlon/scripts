@@ -511,11 +511,12 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-17%2019.25.52.png" />
 
+<i><b>参考文献</b></i><br><br>
+<span id="fn4-black"><a href="#fn4">[1]</a> 黄俊, 职场辱虐的情绪影响和行为反应研究、B站等社交媒体的传播研究,P149,[J]传播创新研究, 2021(12)</span><br>
+<span id="fn5-black"><a href="#fn5">[2]</a> 官琴, 邓三鸿, 王昊, 中文文本聚类常用停用词表对比研究,P76,[J]数据分析与知识发现,2017(3) </span><br>
+
 </details>
 
-<i><b>参考文献</b></i><br><br>
-<span id="fn4-black"><a href="#fn4">[1]</a> 黄俊, 职场辱虐的情绪影响和行为反应研究、B站等社交媒体的传播研究,P149,[J]传播创新研究, 2021(12)<br>
-<span id="fn5-black"><a href="#fn5">[2]</a> 官琴, 邓三鸿, 王昊, 中文文本聚类常用停用词表对比研究,P76,[J]数据分析与知识发现,2017(3) <br>
 
 ## 社会学选题对象基础研究（部分）
 
@@ -525,7 +526,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <summary>点击详情</summary>
 
 <h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb">亚文化视域评论及弹幕调研总结</a></h4>
-
 
 整体来说，后情感时代，让我发现人的情感体验是多元的。单从就“嗑CP”、“萌宠”话题的被采访人语录来看，就得出部分被采访人思维单一、理想化。这是不可靠的，不能一概而论。比较切实的观点应该是，部分被采访人对此类信息可能并不在意，或对这方面未有较深入的认知与关注。并且，该项数据并不能对采访人的情绪、思维、行为逻辑做定论，只是某些事物的关联，需要去理清事情的真相与内在逻辑，这些都要花时间下功夫研究的。
 
