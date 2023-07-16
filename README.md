@@ -542,7 +542,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <p>刘芳对小粉红群体的定义是准确的。她进一步将该群体细分为不同的年龄段、社会阶层以及职业背景。在18至24岁的范围内，学生群体在小粉红中占据了很大比例，其中多数来自无产阶级家庭。然而，在旧牛帆模型流行之前的分类中，也有相当数量的小粉红来自城市中产阶级家庭，这一点也需要我们注意。无论如何，这两个群体都有一个共同点，即小粉红拥有较强的社会消费能力和购买力，并且相对承受较少的社会压力，同时也是中国改革开放国力日益强盛的受益者与见证者。</p>
 
-<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《论马克思主义威望下降的原因》.ipynb">读【董德刚：论马克思主义威望下降的原因】</a></h4>
+<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《论马克思主义威望下降的原因》.ipynb">读《论马克思主义威望下降的原因》</a></h4>
 
 <p>马克思主义威望下降的原因：</p>
 
@@ -550,7 +550,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <p>积极因素：1. 从横向上看，改革开放开阔了我们的思想理论视野，使马克思主义的相对地位下降；2. 从纵向上看，我们创造出中国特色社会主义理论等新的理论，也使马克思主义的相对重要性减弱；3. 人们现在愈来愈能够对马克思学说采取科学分析的态度，亦使马克思主义的威望从顶峰回落。</p>
 
-<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《“帝吧出征”事件中话语表达与社群动员研究》.ipynb">读《“帝吧出征”事件中话语表达与社群动员研究》</h4>
+<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《“帝吧出征”事件中话语表达与社群动员研究》.ipynb">读《“帝吧出征”事件中话语表达与社群动员研究》</a></h4>
 
 <p><b>帝吧出征：群体动员与舆论引导</b></p>
 
