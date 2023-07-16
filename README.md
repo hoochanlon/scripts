@@ -9,7 +9,143 @@
 
 项目代码涉及到部分组件版本兼容问题 <a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/平台兼容问题.ipynb">点击此处</a>；关于ipynb无法在GitHub进行预览，[请查看这里](https://blog.reviewnb.com/jupyter-notebook-not-rendering-on-github/)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
 
-<h2> 社会学选题对象基础研究 </h2>
+## 常见平台热搜与辟谣信息分析
+
+对人文社科期刊、论文研究对象进行跨学科、基础调研（不限于同事访谈、网络论坛问卷调查）等综合性分析。
+
+* html网页解析、webui自动化
+* 数据收集、过滤、分类归档
+* "平均/极值"基础数学统计、分词、文本情绪值计算汇总（自然语言处理）
+
+<details>
+<summary>初上手时的基础操作，简单收集信息测试。</summary>
+
+<p>一键获取中国新闻网资讯 <a href="https://www.52pojie.cn/thread-1780608-1-1.html">图文版</a></p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_chinanews.py)"
+</code></pre>
+
+<p>一键获取中国新闻网资讯 Ruby版</p>
+
+<pre><code>ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_chinanews.rb)"
+</code></pre>
+
+<p>一键生成全球信息报表 <a href="https://www.52pojie.cn/thread-1779165-1-1.html">图文版</a></p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_worldometers.py)"
+</code></pre>
+
+<p>一键收集知乎前五条精选回答摘要</p>
+<pre><code>python3 -c "$(curl -fsSL https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhihu_answers_demo.py)"</code></pre>
+</details>
+
+<details>
+<summary>平台热搜与辟谣信息汇总分析</summary>
+
+前提：开始前，先复制如下指令安装 pip 工具包。涉及到斯坦福大学语言模型 [stanza](https://stanfordnlp.github.io/stanza) 处理的数据需要外网连接。
+
+<pre><code>pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-txt/requirements.txt
+</code></pre>
+
+<h3>头条、抖音、微博热搜采集分析</h3>
+
+<p>一键获取今日头条、抖音、微博热搜。<a href="https://www.52pojie.cn/thread-1785460-1-1.html">图文版</a> （NLP：Stanza）</p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_resou_today_s.py)"
+</code></pre>
+
+<ul>
+<li>自动化分类；整体匹配率：84%~96% 区间左右。</li>
+<li>词频统计；三者共存的热搜，说明为持久公共热度，信息密度较高。</li>
+<li>文本情感平均值、每条标题的情感数值；主：人为置顶热搜的文本情绪强烈程度。</li>
+<li>词性分析；标记可能存有引导与被植入意识成分用词，只要定语、状语叠得多，总能是宣传正态形势。</li>
+</ul>
+
+<p>微博在自动化分类中，噪音三者最大，信息价值低，话题含水量大，失真度偏高；各家平台的热搜标题也存有未标识谣言成分，最好用<a href="https://www.piyao.org.cn/pysjk/frontsql.htm">国家辟谣平台查询</a>鉴别其真伪；虽然娱乐属性极重，但微博其本身具有一对多公共属性的社交模式，当某个社会事件被挂上热搜，它可在短时间内迅速传播信息，引发公众的关注和讨论。</p>
+
+<p>推荐论文：</p>
+
+<ul>
+<li>毛贺祺《大数据背景下微博热搜的新闻阅读服务功能》吉林大学新闻学专业硕士学位论文，2017.3</li>
+<li>喻国明《大数据分析下的中国社会舆情 总体态势与结构性特征》中国人民大学学报，2013年第５期</li>
+<li>王小新《当前我国受众网络新闻的阅读倾向——以百度热搜词为例》《今传媒》，2013年第9期</li>
+<li>许诺《基于百度热搜新闻词的社会风险事件5W提取研究》《系统工程理论与实践》，2022年第40卷第2期</li>
+</ul>
+
+<h3>自动化收集辟谣条目及语言分析</h3>
+
+<p>功能大体与上例相当，对词频的较高词语进行语法分析。（NLP：ThuLAC）</p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_rumor_analysis.py)"
+</code></pre>
+
+<p>urllib3：<a href="https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175">https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175</a></p>
+
+<p>对谣言的定义：阿尔波特（Gordom W.Allport）和波兹曼（Leo Postman）最早为谣言下了定义，即谣言是一个与当时事件相关联的命题，是为了使人相信，一般以口传媒介的方式在人们之间流传，但是却缺乏具体的资料以证实其确切性。<span id="fn1"><a href="#fn1-black"><sup>1</sup></a></span></p>
+
+<p>谣言概念界定：究其本质而言，谣言普遍具有的属性，一是广泛传播，二是不确定性，基于此，本文将谣言界定为被广泛传播的、含有极大的不确定性的信息。“不确定性”主要是指对信息真实与否的不确定性。<span id="fn2"><a href="#fn2-black"><sup>2</sup></a></span></p>
+
+<p>目前，在突发事件中的各类谣言中，有明确目标性和破坏性的攻击型谣言和以实现政治、经济等利益为目标的宣传型或牟利型谣言出现的频率较低。多数谣言是出于恐惧心理和基于错误的认识判断而形成的。（胡琦，2022） 从这次的谣言收集分析已证明，最大的两个类别是，社会话题与健康饮食，两者分别占比48%、43%。</p>
+
+<p>但“后真相”时代多元文化的糅合共存和碎片化的解读方式加剧了民众的价值分歧，侵蚀了信任防线。一方面，复杂的利益诉求、多元的社会思潮与多样的传播方式交织叠加，催生出“后真相”时代多元的网络文化，加大了主流与非主流文化之间的碰撞和摩擦。虽然非主流文化是主流文化的有益补充，但诸如佛系文化、网红文化、躺平文化等难免有背离主流文化的消极因素，尤其是污丑文化、拜金文化等更是尽显畸形审美和金钱至上的错误思想，若不加警惕和批判，极易误导一些认知不足、阅历不够的受众，诱发政治偏见，不断冲击和侵蚀业已形成的政治信任。另一方面，“后真相”时代人们面对海量信息，惯以碎片化的方式拼凑事实、解读真相。一旦关涉社会分化、利益分配、政治腐败和政策失误等复杂的政治谣言鉴别，人们极易陷入碎片化信息的不断解读和重组,制造出多种“真相”,并借此持续发酵,非但无益于阻断网络政治谣言的传播，反而会频繁质疑已有政治共识,造成政治信任的流失，为谣言惑众创设了可能。<span id="fn3"><a href="#fn3-black"><sup>3</sup></a></span></p>
+
+<p>就参考杨芸伊、赵惜群来说，个人生活无非涉及钱的吃穿住行，社会分化也是正常现象，“个人-集体”、“集体-个人”的差异、非一致性，这话更多“是以国家建设为中心”为首纲。下面这两条信息很值得参考研究：</p>
+
+<ul>
+<li><a href="https://www.zhihu.com/question/587740721/answer/2952171143">知乎 - 如何看待央视新视频【靠力气赚钱心里才踏实，是无数平凡人的生活信仰】?</a></li>
+<li><a href="https://www.bilibili.com/video/BV1ss4y1M72E">bilibili - 说我摸，说我摆，谁在意劳动者的无奈？</a></li>
+</ul>
+
+<i><b>参考文献</b></i><br><br>
+<span id="fn1-black"><a href="#fn1">[1]</a> 胡琦, 全媒体时代网络谣言产生的心理机制与治理路径,P135，137, [J]社会科学家, 2022(11)</span><br>
+<span id="fn2-black"><a href="#fn2">[2]</a> 雷霞, 老年群体的谣言认知不协调及其纠偏机制, [J]现代传播, 2023(3)</span><br>
+<span id="fn3-black"><a href="#fn3">[3]</a> 杨芸伊, 赵惜群, “后真相”时代网络政治谣言的表征、归因及治理,P155, [J]湖南科技大学学报(社会科学版)，2022(11)</span><br>
+
+</details>
+
+## B站用户评论、弹幕调研
+
+脚本功能如下：
+
+1. 视频标题、作者、发布时间、播放量、收藏量、分享量、累计弹幕、评论数、视频简介、视频类别、视频链接、封面链接。
+1. 100条弹幕、情绪值、词性分析、发表时间、用户ID
+1. 20篇热门评论、点赞数、情绪值、话题回复条目、会员ID、会员名、评论时间。
+1. 威力增强：弹幕：用户名、生日、注册时间、粉丝数、关注数（cookie）；评论：显示评论用户的IP归属地（webbui）。
+1. 最后生成xlsx，文本情绪值中位数、词频统计、词云、柱形统计图。
+
+<details>
+<summary>点击详情</summary>
+
+前提：先确保你的基础库组件完善
+
+<pre><code>pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-txt/requirements.txt
+</code></pre>
+
+然后运行该脚本 <a href="https://www.52pojie.cn/thread-1802357-1-1.html">图文版</a>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_bv_baseinfo.py)"
+</code></pre>
+
+<h3>文本基础分析 </h3>
+
+停用词文本聚类综合统计分析，见下图<span id="fn4"><a href="#fn4-black"><sup>1</sup></a></span>
+
+<img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-27%2011.00.31.png" />
+
+<p>实际上，不同的停用词表都有其的适用范围。教育机构语料库大多由文献期刊构成，因此复旦、川大等教育科研机构的停用词表，更适合文献与邮件文本。而门户网站的语料库更适合新闻报道，各有其特点。</p>
+
+<p>文本发掘及分词统计涉及到的停用词问题，借助 [goto456/stopwords](https://github.com/goto456/stopwords) 提供的哈工大、川大、百度的停用词语料库，以及从CSDN收集到复旦停用词本进行整合，强化文本对“经济”、“社会”、“文艺”聚类效果，从而达到更精准命中关键词的目的。</p>
+
+文本分析工作内容，如下引用图<span id="fn5"><a href="#fn5-black"><sup>2</sup></a></span>。目的性都差不多，只不过方式略有不同而已，殊途同归了，算是。
+
+<img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-17%2019.25.52.png" />
+
+<i><b>参考文献</b></i><br><br>
+<span id="fn4-black"><a href="#fn4">[1]</a> 黄俊, 职场辱虐的情绪影响和行为反应研究、B站等社交媒体的传播研究,P149,[J]传播创新研究, 2021(12)</span><br>
+<span id="fn5-black"><a href="#fn5">[2]</a> 官琴, 邓三鸿, 王昊, 中文文本聚类常用停用词表对比研究,P76,[J]数据分析与知识发现,2017(3) </span><br>
+</details>
+
+## 社会学选题对象基础研究 
 
 该部分集中于互联网新闻传媒与网络社群组织动员分析。
 
@@ -427,148 +563,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <pre><code>curl -Os https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/seven_z_sensei.bat&amp;&amp;call seven_z_sensei.bat
 </code></pre>
 
-</details>
-
-## 资讯基础信息收集
-
-初上手时的基础操作，简单收集信息测试。
-
-<details>
-<summary>点击详情</summary>
-
-<p>一键获取中国新闻网资讯 <a href="https://www.52pojie.cn/thread-1780608-1-1.html">图文版</a></p>
-
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_chinanews.py)"
-</code></pre>
-
-<p>一键获取中国新闻网资讯 Ruby版</p>
-
-<pre><code>ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_chinanews.rb)"
-</code></pre>
-
-<p>一键生成全球信息报表 <a href="https://www.52pojie.cn/thread-1779165-1-1.html">图文版</a></p>
-
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_worldometers.py)"
-</code></pre>
-
-<p>一键收集知乎前五条精选回答摘要</p>
-
-<pre><code>python3 -c "$(curl -fsSL https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhihu_answers_demo.py)"</code></pre>
-
-</details>
-
-## 常见平台热搜与辟谣信息分析
-
-对人文社科期刊、论文研究对象进行跨学科、基础调研（不限于同事访谈、网络论坛问卷调查）等综合性分析。
-
-* html网页解析、webui自动化
-* 数据收集、过滤、分类归档
-* "平均/极值"基础数学统计、分词、文本情绪值计算汇总（自然语言处理）
-
-<details>
-<summary>点击详情</summary>
-
-前提：开始前，先复制如下指令安装 pip 工具包。涉及到斯坦福大学语言模型 [stanza](https://stanfordnlp.github.io/stanza) 处理的数据需要外网连接。
-
-<pre><code>pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-txt/requirements.txt
-</code></pre>
-
-<h3>头条、抖音、微博热搜采集分析</h3>
-
-<p>一键获取今日头条、抖音、微博热搜。<a href="https://www.52pojie.cn/thread-1785460-1-1.html">图文版</a> （NLP：Stanza）</p>
-
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_resou_today_s.py)"
-</code></pre>
-
-<ul>
-<li>自动化分类；整体匹配率：84%~96% 区间左右。</li>
-<li>词频统计；三者共存的热搜，说明为持久公共热度，信息密度较高。</li>
-<li>文本情感平均值、每条标题的情感数值；主：人为置顶热搜的文本情绪强烈程度。</li>
-<li>词性分析；标记可能存有引导与被植入意识成分用词，只要定语、状语叠得多，总能是宣传正态形势。</li>
-</ul>
-
-<p>微博在自动化分类中，噪音三者最大，信息价值低，话题含水量大，失真度偏高；各家平台的热搜标题也存有未标识谣言成分，最好用<a href="https://www.piyao.org.cn/pysjk/frontsql.htm">国家辟谣平台查询</a>鉴别其真伪；虽然娱乐属性极重，但微博其本身具有一对多公共属性的社交模式，当某个社会事件被挂上热搜，它可在短时间内迅速传播信息，引发公众的关注和讨论。</p>
-
-<p>推荐论文：</p>
-
-<ul>
-<li>毛贺祺《大数据背景下微博热搜的新闻阅读服务功能》吉林大学新闻学专业硕士学位论文，2017.3</li>
-<li>喻国明《大数据分析下的中国社会舆情 总体态势与结构性特征》中国人民大学学报，2013年第５期</li>
-<li>王小新《当前我国受众网络新闻的阅读倾向——以百度热搜词为例》《今传媒》，2013年第9期</li>
-<li>许诺《基于百度热搜新闻词的社会风险事件5W提取研究》《系统工程理论与实践》，2022年第40卷第2期</li>
-</ul>
-
-<h3>自动化收集辟谣条目及语言分析</h3>
-
-<p>功能大体与上例相当，对词频的较高词语进行语法分析。（NLP：ThuLAC）</p>
-
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_rumor_analysis.py)"
-</code></pre>
-
-<p>urllib3：<a href="https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175">https://github.com/urllib3/urllib3/issues/3020#issuecomment-1557412175</a></p>
-
-<p>对谣言的定义：阿尔波特（Gordom W.Allport）和波兹曼（Leo Postman）最早为谣言下了定义，即谣言是一个与当时事件相关联的命题，是为了使人相信，一般以口传媒介的方式在人们之间流传，但是却缺乏具体的资料以证实其确切性。<span id="fn1"><a href="#fn1-black"><sup>1</sup></a></span></p>
-
-<p>谣言概念界定：究其本质而言，谣言普遍具有的属性，一是广泛传播，二是不确定性，基于此，本文将谣言界定为被广泛传播的、含有极大的不确定性的信息。“不确定性”主要是指对信息真实与否的不确定性。<span id="fn2"><a href="#fn2-black"><sup>2</sup></a></span></p>
-
-<p>目前，在突发事件中的各类谣言中，有明确目标性和破坏性的攻击型谣言和以实现政治、经济等利益为目标的宣传型或牟利型谣言出现的频率较低。多数谣言是出于恐惧心理和基于错误的认识判断而形成的。（胡琦，2022） 从这次的谣言收集分析已证明，最大的两个类别是，社会话题与健康饮食，两者分别占比48%、43%。</p>
-
-<p>但“后真相”时代多元文化的糅合共存和碎片化的解读方式加剧了民众的价值分歧，侵蚀了信任防线。一方面，复杂的利益诉求、多元的社会思潮与多样的传播方式交织叠加，催生出“后真相”时代多元的网络文化，加大了主流与非主流文化之间的碰撞和摩擦。虽然非主流文化是主流文化的有益补充，但诸如佛系文化、网红文化、躺平文化等难免有背离主流文化的消极因素，尤其是污丑文化、拜金文化等更是尽显畸形审美和金钱至上的错误思想，若不加警惕和批判，极易误导一些认知不足、阅历不够的受众，诱发政治偏见，不断冲击和侵蚀业已形成的政治信任。另一方面，“后真相”时代人们面对海量信息，惯以碎片化的方式拼凑事实、解读真相。一旦关涉社会分化、利益分配、政治腐败和政策失误等复杂的政治谣言鉴别，人们极易陷入碎片化信息的不断解读和重组,制造出多种“真相”,并借此持续发酵,非但无益于阻断网络政治谣言的传播，反而会频繁质疑已有政治共识,造成政治信任的流失，为谣言惑众创设了可能。<span id="fn3"><a href="#fn3-black"><sup>3</sup></a></span></p>
-
-<p>就参考杨芸伊、赵惜群来说，个人生活无非涉及钱的吃穿住行，社会分化也是正常现象，“个人-集体”、“集体-个人”的差异、非一致性，这话更多“是以国家建设为中心”为首纲。下面这两条信息很值得参考研究：</p>
-
-<ul>
-<li><a href="https://www.zhihu.com/question/587740721/answer/2952171143">知乎 - 如何看待央视新视频【靠力气赚钱心里才踏实，是无数平凡人的生活信仰】?</a></li>
-<li><a href="https://www.bilibili.com/video/BV1ss4y1M72E">bilibili - 说我摸，说我摆，谁在意劳动者的无奈？</a></li>
-</ul>
-
-<i><b>参考文献</b></i><br><br>
-<span id="fn1-black"><a href="#fn1">[1]</a> 胡琦, 全媒体时代网络谣言产生的心理机制与治理路径,P135，137, [J]社会科学家, 2022(11)</span><br>
-<span id="fn2-black"><a href="#fn2">[2]</a> 雷霞, 老年群体的谣言认知不协调及其纠偏机制, [J]现代传播, 2023(3)</span><br>
-<span id="fn3-black"><a href="#fn3">[3]</a> 杨芸伊, 赵惜群, “后真相”时代网络政治谣言的表征、归因及治理,P155, [J]湖南科技大学学报(社会科学版)，2022(11)</span><br>
-
-</details>
-
-## B站用户评论、弹幕调研
-
-脚本功能如下：
-
-1. 视频标题、作者、发布时间、播放量、收藏量、分享量、累计弹幕、评论数、视频简介、视频类别、视频链接、封面链接。
-1. 100条弹幕、情绪值、词性分析、发表时间、用户ID
-1. 20篇热门评论、点赞数、情绪值、话题回复条目、会员ID、会员名、评论时间。
-1. 威力增强：弹幕：用户名、生日、注册时间、粉丝数、关注数（cookie）；评论：显示评论用户的IP归属地（webbui）。
-1. 最后生成xlsx，文本情绪值中位数、词频统计、词云、柱形统计图。
-
-<details>
-<summary>点击详情</summary>
-
-前提：先确保你的基础库组件完善
-
-<pre><code>pip3 install --no-cache-dir -r https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-txt/requirements.txt
-</code></pre>
-
-然后运行该脚本 <a href="https://www.52pojie.cn/thread-1802357-1-1.html">图文版</a>
-
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_bv_baseinfo.py)"
-</code></pre>
-
-<h3>文本基础分析 </h3>
-
-停用词文本聚类综合统计分析，见下图<span id="fn4"><a href="#fn4-black"><sup>1</sup></a></span>
-
-<img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-27%2011.00.31.png" />
-
-<p>实际上，不同的停用词表都有其的适用范围。教育机构语料库大多由文献期刊构成，因此复旦、川大等教育科研机构的停用词表，更适合文献与邮件文本。而门户网站的语料库更适合新闻报道，各有其特点。</p>
-
-<p>文本发掘及分词统计涉及到的停用词问题，借助 [goto456/stopwords](https://github.com/goto456/stopwords) 提供的哈工大、川大、百度的停用词语料库，以及从CSDN收集到复旦停用词本进行整合，强化文本对“经济”、“社会”、“文艺”聚类效果，从而达到更精准命中关键词的目的。</p>
-
-文本分析工作内容，如下引用图<span id="fn5"><a href="#fn5-black"><sup>2</sup></a></span>。目的性都差不多，只不过方式略有不同而已，殊途同归了，算是。
-
-<img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-17%2019.25.52.png" />
-
-<i><b>参考文献</b></i><br><br>
-<span id="fn4-black"><a href="#fn4">[1]</a> 黄俊, 职场辱虐的情绪影响和行为反应研究、B站等社交媒体的传播研究,P149,[J]传播创新研究, 2021(12)</span><br>
-<span id="fn5-black"><a href="#fn5">[2]</a> 官琴, 邓三鸿, 王昊, 中文文本聚类常用停用词表对比研究,P76,[J]数据分析与知识发现,2017(3) </span><br>
 </details>
 
 
