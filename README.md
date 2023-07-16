@@ -539,7 +539,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 1. 威力增强：弹幕：用户名、生日、注册时间、粉丝数、关注数（cookie）；评论：显示评论用户的IP归属地（webbui）。
 1. 最后生成xlsx，文本情绪值中位数、词频统计、词云、柱形统计图。
 
-
 <details>
 <summary>点击详情</summary>
 
@@ -559,7 +558,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <img src="https://cdn.jsdelivr.net/gh/hoochanlon/scripts/AQUICK/catch2023-06-27%2011.00.31.png" />
 
-<p>实际上，不同的停用词表都有其的适用范围。教育机构语料库大多由文献期刊构成，因此复旦、川大等教育科研机构的停用词表，更适合文献与邮件文本。而门户网站的语料库更适合新闻报道，各有其特点。
+<p>实际上，不同的停用词表都有其的适用范围。教育机构语料库大多由文献期刊构成，因此复旦、川大等教育科研机构的停用词表，更适合文献与邮件文本。而门户网站的语料库更适合新闻报道，各有其特点。</p>
 
 <p>文本发掘及分词统计涉及到的停用词问题，借助 [goto456/stopwords](https://github.com/goto456/stopwords) 提供的哈工大、川大、百度的停用词语料库，以及从CSDN收集到复旦停用词本进行整合，强化文本对“经济”、“社会”、“文艺”聚类效果，从而达到更精准命中关键词的目的。</p>
 
