@@ -514,6 +514,9 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <span id="fn5-black"><a href="#fn5">[2]</a> 官琴, 邓三鸿, 王昊, 中文文本聚类常用停用词表对比研究,P76,[J]数据分析与知识发现,2017(3) </span><br>
 
 </details>
+<details>
+<summary>bug</summary>
+</details>
 
 ## 社会学选题对象基础研究
 
