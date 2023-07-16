@@ -522,17 +522,17 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <details>
 <summary>点击详情</summary>
 
-<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb">亚文化视域评论及弹幕调研总结</h4>
+<h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/亚文化视域评论及弹幕调研.ipynb">亚文化视域评论及弹幕调研总结</a></h4>
 
 <p>整体来说，后情感时代，让我发现人的情感体验是多元的。单从就“嗑CP”、“萌宠”话题的被采访人语录来看，就得出部分被采访人思维单一、理想化。这是不可靠的，不能一概而论。比较切实的观点应该是，部分被采访人对此类信息可能并不在意，或对这方面未有较深入的认知与关注。并且，该项数据并不能对采访人的情绪、思维、行为逻辑做定论，只是某些事物的关联，需要去理清事情的真相与内在逻辑，这些都要花时间下功夫研究的。</p>
 
 <h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/民生及时评类新闻基础分析.ipynb">民生及时评类新闻媒体与受众行为浅析</a></h4>
 
-<p><b>民生时评媒体积极方面行为作用</b></p>
+<h5>民生时评媒体积极方面行为作用</h5>
 
 <p>在单向度的社会<span id="fn6"><sup><a href="#fn6-black">1</a></sup></span>中，不同地域的人往往面临着相似的生活困境与社会纠纷，经由媒体选择典型民生个例加以报道，很容易使民众获得切身体会，产生跨地域的情感共鸣。而在此基础上的时评，遵守实事求是的原则，通过解释报道框架<span id="fn7"><sup><a href="#fn7-black">2</a></sup></span>，对各类舆论热点事件进行科学理性的分析，同时提出面向未来的可行性建设性方案。从一定程度上缓释社会矛盾，疏导大众情绪，有促进开启民智的作用。不过，额外强调一点：开启民智目是民众具备批判性思维，自主思考和客观分析问题；它强调的是社会共同进步的需要，而不是贬低民众的智识水平及行为能力。</p>
 
-<b>民生时评类新闻受众失焦现象归因</b>
+<h5>民生时评类新闻受众失焦现象归因</h5>
 
 <p>一方面受众因切身体会共鸣感、猎奇感等作用下接收民生、时评信息，而另一方面身处风险社会<span id="fn8"><sup><a href="#fn8-black">3</a></sup></span>中、受众对严肃内容产生了排斥心理，需要一个可供闲谈与娱乐的话题排解忧虑，获得快感、同时也在探求相同爱好的趣缘群体。由此，这也可以解释我之前的疑问 “为什么我看同事日常精干处理工作事务，但涉及到电视剧、新闻报道却是人云亦云没多少见解，像个白痴一样？” 总的说来，舆论失焦现象也是必然且常态的现象。用户对新闻标题的猎奇点击，对事件的耐心等待与深入思考已不符合这方面一部分受众用户的期望了。在注意力、精力有限的情况下，这部分受众用户从而转向其他具有话题性、娱乐性的闲谈讨论，爆米花式的休闲娱乐（吃瓜）以此舒缓压力获得快感。</p>
 
@@ -552,7 +552,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 <h4 id="h3view"><a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/读《“帝吧出征”事件中话语表达与社群动员研究》.ipynb">读《“帝吧出征”事件中话语表达与社群动员研究》</a></h4>
 
-<p><b>帝吧出征：群体动员与舆论引导</b></p>
+<h5>帝吧出征：群体动员与舆论引导</h5>
 
 <p>当群体的文化与他们倡导的价值目标重合时，形成了一种动力机制，促使群体成员对帝吧社群的多角度文化认同和集体互动。帝吧通过整齐划一的动员基础，深刻影响了其群体成员的价值观念和思维方式，从而调动了粉丝的积极性和团结性来支持社群的集体活动。</p>
 
@@ -570,7 +570,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <span id="fn7-black"><a href="#fn7">[2]</a> <a href="http://media.people.com.cn/n/2015/0312/c150620-26682877.html">李煜申, 邢天意, 新闻网站报道的媒介框架差异分析 ——基于人民网等四家新闻网站的“8.3鲁甸地震事故”再现对比研究, [M]人民网研究院,2015(03) </a><br>
 <span id="fn8-black"><a href="#fn8">[3]</a> <a href="http://www.xml-data.org/KXYSH/html/22ddadf4-325e-41ce-b447-82a9129abf51.htm">张文霞, 赵延东, 风险社会：概念的提出及研究进展, [M]知网协办, 2011(1)</a><br>
 <span id="fn9-black"><a href="#fn9">[4]</a> 刘芳,“小粉红”社会责任承担的现实考量与提升路径研究,P9-13, [M]湖南大学硕士学位论文,2019</span><br>
-
 
 
 
