@@ -3,6 +3,7 @@
 @cd /d "%~dp0"
 @echo off
 @REM https://www.technipages.com/how-to-fix-windows-printer-error-0x0000011b/
+@REM https://www.partitionwizard.com/partitionmagic/error-0x0000011b.html
 
 @reg add "HKLM\SYSTEM\CurrentControlSet\Control\Print"  /v "RpcAuthnLevelPrivacyEnabled" /t REG_DWORD /d 0 /f
 
