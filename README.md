@@ -425,6 +425,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 主要涉及：
 
 * IE、Windows defender、Windows更新、Flash & Chrome v87、钉钉静默安装、打印机自动化安装
+* 文件校验工具：MD5、SHA1、SHA256 哈希值计算、比较、校验工具。
 * C盘空间释放：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作（C盘灭霸脚本）
 
 <details>
@@ -462,6 +463,10 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <p>去掉win10/win11热搜条目（需注销或重启） <a href="https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn">admx.help 上见</a></p>
 
 <pre><code>reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f</code></pre>
+
+<p>一键调用md5、sha1、sha256文件检测工具</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/md5tools.bat&&call md5tools.bat</code></pre>
 
 <p>一键安装flash以及配置支持的87版Chrome浏览器</p>
 
