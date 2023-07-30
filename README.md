@@ -604,7 +604,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 </details>
 
 ---
-Thanks
+谢谢观看
 ---
 
 <!--
