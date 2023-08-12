@@ -214,7 +214,7 @@
 
 解疑探索分析：
 
-1. 政府官员有多少人读懂马克思、多少人信马克思？
+1. How many government officials read Marx and how many believe in Marx?
 2. 对就业进行个人与企业，以及相关欺诈案例进行全面分析
 
 <details>
