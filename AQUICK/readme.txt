@@ -17,7 +17,6 @@ www.imgse.com
 www.imgtp.com
 www.catbox.moe
 www.imgbb.com
-www.hualigs.cn
 www.helloimg.com
 www.imgurl.org
 www.postimages.org
