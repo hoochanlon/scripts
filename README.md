@@ -518,13 +518,11 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/fix_0x11b_share_print.bat&&call fix_0x11b_share_print.bat</code></pre>
 
-
-<p> 安装指定chrome，并禁用升级：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/only_install_chrome65.bat"> only_install_chrome65.bat </a>;钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
-
 <p>一键获取招聘职位信息以及辅助资料参考网站</p>
 
 <pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhipin_demo.py)"</code></pre>
 
+<p> 安装指定chrome，并禁用升级：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/only_install_chrome65.bat"> only_install_chrome65.bat </a>;钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
 
 </details>
 
