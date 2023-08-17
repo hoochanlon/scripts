@@ -447,13 +447,14 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 
 </details>
 
-## 企业系统基础环境需求
+## 企业基础环境需求
 
 主要涉及：
 
 * IE、Windows defender、Windows更新、Flash & Chrome v87、钉钉静默安装、打印机自动化安装
 * 文件校验工具：MD5、SHA1、SHA256 哈希值计算、比较、校验工具。
-* C盘空间释放：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作（C盘灭霸脚本）
+* C盘空间释放：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作（C盘灭霸脚本）。
+* 应聘岗位基础技能、IQ 与 EQ 测评、薪资范围选定汇总及需求分析。
 
 <details>
 <summary><b>点击详情</b></summary>
@@ -519,6 +520,11 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 
 <p> 安装指定chrome，并禁用升级：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/only_install_chrome65.bat"> only_install_chrome65.bat </a>;钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
+
+<p>一键获取招聘职位信息以及辅助资料参考网站</p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhipin_demo.py)"</code></pre>
+
 
 </details>
 
