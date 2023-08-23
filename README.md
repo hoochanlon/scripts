@@ -39,8 +39,8 @@
 <pre><code>python3 -c "$(curl -fsSL https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhihu_answers_demo.py)"</code></pre>
 
 <p>收集boss直聘90条招聘相关招聘岗位的薪资待遇、公司规模等</p>
-<pre><code>python3 -c "$(curl -fsSL https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhipin_demo.py)"</code></pre>
 
+<pre><code>python3 -c "$(curl -fsSL https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhipin_demo.py)"</code></pre>
 
 </details>
 
