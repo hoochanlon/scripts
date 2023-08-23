@@ -38,7 +38,7 @@
 <p>一键收集知乎前五条精选回答摘要</p>
 <pre><code>python3 -c "$(curl -fsSL https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhihu_answers_demo.py)"</code></pre>
 
-<p>收集boss直聘90条招聘相关招聘岗位的薪资待遇、公司规模等</p>
+<p>收集boss直聘90条招聘相关招聘岗位的薪资待遇、公司规模等 <a href="https://www.52pojie.cn/thread-1822212-1-1.html">图文版</a></p>
 
 <pre><code>python3 -c "$(curl -fsSL https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhipin_demo.py)"</code></pre>
 
