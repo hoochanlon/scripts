@@ -162,6 +162,22 @@ class DataToExcel:
             for col, value in enumerate(data_row, start=1):
                 extra_sheet.cell(row=row, column=col, value=value)
 
+       # 添加新的sheet并写入相关的行列数据
+        extra_sheet = workbook.create_sheet(title='就业与择业观')
+        extra_data = [
+            ['主题', '链接'],
+            ['温铁军：天价彩礼、离婚率高企、生育率下降，问题到底出在哪？', 'https://www.bilibili.com/video/BV14o4y1B7wS'],
+            ['温铁军：小镇做题家成也教育，困也教育【温铁军践闻录】','https://www.bilibili.com/video/BV1fg411U7qJ'],
+            ['EP9 温铁军：生态文明战略能否扭转不断萎缩的乡村教育？【温言铁语-问答9】','https://www.bilibili.com/video/BV1Ck4y1J7Di']
+            ['卡尔·马克思：青年在选择职业时的考虑', 'https://www.marxists.org/chinese/marx/marxist.org-chinese-marx-1835-8.htm'],
+            ['【王德峰】总拿自己的专长交换财富，最后只会变成精致的利己主义者','https://www.bilibili.com/video/BV1cu4y1174E'],
+            ['“我们现在的教育，正在培养出一批‘绝对的、精致的利己主义者。”【钱理群】','https://www.bilibili.com/video/BV1pd4y1G7r2']
+        ]
+
+        for row, data_row in enumerate(extra_data, start=1):
+            for col, value in enumerate(data_row, start=1):
+                extra_sheet.cell(row=row, column=col, value=value)
+
 
 if __name__ == '__main__':
     job_data_list = ZhiPin.get_job_list()
