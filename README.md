@@ -646,7 +646,7 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 </details>
 
 ---
-***谢谢观赏，附 [Latex Demo](https://www.overleaf.com/read/khdnbtjxwkzx) ，以飨同好。***
+***谢谢观赏，附 [Latex Demo](https://www.overleaf.com/read/khdnbtjxwkzx) 与 [LaTex简历模版](https://github.com/hoochanlon/resume)，以飨同好。***
 
 <!--
 [![telegram](https://img.shields.io/badge/telegram-:me-blue.svg?longCache=true&style=flat-square)](https://t.me/test) 
