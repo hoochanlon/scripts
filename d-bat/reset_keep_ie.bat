@@ -1,4 +1,4 @@
-@REM  闃睮E鍔寔edge淇敼鍥為粯璁DGE
+@REM  防IE劫持edge修改回默认EDGE
 
 @echo off
 reg delete "HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main" /v "Enable Browser Extensions" /f
