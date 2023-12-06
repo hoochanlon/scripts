@@ -24,3 +24,10 @@ www.postimages.org
 get software format
 
 * https://www.techno360.in/wise-care-365-pro-free/
+
+blue movies
+
+* alldayj.com
+* fs1.app
+* bad.news
+* xvideo.com
