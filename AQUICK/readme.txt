@@ -9,6 +9,7 @@ pigcha|http://101.34.95.10:8081/misc/linux_tutorial (支持Linux cli)
 免费长期试用｜ https://arr007.network/
 爱整事的小伙｜ https://zgq-inc.github.io/
 在线安装小火箭 | https://bwgbus.com/1584.html
+fuck china | https://glados.rocks
 
 ihs：
 
