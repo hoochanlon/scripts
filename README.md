@@ -503,6 +503,11 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 <pre><code>reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f</code></pre>
 
+
+<p>开启网卡电源管理选项，重启生效。（点亮屏幕启动，出现华硕logo，实际上是休眠。另附：<a href="https://www.zhihu.com/question/629961635/answer/3291928985">知乎-qwe-天选4r9在插电和拔掉充电器的时候都会黑屏一下是正常的吗？</a></p>）
+
+<pre><code>reg add HKLM\System\CurrentControlSet\Control\Power /v PlatformAoAcOverride /t REG_DWORD /d 0</code></pre>
+
 <p>一键调用md5、sha1、sha256文件检测工具</p>
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/md5tools.bat&&call md5tools.bat</code></pre>
