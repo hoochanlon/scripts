@@ -473,7 +473,7 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <li>注【2】：代码地址：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat">https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat</a></li>
 </ul>
 
-<p>计算IE兼容视图网站hex，一键使用，本地下载使用转GB2312编码。</p>
+<p>计算IE兼容视图网站hex，一键使用，本地使用需转GB2312编码再运行。</p>
 
 <pre><code>
 irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/clac_ie_clearablelistdata_hex.ps1|iex
@@ -491,6 +491,19 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat</code></pre>
 
+<p>去掉win10/win11热搜条目，需注销或重启。</p>
+
+<pre><code>reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f</code></pre>
+
+<p>开启网卡电源管理选项，重启生效。</p>
+
+<pre><code>reg add HKLM\System\CurrentControlSet\Control\Power /v PlatformAoAcOverride /t REG_DWORD /d 0</code></pre>
+
+<ul>
+<li>注【3】：<a href="https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn">admx.help 注册表参考手册</a>；<a href="https://softaro.net/registry-finder">registry-finder 注册表修改工具（点击「ダウンロード」，即下载）</a></li>
+<li>注【4】：*华硕电脑点亮屏幕启动，出现LOGO开机动画，实际上是休眠，以及充电黑屏问题见 <a href="https://www.zhihu.com/question/629961635/answer/3291928985">知乎-qwe-天选4r9在插电和拔掉充电器的时候都会黑屏一下是正常的吗？</a></li>
+</ul>
+
 <p>C盘灭霸脚本：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作</p>
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/mieba.bat&&call mieba.bat</code></pre>
@@ -498,15 +511,6 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 <p>一键调用设置程序是否以管理员权限运行</p>
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/nano_runas.bat&&call nano_runas.bat</code></pre>
-
-<p>去掉win10/win11热搜条目，需注销或重启。（见： <a href="https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn">admx.help 注册表参考手册</a>；附：<a href="https://softaro.net/registry-finder">registry-finder 注册表修改工具（点击「ダウンロード」，即下载）</a>）</p>
-
-<pre><code>reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f</code></pre>
-
-
-<p>开启网卡电源管理选项，重启生效。（点亮屏幕启动，出现华硕logo，实际上是休眠。BTW：<a href="https://www.zhihu.com/question/629961635/answer/3291928985">知乎-qwe-天选4r9在插电和拔掉充电器的时候都会黑屏一下是正常的吗？</a>）</p>
-
-<pre><code>reg add HKLM\System\CurrentControlSet\Control\Power /v PlatformAoAcOverride /t REG_DWORD /d 0</code></pre>
 
 <p>一键调用md5、sha1、sha256文件检测工具</p>
 
