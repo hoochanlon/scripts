@@ -499,11 +499,10 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 <p>开启网卡电源管理选项，重启生效。（见：<a href="https://www.minitool.com/news/modern-standby.html">MiniTool- What Is Modern Standby? How to Disable It Windows 10/11?</a>）</p>
 
+<li>*华硕电脑点亮屏幕启动，出现LOGO开机动画，实际上是休眠，以及充电黑屏问题见 <a href="https://www.zhihu.com/question/629961635/answer/3291928985">知乎-qwe-天选4r9在插电和拔掉充电器的时候都会黑屏一下是正常的吗？</a></li>
+
 <pre><code>reg add HKLM\System\CurrentControlSet\Control\Power /v PlatformAoAcOverride /t REG_DWORD /d 0</code></pre>
 
-<ul>
-<li>*华硕电脑点亮屏幕启动，出现LOGO开机动画，实际上是休眠，以及充电黑屏问题见 <a href="https://www.zhihu.com/question/629961635/answer/3291928985">知乎-qwe-天选4r9在插电和拔掉充电器的时候都会黑屏一下是正常的吗？</a></li>
-</ul>
 
 <p>C盘灭霸脚本：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作</p>
 
