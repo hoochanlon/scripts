@@ -493,15 +493,16 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 <p>去掉win10/win11热搜条目，需注销或重启。</p>
 
+<li><a href="https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn">admx.help 注册表参考手册</a>；<a href="https://softaro.net/registry-finder">registry-finder 注册表修改工具（点击「ダウンロード」，即下载）</li>
+
 <pre><code>reg add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\explorer" /v DisableSearchBoxSuggestions /t reg_dword /d 1 /f</code></pre>
 
-<p>开启网卡电源管理选项，重启生效。</p>
+<p>开启网卡电源管理选项，重启生效。（见：<a href="https://www.minitool.com/news/modern-standby.html">MiniTool- What Is Modern Standby? How to Disable It Windows 10/11?</a>）</p>
 
 <pre><code>reg add HKLM\System\CurrentControlSet\Control\Power /v PlatformAoAcOverride /t REG_DWORD /d 0</code></pre>
 
 <ul>
-<li>注【3】：<a href="https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.WindowsExplorer::DisableSearchBoxSuggestions&Language=zh-cn">admx.help 注册表参考手册</a>；<a href="https://softaro.net/registry-finder">registry-finder 注册表修改工具（点击「ダウンロード」，即下载）</a></li>
-<li>注【4】：*华硕电脑点亮屏幕启动，出现LOGO开机动画，实际上是休眠，以及充电黑屏问题见 <a href="https://www.zhihu.com/question/629961635/answer/3291928985">知乎-qwe-天选4r9在插电和拔掉充电器的时候都会黑屏一下是正常的吗？</a></li>
+<li>*华硕电脑点亮屏幕启动，出现LOGO开机动画，实际上是休眠，以及充电黑屏问题见 <a href="https://www.zhihu.com/question/629961635/answer/3291928985">知乎-qwe-天选4r9在插电和拔掉充电器的时候都会黑屏一下是正常的吗？</a></li>
 </ul>
 
 <p>C盘灭霸脚本：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作</p>
