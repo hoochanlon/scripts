@@ -34,3 +34,8 @@ blue movies
 * fs1.app
 * bad.news
 * xvideo.com
+
+patch
+
+* https://patch.moe
+* https://patches.nekonyansoft.com/
