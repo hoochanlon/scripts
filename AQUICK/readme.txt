@@ -30,6 +30,7 @@ get software format
 
 blue movies
 
+* njavtv.com
 * alldayj.com
 * fs1.app
 * bad.news
