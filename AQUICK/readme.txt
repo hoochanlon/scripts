@@ -35,6 +35,12 @@ blue movies
 * bad.news
 * xvideo.com
 
+game
+
+www.gbtgames.com
+fitgirl-repacks.site
+
+
 patch
 
 * https://patch.moe
