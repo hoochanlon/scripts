@@ -11,7 +11,8 @@ pigcha|http://101.34.95.10:8081/misc/linux_tutorial (支持Linux cli)
 五年前的真VPN ｜ https://protonvpn.com/
 vpn gate| https://www.vpngate.net/cn/
 游戏加速器| https://kerrynotes.com/game-proxy/
-fuck china | https://glados.rocks
+glados.rocks | https://glados.rocks
+fuck china | PacketiX VPN Client + VPNGATE 镜像列表
 
 ihs：
 
