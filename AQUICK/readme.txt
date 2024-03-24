@@ -39,8 +39,9 @@ blue movies
 
 game
 
-www.gbtgames.com
-fitgirl-repacks.site
+* www.gbtgames.com
+* fitgirl-repacks.site
+* https://www.retrowan.com
 
 在线视频下载/MP4 2 MP3
 
