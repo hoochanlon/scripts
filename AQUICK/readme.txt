@@ -42,6 +42,7 @@ game
 * www.gbtgames.com
 * fitgirl-repacks.site
 * https://www.retrowan.com
+* https://www.freegamesdl.net
 
 在线视频下载/MP4 2 MP3
 
