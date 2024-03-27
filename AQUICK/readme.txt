@@ -44,6 +44,11 @@ game
 * https://www.retrowan.com
 * https://www.freegamesdl.net
 
+小游戏
+
+* https://zh.y8.com
+* https://poki.com
+
 在线视频下载/MP4 2 MP3
 
 * https://snapany.com
