@@ -55,8 +55,20 @@ game
 * https://www.aconvert.com/cn/audio/mp4-to-mp3/
 * https://convertio.co/zh/mp4-mp3/
 
-
 patch
 
 * https://patch.moe
 * https://patches.nekonyansoft.com/
+
+亮屏
+
+* https://www.keepscreenon.com
+
+双语阅读
+
+* http://www.tanglib.com
+* https://fayin.love
+
+文件蜈蚣
+
+* https://filecxx.com/zh_CN/index.html
