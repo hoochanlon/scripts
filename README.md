@@ -601,7 +601,7 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 <p>回归win10右键，或还原win11右键 </p>
 
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/right-menu.bat&amp;&amp;call right-menu.bat
+<pre><code>curl -OfsSL https://ghproxy.org/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/right-menu.bat&&call right-menu.bat
 </code></pre>
 
 
