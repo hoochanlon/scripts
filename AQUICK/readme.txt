@@ -55,6 +55,7 @@ MP3
 
 * https://tool.liumingye.cn/
 * https://www.yeyulingfeng.com/tools/music/
+* https://bailemi.com
 
 在线视频下载/MP4 2 MP3
 
