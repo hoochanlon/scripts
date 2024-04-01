@@ -51,6 +51,11 @@ game
 * https://zh.y8.com
 * https://poki.com
 
+MP3
+
+* https://tool.liumingye.cn/
+* https://www.yeyulingfeng.com/tools/music/
+
 在线视频下载/MP4 2 MP3
 
 * https://snapany.com
