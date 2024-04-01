@@ -44,6 +44,7 @@ game
 * https://www.retrowan.com
 * https://www.freegamesdl.net
 * https://lixianla.com/forum-9.htm
+* https://www.gamer520.com/
 
 小游戏
 
