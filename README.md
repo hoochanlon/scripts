@@ -604,6 +604,11 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 <pre><code>curl -OfsSL https://ghproxy.org/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/right-menu.bat&&call right-menu.bat
 </code></pre>
 
+<p>解锁应用程序因占用导致无权限删除问题 </p>
+
+<pre><code>curl -OfsSL https://ghproxy.org/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/unlockapp.bat&&call unlockapp.bat
+</code></pre>
+
 
 <p>去掉win10/win11热搜条目，需注销或重启。</p>
 
