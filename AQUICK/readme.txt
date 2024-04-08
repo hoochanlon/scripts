@@ -92,3 +92,4 @@ patch
 
 * https://font.sucai999.com
 * https://freeforcommercialuse.net
+* https://www.pngdirs.com
