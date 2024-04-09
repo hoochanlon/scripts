@@ -36,37 +36,37 @@ echo --- 开始检测压缩软件占用情况，并关闭。----
 @REM 特殊关照：winRAR、7z、360压缩、2345好压、快压
 
 @REM winrar
-if exist "C:\Program Files\WinRAR\." (
-    for /r "C:\Program Files\WinRAR" %%A in (*.exe) do (
+if exist "%ProgramFiles%\WinRAR\." (
+    for /r "%ProgramFiles%\WinRAR" %%A in (*.exe) do (
         taskkill /F /FI "IMAGENAME eq %%~nxA" 2>nul
     )
 )
 
 @REM 7z
-if exist "C:\Program Files\7-Zip\." (
-    for /r "C:\Program Files\7-Zip\." %%A in (*.exe) do (
+if exist "%ProgramFiles%\7-Zip\." (
+    for /r "%ProgramFiles%\7-Zip\." %%A in (*.exe) do (
         taskkill /F /FI "IMAGENAME eq %%~nxA" 2>nul
     )
 )
 
 
 @REM  360压缩
-if exist "C:\Program Files (x86)\360\360zip\." (
-    for /r "C:\Program Files (x86)\360\360zip" %%A in (*.exe) do (
+if exist "%ProgramFiles(x86)%\360\360zip\." (
+    for /r "%ProgramFiles(x86)%\360\360zip" %%A in (*.exe) do (
         taskkill /F /FI "IMAGENAME eq %%~nxA" 2>nul
     )
 )
 
 @REM 2345 好压
-if exist "C:\Program Files\2345Soft\HaoZip\." (
-    for /r "C:\Program Files\2345Soft\HaoZip" %%A in (*.exe) do (
+if exist "%ProgramFiles%\2345Soft\HaoZip\." (
+    for /r "%ProgramFiles%\2345Soft\HaoZip" %%A in (*.exe) do (
         taskkill /F /FI "IMAGENAME eq %%~nxA" 2>nul
     )
 )
 
 @REM 快压
-if exist "C:\Users\hooch\AppData\Roaming\快压\." (
-    for /r "C:\Users\hooch\AppData\Roaming\快压" %%A in (*.exe) do (
+if exist "%appdata%\快压\." (
+    for /r "%appdata%\快压" %%A in (*.exe) do (
         taskkill /F /FI "IMAGENAME eq %%~nxA" 2>nul
     )
 )
