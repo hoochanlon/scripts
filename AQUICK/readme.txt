@@ -88,6 +88,10 @@ patch
 
 * https://filecxx.com/zh_CN/index.html
 
+PDF工具
+
+* https://pdf.datapipe.top/?lang=zh_CN
+
 免费商用字体与图片
 
 * https://font.sucai999.com
