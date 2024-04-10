@@ -527,7 +527,7 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 </details>
 
-## 壁纸设定
+## 壁纸设定 | 快捷网页
 
 一面工作，一面生活。
 
@@ -541,6 +541,8 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 <details>
 <summary><b>点击详情</b></summary>
 
+<h3>壁纸设定</h3>
+
 <p>一键爬取bing壁纸 <a href="https://www.52pojie.cn/thread-1781868-1-1.html">图文版</a></p>
 
 <pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/get_bing_wallpapers.py)"</code></pre>
@@ -549,9 +551,17 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 <pre><code>ruby -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/get_msdesign_wallpapers.rb)"</code></pre>
 
-<p>一键定时切换壁纸，一面工作，一面生活（Mac）</p>
+<p>一键定时切换壁纸（Mac 专用）</p>
 
 <pre><code>bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_corn_diy_wallpaper.sh)"</code></pre>
+
+<h3>快捷网页</h3>
+
+<p>Windows 打开网页工具</p>
+<pre><code>curl -OfsSL https://ghproxy.org/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/webtools.bat&&call webtools.bat</code></pre>
+
+<p>Mac 打开网页工具</p>
+<pre><code>bash -c "$(curl -fsSL https://ghproxy.org/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/webtools.sh)"</code></pre>
 
 </details>
 
