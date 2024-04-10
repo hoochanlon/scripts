@@ -635,6 +635,13 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 <pre><code>reg add HKLM\System\CurrentControlSet\Control\Power /v PlatformAoAcOverride /t REG_DWORD /d 0</code></pre>
 
+
+<p>解决图标缓存、“任务栏不见了”等相关问题</p>
+
+<pre><code>curl -OfsSL https://ghproxy.org/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/icon_bar_reset.bat&&call icon_bar_reset.bat
+</code></pre>
+
+
 <p>CMD获取本机公网详情</p>
 
 <pre><code>powershell -c irm "https://freeipapi.com/api/json/$(irm http://api.ipify.org)"
