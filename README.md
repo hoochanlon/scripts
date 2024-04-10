@@ -555,7 +555,7 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 </details>
 
-## 移花接木与细枝末节
+## 移花接木
 
 这部分都是自己发现好玩的，根据不少参考网上资料的文章、源码、神Key，结合自己的思考分析，而做的二创改写，并加工成调用指令。
 
@@ -565,8 +565,6 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 <details>
 <summary><b>点击查看详情</b></summary>
-
-<h3>移花接木</h3>
 
 <p>CMD一键调用windows版本切换与Windows/Office激活 <a href="https://www.52pojie.cn/thread-1743122-1-1.html">图文版</a></p>
 
@@ -597,7 +595,14 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 <pre><code>powershell -c "irm  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/exifhelper.bat -Outfile exifhelper.bat" && exifhelper.bat
 </code></pre>
 
-<h3>细枝末节</h3>
+</details>
+
+## 细枝末节
+
+各种小整活，制造便利小工具。
+
+<details>
+<summary><b>点击查看详情</b></summary>
 
 <p>回归win10右键，或还原win11右键 </p>
 
