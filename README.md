@@ -641,6 +641,11 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 <pre><code>curl -OfsSL https://ghproxy.org/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/icon_bar_reset.bat&&call icon_bar_reset.bat
 </code></pre>
 
+<p>解决<a href="https://answers.microsoft.com/zh-hans/windows/forum/all/%E4%BD%A0%E5%A5%BD-%E8%AF%B7%E9%97%AE/c65a02d7-3e09-4c53-9761-b59ecbea3513">应用启动项无效注册表相关问题</a></p>
+
+<pre><code>curl -OfsSL https://ghproxy.org/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/clear_nullify_startup_reg.bat&&call clear_nullify_startup_reg.bat
+</code></pre>
+
 
 <p>CMD获取本机公网详情</p>
 
