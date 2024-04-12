@@ -353,13 +353,13 @@ GitHub的ipynb文件地址 转换 在线ipynb查看链接粘贴。（Ruby）
 ruby -e "$(wget -qO- https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/nbview.rb)"
 </code></pre>
 
-Mac 一键支持NTFS <a href="https://github.com/hoochanlon/Free-NTFS-For-Mac">图文版</a>
+Mac 一键支持NTFS（macOS 14及以下） <a href="https://github.com/hoochanlon/Free-NTFS-For-Mac">点击更新后的项目地址</a>
 
 <pre><code>
 sudo -u $USER  python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/ntfs_ninja.sh)"
 </code></pre>
 
-Mac 激活各类相关软件 <a href="https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells">图文版</a>（DMCA）
+Mac 激活各类相关软件 <a href="https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells">图文版</a>（DMCA 已关闭）
 
 <pre><code>
 sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
@@ -487,7 +487,7 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 
 <pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/re_update.bat|cmd</code></pre>
 
-<p>一键开启或关闭Windows defender实时保护</p>
+<p>一键开启或关闭Windows defender实时保护（已失效，建议使用<a href="https://www.sordum.org/9480/defender-control-v2-1/">sordum.org/defender-control</a>）</p>
 
 <pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat</code></pre>
 
