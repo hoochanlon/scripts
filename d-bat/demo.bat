@@ -19,9 +19,15 @@ powershell -command "Set-ExecutionPolicy RemoteSigned"
 @REM 关闭防火墙 
 netsh advfirewall set allprofiles state off
 
-
 @REM U盘修复 
 @REM chkdsk G:/f
+
+@REM 永久添加静态路由
+route add 192.168.0.0 mask 255.255.255.0 192.168.3.11 -p
+
+@REM  删除路由
+route delete 192.168.0.0
+
 
 @REM 设置域名计算机名需要netdom工具，专业版默认是没有的，故不设。
 @REM win+r 输入 sysdm.cpl 手动填写计算机名吧。
