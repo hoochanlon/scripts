@@ -70,6 +70,8 @@ TV & movie
 * https://snapany.com
 * https://www.aconvert.com/cn/audio/mp4-to-mp3/
 * https://convertio.co/zh/mp4-mp3/
+* https://y2down.cc/zh/youtube-mp3.html
+* https://y2mate.yt/en/
 
 patch
 
