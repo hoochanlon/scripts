@@ -18,9 +18,12 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Ad
 :: https://learn.microsoft.com/zh-cn/windows-hardware/manufacture/desktop/enable-or-disable-windows-features-using-dism?view=windows-11
 :: https://blog.csdn.net/ysapfa/article/details/131222044
 rem 启用 SMBv1 客户端
-dism /online /enable-feature /featurename:SMB1Protocol /all /norestart
+@REM dism /online /enable-feature /featurename:SMB1Protocol /all /norestart
 rem 启用 SMBv1 服务器
-dism /online /enable-feature /featurename:SMB1Protocol-Server /all /norestart
+@REM dism /online /enable-feature /featurename:SMB1Protocol-Server /all /norestart
+
+@REM 替换成powershell （heroliujia）启用 SMBv1 
+Powershell Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol -A -N
 rem 在注册表中设置 SMBv1 的启用
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" /v SMB1 /t REG_DWORD /d 1 /f
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" /v AllowInsecureGuestAuth /t REG_DWORD /d 1 /f
