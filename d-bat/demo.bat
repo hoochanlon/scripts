@@ -10,23 +10,17 @@ cd /d "%~dp0"
 
 reg add "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "C:\Program Files\Registry Finder\RegistryFinder.exe"  /t REG_SZ /d "RUNASADMIN" /f
 
-@REM win10 开启 smb1 共享，重启生效
-:: https://admx.help/?Category=SecurityBaseline&Policy=Microsoft.Policies.SecGuide::Pol_SecGuide_0001_SMBv1_Server
-reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" /v "SMB1" /t REG_DWORD /d 1 /f
-
 @REM 关闭UAC，重启生效
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d 0 /f
 
 @REM 激活powershell
 powershell -command "Set-ExecutionPolicy RemoteSigned"
 
-@REM 关闭防火墙 (小细节)
+@REM 关闭防火墙 
 netsh advfirewall set allprofiles state off
 
-@REM 关闭休眠 (小细节)
-powercfg /H off 
 
-@REM U盘修复 (小细节)
+@REM U盘修复 
 @REM chkdsk G:/f
 
 @REM 设置域名计算机名需要netdom工具，专业版默认是没有的，故不设。
