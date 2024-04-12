@@ -33,9 +33,10 @@ blue movies
 
 * njavtv.com/cn/articles
 * alldayj.com
-* fs1.app
+* jable.tv
 * bad.news
-* xvideo.com
+* hanime1.me
+* hanime.tv
 
 game
 
