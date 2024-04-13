@@ -51,6 +51,7 @@ game
 
 * https://zh.y8.com
 * https://poki.com
+* http://ending.fun/
 
 MP3
 
