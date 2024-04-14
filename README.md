@@ -672,6 +672,14 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 <pre><code>curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/install_jdk.bat&amp;&amp;call install_jdk.bat
 </code></pre>
 
+<p>一键设置环境变量</p>
+
+<pre><code>powershell -c irm "https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/add_env_path.ps1"
+</code></pre>
+
+<pre><code>curl -OfsSL https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/add_env_path.bat
+</code></pre>
+
 <p>win11一键显示当前WiFi与密码并生成二维码分享 <a href="https://www.52pojie.cn/thread-1772481-1-1.html">图文版</a></p>
 
 <pre><code>curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/show_wifi.bat&amp;&amp;call show_wifi.bat
