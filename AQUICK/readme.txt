@@ -79,6 +79,10 @@ patch
 * https://patch.moe
 * https://patches.nekonyansoft.com/
 
+crx
+
+* https://www.crxsoso.com/
+
 亮屏
 
 * https://www.keepscreenon.com
