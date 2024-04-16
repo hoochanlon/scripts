@@ -54,6 +54,9 @@ netsh interface ip add dns "以太网" 1.1.1.1
 
 ::-------  建立smb共享盘映射 ---------
 
+@REM 安装smb1 （需重启）
+Powershell Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol -A -N
+
 @REM 建立smb共享盘映射 win7格式 
 @REM /persistent:yes 它告诉系统将指定的设置或配置持久保存到系统中。
 @REM 替换成你的共享盘IP与目录，以及用户名与密码； 123456是密码，test是用户名
