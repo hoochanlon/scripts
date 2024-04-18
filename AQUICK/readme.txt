@@ -59,6 +59,7 @@ MP3
 * https://www.yeyulingfeng.com/tools/music/
 * https://bailemi.com
 * https://audiomack.com
+* https://www.zz123.com
 * https://xiageba.com
 * https://www.dtshot.com
 
