@@ -60,6 +60,7 @@ MP3
 * https://bailemi.com
 * https://freefy.app
 * https://audiomack.com
+* https://www.accuradio.com
 * https://www.zz123.com
 * https://xiageba.com
 * https://www.dtshot.com
