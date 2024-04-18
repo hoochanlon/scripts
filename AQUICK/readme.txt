@@ -58,6 +58,9 @@ MP3
 * https://tool.liumingye.cn/
 * https://www.yeyulingfeng.com/tools/music/
 * https://bailemi.com
+* https://audiomack.com
+* https://xiageba.com
+* https://www.dtshot.com
 
 TV & movie
 
