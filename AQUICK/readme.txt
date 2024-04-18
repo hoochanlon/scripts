@@ -58,6 +58,7 @@ MP3
 * https://tool.liumingye.cn/
 * https://www.yeyulingfeng.com/tools/music/
 * https://bailemi.com
+* https://freefy.app
 * https://audiomack.com
 * https://www.zz123.com
 * https://xiageba.com
