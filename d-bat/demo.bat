@@ -10,7 +10,8 @@ cd /d "%~dp0"
 
 reg add "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "C:\Program Files\Registry Finder\RegistryFinder.exe"  /t REG_SZ /d "RUNASADMIN" /f
 
-@REM 关闭UAC，重启生效
+@REM 关闭UAC，重启生效；而且会带来以管理员运行此任务，打开终端直接就是管理员状态
+@REM https://learn.microsoft.com/zh-cn/windows/security/application-security/application-control/user-account-control/settings-and-configuration?tabs=reg
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d 0 /f
 
 @REM 激活powershell
