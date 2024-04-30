@@ -46,6 +46,7 @@ game
 * https://www.freegamesdl.net
 * https://lixianla.com/forum-9.htm
 * https://www.gamer520.com
+* https://h-ero-game.com
 
 小游戏
 
