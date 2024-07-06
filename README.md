@@ -667,7 +667,7 @@ irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/mai
 <pre><code>explorer https://github.com/hoochanlon/scripts/blob/main/d-bat/weipe_showip.bat
 </code></pre>
 
-<p>一键安装Java <a href="https://www.52pojie.cn/thread-1767872-1-1.html">图文版</a></p>
+<p>一键安装Java <a href="https://www.52pojie.cn/thread-1767872-1-1.html">图文版</a>；更好的方式是通过 <a href="https://www.cnblogs.com/fortuneju/p/14701121.html">Scoop</a> 管理包工具安装</p>
 
 <pre><code>curl -O https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/install_jdk.bat&amp;&amp;call install_jdk.bat
 </code></pre>
