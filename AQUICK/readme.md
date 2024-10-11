@@ -3,7 +3,8 @@
 机场 VPN
 
 * https://jichangvpn.github.io
-* https://glados.rocks 
+* https://glados.rocks
+* https://samsock.chat
 * https://sjssr.fun/  info@westworldss.com
 * https://ikuuu.pw  find@ikuuu.pro
 
