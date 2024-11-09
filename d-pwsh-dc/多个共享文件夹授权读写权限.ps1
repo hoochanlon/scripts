@@ -21,7 +21,7 @@ foreach ($user in $domainUsers) {
     foreach ($share in $shares) {
         Write-Host "正在为用户 $fullUserName 添加权限到共享 $($share.Name)..."
 
-        # 1. 添加共享权限（只读）
+        # 1. 添加共享权限
         try {
             Grant-SmbShareAccess -Name $share.Name -AccountName $fullUserName -AccessRight Change -Force
             Write-Host "共享权限：用户 $fullUserName 已被授予 $($share.Name) 的编辑权限。"
@@ -29,7 +29,7 @@ foreach ($user in $domainUsers) {
             Write-Host "共享权限：无法为用户 $fullUserName 添加访问权限到 $($share.Name)，可能该用户已存在或发生其他错误。"
         }
 
-        # 2. 添加NTFS权限（只读）
+        # 2. 添加NTFS权限
         try {
             $icaclsCommand = "icacls `"$($share.Path)`" /grant `"${fullUserName}:(OI)(CI)(M)`" /t" # 显示权限
             # 将字符串转换为命令
