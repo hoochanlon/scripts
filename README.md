@@ -262,6 +262,18 @@
 <span id="fn10-black"><a href="#fn10">[5]</a> 刘江,数字原住民网络潜水动因实证研究,P69, [M]南京大学硕士学位论文,2013</span><br>
 <span id="fn11-black"><a href="#fn11">[6]</a> 刘莫鲜,在虚假招聘的背后——对大学生求职受騙现象的质性探究,P61-83, [M]南京大学博士学位论文,2012</span><br>
 
+## Windows server域控
+
+图文版：
+
+* [吾爱破解论坛 - 【powershell】根据文本内容批量添加相关权限](https://www.52pojie.cn/thread-1981245-1-1.html)
+* [吾爱破解论坛 -【powershell】转换文件夹安全权限为对应的共享权限（项目）](https://www.52pojie.cn/thread-1980549-1-1.html)
+* [吾爱破解论坛- 查看用户在哪些共享文件夹涉及相关权限，以及移除相关权限](https://www.52pojie.cn/thread-1979992-1-1.html)
+* [吾爱破解论坛 - 一个简单的域账户导出脚本小记（需配合正则）](https://www.52pojie.cn/thread-1979794-1-1.html)
+* [吾爱破解论坛 - 【powershell】域用户人员增删、文件授权、组织单元与域用户恢复](https://www.52pojie.cn/thread-1976184-1-1.html)
+
+
+
 
 ## Windows桌面技术基线检查 
 
@@ -303,6 +315,82 @@ Linux基线检查（PR）见：<a href="https://github.com/al0ne/LinuxCheck">al0
 </ul>
 
 大环境下，这篇文章 <a href="https://blog.csdn.net/smartbenson/article/details/50636012">CSDN - 企业管理Mac电脑的三种方式</a>提及的管理办法，都算得上是防控得当，可对比Windows来说，却挺不够看的。
+
+</details>
+
+
+## Windows 企业基础环境需求
+
+主要涉及：
+
+* IE、Windows defender、Windows更新、Flash & Chrome v87、钉钉静默安装、打印机自动化安装
+* 文件校验工具：MD5、SHA1、SHA256 哈希值计算、比较、校验工具。
+* C盘空间释放：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作（C盘灭霸脚本）。
+* 应聘岗位基础技能、IQ 与 EQ 测评、薪资范围选定汇总及需求分析。
+
+<details>
+<summary><b>点击详情</b></summary>
+
+<p>IE防Edge劫持 <a href="https://www.52pojie.cn/thread-1774349-1-1.html">图文版</a></p>
+
+<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/keep_ie.bat|cmd</code></pre>
+
+<ul>
+<li>注【1】：<a href="https://www.52pojie.cn/thread-1765347-1-1.html">域控环境IE模版 图文</a></li>
+<li>注【2】：代码地址：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat">https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat</a></li>
+</ul>
+
+<p>计算IE兼容视图网站hex，一键使用，本地使用需转GB2312编码再运行。</p>
+
+<pre><code>
+irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/clac_ie_clearablelistdata_hex.ps1|iex
+</code></pre>
+
+<p>一键永久关闭Windows更新设置 <a href="https://www.52pojie.cn/thread-1791338-1-1.html">图文版</a></p>
+
+<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/stop_update.bat|cmd</code></pre>
+
+<p>一键恢复被关闭的Windows更新设置</p>
+
+<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/re_update.bat|cmd</code></pre>
+
+<p>一键开启或关闭Windows defender实时保护（已失效，建议使用<a href="https://www.sordum.org/9480/defender-control-v2-1/">sordum.org/defender-control</a>）</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat</code></pre>
+
+<p>C盘灭霸脚本：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/mieba.bat&&call mieba.bat</code></pre>
+
+<p>一键调用设置程序是否以管理员权限运行</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/nano_runas.bat&&call nano_runas.bat</code></pre>
+
+<p>一键调用md5、sha1、sha256文件检测工具</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/md5tools.bat&&call md5tools.bat</code></pre>
+
+<p>一键安装flash以及配置支持的87版Chrome浏览器</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/fxxk_chxxa.bat&&call fxxk_chxxa.bat</code></pre>
+
+<p>一键安装禁止Chrome浏览器更新</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/deny_chrome_update.bat&&call deny_chrome_update.bat</code></pre>
+
+<p>一键PDFtoPNG</p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/PDFtoPNG.py)"</code></pre>
+
+<p>一键修复共享打印机0x11b问题</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/fix_0x11b_share_print.bat&&call fix_0x11b_share_print.bat</code></pre>
+
+<p>一键获取招聘职位信息以及辅助资料参考网站</p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhipin_demo.py)"</code></pre>
+
+<p> 安装指定chrome，并禁用升级：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/only_install_chrome65.bat"> only_install_chrome65.bat </a>;钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
 
 </details>
 
@@ -449,81 +537,6 @@ sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/
 <pre><code>
 sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/lite_vsftpd.sh)"
 </code></pre>
-
-</details>
-
-## 企业基础环境需求
-
-主要涉及：
-
-* IE、Windows defender、Windows更新、Flash & Chrome v87、钉钉静默安装、打印机自动化安装
-* 文件校验工具：MD5、SHA1、SHA256 哈希值计算、比较、校验工具。
-* C盘空间释放：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作（C盘灭霸脚本）。
-* 应聘岗位基础技能、IQ 与 EQ 测评、薪资范围选定汇总及需求分析。
-
-<details>
-<summary><b>点击详情</b></summary>
-
-<p>IE防Edge劫持 <a href="https://www.52pojie.cn/thread-1774349-1-1.html">图文版</a></p>
-
-<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/keep_ie.bat|cmd</code></pre>
-
-<ul>
-<li>注【1】：<a href="https://www.52pojie.cn/thread-1765347-1-1.html">域控环境IE模版 图文</a></li>
-<li>注【2】：代码地址：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat">https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat</a></li>
-</ul>
-
-<p>计算IE兼容视图网站hex，一键使用，本地使用需转GB2312编码再运行。</p>
-
-<pre><code>
-irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/clac_ie_clearablelistdata_hex.ps1|iex
-</code></pre>
-
-<p>一键永久关闭Windows更新设置 <a href="https://www.52pojie.cn/thread-1791338-1-1.html">图文版</a></p>
-
-<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/stop_update.bat|cmd</code></pre>
-
-<p>一键恢复被关闭的Windows更新设置</p>
-
-<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/re_update.bat|cmd</code></pre>
-
-<p>一键开启或关闭Windows defender实时保护（已失效，建议使用<a href="https://www.sordum.org/9480/defender-control-v2-1/">sordum.org/defender-control</a>）</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat</code></pre>
-
-<p>C盘灭霸脚本：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/mieba.bat&&call mieba.bat</code></pre>
-
-<p>一键调用设置程序是否以管理员权限运行</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/nano_runas.bat&&call nano_runas.bat</code></pre>
-
-<p>一键调用md5、sha1、sha256文件检测工具</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/md5tools.bat&&call md5tools.bat</code></pre>
-
-<p>一键安装flash以及配置支持的87版Chrome浏览器</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/fxxk_chxxa.bat&&call fxxk_chxxa.bat</code></pre>
-
-<p>一键安装禁止Chrome浏览器更新</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/deny_chrome_update.bat&&call deny_chrome_update.bat</code></pre>
-
-<p>一键PDFtoPNG</p>
-
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/PDFtoPNG.py)"</code></pre>
-
-<p>一键修复共享打印机0x11b问题</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/fix_0x11b_share_print.bat&&call fix_0x11b_share_print.bat</code></pre>
-
-<p>一键获取招聘职位信息以及辅助资料参考网站</p>
-
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhipin_demo.py)"</code></pre>
-
-<p> 安装指定chrome，并禁用升级：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/only_install_chrome65.bat"> only_install_chrome65.bat </a>;钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
 
 </details>
 
