@@ -264,7 +264,10 @@
 
 ## Windows server域控
 
-脚本位置：https://github.com/hoochanlon/scripts/tree/main/d-pwsh-dc
+脚本位置：
+
+* https://github.com/hoochanlon/scripts/tree/main/d-pwsh-dc
+* https://github.com/hoochanlon/scripts/tree/main/d-bat-dc
 
 图文版：
 
