@@ -264,6 +264,8 @@
 
 ## Windows server域控
 
+脚本位置：https://github.com/hoochanlon/scripts/tree/main/d-pwsh-dc
+
 图文版：
 
 * [吾爱破解论坛 - 【powershell】根据文本内容批量添加相关权限](https://www.52pojie.cn/thread-1981245-1-1.html)
@@ -271,7 +273,6 @@
 * [吾爱破解论坛- 查看用户在哪些共享文件夹涉及相关权限，以及移除相关权限](https://www.52pojie.cn/thread-1979992-1-1.html)
 * [吾爱破解论坛 - 一个简单的域账户导出脚本小记（需配合正则）](https://www.52pojie.cn/thread-1979794-1-1.html)
 * [吾爱破解论坛 - 【powershell】域用户人员增删、文件授权、组织单元与域用户恢复](https://www.52pojie.cn/thread-1976184-1-1.html)
-
 
 
 
