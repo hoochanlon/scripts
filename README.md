@@ -277,6 +277,15 @@
 * [吾爱破解论坛 - 一个简单的域账户导出脚本小记（需配合正则）](https://www.52pojie.cn/thread-1979794-1-1.html)
 * [吾爱破解论坛 - 【powershell】域用户人员增删、文件授权、组织单元与域用户恢复](https://www.52pojie.cn/thread-1976184-1-1.html)
 
+## 数通自动化
+
+脚本位置：
+
+* https://github.com/hoochanlon/scripts/tree/main/d-python-datacom
+
+图文版：
+
+* [吾爱破解论坛 - 单个与批量交换机配置备份](https://www.52pojie.cn/thread-1984161-1-1.html)
 
 
 ## Windows桌面技术基线检查 
