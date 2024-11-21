@@ -9,6 +9,297 @@
 
 项目代码涉及到部分组件版本兼容问题 <a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/平台兼容问题.ipynb">点击此处</a>；关于ipynb无法在GitHub进行预览，[请查看这里](https://blog.reviewnb.com/jupyter-notebook-not-rendering-on-github/)；生成自动化信息处理报表内容，可查阅 [d-xlsx](./d-xlsx) 目录了解详情。
 
+
+## Windows server域控
+
+脚本位置：
+
+* https://github.com/hoochanlon/scripts/tree/main/d-pwsh-dc
+* https://github.com/hoochanlon/scripts/tree/main/d-bat-dc
+
+图文版：
+
+* [吾爱破解论坛 - 【powershell】根据文本内容批量添加相关权限](https://www.52pojie.cn/thread-1981245-1-1.html)
+* [吾爱破解论坛 -【powershell】转换文件夹安全权限为对应的共享权限（项目）](https://www.52pojie.cn/thread-1980549-1-1.html)
+* [吾爱破解论坛- 查看用户在哪些共享文件夹涉及相关权限，以及移除相关权限](https://www.52pojie.cn/thread-1979992-1-1.html)
+* [吾爱破解论坛 - 一个简单的域账户导出脚本小记（需配合正则）](https://www.52pojie.cn/thread-1979794-1-1.html)
+* [吾爱破解论坛 - 【powershell】域用户人员增删、文件授权、组织单元与域用户恢复](https://www.52pojie.cn/thread-1976184-1-1.html)
+
+## 数通自动化
+
+脚本位置：
+
+* https://github.com/hoochanlon/scripts/tree/main/d-python-datacom
+
+图文版：
+
+* [吾爱破解论坛 - 单个与批量交换机配置备份](https://www.52pojie.cn/thread-1984161-1-1.html)
+
+
+## Windows桌面技术基线检查 
+
+首先，确保你的系统已开启 PowerShell
+
+* **打开PowerShell功能：`Set-ExecutionPolicy RemoteSigned`**
+* ***关闭PowerShell功能：`Set-ExecutionPolicy Restricted`***
+
+<details>
+<summary><b>点击详情</b></summary>
+
+一键使用，本地下载使用转GB2312编码 <a href="https://www.52pojie.cn/thread-1795749-1-1.html">图文版</a>
+
+<pre><code>
+irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/frontline_helpdesk.ps1|iex
+</code></pre>
+
+功能概览：
+
+<ol>
+<li>检查IP与网络设备连接近况</li>
+<li>检查打印机、打印池、扫描仪状态</li>
+<li>检查硬盘、CPU、内存、显卡等基础驱动信息</li>
+<li>检查设备安全性、近期升级补丁、定时任务项、证书策略、系统核心文件控制访问状况</li>
+<li>检查主机主动共享协议相关信息</li>
+<li>检查电脑休眠、重启频次、异常关机、程序崩溃等信息</li>
+<li>执行1～6选项的所有功能</li>
+<li>生成"设备驱动检查"、"五天内预警事件"、"登录登出活动记录"、"月度已存威胁概况"分析报表</li>
+<li>查看指导建议与开发说明</li>
+</ol>
+
+BTW
+
+Linux基线检查（PR）见：<a href="https://github.com/al0ne/LinuxCheck">al0ne/LinuxCheck</a>。对于Mac来说，这些安全服务的维护成本，不适用于中小企业。
+
+<ul>
+<li><a href="https://www.apple.com.cn/business/docs/site/Mac_Deployment_Overview.pdf">Apple - Mac系统部署</a></li>
+<li><a href="https://blogs.vmware.com/china/2019/10/08/企业采购苹果设备的正确姿势-abm/">vmware - 企业采购苹果设备的正确姿势-abm</a></li>
+</ul>
+
+大环境下，这篇文章 <a href="https://blog.csdn.net/smartbenson/article/details/50636012">CSDN - 企业管理Mac电脑的三种方式</a>提及的管理办法，都算得上是防控得当，可对比Windows来说，却挺不够看的。
+
+</details>
+
+## Windows 企业基础环境需求
+
+主要涉及：
+
+* IE、Windows defender、Windows更新、Flash & Chrome v87、钉钉静默安装、打印机自动化安装
+* 文件校验工具：MD5、SHA1、SHA256 哈希值计算、比较、校验工具。
+* C盘空间释放：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作（C盘灭霸脚本）。
+* 应聘岗位基础技能、IQ 与 EQ 测评、薪资范围选定汇总及需求分析。
+
+<details>
+<summary><b>点击详情</b></summary>
+
+<p>IE防Edge劫持 <a href="https://www.52pojie.cn/thread-1774349-1-1.html">图文版</a></p>
+
+<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/keep_ie.bat|cmd</code></pre>
+
+<ul>
+<li>注【1】：<a href="https://www.52pojie.cn/thread-1765347-1-1.html">域控环境IE模版 图文</a></li>
+<li>注【2】：代码地址：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat">https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat</a></li>
+</ul>
+
+<p>计算IE兼容视图网站hex，一键使用，本地使用需转GB2312编码再运行。</p>
+
+<pre><code>
+irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/clac_ie_clearablelistdata_hex.ps1|iex
+</code></pre>
+
+<p>一键永久关闭Windows更新设置 <a href="https://www.52pojie.cn/thread-1791338-1-1.html">图文版</a></p>
+
+<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/stop_update.bat|cmd</code></pre>
+
+<p>一键恢复被关闭的Windows更新设置</p>
+
+<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/re_update.bat|cmd</code></pre>
+
+<p>一键开启或关闭Windows defender实时保护（已失效，建议使用<a href="https://www.sordum.org/9480/defender-control-v2-1/">sordum.org/defender-control</a>）</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat</code></pre>
+
+<p>C盘灭霸脚本：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/mieba.bat&&call mieba.bat</code></pre>
+
+<p>一键调用设置程序是否以管理员权限运行</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/nano_runas.bat&&call nano_runas.bat</code></pre>
+
+<p>一键调用md5、sha1、sha256文件检测工具</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/md5tools.bat&&call md5tools.bat</code></pre>
+
+<p>一键安装flash以及配置支持的87版Chrome浏览器</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/fxxk_chxxa.bat&&call fxxk_chxxa.bat</code></pre>
+
+<p>一键安装禁止Chrome浏览器更新</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/deny_chrome_update.bat&&call deny_chrome_update.bat</code></pre>
+
+<p>一键PDFtoPNG</p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/PDFtoPNG.py)"</code></pre>
+
+<p>一键修复共享打印机0x11b问题</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/fix_0x11b_share_print.bat&&call fix_0x11b_share_print.bat</code></pre>
+
+<p>一键获取招聘职位信息以及辅助资料参考网站</p>
+
+<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhipin_demo.py)"</code></pre>
+
+<p> 安装指定chrome，并禁用升级：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/only_install_chrome65.bat"> only_install_chrome65.bat </a>;钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
+
+</details>
+
+## Linux云主机毛坯房安全改造
+
+购买云服务商提供的云主机，系统基本没有任何的安全软件保护。每天都有各地不法分子扫描公网，并不断远程暴破、入侵主机。所以需要采取防治措施。
+
+<details>
+<summary><b>点击详情</b></summary>
+
+<h3>一键搞定SSH登录、用户密码策略配置、Ban IP配置 <a href="https://www.52pojie.cn/thread-1749877-1-1.html">图文版</a></h3>
+
+<ul>
+<li>SSH登录: 免密的密钥模式、心跳长时间连接，客户端不掉线</li>
+<li>密码策略: 不限特殊字符、大小写，并支持4～5位长度下限</li>
+<li>Ban IP: 除自己IP外，30秒内短时间三次输错密码，永久封禁IP。</li>
+</ul>
+
+<pre><code>
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/lite_ssh_n_ban.sh)"
+</code></pre>
+
+<p>SSH单项配置：一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。（单项部分是开启限定自己IP访问的，即 AllowUsers）</p>
+
+<pre><code>
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_ssh.sh)"
+</code></pre>
+
+<p>fail2ban单项配置：一键fail2ban从下载到安装及生成配置与启动服务。(再次允许单项部分可以刷新自己公网IP配置)</p>
+
+<pre><code>
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_ban.sh)"
+</code></pre>
+
+<h3>一键搞定Linux自定义创建具有管理员权限的用户 <a href="https://www.52pojie.cn/thread-1749877-1-1.html">图文版</a></h3>
+
+<ul>
+<li>自定义用户名</li>
+<li>su、sudo及wheel组成员免密</li>
+<li>sshd_config锁root远程登录，提高安全性</li>
+</ul>
+
+<pre><code>
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/diy_add_wheel.sh)"
+</code></pre>
+
+<h3>一键搞定FTP <a href="https://www.52pojie.cn/thread-1753070-1-1.html">图文版</a></h3>
+
+<ul>
+<li>共享目录： /var/ftp/share </li>
+<li>限制越权出逃共享访问，可读写。</li>
+<li>安全，私有化，限定自己的公网IP访问。</li>
+</ul>
+
+<p>不输密码版，用户名:ftpuser 密码：P@ssw0rd</p>
+
+<pre><code>
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_vsftpd.sh)"
+</code></pre>
+
+<p>自定义用户版</p>
+
+<pre><code>
+sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/lite_vsftpd.sh)"
+</code></pre>
+
+</details>
+
+## Mac基础终端操控知会
+
+想要自由使用Mac步骤：
+
+1. **允许所有来源： `sudo spctl --master-disable`**
+2. **恢复模式下，关闭SIP：`csrutil disable`**
+3. **解除苹果签名验证系统的校验隔离：`sudo xattr -d com.apple.quarantine`**
+4. **运行终端工具包前提 —— homebrew，复制如下指令安装**
+
+```
+/bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
+```
+
+<details>
+<summary><b>点击详情</b></summary>
+
+关闭Safari浏览器的腾讯安全浏览
+
+<pre><code>
+defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool false
+</code></pre>
+
+重置macOS ~/.zshrc （仅环境变量配置失误，造成不可逆后果使用）
+
+<pre><code>
+export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin; sudo rm -rf ~/.zshrc
+</code></pre>
+
+
+Mac查看当前Wi-Fi密码 <a href="https://www.52pojie.cn/thread-1766927-1-1.html">图文版</a>
+
+<pre><code>
+sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_show_wifi.sh)"
+</code></pre>
+
+Mac查看常用系统信息
+
+<pre><code>
+sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_systeminfo.sh)"
+</code></pre>
+
+GitHub的ipynb文件地址 转换 在线ipynb查看链接粘贴。（Ruby）
+
+<pre><code>
+ruby -e "$(wget -qO- https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/nbview.rb)"
+</code></pre>
+
+Mac 一键支持NTFS（macOS 14及以下） <a href="https://github.com/hoochanlon/Free-NTFS-For-Mac">点击更新后的项目地址</a>
+
+<pre><code>
+sudo -u $USER  python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/ntfs_ninja.sh)"
+</code></pre>
+
+Mac 激活各类相关软件 <a href="https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells">图文版</a>（DMCA 已关闭）
+
+<pre><code>
+sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
+</code></pre>
+
+macOS MS-AutoUpdate 一键带走
+
+<pre><code>
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-apple/no_ms_autoupdate.scpt)"
+</code></pre>
+
+一键RAR密码爆破 <a href="https://www.52pojie.cn/thread-1775990-1-1.html">图文版</a>
+
+<pre><code>
+bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/7z_rar_sensei.sh)"
+</code></pre>
+
+自动化下载 Office Mac2021 激活工具
+
+<pre><code>
+sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-apple/office2021.scpt)"
+</code></pre>
+
+最后，转朋友的：<a href="https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html">自在拉基 - Mac打印机一键安装</a>。（没需求，所以没写；原理都差不多，确实挺厉害的。）
+
+</details>
+
 ## 常见平台热搜与辟谣信息分析
 
 对人文社科期刊、论文研究对象进行跨学科、基础调研（不限于同事访谈、网络论坛问卷调查）等综合性分析。
@@ -262,296 +553,6 @@
 <span id="fn10-black"><a href="#fn10">[5]</a> 刘江,数字原住民网络潜水动因实证研究,P69, [M]南京大学硕士学位论文,2013</span><br>
 <span id="fn11-black"><a href="#fn11">[6]</a> 刘莫鲜,在虚假招聘的背后——对大学生求职受騙现象的质性探究,P61-83, [M]南京大学博士学位论文,2012</span><br>
 
-## Windows server域控
-
-脚本位置：
-
-* https://github.com/hoochanlon/scripts/tree/main/d-pwsh-dc
-* https://github.com/hoochanlon/scripts/tree/main/d-bat-dc
-
-图文版：
-
-* [吾爱破解论坛 - 【powershell】根据文本内容批量添加相关权限](https://www.52pojie.cn/thread-1981245-1-1.html)
-* [吾爱破解论坛 -【powershell】转换文件夹安全权限为对应的共享权限（项目）](https://www.52pojie.cn/thread-1980549-1-1.html)
-* [吾爱破解论坛- 查看用户在哪些共享文件夹涉及相关权限，以及移除相关权限](https://www.52pojie.cn/thread-1979992-1-1.html)
-* [吾爱破解论坛 - 一个简单的域账户导出脚本小记（需配合正则）](https://www.52pojie.cn/thread-1979794-1-1.html)
-* [吾爱破解论坛 - 【powershell】域用户人员增删、文件授权、组织单元与域用户恢复](https://www.52pojie.cn/thread-1976184-1-1.html)
-
-## 数通自动化
-
-脚本位置：
-
-* https://github.com/hoochanlon/scripts/tree/main/d-python-datacom
-
-图文版：
-
-* [吾爱破解论坛 - 单个与批量交换机配置备份](https://www.52pojie.cn/thread-1984161-1-1.html)
-
-
-## Windows桌面技术基线检查 
-
-首先，确保你的系统已开启 PowerShell
-
-* **打开PowerShell功能：`Set-ExecutionPolicy RemoteSigned`**
-* ***关闭PowerShell功能：`Set-ExecutionPolicy Restricted`***
-
-<details>
-<summary><b>点击详情</b></summary>
-
-一键使用，本地下载使用转GB2312编码 <a href="https://www.52pojie.cn/thread-1795749-1-1.html">图文版</a>
-
-<pre><code>
-irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/frontline_helpdesk.ps1|iex
-</code></pre>
-
-功能概览：
-
-<ol>
-<li>检查IP与网络设备连接近况</li>
-<li>检查打印机、打印池、扫描仪状态</li>
-<li>检查硬盘、CPU、内存、显卡等基础驱动信息</li>
-<li>检查设备安全性、近期升级补丁、定时任务项、证书策略、系统核心文件控制访问状况</li>
-<li>检查主机主动共享协议相关信息</li>
-<li>检查电脑休眠、重启频次、异常关机、程序崩溃等信息</li>
-<li>执行1～6选项的所有功能</li>
-<li>生成"设备驱动检查"、"五天内预警事件"、"登录登出活动记录"、"月度已存威胁概况"分析报表</li>
-<li>查看指导建议与开发说明</li>
-</ol>
-
-BTW
-
-Linux基线检查（PR）见：<a href="https://github.com/al0ne/LinuxCheck">al0ne/LinuxCheck</a>。对于Mac来说，这些安全服务的维护成本，不适用于中小企业。
-
-<ul>
-<li><a href="https://www.apple.com.cn/business/docs/site/Mac_Deployment_Overview.pdf">Apple - Mac系统部署</a></li>
-<li><a href="https://blogs.vmware.com/china/2019/10/08/企业采购苹果设备的正确姿势-abm/">vmware - 企业采购苹果设备的正确姿势-abm</a></li>
-</ul>
-
-大环境下，这篇文章 <a href="https://blog.csdn.net/smartbenson/article/details/50636012">CSDN - 企业管理Mac电脑的三种方式</a>提及的管理办法，都算得上是防控得当，可对比Windows来说，却挺不够看的。
-
-</details>
-
-
-## Windows 企业基础环境需求
-
-主要涉及：
-
-* IE、Windows defender、Windows更新、Flash & Chrome v87、钉钉静默安装、打印机自动化安装
-* 文件校验工具：MD5、SHA1、SHA256 哈希值计算、比较、校验工具。
-* C盘空间释放：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作（C盘灭霸脚本）。
-* 应聘岗位基础技能、IQ 与 EQ 测评、薪资范围选定汇总及需求分析。
-
-<details>
-<summary><b>点击详情</b></summary>
-
-<p>IE防Edge劫持 <a href="https://www.52pojie.cn/thread-1774349-1-1.html">图文版</a></p>
-
-<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/keep_ie.bat|cmd</code></pre>
-
-<ul>
-<li>注【1】：<a href="https://www.52pojie.cn/thread-1765347-1-1.html">域控环境IE模版 图文</a></li>
-<li>注【2】：代码地址：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat">https://github.com/hoochanlon/scripts/blob/main/d-bat/saigonoie.bat</a></li>
-</ul>
-
-<p>计算IE兼容视图网站hex，一键使用，本地使用需转GB2312编码再运行。</p>
-
-<pre><code>
-irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/clac_ie_clearablelistdata_hex.ps1|iex
-</code></pre>
-
-<p>一键永久关闭Windows更新设置 <a href="https://www.52pojie.cn/thread-1791338-1-1.html">图文版</a></p>
-
-<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/stop_update.bat|cmd</code></pre>
-
-<p>一键恢复被关闭的Windows更新设置</p>
-
-<pre><code>curl -L  https://ghproxy.com/https://github.com/hoochanlon/scripts/raw/main/d-bat/re_update.bat|cmd</code></pre>
-
-<p>一键开启或关闭Windows defender实时保护（已失效，建议使用<a href="https://www.sordum.org/9480/defender-control-v2-1/">sordum.org/defender-control</a>）</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/choice_wdrt.bat&&call choice_wdrt.bat</code></pre>
-
-<p>C盘灭霸脚本：钉钉、微信、Foxmail本地缓存、Windows.old、Windows升级日志、文件等一键清理工作</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/mieba.bat&&call mieba.bat</code></pre>
-
-<p>一键调用设置程序是否以管理员权限运行</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/nano_runas.bat&&call nano_runas.bat</code></pre>
-
-<p>一键调用md5、sha1、sha256文件检测工具</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/md5tools.bat&&call md5tools.bat</code></pre>
-
-<p>一键安装flash以及配置支持的87版Chrome浏览器</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/fxxk_chxxa.bat&&call fxxk_chxxa.bat</code></pre>
-
-<p>一键安装禁止Chrome浏览器更新</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/deny_chrome_update.bat&&call deny_chrome_update.bat</code></pre>
-
-<p>一键PDFtoPNG</p>
-
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/PDFtoPNG.py)"</code></pre>
-
-<p>一键修复共享打印机0x11b问题</p>
-
-<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/fix_0x11b_share_print.bat&&call fix_0x11b_share_print.bat</code></pre>
-
-<p>一键获取招聘职位信息以及辅助资料参考网站</p>
-
-<pre><code>python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-python/zhipin_demo.py)"</code></pre>
-
-<p> 安装指定chrome，并禁用升级：<a href="https://github.com/hoochanlon/scripts/blob/main/d-bat/only_install_chrome65.bat"> only_install_chrome65.bat </a>;钉钉静默安装源码： <a href="./d-bat/fuck_dingding.bat">fuck_dingding.bat</a>；打印机安装详情见：<a href="https://nbviewer.org/github/hoochanlon/scripts/blob/main/d-ipynb/打印机自动化安装研究.ipynb">打印机自动化安装研究.ipynb</a></p>
-
-</details>
-
-## Mac基础终端操控知会
-
-想要自由使用Mac步骤：
-
-1. **允许所有来源： `sudo spctl --master-disable`**
-2. **恢复模式下，关闭SIP：`csrutil disable`**
-3. **解除苹果签名验证系统的校验隔离：`sudo xattr -d com.apple.quarantine`**
-4. **运行终端工具包前提 —— homebrew，复制如下指令安装**
-
-```
-/bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
-```
-
-<details>
-<summary><b>点击详情</b></summary>
-
-关闭Safari浏览器的腾讯安全浏览
-
-<pre><code>
-defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool false
-</code></pre>
-
-重置macOS ~/.zshrc （仅环境变量配置失误，造成不可逆后果使用）
-
-<pre><code>
-export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin; sudo rm -rf ~/.zshrc
-</code></pre>
-
-
-Mac查看当前Wi-Fi密码 <a href="https://www.52pojie.cn/thread-1766927-1-1.html">图文版</a>
-
-<pre><code>
-sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_show_wifi.sh)"
-</code></pre>
-
-Mac查看常用系统信息
-
-<pre><code>
-sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/mac_systeminfo.sh)"
-</code></pre>
-
-GitHub的ipynb文件地址 转换 在线ipynb查看链接粘贴。（Ruby）
-
-<pre><code>
-ruby -e "$(wget -qO- https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-ruby/nbview.rb)"
-</code></pre>
-
-Mac 一键支持NTFS（macOS 14及以下） <a href="https://github.com/hoochanlon/Free-NTFS-For-Mac">点击更新后的项目地址</a>
-
-<pre><code>
-sudo -u $USER  python3 -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/ntfs_ninja.sh)"
-</code></pre>
-
-Mac 激活各类相关软件 <a href="https://github.com/QiuChenly/MyMacsAppCrack/tree/main/Shells">图文版</a>（DMCA 已关闭）
-
-<pre><code>
-sudo bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/QiuChenly/MyMacsAppCrack/main/Shells/simple_crack.sh)"
-</code></pre>
-
-macOS MS-AutoUpdate 一键带走
-
-<pre><code>
-sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-apple/no_ms_autoupdate.scpt)"
-</code></pre>
-
-一键RAR密码爆破 <a href="https://www.52pojie.cn/thread-1775990-1-1.html">图文版</a>
-
-<pre><code>
-bash -c "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/7z_rar_sensei.sh)"
-</code></pre>
-
-自动化下载 Office Mac2021 激活工具
-
-<pre><code>
-sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-apple/office2021.scpt)"
-</code></pre>
-
-最后，转朋友的：<a href="https://www.cnblogs.com/98record/p/mac-da-yin-ji-yi-jian-an-zhuang.html">自在拉基 - Mac打印机一键安装</a>。（没需求，所以没写；原理都差不多，确实挺厉害的。）
-
-</details>
-
-## Linux云主机毛坯房安全改造
-
-购买云服务商提供的云主机，系统基本没有任何的安全软件保护。每天都有各地不法分子扫描公网，并不断远程暴破、入侵主机。所以需要采取防治措施。
-
-<details>
-<summary><b>点击详情</b></summary>
-
-<h3>一键搞定SSH登录、用户密码策略配置、Ban IP配置 <a href="https://www.52pojie.cn/thread-1749877-1-1.html">图文版</a></h3>
-
-<ul>
-<li>SSH登录: 免密的密钥模式、心跳长时间连接，客户端不掉线</li>
-<li>密码策略: 不限特殊字符、大小写，并支持4～5位长度下限</li>
-<li>Ban IP: 除自己IP外，30秒内短时间三次输错密码，永久封禁IP。</li>
-</ul>
-
-<pre><code>
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/lite_ssh_n_ban.sh)"
-</code></pre>
-
-<p>SSH单项配置：一键调用SSH快速配置 SSH密钥登录策略、用户简单密码配置规则。（单项部分是开启限定自己IP访问的，即 AllowUsers）</p>
-
-<pre><code>
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_ssh.sh)"
-</code></pre>
-
-<p>fail2ban单项配置：一键fail2ban从下载到安装及生成配置与启动服务。(再次允许单项部分可以刷新自己公网IP配置)</p>
-
-<pre><code>
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_ban.sh)"
-</code></pre>
-
-<h3>一键搞定Linux自定义创建具有管理员权限的用户 <a href="https://www.52pojie.cn/thread-1749877-1-1.html">图文版</a></h3>
-
-<ul>
-<li>自定义用户名</li>
-<li>su、sudo及wheel组成员免密</li>
-<li>sshd_config锁root远程登录，提高安全性</li>
-</ul>
-
-<pre><code>
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/diy_add_wheel.sh)"
-</code></pre>
-
-<h3>一键搞定FTP <a href="https://www.52pojie.cn/thread-1753070-1-1.html">图文版</a></h3>
-
-<ul>
-<li>共享目录： /var/ftp/share </li>
-<li>限制越权出逃共享访问，可读写。</li>
-<li>安全，私有化，限定自己的公网IP访问。</li>
-</ul>
-
-<p>不输密码版，用户名:ftpuser 密码：P@ssw0rd</p>
-
-<pre><code>
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/simple_vsftpd.sh)"
-</code></pre>
-
-<p>自定义用户版</p>
-
-<pre><code>
-sudo bash -c  "$(curl -fL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-shell/lite_vsftpd.sh)"
-</code></pre>
-
-</details>
 
 ## 壁纸设定 | 快捷网页
 
