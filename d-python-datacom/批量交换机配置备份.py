@@ -24,11 +24,11 @@ try:
         
         for row in csv_reader:
             # 解析每一行数据
-            if len(row) < 5:
+            if len(row) < 6:
                 print(f"跳过格式不正确的行: {row}")
                 continue
 
-            device_name, hostname, username, password, port = row
+            device_name, alias_name, hostname, username, password, port = row
             port = int(port)  # 将端口号转换为整数
             backup_filename = f"{device_name}.txt"  # 备份文件名
             backup_filepath = os.path.join(date_folder_path, backup_filename)  # 文件完整路径
