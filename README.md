@@ -35,6 +35,7 @@
 
 * [吾爱破解论坛 - 单个与批量交换机配置备份](https://www.52pojie.cn/thread-1984161-1-1.html)
 * [吾爱破解论坛 - 批量上传交换机配置到本地FTP](https://www.52pojie.cn/thread-1984471-1-1.html)
+* [吾爱破解论坛 - 写了个自动切换内外网的脚本](https://www.52pojie.cn/thread-1986389-1-1.html)
 
 
 ## Windows桌面技术基线检查 
