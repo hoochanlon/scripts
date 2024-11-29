@@ -14,8 +14,8 @@ interface = "以太网"
 static_ip = "172.16.1.55"
 static_mask = "255.255.255.0"
 static_gateway = "172.16.1.254"
-static_dns1 = "172.16.1.1"
-static_dns2 = "114.114.114.114"
+static_dns1 = "172.16.1.6"
+# static_dns2 = "114.114.114.114"
 
 # 创建透明背景的圆形图标
 def create_icon(color):
@@ -39,11 +39,20 @@ def create_icon(color):
 def check_dhcp():
     temp_file = os.path.join(os.getenv('TEMP'), 'display_dhcp_status_output.txt')
     subprocess.run(f'netsh interface ip show config name={interface} > "{temp_file}"', shell=True)
+    
     dhcp_status = None
-    with open(temp_file, 'r', encoding='gbk') as file:
-        for line in file:
-            if "DHCP 已启用" in line:
-                dhcp_status = line.split(":")[1].strip()
+    retries = 5
+    while retries > 0:
+        try:
+            with open(temp_file, 'r', encoding='gbk') as file:
+                for line in file:
+                    if "DHCP 已启用" in line:
+                        dhcp_status = line.split(":")[1].strip()
+            break  # 成功读取文件后退出循环
+        except PermissionError:
+            time.sleep(1)  # 等待 1 秒后重试
+            retries -= 1
+
     os.remove(temp_file)
     return dhcp_status
 
@@ -80,6 +89,8 @@ def update_icon(icon):
         icon.icon = create_icon('green')  # DHCP -> 绿色
     # 判断是否为固定静态 IP
     elif (ip == "172.16.1.55"):
+    # elif (ip == static_ip and mask == static_mask and 
+    #       gateway == static_gateway and dns1 == static_dns1):
         icon.icon = create_icon('yellow')  # 固定静态 IP -> 黄色
     # 否则为自定义静态 IP
     else:
@@ -95,7 +106,7 @@ def switch_to_dhcp(icon, item):
 def switch_to_fixed_static(icon, item):
     subprocess.run(f'netsh interface ip set address name={interface} source=static addr={static_ip} mask={static_mask} gateway={static_gateway}', shell=True)
     subprocess.run(f'netsh interface ip set dns name={interface} source=static addr={static_dns1}', shell=True)
-    subprocess.run(f'netsh interface ip add dns name={interface} addr={static_dns2} index=2', shell=True)
+    # subprocess.run(f'netsh interface ip add dns name={interface} addr={static_dns2} index=2', shell=True)
     update_icon(icon)
 
 # 切换到自定义静态 IP
