@@ -12,6 +12,10 @@
 
 ## Windows server域控
 
+域管理员的一些日常操作记录。
+
+<details>
+<summary><b>点击详情</b></summary>
 脚本位置：
 
 * https://github.com/hoochanlon/scripts/tree/main/d-pwsh-dc
@@ -24,9 +28,14 @@
 * [吾爱破解论坛- 查看用户在哪些共享文件夹涉及相关权限，以及移除相关权限](https://www.52pojie.cn/thread-1979992-1-1.html)
 * [吾爱破解论坛 - 一个简单的域账户导出脚本小记（需配合正则）](https://www.52pojie.cn/thread-1979794-1-1.html)
 * [吾爱破解论坛 - 【powershell】域用户人员增删、文件授权、组织单元与域用户恢复](https://www.52pojie.cn/thread-1976184-1-1.html)
+</details>
 
 ## 数通自动化
 
+记录备份交换机配置，频繁切换内外网等操作。
+
+<details>
+<summary><b>点击详情</b></summary>
 脚本位置：
 
 * https://github.com/hoochanlon/scripts/tree/main/d-python-datacom
@@ -36,7 +45,7 @@
 * [吾爱破解论坛 - 单个与批量交换机配置备份](https://www.52pojie.cn/thread-1984161-1-1.html)
 * [吾爱破解论坛 - 批量上传交换机配置到本地FTP](https://www.52pojie.cn/thread-1984471-1-1.html)
 * [吾爱破解论坛 - 写了个自动切换内外网的脚本](https://www.52pojie.cn/thread-1986389-1-1.html)
-
+</details>
 
 ## Windows桌面技术基线检查 
 
