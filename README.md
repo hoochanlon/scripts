@@ -565,9 +565,9 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
 <span id="fn11-black"><a href="#fn11">[6]</a> 刘莫鲜,在虚假招聘的背后——对大学生求职受騙现象的质性探究,P61-83, [M]南京大学博士学位论文,2012</span><br>
 
 
-## 壁纸设定 | 快捷网页
+## 壁纸、快捷网页设定
 
-一面工作，一面生活。
+一面工作，一面生活，太过理想，纯属放屁。
 
 <ol>
 <li>ruby 必须在3.0以上版本</li>
@@ -731,6 +731,11 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
 <p>一键RAR密码爆破 <a href="https://www.52pojie.cn/thread-1775357-1-1.html">图文版</a></p>
 
 <pre><code>curl -Os https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/seven_z_sensei.bat&amp;&amp;call seven_z_sensei.bat
+</code></pre>
+
+<p>一键图标缓存清理</p>
+
+<pre><code>curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/clean_icon_cache.bat&amp;&amp;call clean_icon_cache.bat
 </code></pre>
 
 </details>
