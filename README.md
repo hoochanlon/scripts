@@ -567,7 +567,7 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
 
 ## 壁纸、快捷网页设定
 
-一面工作，一面生活，太过理想，纯属放屁。
+一面工作，一面生活，要我说放[屁](https://www.bilibili.com/video/BV1Y1WEetEKt)。
 
 <ol>
 <li>ruby 必须在3.0以上版本</li>
