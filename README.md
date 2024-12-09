@@ -18,16 +18,20 @@
 <summary><b>点击详情</b></summary>
 脚本位置：
 
+
+* https://github.com/hoochanlon/scripts/tree/main/d-python-dc
 * https://github.com/hoochanlon/scripts/tree/main/d-pwsh-dc
 * https://github.com/hoochanlon/scripts/tree/main/d-bat-dc
 
 图文版：
 
+* [实现给域控电脑屏幕加水印的代码，适用于内网办公环境](https://github.com/hoochanlon/scripts/tree/main/d-python-dc/watermark)
 * [吾爱破解论坛 - 【powershell】根据文本内容批量添加相关权限](https://www.52pojie.cn/thread-1981245-1-1.html)
 * [吾爱破解论坛 -【powershell】转换文件夹安全权限为对应的共享权限（项目）](https://www.52pojie.cn/thread-1980549-1-1.html)
 * [吾爱破解论坛- 查看用户在哪些共享文件夹涉及相关权限，以及移除相关权限](https://www.52pojie.cn/thread-1979992-1-1.html)
 * [吾爱破解论坛 - 一个简单的域账户导出脚本小记（需配合正则）](https://www.52pojie.cn/thread-1979794-1-1.html)
 * [吾爱破解论坛 - 【powershell】域用户人员增删、文件授权、组织单元与域用户恢复](https://www.52pojie.cn/thread-1976184-1-1.html)
+
 </details>
 
 ## 数通自动化
