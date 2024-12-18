@@ -36,6 +36,12 @@
 
 ## 数通自动化
 
+ENSP启动设备失败，输入如下指令，然后重启电脑。
+
+```
+bcdedit /set hypervisorlaunchtype off
+```
+
 记录备份交换机配置，频繁切换内外网等操作。
 
 <details>
