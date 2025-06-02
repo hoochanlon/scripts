@@ -53,7 +53,7 @@ bcdedit /set hypervisorlaunchtype off
 图文版：
 
 * [吾爱破解论坛 - 单个与批量交换机配置备份](https://www.52pojie.cn/thread-1984161-1-1.html)
-* [吾爱破解论坛 - 批量上传交换机配置到本地FTP](https://www.52pojie.cn/thread-1984471-1-1.html) （另一种方式见：[/d-python-datacom/%E6%89%B9%E9%87%8F%E4%B8%8A%E4%BC%A0%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%85%8D%E7%BD%AE%E5%88%B0%E6%9C%AC%E5%9C%B0FTP.py](交换机FTP服务器下载备份文件到本地.py)）
+* [吾爱破解论坛 - 批量上传交换机配置到本地FTP](https://www.52pojie.cn/thread-1984471-1-1.html) （另一种方式见：[交换机FTP服务器下载备份文件到本地.py](/d-python-datacom/%E6%89%B9%E9%87%8F%E4%B8%8A%E4%BC%A0%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%85%8D%E7%BD%AE%E5%88%B0%E6%9C%AC%E5%9C%B0FTP.py)）
 * [吾爱破解论坛 - 写了个自动切换内外网的脚本](https://www.52pojie.cn/thread-1986389-1-1.html)
 </details>
 
