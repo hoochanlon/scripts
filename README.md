@@ -589,6 +589,20 @@ sudo /usr/bin/osascript -e "$(curl -fsSL https://ghproxy.com/https://raw.githubu
 <details>
 <summary><b>点击详情</b></summary>
 
+<h3>还原旧设定 </h3>
+
+<p>还原旧Windows照片查看器</p>
+
+<pre><code>
+irm https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-pwsh/photoview.ps1|iex
+</code></pre>
+
+<p>还原旧右键菜单</p>
+
+<pre><code>
+curl -OfsSL https://ghproxy.com/https://raw.githubusercontent.com/hoochanlon/scripts/main/d-bat/right-menu.bat
+</code></pre>
+
 <h3>壁纸设定</h3>
 
 <p>一键爬取bing壁纸 <a href="https://www.52pojie.cn/thread-1781868-1-1.html">图文版</a></p>
